@@ -5,4 +5,9 @@ Feature: Ingresar a la pagina principal del sistema SGCRED de Caja Piura
 
   Scenario: Loguearse a la aplicación SGCRED
     Given La web esta disponible
-    When ingreso usuario
+    When ingrese usuario y password
+      | nombre | password |
+      | ALCO   | prueba   |
+    And  doy click en boton ingresar
+    Then me muestra el home page
+

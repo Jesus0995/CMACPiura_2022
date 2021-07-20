@@ -1,48 +1,51 @@
 package Definitions;
 
-import PageObjects.MenuPage;
+import PageObjects.*;
 import io.cucumber.java.en.Given;
-import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import io.cucumber.messages.Messages;
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import io.cucumber.datatable.DataTable;
+import io.cucumber.java.en.And;
+import io.cucumber.java.en.Then;
+import java.util.List;
+import java.util.Map;
+
 
 public class LoginDefinitions {
 
     //Crear Variables de Menu Page
-    MenuPage menu;
+    LoginPage formulario;
 
     //crear constructor
     public LoginDefinitions() {
-        menu = new MenuPage(Hooks.driver);
-        menu.Ingresarusuario();
+        formulario = new LoginPage(Hooks.driver);
     }
-
-    WebDriver driver;
 
     @Given("La web esta disponible")
     public void la_web_esta_disponible() {
         Hooks.driver.get("http://10.0.203.12:8083/propuesta/logout.jsp");
     }
-    @When("Ingreso usuario")
-    public void ingreso_usuario() {
 
+    @When("ingrese usuario y password")
+    public void ingreseusuarioypassword(DataTable usuarios) {
+        List<Map<String, String>> lista = usuarios.asMaps(String.class, String.class);
+        for (int i = 0; i < lista.size(); i++) {
+            formulario.IngresarUsuario(lista.get(i).get("nombre"));
+            formulario.IngresarPassword(lista.get(i).get("password"));
+
+        }
+    }
+    @And("doy click en boton ingresar")
+    public void doy_click_en_boton_ingresar() {
+            formulario.ClickSubmit();
+    }
+    @Then("me muestra el home page")
+    public void memuestra_el_home_page() {
 
     }
-    @When("hago click en el boton Ingresar")
-    public void hago_click_en_el_boton_ingresar() {
-        Hooks.driver.findElement(By.xpath("//button[@type=\"submit\"]")).click();
-
-    }
-
-    @Then("Me muestra el Home de la web SGCRED")
-    public void me_muestra_el_home_de_la_web_sgcred() {
-
-    }
 
 
 
-    }
+}
 
 
