@@ -23,7 +23,7 @@ public class LoginDefinitions {
 
     @Given("La web esta disponible")
     public void la_web_esta_disponible() {
-        Hooks.driver.get("http://10.0.203.12:8083/propuesta/logout.jsp");
+        Hooks.driver.get("http://10.0.203.12:8083/propuesta/");
     }
 
     @When("ingrese usuario y password")
