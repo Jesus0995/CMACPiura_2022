@@ -7,7 +7,7 @@ import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-public class SeleccionarSegurosPage {
+public class RegistrarSegurosPage {
     //2. crear variables
 
     private WebDriver driver;
@@ -22,36 +22,32 @@ public class SeleccionarSegurosPage {
     @FindBy(xpath = "//button[@type=\"button\"]") private WebElement btn_cancelar;
 
     //1.Constructor
-    public SeleccionarSegurosPage(WebDriver d) {
+    public RegistrarSegurosPage(WebDriver d) {
         driver = d;
         wait = new WebDriverWait(driver,30);
         PageFactory.initElements(driver,this);
     }
-    public void SeleccionarSeguroDesgravamennm (){
+    public void SeleccionarDesgravamennm (){
         //wait.until(ExpectedCondition.elementToBeClickable(chk_segdesgrnm));
         chk_segdesgrnm.click();
 
     }
 
-    public void IngresarSeguroDesgravamennmdps (String segurosdesgravamen){
+    public void IngresarDesgravamennmdps (String desgravamenm){
         //wait.until(ExpectedCondition.visibilityof(txt_segdesgrnmdps));
         txt_segdesgrnmdps.clear();
-        txt_segdesgrnmdps.sendKeys(segurosdesgravamen);
+        txt_segdesgrnmdps.sendKeys(desgravamenm);
 
     }
 
-    public void SeleccionarPlanPymes(){
-        chk_planpymes.click();
+    public void SeleccionarPlanPymes(){ chk_planpymes.click(); }
 
-    }
     public void IngresarPlanPymes (String planpymes) {
         txt_planpymesdps.click();
         txt_planpymesdps.sendKeys(planpymes);
     }
 
-    public void ClickConfirmar(){
-        btn_confirmar.click();
-    }
+    public void ClickConfirmar(){ btn_confirmar.click();    }
 
 
 

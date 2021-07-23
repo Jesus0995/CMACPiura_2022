@@ -11,7 +11,7 @@ Scenario:  Crear una propuesta de financiamiento Normal
   And doy click en boton ingresar
   And seleccionar link propuesta de financiamiento
   And seleccionar boton crear propuesta de financiamiento
-  And Ingresar codigo de cliente a buscar
+  And Ingresar codigo de cliente
   And doy click en boton buscar
   And doy clic en crear nueva propuesta
 

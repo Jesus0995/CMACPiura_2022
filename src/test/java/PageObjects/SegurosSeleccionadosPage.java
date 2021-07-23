@@ -6,23 +6,19 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-public class SeleccionarGarantiaPage {
+public class SegurosSeleccionadosPage {
 
     private WebDriver driver;
     private WebDriverWait wait;
 
-    //mapeo objetos
-    //@FindBy(name="propiedad") private WebElement cbx_propiedad;
+    @FindBy(xpath = "//button[@type=\"button\"]") private WebElement btn_cerrar;
 
-    @FindBy(xpath = "//button[@type=\"submit\"]") private WebElement btn_registrar;
-
-
-    public SeleccionarGarantiaPage(WebDriver d) {
+    public SegurosSeleccionadosPage(WebDriver d) {
         driver = d;
         wait = new WebDriverWait(driver,30);
         PageFactory.initElements(driver,this);
+
     }
-    public void ClickRegistrarGarantia(){btn_registrar.click();}
 
-
+    public void ClickCerrar(){btn_cerrar.click();}
 }
