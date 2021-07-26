@@ -31,6 +31,7 @@ public class IngresarOperacionCreditoPage {
         wait =  new WebDriverWait(driver,30);
         PageFactory.initElements(driver,this);
     }
+
     public void SeleccionarMoneda(String moneda){ new Select(cbx_moneda).selectByValue(moneda); }
     public void IngresarMonto(String monto){ txt_monto.sendKeys(monto); }
     public void ClickCalcular (){btn_calcular.click(); }

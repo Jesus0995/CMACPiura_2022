@@ -23,8 +23,12 @@ public class PropuestaPage {
     @FindBy(id = "txtclasificaAval") private WebElement txt_clasifaval;
     @FindBy(id="txtanalisisUEF") private WebElement txt_clasifecon;
     @FindBy(name = "btnGaranExist") private WebElement btn_garantias;
-    @FindBy(xpath = "//button[@onclick=\"window.open('actualizaEEFFP.jsp?accion=enlazar&nroProp=4689701', 'Enlazar EEFF 7F01BEA3229E1DE020B289CFDBF03BF1', 'toolbar=no,scrollbars=yes,location=,statusbar=no,menubar=no,resizable=yes,width=400,height=250,dependent=yes');\"]") private WebElement btn_estadosfin;
-
+    //@FindBy(xpath = "//button[@onclick=\"window.open('actualizaEEFFP.jsp?accion=enlazar&nroProp=4689701', 'Enlazar EEFF 7F01BEA3229E1DE020B289CFDBF03BF1', 'toolbar=no,scrollbars=yes,location=,statusbar=no,menubar=no,resizable=yes,width=400,height=250,dependent=yes');\"]") private WebElement btn_estadosfin;
+    @FindBy(xpath = "/html/body/form/table[2]/tbody/tr[1]/td[3]/button") private WebElement btn_informeVisita;
+    @FindBy(xpath = "/html/body/form/table[2]/tbody/tr[3]/td[3]/button") private WebElement btn_informeComercial;
+    @FindBy(xpath = "/html/body/form/table[1]/tbody/tr[3]/td/div/button") private  WebElement btn_estadosFinancieros;
+    @FindBy(xpath = "/html/body/form/table[1]/tbody/tr[2]/td/table[1]/tbody/tr[2]/td[1]/table/tbody/tr/td[5]/a")private WebElement btn_grabar;
+    @FindBy(xpath = "/html/body/form/table[1]/tbody/tr[2]/td/table[2]/tbody/tr[1]/td/a") private WebElement btn_Aprobar;
 
     public PropuestaPage(WebDriver d) {
         driver = d;
@@ -43,7 +47,12 @@ public class PropuestaPage {
     public void IngresarClasifAval (){txt_clasifaval.sendKeys("prueba");}
     public void IngresarClasifEcon () {txt_clasifecon.sendKeys("prueba");}
     public void ClickAnexarGarantias () {btn_garantias.click();}
-    public void ClickEstadosFinan () {btn_estadosfin.click();}
+    public void ClickEstadosFinan () {btn_estadosFinancieros.click();}
+    public void ClickInformeVisita() {btn_informeVisita.click();}
+    public void ClickInformeComercial () {btn_informeComercial.click();}
+    public void ClickGrabar(){btn_grabar.click();}
+
+    public void ClickAprobar(){btn_Aprobar.click();}
 
 
 }
