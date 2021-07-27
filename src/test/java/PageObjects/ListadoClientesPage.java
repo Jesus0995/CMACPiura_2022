@@ -26,6 +26,7 @@ public class ListadoClientesPage {
         }
     }
 
+
     public ListadoClientesPage(WebDriver d) {
         driver = d;
         wait = new WebDriverWait(driver,30);
@@ -50,8 +51,9 @@ public class ListadoClientesPage {
     public void SeleccionarIconoPropuesta(){
         icn_nuevaPropuesta.click();
     }
+   // public void CerrarVentana(){
+   //     driver.close();
+   // }
 
-    public void CerrarVentana(){
-        driver.close();
-    }
+
 }

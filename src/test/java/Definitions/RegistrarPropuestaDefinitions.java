@@ -55,37 +55,70 @@ public class RegistrarPropuestaDefinitions {
     }
 
 
-    @And("doy click en propuesta financiamiento")
-    public void doyClickEnPropuestaFinanciamiento() {
+    @And("doy click en link propuesta financiamiento")
+    public void doyClickEnLinkPropuestaFinanciamiento() {
         menuPrincipal.ClickPropuestaFinanciamiento();
-        //menuPrincipal.CerrarVentana();
+
     }
 
-    @And("doy click en crear propuesta de la ventana Listado Propuesta")
-    public void doyClickEnCrearPropuestaDeLaVentanaListadoPropuesta() {
+    @And("doy click en el boton crear_propuesta de la ventana Listado Propuesta")
+    public void doyClickEnElBotonCrear_propuestaDeLaVentanaListadoPropuesta() {
         //listadoPropuesta.AbrirVentana();
         listadoPropuesta.clickCrearPropuesta();
+    }
 
+
+    @And("mostrar la ventana cliente para realizar la busqueda en el tab codigo")
+    public void mostrarLaVentanaClienteParaRealizarLaBusquedaEnElTabCodigo() {
+        listadoClientes.AbrirVentana();
+        listadoClientes.SeleccionarTabCodigo();
+    }
+
+    @And("en la ventana cliente ingresar el codigo a buscar")
+    public void enLaVentanaClienteIngresarElCodigoABuscar() {
+        listadoClientes.IngresarCodigoCliente();
+    }
+
+    @And("en la ventana cliente doy click en el boton buscar")
+    public void enLaVentanaClienteDoyClickEnElBotonBuscar() {
+        listadoClientes.ClickBuscarCliente();
 
     }
 
-    @And("realizar busqueda de cliente para crear propuesta")
-    public void realizarBusquedaDeClienteParaCrearPropuesta() {
-        listadoClientes.AbrirVentana();
-        listadoClientes.SeleccionarTabCodigo();
-        listadoClientes.IngresarCodigoCliente();
-        listadoClientes.ClickBuscarCliente();
+    @And("en la ventana cliente hacer click en el icono propuesta")
+    public void enLaVentanaClienteHacerClickEnElIconoPropuesta() {
         listadoClientes.SeleccionarIconoPropuesta();
     }
 
-    @And("ingresar operaciones de credito")
-    public void ingresarOperacionesDeCredito() {
+    @And("SGCRED muestra la ventana servicio y seleccionamos el servicio para generar la propuesta")
+    public void sgcredMuestraLaVentanaServicioYSeleccionamosElServicioParaGenerarLaPropuesta() {
         Servicio.AbrirVentana();
         Servicio.SeleccionarServicio();
-        Servicio.SeleccionarServicioCredito();
-        Servicio.SeleccionarTipoPropuesta();
-        Servicio.SeleccionarSubTipoPropuesta();
-        Servicio.SeleccionarPromocion();
+        
+    }
 
+    @And("en la ventana servicio seleccionar el Servicio credito")
+    public void enLaVentanaServicioSeleccionarElServicioCredito() {
+        Servicio.SeleccionarServicioCredito();
+    }
+
+    @And("en la ventana servicio seleccionar tipo de propuesta")
+    public void enLaVentanaServicioSeleccionarTipoDePropuesta() {
+        Servicio.SeleccionarTipoPropuesta();
+    }
+
+    @And("en la ventana servicio seleccionar subtipo de propuesta")
+    public void enLaVentanaServicioSeleccionarSubtipoDePropuesta() {
+        Servicio.SeleccionarSubTipoPropuesta();
+    }
+
+    @And("en la ventana servicio seleccionar promocion")
+    public void enLaVentanaServicioSeleccionarPromocion() {
+        Servicio.SeleccionarPromocion();
+    }
+
+    @And("en la ventana servicio doy click en el boton cargar")
+    public void enLaVentanaServicioDoyClickEnElBotonCargar() {
+        Servicio.ClickCargar();
     }
 }

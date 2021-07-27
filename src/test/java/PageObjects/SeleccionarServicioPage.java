@@ -23,7 +23,7 @@ public class SeleccionarServicioPage {
     @FindBy(id = "idnegocio") private WebElement cbx_negocio;
     @FindBy(id = "idTipoOperacion") private  WebElement cbx_tipoOperacion;
     @FindBy(id = "bCargar")private  WebElement btn_cargar;
-    @FindBy(xpath = "//button[@onclick=\"javascript:window.close();\"]") private  WebElement btn_cancelar;
+
 
 
     //crear meotodo para abrir ventana
@@ -42,23 +42,23 @@ public class SeleccionarServicioPage {
     }
 
     public void SeleccionarServicio(){
-        new Select(cbx_servicio).selectByValue("CREDITO EMPRESARIAL");
+        new Select(cbx_servicio).selectByVisibleText("CREDITO EMPRESARIAL");
     }
 
     public void SeleccionarServicioCredito(){
-        new Select(cbx_servicioCredito).selectByValue("CREDITOS PYMES");
+        new Select(cbx_servicioCredito).selectByVisibleText("CREDITOS PYMES");
     }
 
     public void SeleccionarTipoPropuesta (){
-        new Select(cbx_tipoPropuesta).selectByValue("NORMAL");
+        new Select(cbx_tipoPropuesta).selectByVisibleText("NORMAL");
     }
 
     public void SeleccionarSubTipoPropuesta (){
-        new Select(cbx_subTipoPropuesta).selectByValue("NORMAL");
+        new Select(cbx_subTipoPropuesta).selectByVisibleText("NORMAL");
     }
 
     public void SeleccionarPromocion (){
-        new Select(cbx_promocion).selectByValue("SIN PROMOCION");
+        new Select(cbx_promocion).selectByVisibleText("SIN PROMOCION");
     }
 
     public void ClickCargar(){
