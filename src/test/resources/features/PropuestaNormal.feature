@@ -10,6 +10,7 @@ Scenario:  Crear una propuesta de financiamiento Normal
     | ALPAMA  | prueba  |
   And doy click en boton ingresar
   And Mostrar home de SGCRED
+  And Cerrar las ventanas emergentes
   And doy click en link propuesta financiamiento
   And doy click en el boton crear_propuesta de la ventana Listado Propuesta
   And mostrar la ventana cliente para realizar la busqueda en el tab codigo
@@ -22,6 +23,9 @@ Scenario:  Crear una propuesta de financiamiento Normal
   And en la ventana servicio seleccionar subtipo de propuesta
   And en la ventana servicio seleccionar promocion
   And en la ventana servicio doy click en el boton cargar
+
+
+
 
 
 

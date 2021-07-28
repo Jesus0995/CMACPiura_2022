@@ -16,21 +16,21 @@ public class SeleccionarServicioPage {
 
     //mapeo de objetos
     @FindBy(xpath = "//*[@id=\"servicio\"]") private WebElement cbx_servicio;
-    @FindBy(id = "idServicioSofia") private WebElement cbx_servicioCredito;
-    @FindBy(id = "idTipoPropuesta") private  WebElement cbx_tipoPropuesta;
-    @FindBy(id = "idSubTipoPropuesta") private WebElement cbx_subTipoPropuesta;
-    @FindBy(id = "idPromocion") private WebElement cbx_promocion;
-    @FindBy(id = "idnegocio") private WebElement cbx_negocio;
-    @FindBy(id = "idTipoOperacion") private  WebElement cbx_tipoOperacion;
-    @FindBy(id = "bCargar")private  WebElement btn_cargar;
+    @FindBy(xpath = "//*[@id=\"idServicioSofia\"]") private WebElement cbx_servicioCredito;
+    @FindBy(xpath = "//*[@id=\"idTipoPropuesta\"]") private  WebElement cbx_tipoPropuesta;
+    @FindBy(xpath = "//*[@id=\"idSubTipoPropuesta\"]") private WebElement cbx_subTipoPropuesta;
+    @FindBy(xpath = "//*[@id=\"idPromocion\"]") private WebElement cbx_promocion;
+    //@FindBy(id = "idnegocio") private WebElement cbx_negocio;
+    //@FindBy(id = "idTipoOperacion") private  WebElement cbx_tipoOperacion;
+    @FindBy(xpath = "//*[@id=\"bCargar\"]")private  WebElement btn_cargar;
 
 
 
     //crear meotodo para abrir ventana
     public void AbrirVentana(){
         Set<String> identificadores =driver.getWindowHandles();
-        for (String identificador : identificadores){
-            driver.switchTo().window(identificador);
+        for (String identificador1 : identificadores){
+            driver.switchTo().window(identificador1);
         }
     }
 
@@ -43,6 +43,7 @@ public class SeleccionarServicioPage {
 
     public void SeleccionarServicio(){
         new Select(cbx_servicio).selectByVisibleText("CREDITO EMPRESARIAL");
+        System.out.println(cbx_servicio);
     }
 
     public void SeleccionarServicioCredito(){

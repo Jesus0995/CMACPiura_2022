@@ -54,6 +54,14 @@ public class RegistrarPropuestaDefinitions {
 
     }
 
+    @And("Cerrar las ventanas emergentes")
+    public void cerrarLasVentanasEmergentes() {
+        menuPrincipal.CerrarPopUpImagen();
+        menuPrincipal.CerrarPopUpAviso();
+
+    }
+
+
 
     @And("doy click en link propuesta financiamiento")
     public void doyClickEnLinkPropuestaFinanciamiento() {
@@ -121,4 +129,6 @@ public class RegistrarPropuestaDefinitions {
     public void enLaVentanaServicioDoyClickEnElBotonCargar() {
         Servicio.ClickCargar();
     }
+
+
 }
