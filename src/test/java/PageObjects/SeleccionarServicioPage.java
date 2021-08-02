@@ -20,17 +20,17 @@ public class SeleccionarServicioPage {
     @FindBy(xpath = "//*[@id=\"idTipoPropuesta\"]") private  WebElement cbx_tipoPropuesta;
     @FindBy(xpath = "//*[@id=\"idSubTipoPropuesta\"]") private WebElement cbx_subTipoPropuesta;
     @FindBy(xpath = "//*[@id=\"idPromocion\"]") private WebElement cbx_promocion;
-    //@FindBy(id = "idnegocio") private WebElement cbx_negocio;
-    //@FindBy(id = "idTipoOperacion") private  WebElement cbx_tipoOperacion;
+    @FindBy(id = "idnegocio") private WebElement cbx_negocio;
+    @FindBy(id = "idTipoOperacion") private  WebElement cbx_tipoOperacion;
     @FindBy(xpath = "//*[@id=\"bCargar\"]")private  WebElement btn_cargar;
 
 
 
     //crear meotodo para abrir ventana
-    public void AbrirVentana(){
-        Set<String> identificadores =driver.getWindowHandles();
-        for (String identificador1 : identificadores){
-            driver.switchTo().window(identificador1);
+    public void AbrirVentanaServicio(){
+        Set<String> identificadoresServicio = driver.getWindowHandles();
+        for (String identificadorservicio : identificadoresServicio){
+            driver.switchTo().window(identificadorservicio);
         }
     }
 
@@ -62,8 +62,16 @@ public class SeleccionarServicioPage {
         new Select(cbx_promocion).selectByVisibleText("SIN PROMOCION");
     }
 
+    public void SeleccionarNegocio (){new Select (cbx_negocio).selectByVisibleText("VENTA AL POR MENOR DE PRENDAS DE VESTIR,");}
+
+    public void SeleccionarTipoOperacion() {new Select (cbx_tipoOperacion).selectByVisibleText("SIMPLE");}
+
     public void ClickCargar(){
         btn_cargar.click();
     }
+
+    //public void CerrarServicio() {driver.close();}
+
+
 
 }

@@ -19,12 +19,12 @@ public class ListadoClientesPage {
     @FindBy(xpath = "/html/body/table[2]/tbody/tr[2]/td[6]/div/span/img") private WebElement icn_nuevaPropuesta;
 
     //crear meotodo para abrir ventana
-    public void AbrirVentana(){
-        Set<String> identificadores =driver.getWindowHandles();
-        for (String identificador : identificadores){
-            driver.switchTo().window(identificador);
-        }
-    }
+    //public void AbrirVentana(){
+    //    Set<String> identificadores =driver.getWindowHandles();
+    //    for (String identificador : identificadores){
+    //        driver.switchTo().window(identificador);
+    //    }
+    //    }
 
 
     public ListadoClientesPage(WebDriver d) {

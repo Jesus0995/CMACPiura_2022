@@ -7,7 +7,12 @@ Feature: Ingresar a la pagina principal del sistema SGCRED de Caja Piura
     Given La web esta disponible
     When ingrese usuario y password
       | nombre | password |
-      | ALCO   | prueba   |
+      | CIYAZU   | prueba   |
+      | JURO   | prueba   |
+      | NISI   | prueba   |
     And  doy click en boton ingresar
-    Then me muestra el home page
+    And me muestra el home page
+    Then doy click en cerrar sesion
+
+
 

@@ -39,8 +39,15 @@ public class LoginDefinitions {
     public void doy_click_en_boton_ingresar() {
             formulario.ClickSubmit();
     }
-    @Then("me muestra el home page")
+    @And("me muestra el home page")
     public void memuestra_el_home_page() {
+
+    }
+
+
+    @Then("doy click en cerrar sesion")
+    public void doyClickEnCerrarSesion() {
+        formulario.CerrarSesion();
 
     }
 

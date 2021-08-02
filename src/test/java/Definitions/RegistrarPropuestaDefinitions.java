@@ -17,6 +17,7 @@ public class RegistrarPropuestaDefinitions {
     ListadoPropuestaPage listadoPropuesta;
     ListadoClientesPage listadoClientes;
     SeleccionarServicioPage Servicio;
+    PropuestaPage propuesta;
 
     //Constructor
     public RegistrarPropuestaDefinitions() {
@@ -34,6 +35,7 @@ public class RegistrarPropuestaDefinitions {
         Hooks.driver.get("http://10.0.203.12:8083/propuesta/");
     }
     @When("ingreso usuario y password")
+
     public void ingreso_usuario_y_password(DataTable user) {
         List<Map<String,String>> lista = user.asMaps(String.class, String.class);
         for (int i = 0; i < lista.size(); i ++) {
@@ -78,7 +80,7 @@ public class RegistrarPropuestaDefinitions {
 
     @And("mostrar la ventana cliente para realizar la busqueda en el tab codigo")
     public void mostrarLaVentanaClienteParaRealizarLaBusquedaEnElTabCodigo() {
-        listadoClientes.AbrirVentana();
+        //listadoClientes.AbrirVentana();
         listadoClientes.SeleccionarTabCodigo();
     }
 
@@ -100,7 +102,7 @@ public class RegistrarPropuestaDefinitions {
 
     @And("SGCRED muestra la ventana servicio y seleccionamos el servicio para generar la propuesta")
     public void sgcredMuestraLaVentanaServicioYSeleccionamosElServicioParaGenerarLaPropuesta() {
-        Servicio.AbrirVentana();
+        Servicio.AbrirVentanaServicio();
         Servicio.SeleccionarServicio();
         
     }
@@ -125,9 +127,47 @@ public class RegistrarPropuestaDefinitions {
         Servicio.SeleccionarPromocion();
     }
 
+
+    @And("en la ventana Servicio seleccionar negocio")
+    public void enLaVentanaServicioSeleccionarNegocio() {
+        Servicio.SeleccionarNegocio();
+
+    }
+
+    @And("en la ventana Servicio seleccionar tipo operacion")
+    public void enLaVentanaServicioSeleccionarTipoOperacion() {
+        Servicio.SeleccionarTipoOperacion();
+    }
     @And("en la ventana servicio doy click en el boton cargar")
     public void enLaVentanaServicioDoyClickEnElBotonCargar() {
         Servicio.ClickCargar();
+    }
+
+    @And("el sistema muestra el formulario de Propuesta a registrar")
+    public void elSistemaMuestraElFormularioDePropuestaARegistrar() {
+        propuesta.AbrirVentanaPropuesta();
+
+    }
+
+    @And("en el formulario propuesta ingresar comentario en clasificacion crediticia")
+    public void enElFormularioPropuestaIngresarComentarioEnClasificacionCrediticia() {
+        propuesta.IngresarComentarioCrediticio();
+    }
+
+    @And("en el formulario propuesta ingresar comentario del objetivo del credito")
+    public void enElFormularioPropuestaIngresarComentarioDelObjetivoDelCredito() {
+        propuesta.IngresarObjetivo();
+    }
+
+    @And("en el formulario propuesta ingresar comentario justificacion del credito")
+    public void enElFormularioPropuestaIngresarComentarioJustificacionDelCredito() {
+        propuesta.IngresarJustificacion();
+    }
+
+    @And("en el formulario propuesta hacer click en nueva operacion")
+    public void enElFormularioPropuestaHacerClickEnNuevaOperacion() {
+        propuesta.ClickOperacion();
+
     }
 
 

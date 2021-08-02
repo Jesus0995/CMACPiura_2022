@@ -1,7 +1,7 @@
 Feature: Crear una propuesta de financiamiento de tipo NORMAL en SGCRED
   Yo como usuario asesor de creditos
   Quiero registrar una propuesta de tipo Normal
-  Para que aprueben la propuesta
+  Para que sea aprobada por el area co
 
 Scenario:  Crear una propuesta de financiamiento Normal
   Given la web SGCRED esta disponible
@@ -22,7 +22,15 @@ Scenario:  Crear una propuesta de financiamiento Normal
   And en la ventana servicio seleccionar tipo de propuesta
   And en la ventana servicio seleccionar subtipo de propuesta
   And en la ventana servicio seleccionar promocion
+  And en la ventana Servicio seleccionar negocio
+  And en la ventana Servicio seleccionar tipo operacion
   And en la ventana servicio doy click en el boton cargar
+  And el sistema muestra el formulario de Propuesta a registrar
+  And en el formulario propuesta ingresar comentario en clasificacion crediticia
+  And en el formulario propuesta ingresar comentario del objetivo del credito
+  And en el formulario propuesta ingresar comentario justificacion del credito
+  And en el formulario propuesta hacer click en nueva operacion
+
 
 
 

@@ -7,6 +7,8 @@ import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import java.util.Set;
+
 public class PropuestaPage {
     private WebDriver driver;
     private WebDriverWait wait;
@@ -30,12 +32,21 @@ public class PropuestaPage {
     @FindBy(xpath = "/html/body/form/table[1]/tbody/tr[2]/td/table[1]/tbody/tr[2]/td[1]/table/tbody/tr/td[5]/a")private WebElement btn_grabar;
     @FindBy(xpath = "/html/body/form/table[1]/tbody/tr[2]/td/table[2]/tbody/tr[1]/td/a") private WebElement btn_Aprobar;
 
+    //metodo para abrir ventana
+    public void AbrirVentanaPropuesta(){
+        Set<String> identificadoresPropuesta = driver.getWindowHandles();
+        for (String identificadorPropuesta : identificadoresPropuesta ){
+            driver.switchTo().window(identificadorPropuesta);
+        }
+
+    }
+
     public PropuestaPage(WebDriver d) {
         driver = d;
         wait = new WebDriverWait(driver,30);
         PageFactory.initElements(driver,this);
     }
-    public void IngresarComentario (){txt_comentarioCred.sendKeys("prueba");}
+    public void IngresarComentarioCrediticio (){txt_comentarioCred.sendKeys("prueba");}
     public void IngresarObjetivo () {txt_objetivo.sendKeys("prueba");}
     public void IngresarJustificacion (){txt_justificacion.sendKeys("prueba");}
     public void ClickOperacion (){btn_nuevaOperacion.click();}
