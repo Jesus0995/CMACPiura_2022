@@ -4,6 +4,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
@@ -36,12 +37,13 @@ public class SeleccionarServicioPage {
 
     public SeleccionarServicioPage(WebDriver d) {
         driver = d;
-        wait = new WebDriverWait(driver,40);
+        wait = new WebDriverWait(driver,60);
         PageFactory.initElements(driver,this);
 
     }
 
     public void SeleccionarServicio(){
+        wait.until(ExpectedConditions.elementToBeClickable(cbx_servicio));
         new Select(cbx_servicio).selectByVisibleText("CREDITO EMPRESARIAL");
         System.out.println(cbx_servicio);
     }

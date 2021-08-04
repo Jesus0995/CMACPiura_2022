@@ -43,10 +43,13 @@ public class PropuestaPage {
 
     public PropuestaPage(WebDriver d) {
         driver = d;
-        wait = new WebDriverWait(driver,50);
+        wait = new WebDriverWait(driver,60);
         PageFactory.initElements(driver,this);
     }
-    public void IngresarComentarioCrediticio (){txt_comentarioCred.sendKeys("prueba");}
+    public void IngresarComentarioCrediticio (){
+        wait.until(ExpectedConditions.elementToBeClickable(txt_comentarioCred));
+        txt_comentarioCred.sendKeys("prueba");}
+
     public void IngresarObjetivo () {txt_objetivo.sendKeys("prueba");}
     public void IngresarJustificacion (){txt_justificacion.sendKeys("prueba");}
     public void ClickOperacion (){btn_nuevaOperacion.click();}

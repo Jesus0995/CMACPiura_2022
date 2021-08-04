@@ -36,6 +36,7 @@ public class ListadoClientesPage {
 
 
     public void SeleccionarTabCodigo(){
+        wait.until(ExpectedConditions.elementToBeClickable(tab_codigo));
         tab_codigo.click();
 
     }
@@ -51,8 +52,7 @@ public class ListadoClientesPage {
     }
 
     public void SeleccionarIconoPropuesta(){
-        wait.until(ExpectedConditions.elementToBeClickable(icn_nuevaPropuesta));
-        icn_nuevaPropuesta.click();
+            icn_nuevaPropuesta.click();
     }
    // public void CerrarVentana(){
    //     driver.close();

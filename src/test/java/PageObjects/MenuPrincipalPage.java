@@ -46,7 +46,7 @@ public class MenuPrincipalPage {
         lnk_propuestaFinanciamiento.click();
     }
     public void CerrarPopUpImagen(){popup_imagen.click();}
-    
+
     public void CerrarPopUpAviso(){popup_aviso.click();}
 
 
