@@ -36,7 +36,7 @@ public class SeleccionarServicioPage {
 
     public SeleccionarServicioPage(WebDriver d) {
         driver = d;
-        wait = new WebDriverWait(driver,30);
+        wait = new WebDriverWait(driver,40);
         PageFactory.initElements(driver,this);
 
     }

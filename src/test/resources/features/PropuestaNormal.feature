@@ -3,11 +3,13 @@ Feature: Crear una propuesta de financiamiento de tipo NORMAL en SGCRED
   Quiero registrar una propuesta de tipo Normal
   Para que sea aprobada por el area co
 
+@Prueba
 Scenario:  Crear una propuesta de financiamiento Normal
   Given la web SGCRED esta disponible
   When ingreso usuario y password
     |nombre | password|
     | ALPAMA  | prueba  |
+
   And doy click en boton ingresar
   And Mostrar home de SGCRED
   And Cerrar las ventanas emergentes
@@ -25,7 +27,6 @@ Scenario:  Crear una propuesta de financiamiento Normal
   And en la ventana Servicio seleccionar negocio
   And en la ventana Servicio seleccionar tipo operacion
   And en la ventana servicio doy click en el boton cargar
-  And el sistema muestra el formulario de Propuesta a registrar
   And en el formulario propuesta ingresar comentario en clasificacion crediticia
   And en el formulario propuesta ingresar comentario del objetivo del credito
   And en el formulario propuesta ingresar comentario justificacion del credito

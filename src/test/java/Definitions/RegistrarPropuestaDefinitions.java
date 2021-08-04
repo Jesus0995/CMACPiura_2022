@@ -143,12 +143,6 @@ public class RegistrarPropuestaDefinitions {
         Servicio.ClickCargar();
     }
 
-    @And("el sistema muestra el formulario de Propuesta a registrar")
-    public void elSistemaMuestraElFormularioDePropuestaARegistrar() {
-        propuesta.AbrirVentanaPropuesta();
-
-    }
-
     @And("en el formulario propuesta ingresar comentario en clasificacion crediticia")
     public void enElFormularioPropuestaIngresarComentarioEnClasificacionCrediticia() {
         propuesta.IngresarComentarioCrediticio();

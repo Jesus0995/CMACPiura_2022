@@ -43,7 +43,7 @@ public class PropuestaPage {
 
     public PropuestaPage(WebDriver d) {
         driver = d;
-        wait = new WebDriverWait(driver,30);
+        wait = new WebDriverWait(driver,50);
         PageFactory.initElements(driver,this);
     }
     public void IngresarComentarioCrediticio (){txt_comentarioCred.sendKeys("prueba");}

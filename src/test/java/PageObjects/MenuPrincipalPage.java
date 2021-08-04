@@ -4,6 +4,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.util.Set;
@@ -41,9 +42,11 @@ public class MenuPrincipalPage {
         PageFactory.initElements(driver,this);
     }
     public void ClickPropuestaFinanciamiento (){
+        wait.until(ExpectedConditions.elementToBeClickable(lnk_propuestaFinanciamiento));
         lnk_propuestaFinanciamiento.click();
     }
     public void CerrarPopUpImagen(){popup_imagen.click();}
+    
     public void CerrarPopUpAviso(){popup_aviso.click();}
 
 
