@@ -1,5 +1,6 @@
 package PageObjects;
 
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -14,6 +15,9 @@ public class PropuestaPage {
     private WebDriverWait wait;
 
     //mapeo de locator
+    //span[@class='ui-icon ui-icon-closethick
+
+    @FindBy(xpath = "//a[@role='button']") private WebElement popUpComunicado;
     @FindBy(id = "txtComenCalifCred") private WebElement txt_comentarioCred;
     @FindBy(id = "txtobjetivo") private WebElement txt_objetivo;
     @FindBy(id = "justificacion") private WebElement txt_justificacion;
@@ -33,18 +37,26 @@ public class PropuestaPage {
     @FindBy(xpath = "/html/body/form/table[1]/tbody/tr[2]/td/table[2]/tbody/tr[1]/td/a") private WebElement btn_Aprobar;
 
     //metodo para abrir ventana
-    public void AbrirVentanaPropuesta(){
-        Set<String> identificadoresPropuesta = driver.getWindowHandles();
-        for (String identificadorPropuesta : identificadoresPropuesta ){
-            driver.switchTo().window(identificadorPropuesta);
-        }
+    //public void AbrirVentanaPropuesta(){
+    //    Set<String> identificadoresPropuesta = driver.getWindowHandles();
+    //    for (String identificadorPropuesta : identificadoresPropuesta ){
+    //        driver.switchTo().window(identificadorPropuesta);
+    //    }
 
-    }
+    //}
 
     public PropuestaPage(WebDriver d) {
         driver = d;
-        wait = new WebDriverWait(driver,60);
+        wait = new WebDriverWait(driver,120);
         PageFactory.initElements(driver,this);
+    }
+
+    public void ClickpopUpComunicado(){
+        wait.until(ExpectedConditions.elementToBeClickable(popUpComunicado));
+        popUpComunicado.click();
+        //JavascriptExecutor executor= (JavascriptExecutor) driver;
+        //executor.executeScript("arguments[0].click();", popUpComunicado);
+
     }
     public void IngresarComentarioCrediticio (){
         wait.until(ExpectedConditions.elementToBeClickable(txt_comentarioCred));

@@ -27,6 +27,7 @@ Scenario:  Crear una propuesta de financiamiento Normal
   And en la ventana Servicio seleccionar negocio
   And en la ventana Servicio seleccionar tipo operacion
   And en la ventana servicio doy click en el boton cargar
+  And cerrar el popup de Comunicado y mostrar el formulario propuesta
   And en el formulario propuesta ingresar comentario en clasificacion crediticia
   And en el formulario propuesta ingresar comentario del objetivo del credito
   And en el formulario propuesta ingresar comentario justificacion del credito

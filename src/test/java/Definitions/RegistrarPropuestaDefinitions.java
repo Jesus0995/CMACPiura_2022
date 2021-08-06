@@ -27,6 +27,7 @@ public class RegistrarPropuestaDefinitions {
         listadoPropuesta = new ListadoPropuestaPage( Hooks.driver);
         listadoClientes = new ListadoClientesPage(Hooks.driver);
         Servicio = new SeleccionarServicioPage (Hooks.driver);
+        propuesta = new PropuestaPage(Hooks.driver);
         }
 
 
@@ -136,11 +137,22 @@ public class RegistrarPropuestaDefinitions {
 
     @And("en la ventana Servicio seleccionar tipo operacion")
     public void enLaVentanaServicioSeleccionarTipoOperacion() {
+
         Servicio.SeleccionarTipoOperacion();
     }
+
+
     @And("en la ventana servicio doy click en el boton cargar")
+
     public void enLaVentanaServicioDoyClickEnElBotonCargar() {
+
         Servicio.ClickCargar();
+    }
+
+    @And("cerrar el popup de Comunicado y mostrar el formulario propuesta")
+    public void cerrarElPopupDeComunicadoYMostrarElFormularioPropuesta() {
+        //propuesta.AbrirVentanaPropuesta();
+        propuesta.ClickpopUpComunicado();
     }
 
     @And("en el formulario propuesta ingresar comentario en clasificacion crediticia")
@@ -163,6 +175,7 @@ public class RegistrarPropuestaDefinitions {
         propuesta.ClickOperacion();
 
     }
+
 
 
 }
