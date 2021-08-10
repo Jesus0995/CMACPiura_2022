@@ -14,7 +14,7 @@ public class LoginPage {
     @FindBy(name = "txtUsuario") private WebElement txt_usuario;
     @FindBy(name = "txtPassword") private WebElement txt_password;
     @FindBy(xpath = "//button[@type='submit']") private WebElement btn_ingresar;
-    @FindBy(xpath = "/html/body/table[2]/tbody/tr[3]/td/form/table/tbody/tr[2]/td/button[1]") private WebElement lnk_cerrar;
+    @FindBy(linkText = "CERRAR SESION") private WebElement lnk_cerrar;
 
     public LoginPage(WebDriver d) {
         driver = d;
@@ -33,9 +33,11 @@ public class LoginPage {
         txt_password.sendKeys(password);
     }
 
-    public void ClickSubmit() {btn_ingresar.click();}
+    public void ClickSubmit()
+    {btn_ingresar.click();}
 
 
-    public void CerrarSesion() {lnk_cerrar.click();}
+    public void CerrarSesion()
+    {lnk_cerrar.click();}
 
 }

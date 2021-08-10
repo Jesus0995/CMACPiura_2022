@@ -20,18 +20,8 @@ public class MenuPrincipalPage {
     @FindBy(linkText = "INFORME COMERCIAL NUEVO FORMATO") private WebElement lnk_informeComercial;
     @FindBy(partialLinkText = "CERRAR") private WebElement lnk_cerrarSesion;
     @FindBy(xpath = "/html/body/table/tbody/tr[1]/td/table[1]/tbody/tr/td[2]/h2/strong/font") private WebElement lbl_titulo;
-    @FindBy(xpath = "/html/body/div[2]/div[1]/a/span") private WebElement popup_imagen;
-    @FindBy(xpath = "/html/body/div[1]/div[1]/a/span") private WebElement popup_aviso;
-
-    //Metodo Abrir ventana
-    public void UbicarVentana(){
-        Set<String> identificadores =driver.getWindowHandles();
-        for (String identificador : identificadores){
-            driver.switchTo().window(identificador);
-        }
-
-    }
-
+    //@FindBy(xpath = "/html/body/div[2]/div[1]/a/span") private WebElement popup_imagen;
+    //@FindBy(xpath = "/html/body/div[1]/div[1]/a/span") private WebElement popup_aviso;
 
 
     //constructor
@@ -45,9 +35,9 @@ public class MenuPrincipalPage {
         wait.until(ExpectedConditions.elementToBeClickable(lnk_propuestaFinanciamiento));
         lnk_propuestaFinanciamiento.click();
     }
-    public void CerrarPopUpImagen(){popup_imagen.click();}
+    //public void CerrarPopUpImagen(){popup_imagen.click();}
 
-    public void CerrarPopUpAviso(){popup_aviso.click();}
+    //public void CerrarPopUpAviso(){popup_aviso.click();}
 
 
 

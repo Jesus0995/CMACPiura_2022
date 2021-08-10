@@ -18,6 +18,7 @@ public class SeleccionarSegurosPage {
         PageFactory.initElements(driver,this);
 
     }
-    private void ClickConfirmar (){btn_confirmar.click();}
+    private void ClickConfirmar ()
+    {btn_confirmar.click();}
 
 }

@@ -5,7 +5,9 @@ import io.cucumber.datatable.DataTable;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.When;
+import static Support.screenshot.pantallazo;
 
+import java.io.IOException;
 import java.util.List;
 import java.util.Map;
 
@@ -57,25 +59,27 @@ public class RegistrarPropuestaDefinitions {
 
     }
 
-    @And("Cerrar las ventanas emergentes")
-    public void cerrarLasVentanasEmergentes() {
-        menuPrincipal.CerrarPopUpImagen();
-        menuPrincipal.CerrarPopUpAviso();
+   // @And("Cerrar las ventanas emergentes")
+   // public void cerrarLasVentanasEmergentes() {
+   //     menuPrincipal.CerrarPopUpImagen();
+   //     menuPrincipal.CerrarPopUpAviso();
 
-    }
+    //}
 
 
 
     @And("doy click en link propuesta financiamiento")
-    public void doyClickEnLinkPropuestaFinanciamiento() {
+    public void doyClickEnLinkPropuestaFinanciamiento() throws IOException {
         menuPrincipal.ClickPropuestaFinanciamiento();
+        pantallazo();
 
     }
 
     @And("doy click en el boton crear_propuesta de la ventana Listado Propuesta")
-    public void doyClickEnElBotonCrear_propuestaDeLaVentanaListadoPropuesta() {
+    public void doyClickEnElBotonCrear_propuestaDeLaVentanaListadoPropuesta() throws IOException {
         //listadoPropuesta.AbrirVentana();
         listadoPropuesta.clickCrearPropuesta();
+        pantallazo();
     }
 
 
@@ -86,8 +90,9 @@ public class RegistrarPropuestaDefinitions {
     }
 
     @And("en la ventana cliente ingresar el codigo a buscar")
-    public void enLaVentanaClienteIngresarElCodigoABuscar() {
+    public void enLaVentanaClienteIngresarElCodigoABuscar() throws IOException {
         listadoClientes.IngresarCodigoCliente();
+        pantallazo();
     }
 
     @And("en la ventana cliente doy click en el boton buscar")
@@ -101,46 +106,23 @@ public class RegistrarPropuestaDefinitions {
         listadoClientes.SeleccionarIconoPropuesta();
     }
 
-    @And("SGCRED muestra la ventana servicio y seleccionamos el servicio para generar la propuesta")
-    public void sgcredMuestraLaVentanaServicioYSeleccionamosElServicioParaGenerarLaPropuesta() {
+    @And("el sistema muestra la ventana de servicio e ingresamos la informacion")
+    public void elSistemaMuestraLaVentanaDeServicioEIngresamosLaInformacion(DataTable tipoServicio) throws IOException {
+
         Servicio.AbrirVentanaServicio();
-        Servicio.SeleccionarServicio();
-        
-    }
+        List<Map<String,String>> lista = tipoServicio.asMaps(String.class, String.class);
+        for(int i = 0; i<lista.size(); i++){
+            Servicio.SeleccionarServicio(lista.get(i).get("TipoServicio"));
+            Servicio.SeleccionarServicioCredito(lista.get(i).get("ServicioCredito"));
+            Servicio.SeleccionarTipoPropuesta(lista.get(i).get("TipoPropuesta"));
+            Servicio.SeleccionarSubTipoPropuesta(lista.get(i).get("SubTipoPropuesta"));
+            Servicio.SeleccionarPromocion(lista.get(i).get("Promocion"));
+            Servicio.SeleccionarNegocio(lista.get(i).get("Negocio"));
+            Servicio.SeleccionarTipoOperacion(lista.get(i).get("TipoOperacion"));
+            }
 
-    @And("en la ventana servicio seleccionar el Servicio credito")
-    public void enLaVentanaServicioSeleccionarElServicioCredito() {
-        Servicio.SeleccionarServicioCredito();
-    }
-
-    @And("en la ventana servicio seleccionar tipo de propuesta")
-    public void enLaVentanaServicioSeleccionarTipoDePropuesta() {
-        Servicio.SeleccionarTipoPropuesta();
-    }
-
-    @And("en la ventana servicio seleccionar subtipo de propuesta")
-    public void enLaVentanaServicioSeleccionarSubtipoDePropuesta() {
-        Servicio.SeleccionarSubTipoPropuesta();
-    }
-
-    @And("en la ventana servicio seleccionar promocion")
-    public void enLaVentanaServicioSeleccionarPromocion() {
-        Servicio.SeleccionarPromocion();
-    }
-
-
-    @And("en la ventana Servicio seleccionar negocio")
-    public void enLaVentanaServicioSeleccionarNegocio() {
-        Servicio.SeleccionarNegocio();
 
     }
-
-    @And("en la ventana Servicio seleccionar tipo operacion")
-    public void enLaVentanaServicioSeleccionarTipoOperacion() {
-
-        Servicio.SeleccionarTipoOperacion();
-    }
-
 
     @And("en la ventana servicio doy click en el boton cargar")
 
@@ -149,33 +131,9 @@ public class RegistrarPropuestaDefinitions {
         Servicio.ClickCargar();
     }
 
-    @And("cerrar el popup de Comunicado y mostrar el formulario propuesta")
-    public void cerrarElPopupDeComunicadoYMostrarElFormularioPropuesta() {
-        //propuesta.AbrirVentanaPropuesta();
-        propuesta.ClickpopUpComunicado();
+    @And("el sistema muestra alerta de propuesta")
+    public void elSistemaMuestraAlertaDePropuesta() {
+        propuesta.AbrirVentanaPropuesta();
+        propuesta.ObtenerAlertaPropuesta();
     }
-
-    @And("en el formulario propuesta ingresar comentario en clasificacion crediticia")
-    public void enElFormularioPropuestaIngresarComentarioEnClasificacionCrediticia() {
-        propuesta.IngresarComentarioCrediticio();
-    }
-
-    @And("en el formulario propuesta ingresar comentario del objetivo del credito")
-    public void enElFormularioPropuestaIngresarComentarioDelObjetivoDelCredito() {
-        propuesta.IngresarObjetivo();
-    }
-
-    @And("en el formulario propuesta ingresar comentario justificacion del credito")
-    public void enElFormularioPropuestaIngresarComentarioJustificacionDelCredito() {
-        propuesta.IngresarJustificacion();
-    }
-
-    @And("en el formulario propuesta hacer click en nueva operacion")
-    public void enElFormularioPropuestaHacerClickEnNuevaOperacion() {
-        propuesta.ClickOperacion();
-
-    }
-
-
-
 }

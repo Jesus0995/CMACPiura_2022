@@ -20,5 +20,6 @@ public class SegurosSeleccionadosPage {
 
     }
 
-    public void ClickCerrar(){btn_cerrar.click();}
+    public void ClickCerrar()
+    {btn_cerrar.click();}
 }

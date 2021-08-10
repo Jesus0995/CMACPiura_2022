@@ -7,6 +7,7 @@ import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import java.io.IOException;
 import java.util.Set;
 
 public class ListadoClientesPage {
@@ -41,11 +42,10 @@ public class ListadoClientesPage {
 
     }
 
-    public void IngresarCodigoCliente(){
+    public void IngresarCodigoCliente() {
         txt_codigo.clear();
         txt_codigo.sendKeys("97941041");
-
-    }
+            }
 
     public void ClickBuscarCliente(){
         btn_buscar.click();

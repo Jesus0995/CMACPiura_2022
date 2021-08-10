@@ -40,15 +40,15 @@ public class RegistrarSegurosPage {
 
     }
 
-    public void SeleccionarPlanPymes(){ chk_planpymes.click(); }
+    public void SeleccionarPlanPymes()
+    { chk_planpymes.click(); }
 
     public void IngresarPlanPymes (String planpymes) {
         txt_planpymesdps.click();
         txt_planpymesdps.sendKeys(planpymes);
     }
 
-    public void ClickConfirmar(){ btn_confirmar.click();    }
-
-
+    public void ClickConfirmar()
+    { btn_confirmar.click();    }
 
 }

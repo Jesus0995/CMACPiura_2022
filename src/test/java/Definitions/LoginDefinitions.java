@@ -15,10 +15,14 @@ public class LoginDefinitions {
 
     //Crear Variables de Menu Page
     LoginPage formulario;
+    ConfirmarCierreSesionPage CierreSesion;
 
     //crear constructor
     public LoginDefinitions() {
+
         formulario = new LoginPage(Hooks.driver);
+        CierreSesion = new ConfirmarCierreSesionPage(Hooks.driver);
+
     }
 
     @Given("La web esta disponible")
@@ -52,7 +56,10 @@ public class LoginDefinitions {
     }
 
 
-
+    @And("confirmo el cierre de sesion")
+    public void confirmoElCierreDeSesion() {
+        CierreSesion.ClickConfirmarCierre();
+    }
 }
 
 

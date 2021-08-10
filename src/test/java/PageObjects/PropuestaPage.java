@@ -1,5 +1,6 @@
 package PageObjects;
 
+import org.openqa.selenium.Alert;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -14,10 +15,13 @@ public class PropuestaPage {
     private WebDriver driver;
     private WebDriverWait wait;
 
+
     //mapeo de locator
     //span[@class='ui-icon ui-icon-closethick
 
-    @FindBy(xpath = "//a[@role='button']") private WebElement popUpComunicado;
+    //@FindBy(xpath = "/html/body/div[1]/div[1]/a/span") private WebElement xxx;
+    @FindBy(xpath = "//div[@class='ui-dialog-titlebar ui-widget-header ui-corner-all ui-helper-clearfix']") private WebElement AlertaComunicado;
+
     @FindBy(id = "txtComenCalifCred") private WebElement txt_comentarioCred;
     @FindBy(id = "txtobjetivo") private WebElement txt_objetivo;
     @FindBy(id = "justificacion") private WebElement txt_justificacion;
@@ -37,48 +41,76 @@ public class PropuestaPage {
     @FindBy(xpath = "/html/body/form/table[1]/tbody/tr[2]/td/table[2]/tbody/tr[1]/td/a") private WebElement btn_Aprobar;
 
     //metodo para abrir ventana
-    //public void AbrirVentanaPropuesta(){
-    //    Set<String> identificadoresPropuesta = driver.getWindowHandles();
-    //    for (String identificadorPropuesta : identificadoresPropuesta ){
-    //        driver.switchTo().window(identificadorPropuesta);
-    //    }
-
-    //}
+    public void AbrirVentanaPropuesta(){
+        Set<String> identificadoresPropuesta = driver.getWindowHandles();
+       for (String identificadorPropuesta : identificadoresPropuesta ){
+           driver.switchTo().window(identificadorPropuesta);
+       }
+    }
 
     public PropuestaPage(WebDriver d) {
         driver = d;
-        wait = new WebDriverWait(driver,120);
+        wait = new WebDriverWait(driver,140);
         PageFactory.initElements(driver,this);
     }
 
-    public void ClickpopUpComunicado(){
-        wait.until(ExpectedConditions.elementToBeClickable(popUpComunicado));
-        popUpComunicado.click();
-        //JavascriptExecutor executor= (JavascriptExecutor) driver;
-        //executor.executeScript("arguments[0].click();", popUpComunicado);
+
+
+    public void ObtenerAlertaPropuesta(){
+        wait.until(ExpectedConditions.elementToBeClickable(AlertaComunicado));
+        AlertaComunicado.click();
+
 
     }
     public void IngresarComentarioCrediticio (){
         wait.until(ExpectedConditions.elementToBeClickable(txt_comentarioCred));
         txt_comentarioCred.sendKeys("prueba");}
 
-    public void IngresarObjetivo () {txt_objetivo.sendKeys("prueba");}
-    public void IngresarJustificacion (){txt_justificacion.sendKeys("prueba");}
-    public void ClickOperacion (){btn_nuevaOperacion.click();}
-    public void ClickSeguro (){btn_seguro.click();}
-    public void CickAnexarCheckList (){btn_checklist.click();}
+    public void IngresarObjetivo ()
+    {txt_objetivo.sendKeys("prueba");}
 
-    public void IngresarCaracteristica (){txt_caracteristica.sendKeys("prueba");}
-    public void IngresarClasificacion (){txt_clasificacion.sendKeys("prueba");}
-    public void IngresarClasifAval (){txt_clasifaval.sendKeys("prueba");}
-    public void IngresarClasifEcon () {txt_clasifecon.sendKeys("prueba");}
-    public void ClickAnexarGarantias () {btn_garantias.click();}
-    public void ClickEstadosFinan () {btn_estadosFinancieros.click();}
-    public void ClickInformeVisita() {btn_informeVisita.click();}
-    public void ClickInformeComercial () {btn_informeComercial.click();}
-    public void ClickGrabar(){btn_grabar.click();}
+    public void IngresarJustificacion ()
+    {txt_justificacion.sendKeys("prueba");}
 
-    public void ClickAprobar(){btn_Aprobar.click();}
+    public void ClickOperacion ()
+    {btn_nuevaOperacion.click();}
+
+    public void ClickSeguro ()
+    {btn_seguro.click();}
+
+    public void CickAnexarCheckList ()
+    {btn_checklist.click();}
+
+    public void IngresarCaracteristica ()
+    {txt_caracteristica.sendKeys("prueba");}
+
+    public void IngresarClasificacion ()
+    {txt_clasificacion.sendKeys("prueba");}
+
+    public void IngresarClasifAval ()
+    {txt_clasifaval.sendKeys("prueba");}
+
+    public void IngresarClasifEcon ()
+    {txt_clasifecon.sendKeys("prueba");}
+
+    public void ClickAnexarGarantias ()
+    {btn_garantias.click();}
+
+    public void ClickEstadosFinan ()
+    {btn_estadosFinancieros.click();}
+
+    public void ClickInformeVisita()
+    {btn_informeVisita.click();}
+
+    public void ClickInformeComercial ()
+    {btn_informeComercial.click();}
+
+    public void ClickGrabar()
+    {btn_grabar.click();}
+
+
+    public void ClickAprobar()
+    {btn_Aprobar.click();}
 
 
 }

@@ -21,6 +21,7 @@ public class MensajeActualizacionEEFFPage {
 
     }
 
-    public void ClickCerrar (){btn_cerrar.click();}
+    public void ClickCerrar ()
+    {btn_cerrar.click();}
 
 }
