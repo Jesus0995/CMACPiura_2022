@@ -1,14 +1,19 @@
 package PageObjects;
 
 import io.cucumber.messages.internal.com.google.gson.internal.bind.util.ISO8601Utils;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Action;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import java.awt.*;
+import java.awt.event.KeyEvent;
 import java.util.concurrent.TimeUnit;
 
 import java.util.Set;
@@ -17,6 +22,7 @@ public class SeleccionarServicioPage {
 
     private WebDriver driver;
     private WebDriverWait wait;
+    private Set<String> identificadoresServicio;
 
     //mapeo de objetos
     @FindBy(xpath = "//select[@name='servicio']") private WebElement cbx_servicio;
@@ -32,10 +38,32 @@ public class SeleccionarServicioPage {
 
     //crear meotodo para abrir ventana
     public void AbrirVentanaServicio(){
-        Set<String> identificadoresServicio = driver.getWindowHandles();
+        identificadoresServicio = driver.getWindowHandles();
+        System.out.println(identificadoresServicio);
+        String LastHandle = "";
+
         for (String identificadorservicio : identificadoresServicio){
-            driver.switchTo().window(identificadorservicio);
+            LastHandle = identificadorservicio;
         }
+
+        driver.switchTo().window(LastHandle);
+    }
+
+    //crear meotodo para abrir ventana
+    public void CerrarVentanaServicio(){
+        //Actions Acciones = new Actions(driver);
+
+        Integer SetSize = identificadoresServicio.size();
+        Integer Index = 0;
+        String[] Handles = new String[SetSize];
+
+        for (String identificadorservicio : identificadoresServicio){
+            Handles[Index] = identificadorservicio;
+            Index++;
+        }
+
+        System.out.println(Handles[0]);
+        driver.switchTo().window(Handles[0]);
     }
 
     public SeleccionarServicioPage(WebDriver d) {
@@ -97,8 +125,25 @@ public class SeleccionarServicioPage {
         //"SIMPLE"
     }
 
-    public void ClickCargar(){
+    public void ClickCargar() throws InterruptedException {
+        wait.until(ExpectedConditions.elementToBeClickable(btn_cargar));
+
         btn_cargar.click();
+
+        //wait = new WebDriverWait(driver,10);
+        Thread.sleep(10000);
+
+       // Actions action = new Actions(driver);
+       // action.sendKeys(Keys.ESCAPE);
+
+       // Thread.sleep(5000);
+        //Actions Accion = new Actions(driver);
+        //Accion.sendKeys(Keys.ESCAPE).build().perform();
+
+       // driver.switchTo().activeElement().sendKeys(Keys.ESCAPE);
+       //currentElement().sendKeys(Keys.ESCAPE);
+       // Thread.sleep(5000);
+
     }
 
     //public void CerrarServicio() {driver.close();}

@@ -7,6 +7,7 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.When;
 import static Support.screenshot.pantallazo;
 
+import java.awt.*;
 import java.io.IOException;
 import java.util.List;
 import java.util.Map;
@@ -19,6 +20,7 @@ public class RegistrarPropuestaDefinitions {
     ListadoPropuestaPage listadoPropuesta;
     ListadoClientesPage listadoClientes;
     SeleccionarServicioPage Servicio;
+    PopUpComunicadoPage PopUpComunicado;
     PropuestaPage propuesta;
 
     //Constructor
@@ -26,27 +28,31 @@ public class RegistrarPropuestaDefinitions {
         //Inicializar las paginas
         login = new LoginPage(Hooks.driver);
         menuPrincipal = new MenuPrincipalPage(Hooks.driver);
-        listadoPropuesta = new ListadoPropuestaPage( Hooks.driver);
+        listadoPropuesta = new ListadoPropuestaPage(Hooks.driver);
         listadoClientes = new ListadoClientesPage(Hooks.driver);
-        Servicio = new SeleccionarServicioPage (Hooks.driver);
+        Servicio = new SeleccionarServicioPage(Hooks.driver);
+        PopUpComunicado = new PopUpComunicadoPage(Hooks.driver);
         propuesta = new PropuestaPage(Hooks.driver);
-        }
+    }
 
 
     @Given("la web SGCRED esta disponible")
     public void la_web_sgcred_esta_disponible() {
+
         Hooks.driver.get("http://10.0.203.12:8083/propuesta/");
     }
+
     @When("ingreso usuario y password")
 
     public void ingreso_usuario_y_password(DataTable user) {
-        List<Map<String,String>> lista = user.asMaps(String.class, String.class);
-        for (int i = 0; i < lista.size(); i ++) {
+        List<Map<String, String>> lista = user.asMaps(String.class, String.class);
+        for (int i = 0; i < lista.size(); i++) {
             login.IngresarUsuario(lista.get(i).get("nombre"));
             login.IngresarPassword(lista.get(i).get("password"));
         }
 
     }
+
     @When("doy clic en boton ingresar")
     public void doy_click_en_boton_ingresar() {
         login.ClickSubmit();
@@ -59,13 +65,12 @@ public class RegistrarPropuestaDefinitions {
 
     }
 
-   // @And("Cerrar las ventanas emergentes")
-   // public void cerrarLasVentanasEmergentes() {
-   //     menuPrincipal.CerrarPopUpImagen();
-   //     menuPrincipal.CerrarPopUpAviso();
+    // @And("Cerrar las ventanas emergentes")
+    // public void cerrarLasVentanasEmergentes() {
+    //     menuPrincipal.CerrarPopUpImagen();
+    //     menuPrincipal.CerrarPopUpAviso();
 
     //}
-
 
 
     @And("doy click en link propuesta financiamiento")
@@ -103,6 +108,7 @@ public class RegistrarPropuestaDefinitions {
 
     @And("en la ventana cliente hacer click en el icono propuesta")
     public void enLaVentanaClienteHacerClickEnElIconoPropuesta() {
+
         listadoClientes.SeleccionarIconoPropuesta();
     }
 
@@ -110,8 +116,9 @@ public class RegistrarPropuestaDefinitions {
     public void elSistemaMuestraLaVentanaDeServicioEIngresamosLaInformacion(DataTable tipoServicio) throws IOException {
 
         Servicio.AbrirVentanaServicio();
-        List<Map<String,String>> lista = tipoServicio.asMaps(String.class, String.class);
-        for(int i = 0; i<lista.size(); i++){
+
+        List<Map<String, String>> lista = tipoServicio.asMaps(String.class, String.class);
+        for (int i = 0; i < lista.size(); i++) {
             Servicio.SeleccionarServicio(lista.get(i).get("TipoServicio"));
             Servicio.SeleccionarServicioCredito(lista.get(i).get("ServicioCredito"));
             Servicio.SeleccionarTipoPropuesta(lista.get(i).get("TipoPropuesta"));
@@ -119,21 +126,38 @@ public class RegistrarPropuestaDefinitions {
             Servicio.SeleccionarPromocion(lista.get(i).get("Promocion"));
             Servicio.SeleccionarNegocio(lista.get(i).get("Negocio"));
             Servicio.SeleccionarTipoOperacion(lista.get(i).get("TipoOperacion"));
-            }
+        }
 
+        try {
+            Servicio.ClickCargar();
+        } catch (Exception Error) {
+
+        }
+
+        Servicio.CerrarVentanaServicio();
 
     }
 
     @And("en la ventana servicio doy click en el boton cargar")
 
-    public void enLaVentanaServicioDoyClickEnElBotonCargar() {
+    public void enLaVentanaServicioDoyClickEnElBotonCargar() throws InterruptedException {
 
         Servicio.ClickCargar();
     }
 
-    @And("el sistema muestra alerta de propuesta")
-    public void elSistemaMuestraAlertaDePropuesta() {
-        propuesta.AbrirVentanaPropuesta();
-        propuesta.ObtenerAlertaPropuesta();
+    @And("validar el mensaje del popup Comunicado")
+    public void validarElMensajeDelPopupComunicado(){
+       // PopUpComunicado.UbicarVentanaComunicado();
+        PopUpComunicado.ValidarComunicado();
+
+
+    }
+
+
+    @And("ingresar comentario crediticio")
+    public void ingresarComentarioCrediticio() {
+
+        propuesta.IngresarClasificacionCrediticia();
     }
 }
+

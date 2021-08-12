@@ -35,6 +35,12 @@ public class MenuPrincipalPage {
         wait.until(ExpectedConditions.elementToBeClickable(lnk_propuestaFinanciamiento));
         lnk_propuestaFinanciamiento.click();
     }
+
+    public void ClickInformeVisita(){
+        wait.until(ExpectedConditions.elementToBeClickable(lnk_informeVisita));
+        lnk_informeVisita.click();
+    }
+
     //public void CerrarPopUpImagen(){popup_imagen.click();}
 
     //public void CerrarPopUpAviso(){popup_aviso.click();}

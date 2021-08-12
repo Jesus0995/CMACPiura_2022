@@ -3,7 +3,7 @@ Feature: Crear una propuesta de Credito Empresarial de tipo NORMAL en el Sistema
   Quiero registrar una propuesta de credito Empresarial de tipo Normal
   Para su aprobacion correspondiente
 
-  @Prueba
+
   Scenario:  Crear una propuesta de Credito Empresarial de tipo Normal
     Given la web SGCRED esta disponible
     When ingreso usuario y password
@@ -20,8 +20,9 @@ Feature: Crear una propuesta de Credito Empresarial de tipo NORMAL en el Sistema
     And el sistema muestra la ventana de servicio e ingresamos la informacion
       | TipoServicio        | ServicioCredito | TipoPropuesta | SubTipoPropuesta | Promocion     | Negocio                                  | TipoOperacion |
       | CREDITO EMPRESARIAL | CREDITOS PYMES  | NORMAL        | NORMAL           | SIN PROMOCION | VENTA AL POR MENOR DE PRENDAS DE VESTIR, | SIMPLE        |
-    And en la ventana servicio doy click en el boton cargar
-    And el sistema muestra alerta de propuesta
+    And validar el mensaje del popup Comunicado
+    And ingresar comentario crediticio
+
 
 
 
