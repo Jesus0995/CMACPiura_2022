@@ -19,9 +19,7 @@ public class ListadoPropuestaPage {
     @FindBy(name = "tipoBusqueda") private WebElement cbx_tipoPropuesta;
     @FindBy(name = "valorBuscado") private WebElement txt_valorBuscado;
     @FindBy(xpath = "//button[@type=\"submit\"]") private WebElement btn_buscar;
-    @FindBy(xpath = "/html/body/table/tbody/tr[2]/td/table/tbody/tr/td[2]/div/button[1]") private WebElement btn_crearPropuesta;
-    @FindBy(xpath = "//button[@onclick=\"window.location='login.jsp'\"]") private WebElement btn_regresar;
-    @FindBy(xpath = "//button[@onclick=\"window.location='logout.jsp'\"]") private WebElement btn_cerrar;
+    @FindBy(xpath = "/html/body/table/tbody/tr[2]/td/table[1]/tbody/tr/td[2]/div/button[1]") private WebElement btn_crearPropuesta;
 
     //crear meotodo para abrir ventana
     //public void AbrirVentana(){
@@ -34,7 +32,7 @@ public class ListadoPropuestaPage {
     public ListadoPropuestaPage(WebDriver d) {
         //Iniciar las variables
         driver=d;
-        wait = new WebDriverWait(driver,30);
+        wait = new WebDriverWait(driver,50);
         PageFactory.initElements(driver,this);
     }
     //crear metodo para dar click a crear propuesta

@@ -30,14 +30,15 @@ public class SeleccionarServicioPage {
     @FindBy(xpath = "//select[@name='idTipoPropuesta']") private  WebElement cbx_tipoPropuesta;
     @FindBy(xpath = "//select[@name='idSubTipoPropuesta']") private WebElement cbx_subTipoPropuesta;
     @FindBy(xpath = "//select[@name='idPromocion']") private WebElement cbx_promocion;
-    @FindBy(xpath = "//select[@name='idnegocio']") private WebElement cbx_negocio;
-    @FindBy(xpath = "//select[@name='idTipoOperacion']") private  WebElement cbx_tipoOperacion;
+    //@FindBy(xpath = "//select[@name='idnegocio']") private WebElement cbx_negocio;
+    //@FindBy(xpath = "//select[@name='idTipoOperacion']") private  WebElement cbx_tipoOperacion;
     @FindBy(xpath = "//*[@id=\"bCargar\"]")private  WebElement btn_cargar;
 
 
 
     //crear meotodo para abrir ventana
     public void AbrirVentanaServicio(){
+
         identificadoresServicio = driver.getWindowHandles();
         System.out.println(identificadoresServicio);
         String LastHandle = "";
@@ -109,8 +110,11 @@ public class SeleccionarServicioPage {
         new Select(cbx_promocion).selectByVisibleText(Promocion);
         System.out.println(cbx_promocion);
         //"SIN PROMOCION"
-    }
 
+
+
+    }
+    /*
     public void SeleccionarNegocio (String Negocio){
         wait.until(ExpectedConditions.elementToBeClickable(cbx_negocio));
         new Select (cbx_negocio).selectByVisibleText(Negocio);
@@ -124,7 +128,7 @@ public class SeleccionarServicioPage {
         System.out.println(cbx_tipoOperacion);
         //"SIMPLE"
     }
-
+    */
     public void ClickCargar() throws InterruptedException {
         wait.until(ExpectedConditions.elementToBeClickable(btn_cargar));
 

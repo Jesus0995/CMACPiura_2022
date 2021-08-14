@@ -53,18 +53,18 @@ public class PropuestaPage {
 
     }
 
-    public void IngresarClasificacionCrediticia (){
+    public void IngresarClasificacionCrediticia (String clasificacion){
         wait.until(ExpectedConditions.elementToBeClickable(txt_ClasificacionCrediticia));
         txt_ClasificacionCrediticia.clear();
-        txt_ClasificacionCrediticia.sendKeys("prueba");}
+        txt_ClasificacionCrediticia.sendKeys(clasificacion);}
 
-    public void IngresarObjetivoCredto () {
+    public void IngresarObjetivoCredito (String Objetivo) {
         txt_ObjetivoCredito.clear();
-        txt_ObjetivoCredito.sendKeys("prueba");}
+        txt_ObjetivoCredito.sendKeys(Objetivo);}
 
-    public void IngresarJustificacionCredito () {
+    public void IngresarJustificacionCredito (String Justificacion) {
         txt_JustificacionCredito.clear();
-        txt_JustificacionCredito.sendKeys("prueba");}
+        txt_JustificacionCredito.sendKeys(Justificacion);}
 
     public void ClickBotonOperacion () {
         wait.until(ExpectedConditions.elementToBeClickable(btn_NuevaOperacion));

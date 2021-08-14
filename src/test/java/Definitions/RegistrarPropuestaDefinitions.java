@@ -22,6 +22,8 @@ public class RegistrarPropuestaDefinitions {
     SeleccionarServicioPage Servicio;
     PopUpComunicadoPage PopUpComunicado;
     PropuestaPage propuesta;
+    SeleccionarOperacionCreditoPage seleccionarOpeCred;
+    OperacionCreditoPage operacioncredito;
 
     //Constructor
     public RegistrarPropuestaDefinitions() {
@@ -33,6 +35,8 @@ public class RegistrarPropuestaDefinitions {
         Servicio = new SeleccionarServicioPage(Hooks.driver);
         PopUpComunicado = new PopUpComunicadoPage(Hooks.driver);
         propuesta = new PropuestaPage(Hooks.driver);
+        seleccionarOpeCred = new SeleccionarOperacionCreditoPage(Hooks.driver);
+        operacioncredito = new OperacionCreditoPage(Hooks.driver);
     }
 
 
@@ -94,9 +98,9 @@ public class RegistrarPropuestaDefinitions {
         listadoClientes.SeleccionarTabCodigo();
     }
 
-    @And("en la ventana cliente ingresar el codigo a buscar")
-    public void enLaVentanaClienteIngresarElCodigoABuscar() throws IOException {
-        listadoClientes.IngresarCodigoCliente();
+    @And("en la ventana cliente ingresar el codigo a buscar {string}")
+    public void enLaVentanaClienteIngresarElCodigoABuscar(String CodCliente) throws IOException {
+        listadoClientes.IngresarCodigoCliente(CodCliente);
         pantallazo();
     }
 
@@ -124,8 +128,8 @@ public class RegistrarPropuestaDefinitions {
             Servicio.SeleccionarTipoPropuesta(lista.get(i).get("TipoPropuesta"));
             Servicio.SeleccionarSubTipoPropuesta(lista.get(i).get("SubTipoPropuesta"));
             Servicio.SeleccionarPromocion(lista.get(i).get("Promocion"));
-            Servicio.SeleccionarNegocio(lista.get(i).get("Negocio"));
-            Servicio.SeleccionarTipoOperacion(lista.get(i).get("TipoOperacion"));
+            //Servicio.SeleccionarNegocio(lista.get(i).get("Negocio"));
+            //Servicio.SeleccionarTipoOperacion(lista.get(i).get("TipoOperacion"));
         }
 
         try {
@@ -153,11 +157,50 @@ public class RegistrarPropuestaDefinitions {
 
     }
 
+    @And("en la ventana propuesta ingresar clasificacion crediticia {string}")
+    public void enLaVentanaPropuestaIngresarClasificacionCrediticia(String clasificacion) {
+        propuesta.IngresarClasificacionCrediticia(clasificacion);
 
-    @And("ingresar comentario crediticio")
-    public void ingresarComentarioCrediticio() {
+    }
 
-        propuesta.IngresarClasificacionCrediticia();
+    @And("en la ventana propuesta ingresar objetivo del credito {string}")
+    public void enLaVentanaPropuestaIngresarObjetivoDelCredito(String objetivo) {
+        propuesta.IngresarObjetivoCredito(objetivo);
+
+    }
+
+    @And("en la ventana propuesta ingresar justificacion del credito {string}")
+    public void enLaVentanaPropuestaIngresarJustificacionDelCredito(String justificacion) {
+        propuesta.IngresarJustificacionCredito(justificacion);
+    }
+
+    @And("en la ventana propuesta doy click en el boton nueva operacion")
+    public void enLaVentanaPropuestaDoyClickEnElBotonNuevaOperacion()
+    {
+        propuesta.ClickBotonOperacion();
+    }
+
+
+    @And("validar la ventana seleccionar operacion de credito luego doy click en boton aceptar")
+    public void validarLaVentanaSeleccionarOperacionDeCreditoLuegoDoyClickEnBotonAceptar() {
+        seleccionarOpeCred.AbrirVentanaSeleccionarOP();
+        try {
+            seleccionarOpeCred.ValidarVentanaOP();
+        } catch(Exception Error){
+
+        }
+
+        seleccionarOpeCred.CerrarVentanaSeleccionarOP();
+
+    }
+
+
+    @And("posicionarse en la ventana Operacion Credito e ingresar la informacion")
+    public void posicionarseEnLaVentanaOperacionCreditoEIngresarLaInformacion() {
+        operacioncredito.AbrirVentanaOperacionCredito();
+
+
+
     }
 }
 
