@@ -79,13 +79,13 @@ public class SeleccionarServicioPage {
         new Select(cbx_servicio).selectByVisibleText(TipoServicio);
         //"CREDITO EMPRESARIAL"
 
-        System.out.println(cbx_servicio);
+        //System.out.println(cbx_servicio);
     }
 
     public void SeleccionarServicioCredito(String ServicioCredito){
         wait.until(ExpectedConditions.elementToBeClickable(cbx_servicioCredito));
         new Select(cbx_servicioCredito).selectByVisibleText(ServicioCredito);
-        System.out.println(cbx_servicioCredito);
+        //System.out.println(cbx_servicioCredito);
         //"CREDITOS PYMES"
 
     }
@@ -94,21 +94,21 @@ public class SeleccionarServicioPage {
     public void SeleccionarTipoPropuesta (String TipoPropuesta){
         wait.until(ExpectedConditions.elementToBeClickable(cbx_tipoPropuesta));
         new Select(cbx_tipoPropuesta).selectByVisibleText(TipoPropuesta);
-        System.out.println(cbx_tipoPropuesta);
+        //System.out.println(cbx_tipoPropuesta);
         //"NORMAL"
     }
 
     public void SeleccionarSubTipoPropuesta (String SubTipoPropuesta){
         wait.until(ExpectedConditions.elementToBeClickable(cbx_subTipoPropuesta));
         new Select(cbx_subTipoPropuesta).selectByVisibleText(SubTipoPropuesta);
-        System.out.println(cbx_subTipoPropuesta);
+        //System.out.println(cbx_subTipoPropuesta);
         //"NORMAL"
     }
 
     public void SeleccionarPromocion (String Promocion){
         wait.until(ExpectedConditions.elementToBeClickable(cbx_promocion));
         new Select(cbx_promocion).selectByVisibleText(Promocion);
-        System.out.println(cbx_promocion);
+        //System.out.println(cbx_promocion);
         //"SIN PROMOCION"
 
 

@@ -5,6 +5,8 @@ import io.cucumber.datatable.DataTable;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.When;
+import io.cucumber.java.it.Ma;
+
 import static Support.screenshot.pantallazo;
 
 import java.awt.*;
@@ -195,12 +197,34 @@ public class RegistrarPropuestaDefinitions {
     }
 
 
-    @And("posicionarse en la ventana Operacion Credito e ingresar la informacion")
-    public void posicionarseEnLaVentanaOperacionCreditoEIngresarLaInformacion() {
+    @And("posicionarse en la ventana Operacion Credito e ingresar la Operacion y doy click en Calcular")
+
+    public void posicionarseEnLaVentanaOperacionCreditoEIngresarlaOperacionYDoyClickEnCalcular(DataTable OperacionCredito) throws InterruptedException {
+
         operacioncredito.AbrirVentanaOperacionCredito();
 
+        List<Map<String, String>> lista = OperacionCredito.asMaps(String.class, String.class);
+        for (int i = 0; i < lista.size(); i++) {
+            operacioncredito.SeleccionarMoneda(lista.get(i).get("Moneda"));
+            operacioncredito.IngresarMonto(lista.get(i).get("Monto"));
+            operacioncredito.IngresarTasaInicial(lista.get(i).get("TasaInicial"));
 
+        }
+
+        operacioncredito.ClickCalcular();
 
     }
+
+    @And("en la ventana Operacion Credito seleccionar plan de pagos")
+    public void enLaVentanaOperacionCreditoSeleccionarPlanDePagos() throws InterruptedException {
+        operacioncredito.SeleccionarPlanPagos();
+    }
+
+    @And("en la ventana Operacion Credito seleccionar modalidad")
+    public void enLaVentanaOperacionCreditoSeleccionarModalidad() {
+        operacioncredito.SeleccionarModalidad();
+    }
 }
+
+
 
