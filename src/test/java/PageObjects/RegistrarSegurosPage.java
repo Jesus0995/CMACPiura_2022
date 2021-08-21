@@ -14,12 +14,12 @@ public class RegistrarSegurosPage {
     private WebDriverWait wait;
 
     //Mapear los locator de la pagina
-    @FindBy(id = "dps02201") private WebElement chk_segdesgrnm;
-    @FindBy(id = "dps02201") private WebElement txt_segdesgrnmdps;
-    @FindBy(id = "5_13501") private WebElement chk_planpymes;
-    @FindBy(id = "dps13501") private WebElement txt_planpymesdps;
+    @FindBy(xpath = "//input[@name=\"seguro\" and @value=\"4_02201\"]") private WebElement chk_SeguroDesgravamenFlatMN;
+    @FindBy(xpath = "//input[@id='dps02201']") private WebElement txt_SeguroDesgravamenFlatMN;
+    @FindBy(xpath = "//input[@id='5_13501' and @value='5_13501']") private WebElement chk_SeguroPlanPymes;
+    @FindBy(xpath = "//input[@id='dps13501']") private WebElement txt_SeguroPlanPymes;
     @FindBy(xpath ="//button[@type=\"submit\"]") private WebElement btn_confirmar;
-    @FindBy(xpath = "//button[@type=\"button\"]") private WebElement btn_cancelar;
+
 
     //1.Constructor
     public RegistrarSegurosPage(WebDriver d) {
@@ -27,28 +27,30 @@ public class RegistrarSegurosPage {
         wait = new WebDriverWait(driver,30);
         PageFactory.initElements(driver,this);
     }
-    public void SeleccionarDesgravamennm (){
+
+    public void SeleccionarSeguroDesgravamenMN (){
         //wait.until(ExpectedCondition.elementToBeClickable(chk_segdesgrnm));
-        chk_segdesgrnm.click();
+        chk_SeguroDesgravamenFlatMN.click();
 
     }
 
-    public void IngresarDesgravamennmdps (String desgravamenm){
+    public void IngresarSeguroDesgravamenMN (String desgravamenm){
         //wait.until(ExpectedCondition.visibilityof(txt_segdesgrnmdps));
-        txt_segdesgrnmdps.clear();
-        txt_segdesgrnmdps.sendKeys(desgravamenm);
+        txt_SeguroDesgravamenFlatMN.clear();
+        txt_SeguroDesgravamenFlatMN.sendKeys(desgravamenm);
 
     }
 
-    public void SeleccionarPlanPymes()
-    { chk_planpymes.click(); }
+    public void SeleccionarSeguroPlanPymes() {
+        chk_SeguroPlanPymes.click(); }
 
-    public void IngresarPlanPymes (String planpymes) {
-        txt_planpymesdps.click();
-        txt_planpymesdps.sendKeys(planpymes);
+    public void IngresarSeguroPlanPymes (String planpymes) {
+        txt_SeguroPlanPymes.click();
+        txt_SeguroPlanPymes.sendKeys(planpymes);
     }
 
-    public void ClickConfirmar()
-    { btn_confirmar.click();    }
+    public void ClickConfirmar() {
+        btn_confirmar.click();
+    }
 
 }

@@ -23,21 +23,21 @@ public class LoginPage {
 
     }
 
-    public void IngresarUsuario(String nombre) {
+    public void IngresarUsuario(String Usuario) {
         txt_usuario.clear();
-        txt_usuario.sendKeys(nombre);
+        txt_usuario.sendKeys(Usuario);
     }
 
-    public void IngresarPassword(String password) {
+    public void IngresarPassword(String Password) {
         txt_password.clear();
-        txt_password.sendKeys(password);
+        txt_password.sendKeys(Password);
     }
 
     public void ClickSubmit()
     {btn_ingresar.click();}
 
 
-    public void CerrarSesion()
+    public void ClickCerrarSesion()
     {lnk_cerrar.click();}
 
 }

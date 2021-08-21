@@ -14,7 +14,7 @@ Feature: Crear una propuesta de Credito Empresarial de tipo NORMAL en el Sistema
     And doy click en link propuesta financiamiento
     And doy click en el boton crear_propuesta de la ventana Listado Propuesta
     And mostrar la ventana cliente para realizar la busqueda en el tab codigo
-    And en la ventana cliente ingresar el codigo a buscar "950145006"
+    And en la ventana cliente ingresar el codigo a buscar "97941041"
     And en la ventana cliente doy click en el boton buscar
     And en la ventana cliente hacer click en el icono propuesta
     And el sistema muestra la ventana de servicio e ingresamos la informacion
@@ -29,8 +29,25 @@ Feature: Crear una propuesta de Credito Empresarial de tipo NORMAL en el Sistema
     And posicionarse en la ventana Operacion Credito e ingresar la Operacion y doy click en Calcular
       | Moneda | Monto | TasaInicial |
       | S/     | 5000  | 1           |
-    And en la ventana Operacion Credito seleccionar plan de pagos
-    And en la ventana Operacion Credito seleccionar modalidad
+    And en la ventana Operacion Credito seleccionar plan de pagos "Fija Vencida"
+    And en la ventana Operacion Credito seleccionar modalidad "Libre Amortizacion"
+    And en la ventana Operacion Credito Ingresar los dias "90"
+    And en la ventana Operacion Credito ingresar porcentaje de Tasa Preferencial "11.45"
+    And en la ventana Operacion Credito seleccionar forma de desembolso "GIRO BANCO DE LA NACION"
+    And en la ventana Operacion Credito seleccionar plaza de desembolso
+      | Departamento | Provincia | Distrito |
+      | LIMA         | LIMA      | LIMA     |
+    And en la ventana Operacion Credito ingresar fecha probable del desembolso "20/08/2021"
+    And en la ventana Operacion Credito Ingresar notas "Prueba"
+    And en la ventana Operacion Credito doy click en grabar
+    And en la ventana Operacion Credito aceptar la alerta
+
+
+
+
+
+
+
 
 
 

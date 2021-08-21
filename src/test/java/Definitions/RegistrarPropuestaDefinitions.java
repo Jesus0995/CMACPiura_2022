@@ -11,6 +11,7 @@ import static Support.screenshot.pantallazo;
 
 import java.awt.*;
 import java.io.IOException;
+import java.util.Date;
 import java.util.List;
 import java.util.Map;
 
@@ -80,17 +81,17 @@ public class RegistrarPropuestaDefinitions {
 
 
     @And("doy click en link propuesta financiamiento")
-    public void doyClickEnLinkPropuestaFinanciamiento() throws IOException {
+    public void doyClickEnLinkPropuestaFinanciamiento() {
         menuPrincipal.ClickPropuestaFinanciamiento();
-        pantallazo();
+        //pantallazo();
 
     }
 
     @And("doy click en el boton crear_propuesta de la ventana Listado Propuesta")
-    public void doyClickEnElBotonCrear_propuestaDeLaVentanaListadoPropuesta() throws IOException {
+    public void doyClickEnElBotonCrear_propuestaDeLaVentanaListadoPropuesta(){
         //listadoPropuesta.AbrirVentana();
         listadoPropuesta.clickCrearPropuesta();
-        pantallazo();
+        //pantallazo();
     }
 
 
@@ -101,9 +102,9 @@ public class RegistrarPropuestaDefinitions {
     }
 
     @And("en la ventana cliente ingresar el codigo a buscar {string}")
-    public void enLaVentanaClienteIngresarElCodigoABuscar(String CodCliente) throws IOException {
+    public void enLaVentanaClienteIngresarElCodigoABuscar(String CodCliente)  {
         listadoClientes.IngresarCodigoCliente(CodCliente);
-        pantallazo();
+        //pantallazo();
     }
 
     @And("en la ventana cliente doy click en el boton buscar")
@@ -215,14 +216,78 @@ public class RegistrarPropuestaDefinitions {
 
     }
 
-    @And("en la ventana Operacion Credito seleccionar plan de pagos")
-    public void enLaVentanaOperacionCreditoSeleccionarPlanDePagos() throws InterruptedException {
-        operacioncredito.SeleccionarPlanPagos();
+
+    @And("en la ventana Operacion Credito seleccionar plan de pagos {string}")
+    public void enLaVentanaOperacionCreditoSeleccionarPlanDePagos(String PlanPagos) {
+        operacioncredito.SeleccionarPlanPagos(PlanPagos);
+
     }
 
-    @And("en la ventana Operacion Credito seleccionar modalidad")
-    public void enLaVentanaOperacionCreditoSeleccionarModalidad() {
-        operacioncredito.SeleccionarModalidad();
+    @And("en la ventana Operacion Credito seleccionar modalidad {string}")
+    public void enLaVentanaOperacionCreditoSeleccionarModalidad(String Modalidad) {
+        operacioncredito.SeleccionarModalidad(Modalidad);
+
+    }
+
+    @And("en la ventana Operacion Credito Ingresar los dias {string}")
+    public void enLaVentanaOperacionCreditoIngresarLosDias(String Dias) {
+        operacioncredito.IngresarDias(Dias);
+    }
+
+    @And("en la ventana Operacion Credito ingresar porcentaje de Tasa Preferencial {string}")
+    public void enLaVentanaOperacionCreditoIngresarPorcentajeDeTasaPreferencial(String TasaPreferencial) {
+        operacioncredito.IngresarTasaPreferencial(TasaPreferencial);
+
+    }
+
+    @And("en la ventana Operacion Credito seleccionar forma de desembolso {string}")
+    public void enLaVentanaOperacionCreditoSeleccionarFormaDeDesembolso(String FormaDesembolso) {
+        operacioncredito.SeleccionarFormaDesembolso(FormaDesembolso);
+
+        
+    }
+
+    @And("en la ventana Operacion Credito seleccionar plaza de desembolso")
+    public void enLaVentanaOperacionCreditoSeleccionarPlazaDeDesembolso(DataTable PlazaDesembolso) {
+
+        List<Map<String,String>> lista = PlazaDesembolso.asMaps(String.class,String.class);
+        for (int i = 0; i < lista.size(); i++) {
+            operacioncredito.SeleccionarDepartamento(lista.get(i).get("Departamento"));
+            operacioncredito.SeleccionarProvincia(lista.get(i).get("Provincia"));
+            operacioncredito.SeleccionarDistrito(lista.get(i).get("Distrito"));
+
+
+        }
+
+
+    }
+
+    @And("en la ventana Operacion Credito ingresar fecha probable del desembolso {string}")
+    public void enLaVentanaOperacionCreditoIngresarFechaProbableDelDesembolso(String FechaDesembolso) {
+        operacioncredito.IngresarFechaDesembolso(FechaDesembolso);
+
+    }
+
+    @And("en la ventana Operacion Credito Ingresar notas {string}")
+    public void enLaVentanaOperacionCreditoIngresarNotas(String Notas) {
+        operacioncredito.IngresarNotas(Notas);
+
+
+    }
+
+    @And("en la ventana Operacion Credito doy click en grabar")
+    public void enLaVentanaOperacionCreditoDoyClickEnGrabar() {
+        operacioncredito.ClickGrabar();
+
+
+
+    }
+
+    @And("en la ventana Operacion Credito aceptar la alerta")
+    public void enLaVentanaOperacionCreditoAceptarLaAlerta() {
+        operacioncredito.ObtenerAlerta();
+
+        operacioncredito.CerrarVentanaOperacionCredito();
     }
 }
 

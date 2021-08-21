@@ -1,20 +1,22 @@
 package PageObjects;
 
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
+import org.openqa.selenium.*;
+import org.openqa.selenium.interactions.Action;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import java.util.List;
 import java.util.Set;
 
 public class OperacionCreditoPage {
     private WebDriver driver;
     private WebDriverWait wait;
     private Set<String> identificadoresOperacionCredito;
+    private Alert MensajeAlerta;
 
     //Mapear objetos
     @FindBy(xpath = "//select[@name='moneda']") private WebElement cbx_moneda;
@@ -29,10 +31,10 @@ public class OperacionCreditoPage {
     @FindBy(xpath = "//input[@name='diasPlazo']") private WebElement txt_diasPlazo;
     @FindBy(xpath = "//input[@name='tasaPropuesta']") private WebElement txt_TasaPreferencial;
     @FindBy(xpath = "//select[@name='flgCuenta']") private WebElement cbx_desembolso; //GIRO BANCO DE LA NACION
-    @FindBy(xpath = "//select[@name='idDepartamento']") private WebElement cbx_dptoDesembolso;
-    @FindBy(xpath = "//select[@name='idProvincia']") private WebElement cbx_provDesembolso;
-    @FindBy(xpath = "//select[@name='idDistrito']") private WebElement cbx_distDesembolso;
-    @FindBy(xpath = "//input[@name='fechaProbableDesembolso']") private WebElement txt_fecha;
+    @FindBy(xpath = "//select[@name='idDepartamento']") private WebElement cbx_Departamento;
+    @FindBy(xpath = "//select[@name='idProvincia']") private WebElement cbx_Provincia;
+    @FindBy(xpath = "//select[@name='idDistrito']") private WebElement cbx_Distrito;
+    @FindBy(xpath = "//input[@name='fechaProbableDesembolso']") private WebElement txt_fechaDesembolso;
     @FindBy(xpath = "//textarea[@name='notas']") private WebElement txt_notas;
     @FindBy(xpath = "//button[@type=\"submit\"]") private WebElement btn_grabar; //windows onload
 
@@ -46,9 +48,10 @@ public class OperacionCreditoPage {
             LastHandle = identificadorOperacionCredito;
         }
         driver.switchTo().window(LastHandle);
+        System.out.println("Titulo:" + driver.getTitle());
 
     }
-/*
+
     public void CerrarVentanaOperacionCredito(){
         Integer SetSize = identificadoresOperacionCredito.size();
         Integer Index=0;
@@ -62,7 +65,7 @@ public class OperacionCreditoPage {
 
     }
 
-*/
+
     public OperacionCreditoPage(WebDriver d) {
         driver = d;
         wait =  new WebDriverWait(driver,60);
@@ -91,41 +94,44 @@ public class OperacionCreditoPage {
     public void ClickCalcular () throws InterruptedException {
         wait.until(ExpectedConditions.elementToBeClickable(btn_calcular));
         btn_calcular.click();
-        Thread.sleep(30000);
+        Thread.sleep(10000);
     }
 
 
 
-    public void SeleccionarPlanPagos () throws InterruptedException {
+    public void SeleccionarPlanPagos (String PlanPagos)  {
+        // Seleccionamos el valor textual de la opcion 'PlanPagos' en el combobox.
+        cbx_planPagos.sendKeys(PlanPagos);
 
-        //Esperar(2);
-       //Select cbx_planPagos = new Select(driver.findElement(By.xpath("//select[@name='planPagos']")));
+        // Buscamos el webelement de la opcion indicada en el xpath.
+        WebElement Opcion = driver.findElement(By.xpath("//*[text() = '" + PlanPagos + "']"));
 
-        //cbx_planPagos.selectByVisibleText("Fija Vencida");
-        //cbx_planPagos.SelectIndex(1);
+        // Obtenemos el valor del atributo 'onclick' de la opcion indicada
+        String JScript = Opcion.getAttribute("onclick");
 
-        //Esperar(3);
-        //WebElement cbx_planPagos = driver.findElement(By.xpath("//select[@name='planPagos']"));
-        //new Select(cbx_planPagos).selectByVisibleText("Fija Vencida");
+        // Ejecutamos el script del contenido 'onclick' para simular el arraque del mismo como un click humano.
+        ((JavascriptExecutor) driver).executeScript(JScript);
 
-        //Select pagos = new Select(driver.findElement(By.xpath("//select[@name='planPagos']")));
-        //String selectedComboValue = pagos.getFirstSelectedOption().getText();
-        //System.out.println("Selected combo value." + selectedComboValue);
-
-        wait.until(ExpectedConditions.elementToBeClickable(cbx_planPagos));
-        cbx_planPagos.click();
-        new Select(cbx_planPagos).selectByVisibleText("Fija Vencida");
-
-
-
+        // Esperamos unos segundos para que aparezca el proximo combobox.
+        Esperar(3);
     }
 
-    public void SeleccionarModalidad () {
-        //wait.until(ExpectedConditions.elementToBeClickable(cbx_modalidad));
-        new Select(cbx_modalidad).selectByVisibleText("Libre Amortizacion");
+    public void SeleccionarModalidad (String Modalidad) {
+        // Seleccionamos el valor textual de la opcion 'PlanPagos' en el combobox.
+        cbx_modalidad.sendKeys(Modalidad);
 
+        // Buscamos el webelement de la opcion indicada en el xpath.
+        WebElement Opcion = driver.findElement(By.xpath("//*[text() = '" + Modalidad + "']"));
 
-        //Esperar(5);
+        // Obtenemos el valor del atributo 'onclick' de la opcion indicada
+        String JScript = Opcion.getAttribute("onclick");
+
+        // Ejecutamos el script del contenido 'onclick' para simular el arraque del mismo como un click humano.
+        ((JavascriptExecutor) driver).executeScript(JScript);
+
+        // Esperamos unos segundos para que aparezca el proximo combobox.
+        Esperar(3);
+
     }
 
     public void IngresarDias (String Dias) {
@@ -139,28 +145,39 @@ public class OperacionCreditoPage {
     }
 
     public void SeleccionarFormaDesembolso (String FormaDesembolso) {
-        wait.until(ExpectedConditions.elementToBeClickable(cbx_desembolso));
-        new Select(cbx_desembolso).selectByVisibleText(FormaDesembolso);
+        cbx_desembolso.sendKeys(FormaDesembolso);
+        WebElement desembolso = driver.findElement(By.xpath("//*[text()='" + FormaDesembolso + "']"));
+        String JScript = desembolso.getAttribute("onclick");
+        ((JavascriptExecutor) driver).executeScript(JScript);
+        Esperar (3);
     }
 
+
+
     public void SeleccionarDepartamento (String Departamento) {
-        wait.until(ExpectedConditions.elementToBeClickable(cbx_dptoDesembolso));
-        new Select(cbx_dptoDesembolso).selectByValue(Departamento);
+        wait.until(ExpectedConditions.elementToBeClickable(cbx_Departamento));
+        new Select (cbx_Departamento).selectByVisibleText(Departamento);
+
+        //String JScript = cbx_dptoDesembolso.getAttribute("click");
+        //((JavascriptExecutor) driver).executeScript(JScript);
+        //Esperar(1);
     }
 
     public void SeleccionarProvincia (String Provincia) {
-        wait.until(ExpectedConditions.elementToBeClickable(cbx_provDesembolso));
-        new Select (cbx_provDesembolso).selectByVisibleText(Provincia);
+        wait.until(ExpectedConditions.elementToBeClickable(cbx_Provincia));
+        new Select(cbx_Provincia).selectByVisibleText(Provincia);
+
     }
 
     public void SeleccionarDistrito (String Distrito) {
-        wait.until(ExpectedConditions.elementToBeClickable(cbx_distDesembolso));
-        new Select (cbx_distDesembolso).selectByVisibleText(Distrito);
+        wait.until(ExpectedConditions.elementToBeClickable(cbx_Distrito));
+        new Select(cbx_Distrito).selectByVisibleText(Distrito);
+
     }
 
     public void IngresarFechaDesembolso (String FechaDesembolso) {
-        txt_fecha.clear();
-        txt_fecha.sendKeys(FechaDesembolso);
+        txt_fechaDesembolso.clear();
+        txt_fechaDesembolso.sendKeys(FechaDesembolso);
     }
 
     public void IngresarNotas (String Notas) {
@@ -168,11 +185,20 @@ public class OperacionCreditoPage {
         txt_notas.sendKeys(Notas);
     }
 
-    public void ClickGrabar (){
+    public void ClickGrabar () {
         wait.until(ExpectedConditions.elementToBeClickable(btn_grabar));
         btn_grabar.click();
-        Esperar(3);
+        //Esperar(1);
     }
+    public void ObtenerAlerta() {
+
+        MensajeAlerta = driver.switchTo().alert();
+        System.out.println("El mensaje de alerta es:" + MensajeAlerta.getText());
+        MensajeAlerta.accept();
+
+        Esperar(2);
+        }
+
 
 
     private void Esperar(Integer Segundos){

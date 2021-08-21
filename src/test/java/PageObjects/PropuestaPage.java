@@ -27,7 +27,7 @@ public class PropuestaPage {
     @FindBy(name = "btnEnviar") private WebElement btn_NuevaOperacion;
     @FindBy(name = "btnEnviar2") private WebElement btn_AgregarSeguro;
     @FindBy(xpath = "//button[@onclick=\"window.open('anexaCheckList.jsp', 'Anexo Check List 93F33861F69D989C9B85816814AEAA8A', 'toolbar=no,scrollbars=yes,location=no,status=no,menubar=no,resizable=yes,width=690,height=500,dependent=yes');\"]") private WebElement btn_Checklist;
-    @FindBy(name = "btnGaranExist") private WebElement btn_AgregarGarantias;
+    @FindBy(xpath = "//button[@name=\"btnGaranExist\"]") private WebElement btn_AnexarGarantias;
     @FindBy(xpath = "/html/body/form/table[1]/tbody/tr[3]/td/div/button") private  WebElement btn_EnlazarEstadosFinancieros;
     @FindBy(xpath = "/html/body/form/table[2]/tbody/tr[1]/td[3]/button") private WebElement btn_EnlazarInformeVisita;
     @FindBy(xpath = "/html/body/form/table[2]/tbody/tr[3]/td[3]/button") private WebElement btn_EnlazarInformeComercial;
@@ -81,8 +81,8 @@ public class PropuestaPage {
 
 
     public void ClickAnexarGarantias () {
-        wait.until(ExpectedConditions.elementToBeClickable(btn_AgregarGarantias));
-        btn_AgregarGarantias.click();}
+        wait.until(ExpectedConditions.elementToBeClickable(btn_AnexarGarantias));
+        btn_AnexarGarantias.click();}
 
     public void ClickEnlazarEstadosFinancieros () {
         wait.until(ExpectedConditions.elementToBeClickable(btn_EnlazarEstadosFinancieros));
