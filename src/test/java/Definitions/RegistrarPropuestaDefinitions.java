@@ -4,8 +4,10 @@ import PageObjects.*;
 import io.cucumber.datatable.DataTable;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
+import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import io.cucumber.java.it.Ma;
+import io.cucumber.messages.Messages;
 
 import static Support.screenshot.pantallazo;
 
@@ -27,6 +29,11 @@ public class RegistrarPropuestaDefinitions {
     PropuestaPage propuesta;
     SeleccionarOperacionCreditoPage seleccionarOpeCred;
     OperacionCreditoPage operacioncredito;
+    SeleccionarSegurosPage seleccionarSeguros;
+    CambioTasaCreditoPage cambioTasaCredito;
+    RegistrarSegurosPage registrarSeguros;
+    ConfirmarSegurosSeleccionadosPage confirmarSeguros;
+    AnexarChecklistPage anexarChecklist;
 
     //Constructor
     public RegistrarPropuestaDefinitions() {
@@ -40,6 +47,11 @@ public class RegistrarPropuestaDefinitions {
         propuesta = new PropuestaPage(Hooks.driver);
         seleccionarOpeCred = new SeleccionarOperacionCreditoPage(Hooks.driver);
         operacioncredito = new OperacionCreditoPage(Hooks.driver);
+        cambioTasaCredito = new CambioTasaCreditoPage(Hooks.driver);
+        seleccionarSeguros = new SeleccionarSegurosPage(Hooks.driver);
+        registrarSeguros = new RegistrarSegurosPage(Hooks.driver);
+        confirmarSeguros = new ConfirmarSegurosSeleccionadosPage(Hooks.driver);
+        anexarChecklist = new AnexarChecklistPage(Hooks.driver);
     }
 
 
@@ -289,6 +301,96 @@ public class RegistrarPropuestaDefinitions {
 
         operacioncredito.CerrarVentanaOperacionCredito();
     }
+
+    @Then("el sistema direcciona a ventana Propuesta y doy click icono cambio de tasa")
+    public void elSistemaDireccionaAVentanaPropuestaYDoyClickIconoCambioDeTasa() {
+        propuesta.ClickIcnCambioTasa();
+
+    }
+
+    @And("en la ventana Cambio Tasa de credito registro el comentario de solicitud {string}")
+    public void enLaVentanaCambioTasaDeCreditoRegistroElComentarioDeSolicitud(String ComentarioCambioTasa) {
+        cambioTasaCredito.AbrirVentanaCambioTasaCredito();
+        cambioTasaCredito.IngresarComentarioCambio(ComentarioCambioTasa);
+
+    }
+
+    @And("en la ventana Cambio Tasa de Credito doy click en boton Grabar")
+    public void enLaVentanaCambioTasaDeCreditoDoyClickEnBotonGrabar() {
+        cambioTasaCredito.ClickGrabar();
+        cambioTasaCredito.CerrarVentanaCambioTasaCredito();
+
+    }
+
+
+    @Then("el sistema direcciona a la propuesta y doy click al boton Registro de seguros")
+    public void elSistemaDireccionaALaPropuestaYDoyClickAlBotonRegistroDeSeguros() {
+        propuesta.ClickBotonRegistrarSeguro();
+
+    }
+
+    @And("en la ventana Seleccion de seguros doy click en boton Confirmar")
+    public void enLaVentanaSeleccionDeSegurosDoyClickEnBotonConfirmar() {
+        seleccionarSeguros.AbrirVentanaSeleccionarSeguros();
+        seleccionarSeguros.ClickbtnConfirmar();
+        seleccionarSeguros.CerrarVentanaSeleccionarSeguros();
+
+    }
+
+
+    @And("el sistema direcciona a la ventana Registro Seguros y check en seguro desgravamen flat MN")
+    public void elSistemaDireccionaALaVentanaRegistroSegurosYCheckEnSeguroDesgravamenFlatMN() {
+        registrarSeguros.AbrirVentanaRegistrarSeguros();
+        registrarSeguros.ClickCheckSeguroDesgravamenMN();
+    }
+
+    @And("en la ventana Registro Seguros ingresar el numero DPS {string}")
+    public void enLaVentanaRegistroSegurosIngresarElNumeroDPS(String seguroDesgravameMN) {
+        registrarSeguros.IngresarSeguroDesgravamenMN(seguroDesgravameMN);
+    }
+
+    @And("en la ventana Registro Seguros hacer check en seguro todo riesgo Plan Pymes")
+    public void enLaVentanaRegistroSegurosHacerCheckEnSeguroTodoRiesgoPlanPymes() {
+        registrarSeguros.ClickCheckSeguroRiesgoPlanPymes();
+    }
+
+    @And("en la ventana Registro Seguros ingresar el numero DPS {string} del seguro Plan Pymes")
+    public void enLaVentanaRegistroSegurosIngresarElNumeroDPSDelSeguroPlanPymes(String seguroRiesgoPlanPymes) {
+        registrarSeguros.IngresarSeguroRiesgoPlanPymes(seguroRiesgoPlanPymes);
+    }
+
+
+    @And("en la ventana Registro Seguros doy click en Confirmar")
+    public void enLaVentanaRegistroSegurosDoyClickEnConfirmar() {
+        registrarSeguros.ClickConfirmar();
+        registrarSeguros.CerrarVentanaRegistrarSeguros();
+        
+    }
+
+    @And("el sistema muestra la ventana seguros seleccionados y doy click en cerrar")
+    public void elSistemaMuestraLaVentanaSegurosSeleccionadosYDoyClickEnCerrar() throws InterruptedException {
+        confirmarSeguros.AbrirVentanaConfirmacionSeguros();
+        confirmarSeguros.ClickCerrar();
+
+        confirmarSeguros.CerrarVentanaConfirmacionSeguros();
+
+    }
+
+    @Then("el sistema direcciona a la propuesta y doy click en Anexar CheckList Creditos")
+    public void elSistemaDireccionaALaPropuestaYDoyClickEnAnexarCheckListCreditos() {
+        propuesta.ClickAnexarCheckListCreditos();
+
+    }
+
+
+    @And("en la ventana CheckList Creditos seleccionar en Informacion Basica_Tarjeta de Informacion")
+    public void enLaVentanaCheckListCreditosSeleccionarEnInformacionBasica_TarjetaDeInformacion() {
+        anexarChecklist.AbrirVentanaAnexarCheckList();
+        anexarChecklist.Seleccionar1_TarjetaInformacion();
+    }
+
+
+
 }
 
 

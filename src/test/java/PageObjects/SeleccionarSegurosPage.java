@@ -26,6 +26,7 @@ public class SeleccionarSegurosPage {
             LastHandle = identificadorSeleccionarOP;
         }
         driver.switchTo().window(LastHandle);
+        System.out.println("Titulo:" + driver.getTitle());
 
     }
 
@@ -49,7 +50,7 @@ public class SeleccionarSegurosPage {
         PageFactory.initElements(driver,this);
 
     }
-    private void ClickConfirmar (){
+    public void ClickbtnConfirmar(){
         wait.until(ExpectedConditions.elementToBeClickable(btn_Confirmar));
         btn_Confirmar.click();}
 

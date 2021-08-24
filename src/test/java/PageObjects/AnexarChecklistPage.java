@@ -5,12 +5,16 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+
+import java.util.Set;
 
 public class AnexarChecklistPage {
 
     private WebDriver driver;
     private WebDriverWait wait;
+    private Set<String> identificadoresAnexarCheckList;
 
     //Informacion basica cliente
 
@@ -81,63 +85,178 @@ public class AnexarChecklistPage {
 
     @FindBy(id="idSaveSend") private WebElement btn_guardarTerminar;
 
+    public void AbrirVentanaAnexarCheckList(){
+        identificadoresAnexarCheckList = driver.getWindowHandles();
+        System.out.println(identificadoresAnexarCheckList);
+        String LastHandle ="";
+
+        for (String identificadorAnexarCheckList :identificadoresAnexarCheckList ){
+            LastHandle = identificadorAnexarCheckList;
+        }
+        driver.switchTo().window(LastHandle);
+        System.out.println("Titulo:" + driver.getTitle());
+
+    }
+
+    public void CerrarVentanaAnexarCheckList(){
+        Integer SetSize = identificadoresAnexarCheckList.size();
+        Integer Index=0;
+        String[] Handles = new String[SetSize] ;
+        for (String identificadorAnexarCheckList : identificadoresAnexarCheckList) {
+            Handles[Index] = identificadorAnexarCheckList;
+            Index++;
+        }
+        System.out.println(Handles[0]);
+        driver.switchTo().window(Handles[0]);
+
+    }
+
+
     public AnexarChecklistPage(WebDriver d) {
         driver = d;
         wait = new WebDriverWait(driver,30);
         PageFactory.initElements(driver,this);
     }
 
-    public void SeleccionarOpcion1() {opt_cliTarjetaBasica.click();}
-    public void SeleccionarOpcion2() {opt_cliCopiaFedateada.click();}
-    public void SeleccionarOpcion3() {opt_cliVigenciaActualizada.click();}
-    public void SeleccionarOpcion4() {opt_cliReciboLuz.click();}
-    public void SeleccionarOpcion5() {opt_cliCroquisDomic.click();}
-    public void SeleccionarOpcion6() {opt_cliAgricolas.click();}
-    public void SeleccionarOpcion7() {opt_cliFotoPanoramica.click();}
+    public void Seleccionar1_TarjetaInformacion() {
+        wait.until(ExpectedConditions.elementToBeClickable(opt_cliTarjetaBasica));
+        opt_cliTarjetaBasica.click();}
 
-    public void SeleccionarOpcion9() {opt_NegocioLuz.click();}
-    public void SeleccionarOpcion10() {opt_NegocioFoto.click();}
-    public void SeleccionarOpcion11() {opt_NegocioSustento.click();}
-    public void SeleccionarOpcion12() {opt_NegocioInforme.click();}
+    public void Seleccionar2_CopiaFedatariaDOI() {
+        wait.until(ExpectedConditions.elementToBeClickable(opt_cliCopiaFedateada));
+        opt_cliCopiaFedateada.click();}
 
-    public void SeleccionarOpcion15() {opt_OperSolicitud.click();}
+    public void Seleccionar3_VigenciaPoderActualizada() {
+        wait.until(ExpectedConditions.elementToBeClickable(opt_cliVigenciaActualizada));
+        opt_cliVigenciaActualizada.click();}
 
-    public void SeleccionarOpcion16() {opt_SegCopiaDPS.click();}
+    public void Seleccionar4_ReciboLuz() {
+        wait.until(ExpectedConditions.elementToBeClickable(opt_cliReciboLuz));
+        opt_cliReciboLuz.click();}
 
-    public void SeleccionarOpcion17() {opt_SegPolizas.click();}
+    public void Seleccionar5_CroquisDomicilio() {
+        wait.until(ExpectedConditions.elementToBeClickable(opt_cliCroquisDomic));
+        opt_cliCroquisDomic.click();}
 
-    public void SeleccionarOpcion18() {opt_EEFFSectorista.click();}
-    public void SeleccionarOpcion19() {opt_flujoCaja.click();}
+    public void Seleccionar6_GPSAgricolas() {
+        wait.until(ExpectedConditions.elementToBeClickable(opt_cliAgricolas));
+        opt_cliAgricolas.click();}
 
-    public void SeleccionarOpcion56() {opt_clienteTarjeta.click();}
-
-    public void SeleccionarOpcion59() {opt_busquedaBienes.click();}
-    public void SeleccionarOpcion60() {opt_docPropiedad.click();}
-    public void SeleccionarOpcion62() {opt_bolInformativa.click();}
-    public void SeleccionarOpcion63() {opt_contPrestamo.click();}
-    public void SeleccionarOpcion64() {opt_decJuradaBienes.click();}
+    public void Seleccionar7_FotoDomicilio() {
+        wait.until(ExpectedConditions.elementToBeClickable(opt_cliFotoPanoramica));
+        opt_cliFotoPanoramica.click();}
 
 
-    public void SeleccionarOpcion65() {opt_tasacion.click();}
-    public void SeleccionarOpcion66() {opt_copiaPlazoFijo.click();}
+    public void Seleccionar8_ReciboSSBB() {
+        wait.until(ExpectedConditions.elementToBeClickable(opt_NegocioLuz));
+        opt_NegocioLuz.click();}
 
-    public void SeleccionarOpcion68() {opt_certLiteralDom.click();}
-    public void SeleccionarOpcion69() {opt_garantiasInscr.click();}
+    public void Seleccionar9_FotoNegocio() {
+        wait.until(ExpectedConditions.elementToBeClickable(opt_NegocioFoto));
+        opt_NegocioFoto.click();}
 
-    public void SeleccionarOpcion70() {opt_valuacion.click();}
-    public void SeleccionarOpcion71() {opt_opinionLegal.click();}
+    public void Seleccionar10_SustentoVigencia() {
+        wait.until(ExpectedConditions.elementToBeClickable(opt_NegocioSustento));
+        opt_NegocioSustento.click();}
+
+    public void Seleccionar11_InformeComercial() {
+        wait.until(ExpectedConditions.elementToBeClickable(opt_NegocioInforme));
+        opt_NegocioInforme.click();}
 
 
-    public void SeleccionarOpcion72() {opt_mobiliConst.click();}
-    public void SeleccionarOpcion73() {opt_mobiliPreConst.click();}
+    public void Seleccionar12_SolicitudCredito() {
+        wait.until(ExpectedConditions.elementToBeClickable(opt_OperSolicitud));
+        opt_OperSolicitud.click();}
 
-    public void SeleccionarOpcion74() {opt_testimonio.click();}
+    public void Seleccionar13_CopiaDPS() {
+        wait.until(ExpectedConditions.elementToBeClickable(opt_SegCopiaDPS));
+        opt_SegCopiaDPS.click();}
 
-    public void SeleccionarOpcion80() {opt_fichaIngresoRRPP.click();}
-    public void SeleccionarOpcion81() {opt_copiaPartida.click();}
+    public void Seleccionar14_CopiaPolizaSeguro() {
+        wait.until(ExpectedConditions.elementToBeClickable(opt_SegPolizas));
+        opt_SegPolizas.click();}
 
-    public void ClickGuardarTerminar (){btn_guardarTerminar.click();}
+    public void Seleccionar15_EstadosFinancieros() {
+        wait.until(ExpectedConditions.elementToBeClickable(opt_EEFFSectorista));
+        opt_EEFFSectorista.click();}
 
+    public void Seleccionar16_FlujodeCaja() {
+        wait.until(ExpectedConditions.elementToBeClickable(opt_flujoCaja));
+        opt_flujoCaja.click();}
+
+    public void Seleccionar17_InformeVisitaSectorista() {
+        wait.until(ExpectedConditions.elementToBeClickable(opt_clienteTarjeta));
+        opt_clienteTarjeta.click();}
+
+    public void Seleccionar18_BusquedaBienes() {
+        wait.until(ExpectedConditions.elementToBeClickable(opt_busquedaBienes));
+        opt_busquedaBienes.click();}
+
+    public void Seleccionar19_DocumentosSustentatorios() {
+        wait.until(ExpectedConditions.elementToBeClickable(opt_docPropiedad));
+        opt_docPropiedad.click();}
+
+    public void Seleccionar20_BoletaInformativa() {
+        wait.until(ExpectedConditions.elementToBeClickable(opt_bolInformativa));
+        opt_bolInformativa.click();}
+
+    public void Seleccionar21_ContratoPrestamo() {
+        wait.until(ExpectedConditions.elementToBeClickable(opt_contPrestamo));
+        opt_contPrestamo.click();}
+
+    public void Seleccionar22_DeclaracionJuradaBienes() {
+        wait.until(ExpectedConditions.elementToBeClickable(opt_decJuradaBienes));
+        opt_decJuradaBienes.click();}
+
+
+    public void Seleccionar23_CopiaCertificadoTasacion() {
+        wait.until(ExpectedConditions.elementToBeClickable(opt_tasacion));
+        opt_tasacion.click();}
+
+    public void Seleccionar24_CopiaCertificadoPlazoFijo() {
+        wait.until(ExpectedConditions.elementToBeClickable(opt_copiaPlazoFijo));
+        opt_copiaPlazoFijo.click();}
+
+    public void Seleccionar25_CertificadoLiteral() {
+        wait.until(ExpectedConditions.elementToBeClickable(opt_certLiteralDom));
+        opt_certLiteralDom.click();}
+
+    public void Seleccionar26_CertificadoLiteral() {
+        wait.until(ExpectedConditions.elementToBeClickable(opt_garantiasInscr));
+        opt_garantiasInscr.click();}
+
+    public void Seleccionar27_ValuacionDelBien() {
+        wait.until(ExpectedConditions.elementToBeClickable(opt_valuacion));
+        opt_valuacion.click();}
+
+    public void Seleccionar28_OpinionLegal() {
+        wait.until(ExpectedConditions.elementToBeClickable(opt_opinionLegal));
+        opt_opinionLegal.click();}
+
+
+    public void Seleccionar29_ContratoPrestamo() {
+        wait.until(ExpectedConditions.elementToBeClickable(opt_mobiliConst));
+        opt_mobiliConst.click();}
+
+    public void Seleccionar30_ContratoPrestamoPre() {
+        wait.until(ExpectedConditions.elementToBeClickable(opt_mobiliPreConst));
+        opt_mobiliPreConst.click();}
+
+    public void Seleccionar31_Testimonio() {
+        wait.until(ExpectedConditions.elementToBeClickable(opt_testimonio));
+        opt_testimonio.click();}
+
+    public void Seleccionar31_FichaIngreso() {
+        wait.until(ExpectedConditions.elementToBeClickable(opt_fichaIngresoRRPP));
+        opt_fichaIngresoRRPP.click();}
+
+    public void Seleccionar32_CopiaLiteralPartida() {
+        wait.until(ExpectedConditions.elementToBeClickable(opt_copiaPartida));
+        opt_copiaPartida.click();}
+
+    public void ClickGuardarTerminar (){
+        wait.until(ExpectedConditions.elementToBeClickable(btn_guardarTerminar));
+        btn_guardarTerminar.click();}
 
 
 }
