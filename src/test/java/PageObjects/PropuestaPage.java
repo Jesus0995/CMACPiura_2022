@@ -27,7 +27,7 @@ public class PropuestaPage {
     @FindBy(name = "btnEnviar") private WebElement btn_NuevaOperacion;
     @FindBy(xpath = "//img[@src='./images/mail-send-receive.png']") private WebElement icn_CambioTasa;
     @FindBy(name = "btnEnviar2") private WebElement btn_AgregarSeguro;
-    @FindBy(xpath = "//button[@onclick=\"window.open('anexaCheckList.jsp', 'Anexo Check List 93F33861F69D989C9B85816814AEAA8A', 'toolbar=no,scrollbars=yes,location=no,status=no,menubar=no,resizable=yes,width=690,height=500,dependent=yes');\"]") private WebElement btn_Checklist;
+    @FindBy(xpath = "/html/body/form/table[1]/tbody/tr[3]/td/div/table[8]/tbody/tr[1]/td[2]/button") private WebElement btn_AnexarChecklist;
     @FindBy(xpath = "//button[@name=\"btnGaranExist\"]") private WebElement btn_AnexarGarantias;
     @FindBy(xpath = "/html/body/form/table[1]/tbody/tr[3]/td/div/button") private  WebElement btn_EnlazarEstadosFinancieros;
     @FindBy(xpath = "/html/body/form/table[2]/tbody/tr[1]/td[3]/button") private WebElement btn_EnlazarInformeVisita;
@@ -82,8 +82,10 @@ public class PropuestaPage {
         btn_AgregarSeguro.click();}
 
     public void ClickAnexarCheckListCreditos () {
-        wait.until(ExpectedConditions.elementToBeClickable(btn_Checklist));
-        btn_Checklist.click();}
+
+        wait.until(ExpectedConditions.elementToBeClickable(btn_AnexarChecklist));
+        btn_AnexarChecklist.click();
+    }
 
 
 

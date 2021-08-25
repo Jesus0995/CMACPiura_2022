@@ -18,70 +18,70 @@ public class AnexarChecklistPage {
 
     //Informacion basica cliente
 
-    @FindBy(id = "item_1") private WebElement opt_cliTarjetaBasica;
-    @FindBy(id = "item_2") private WebElement opt_cliCopiaFedateada;
-    @FindBy(id = "item_3") private WebElement opt_cliVigenciaActualizada;
-    @FindBy(id = "item_4") private WebElement opt_cliReciboLuz;
-    @FindBy(id = "item_5") private WebElement opt_cliCroquisDomic;
-    @FindBy(id = "item_6") private WebElement opt_cliAgricolas;
-    @FindBy(id = "item_7") private WebElement opt_cliFotoPanoramica;
+    @FindBy(xpath = "//input[@id='item_1' and @value='2']") private WebElement opt_cliTarjetaBasica;
+    @FindBy(xpath = "//input[@id='item_2' and @value='2']") private WebElement opt_cliCopiaFedateada;
+    @FindBy(xpath = "//input[@id='item_3' and @value='2']") private WebElement opt_cliVigenciaActualizada;
+    @FindBy(xpath = "//input[@id='item_4' and @value='2']") private WebElement opt_cliReciboLuz;
+    @FindBy(xpath = "//input[@id='item_5' and @value='2']") private WebElement opt_cliCroquisDomic;
+    @FindBy(xpath = "//input[@id='item_6' and @value='2']") private WebElement opt_cliAgricolas;
+    @FindBy(xpath = "//input[@id='item_7' and @value='2']") private WebElement opt_cliFotoPanoramica;
 
 // Informacion del negocio
 
-    @FindBy(id = "item_9") private WebElement opt_NegocioLuz;
-    @FindBy(id = "item_10") private WebElement opt_NegocioFoto;
-    @FindBy(id = "item_11") private WebElement opt_NegocioSustento;
-    @FindBy(id = "item_12") private WebElement opt_NegocioInforme;
+    @FindBy(xpath = "//input[@id='item_8' and @value='2']") private WebElement opt_NegocioLuz;
+    @FindBy(xpath = "//input[@id='item_9' and @value='2']") private WebElement opt_NegocioFoto;
+    @FindBy(xpath = "//input[@id='item_10' and @value='2']") private WebElement opt_NegocioSustento;
+    @FindBy(xpath = "//input[@id='item_11' and @value='2']") private WebElement opt_NegocioInforme;
 
 //operaciones propuestas
 
 
-    @FindBy(id = "item_15") private WebElement opt_OperSolicitud;
+    @FindBy(xpath = "//input[@id='item_15' and @value='2']") private WebElement opt_OperSolicitud;
 
     //seguro cliente
-    @FindBy(id = "item_16") private WebElement opt_SegCopiaDPS;
+    @FindBy(xpath = "//input[@id='item_16' and @value='2']") private WebElement opt_SegCopiaDPS;
 
     //seguro garantia
 
-    @FindBy(id = "item_17") private WebElement opt_SegPolizas;
+    @FindBy(xpath = "//input[@id='item_17' and @value='2']") private WebElement opt_SegPolizas;
 
     //informacion economica financiera del cliente
 
-    @FindBy(id = "item_18") private WebElement opt_EEFFSectorista;
-    @FindBy(id = "item_19") private WebElement opt_flujoCaja;
+    @FindBy(xpath = "//input[@id='item_18' and @value='2']") private WebElement opt_EEFFSectorista;
+    @FindBy(xpath = "//input[@id='item_19' and @value='2']") private WebElement opt_flujoCaja;
 
     //informe verificacion previa
 
-    @FindBy(id = "item_56") private WebElement opt_clienteTarjeta;
+    @FindBy(xpath = "//input[@id='item_56' and @value='2']") private WebElement opt_clienteTarjeta;
 
     //garantias no inscribibles
 
-    @FindBy(id = "item_59") private WebElement opt_busquedaBienes;
-    @FindBy(id = "item_60") private WebElement opt_docPropiedad;
-    @FindBy(id = "item_62") private WebElement opt_bolInformativa;
-    @FindBy(id = "item_63") private WebElement opt_contPrestamo;
-    @FindBy(id = "item_64") private WebElement opt_decJuradaBienes;
+    @FindBy(xpath = "//input[@id='item_59' and @value='2']") private WebElement opt_busquedaBienes;
+    @FindBy(xpath = "//input[@id='item_60' and @value='2']") private WebElement opt_docPropiedad;
+    @FindBy(xpath = "//input[@id='item_62' and @value='2']") private WebElement opt_bolInformativa;
+    @FindBy(xpath = "//input[@id='item_63' and @value='2']") private WebElement opt_contPrestamo;
+    @FindBy(xpath = "//input[@id='item_64' and @value='2']") private WebElement opt_decJuradaBienes;
 
     //garantia con desposesion
 
-    @FindBy(id = "item_65") private WebElement opt_tasacion;
+    @FindBy(xpath = "item_65") private WebElement opt_tasacion;
 
-    @FindBy(id = "item_66") private WebElement opt_copiaPlazoFijo;
+    @FindBy(xpath = "item_66") private WebElement opt_copiaPlazoFijo;
 
 
     //garantias inscribibles
-    @FindBy(id = "item_68") private WebElement opt_certLiteralDom;
-    @FindBy(id = "item_69") private WebElement opt_garantiasInscr;
-    @FindBy(id = "item_70") private WebElement opt_valuacion;
-    @FindBy(id = "item_71") private WebElement opt_opinionLegal;
-    @FindBy(id = "item_72") private WebElement opt_mobiliConst;
-    @FindBy(id = "item_73") private WebElement opt_mobiliPreConst;
-    @FindBy(id = "item_74") private WebElement opt_testimonio;
+    @FindBy(xpath = "item_68") private WebElement opt_certLiteralDom;
+    @FindBy(xpath = "item_69") private WebElement opt_garantiasInscr;
+    @FindBy(xpath = "item_70") private WebElement opt_valuacion;
+    @FindBy(xpath = "item_71") private WebElement opt_opinionLegal;
+    @FindBy(xpath = "item_72") private WebElement opt_mobiliConst;
+    @FindBy(xpath = "item_73") private WebElement opt_mobiliPreConst;
+    @FindBy(xpath = "item_74") private WebElement opt_testimonio;
 
     //Desembolso de credito
 
-    @FindBy(id = "item_80") private WebElement opt_fichaIngresoRRPP;
-    @FindBy(id = "item_81") private WebElement opt_copiaPartida;
+    @FindBy(xpath = "item_80") private WebElement opt_fichaIngresoRRPP;
+    @FindBy(xpath = "item_81") private WebElement opt_copiaPartida;
 
     @FindBy(id="idSaveSend") private WebElement btn_guardarTerminar;
 

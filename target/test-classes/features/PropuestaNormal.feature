@@ -3,7 +3,7 @@ Feature: Crear una propuesta de Credito Empresarial de tipo NORMAL en el Sistema
   Quiero registrar una propuesta de credito Empresarial de tipo Normal
   Para su aprobacion correspondiente
 
-
+  @Prueba
   Scenario:  Crear una propuesta de Credito Empresarial de tipo Normal
     Given la web SGCRED esta disponible
     When ingreso usuario y password
@@ -37,7 +37,7 @@ Feature: Crear una propuesta de Credito Empresarial de tipo NORMAL en el Sistema
     And en la ventana Operacion Credito seleccionar plaza de desembolso
       | Departamento | Provincia | Distrito |
       | LIMA         | LIMA      | LIMA     |
-    And en la ventana Operacion Credito ingresar fecha probable del desembolso "23/08/2021"
+    And en la ventana Operacion Credito ingresar fecha probable del desembolso "24/08/2021"
     And en la ventana Operacion Credito Ingresar notas "Prueba"
     And en la ventana Operacion Credito doy click en grabar
     And en la ventana Operacion Credito aceptar la alerta
@@ -51,9 +51,9 @@ Feature: Crear una propuesta de Credito Empresarial de tipo NORMAL en el Sistema
     And en la ventana Registro Seguros hacer check en seguro todo riesgo Plan Pymes
     And en la ventana Registro Seguros ingresar el numero DPS "6789" del seguro Plan Pymes
     And en la ventana Registro Seguros doy click en Confirmar
-    And el sistema muestra la ventana seguros seleccionados y doy click en cerrar
-    Then el sistema direcciona a la propuesta y doy click en Anexar CheckList Creditos
-    And en la ventana CheckList Creditos seleccionar en Informacion Basica_Tarjeta de Informacion
+    And en la ventana seguros seleccionados visualizar información y doy click en cerrar
+    Then el sistema direcciona a la propuesta y doy click en Anexar CheckList creditos
+    And en la ventana CheckList seccion informacion basica del cliente seleccionar los expedientes del uno al siete
 
 
 

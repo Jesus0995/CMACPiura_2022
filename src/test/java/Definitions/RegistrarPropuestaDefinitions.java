@@ -33,7 +33,8 @@ public class RegistrarPropuestaDefinitions {
     CambioTasaCreditoPage cambioTasaCredito;
     RegistrarSegurosPage registrarSeguros;
     ConfirmarSegurosSeleccionadosPage confirmarSeguros;
-    AnexarChecklistPage anexarChecklist;
+    AnexarChecklistPage anexarCheckListCreditos;
+
 
     //Constructor
     public RegistrarPropuestaDefinitions() {
@@ -51,7 +52,7 @@ public class RegistrarPropuestaDefinitions {
         seleccionarSeguros = new SeleccionarSegurosPage(Hooks.driver);
         registrarSeguros = new RegistrarSegurosPage(Hooks.driver);
         confirmarSeguros = new ConfirmarSegurosSeleccionadosPage(Hooks.driver);
-        anexarChecklist = new AnexarChecklistPage(Hooks.driver);
+        anexarCheckListCreditos = new AnexarChecklistPage(Hooks.driver);
     }
 
 
@@ -367,30 +368,27 @@ public class RegistrarPropuestaDefinitions {
         
     }
 
-    @And("el sistema muestra la ventana seguros seleccionados y doy click en cerrar")
-    public void elSistemaMuestraLaVentanaSegurosSeleccionadosYDoyClickEnCerrar() throws InterruptedException {
+
+    @And("en la ventana seguros seleccionados visualizar información y doy click en cerrar")
+    public void enLaVentanaSegurosSeleccionadosVisualizarInformaciónYDoyClickEnCerrar() {
         confirmarSeguros.AbrirVentanaConfirmacionSeguros();
         confirmarSeguros.ClickCerrar();
-
         confirmarSeguros.CerrarVentanaConfirmacionSeguros();
 
     }
 
-    @Then("el sistema direcciona a la propuesta y doy click en Anexar CheckList Creditos")
+    @Then("el sistema direcciona a la propuesta y doy click en Anexar CheckList creditos")
     public void elSistemaDireccionaALaPropuestaYDoyClickEnAnexarCheckListCreditos() {
         propuesta.ClickAnexarCheckListCreditos();
-
     }
 
+    @And("en la ventana CheckList seccion informacion basica del cliente seleccionar los expedientes del uno al siete")
+    public void enLaVentanaCheckListSeccionInformacionBasicaDelClienteSeleccionarLosExpedientesDelUnoAlSiete() {
+        anexarCheckListCreditos.AbrirVentanaAnexarCheckList();
+        anexarCheckListCreditos.Seleccionar1_TarjetaInformacion();
+        anexarCheckListCreditos.Seleccionar2_CopiaFedatariaDOI();
 
-    @And("en la ventana CheckList Creditos seleccionar en Informacion Basica_Tarjeta de Informacion")
-    public void enLaVentanaCheckListCreditosSeleccionarEnInformacionBasica_TarjetaDeInformacion() {
-        anexarChecklist.AbrirVentanaAnexarCheckList();
-        anexarChecklist.Seleccionar1_TarjetaInformacion();
     }
-
-
-
 }
 
 

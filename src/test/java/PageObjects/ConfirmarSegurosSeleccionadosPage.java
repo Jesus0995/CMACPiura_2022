@@ -32,19 +32,20 @@ public class ConfirmarSegurosSeleccionadosPage {
     }
 
 
-    public void CerrarVentanaConfirmacionSeguros() throws InterruptedException {
-        Integer SetSize =  identificadoresConfirmacionSeguros.size();
-        Integer Index=0;
-        String [] Handles = new String[SetSize];
-        for (String identificadorConfirmacionSeguros :identificadoresConfirmacionSeguros ){
-            Handles[SetSize] = identificadorConfirmacionSeguros;
-            Index++;
-        }
-        System.out.println(Handles[0]);
-        driver.switchTo().window(Handles[0]);
+    public void CerrarVentanaConfirmacionSeguros()  {
 
-        Thread.sleep(10000);
-    }
+            Integer SetSize = identificadoresConfirmacionSeguros.size();
+            Integer Index = 0;
+            String[] Handles = new String[SetSize];
+            for (String identificadorConfirmacionSeguros : identificadoresConfirmacionSeguros) {
+                Handles[Index] = identificadorConfirmacionSeguros;
+                Index++;
+            }
+            System.out.println(Handles[0]);
+            driver.switchTo().window(Handles[0]);
+
+        }
+
 
 
     public ConfirmarSegurosSeleccionadosPage(WebDriver d) {
