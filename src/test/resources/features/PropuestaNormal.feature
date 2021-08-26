@@ -37,14 +37,14 @@ Feature: Crear una propuesta de Credito Empresarial de tipo NORMAL en el Sistema
     And en la ventana Operacion Credito seleccionar plaza de desembolso
       | Departamento | Provincia | Distrito |
       | LIMA         | LIMA      | LIMA     |
-    And en la ventana Operacion Credito ingresar fecha probable del desembolso "24/08/2021"
+    And en la ventana Operacion Credito ingresar fecha probable del desembolso "25/08/2021"
     And en la ventana Operacion Credito Ingresar notas "Prueba"
     And en la ventana Operacion Credito doy click en grabar
     And en la ventana Operacion Credito aceptar la alerta
     Then el sistema direcciona a ventana Propuesta y doy click icono cambio de tasa
     And en la ventana Cambio Tasa de credito registro el comentario de solicitud "se aprueba el cambio de tasa de credito"
     And en la ventana Cambio Tasa de Credito doy click en boton Grabar
-    Then el sistema direcciona a la propuesta y doy click al boton Registro de seguros
+    Then el sistema direcciona a la ventana propuesta y doy click al boton Registro de seguros
     And en la ventana Seleccion de seguros doy click en boton Confirmar
     And el sistema direcciona a la ventana Registro Seguros y check en seguro desgravamen flat MN
     And en la ventana Registro Seguros ingresar el numero DPS "12345"
@@ -52,8 +52,30 @@ Feature: Crear una propuesta de Credito Empresarial de tipo NORMAL en el Sistema
     And en la ventana Registro Seguros ingresar el numero DPS "6789" del seguro Plan Pymes
     And en la ventana Registro Seguros doy click en Confirmar
     And en la ventana seguros seleccionados visualizar información y doy click en cerrar
-    Then el sistema direcciona a la propuesta y doy click en Anexar CheckList creditos
-    And en la ventana CheckList seccion informacion basica del cliente seleccionar los expedientes del uno al siete
+    Then el sistema direcciona a la ventana propuesta y doy click en Anexar CheckList creditos
+    And en la ventana CheckList Seccion Informacion Basica Cliente seleccionar las opciones del uno al siete
+    And en la ventana CheckList Seccion Información del Negocio seleccionar las opciones ocho al once
+    And en la ventana CheckList Seccion Operaciones Propuestas seleccionar la opcion doce
+    And en la ventana CheckList Seccion Seguro del Cliente seleccionar la opcion trece
+    And en la ventana CheckList Seccion Seguro de Garantia seleccionar la opcion catorce
+    And en la ventana CheckList Seccion Informacion Economica Financiera seleccionar las opciones quince y dieciseis
+    And en la ventana CheckList Seccion Informe Verificacion Previa seleccionar la opcion diecisiete
+    And en la ventana CheckList Seccion Garantias No Inscribibles seleccionar las opciones dieciocho al veintidos
+    And en la ventana CheckList Seccion Garantias Con Deposicion seleccionar las opciones veintitres y veiniticuatro
+    And en la ventana CheckList Seccion Garantias Inscribibles seleccionar las opciones veinticinco al treintaiuno
+    And en la ventana CheckList Seccion Desembolso de credito con Inscripcion seleccionar las opciones treintaidos y treintaitres
+    And en la ventana CheckList doy clic en Guardar y Terminar finalmente acepto la alerta
+    And el sistema direcciona a la ventana Confirmar Checklist de Credito y doy click en cerrar
+    Then el sistema direcciona a la ventana propuesta y se procede a ingresar los siguientes comentarios
+      | CaracteristicaNegocio | ClasificacionRiesgoNegocio | ClasificacionRiesgoAval | AnalisisUnidadFinanciera |
+      | prueba                | prueba                     | prueba                  | prueba                   |
+    And en la ventana propuesta doy click en Anexar Garantias Existentes
+    And en la ventana Seleccionar Garantias doy click en Registrar Garantias
+    And en la ventana Garantias Existentes seleccionar garantia correspondiente y doy click en Aceptar
+
+
+
+
 
 
 

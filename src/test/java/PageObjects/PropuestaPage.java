@@ -28,6 +28,14 @@ public class PropuestaPage {
     @FindBy(xpath = "//img[@src='./images/mail-send-receive.png']") private WebElement icn_CambioTasa;
     @FindBy(name = "btnEnviar2") private WebElement btn_AgregarSeguro;
     @FindBy(xpath = "/html/body/form/table[1]/tbody/tr[3]/td/div/table[8]/tbody/tr[1]/td[2]/button") private WebElement btn_AnexarChecklist;
+
+    @FindBy(xpath = "//textarea[@id='txtcaracter']") private WebElement txt_caracteristicaNegocio;
+    @FindBy(xpath = "//textarea[@id='txtclasificac']") private WebElement txt_clasificacionRiesgoCliente;
+    @FindBy(xpath = "//textarea[@id='txtclasificaAval']")private  WebElement txt_clasificacionRiesgoAval;
+    @FindBy(xpath = "//textarea[@id='txtanalisisUEF']") private WebElement txt_analisisUnidadFinanciera;
+
+
+
     @FindBy(xpath = "//button[@name=\"btnGaranExist\"]") private WebElement btn_AnexarGarantias;
     @FindBy(xpath = "/html/body/form/table[1]/tbody/tr[3]/td/div/button") private  WebElement btn_EnlazarEstadosFinancieros;
     @FindBy(xpath = "/html/body/form/table[2]/tbody/tr[1]/td[3]/button") private WebElement btn_EnlazarInformeVisita;
@@ -57,19 +65,23 @@ public class PropuestaPage {
     public void IngresarClasificacionCrediticia (String clasificacion){
         wait.until(ExpectedConditions.elementToBeClickable(txt_ClasificacionCrediticia));
         txt_ClasificacionCrediticia.clear();
-        txt_ClasificacionCrediticia.sendKeys(clasificacion);}
+        txt_ClasificacionCrediticia.sendKeys(clasificacion);
+    }
 
     public void IngresarObjetivoCredito (String Objetivo) {
         txt_ObjetivoCredito.clear();
-        txt_ObjetivoCredito.sendKeys(Objetivo);}
+        txt_ObjetivoCredito.sendKeys(Objetivo);
+    }
 
     public void IngresarJustificacionCredito (String Justificacion) {
         txt_JustificacionCredito.clear();
-        txt_JustificacionCredito.sendKeys(Justificacion);}
+        txt_JustificacionCredito.sendKeys(Justificacion);
+    }
 
     public void ClickBotonOperacion () {
         wait.until(ExpectedConditions.elementToBeClickable(btn_NuevaOperacion));
-        btn_NuevaOperacion.click();}
+        btn_NuevaOperacion.click();
+    }
 
     public void ClickIcnCambioTasa(){
         wait.until(ExpectedConditions.elementToBeClickable(icn_CambioTasa));
@@ -79,7 +91,8 @@ public class PropuestaPage {
     public void ClickBotonRegistrarSeguro () {
 
         wait.until(ExpectedConditions.elementToBeClickable(btn_AgregarSeguro));
-        btn_AgregarSeguro.click();}
+        btn_AgregarSeguro.click();
+    }
 
     public void ClickAnexarCheckListCreditos () {
 
@@ -87,27 +100,52 @@ public class PropuestaPage {
         btn_AnexarChecklist.click();
     }
 
+    public void IngresarCaracteristicaNegocio(String CaracteristicaNegocio){
+        txt_caracteristicaNegocio.clear();
+        txt_caracteristicaNegocio.sendKeys(CaracteristicaNegocio);
+    }
+
+    public void IngresarClasificacionRiesgoCliente(String ClasificacionRiesgoNegocio){
+        txt_clasificacionRiesgoCliente.clear();
+        txt_clasificacionRiesgoCliente.sendKeys(ClasificacionRiesgoNegocio);
+
+    }
+
+    public void IngresarClasificacionRiesgoAval(String ClasificacionRiesgoAval){
+        txt_clasificacionRiesgoAval.clear();
+        txt_clasificacionRiesgoAval.sendKeys(ClasificacionRiesgoAval);
+    }
+
+    public void IngresarAnalisisUnidadF(String AnalisisUnidadFinanciera){
+        txt_analisisUnidadFinanciera.clear();
+        txt_analisisUnidadFinanciera.sendKeys(AnalisisUnidadFinanciera);
+    }
 
 
     public void ClickAnexarGarantias () {
         wait.until(ExpectedConditions.elementToBeClickable(btn_AnexarGarantias));
-        btn_AnexarGarantias.click();}
+        btn_AnexarGarantias.click();
+    }
 
     public void ClickEnlazarEstadosFinancieros () {
         wait.until(ExpectedConditions.elementToBeClickable(btn_EnlazarEstadosFinancieros));
-        btn_EnlazarEstadosFinancieros.click();}
+        btn_EnlazarEstadosFinancieros.click();
+    }
 
     public void ClickEnlazarInformeVisita() {
         wait.until(ExpectedConditions.elementToBeClickable(btn_EnlazarInformeVisita));
-        btn_EnlazarInformeVisita.click();}
+        btn_EnlazarInformeVisita.click();
+    }
 
     public void ClickInformeComercial () {
         wait.until(ExpectedConditions.elementToBeClickable(btn_EnlazarInformeComercial));
-        btn_EnlazarInformeComercial.click();}
+        btn_EnlazarInformeComercial.click();
+    }
 
     public void ClickGrabar() {
         wait.until(ExpectedConditions.elementToBeClickable(btn_Grabar));
-        btn_Grabar.click();}
+        btn_Grabar.click();
+    }
 
 
 

@@ -55,6 +55,7 @@ public class OperacionCreditoPage {
     public void CerrarVentanaOperacionCredito(){
         Integer SetSize = identificadoresOperacionCredito.size();
         Integer Index=0;
+
         String[] Handles = new String[SetSize] ;
         for (String identificadorOperacionCredito : identificadoresOperacionCredito) {
             Handles[Index] = identificadorOperacionCredito;
@@ -113,7 +114,7 @@ public class OperacionCreditoPage {
         ((JavascriptExecutor) driver).executeScript(JScript);
 
         // Esperamos unos segundos para que aparezca el proximo combobox.
-        Esperar(3);
+        Esperar(1);
     }
 
     public void SeleccionarModalidad (String Modalidad) {
@@ -130,7 +131,7 @@ public class OperacionCreditoPage {
         ((JavascriptExecutor) driver).executeScript(JScript);
 
         // Esperamos unos segundos para que aparezca el proximo combobox.
-        Esperar(3);
+        Esperar(1);
 
     }
 
@@ -149,7 +150,7 @@ public class OperacionCreditoPage {
         WebElement desembolso = driver.findElement(By.xpath("//*[text()='" + FormaDesembolso + "']"));
         String JScript = desembolso.getAttribute("onclick");
         ((JavascriptExecutor) driver).executeScript(JScript);
-        Esperar (3);
+        Esperar (1);
     }
 
 

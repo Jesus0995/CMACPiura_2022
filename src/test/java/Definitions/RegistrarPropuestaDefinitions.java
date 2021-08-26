@@ -34,6 +34,9 @@ public class RegistrarPropuestaDefinitions {
     RegistrarSegurosPage registrarSeguros;
     ConfirmarSegurosSeleccionadosPage confirmarSeguros;
     AnexarChecklistPage anexarCheckListCreditos;
+    ConfirmacionChecklistPage confirmarCheckList;
+    SeleccionarGarantiaPage seleccionarGarantia;
+    SeleccionarGarantiasExistentesPage seleccionarGarantiasExistentes;
 
 
     //Constructor
@@ -53,6 +56,9 @@ public class RegistrarPropuestaDefinitions {
         registrarSeguros = new RegistrarSegurosPage(Hooks.driver);
         confirmarSeguros = new ConfirmarSegurosSeleccionadosPage(Hooks.driver);
         anexarCheckListCreditos = new AnexarChecklistPage(Hooks.driver);
+        confirmarCheckList = new ConfirmacionChecklistPage(Hooks.driver);
+        seleccionarGarantia = new SeleccionarGarantiaPage(Hooks.driver);
+        seleccionarGarantiasExistentes = new SeleccionarGarantiasExistentesPage(Hooks.driver);
     }
 
 
@@ -324,8 +330,8 @@ public class RegistrarPropuestaDefinitions {
     }
 
 
-    @Then("el sistema direcciona a la propuesta y doy click al boton Registro de seguros")
-    public void elSistemaDireccionaALaPropuestaYDoyClickAlBotonRegistroDeSeguros() {
+    @Then("el sistema direcciona a la ventana propuesta y doy click al boton Registro de seguros")
+    public void elSistemaDireccionaALaVentanaPropuestaYDoyClickAlBotonRegistroDeSeguros() {
         propuesta.ClickBotonRegistrarSeguro();
 
     }
@@ -377,16 +383,144 @@ public class RegistrarPropuestaDefinitions {
 
     }
 
-    @Then("el sistema direcciona a la propuesta y doy click en Anexar CheckList creditos")
-    public void elSistemaDireccionaALaPropuestaYDoyClickEnAnexarCheckListCreditos() {
+    @Then("el sistema direcciona a la ventana propuesta y doy click en Anexar CheckList creditos")
+    public void elSistemaDireccionaALaVentanaPropuestaYDoyClickEnAnexarCheckListCreditos() {
         propuesta.ClickAnexarCheckListCreditos();
     }
 
-    @And("en la ventana CheckList seccion informacion basica del cliente seleccionar los expedientes del uno al siete")
-    public void enLaVentanaCheckListSeccionInformacionBasicaDelClienteSeleccionarLosExpedientesDelUnoAlSiete() {
+    @And("en la ventana CheckList Seccion Informacion Basica Cliente seleccionar las opciones del uno al siete")
+    public void enLaVentanaCheckListSeccionInformacionBasicaDelClienteSeleccionarLasOpcionesDelUnoAlSiete() {
         anexarCheckListCreditos.AbrirVentanaAnexarCheckList();
-        anexarCheckListCreditos.Seleccionar1_TarjetaInformacion();
-        anexarCheckListCreditos.Seleccionar2_CopiaFedatariaDOI();
+        anexarCheckListCreditos.Seleccionar_1TarjetaInformacion();
+        anexarCheckListCreditos.Seleccionar_2CopiaFedatariaDOI();
+        anexarCheckListCreditos.Seleccionar_3VigenciaPoderActualizada();
+        anexarCheckListCreditos.Seleccionar_4ReciboLuz();
+        anexarCheckListCreditos.Seleccionar_5CroquisDomicilio();
+        anexarCheckListCreditos.Seleccionar_6GPSAgricolas();
+        anexarCheckListCreditos.Seleccionar_7FotoDomicilio();
+
+    }
+
+    @And("en la ventana CheckList Seccion Información del Negocio seleccionar las opciones ocho al once")
+    public void enLaVentanaCheckListSeccionInformaciónDelNegocioSeleccionarLasOpcionesOchoAlOnce() {
+        anexarCheckListCreditos.Seleccionar_8ReciboSSBB();
+        anexarCheckListCreditos.Seleccionar_9FotoNegocio();
+        anexarCheckListCreditos.Seleccionar_10SustentoVigencia();
+        anexarCheckListCreditos.Seleccionar_11InformeComercial();
+        
+    }
+
+    @And("en la ventana CheckList Seccion Operaciones Propuestas seleccionar la opcion doce")
+    public void enLaVentanaCheckListSeccionOperacionesPropuestasSeleccionarLaOpcionDoce() {
+        anexarCheckListCreditos.Seleccionar_12SolicitudCredito();
+        
+    }
+
+    @And("en la ventana CheckList Seccion Seguro del Cliente seleccionar la opcion trece")
+    public void enLaVentanaCheckListSeccionSeguroDelClienteSeleccionarLaOpcionTrece() {
+        anexarCheckListCreditos.Seleccionar_13CopiaDPS();
+    }
+
+    @And("en la ventana CheckList Seccion Seguro de Garantia seleccionar la opcion catorce")
+    public void enLaVentanaCheckListSeccionSeguroDeGarantiaSeleccionarLaOpcionCatorce() {
+        anexarCheckListCreditos.Seleccionar_14CopiaPolizaSeguro();
+    }
+
+    @And("en la ventana CheckList Seccion Informacion Economica Financiera seleccionar las opciones quince y dieciseis")
+    public void enLaVentanaCheckListSeccionInformacionEconomicaFinancieraSeleccionarLasOpcionesQuinceYDieciseis() {
+        anexarCheckListCreditos.Seleccionar_15EstadosFinancieros();
+        anexarCheckListCreditos.Seleccionar_16FlujodeCaja();
+
+    }
+
+    @And("en la ventana CheckList Seccion Informe Verificacion Previa seleccionar la opcion diecisiete")
+    public void enLaVentanaCheckListSeccionInformeVerificacionPreviaSeleccionarLaOpcionDiecisiete() {
+        anexarCheckListCreditos.Seleccionar_17InformeVisitaSectorista();
+    }
+
+    @And("en la ventana CheckList Seccion Garantias No Inscribibles seleccionar las opciones dieciocho al veintidos")
+    public void enLaVentanaCheckListSeccionGarantiasNoInscribiblesSeleccionarLasOpcionesDieciochoAlVeintidos() {
+        anexarCheckListCreditos.Seleccionar_18BusquedaBienes();
+        anexarCheckListCreditos.Seleccionar_19DocumentosSustentatorios();
+        anexarCheckListCreditos.Seleccionar_20BoletaInformativa();
+        anexarCheckListCreditos.Seleccionar_21ContratoPrestamo();
+        anexarCheckListCreditos.Seleccionar_22DeclaracionJuradaBienes();
+    }
+
+    @And("en la ventana CheckList Seccion Garantias Con Deposicion seleccionar las opciones veintitres y veiniticuatro")
+    public void enLaVentanaCheckListSeccionGarantiasConDeposicionSeleccionarLasOpcionesVeintitresYVeiniticuatro() {
+        anexarCheckListCreditos.Seleccionar_23CopiaCertificadoTasacion();
+        anexarCheckListCreditos.Seleccionar_24CopiaCertificadoPlazoFijo();
+
+    }
+
+    @And("en la ventana CheckList Seccion Garantias Inscribibles seleccionar las opciones veinticinco al treintaiuno")
+    public void enLaVentanaCheckListSeccionGarantiasInscribiblesSeleccionarLasOpcionesVeinticincoAlTreintaiuno() {
+        anexarCheckListCreditos.Seleccionar_25CertificadoLiteral();
+        anexarCheckListCreditos.Seleccionar_26CertificadoLiteral();
+        anexarCheckListCreditos.Seleccionar_27ValuacionDelBien();
+        anexarCheckListCreditos.Seleccionar_28OpinionLegal();
+        anexarCheckListCreditos.Seleccionar_29ContratoPrestamo();
+        anexarCheckListCreditos.Seleccionar_30ContratoPrestamoPre();
+        anexarCheckListCreditos.Seleccionar_31Testimonio();
+    }
+
+    @And("en la ventana CheckList Seccion Desembolso de credito con Inscripcion seleccionar las opciones treintaidos y treintaitres")
+    public void enLaVentanaCheckListSeccionDesembolsoDeCreditoConInscripcionSeleccionarLasOpcionesTreintaidosYTreintaitres() {
+        anexarCheckListCreditos.Seleccionar_32FichaIngresoRRPP();
+        anexarCheckListCreditos.Seleccionar_33CopiaLiteralPartida();
+    }
+
+
+    @And("en la ventana CheckList doy clic en Guardar y Terminar finalmente acepto la alerta")
+    public void enLaVentanaCheckListDoyClicEnGuardarYTerminarFinalmenteAceptoLaAlerta() {
+        anexarCheckListCreditos.ClickGuardarTerminar();
+
+        anexarCheckListCreditos.AceptarAlerta();
+
+        anexarCheckListCreditos.CerrarVentanaAnexarCheckList();
+    }
+
+    @And("el sistema direcciona a la ventana Confirmar Checklist de Credito y doy click en cerrar")
+    public void elSistemaDireccionaALaVentanaConfirmarChecklistDeCreditoYDoyClickEnCerrar() {
+        confirmarCheckList.AbrirVentanaConfirmacionCheckList();
+        confirmarCheckList.ClickCerrar();
+        confirmarCheckList.CerrarVentanaConfirmacionCheckList();
+    }
+
+
+    @Then("el sistema direcciona a la ventana propuesta y se procede a ingresar los siguientes comentarios")
+    public void elSistemaDireccionaALaVentanaPropuestaYSeProcedeAIngresarLosSiguientesComentarios(DataTable ComentariosJustificados) {
+        List<Map<String,String>> listaComentarios = ComentariosJustificados.asMaps(String.class,String.class);
+        for (Integer i = 0; i < listaComentarios.size() ;i++){
+            propuesta.IngresarCaracteristicaNegocio(listaComentarios.get(i).get("CaracteristicaNegocio"));
+            propuesta.IngresarClasificacionRiesgoCliente(listaComentarios.get(i).get("ClasificacionRiesgoNegocio"));
+            propuesta.IngresarClasificacionRiesgoAval(listaComentarios.get(i).get("ClasificacionRiesgoAval"));
+            propuesta.IngresarAnalisisUnidadF(listaComentarios.get(i).get("AnalisisUnidadFinanciera"));
+
+        }
+
+
+    }
+
+    @And("en la ventana propuesta doy click en Anexar Garantias Existentes")
+    public void enLaVentanaPropuestaDoyClickEnAnexarGarantiasExistentes() {
+        propuesta.ClickAnexarGarantias();
+
+    }
+
+    @And("en la ventana Seleccionar Garantias doy click en Registrar Garantias")
+    public void enLaVentanaSeleccionarGarantiasDoyClickEnRegistrarGarantias() {
+        seleccionarGarantia.AbrirVentanaGarantia();
+        seleccionarGarantia.ClickRegistrarGarantia();
+        seleccionarGarantia.CerrarVentanaGarantia();
+    }
+
+    @And("en la ventana Garantias Existentes seleccionar garantia correspondiente y doy click en Aceptar")
+    public void enLaVentanaGarantiasExistentesSeleccionarGarantiaCorrespondienteYDoyClickEnAceptar() {
+        seleccionarGarantiasExistentes.AbrirVentanaGarantiasExistentes();
+        seleccionarGarantiasExistentes.SeleccionarCheckGarantiasExistentes();
+        seleccionarGarantiasExistentes.ClickAceptar();
 
     }
 }

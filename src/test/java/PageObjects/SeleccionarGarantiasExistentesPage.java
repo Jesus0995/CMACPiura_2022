@@ -4,6 +4,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.util.Set;
@@ -17,7 +18,7 @@ public class SeleccionarGarantiasExistentesPage {
 
     //mapeo objetos
 
-    @FindBy(xpath = "//input[@name='garantia']") private WebElement chk_Garantia;
+    @FindBy(xpath = "//input[@name='garantia']") private WebElement chk_garantiaExistentes;
     @FindBy(xpath = "//button[@type=\"submit\"]") private  WebElement btn_Aceptar;
 
 
@@ -48,8 +49,6 @@ public class SeleccionarGarantiasExistentesPage {
 
     }
 
-
-
     public SeleccionarGarantiasExistentesPage(WebDriver d) {
 
         driver = d;
@@ -57,11 +56,13 @@ public class SeleccionarGarantiasExistentesPage {
         PageFactory.initElements(driver, this);
     }
 
-    public void SeleccionarCheck() {
-        chk_Garantia.click();
+    public void SeleccionarCheckGarantiasExistentes() {
+        wait.until(ExpectedConditions.elementToBeClickable(chk_garantiaExistentes));
+        chk_garantiaExistentes.click();
     }
 
-    public void ClickSubmit (){
+    public void ClickAceptar (){
+        wait.until(ExpectedConditions.elementToBeClickable(btn_Aceptar));
         btn_Aceptar.click();
     }
 

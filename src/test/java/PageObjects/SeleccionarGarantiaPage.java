@@ -16,7 +16,6 @@ public class SeleccionarGarantiaPage {
     private Set<String>identificadoresGarantia;
 
     //mapeo objetos
-    //@FindBy(name="propiedad") private WebElement cbx_propiedad;
 
     @FindBy(xpath = "//button[@type=\"submit\"]") private WebElement btn_RegistrarGarantia;
 
@@ -61,7 +60,8 @@ public class SeleccionarGarantiaPage {
 
     public void ClickRegistrarGarantia() {
         wait.until(ExpectedConditions.elementToBeClickable(btn_RegistrarGarantia));
-        btn_RegistrarGarantia.click();}
+        btn_RegistrarGarantia.click();
+    }
 
 
 }
