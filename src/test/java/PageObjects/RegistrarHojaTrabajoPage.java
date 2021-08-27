@@ -40,59 +40,59 @@ public class RegistrarHojaTrabajoPage {
         PageFactory.initElements(driver,this);
     }
 
-    public void TiempoLaboral(){
+    public void TiempoLaboral(String TiempoLaboral){
         txt_tiempoLaboral.clear();
-        txt_tiempoLaboral.sendKeys("48");
+        txt_tiempoLaboral.sendKeys(TiempoLaboral);
     }
 
-    public void IngresosBoleta(){
+    public void IngresosBoleta(String IngresosBoleta){
         txt_ingresosBoleta.clear();
-        txt_ingresosBoleta.sendKeys("2500");
+        txt_ingresosBoleta.sendKeys(IngresosBoleta);
     }
 
-    public void IngresosReciboHonorario(){
+    public void IngresosReciboHonorario(String IngresosReciboHonorario){
         txt_ingresosReciboHonorario.clear();
-        txt_ingresosReciboHonorario.sendKeys("0");
+        txt_ingresosReciboHonorario.sendKeys(IngresosReciboHonorario);
     }
 
-    public void GastosAlimentacion(){
+    public void GastosAlimentacion(String GastosAlimentacion){
         txt_gastosAlimentacion.clear();
-        txt_gastosAlimentacion.sendKeys("600");
+        txt_gastosAlimentacion.sendKeys(GastosAlimentacion);
     }
 
-    public void GastosTransporte(){
+    public void GastosTransporte(String GastosTransporte){
         txt_gastosTransporte.clear();
-        txt_gastosTransporte.sendKeys("200");
+        txt_gastosTransporte.sendKeys(GastosTransporte);
     }
 
-    public void GastosEducacion(){
+    public void GastosEducacion(String GastosEducacion){
         txt_gastosEducacion.clear();
-        txt_gastosEducacion.sendKeys("300");
+        txt_gastosEducacion.sendKeys(GastosEducacion);
     }
 
-    public void GastosVivienda(){
+    public void GastosVivienda(String GastosVivienda){
         txt_gastosVivienda.clear();
-        txt_gastosVivienda.sendKeys("0");
+        txt_gastosVivienda.sendKeys(GastosVivienda);
     }
 
-    public void GastosServiciosBasicos(){
+    public void GastosServiciosBasicos(String GastosServiciosBasicos){
         txt_gastosServiciosBasicos.clear();
-        txt_gastosServiciosBasicos.sendKeys("250");
+        txt_gastosServiciosBasicos.sendKeys(GastosServiciosBasicos);
     }
 
-    public void GastosObligacionesTerceros(){
+    public void GastosObligacionesTerceros(String GastosObligacionesTerceros){
         txt_gastosOligacionesTerceros.clear();
-        txt_gastosOligacionesTerceros.sendKeys("0");
+        txt_gastosOligacionesTerceros.sendKeys(GastosObligacionesTerceros);
     }
 
-    public void DescuentoBoleta(){
+    public void DescuentoBoleta(String DescuentoBoleta){
         txt_descuentoBoleta.clear();
-        txt_descuentoBoleta.sendKeys("400");
+        txt_descuentoBoleta.sendKeys(DescuentoBoleta);
     }
 
-    public void DescuentoReciboHonorario(){
+    public void DescuentoReciboHonorario(String DescuentoReciboHonorario){
         txt_descuentoReciboHonorario.clear();
-        txt_descuentoReciboHonorario.sendKeys("0");
+        txt_descuentoReciboHonorario.sendKeys(DescuentoReciboHonorario);
     }
 
     public void GrabarHojaTrabajo(){
@@ -104,11 +104,6 @@ public class RegistrarHojaTrabajoPage {
 
         btn_finalizarHojaTrabajo.click();
     }
-
-    /*public void RegresarCrearHoja(){
-
-        btn_regresarCrearHoja.click();
-    }*/
 
     public void ObtenerAlerta() {
 

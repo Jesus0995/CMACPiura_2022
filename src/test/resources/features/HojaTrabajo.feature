@@ -21,6 +21,8 @@ Feature: Crear una Hoja de Trabajo en el sistema SGCCRED de Caja Piura
     And en la ventana hojas de trabajo doy click en el boton crear hoja de trabajo
     And me muestra la ventana Hoja de Trabajo
     And en la ventana Hoja de Trabajo se ingresa los datos de trabajo
+      |TiempoLaboral|IngresosBoleta|IngresosReciboHonorario|GastosAlimentacion|GastosTransporte|GastosEducacion|GastosVivienda|GastosObligacionesTerceros|DescuentoBoleta|DescuentoReciboHonorario|
+      | 48          |2500          | 0                     |600               |200             |300            |0             |0                         |400            |0                       |
     And en la ventana Hoja de Trabajo doy click en el botón grabar
     And en la ventana Hoja de Trabajo doy click en aceptar la alerta
     And en la ventana Hoja de Trabajo doy click en el boton finalizar

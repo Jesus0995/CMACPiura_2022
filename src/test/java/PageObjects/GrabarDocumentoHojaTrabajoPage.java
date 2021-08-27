@@ -27,7 +27,7 @@ public class GrabarDocumentoHojaTrabajoPage {
     }
 
     //crear metodo para abrir ventana
-    public void AbrirVentanaServicio(){
+    public void AbrirVentanaGrabarDocumento(){
 
         identificadoresGrabarDocumento = driver.getWindowHandles();
         System.out.println(identificadoresGrabarDocumento);
@@ -41,7 +41,7 @@ public class GrabarDocumentoHojaTrabajoPage {
     }
 
     //crear metodo para cerrar ventana
-    public void CerrarVentanaServicio(){
+    public void CerrarVentanaGrabarDocumento(){
         //Actions Acciones = new Actions(driver);
 
         Integer SetSize = identificadoresGrabarDocumento.size();

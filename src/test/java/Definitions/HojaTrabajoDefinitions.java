@@ -102,17 +102,22 @@ public class HojaTrabajoDefinitions {
     }
 
     @And("en la ventana Hoja de Trabajo se ingresa los datos de trabajo")
-    public void enLaVentanaHojaDeTrabajoSeIngresaLosDatosDeTrabajo() {
-        registrarHojaTrabajo.TiempoLaboral();
-        registrarHojaTrabajo.IngresosBoleta();
-        registrarHojaTrabajo.IngresosReciboHonorario();
-        registrarHojaTrabajo.GastosAlimentacion();
-        registrarHojaTrabajo.GastosTransporte();
-        registrarHojaTrabajo.GastosEducacion();
-        registrarHojaTrabajo.GastosVivienda();
-        registrarHojaTrabajo.GastosObligacionesTerceros();
-        registrarHojaTrabajo.DescuentoBoleta();
-        registrarHojaTrabajo.DescuentoReciboHonorario();
+    public void enLaVentanaHojaDeTrabajoSeIngresaLosDatosDeTrabajo(DataTable tipoMonto) {
+
+        List<Map<String, String>> lista = tipoMonto.asMaps(String.class,String.class);
+        for (int i = 0; i < lista.size(); i++) {
+            registrarHojaTrabajo.TiempoLaboral(lista.get(i).get("TiempoLaboral"));
+            registrarHojaTrabajo.IngresosBoleta(lista.get(i).get("IngresosBoleta"));
+            registrarHojaTrabajo.IngresosReciboHonorario(lista.get(i).get("IngresosReciboHonorario"));
+            registrarHojaTrabajo.GastosAlimentacion(lista.get(i).get("GastosAlimentacion"));
+            registrarHojaTrabajo.GastosTransporte(lista.get(i).get("GastosTransporte"));
+            registrarHojaTrabajo.GastosEducacion(lista.get(i).get("GastosEducacion"));
+            registrarHojaTrabajo.GastosVivienda(lista.get(i).get("GastosVivienda"));
+            registrarHojaTrabajo.GastosObligacionesTerceros(lista.get(i).get("GastosObligacionesTerceros"));
+            registrarHojaTrabajo.DescuentoBoleta(lista.get(i).get("DescuentoBoleta"));
+            registrarHojaTrabajo.DescuentoReciboHonorario(lista.get(i).get("DescuentoReciboHonorario"));
+        }
+
     }
 
     @And("en la ventana Hoja de Trabajo doy click en el botón grabar")
@@ -135,31 +140,19 @@ public class HojaTrabajoDefinitions {
 
     @And("en la ventana grabar documento hoja de trabajo doy click en el botón cerrar")
     public void enLaVentanaGrabarDocumentoHojaDeTrabajoDoyClickEnElBotónCerrar() throws IOException {
-        grabarDocumentoHojaTrabajoPage.AbrirVentanaServicio();
+        grabarDocumentoHojaTrabajoPage.AbrirVentanaGrabarDocumento();
         try {
             grabarDocumentoHojaTrabajoPage.GrabarDocumentoHojaTrabajo();
         } catch (Exception Error) {
-
+                System.out.println(Error.getMessage());
         }
-        grabarDocumentoHojaTrabajoPage.CerrarVentanaServicio();
+        grabarDocumentoHojaTrabajoPage.CerrarVentanaGrabarDocumento();
     }
-   /* @And("en la ventana Hoja de Trabajo doy click en el botón regresar")
-    public void enLaVentanaHojaDeTrabajoDoyClickEnElBotónRegresar() {
-
-        registrarHojaTrabajo.RegresarCrearHoja();
-    }*/
 
     @And("en la ventana hojas de trabajo doy click en el boton regresar")
     public void enLaVentanaHojasDeTrabajoDoyClickEnElBotonRegresar() {
 
         crearHojaTrabajo.RegresarListado();
     }
-
-   /* @And("en la ventana listado de hojas de trabajo doy click en el boton regresar")
-    public void enLaVentanaListadoDeHojasDeTrabajoDoyClickEnElBotonRegresar() {
-        listadoHojaTrabajo.RegesarMenuPrincipal();
-    }*/
-
-
 
 }

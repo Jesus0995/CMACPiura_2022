@@ -29,8 +29,18 @@ public class OperacionCreditoPage {
     @FindBy(xpath = "//select[@name='planPagos']") private WebElement cbx_planPagos; //Fija Vencida
     @FindBy(xpath = "//select[@name='modalidad']") private WebElement cbx_modalidad; //Libre Amortizacion
     @FindBy(xpath = "//input[@name='diasPlazo']") private WebElement txt_diasPlazo;
+
+    @FindBy(xpath = "//select[@name='opcion']") private WebElement cbx_opcionPagos;
+    @FindBy(xpath = "//select[@name='pago']") private WebElement cbx_diaPagos;
+    @FindBy(xpath = "//input[@name='numeroCuotas']") private WebElement txt_numeroCuotas;
+
+
+
     @FindBy(xpath = "//input[@name='tasaPropuesta']") private WebElement txt_TasaPreferencial;
     @FindBy(xpath = "//select[@name='flgCuenta']") private WebElement cbx_desembolso; //GIRO BANCO DE LA NACION
+
+    @FindBy(xpath = "//select[@name='codigocuenta']") private WebElement cbx_codigoCuenta;
+
     @FindBy(xpath = "//select[@name='idDepartamento']") private WebElement cbx_Departamento;
     @FindBy(xpath = "//select[@name='idProvincia']") private WebElement cbx_Provincia;
     @FindBy(xpath = "//select[@name='idDistrito']") private WebElement cbx_Distrito;
@@ -140,6 +150,28 @@ public class OperacionCreditoPage {
         txt_diasPlazo.sendKeys(Dias);
     }
 
+    public void SeleccionarOpcionPagos(String OpcionPagos) {
+        cbx_opcionPagos.sendKeys(OpcionPagos);
+        WebElement Opcion = driver.findElement(By.xpath("//*[text() = '" + OpcionPagos + "']"));
+        String JScript = Opcion.getAttribute("onclick");
+        ((JavascriptExecutor) driver).executeScript(JScript);
+        Esperar(3);
+    }
+
+    public void SeleccionarDiaPagos(String DiaPagos) {
+        cbx_diaPagos.sendKeys(DiaPagos);
+        WebElement Opcion = driver.findElement(By.xpath("//select[@name='pago']//option[@value = '"+DiaPagos+"']"));
+        String JScript = Opcion.getAttribute("onclick");
+        ((JavascriptExecutor) driver).executeScript(JScript);
+        Esperar(3);
+    }
+
+    public void IngresarNumeroCuotas(String NumeroCuotas) {
+        txt_numeroCuotas.clear();
+        txt_numeroCuotas.sendKeys(NumeroCuotas);
+    }
+
+
     public void IngresarTasaPreferencial(String TasaPreferencial){
         txt_TasaPreferencial.clear();
         txt_TasaPreferencial.sendKeys(TasaPreferencial);
@@ -153,7 +185,13 @@ public class OperacionCreditoPage {
         Esperar (1);
     }
 
-
+    public void SeleccionarCodigoCuenta(String CodigoCuenta){
+        cbx_codigoCuenta.sendKeys(CodigoCuenta);
+        WebElement desembolso = driver.findElement(By.xpath("//select[@name='codigocuenta']//option[@value = '"+CodigoCuenta+ "']"));
+        String JScript = desembolso.getAttribute("onclick");
+        ((JavascriptExecutor) driver).executeScript(JScript);
+        Esperar (3);
+    }
 
     public void SeleccionarDepartamento (String Departamento) {
         wait.until(ExpectedConditions.elementToBeClickable(cbx_Departamento));
