@@ -21,9 +21,9 @@ Feature: Crear una propuesta de Credito Empresarial de tipo NORMAL en el Sistema
       | TipoServicio        | ServicioCredito | TipoPropuesta | SubTipoPropuesta | Promocion     |
       | CREDITO EMPRESARIAL | CREDITOS PYMES  | NORMAL        | NORMAL           | SIN PROMOCION |
     And validar el mensaje del popup Comunicado
-    And en la ventana propuesta ingresar clasificacion crediticia "prueba"
-    And en la ventana propuesta ingresar objetivo del credito "prueba"
-    And en la ventana propuesta ingresar justificacion del credito "prueba"
+    And en la ventana propuesta ingresar comentarios en clasificacion, objetivo y justificacion
+      | clasificacion | objetivo | justificacion |
+      | prueba        | prueba   | prueba        |
     And en la ventana propuesta doy click en el boton nueva operacion
     And validar la ventana seleccionar operacion de credito luego doy click en boton aceptar
     And posicionarse en la ventana Operacion Credito e ingresar la Operacion y doy click en Calcular
@@ -37,14 +37,14 @@ Feature: Crear una propuesta de Credito Empresarial de tipo NORMAL en el Sistema
     And en la ventana Operacion Credito seleccionar plaza de desembolso
       | Departamento | Provincia | Distrito |
       | LIMA         | LIMA      | LIMA     |
-    And en la ventana Operacion Credito ingresar fecha probable del desembolso "25/08/2021"
+    And en la ventana Operacion Credito ingresar fecha probable del desembolso "26/08/2021"
     And en la ventana Operacion Credito Ingresar notas "Prueba"
     And en la ventana Operacion Credito doy click en grabar
     And en la ventana Operacion Credito aceptar la alerta
     Then el sistema direcciona a ventana Propuesta y doy click icono cambio de tasa
     And en la ventana Cambio Tasa de credito registro el comentario de solicitud "se aprueba el cambio de tasa de credito"
     And en la ventana Cambio Tasa de Credito doy click en boton Grabar
-    Then el sistema direcciona a la propuesta y doy click al boton Registro de seguros
+    Then el sistema direcciona a la ventana propuesta y doy click al boton Registro de seguros
     And en la ventana Seleccion de seguros doy click en boton Confirmar
     And el sistema direcciona a la ventana Registro Seguros y check en seguro desgravamen flat MN
     And en la ventana Registro Seguros ingresar el numero DPS "12345"
@@ -52,7 +52,7 @@ Feature: Crear una propuesta de Credito Empresarial de tipo NORMAL en el Sistema
     And en la ventana Registro Seguros ingresar el numero DPS "6789" del seguro Plan Pymes
     And en la ventana Registro Seguros doy click en Confirmar
     And en la ventana seguros seleccionados visualizar información y doy click en cerrar
-    Then el sistema direcciona a la propuesta y doy click en Anexar CheckList creditos
+    Then el sistema direcciona a la ventana propuesta y doy click en Anexar CheckList creditos
     And en la ventana CheckList Seccion Informacion Basica Cliente seleccionar las opciones del uno al siete
     And en la ventana CheckList Seccion Información del Negocio seleccionar las opciones ocho al once
     And en la ventana CheckList Seccion Operaciones Propuestas seleccionar la opcion doce
@@ -66,6 +66,24 @@ Feature: Crear una propuesta de Credito Empresarial de tipo NORMAL en el Sistema
     And en la ventana CheckList Seccion Desembolso de credito con Inscripcion seleccionar las opciones treintaidos y treintaitres
     And en la ventana CheckList doy clic en Guardar y Terminar finalmente acepto la alerta
     And el sistema direcciona a la ventana Confirmar Checklist de Credito y doy click en cerrar
+    Then el sistema direcciona a la ventana propuesta y se procede a ingresar los siguientes comentarios
+      | CaracteristicaNegocio | ClasificacionRiesgoNegocio | ClasificacionRiesgoAval | AnalisisUnidadFinanciera |
+      | prueba                | prueba                     | prueba                  | prueba                   |
+    And en la ventana propuesta doy click en Anexar Garantias Existentes
+    And en la ventana Seleccionar Garantias doy click en Registrar Garantias
+    And en la ventana Garantias Existentes seleccionar garantia correspondiente y doy click en Aceptar
+    Then el sistema direcciona a la ventana propuesta y doy click en Enlazar Estados Financieros
+    And en la ventana Enlazar Estados Financieros doy click en Enlazar
+    And el sistema direcciona a la ventana Propuesta e ingreso Comentarios de los Principales Ratios "prueba"
+    And en la ventana Propuesta doy click en desenlazar informe de visita
+    And en la ventana Desenlazar informe visita doy click en Realizar
+    And el sistema direcciona a la ventana Propuesta y doy click en Enlazar Informe Visita
+
+
+
+
+
+
 
 
 

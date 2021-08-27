@@ -37,8 +37,15 @@ public class PropuestaPage {
 
 
     @FindBy(xpath = "//button[@name=\"btnGaranExist\"]") private WebElement btn_AnexarGarantias;
-    @FindBy(xpath = "/html/body/form/table[1]/tbody/tr[3]/td/div/button") private  WebElement btn_EnlazarEstadosFinancieros;
+
+    @FindBy(xpath = "//button[@onclick=\"window.open('actualizaEEFFP.jsp?accion=enlazar&nroProp=4689918', 'Enlazar EEFF CA5D1F9E41E0DF0FEA951AC66CF54E2E', 'toolbar=no,scrollbars=yes,location=,statusbar=no,menubar=no,resizable=yes,width=400,height=250,dependent=yes');\"]") private  WebElement btn_EnlazarEstadosFinancieros;
+
+    @FindBy(xpath = "//textarea[@id='txtPrincipalRatio']")private  WebElement txt_comentariosRatios;
+
+    @FindBy(xpath = "/html/body/form/table[2]/tbody/tr[1]/td[3]/button") private WebElement btn_DesenlazarInformeVisita;
+
     @FindBy(xpath = "/html/body/form/table[2]/tbody/tr[1]/td[3]/button") private WebElement btn_EnlazarInformeVisita;
+
     @FindBy(xpath = "/html/body/form/table[2]/tbody/tr[3]/td[3]/button") private WebElement btn_EnlazarInformeComercial;
 
     @FindBy(xpath = "/html/body/form/table[1]/tbody/tr[2]/td/table[1]/tbody/tr[2]/td[1]/table/tbody/tr/td[5]/a")private WebElement btn_Grabar;
@@ -132,10 +139,26 @@ public class PropuestaPage {
         btn_EnlazarEstadosFinancieros.click();
     }
 
-    public void ClickEnlazarInformeVisita() {
+
+    public void IngresarComentariosRatios(String ComentariosRatios){
+        txt_comentariosRatios.clear();
+        txt_comentariosRatios.sendKeys(ComentariosRatios);
+    }
+
+
+
+    public void ClickDesenlazarInformeVisita() {
+        wait.until(ExpectedConditions.elementToBeClickable(btn_DesenlazarInformeVisita));
+        btn_DesenlazarInformeVisita.click();
+    }
+
+    public void ClickEnlazarInformeVisita(){
         wait.until(ExpectedConditions.elementToBeClickable(btn_EnlazarInformeVisita));
         btn_EnlazarInformeVisita.click();
+
     }
+
+
 
     public void ClickInformeComercial () {
         wait.until(ExpectedConditions.elementToBeClickable(btn_EnlazarInformeComercial));

@@ -34,6 +34,7 @@ public class ConfirmacionChecklistPage {
     public void CerrarVentanaConfirmacionCheckList(){
         Integer SetSize = idenficadoresCheckList.size();
         Integer Index=0;
+
         String[]Handles = new String[SetSize];
 
         for (String identificadorCheckList : idenficadoresCheckList){

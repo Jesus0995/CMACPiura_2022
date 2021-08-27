@@ -61,11 +61,23 @@ public class SeleccionarGarantiasExistentesPage {
         chk_garantiaExistentes.click();
     }
 
-    public void ClickAceptar (){
+    public void ClickbtnAceptar (){
         wait.until(ExpectedConditions.elementToBeClickable(btn_Aceptar));
         btn_Aceptar.click();
+        Esperar(1);
     }
 
+    private void Esperar(Integer Segundos){
+        Integer Milisegundos = Segundos * 1000;
+
+        try {
+            Thread.sleep(Milisegundos);
+        }catch (InterruptedException e){
+            e.printStackTrace();
+        }
+
+
+    }
 
 
 }

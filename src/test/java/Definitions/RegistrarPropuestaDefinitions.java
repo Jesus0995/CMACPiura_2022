@@ -6,6 +6,7 @@ import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import io.cucumber.java.hu.De;
 import io.cucumber.java.it.Ma;
 import io.cucumber.messages.Messages;
 
@@ -37,7 +38,8 @@ public class RegistrarPropuestaDefinitions {
     ConfirmacionChecklistPage confirmarCheckList;
     SeleccionarGarantiaPage seleccionarGarantia;
     SeleccionarGarantiasExistentesPage seleccionarGarantiasExistentes;
-
+    EnlazarEstadosFinancierosPage enlazarEEFF;
+    DesenlazarInformeVisitaPage desenlazarinformevisita;
 
     //Constructor
     public RegistrarPropuestaDefinitions() {
@@ -59,6 +61,9 @@ public class RegistrarPropuestaDefinitions {
         confirmarCheckList = new ConfirmacionChecklistPage(Hooks.driver);
         seleccionarGarantia = new SeleccionarGarantiaPage(Hooks.driver);
         seleccionarGarantiasExistentes = new SeleccionarGarantiasExistentesPage(Hooks.driver);
+        enlazarEEFF = new EnlazarEstadosFinancierosPage(Hooks.driver);
+        desenlazarinformevisita = new DesenlazarInformeVisitaPage(Hooks.driver);
+
     }
 
 
@@ -179,21 +184,15 @@ public class RegistrarPropuestaDefinitions {
 
     }
 
-    @And("en la ventana propuesta ingresar clasificacion crediticia {string}")
-    public void enLaVentanaPropuestaIngresarClasificacionCrediticia(String clasificacion) {
-        propuesta.IngresarClasificacionCrediticia(clasificacion);
 
-    }
-
-    @And("en la ventana propuesta ingresar objetivo del credito {string}")
-    public void enLaVentanaPropuestaIngresarObjetivoDelCredito(String objetivo) {
-        propuesta.IngresarObjetivoCredito(objetivo);
-
-    }
-
-    @And("en la ventana propuesta ingresar justificacion del credito {string}")
-    public void enLaVentanaPropuestaIngresarJustificacionDelCredito(String justificacion) {
-        propuesta.IngresarJustificacionCredito(justificacion);
+    @And("en la ventana propuesta ingresar comentarios en clasificacion, objetivo y justificacion")
+    public void enLaVentanaPropuestaIngresarComentariosEnClasificacionObjetivoYJustificacion(DataTable comentarios) {
+        List<Map<String, String>> lista = comentarios.asMaps(String.class,String.class);
+        for (Integer i = 0;i < lista.size(); i++){
+            propuesta.IngresarClasificacionCrediticia(lista.get(i).get("clasificacion"));
+            propuesta.IngresarObjetivoCredito(lista.get(i).get("objetivo"));
+            propuesta.IngresarJustificacionCredito(lista.get(i).get("justificacion"));
+        }
     }
 
     @And("en la ventana propuesta doy click en el boton nueva operacion")
@@ -520,8 +519,45 @@ public class RegistrarPropuestaDefinitions {
     public void enLaVentanaGarantiasExistentesSeleccionarGarantiaCorrespondienteYDoyClickEnAceptar() {
         seleccionarGarantiasExistentes.AbrirVentanaGarantiasExistentes();
         seleccionarGarantiasExistentes.SeleccionarCheckGarantiasExistentes();
-        seleccionarGarantiasExistentes.ClickAceptar();
+        seleccionarGarantiasExistentes.ClickbtnAceptar();
+        seleccionarGarantiasExistentes.CerrarVentanaGarantiasExistentes();
 
+    }
+
+
+    @Then("el sistema direcciona a la ventana propuesta y doy click en Enlazar Estados Financieros")
+    public void elSistemaDireccionaALaVentanaPropuestaYDoyClickEnEnlazarEstadosFinancieros() {
+        propuesta.ClickEnlazarEstadosFinancieros();
+    }
+
+    @And("en la ventana Enlazar Estados Financieros doy click en Enlazar")
+    public void enLaVentanaEnlazarEstadosFinancierosDoyClickEnEnlazar() {
+        enlazarEEFF.AbrirVentanaEnlazarEstadosFinancieros();
+        enlazarEEFF.ClickEnlazar();
+        enlazarEEFF.CerrarVentanaEnlazarEstadosFinancieros();
+    }
+
+    @And("el sistema direcciona a la ventana Propuesta e ingreso Comentarios de los Principales Ratios {string}")
+    public void elSistemaDireccionaALaVentanaPropuestaEIngresoComentariosDeLosPrincipalesRatios(String ComentariosRatios) {
+        propuesta.IngresarComentariosRatios(ComentariosRatios);
+    }
+
+    @And("en la ventana Propuesta doy click en desenlazar informe de visita")
+    public void enLaVentanaPropuestaDoyClickEnDesenlazarInformeDeVisita() {
+        propuesta.ClickDesenlazarInformeVisita();
+
+    }
+
+    @And("en la ventana Desenlazar informe visita doy click en Realizar")
+    public void enLaVentanaDesenlazarInformeVisitaDoyClickEnRealizar() {
+        desenlazarinformevisita.AbrirVentanaDesenlazarInformeVisita();
+        desenlazarinformevisita.clickbtnRealizar();
+        desenlazarinformevisita.CerrarVentanaDesenlazarInformeVisita();
+    }
+
+    @And("el sistema direcciona a la ventana Propuesta y doy click en Enlazar Informe Visita")
+    public void elSistemaDireccionaALaVentanaPropuestaYDoyClickEnEnlazarInformeVisita() {
+        propuesta.ClickEnlazarInformeVisita();
     }
 }
 
