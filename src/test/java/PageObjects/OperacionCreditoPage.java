@@ -124,7 +124,7 @@ public class OperacionCreditoPage {
         ((JavascriptExecutor) driver).executeScript(JScript);
 
         // Esperamos unos segundos para que aparezca el proximo combobox.
-        Esperar(1);
+        Esperar(2);
     }
 
     public void SeleccionarModalidad (String Modalidad) {
@@ -141,7 +141,7 @@ public class OperacionCreditoPage {
         ((JavascriptExecutor) driver).executeScript(JScript);
 
         // Esperamos unos segundos para que aparezca el proximo combobox.
-        Esperar(1);
+        Esperar(2);
 
     }
 
@@ -182,7 +182,7 @@ public class OperacionCreditoPage {
         WebElement desembolso = driver.findElement(By.xpath("//*[text()='" + FormaDesembolso + "']"));
         String JScript = desembolso.getAttribute("onclick");
         ((JavascriptExecutor) driver).executeScript(JScript);
-        Esperar (1);
+        Esperar (3);
     }
 
     public void SeleccionarCodigoCuenta(String CodigoCuenta){

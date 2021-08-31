@@ -37,7 +37,7 @@ Feature: Crear una propuesta de Credito Empresarial de tipo NORMAL en el Sistema
     And en la ventana Operacion Credito seleccionar plaza de desembolso
       | Departamento | Provincia | Distrito |
       | LIMA         | LIMA      | LIMA     |
-    And en la ventana Operacion Credito ingresar fecha probable del desembolso "27/08/2021"
+    And en la ventana Operacion Credito ingresar fecha probable del desembolso "31/08/2021"
     And en la ventana Operacion Credito Ingresar notas "Prueba"
     And en la ventana Operacion Credito doy click en grabar
     And en la ventana Operacion Credito aceptar la alerta
@@ -72,12 +72,12 @@ Feature: Crear una propuesta de Credito Empresarial de tipo NORMAL en el Sistema
     And en la ventana propuesta doy click en Anexar Garantias Existentes
     And en la ventana Seleccionar Garantias doy click en Registrar Garantias
     And en la ventana Garantias Existentes seleccionar garantia correspondiente y doy click en Aceptar
-    Then el sistema direcciona a la ventana propuesta y doy click en Enlazar Estados Financieros
-    And en la ventana Enlazar Estados Financieros doy click en Enlazar
-    And el sistema direcciona a la ventana Propuesta e ingreso Comentarios de los Principales Ratios "prueba"
-    And en la ventana Propuesta doy click en desenlazar informe de visita
-    And en la ventana Desenlazar informe visita doy click en Realizar
-    And el sistema direcciona a la ventana Propuesta y doy click en Enlazar Informe Visita
+    Then el sistema direcciona a la ventana propuesta y doy click en grabar
+    And el sistema direcciona a la ventana Grabar informacion y doy clic en Cerrar
+
+
+
+
 
 
 

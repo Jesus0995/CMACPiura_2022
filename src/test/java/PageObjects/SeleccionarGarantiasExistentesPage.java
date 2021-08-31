@@ -64,7 +64,7 @@ public class SeleccionarGarantiasExistentesPage {
     public void ClickbtnAceptar (){
         wait.until(ExpectedConditions.elementToBeClickable(btn_Aceptar));
         btn_Aceptar.click();
-        Esperar(1);
+        //Esperar(1);
     }
 
     private void Esperar(Integer Segundos){

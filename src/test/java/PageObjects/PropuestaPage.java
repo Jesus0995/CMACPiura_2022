@@ -38,7 +38,7 @@ public class PropuestaPage {
 
     @FindBy(xpath = "//button[@name=\"btnGaranExist\"]") private WebElement btn_AnexarGarantias;
 
-    @FindBy(xpath = "//button[@onclick=\"window.open('actualizaEEFFP.jsp?accion=enlazar&nroProp=4689918', 'Enlazar EEFF CA5D1F9E41E0DF0FEA951AC66CF54E2E', 'toolbar=no,scrollbars=yes,location=,statusbar=no,menubar=no,resizable=yes,width=400,height=250,dependent=yes');\"]") private  WebElement btn_EnlazarEstadosFinancieros;
+    @FindBy(css = "#frmPropuesta > table:nth-child(1) > tbody:nth-child(1) > tr:nth-child(3) > td:nth-child(1) > div:nth-child(7) > button:nth-child(65)") private  WebElement btn_EnlazarEEFF;
 
     @FindBy(xpath = "//textarea[@id='txtPrincipalRatio']")private  WebElement txt_comentariosRatios;
 
@@ -50,6 +50,9 @@ public class PropuestaPage {
 
     @FindBy(xpath = "/html/body/form/table[1]/tbody/tr[2]/td/table[1]/tbody/tr[2]/td[1]/table/tbody/tr/td[5]/a")private WebElement btn_Grabar;
     //@FindBy(xpath = "/html/body/form/table[1]/tbody/tr[2]/td/table[2]/tbody/tr[1]/td/a") private WebElement btn_Aprobar;
+
+    @FindBy(xpath = "//img[@alt='Aprobar']") private WebElement btn_Aprobar;
+
 
     //metodo para abrir ventana
     /*
@@ -134,9 +137,13 @@ public class PropuestaPage {
         btn_AnexarGarantias.click();
     }
 
-    public void ClickEnlazarEstadosFinancieros () {
-        wait.until(ExpectedConditions.elementToBeClickable(btn_EnlazarEstadosFinancieros));
-        btn_EnlazarEstadosFinancieros.click();
+    public void ClickEnlazarEEFF () {
+        //wait.until(ExpectedConditions.elementToBeClickable(btn_EnlazarEEFF));
+        //btn_EnlazarEEFF.click();
+        WebElement btn_EEFF = driver.findElement(By.xpath("//*[text() = 'Enlazar']"));
+        String JScript = btn_EEFF.getAttribute("click");
+        ((JavascriptExecutor)driver).executeScript(JScript);
+
     }
 
 
@@ -168,6 +175,13 @@ public class PropuestaPage {
     public void ClickGrabar() {
         wait.until(ExpectedConditions.elementToBeClickable(btn_Grabar));
         btn_Grabar.click();
+    }
+
+
+    public void ClickbtnAprobar(){
+        wait.until(ExpectedConditions.elementToBeClickable(btn_Aprobar));
+        btn_Aprobar.click();
+
     }
 
 
