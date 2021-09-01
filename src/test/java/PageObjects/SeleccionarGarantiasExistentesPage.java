@@ -15,7 +15,6 @@ public class SeleccionarGarantiasExistentesPage {
     private WebDriverWait wait;
     private Set<String> identificadoresGarantiasExistentes;
 
-
     //mapeo objetos
 
     @FindBy(xpath = "//input[@name='garantia']") private WebElement chk_garantiaExistentes;

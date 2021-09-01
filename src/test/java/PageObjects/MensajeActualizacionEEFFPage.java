@@ -4,6 +4,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class MensajeActualizacionEEFFPage {
@@ -18,10 +19,11 @@ public class MensajeActualizacionEEFFPage {
         wait = new WebDriverWait(driver,30);
         PageFactory.initElements(driver,this);
 
-
     }
 
-    public void ClickCerrar ()
-    {btn_cerrar.click();}
+    public void ClickCerrar () {
+        wait.until(ExpectedConditions.elementToBeClickable(btn_cerrar));
+        btn_cerrar.click();
+    }
 
 }

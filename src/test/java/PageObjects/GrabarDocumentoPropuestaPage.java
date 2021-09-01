@@ -9,12 +9,10 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.util.Set;
 
-public class GrabarPropuestaPage {
+public class GrabarDocumentoPropuestaPage {
     private WebDriver driver;
     private WebDriverWait wait;
     private Set<String> identificadoresGrabarPropuesta;
-
-
 
     @FindBy(xpath = "//button[@type=\"button\"]") private WebElement btn_btnCerrar;
 
@@ -45,7 +43,7 @@ public class GrabarPropuestaPage {
     }
 
 
-    public GrabarPropuestaPage(WebDriver d) {
+    public GrabarDocumentoPropuestaPage(WebDriver d) {
         driver = d;
         wait = new WebDriverWait(driver,30);
         PageFactory.initElements(driver,this);

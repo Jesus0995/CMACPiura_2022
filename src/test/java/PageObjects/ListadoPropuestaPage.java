@@ -21,14 +21,6 @@ public class ListadoPropuestaPage {
     @FindBy(xpath = "//button[@type=\"submit\"]") private WebElement btn_buscar;
     @FindBy(xpath = "/html/body/table/tbody/tr[2]/td/table[1]/tbody/tr/td[2]/div/button[1]") private WebElement btn_crearPropuesta;
 
-    //crear meotodo para abrir ventana
-    //public void AbrirVentana(){
-    //    Set<String> identificadores =driver.getWindowHandles();
-    //    for (String identificador : identificadores){
-    //        driver.switchTo().window(identificador);
-    //    }
-    //    }
-
     public ListadoPropuestaPage(WebDriver d) {
         //Iniciar las variables
         driver=d;

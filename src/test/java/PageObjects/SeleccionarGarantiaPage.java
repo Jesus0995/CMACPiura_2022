@@ -19,7 +19,6 @@ public class SeleccionarGarantiaPage {
 
     @FindBy(xpath = "//button[@type=\"submit\"]") private WebElement btn_RegistrarGarantia;
 
-
     public SeleccionarGarantiaPage(WebDriver d) {
         driver = d;
         wait = new WebDriverWait(driver,30);

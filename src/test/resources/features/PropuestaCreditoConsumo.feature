@@ -40,7 +40,7 @@ Feature: Crear una propuesta de Creditos de Consumo de tipo Normal en el sistema
     And en la ventana operacion credito ingresar la tasa preferencial "30"
     And en la ventana operacion credito seleccionar la forma desembolso "ABONO EN CUENTA"
     And en la ventana operacion credito seleccionar el codigo de cuenta "210-01-6139179"
-    And en la ventana operacion credito seleccionar la fecha desembolso "27/08/2021"
+    And en la ventana operacion credito seleccionar la fecha desembolso "01/09/2021"
     And en la ventana operacion credito ingresar una nota "prueba de nueva propuesta"
     And en la ventana operacion credito doy click en el boton grabar
     And en la ventana operacion credito aceptar la alerta

@@ -193,8 +193,8 @@ public class CreditoConsumoDefinitions {
     }
 
     @And("en la ventana operacion credito ingresar el monto, la tasa inicial luego click en el boton calcular")
-    public void enLaVentaOperacionCreditoIngresarElMontoLaTasaInicialLuegoClickEnElBotonCalcular(DataTable OperacionCredito) {
-        try {
+    public void enLaVentaOperacionCreditoIngresarElMontoLaTasaInicialLuegoClickEnElBotonCalcular(DataTable OperacionCredito) throws InterruptedException {
+
             operacioncredito.AbrirVentanaOperacionCredito();
 
             List<Map<String, String>> lista = OperacionCredito.asMaps(String.class, String.class);
@@ -202,11 +202,10 @@ public class CreditoConsumoDefinitions {
                 operacioncredito.IngresarMonto(lista.get(i).get("Monto"));
                 operacioncredito.IngresarTasaInicial(lista.get(i).get("TasaInicial"));
             }
+
             operacioncredito.ClickCalcular();
-        }
-        catch (Exception Error){
-            System.out.println(Error.getMessage());
-        }
+
+
     }
 
     @And("en la ventana operacion credito seleccionar el plan de pagos {string}")

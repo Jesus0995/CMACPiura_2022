@@ -14,7 +14,6 @@ public class PropuestaPage {
     private WebDriver driver;
     private WebDriverWait wait;
 
-
     //mapeo de locator
     //span[@class='ui-icon ui-icon-closethick
 
@@ -34,8 +33,6 @@ public class PropuestaPage {
     @FindBy(xpath = "//textarea[@id='txtclasificaAval']")private  WebElement txt_clasificacionRiesgoAval;
     @FindBy(xpath = "//textarea[@id='txtanalisisUEF']") private WebElement txt_analisisUnidadFinanciera;
 
-
-
     @FindBy(xpath = "//button[@name=\"btnGaranExist\"]") private WebElement btn_AnexarGarantias;
 
     @FindBy(css = "#frmPropuesta > table:nth-child(1) > tbody:nth-child(1) > tr:nth-child(3) > td:nth-child(1) > div:nth-child(7) > button:nth-child(65)") private  WebElement btn_EnlazarEEFF;
@@ -52,18 +49,6 @@ public class PropuestaPage {
     //@FindBy(xpath = "/html/body/form/table[1]/tbody/tr[2]/td/table[2]/tbody/tr[1]/td/a") private WebElement btn_Aprobar;
 
     @FindBy(xpath = "//img[@alt='Aprobar']") private WebElement btn_Aprobar;
-
-
-    //metodo para abrir ventana
-    /*
-    public void AbrirVentanaPropuesta(){
-        Set<String> IdentificadorPropuesta = driver.getWindowHandles();
-       for (String identificador3 : IdentificadorPropuesta ){
-           driver.switchTo().window(identificador3);
-       }
-    }
-    */
-
 
     public PropuestaPage(WebDriver d) {
         driver = d;
@@ -164,8 +149,6 @@ public class PropuestaPage {
         btn_EnlazarInformeVisita.click();
 
     }
-
-
 
     public void ClickInformeComercial () {
         wait.until(ExpectedConditions.elementToBeClickable(btn_EnlazarInformeComercial));

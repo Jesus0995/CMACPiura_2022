@@ -14,21 +14,10 @@ import java.awt.*;
 import java.awt.event.KeyEvent;
 import java.util.Set;
 
-
 public class PopUpComunicadoPage {
 
     private WebDriver driver;
     private WebDriverWait wait;
-
-    //public void UbicarVentanaComunicado(){
-    //    Set<String> identificadorComunicado = driver.getWindowHandles();
-    //    for (String identificador2 : identificadorComunicado){
-    //        driver.switchTo().window(identificador2);
-
-    //    }
-
-   // }
-
 
     public PopUpComunicadoPage(WebDriver d) {
         driver = d;
@@ -39,13 +28,10 @@ public class PopUpComunicadoPage {
 
         public void ValidarComunicado() {
             //wait.until(ExpectedConditions.elementToBeClickable(vtn_comunicado));
-
             // @FindBy(xpath = "//span[test() = 'close' or.= 'close')]") private WebElement vtn_comunicado;
 
             System.out.println("Handle: " + driver.getWindowHandle());
             System.out.println("Titulo: " + driver.getTitle());
-
-
 
             WebElement linkComunicadoClose = driver.findElement(By.xpath("/html/body/div[1]/div[1]/a/span"));
             System.out.println(linkComunicadoClose);
@@ -62,9 +48,6 @@ public class PopUpComunicadoPage {
 
             // Robot r = new Robot();
             // r.keyPress(KeyEvent.VK_ESCAPE);
-
-
-
 
         }
 

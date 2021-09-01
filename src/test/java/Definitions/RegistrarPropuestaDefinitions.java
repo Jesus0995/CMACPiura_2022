@@ -6,15 +6,8 @@ import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import io.cucumber.java.hu.De;
-import io.cucumber.java.it.Ma;
-import io.cucumber.messages.Messages;
 
-import static Support.screenshot.pantallazo;
-
-import java.awt.*;
 import java.io.IOException;
-import java.util.Date;
 import java.util.List;
 import java.util.Map;
 
@@ -40,7 +33,7 @@ public class RegistrarPropuestaDefinitions {
     SeleccionarGarantiasExistentesPage seleccionarGarantiasExistentes;
     EnlazarEstadosFinancierosPage enlazarEEFF;
     DesenlazarInformeVisitaPage desenlazarinformevisita;
-    GrabarPropuestaPage grabarPropuesta;
+    GrabarDocumentoPropuestaPage grabarPropuesta;
 
     //Constructor
     public RegistrarPropuestaDefinitions() {
@@ -64,10 +57,9 @@ public class RegistrarPropuestaDefinitions {
         seleccionarGarantiasExistentes = new SeleccionarGarantiasExistentesPage(Hooks.driver);
         enlazarEEFF = new EnlazarEstadosFinancierosPage(Hooks.driver);
         desenlazarinformevisita = new DesenlazarInformeVisitaPage(Hooks.driver);
-        grabarPropuesta = new GrabarPropuestaPage(Hooks.driver);
+        grabarPropuesta = new GrabarDocumentoPropuestaPage(Hooks.driver);
 
     }
-
 
     @Given("la web SGCRED esta disponible")
     public void la_web_sgcred_esta_disponible() {
@@ -95,16 +87,7 @@ public class RegistrarPropuestaDefinitions {
     @And("Mostrar home de SGCRED")
     public void mostrarHomeDeSGCRED() {
 
-
     }
-
-    // @And("Cerrar las ventanas emergentes")
-    // public void cerrarLasVentanasEmergentes() {
-    //     menuPrincipal.CerrarPopUpImagen();
-    //     menuPrincipal.CerrarPopUpAviso();
-
-    //}
-
 
     @And("doy click en link propuesta financiamiento")
     public void doyClickEnLinkPropuestaFinanciamiento() {
@@ -119,7 +102,6 @@ public class RegistrarPropuestaDefinitions {
         listadoPropuesta.clickCrearPropuesta();
         //pantallazo();
     }
-
 
     @And("mostrar la ventana cliente para realizar la busqueda en el tab codigo")
     public void mostrarLaVentanaClienteParaRealizarLaBusquedaEnElTabCodigo() {
@@ -164,11 +146,9 @@ public class RegistrarPropuestaDefinitions {
         try {
             Servicio.ClickCargar();
         } catch (Exception Error) {
-
         }
 
         Servicio.CerrarVentanaServicio();
-
     }
 
     @And("en la ventana servicio doy click en el boton cargar")
@@ -183,9 +163,7 @@ public class RegistrarPropuestaDefinitions {
        // PopUpComunicado.UbicarVentanaComunicado();
         PopUpComunicado.ValidarComunicado();
 
-
     }
-
 
     @And("en la ventana propuesta ingresar comentarios en clasificacion, objetivo y justificacion")
     public void enLaVentanaPropuestaIngresarComentariosEnClasificacionObjetivoYJustificacion(DataTable comentarios) {
@@ -217,7 +195,6 @@ public class RegistrarPropuestaDefinitions {
 
     }
 
-
     @And("posicionarse en la ventana Operacion Credito e ingresar la Operacion y doy click en Calcular")
 
     public void posicionarseEnLaVentanaOperacionCreditoEIngresarlaOperacionYDoyClickEnCalcular(DataTable OperacionCredito) throws InterruptedException {
@@ -235,7 +212,6 @@ public class RegistrarPropuestaDefinitions {
         operacioncredito.ClickCalcular();
 
     }
-
 
     @And("en la ventana Operacion Credito seleccionar plan de pagos {string}")
     public void enLaVentanaOperacionCreditoSeleccionarPlanDePagos(String PlanPagos) {
@@ -264,7 +240,6 @@ public class RegistrarPropuestaDefinitions {
     public void enLaVentanaOperacionCreditoSeleccionarFormaDeDesembolso(String FormaDesembolso) {
         operacioncredito.SeleccionarFormaDesembolso(FormaDesembolso);
 
-        
     }
 
     @And("en la ventana Operacion Credito seleccionar plaza de desembolso")
@@ -276,9 +251,7 @@ public class RegistrarPropuestaDefinitions {
             operacioncredito.SeleccionarProvincia(lista.get(i).get("Provincia"));
             operacioncredito.SeleccionarDistrito(lista.get(i).get("Distrito"));
 
-
         }
-
 
     }
 
@@ -292,14 +265,11 @@ public class RegistrarPropuestaDefinitions {
     public void enLaVentanaOperacionCreditoIngresarNotas(String Notas) {
         operacioncredito.IngresarNotas(Notas);
 
-
     }
 
     @And("en la ventana Operacion Credito doy click en grabar")
     public void enLaVentanaOperacionCreditoDoyClickEnGrabar() {
         operacioncredito.ClickGrabar();
-
-
 
     }
 
@@ -329,7 +299,6 @@ public class RegistrarPropuestaDefinitions {
         cambioTasaCredito.CerrarVentanaCambioTasaCredito();
 
     }
-
 
     @Then("el sistema direcciona a la ventana propuesta y doy click al boton Registro de seguros")
     public void elSistemaDireccionaALaVentanaPropuestaYDoyClickAlBotonRegistroDeSeguros() {
@@ -367,14 +336,12 @@ public class RegistrarPropuestaDefinitions {
         registrarSeguros.IngresarSeguroRiesgoPlanPymes(seguroRiesgoPlanPymes);
     }
 
-
     @And("en la ventana Registro Seguros doy click en Confirmar")
     public void enLaVentanaRegistroSegurosDoyClickEnConfirmar() {
         registrarSeguros.ClickConfirmar();
         registrarSeguros.CerrarVentanaRegistrarSeguros();
         
     }
-
 
     @And("en la ventana seguros seleccionados visualizar información y doy click en cerrar")
     public void enLaVentanaSegurosSeleccionadosVisualizarInformaciónYDoyClickEnCerrar() {
@@ -472,7 +439,6 @@ public class RegistrarPropuestaDefinitions {
         anexarCheckListCreditos.Seleccionar_33CopiaLiteralPartida();
     }
 
-
     @And("en la ventana CheckList doy clic en Guardar y Terminar finalmente acepto la alerta")
     public void enLaVentanaCheckListDoyClicEnGuardarYTerminarFinalmenteAceptoLaAlerta() {
         anexarCheckListCreditos.ClickGuardarTerminar();
@@ -489,7 +455,6 @@ public class RegistrarPropuestaDefinitions {
         confirmarCheckList.CerrarVentanaConfirmacionCheckList();
     }
 
-
     @Then("el sistema direcciona a la ventana propuesta y se procede a ingresar los siguientes comentarios")
     public void elSistemaDireccionaALaVentanaPropuestaYSeProcedeAIngresarLosSiguientesComentarios(DataTable ComentariosJustificados) {
         List<Map<String,String>> listaComentarios = ComentariosJustificados.asMaps(String.class,String.class);
@@ -498,9 +463,7 @@ public class RegistrarPropuestaDefinitions {
             propuesta.IngresarClasificacionRiesgoCliente(listaComentarios.get(i).get("ClasificacionRiesgoNegocio"));
             propuesta.IngresarClasificacionRiesgoAval(listaComentarios.get(i).get("ClasificacionRiesgoAval"));
             propuesta.IngresarAnalisisUnidadF(listaComentarios.get(i).get("AnalisisUnidadFinanciera"));
-
         }
-
 
     }
 
@@ -526,16 +489,13 @@ public class RegistrarPropuestaDefinitions {
 
     }
 
-
     @Then("el sistema direcciona a la ventana propuesta y doy click en Enlazar Estados Financieros")
     public void elSistemaDireccionaALaVentanaPropuestaYDoyClickEnEnlazarEstadosFinancieros() {
        // propuesta.ClickEnlazarEEFF();
     }
 
-
     @Then("el sistema direcciona a la ventana propuesta y doy click en grabar")
     public void elSistemaDireccionaALaVentanaPropuestaYDoyClickEnGrabar() {
-
         propuesta.ClickGrabar();
     }
 

@@ -4,7 +4,7 @@ Feature: Crear una propuesta de Credito Empresarial de tipo NORMAL en el Sistema
   Para su aprobacion correspondiente
 
   @Prueba
-  Scenario:  Crear una propuesta de Credito Empresarial de tipo Normal
+  Scenario:  Crear una propuesta de Credito Empresarial de tipo propuesta Normal con el Perfil "Asesor de Finanzas Empresariales"
     Given la web SGCRED esta disponible
     When ingreso usuario y password
       | nombre | password |
@@ -74,7 +74,9 @@ Feature: Crear una propuesta de Credito Empresarial de tipo NORMAL en el Sistema
     And en la ventana Garantias Existentes seleccionar garantia correspondiente y doy click en Aceptar
     Then el sistema direcciona a la ventana propuesta y doy click en grabar
     And el sistema direcciona a la ventana Grabar informacion y doy clic en Cerrar
-    And en la ventana Propuesta doy clic en Aprobar
+
+
+
 
 
 

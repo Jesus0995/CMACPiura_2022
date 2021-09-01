@@ -1,21 +1,12 @@
 package PageObjects;
 
-import io.cucumber.messages.internal.com.google.gson.internal.bind.util.ISO8601Utils;
-import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.interactions.Action;
-import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
-
-import java.awt.*;
-import java.awt.event.KeyEvent;
-import java.util.concurrent.TimeUnit;
-
 import java.util.Set;
 
 public class SeleccionarServicioPage {
@@ -33,8 +24,6 @@ public class SeleccionarServicioPage {
     //@FindBy(xpath = "//select[@name='idnegocio']") private WebElement cbx_negocio;
     //@FindBy(xpath = "//select[@name='idTipoOperacion']") private  WebElement cbx_tipoOperacion;
     @FindBy(xpath = "//*[@id=\"bCargar\"]")private  WebElement btn_cargar;
-
-
 
     //crear meotodo para abrir ventana
     public void AbrirVentanaServicio(){

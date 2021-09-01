@@ -31,18 +31,6 @@ public class LoginDefinitions {
         Hooks.driver.get("http://10.0.203.12:8083/propuesta/");
     }
 
-    /*
-    @When("ingrese usuario y password")
-    public void ingreseusuarioypassword(DataTable usuarios) {
-        List<Map<String, String>> lista = usuarios.asMaps(String.class, String.class);
-        for (int i = 0; i < lista.size(); i++) {
-            formulario.IngresarUsuario(lista.get(i).get("nombre"));
-            formulario.IngresarPassword(lista.get(i).get("password"));
-
-        }
-    }
-    */
-
     @When("ingrese Usuario como {string} y Password como {string}")
     public void ingreseUsuarioComoYPasswordComo(String Usuario, String Password) {
         formulario.IngresarUsuario(Usuario);
@@ -53,6 +41,7 @@ public class LoginDefinitions {
 
     @And("doy click en boton ingresar")
     public void doy_click_en_boton_ingresar() {
+
         formulario.ClickSubmit();
     }
 
@@ -71,6 +60,7 @@ public class LoginDefinitions {
 
     @And("confirmo el cierre de sesion")
     public void confirmoElCierreDeSesion() {
+
         CierreSesion.ClickConfirmarCierre();
     }
 

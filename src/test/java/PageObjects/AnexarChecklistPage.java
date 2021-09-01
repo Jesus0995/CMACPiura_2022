@@ -19,7 +19,6 @@ public class AnexarChecklistPage {
     private Alert MensajeAlerta;
 
     //Informacion basica cliente
-
     @FindBy(xpath = "//input[@id='item_1' and @value='2']") private WebElement opt_1cliTarjetaBasica;
     @FindBy(xpath = "//input[@id='item_2' and @value='2']") private WebElement opt_2cliCopiaFedateada;
     @FindBy(xpath = "//input[@id='item_3' and @value='2']") private WebElement opt_3cliVigenciaActualizada;
@@ -29,35 +28,28 @@ public class AnexarChecklistPage {
     @FindBy(xpath = "//input[@id='item_7' and @value='2']") private WebElement opt_7cliFotoPanoramica;
 
 // Informacion del negocio
-
     @FindBy(xpath = "//input[@id='item_8' and @value='2']") private WebElement opt_8NegocioLuz;
     @FindBy(xpath = "//input[@id='item_9' and @value='2']") private WebElement opt_9NegocioFoto;
     @FindBy(xpath = "//input[@id='item_10' and @value='2']") private WebElement opt_10NegocioSustento;
     @FindBy(xpath = "//input[@id='item_11' and @value='2']") private WebElement opt_11NegocioInforme;
 
 //operaciones propuestas
-
-
     @FindBy(xpath = "//input[@id='item_15' and @value='2']") private WebElement opt_12OperSolicitud;
 
     //seguro cliente
     @FindBy(xpath = "//input[@id='item_16' and @value='2']") private WebElement opt_13SegCopiaDPS;
 
     //seguro garantia
-
     @FindBy(xpath = "//input[@id='item_17' and @value='2']") private WebElement opt_14SegPolizas;
 
     //informacion economica financiera del cliente
-
     @FindBy(xpath = "//input[@id='item_18' and @value='2']") private WebElement opt_15EEFFSectorista;
     @FindBy(xpath = "//input[@id='item_19' and @value='2']") private WebElement opt_16flujoCaja;
 
     //informe verificacion previa
-
     @FindBy(xpath = "//input[@id='item_56' and @value='2']") private WebElement opt_17clienteTarjeta;
 
     //garantias no inscribibles
-
     @FindBy(xpath = "//input[@id='item_59' and @value='2']") private WebElement opt_18busquedaBienes;
     @FindBy(xpath = "//input[@id='item_60' and @value='2']") private WebElement opt_19docPropiedad;
     @FindBy(xpath = "//input[@id='item_62' and @value='2']") private WebElement opt_20bolInformativa;
@@ -65,9 +57,7 @@ public class AnexarChecklistPage {
     @FindBy(xpath = "//input[@id='item_64' and @value='2']") private WebElement opt_22decJuradaBienes;
 
     //garantia con desposesion
-
     @FindBy(xpath = "//input[@id='item_65' and @value='2']") private WebElement opt_23tasacion;
-
     @FindBy(xpath = "//input[@id='item_66' and @value='2']") private WebElement opt_24copiaPlazoFijo;
 
 
@@ -81,7 +71,6 @@ public class AnexarChecklistPage {
     @FindBy(xpath = "//input[@id='item_74' and @value='2']") private WebElement opt_31testimonio;
 
     //Desembolso de credito
-
     @FindBy(xpath = "//input[@id='item_80' and @value='2']") private WebElement opt_32fichaIngresoRRPP;
     @FindBy(xpath = "//input[@id='item_81' and @value='2']") private WebElement opt_33copiaPartida;
 
