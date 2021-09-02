@@ -35,15 +35,9 @@ public class PropuestaPage {
 
     @FindBy(xpath = "//button[@name=\"btnGaranExist\"]") private WebElement btn_AnexarGarantias;
 
-    @FindBy(css = "#frmPropuesta > table:nth-child(1) > tbody:nth-child(1) > tr:nth-child(3) > td:nth-child(1) > div:nth-child(7) > button:nth-child(65)") private  WebElement btn_EnlazarEEFF;
-
     @FindBy(xpath = "//textarea[@id='txtPrincipalRatio']")private  WebElement txt_comentariosRatios;
 
-    @FindBy(xpath = "/html/body/form/table[2]/tbody/tr[1]/td[3]/button") private WebElement btn_DesenlazarInformeVisita;
 
-    @FindBy(xpath = "/html/body/form/table[2]/tbody/tr[1]/td[3]/button") private WebElement btn_EnlazarInformeVisita;
-
-    @FindBy(xpath = "/html/body/form/table[2]/tbody/tr[3]/td[3]/button") private WebElement btn_EnlazarInformeComercial;
 
     @FindBy(xpath = "/html/body/form/table[1]/tbody/tr[2]/td/table[1]/tbody/tr[2]/td[1]/table/tbody/tr/td[5]/a")private WebElement btn_Grabar;
     //@FindBy(xpath = "/html/body/form/table[1]/tbody/tr[2]/td/table[2]/tbody/tr[1]/td/a") private WebElement btn_Aprobar;
@@ -125,9 +119,11 @@ public class PropuestaPage {
     public void ClickEnlazarEEFF () {
         //wait.until(ExpectedConditions.elementToBeClickable(btn_EnlazarEEFF));
         //btn_EnlazarEEFF.click();
-        WebElement btn_EEFF = driver.findElement(By.xpath("//*[text() = 'Enlazar']"));
-        String JScript = btn_EEFF.getAttribute("click");
-        ((JavascriptExecutor)driver).executeScript(JScript);
+        WebElement btn_EnlazarEEFF = driver.findElement(By.xpath("/html/body/form/table[1]/tbody/tr[3]/td/div/button"));
+
+        String JScript = btn_EnlazarEEFF.getAttribute("onclick");
+        ((JavascriptExecutor) driver).executeScript(JScript);
+        Esperar(2);
 
     }
 
@@ -137,22 +133,28 @@ public class PropuestaPage {
         txt_comentariosRatios.sendKeys(ComentariosRatios);
     }
 
-
-
     public void ClickDesenlazarInformeVisita() {
-        wait.until(ExpectedConditions.elementToBeClickable(btn_DesenlazarInformeVisita));
-        btn_DesenlazarInformeVisita.click();
+        WebElement btn_desenlazarInformeVisita = driver.findElement(By.xpath("/html/body/form/table[2]/tbody/tr[1]/td[3]/button"));
+        String JScript = btn_desenlazarInformeVisita.getAttribute("onclick");
+        ((JavascriptExecutor)driver).executeScript(JScript);
+        Esperar(2);
     }
 
     public void ClickEnlazarInformeVisita(){
-        wait.until(ExpectedConditions.elementToBeClickable(btn_EnlazarInformeVisita));
-        btn_EnlazarInformeVisita.click();
+        WebElement btn_enlazarInformeVisita = driver.findElement(By.xpath("/html/body/form/table[2]/tbody/tr[1]/td[3]/button"));
+        String JScript = btn_enlazarInformeVisita.getAttribute("onclick");
+        ((JavascriptExecutor)driver).executeScript(JScript);
+        Esperar(2);
 
     }
 
-    public void ClickInformeComercial () {
-        wait.until(ExpectedConditions.elementToBeClickable(btn_EnlazarInformeComercial));
-        btn_EnlazarInformeComercial.click();
+    public void ClickEnlazarInformeComercialNuevo () {
+        WebElement btn_enlazarInformeComercial = driver.findElement(By.xpath("/html/body/form/table[2]/tbody/tr[3]/td[3]/button"));
+        String JScript = btn_enlazarInformeComercial.getAttribute("onclick");
+        ((JavascriptExecutor)driver).executeScript(JScript);
+        Esperar(2);
+
+
     }
 
     public void ClickGrabar() {
@@ -165,6 +167,16 @@ public class PropuestaPage {
         wait.until(ExpectedConditions.elementToBeClickable(btn_Aprobar));
         btn_Aprobar.click();
 
+    }
+
+
+    private void Esperar(Integer Segundos){
+        Integer Milisegundos = Segundos * 1000;
+        try {
+            Thread.sleep(Milisegundos);
+        }catch (InterruptedException e){
+            e.printStackTrace();
+        }
     }
 
 

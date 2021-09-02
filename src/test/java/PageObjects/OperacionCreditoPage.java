@@ -84,9 +84,6 @@ public class OperacionCreditoPage {
     }
 
     public void SeleccionarMoneda(String Moneda){
-        System.out.println("Handles:" + driver.getWindowHandle());
-        System.out.println("Title: " + driver.getTitle());
-
         wait.until(ExpectedConditions.elementToBeClickable(cbx_moneda));
         new Select(cbx_moneda).selectByVisibleText(Moneda);
     }
@@ -107,8 +104,6 @@ public class OperacionCreditoPage {
         btn_calcular.click();
         Thread.sleep(10000);
     }
-
-
 
     public void SeleccionarPlanPagos (String PlanPagos)  {
         // Seleccionamos el valor textual de la opcion 'PlanPagos' en el combobox.

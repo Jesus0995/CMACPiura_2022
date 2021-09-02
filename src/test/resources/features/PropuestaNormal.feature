@@ -28,7 +28,7 @@ Feature: Crear una propuesta de Credito Empresarial de tipo NORMAL en el Sistema
     And validar la ventana seleccionar operacion de credito luego doy click en boton aceptar
     And posicionarse en la ventana Operacion Credito e ingresar la Operacion y doy click en Calcular
       | Moneda | Monto | TasaInicial |
-      | S/     | 5000  | 1           |
+      | S/     | 5000  | 10           |
     And en la ventana Operacion Credito seleccionar plan de pagos "Fija Vencida"
     And en la ventana Operacion Credito seleccionar modalidad "Libre Amortizacion"
     And en la ventana Operacion Credito Ingresar los dias "90"
@@ -37,7 +37,7 @@ Feature: Crear una propuesta de Credito Empresarial de tipo NORMAL en el Sistema
     And en la ventana Operacion Credito seleccionar plaza de desembolso
       | Departamento | Provincia | Distrito |
       | LIMA         | LIMA      | LIMA     |
-    And en la ventana Operacion Credito ingresar fecha probable del desembolso "31/08/2021"
+    And en la ventana Operacion Credito ingresar fecha probable del desembolso "02/09/2021"
     And en la ventana Operacion Credito Ingresar notas "Prueba"
     And en la ventana Operacion Credito doy click en grabar
     And en la ventana Operacion Credito aceptar la alerta
@@ -72,8 +72,19 @@ Feature: Crear una propuesta de Credito Empresarial de tipo NORMAL en el Sistema
     And en la ventana propuesta doy click en Anexar Garantias Existentes
     And en la ventana Seleccionar Garantias doy click en Registrar Garantias
     And en la ventana Garantias Existentes seleccionar garantia correspondiente y doy click en Aceptar
-    Then el sistema direcciona a la ventana propuesta y doy click en grabar
-    And el sistema direcciona a la ventana Grabar informacion y doy clic en Cerrar
+    Then el sistema direcciona a la ventana Propuesta y doy click en grabar
+    And en la ventana Grabar documento doy click en el boton Cerrar
+    And en la ventana Propuesta doy click en Enlazar Estados Financieros
+    Then el sistema direcciona a la ventana Estados Financieros y doy click en Enlazar
+
+
+
+
+
+
+
+
+
 
 
 

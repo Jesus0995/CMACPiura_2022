@@ -85,7 +85,7 @@ public class AnexarChecklistPage {
             LastHandle = identificadorAnexarCheckList;
         }
         driver.switchTo().window(LastHandle);
-        System.out.println("Titulo:" + driver.getTitle());
+        System.out.println("Titulo:"+ driver.getTitle());
 
     }
 

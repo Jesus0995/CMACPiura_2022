@@ -31,9 +31,12 @@ public class RegistrarPropuestaDefinitions {
     ConfirmacionChecklistPage confirmarCheckList;
     SeleccionarGarantiaPage seleccionarGarantia;
     SeleccionarGarantiasExistentesPage seleccionarGarantiasExistentes;
-    EnlazarEstadosFinancierosPage enlazarEEFF;
-    DesenlazarInformeVisitaPage desenlazarinformevisita;
     GrabarDocumentoPropuestaPage grabarPropuesta;
+    EnlazarEstadosFinancierosPage enlazarEstadosFinancieros;
+    DesenlazarInformeVisitaPage desenlazarinformevisita;
+    EnlazarInformeVisitaPage enlazarInformeVisita;
+    EnlazarInformeComercialNuevoPage enlazarInformeComercialNuevo;
+
 
     //Constructor
     public RegistrarPropuestaDefinitions() {
@@ -55,9 +58,11 @@ public class RegistrarPropuestaDefinitions {
         confirmarCheckList = new ConfirmacionChecklistPage(Hooks.driver);
         seleccionarGarantia = new SeleccionarGarantiaPage(Hooks.driver);
         seleccionarGarantiasExistentes = new SeleccionarGarantiasExistentesPage(Hooks.driver);
-        enlazarEEFF = new EnlazarEstadosFinancierosPage(Hooks.driver);
-        desenlazarinformevisita = new DesenlazarInformeVisitaPage(Hooks.driver);
         grabarPropuesta = new GrabarDocumentoPropuestaPage(Hooks.driver);
+        enlazarEstadosFinancieros = new EnlazarEstadosFinancierosPage(Hooks.driver);
+        desenlazarinformevisita = new DesenlazarInformeVisitaPage(Hooks.driver);
+        enlazarInformeVisita = new EnlazarInformeVisitaPage(Hooks.driver);
+        enlazarInformeComercialNuevo = new EnlazarInformeComercialNuevoPage(Hooks.driver);
 
     }
 
@@ -489,24 +494,68 @@ public class RegistrarPropuestaDefinitions {
 
     }
 
-    @Then("el sistema direcciona a la ventana propuesta y doy click en Enlazar Estados Financieros")
-    public void elSistemaDireccionaALaVentanaPropuestaYDoyClickEnEnlazarEstadosFinancieros() {
-       // propuesta.ClickEnlazarEEFF();
-    }
-
-    @Then("el sistema direcciona a la ventana propuesta y doy click en grabar")
+    @Then("el sistema direcciona a la ventana Propuesta y doy click en grabar")
     public void elSistemaDireccionaALaVentanaPropuestaYDoyClickEnGrabar() {
         propuesta.ClickGrabar();
     }
 
-    @And("el sistema direcciona a la ventana Grabar informacion y doy clic en Cerrar")
-    public void elSistemaDireccionaALaVentanaGrabarInformacionYDoyClicEnCerrar() {
+    @And("en la ventana Grabar documento doy click en el boton Cerrar")
+    public void enLaVentanaGrabarDocumentoDoyClickEnElBotonCerrar() {
         grabarPropuesta.AbrirVentanaGrabarPropuesta();
-        grabarPropuesta.ClickCerrarGrabar();
+        grabarPropuesta.ClickCerrar();
         grabarPropuesta.CerrarVentanaGrabarPropuesta();
+    }
+
+    @And("en la ventana Propuesta doy click en Enlazar Estados Financieros")
+    public void enLaVentanaPropuestaDoyClickEnEnlazarEstadosFinancieros() {
+        propuesta.ClickEnlazarEEFF();
+    }
+
+    @Then("el sistema direcciona a la ventana Estados Financieros y doy click en Enlazar")
+    public void elSistemaDireccionaALaVentanaEstadosFinancierosYDoyClickEnEnlazar() {
+        enlazarEstadosFinancieros.AbrirVentanaEnlazarEstadosFinancieros();
+        enlazarEstadosFinancieros.ClickbtnEnlazar();
+        enlazarEstadosFinancieros.CerrarVentanaEnlazarEstadosFinancieros();
 
     }
 
+    @And("en la ventana Propuesta doy click en Desenlazar Informe de Visita")
+    public void enLaVentanaPropuestaDoyClickEnDesenlazarInformeDeVisita() {
+        propuesta.ClickDesenlazarInformeVisita();
+    }
+
+    @And("en la ventana Desenlazar Informe de Visita doy click en el boton Realizar")
+    public void enLaVentanaDesenlazarInformeDeVisitaDoyClickEnElBotonRealizar() {
+        desenlazarinformevisita.AbrirVentanaDesenlazarInformeVisita();
+        desenlazarinformevisita.clickbtnRealizar();
+        desenlazarinformevisita.CerrarVentanaDesenlazarInformeVisita();
+    }
+
+    @Then("el sistema direcciona a la ventana Propuesta y doy click en el boton Enlazar Informe Visita")
+    public void elSistemaDireccionaALaVentanaPropuestaYDoyClickEnElBotonEnlazarInformeVisita() {
+        propuesta.ClickEnlazarInformeVisita();
+    }
+
+    @And("en la ventana Enlazar Informe Visita doy click en el boton Realizar")
+    public void enLaVentanaEnlazarInformeVisitaDoyClickEnElBotonRealizar() {
+        enlazarInformeVisita.AbrirVentanaEnlazarInformeVisita();
+        enlazarInformeVisita.ClickbtnRealizar();
+        enlazarInformeVisita.CerrarVentanaEnlazarInformeVisita();
+
+    }
+
+    @Then("el sistema direcciona a la ventana Propuesta y doy click en el boton Enlazar Informe Comercial")
+    public void elSistemaDireccionaALaVentanaPropuestaYDoyClickEnElBotonEnlazarInformeComercial() {
+        propuesta.ClickEnlazarInformeComercialNuevo();
+    }
+
+    @And("en la ventana Informe Comercial doy click en el boton Realizar")
+    public void enLaVentanaInformeComercialDoyClickEnElBotonRealizar() {
+        enlazarInformeComercialNuevo.AbrirVentanaEnlazarInformeComercialNuevo();
+        enlazarInformeComercialNuevo.ClickbtnRealizar();
+        enlazarInformeComercialNuevo.CerrarVentanaEnlazarInformeComercialNuevo();
+
+    }
 }
 
 

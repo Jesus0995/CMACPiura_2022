@@ -28,7 +28,7 @@ public class ConfirmarSegurosSeleccionadosPage {
             LastHandle = identificadorConfirmacionSeguros;
         }
         driver.switchTo().window(LastHandle);
-        System.out.println("Titulo: " + driver.getTitle());
+        System.out.println("Titulo:"+ driver.getTitle());
     }
 
 

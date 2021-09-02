@@ -18,7 +18,7 @@ public class EnlazarInformeVisitaPage {
     //mapeop elementos
     @FindBy(xpath = "//button[@type='submit']") private WebElement btn_realizar;
 
-    public void AbrirVentanaEnlazarEstadosFinancieros(){
+    public void AbrirVentanaEnlazarInformeVisita(){
         identificadoresEnlazarInformeVisita = driver.getWindowHandles();
         System.out.println(identificadoresEnlazarInformeVisita);
         String LastHandle="";
@@ -27,10 +27,10 @@ public class EnlazarInformeVisitaPage {
             LastHandle=identificadorEnlazarInformeVisita;
         }
         driver.switchTo().window(LastHandle);
-        System.out.println("Titulo : " + driver.getTitle());
+        System.out.println("Titulo:" + driver.getTitle());
     }
 
-    public void CerrarVentanaEnlazarEstadosFinancieros(){
+    public void CerrarVentanaEnlazarInformeVisita(){
         Integer SetSize = identificadoresEnlazarInformeVisita.size();
         Integer Index= 0;
 
@@ -55,7 +55,7 @@ public class EnlazarInformeVisitaPage {
     public void ClickbtnRealizar(){
         wait.until(ExpectedConditions.elementToBeClickable(btn_realizar));
         btn_realizar.click();
-        Esperar (1);
+        Esperar (2);
 
     }
 

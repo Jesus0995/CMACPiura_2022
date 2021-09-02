@@ -57,7 +57,7 @@ public class DesenlazarInformeVisitaPage {
     public void clickbtnRealizar(){
         wait.until(ExpectedConditions.elementToBeClickable(btn_realizar));
         btn_realizar.click();
-        Esperar(1);
+        Esperar(2);
 
 
     }

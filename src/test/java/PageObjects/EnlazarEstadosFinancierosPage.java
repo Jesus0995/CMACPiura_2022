@@ -15,8 +15,8 @@ public class EnlazarEstadosFinancierosPage {
     private WebDriverWait wait;
     private Set<String> identificadoresEnlazarEstadosFinancieros;
 
-    //mapeop elementos
-    @FindBy(xpath = "//button[@type=\"submit\"]") private WebElement btn_enlazarEEFF;
+    //mapeo elementos
+    @FindBy(xpath = "//button[@type=\"submit\"]") private WebElement btn_enlazar;
 
     public void AbrirVentanaEnlazarEstadosFinancieros(){
         identificadoresEnlazarEstadosFinancieros = driver.getWindowHandles();
@@ -27,7 +27,7 @@ public class EnlazarEstadosFinancierosPage {
             LastHandle=identificadorEnlazarEstadosFinancieros;
         }
         driver.switchTo().window(LastHandle);
-        System.out.println("Titulo : " + driver.getTitle());
+        System.out.println("Titulo:" + driver.getTitle());
     }
 
     public void CerrarVentanaEnlazarEstadosFinancieros(){
@@ -52,10 +52,10 @@ public class EnlazarEstadosFinancierosPage {
 
     }
 
-    public void ClickEnlazar(){
-        wait.until(ExpectedConditions.elementToBeClickable(btn_enlazarEEFF));
-        btn_enlazarEEFF.click();
-        Esperar(1);
+    public void ClickbtnEnlazar(){
+        wait.until(ExpectedConditions.elementToBeClickable(btn_enlazar));
+        btn_enlazar.click();
+        Esperar(2);
 
     }
 

@@ -17,6 +17,7 @@ public class GrabarDocumentoPropuestaPage {
     @FindBy(xpath = "//button[@type=\"button\"]") private WebElement btn_btnCerrar;
 
     public void AbrirVentanaGrabarPropuesta(){
+
         identificadoresGrabarPropuesta = driver.getWindowHandles();
         System.out.println(identificadoresGrabarPropuesta);
         String LastHandle ="";
@@ -39,7 +40,6 @@ public class GrabarDocumentoPropuestaPage {
         }
         System.out.println(Handles[0]);
         driver.switchTo().window(Handles[0]);
-
     }
 
 
@@ -54,7 +54,7 @@ public class GrabarDocumentoPropuestaPage {
 
 
 
-    public void ClickCerrarGrabar(){
+    public void ClickCerrar(){
         wait.until(ExpectedConditions.elementToBeClickable(btn_btnCerrar));
         btn_btnCerrar.click();
 
