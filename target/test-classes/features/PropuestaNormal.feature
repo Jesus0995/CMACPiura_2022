@@ -37,7 +37,7 @@ Feature: Crear una propuesta de Credito Empresarial de tipo NORMAL en el Sistema
     And en la ventana Operacion Credito seleccionar plaza de desembolso
       | Departamento | Provincia | Distrito |
       | LIMA         | LIMA      | LIMA     |
-    And en la ventana Operacion Credito ingresar fecha probable del desembolso "02/09/2021"
+    And en la ventana Operacion Credito ingresar fecha probable del desembolso "03/09/2021"
     And en la ventana Operacion Credito Ingresar notas "Prueba"
     And en la ventana Operacion Credito doy click en grabar
     And en la ventana Operacion Credito aceptar la alerta
@@ -69,13 +69,26 @@ Feature: Crear una propuesta de Credito Empresarial de tipo NORMAL en el Sistema
     Then el sistema direcciona a la ventana propuesta y se procede a ingresar los siguientes comentarios
       | CaracteristicaNegocio | ClasificacionRiesgoNegocio | ClasificacionRiesgoAval | AnalisisUnidadFinanciera |
       | prueba                | prueba                     | prueba                  | prueba                   |
-    And en la ventana propuesta doy click en Anexar Garantias Existentes
+    And en la ventana Propuesta doy click en Anexar Garantias Existentes
     And en la ventana Seleccionar Garantias doy click en Registrar Garantias
     And en la ventana Garantias Existentes seleccionar garantia correspondiente y doy click en Aceptar
-    Then el sistema direcciona a la ventana Propuesta y doy click en grabar
-    And en la ventana Grabar documento doy click en el boton Cerrar
+    And el sistema muestra una ventana de cancelacion de pagares y se cierra automaticamente
     And en la ventana Propuesta doy click en Enlazar Estados Financieros
     Then el sistema direcciona a la ventana Estados Financieros y doy click en Enlazar
+    And en la ventana Propuesta doy click en Desenlazar el Informe de Visita precargado por defecto
+    Then el sistema muestra la ventana Desenlazar Informe de Visita y doy click en el boton Realizar
+    And el sistema realiza la accion y direcciona a la ventana Propuesta y doy click en Enlazar el nuevo Informe Visita
+    Then el sistema muestra la ventana Enlazar Informe de Visita y le doy click en el boton Realizar
+    And el sistema realiza la accion y direcciona a la ventana Propuesta y doy click en Enlazar Informe Comercial Nuevo
+    Then el sistema muestra la ventana Enlazar Informe Comercial y le doy click en el boton Realizar
+    And el sistema direcciona a la ventana Propuesta y doy click en la opcion grabar
+    And en la ventana Grabar documento doy click en el boton Cerrar
+    And el sistema muestra la ventana Propuesta y debe ingresar comentarios de los principales ratios "Comentarios positivos"
+    And en la ventana Propuesta seleccionar la opcion Aprobar para Emitir Dictamen de Propuesta
+
+
+
+
 
 
 

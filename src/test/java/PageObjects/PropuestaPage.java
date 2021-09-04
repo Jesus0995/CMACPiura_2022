@@ -42,7 +42,7 @@ public class PropuestaPage {
     @FindBy(xpath = "/html/body/form/table[1]/tbody/tr[2]/td/table[1]/tbody/tr[2]/td[1]/table/tbody/tr/td[5]/a")private WebElement btn_Grabar;
     //@FindBy(xpath = "/html/body/form/table[1]/tbody/tr[2]/td/table[2]/tbody/tr[1]/td/a") private WebElement btn_Aprobar;
 
-    @FindBy(xpath = "//img[@alt='Aprobar']") private WebElement btn_Aprobar;
+    //@FindBy(xpath = "//img[@alt='Aprobar']") private WebElement btn_Aprobar;
 
     public PropuestaPage(WebDriver d) {
         driver = d;
@@ -117,8 +117,6 @@ public class PropuestaPage {
     }
 
     public void ClickEnlazarEEFF () {
-        //wait.until(ExpectedConditions.elementToBeClickable(btn_EnlazarEEFF));
-        //btn_EnlazarEEFF.click();
         WebElement btn_EnlazarEEFF = driver.findElement(By.xpath("/html/body/form/table[1]/tbody/tr[3]/td/div/button"));
 
         String JScript = btn_EnlazarEEFF.getAttribute("onclick");
@@ -164,8 +162,10 @@ public class PropuestaPage {
 
 
     public void ClickbtnAprobar(){
-        wait.until(ExpectedConditions.elementToBeClickable(btn_Aprobar));
-        btn_Aprobar.click();
+       WebElement btn_Aprobar = driver.findElement(By.xpath("/html/body/form/table[1]/tbody/tr[2]/td/table[2]/tbody/tr[1]/td/a"));
+       String JScript = btn_Aprobar.getAttribute("onclick");
+        ((JavascriptExecutor)driver).executeScript(JScript);
+        Esperar(1);
 
     }
 

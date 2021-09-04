@@ -1,5 +1,7 @@
 package PageObjects;
 
+import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -14,7 +16,7 @@ public class GrabarDocumentoPropuestaPage {
     private WebDriverWait wait;
     private Set<String> identificadoresGrabarPropuesta;
 
-    @FindBy(xpath = "//button[@type=\"button\"]") private WebElement btn_btnCerrar;
+    @FindBy(xpath = "//button[@type=\"button\"]") private WebElement btn_Cerrar;
 
     public void AbrirVentanaGrabarPropuesta(){
 
@@ -49,14 +51,15 @@ public class GrabarDocumentoPropuestaPage {
         PageFactory.initElements(driver,this);
     }
 
+    public void ClickbtnCerrar(){
+        wait.until(ExpectedConditions.elementToBeClickable(btn_Cerrar));
+        btn_Cerrar.click();
+        /*
+        WebElement btn_Cerrar = driver.findElement(By.xpath("//button[@type='button']"));
+        String JScript = btn_Cerrar.getAttribute("click");
+        ((JavascriptExecutor)driver).executeScript(JScript);
+        */
 
-
-
-
-
-    public void ClickCerrar(){
-        wait.until(ExpectedConditions.elementToBeClickable(btn_btnCerrar));
-        btn_btnCerrar.click();
 
     }
 

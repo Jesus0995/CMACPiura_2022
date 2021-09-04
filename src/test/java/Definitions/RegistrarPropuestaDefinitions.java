@@ -31,11 +31,13 @@ public class RegistrarPropuestaDefinitions {
     ConfirmacionChecklistPage confirmarCheckList;
     SeleccionarGarantiaPage seleccionarGarantia;
     SeleccionarGarantiasExistentesPage seleccionarGarantiasExistentes;
+    CancelandoPagaresPage cancelandoPagares;
     GrabarDocumentoPropuestaPage grabarPropuesta;
     EnlazarEstadosFinancierosPage enlazarEstadosFinancieros;
     DesenlazarInformeVisitaPage desenlazarinformevisita;
     EnlazarInformeVisitaPage enlazarInformeVisita;
     EnlazarInformeComercialNuevoPage enlazarInformeComercialNuevo;
+
 
 
     //Constructor
@@ -58,6 +60,7 @@ public class RegistrarPropuestaDefinitions {
         confirmarCheckList = new ConfirmacionChecklistPage(Hooks.driver);
         seleccionarGarantia = new SeleccionarGarantiaPage(Hooks.driver);
         seleccionarGarantiasExistentes = new SeleccionarGarantiasExistentesPage(Hooks.driver);
+        cancelandoPagares = new CancelandoPagaresPage(Hooks.driver);
         grabarPropuesta = new GrabarDocumentoPropuestaPage(Hooks.driver);
         enlazarEstadosFinancieros = new EnlazarEstadosFinancierosPage(Hooks.driver);
         desenlazarinformevisita = new DesenlazarInformeVisitaPage(Hooks.driver);
@@ -472,7 +475,7 @@ public class RegistrarPropuestaDefinitions {
 
     }
 
-    @And("en la ventana propuesta doy click en Anexar Garantias Existentes")
+    @And("en la ventana Propuesta doy click en Anexar Garantias Existentes")
     public void enLaVentanaPropuestaDoyClickEnAnexarGarantiasExistentes() {
         propuesta.ClickAnexarGarantias();
 
@@ -491,19 +494,13 @@ public class RegistrarPropuestaDefinitions {
         seleccionarGarantiasExistentes.SeleccionarCheckGarantiasExistentes();
         seleccionarGarantiasExistentes.ClickbtnAceptar();
         seleccionarGarantiasExistentes.CerrarVentanaGarantiasExistentes();
-
     }
 
-    @Then("el sistema direcciona a la ventana Propuesta y doy click en grabar")
-    public void elSistemaDireccionaALaVentanaPropuestaYDoyClickEnGrabar() {
-        propuesta.ClickGrabar();
-    }
+    @And("el sistema muestra una ventana de cancelacion de pagares y se cierra automaticamente")
+    public void elSistemaMuestraUnaVentanaDeCancelacionDePagaresYSeCierraAutomaticamente() {
+            cancelandoPagares.AbrirVentanaCancelandoPagares();
+            cancelandoPagares.CerrarVentanaCancelandoPagares();
 
-    @And("en la ventana Grabar documento doy click en el boton Cerrar")
-    public void enLaVentanaGrabarDocumentoDoyClickEnElBotonCerrar() {
-        grabarPropuesta.AbrirVentanaGrabarPropuesta();
-        grabarPropuesta.ClickCerrar();
-        grabarPropuesta.CerrarVentanaGrabarPropuesta();
     }
 
     @And("en la ventana Propuesta doy click en Enlazar Estados Financieros")
@@ -519,42 +516,66 @@ public class RegistrarPropuestaDefinitions {
 
     }
 
-    @And("en la ventana Propuesta doy click en Desenlazar Informe de Visita")
-    public void enLaVentanaPropuestaDoyClickEnDesenlazarInformeDeVisita() {
+    @And("en la ventana Propuesta doy click en Desenlazar el Informe de Visita precargado por defecto")
+    public void enLaVentanaPropuestaDoyClickEnDesenlazarElInformeDeVisitaPrecargadoPorDefecto() {
         propuesta.ClickDesenlazarInformeVisita();
     }
 
-    @And("en la ventana Desenlazar Informe de Visita doy click en el boton Realizar")
-    public void enLaVentanaDesenlazarInformeDeVisitaDoyClickEnElBotonRealizar() {
+
+    @Then("el sistema muestra la ventana Desenlazar Informe de Visita y doy click en el boton Realizar")
+    public void elSistemaMuestraLaVentanaDesenlazarInformeDeVisitaYDoyClickEnElBotonRealizar() {
         desenlazarinformevisita.AbrirVentanaDesenlazarInformeVisita();
         desenlazarinformevisita.clickbtnRealizar();
         desenlazarinformevisita.CerrarVentanaDesenlazarInformeVisita();
     }
 
-    @Then("el sistema direcciona a la ventana Propuesta y doy click en el boton Enlazar Informe Visita")
-    public void elSistemaDireccionaALaVentanaPropuestaYDoyClickEnElBotonEnlazarInformeVisita() {
+    @And("el sistema realiza la accion y direcciona a la ventana Propuesta y doy click en Enlazar el nuevo Informe Visita")
+    public void elSistemaRealizaLaAccionYDireccionaALaVentanaPropuestaYDoyClickEnEnlazarElNuevoInformeVisita() {
         propuesta.ClickEnlazarInformeVisita();
     }
 
-    @And("en la ventana Enlazar Informe Visita doy click en el boton Realizar")
-    public void enLaVentanaEnlazarInformeVisitaDoyClickEnElBotonRealizar() {
+    @Then("el sistema muestra la ventana Enlazar Informe de Visita y le doy click en el boton Realizar")
+    public void elSistemaMuestraLaVentanaEnlazarInformeDeVisitaYLeDoyClickEnElBotonRealizar() {
         enlazarInformeVisita.AbrirVentanaEnlazarInformeVisita();
         enlazarInformeVisita.ClickbtnRealizar();
         enlazarInformeVisita.CerrarVentanaEnlazarInformeVisita();
-
     }
 
-    @Then("el sistema direcciona a la ventana Propuesta y doy click en el boton Enlazar Informe Comercial")
-    public void elSistemaDireccionaALaVentanaPropuestaYDoyClickEnElBotonEnlazarInformeComercial() {
+    @And("el sistema realiza la accion y direcciona a la ventana Propuesta y doy click en Enlazar Informe Comercial Nuevo")
+    public void elSistemaRealizaLaAccionYDireccionaALaVentanaPropuestaYDoyClickEnEnlazarInformeComercialNuevo() {
         propuesta.ClickEnlazarInformeComercialNuevo();
     }
 
-    @And("en la ventana Informe Comercial doy click en el boton Realizar")
-    public void enLaVentanaInformeComercialDoyClickEnElBotonRealizar() {
+    @Then("el sistema muestra la ventana Enlazar Informe Comercial y le doy click en el boton Realizar")
+    public void elSistemaMuestraLaVentanaEnlazarInformeComercialYLeDoyClickEnElBotonRealizar() {
         enlazarInformeComercialNuevo.AbrirVentanaEnlazarInformeComercialNuevo();
         enlazarInformeComercialNuevo.ClickbtnRealizar();
         enlazarInformeComercialNuevo.CerrarVentanaEnlazarInformeComercialNuevo();
+    }
 
+    @And("el sistema muestra la ventana Propuesta y debe ingresar comentarios de los principales ratios {string}")
+    public void elSistemaMuestraLaVentanaPropuestaYDebeIngresarComentariosDeLosPrincipalesRatios(String ComentariosRatios) {
+        propuesta.IngresarComentariosRatios(ComentariosRatios);
+    }
+
+
+
+    @And("el sistema direcciona a la ventana Propuesta y doy click en la opcion grabar")
+    public void elSistemaDireccionaALaVentanaPropuestaYDoyClickEnLaOpcionGrabar() {
+        propuesta.ClickGrabar();
+    }
+
+    @And("en la ventana Grabar documento doy click en el boton Cerrar")
+    public void enLaVentanaGrabarDocumentoDoyClickEnElBotonCerrar() {
+        grabarPropuesta.AbrirVentanaGrabarPropuesta();
+        grabarPropuesta.ClickbtnCerrar();
+        grabarPropuesta.CerrarVentanaGrabarPropuesta();
+    }
+
+
+    @And("en la ventana Propuesta seleccionar la opcion Aprobar para Emitir Dictamen de Propuesta")
+    public void enLaVentanaPropuestaSeleccionarLaOpcionAprobarParaEmitirDictamenDePropuesta() {
+        propuesta.ClickbtnAprobar();
     }
 }
 
