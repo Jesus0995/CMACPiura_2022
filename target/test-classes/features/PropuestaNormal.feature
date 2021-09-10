@@ -14,7 +14,7 @@ Feature: Crear una propuesta de Credito Empresarial de tipo NORMAL en el Sistema
     And doy click en link propuesta financiamiento
     And doy click en el boton crear_propuesta de la ventana Listado Propuesta
     And mostrar la ventana cliente para realizar la busqueda en el tab codigo
-    And en la ventana cliente ingresar el codigo a buscar "97941041"
+    And en la ventana cliente ingresar el codigo a buscar "12933991"
     And en la ventana cliente doy click en el boton buscar
     And en la ventana cliente hacer click en el icono propuesta
     And el sistema muestra la ventana de servicio e ingresamos la informacion
@@ -37,7 +37,7 @@ Feature: Crear una propuesta de Credito Empresarial de tipo NORMAL en el Sistema
     And en la ventana Operacion Credito seleccionar plaza de desembolso
       | Departamento | Provincia | Distrito |
       | LIMA         | LIMA      | LIMA     |
-    And en la ventana Operacion Credito ingresar fecha probable del desembolso "03/09/2021"
+    And en la ventana Operacion Credito ingresar fecha probable del desembolso "09/09/2021"
     And en la ventana Operacion Credito Ingresar notas "Prueba"
     And en la ventana Operacion Credito doy click en grabar
     And en la ventana Operacion Credito aceptar la alerta
@@ -85,6 +85,10 @@ Feature: Crear una propuesta de Credito Empresarial de tipo NORMAL en el Sistema
     And en la ventana Grabar documento doy click en el boton Cerrar
     And el sistema muestra la ventana Propuesta y debe ingresar comentarios de los principales ratios "Comentarios positivos"
     And en la ventana Propuesta seleccionar la opcion Aprobar para Emitir Dictamen de Propuesta
+    And en la ventana Emitir Dictamen de Propuesta ingresar observaciones "APROBADO"
+    And en la ventana Emitir Dictamen de Propuesta ingresar password "prueba"
+    And en la ventana Emitir Dictamen de Propuesta doy click en el boton Procesar
+
 
 
 

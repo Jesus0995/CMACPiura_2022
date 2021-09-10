@@ -37,6 +37,7 @@ public class RegistrarPropuestaDefinitions {
     DesenlazarInformeVisitaPage desenlazarinformevisita;
     EnlazarInformeVisitaPage enlazarInformeVisita;
     EnlazarInformeComercialNuevoPage enlazarInformeComercialNuevo;
+    AprobarDictamenPropuestaPage aprobarDictamenPropuesta;
 
 
 
@@ -66,13 +67,14 @@ public class RegistrarPropuestaDefinitions {
         desenlazarinformevisita = new DesenlazarInformeVisitaPage(Hooks.driver);
         enlazarInformeVisita = new EnlazarInformeVisitaPage(Hooks.driver);
         enlazarInformeComercialNuevo = new EnlazarInformeComercialNuevoPage(Hooks.driver);
+        aprobarDictamenPropuesta = new AprobarDictamenPropuestaPage(Hooks.driver);
 
     }
 
     @Given("la web SGCRED esta disponible")
     public void la_web_sgcred_esta_disponible() {
 
-        Hooks.driver.get("http://10.0.203.12:8083/propuesta/");
+        Hooks.driver.get("http://10.0.203.12:8082/propuesta/");
     }
 
     @When("ingreso usuario y password")
@@ -576,6 +578,24 @@ public class RegistrarPropuestaDefinitions {
     @And("en la ventana Propuesta seleccionar la opcion Aprobar para Emitir Dictamen de Propuesta")
     public void enLaVentanaPropuestaSeleccionarLaOpcionAprobarParaEmitirDictamenDePropuesta() {
         propuesta.ClickbtnAprobar();
+    }
+
+    @And("en la ventana Emitir Dictamen de Propuesta ingresar observaciones {string}")
+    public void enLaVentanaEmitirDictamenDePropuestaIngresarObservaciones(String Observaciones) {
+        aprobarDictamenPropuesta.AbrirVentanaAprobarDictamenPropuesta();
+        aprobarDictamenPropuesta.IngresarObservaciones(Observaciones);
+
+    }
+
+    @And("en la ventana Emitir Dictamen de Propuesta ingresar password {string}")
+    public void enLaVentanaEmitirDictamenDePropuestaIngresarPassword(String Password) {
+        aprobarDictamenPropuesta.IngresarPassword(Password);
+    }
+
+    @And("en la ventana Emitir Dictamen de Propuesta doy click en el boton Procesar")
+    public void enLaVentanaEmitirDictamenDePropuestaDoyClickEnElBotonProcesar() {
+        aprobarDictamenPropuesta.ClickbtnProcesar();
+        aprobarDictamenPropuesta.CerrarVentanaAprobarDictamenPropuesta();
     }
 }
 
