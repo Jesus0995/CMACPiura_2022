@@ -1,5 +1,6 @@
 package PageObjects;
 
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -55,6 +56,7 @@ public class DesenlazarInformeVisitaPage {
 
 
     public void clickbtnRealizar(){
+
         wait.until(ExpectedConditions.elementToBeClickable(btn_realizar));
         btn_realizar.click();
         Esperar(2);

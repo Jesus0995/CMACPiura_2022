@@ -73,7 +73,20 @@ public class AprobarDictamenPropuestaPage {
     public void ClickbtnProcesar(){
         wait.until(ExpectedConditions.elementToBeClickable(btn_procesar));
         btn_procesar.click();
+        Esperar(2);
 
 
     }
+
+    private void Esperar(Integer Segundos){
+        Integer Milisegundos = Segundos*1000;
+        try {
+            Thread.sleep(Segundos);
+        }catch (InterruptedException e){
+            e.printStackTrace();
+        }
+
+    }
+
+
 }

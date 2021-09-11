@@ -28,7 +28,7 @@ public class PropuestaPage {
     @FindBy(name = "btnEnviar2") private WebElement btn_AgregarSeguro;
     @FindBy(xpath = "/html/body/form/table[1]/tbody/tr[3]/td/div/table[8]/tbody/tr[1]/td[2]/button") private WebElement btn_AnexarChecklist;
 
-    @FindBy(xpath = "//textarea[@id='txtcaracter']") private WebElement txt_caracteristicaNegocio;
+    @FindBy(xpath = "//textarea[@name='caracteristicaNegocio']") private WebElement txt_caracteristicaNegocio;
     @FindBy(xpath = "//textarea[@id='txtclasificac']") private WebElement txt_clasificacionRiesgoCliente;
     @FindBy(xpath = "//textarea[@id='txtclasificaAval']")private  WebElement txt_clasificacionRiesgoAval;
     @FindBy(xpath = "//textarea[@id='txtanalisisUEF']") private WebElement txt_analisisUnidadFinanciera;

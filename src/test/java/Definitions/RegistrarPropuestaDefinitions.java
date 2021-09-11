@@ -38,6 +38,7 @@ public class RegistrarPropuestaDefinitions {
     EnlazarInformeVisitaPage enlazarInformeVisita;
     EnlazarInformeComercialNuevoPage enlazarInformeComercialNuevo;
     AprobarDictamenPropuestaPage aprobarDictamenPropuesta;
+    GrabarInformacionErroresPage grabarInformacionErrores;
 
 
 
@@ -68,6 +69,7 @@ public class RegistrarPropuestaDefinitions {
         enlazarInformeVisita = new EnlazarInformeVisitaPage(Hooks.driver);
         enlazarInformeComercialNuevo = new EnlazarInformeComercialNuevoPage(Hooks.driver);
         aprobarDictamenPropuesta = new AprobarDictamenPropuestaPage(Hooks.driver);
+        grabarInformacionErrores = new GrabarInformacionErroresPage(Hooks.driver);
 
     }
 
@@ -120,10 +122,10 @@ public class RegistrarPropuestaDefinitions {
     }
 
     @And("en la ventana cliente ingresar el codigo a buscar {string}")
-    public void enLaVentanaClienteIngresarElCodigoABuscar(String CodCliente)  {
+    public void enLaVentanaClienteIngresarElCodigoABuscar(String CodCliente) {
         listadoClientes.IngresarCodigoCliente(CodCliente);
-        //pantallazo();
     }
+
 
     @And("en la ventana cliente doy click en el boton buscar")
     public void enLaVentanaClienteDoyClickEnElBotonBuscar() {
@@ -564,6 +566,7 @@ public class RegistrarPropuestaDefinitions {
 
     @And("el sistema direcciona a la ventana Propuesta y doy click en la opcion grabar")
     public void elSistemaDireccionaALaVentanaPropuestaYDoyClickEnLaOpcionGrabar() {
+
         propuesta.ClickGrabar();
     }
 
@@ -580,16 +583,15 @@ public class RegistrarPropuestaDefinitions {
         propuesta.ClickbtnAprobar();
     }
 
-    @And("en la ventana Emitir Dictamen de Propuesta ingresar observaciones {string}")
-    public void enLaVentanaEmitirDictamenDePropuestaIngresarObservaciones(String Observaciones) {
+    @And("en la ventana Emitir Dictamen de Propuesta ingresar observaciones y password")
+    public void enLaVentanaEmitirDictamenDePropuestaIngresarObservacionesYPassword(DataTable DatosAprobacion) {
         aprobarDictamenPropuesta.AbrirVentanaAprobarDictamenPropuesta();
-        aprobarDictamenPropuesta.IngresarObservaciones(Observaciones);
+        List<Map<String,String>> lista = DatosAprobacion.asMaps(String.class,String.class);
+        for (Integer i = 0; i < lista.size() ;i++){
+            aprobarDictamenPropuesta.IngresarObservaciones(lista.get(i).get("Observaciones"));
+            aprobarDictamenPropuesta.IngresarPassword(lista.get(i).get("Password"));
+        }
 
-    }
-
-    @And("en la ventana Emitir Dictamen de Propuesta ingresar password {string}")
-    public void enLaVentanaEmitirDictamenDePropuestaIngresarPassword(String Password) {
-        aprobarDictamenPropuesta.IngresarPassword(Password);
     }
 
     @And("en la ventana Emitir Dictamen de Propuesta doy click en el boton Procesar")
@@ -597,6 +599,17 @@ public class RegistrarPropuestaDefinitions {
         aprobarDictamenPropuesta.ClickbtnProcesar();
         aprobarDictamenPropuesta.CerrarVentanaAprobarDictamenPropuesta();
     }
+
+    @And("en la ventana Grabar Informacion doy click en boton cerrar y cerrar ventana")
+    public void enLaVentanaGrabarInformacionDoyClickEnBotonCerrarYCerrarVentana() {
+        grabarInformacionErrores.AbrirVentanaGrabarInformacion();
+        grabarInformacionErrores.ClickbtnCerrar();
+        grabarInformacionErrores.CerrarVentanaGrabarInformacion();
+
+    }
+
+
+
 }
 
 

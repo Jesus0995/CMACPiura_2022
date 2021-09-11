@@ -52,13 +52,10 @@ public class GrabarDocumentoPropuestaPage {
     }
 
     public void ClickbtnCerrar(){
-        wait.until(ExpectedConditions.elementToBeClickable(btn_Cerrar));
-        btn_Cerrar.click();
-        /*
-        WebElement btn_Cerrar = driver.findElement(By.xpath("//button[@type='button']"));
-        String JScript = btn_Cerrar.getAttribute("click");
+
+        String JScript = btn_Cerrar.getAttribute("onclick");
         ((JavascriptExecutor)driver).executeScript(JScript);
-        */
+
 
 
     }
