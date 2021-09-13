@@ -18,7 +18,7 @@ Feature: Crear una propuesta de Creditos de Consumo de tipo Normal en el sistema
     And en la ventana cliente se da click en el boton buscar
     And en la ventana cliente se da click en el icono propuesta
     And el sistema muestra la ventana de requisitos de propuesta e ingresamos la informacion
-      | TipoServicio        | ServicioCredito | TipoPropuesta | SubTipoPropuesta | Promocion     | Negocio                               | TipoOperacion |
+      | TipoServicio        | ServicioCredito | TipoPropuesta | SubTipoPropuesta | Promocion     | Negocio                                  | TipoOperacion |
       | CREDITOS DE CONSUMO | CREDIPERSONAS   | NORMAL        | NORMAL           | SIN PROMOCION | ADMINISTRACION DE SERVICIOS DE PLANIFICA | SIMPLE        |
     And en la ventana requisitos de propuesta se da click en el boton cargar
     And validar el popup Comunicado
@@ -37,8 +37,8 @@ Feature: Crear una propuesta de Creditos de Consumo de tipo Normal en el sistema
     And en la ventana operacion credito seleccionar el numero de cuotas "18"
     And en la ventana operacion credito ingresar la tasa preferencial "30"
     And en la ventana operacion credito seleccionar la forma desembolso "ABONO EN CUENTA"
-    And en la ventana operacion credito seleccionar el codigo de cuenta "210-01-6139179"
-    And en la ventana operacion credito seleccionar la fecha desembolso "09/09/2021"
+    And en la ventana operacion credito seleccionar el codigo de cuenta "210-01-1624829"
+    And en la ventana operacion credito seleccionar la fecha desembolso "13/09/2021"
     And en la ventana operacion credito ingresar una nota "prueba de nueva propuesta"
     And en la ventana operacion credito doy click en el boton grabar
     And en la ventana operacion credito aceptar la alerta

@@ -21,6 +21,13 @@ public class RegistrarSegurosPage {
     @FindBy(xpath = "//input[@id='dps02201']") private WebElement txt_SeguroDesgravamenFlatMN;
     @FindBy(xpath = "//input[@id='5_13501' and @value='5_13501']") private WebElement chk_SeguroRiesgoPlanPymes;
     @FindBy(xpath = "//input[@id='dps13501']") private WebElement txt_SeguroRiesgoPlanPymes;
+
+    @FindBy(xpath = "//input[@id='4_01201']") private WebElement chk_SeguroDesgravamenSaldo;
+    @FindBy(xpath = "//input[@id='dps01201']") private WebElement txt_SeguroDesgravamenSaldo;
+    @FindBy(xpath = "//input[@id='6_91001']") private WebElement chk_SeguroVidaPlan1;
+    @FindBy(xpath = "//input[@id='dps91001']") private WebElement txt_SeguroVidaPlan1;
+
+
     @FindBy(xpath ="//button[@type=\"submit\"]") private WebElement btn_confirmar;
 
     public void AbrirVentanaRegistrarSeguros(){
@@ -76,6 +83,27 @@ public class RegistrarSegurosPage {
     public void IngresarSeguroRiesgoPlanPymes (String seguroRiesgoPlanPymes) {
         txt_SeguroRiesgoPlanPymes.click();
         txt_SeguroRiesgoPlanPymes.sendKeys(seguroRiesgoPlanPymes);
+    }
+
+    public void ClickCheckSeguroDesgravamenSaldo (){
+        wait.until(ExpectedConditions.elementToBeClickable(chk_SeguroDesgravamenSaldo));
+        chk_SeguroDesgravamenSaldo.click();
+
+    }
+
+    public void IngresarSeguroDesgravamenSaldo (String seguroDesgravameSaldo){
+        txt_SeguroDesgravamenSaldo.clear();
+        txt_SeguroDesgravamenSaldo.sendKeys(seguroDesgravameSaldo);
+
+    }
+
+    public void ClickCheckSeguroVidaPlan1() {
+        wait.until(ExpectedConditions.elementToBeClickable(chk_SeguroVidaPlan1));
+        chk_SeguroVidaPlan1.click(); }
+
+    public void IngresarSeguroVidaPlan1 (String seguroVidaPlan1) {
+        txt_SeguroVidaPlan1.click();
+        txt_SeguroVidaPlan1.sendKeys(seguroVidaPlan1);
     }
 
     public void ClickConfirmar() {

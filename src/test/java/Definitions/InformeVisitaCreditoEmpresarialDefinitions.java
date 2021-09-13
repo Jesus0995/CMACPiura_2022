@@ -15,7 +15,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import java.util.List;
 import java.util.Map;
 
-public class InformeVisitaDefinitions {
+public class InformeVisitaCreditoEmpresarialDefinitions {
 
     MenuPrincipalPage menuPrincipal;
     LoginPage loginInforme;
@@ -23,7 +23,7 @@ public class InformeVisitaDefinitions {
     SeleccionarRubroNegocioPage seleccionarRubroNegocio;
 
 
-    public InformeVisitaDefinitions() {
+    public InformeVisitaCreditoEmpresarialDefinitions() {
         menuPrincipal = new MenuPrincipalPage(Hooks.driver);
         loginInforme = new LoginPage(Hooks.driver);
         listadoClientes = new ListadoClientesPage(Hooks.driver);

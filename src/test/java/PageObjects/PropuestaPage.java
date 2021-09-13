@@ -43,6 +43,9 @@ public class PropuestaPage {
     //@FindBy(xpath = "/html/body/form/table[1]/tbody/tr[2]/td/table[2]/tbody/tr[1]/td/a") private WebElement btn_Aprobar;
 
     //@FindBy(xpath = "//img[@alt='Aprobar']") private WebElement btn_Aprobar;
+    @FindBy(xpath = "//img[@alt='Aprobar']") private WebElement btn_Aprobar;
+    @FindBy(xpath = "//td[@id='NewDdTD']") private WebElement btn_Dictamen;
+
 
     public PropuestaPage(WebDriver d) {
         driver = d;
@@ -138,6 +141,16 @@ public class PropuestaPage {
         Esperar(2);
     }
 
+    public void ClickDesenlazarInformeVisitaConsumo() {
+        WebElement btn_desenlazarInformeVisitaConsumo = driver.findElement(By.xpath("/html/body/form/table/tbody/tr[3]/td/div/table[18]/tbody/tr[1]/td[3]/button"));
+        String JScript = btn_desenlazarInformeVisitaConsumo.getAttribute("onclick");
+        ((JavascriptExecutor)driver).executeScript(JScript);
+        Esperar(2);
+    }
+
+
+
+
     public void ClickEnlazarInformeVisita(){
         WebElement btn_enlazarInformeVisita = driver.findElement(By.xpath("/html/body/form/table[2]/tbody/tr[1]/td[3]/button"));
         String JScript = btn_enlazarInformeVisita.getAttribute("onclick");
@@ -146,28 +159,57 @@ public class PropuestaPage {
 
     }
 
+    public void ClickEnlazarInformeVisitaConsumo() {
+        WebElement btn_enlazarInformeVisitaConsumo = driver.findElement(By.xpath("/html/body/form/table/tbody/tr[3]/td/div/table[18]/tbody/tr[1]/td[3]/button"));
+        String JScript = btn_enlazarInformeVisitaConsumo.getAttribute("onclick");
+        ((JavascriptExecutor) driver).executeScript(JScript);
+        Esperar(2);
+    }
+
     public void ClickEnlazarInformeComercialNuevo () {
         WebElement btn_enlazarInformeComercial = driver.findElement(By.xpath("/html/body/form/table[2]/tbody/tr[3]/td[3]/button"));
         String JScript = btn_enlazarInformeComercial.getAttribute("onclick");
         ((JavascriptExecutor)driver).executeScript(JScript);
         Esperar(2);
 
-
     }
+
+    public void ClickEnlazarInformeComercialConsumo () {
+        WebElement btn_enlazarInformeComercialConsumo = driver.findElement(By.xpath("/html/body/form/table/tbody/tr[3]/td/div/table[18]/tbody/tr[2]/td[3]/button"));
+        String JScript = btn_enlazarInformeComercialConsumo.getAttribute("onclick");
+        ((JavascriptExecutor)driver).executeScript(JScript);
+        Esperar(2);
+    }
+
+    public void ClickEnlazarHojaTrabajo () {
+        WebElement btn_enlazarInformeComercial = driver.findElement(By.xpath(" /html/body/form/table/tbody/tr[3]/td/div/table[16]/tbody/tr/td[3]/button"));
+        String JScript = btn_enlazarInformeComercial.getAttribute("onclick");
+        ((JavascriptExecutor)driver).executeScript(JScript);
+        Esperar(2);
+    }
+
+
 
     public void ClickGrabar() {
         wait.until(ExpectedConditions.elementToBeClickable(btn_Grabar));
         btn_Grabar.click();
     }
 
+    public void AbrirOpcionesDictamen(){
+        btn_Dictamen.click();
+    }
+
+
+
 
     public void ClickbtnAprobar(){
-       WebElement btn_Aprobar = driver.findElement(By.xpath("/html/body/form/table[1]/tbody/tr[2]/td/table[2]/tbody/tr[1]/td/a"));
-       String JScript = btn_Aprobar.getAttribute("onclick");
+       WebElement btn_AprobarNormal = driver.findElement(By.xpath("/html/body/form/table[1]/tbody/tr[2]/td/table[2]/tbody/tr[1]/td/a"));
+       String JScript = btn_AprobarNormal.getAttribute("onclick");
         ((JavascriptExecutor)driver).executeScript(JScript);
         Esperar(1);
 
     }
+
 
 
     private void Esperar(Integer Segundos){

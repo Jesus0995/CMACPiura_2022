@@ -125,7 +125,7 @@ Feature: Crear una propuesta de Credito Empresarial de tipo NORMAL en el Sistema
     And en la ventana Operacion Credito seleccionar plaza de desembolso
       | Departamento | Provincia | Distrito |
       | LIMA         | LIMA      | LIMA     |
-    And en la ventana Operacion Credito ingresar fecha probable del desembolso "10/09/2021"
+    And en la ventana Operacion Credito ingresar fecha probable del desembolso "13/09/2021"
     And en la ventana Operacion Credito Ingresar notas "Prueba"
     And en la ventana Operacion Credito doy click en grabar
     And en la ventana Operacion Credito aceptar la alerta
@@ -174,7 +174,7 @@ Feature: Crear una propuesta de Credito Empresarial de tipo NORMAL en el Sistema
     And en la ventana Grabar documento doy click en el boton Cerrar
     And en la ventana Propuesta seleccionar la opcion Aprobar para Emitir Dictamen de Propuesta
     And en la ventana Emitir Dictamen de Propuesta ingresar observaciones y password
-    |Observaciones|Password|
+    |Observaciones|Contrasena|
     |Aprobado     |prueba  |
     And en la ventana Emitir Dictamen de Propuesta doy click en el boton Procesar
     And en la ventana Grabar Informacion doy click en boton cerrar y cerrar ventana

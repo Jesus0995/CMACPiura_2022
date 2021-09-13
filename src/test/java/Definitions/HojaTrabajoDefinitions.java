@@ -155,4 +155,23 @@ public class HojaTrabajoDefinitions {
         crearHojaTrabajo.RegresarListado();
     }
 
+    @And("se posiciona en menu principal y doy click en la opcion cerrar sesion")
+    public void sePosicionaEnMenuPrincipalYDoyClickEnLaOpcionCerrarSesion() {
+
+        menuPrincipal.ClickCerrarSesion();
+    }
+
+    @And("se posiciona en login y doy click en el boton cerrar sesion")
+    public void sePosicionaEnLoginYDoyClickEnElBotonCerrarSesion() {
+
+        login.ClickCerrarSesion();
+    }
+
+    @And("doy cerrar la pagina web")
+    public void doyCerrarLaPaginaWeb() {
+
+        Hooks.driver.close();
+    }
+
+
 }

@@ -14,7 +14,7 @@ Feature: Crear una Hoja de Trabajo en el sistema SGCCRED de Caja Piura
     And me muestra el home de SGCRED
     And doy click en link Hoja de Trabajo
     And me muestra la ventana listado de hojas de trabajo para realizar la busqueda en el tab codigo
-    And en la ventana listado de hojas de trabajo ingresar el codigo a buscar "240316510"
+    And en la ventana listado de hojas de trabajo ingresar el codigo a buscar "25356918"
     And en la ventana listado de hojas de trabajo doy click en el boton buscar
     And en la ventana listado de hojas de trabajo hacer click en el icono hoja de trabajo
     And me muestra la ventana hojas de trabajo
@@ -29,4 +29,7 @@ Feature: Crear una Hoja de Trabajo en el sistema SGCCRED de Caja Piura
     And en la ventana Hoja de Trabajo doy click en aceptar la alerta
     And en la ventana grabar documento hoja de trabajo doy click en el botón cerrar
     And en la ventana hojas de trabajo doy click en el boton regresar
+    And se posiciona en menu principal y doy click en la opcion cerrar sesion
+    And se posiciona en login y doy click en el boton cerrar sesion
+    And doy cerrar la pagina web
 

@@ -589,7 +589,7 @@ public class RegistrarPropuestaDefinitions {
         List<Map<String,String>> lista = DatosAprobacion.asMaps(String.class,String.class);
         for (Integer i = 0; i < lista.size() ;i++){
             aprobarDictamenPropuesta.IngresarObservaciones(lista.get(i).get("Observaciones"));
-            aprobarDictamenPropuesta.IngresarPassword(lista.get(i).get("Password"));
+            aprobarDictamenPropuesta.IngresarContrasena(lista.get(i).get("Contrasena"));
         }
 
     }

@@ -29,4 +29,7 @@ Feature: Crear una Hoja de Trabajo en el sistema SGCCRED de Caja Piura
     And en la ventana Hoja de Trabajo doy click en aceptar la alerta
     And en la ventana grabar documento hoja de trabajo doy click en el botón cerrar
     And en la ventana hojas de trabajo doy click en el boton regresar
+    And se posiciona en menu principal y doy click en la opcion cerrar sesion
+    And se posiciona en login y doy click en el boton cerrar sesion
+    And doy cerrar la pagina web
 

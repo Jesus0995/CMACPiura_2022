@@ -16,10 +16,10 @@ public class GrabarDocumentoPropuestaPage {
     private WebDriverWait wait;
     private Set<String> identificadoresGrabarPropuesta;
 
-    @FindBy(xpath = "//button[@type=\"button\"]") private WebElement btn_Cerrar;
+    @FindBy(xpath = "//button[@type=\"button\"]") private WebElement btn_cerrar;
 
     public void AbrirVentanaGrabarPropuesta(){
-
+        Esperar(2);
         identificadoresGrabarPropuesta = driver.getWindowHandles();
         System.out.println(identificadoresGrabarPropuesta);
         String LastHandle ="";
@@ -28,7 +28,7 @@ public class GrabarDocumentoPropuestaPage {
             LastHandle = identificadorGrabarPropuesta;
         }
         driver.switchTo().window(LastHandle);
-        System.out.println("Titulo:" + driver.getTitle());
+        System.out.println("Titulo LastHandle: "+ driver.getWindowHandle() +" - "+driver.getTitle());
 
     }
 
@@ -53,28 +53,17 @@ public class GrabarDocumentoPropuestaPage {
 
     public void ClickbtnCerrar(){
 
-        String JScript = btn_Cerrar.getAttribute("onclick");
+        String JScript = btn_cerrar.getAttribute("onclick");
         ((JavascriptExecutor)driver).executeScript(JScript);
-
-
 
     }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    private void Esperar(Integer Segundos) {
+        Integer Milisegundos = Segundos * 1000;
+        try {
+            Thread.sleep(Milisegundos);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+    }
 }

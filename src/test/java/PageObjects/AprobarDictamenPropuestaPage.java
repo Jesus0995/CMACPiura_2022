@@ -22,6 +22,7 @@ public class AprobarDictamenPropuestaPage {
 
 
     public void AbrirVentanaAprobarDictamenPropuesta(){
+        Esperar(2);
         identificadoresAprobarDictamenPropuesta = driver.getWindowHandles();
         System.out.println(identificadoresAprobarDictamenPropuesta);
         String LastHandle ="";
@@ -30,7 +31,7 @@ public class AprobarDictamenPropuestaPage {
             LastHandle = identificadorAprobarDictamenPropuesta;
         }
         driver.switchTo().window(LastHandle);
-        System.out.println("Titulo:" + driver.getTitle());
+        System.out.println("Titulo LastHandles :" + driver.getWindowHandles() +driver.getTitle());
 
     }
 
@@ -64,9 +65,9 @@ public class AprobarDictamenPropuestaPage {
     }
 
 
-    public void IngresarPassword(String Password){
+    public void IngresarContrasena(String Contrasena){
         txt_password.clear();
-        txt_password.sendKeys(Password);
+        txt_password.sendKeys(Contrasena);
     }
 
 
