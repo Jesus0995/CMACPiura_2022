@@ -291,7 +291,7 @@ public class RegistrarPropuestaDefinitions {
 
         operacioncredito.CerrarVentanaOperacionCredito();
     }
-
+/*
     @Then("el sistema direcciona a ventana Propuesta y doy click icono cambio de tasa")
     public void elSistemaDireccionaAVentanaPropuestaYDoyClickIconoCambioDeTasa() {
         propuesta.ClickIcnCambioTasa();
@@ -311,7 +311,7 @@ public class RegistrarPropuestaDefinitions {
         cambioTasaCredito.CerrarVentanaCambioTasaCredito();
 
     }
-
+*/
     @Then("el sistema direcciona a la ventana propuesta y doy click al boton Registro de seguros")
     public void elSistemaDireccionaALaVentanaPropuestaYDoyClickAlBotonRegistroDeSeguros() {
         propuesta.ClickBotonRegistrarSeguro();
