@@ -15,11 +15,13 @@ public class ListadoPropuestaPage {
     private WebDriverWait wait;
 
     //Mapear los locator
-    @FindBy(name = "criterio") private WebElement cbx_propuesta;
-    @FindBy(name = "tipoBusqueda") private WebElement cbx_tipoPropuesta;
-    @FindBy(name = "valorBuscado") private WebElement txt_valorBuscado;
+    @FindBy(name = "criterio") private WebElement cbx_Propuesta;
+    @FindBy(name = "tipoBusqueda") private WebElement cbx_TipoPropuesta;
+    @FindBy(name = "valorBuscado") private WebElement txt_ValorBuscado;
     @FindBy(xpath = "//button[@type=\"submit\"]") private WebElement btn_buscar;
-    @FindBy(xpath = "/html/body/table/tbody/tr[2]/td/table[1]/tbody/tr/td[2]/div/button[1]") private WebElement btn_crearPropuesta;
+    @FindBy(xpath = "/html/body/table/tbody/tr[2]/td/table[1]/tbody/tr/td[2]/div/button[1]") private WebElement btn_CrearPropuesta;
+    @FindBy(xpath = "/html/body/table/tbody/tr[2]/td/table[1]/tbody/tr/td[2]/div/button[2]") private WebElement btn_Regresar;
+
 
     public ListadoPropuestaPage(WebDriver d) {
         //Iniciar las variables
@@ -28,11 +30,17 @@ public class ListadoPropuestaPage {
         PageFactory.initElements(driver,this);
     }
     //crear metodo para dar click a crear propuesta
+
     public void clickCrearPropuesta (){
-        wait.until(ExpectedConditions.elementToBeClickable(btn_crearPropuesta));
+        wait.until(ExpectedConditions.elementToBeClickable(btn_CrearPropuesta));
 
-        btn_crearPropuesta.click();
+        btn_CrearPropuesta.click();
 
+    }
+
+    public void clickRegresar (){
+        wait.until(ExpectedConditions.elementToBeClickable(btn_Regresar));
+        btn_Regresar.click();
     }
 
 

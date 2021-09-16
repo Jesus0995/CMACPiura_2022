@@ -16,10 +16,20 @@ public class GrabarDocumentoPropuestaPage {
     private WebDriverWait wait;
     private Set<String> identificadoresGrabarPropuesta;
 
-    @FindBy(xpath = "//button[@type=\"button\"]") private WebElement btn_cerrar;
+    @FindBy(xpath = "//button[@type='button']") private WebElement btn_cerrar;
 
     public void AbrirVentanaGrabarPropuesta(){
-        Esperar(2);
+        Esperar(5);
+
+        /*validar handles activos
+        String handleActual = driver.getWindowHandle();
+        for (String recorrerHandles : driver.getWindowHandles() ){
+            driver.switchTo().window(recorrerHandles);
+            System.out.println(driver.getWindowHandle()+"-"+driver.getTitle());
+        }
+        driver.switchTo().window(handleActual);*/
+
+        System.out.println(driver.getWindowHandles());
         identificadoresGrabarPropuesta = driver.getWindowHandles();
         System.out.println(identificadoresGrabarPropuesta);
         String LastHandle ="";
@@ -42,6 +52,8 @@ public class GrabarDocumentoPropuestaPage {
         }
         System.out.println(Handles[0]);
         driver.switchTo().window(Handles[0]);
+
+        Esperar(5);
     }
 
 

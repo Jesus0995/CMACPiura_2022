@@ -9,7 +9,7 @@ import io.cucumber.java.en.When;
 import java.util.List;
 import java.util.Map;
 
-public class InformeComercialCredtoConsumoDefinitions {
+public class InformeComercialCreditoConsumoDefinitions {
     LoginPage loginInforme;
     MenuPrincipalPage menuPrincipal;
     ListadoInformeVisitaPage listadoInformeComercial;
@@ -17,7 +17,7 @@ public class InformeComercialCredtoConsumoDefinitions {
     InformeVisita_InformePage listaInformes;
     InformeComercialNuevoPage informeComercialNuevo;
 
-    public InformeComercialCredtoConsumoDefinitions(){
+    public InformeComercialCreditoConsumoDefinitions(){
         loginInforme = new LoginPage(Hooks.driver);
         menuPrincipal = new MenuPrincipalPage(Hooks.driver);
         listadoInformeComercial = new ListadoInformeVisitaPage(Hooks.driver);
@@ -93,31 +93,33 @@ public class InformeComercialCredtoConsumoDefinitions {
 
     @And("en la ventana nuevo informe comercial doy clik en el boton grabar")
     public void enLaVentanaNuevoInformeComercialDoyClikEnElBotonGrabar() {
+
         informeComercialNuevo.ClickGrabar();
     }
 
     @And("en la ventana nuevo informe comercial doy clik en el boton regresar")
     public void enLaVentanaNuevoInformeComercialDoyClikEnElBotonRegresar() {
+
         informeComercialNuevo.ClickRegresar();
     }
 
     @And("muestra la ventana informes comerciales y doy click en el boton regresar")
     public void muestraLaVentanaInformesComercialesYDoyClickEnElBotonRegresar() {
+
         listaInformes.ClickRegresar();
     }
 
     @And("posiciona en menu principal y doy click en la opcion cerrar sesion")
     public void posicionaEnMenuPrincipalYDoyClickEnLaOpcionCerrarSesion() {
+
         menuPrincipal.ClickCerrarSesion();
     }
 
     @And("posiciona en login y doy click en el boton cerrar sesion")
     public void posicionaEnLoginYDoyClickEnElBotonCerrarSesion() {
+
         loginInforme.ClickCerrarSesion();
     }
 
-    @And("cerrar la pagina web")
-    public void cerrarLaPaginaWeb() {
-        Hooks.driver.close();
-    }
+
 }

@@ -2,6 +2,7 @@ package Definitions;
 
 
 import PageObjects.*;
+import com.sun.istack.internal.NotNull;
 import io.cucumber.datatable.DataTable;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
@@ -162,24 +163,6 @@ public class CreditoConsumoDefinitions {
         }
     }
 
-    @And("en la ventana propuesta de financiamiento ingresar la clasificacion crediticia {string}")
-    public void enLaVentanaPropuestaDeFinanciamientoIngresarLaClasificacionCrediticia(String clasificacion) {
-        propuesta.IngresarClasificacionCrediticia(clasificacion);
-        //pantallazo();
-    }
-
-    @And("en la ventana propuesta de financiamiento ingresar el objetivo de credito {string}")
-    public void enLaVentanaPropuestaDeFinanciamientoIngresarElObjetivoDeCredito(String Objetivo) {
-        propuesta.IngresarObjetivoCredito(Objetivo);
-        //pantallazo();
-    }
-
-    @And("en la ventana propuesta de financiamiento ingresar la justificacion de credito {string}")
-    public void enLaVentanaPropuestaDeFinanciamientoIngresarLaJustificacionDeCredito(String Justificacion) {
-        propuesta.IngresarJustificacionCredito(Justificacion);
-        //pantallazo();
-    }
-
     @And("en la ventana propuesta de financiamiento doy clik al boton nueva operacion")
     public void enLaVentanaPropuestaDeFinanciamientoDoyClikAlBotonNuevaOperacion() {
         propuesta.ClickBotonOperacion();
@@ -214,125 +197,64 @@ public class CreditoConsumoDefinitions {
 
     @And("en la ventana operacion credito seleccionar el plan de pagos {string}")
     public void enLaVentanaOperacionCreditoSeleccionarElPlanDePagos(String PlanPagos) {
-        try {
-            operacioncredito.SeleccionarPlanPagos(PlanPagos);
-        }
-        catch (Exception Error){
-            System.out.println(Error.getMessage());
-        }
-
+        operacioncredito.SeleccionarPlanPagos(PlanPagos);
     }
 
     @And("en la ventana operacion credito seleccionar la modalidad de amortizacion {string}")
     public void enLaVentanaOperacionCreditoSeleccionarLaModalidadDeAmortizacion(String Modalidad) {
-        try {
-            operacioncredito.SeleccionarModalidad(Modalidad);
-        }
-        catch (Exception Error){
-            System.out.println(Error.getMessage());
-        }
+        operacioncredito.SeleccionarModalidad(Modalidad);
     }
 
     @And("en la ventana operacion credito seleccionar la opcion de pago {string}")
     public void enLaVentanaOperacionCreditoSeleccionarLaOpcionDePago(String OpcionPagos) {
-        try {
-            operacioncredito.SeleccionarOpcionPagos(OpcionPagos);
-        }
-        catch (Exception Error){
-            System.out.println(Error.getMessage());
-        }
+        operacioncredito.SeleccionarOpcionPagos(OpcionPagos);
     }
 
     @And("en la ventana operacion credito ingresar el dia de pago {string}")
     public void enLaVentanaOperacionCreditoIngresarElDiaDePago(String DiaPagos) {
-        try {
-            operacioncredito.SeleccionarDiaPagos(DiaPagos);
-            //pantallazo();
-        }
-        catch (Exception Error){
-            System.out.println(Error.getMessage());
-        }
+        operacioncredito.SeleccionarDiaPagos(DiaPagos);
+        //pantallazo();
     }
 
     @And("en la ventana operacion credito seleccionar el numero de cuotas {string}")
     public void enLaVentanaOperacionCreditoSeleccionarElNumeroDeCuotas(String NumeroCuotas) {
-        try {
-            operacioncredito.IngresarNumeroCuotas(NumeroCuotas);
-        }
-        catch (Exception Error){
-            System.out.println(Error.getMessage());
-        }
+        operacioncredito.IngresarNumeroCuotas(NumeroCuotas);
     }
 
     @And("en la ventana operacion credito ingresar la tasa preferencial {string}")
     public void enLaVentanaOperacionCreditoIngresarLaTasaPreferencial(String TasaPreferencial) {
-        try {
-            operacioncredito.IngresarTasaPreferencial(TasaPreferencial);
-        }
-        catch (Exception Error){
-            System.out.println(Error.getMessage());
-        }
+        operacioncredito.IngresarTasaPreferencial(TasaPreferencial);
     }
 
     @And("en la ventana operacion credito seleccionar la forma desembolso {string}")
     public void enLaVentanaOperacionCreditoSeleccionarLaFormaDesembolso(String FormaDesembolso) {
-        try {
-            operacioncredito.SeleccionarFormaDesembolso(FormaDesembolso);
-        }
-        catch (Exception Error){
-            System.out.println(Error.getMessage());
-        }
+        operacioncredito.SeleccionarFormaDesembolso(FormaDesembolso);
     }
 
     @And("en la ventana operacion credito seleccionar el codigo de cuenta {string}")
     public void enLaVentanaOperacionCreditoSeleccionarElNumeroDeCuenta(String CodigoCuenta) {
-        try {
-            operacioncredito.SeleccionarCodigoCuenta(CodigoCuenta);
-        }
-        catch (Exception Error){
-            System.out.println(Error.getMessage());
-        }
+        operacioncredito.SeleccionarCodigoCuenta(CodigoCuenta);
     }
 
     @And("en la ventana operacion credito seleccionar la fecha desembolso {string}")
     public void enLaVentanaOperacionCreditoSeleccionarLaFechaDesembolso(String FechaDesembolso) {
-        try {
-            operacioncredito.IngresarFechaDesembolso(FechaDesembolso);
-        }
-        catch (Exception Error){
-            System.out.println(Error.getMessage());
-        }
+        operacioncredito.IngresarFechaDesembolso(FechaDesembolso);
     }
 
     @And("en la ventana operacion credito ingresar una nota {string}")
     public void enLaVentanaOperacionCreditoIngresarUnaNota(String Notas) {
-        try {
-            operacioncredito.IngresarNotas(Notas);
-        }
-        catch (Exception Error){
-            System.out.println(Error.getMessage());
-        }
+        operacioncredito.IngresarNotas(Notas);
     }
 
     @And("en la ventana operacion credito doy click en el boton grabar")
     public void enLaVentanaOperacionCreditoDoyClickEnElBotonGrabar() {
-        try {
-            operacioncredito.ClickGrabar();
-        }
-        catch (Exception Error){
-            System.out.println(Error.getMessage());
-        }
+        operacioncredito.ClickGrabar();
     }
 
     @And("en la ventana operacion credito aceptar la alerta")
     public void enLaVentanaOperacionCreditoAceptarLaAlerta() {
-        try {
-            operacioncredito.ObtenerAlerta();
-            operacioncredito.CerrarVentanaOperacionCredito();
-        }
-        catch (Exception Error){
-            System.out.println(Error.getMessage());
-        }
+        operacioncredito.ObtenerAlerta();
+        operacioncredito.CerrarVentanaOperacionCredito();
     }
 
     @And("el sistema direcciona a la ventana propuesta y doy clik en el boton registro de seguro")
@@ -454,9 +376,26 @@ public class CreditoConsumoDefinitions {
         enlazarInformeComercialNuevo.CerrarVentanaEnlazarInformeComercialNuevo();
     }
 
-    @And("el sistema direcciona a la ventana propuesta y doy clik en el boton grabar")
-    public void elSistemaDireccionaALaVentanaPropuestaYDoyClikEnElBotonGrabar() {
+    @And("direcciona a la ventana propuesta de financiamiento ingresar la clasificacion crediticia {string}")
+    public void direccionaALaVentanaPropuestaDeFinanciamientoIngresarLaClasificacionCrediticia(String clasificacion) {
+        propuesta.IngresarClasificacionCrediticia(clasificacion);
+        //pantallazo();
+    }
 
+    @And("en la ventana propuesta de financiamiento ingresar el objetivo de credito {string}")
+    public void enLaVentanaPropuestaDeFinanciamientoIngresarElObjetivoDeCredito(String Objetivo) {
+        propuesta.IngresarObjetivoCredito(Objetivo);
+        //pantallazo();
+    }
+
+    @And("en la ventana propuesta de financiamiento ingresar la justificacion de credito {string}")
+    public void enLaVentanaPropuestaDeFinanciamientoIngresarLaJustificacionDeCredito(String Justificacion) {
+        propuesta.IngresarJustificacionCredito(Justificacion);
+        //pantallazo();
+    }
+
+    @And("en la ventana propuesta de financiamiento doy clik en el boton grabar")
+    public void enLaVentanaPropuestaDeFinanciamientoDoyClikEnElBotonGrabar() {
         propuesta.ClickGrabar();
     }
 
@@ -467,40 +406,50 @@ public class CreditoConsumoDefinitions {
         grabarDocumentoPropuesta.CerrarVentanaGrabarPropuesta();
     }
 
-    /*@And("el sistema direcciona a la propuesta doy click en la opcion emitir dictamen")
-    public void elSistemaDireccionaALaPropuestaDoyClickEnLaOpcionEmitirDictamen() {
-
-    }*/
-
-    @And("en la ventana propuesta seleccionar la opcion aprobar")
-    public void enLaVentanaPropuestaSeleccionarLaOpcionAprobar() {
-
-        propuesta.ClickbtnAprobar();
+    @And("en la ventana propuesta de financiamiento seleccionar la opcion aprobar")
+    public void enLaVentanaPropuestaDeFinanciamientoSeleccionarLaOpcionAprobar() {
+        propuesta.ClickbtnAprobarCreditoConsumo();
     }
 
-    @And("muestra la ventana emitir dictamen propuesta ingresar observaciones y contraseña del usuario")
-    public void muestraLaVentanaEmitirDictamenPropuestaIngresarObservacionesYContraseñaDelUsuario(DataTable DatosAprobacion) {
+    @And("muestra la ventana emitir dictamen propuesta ingresar observaciones y contrasena del usuario")
+    public void muestraLaVentanaEmitirDictamenPropuestaIngresarObservacionesYContrasenaDelUsuario(DataTable DatosAprobacion) {
+        aprobarDictamenPropuesta.AbrirVentanaAprobarDictamenPropuesta();
         List<Map<String, String>> lista = DatosAprobacion.asMaps(String.class, String.class);
         for (int i = 0; i < lista.size(); i++) {
             aprobarDictamenPropuesta.IngresarObservaciones(lista.get(i).get("Observaciones"));
             aprobarDictamenPropuesta.IngresarContrasena(lista.get(i).get("Contrasena"));
         }
-
     }
 
     @And("en la ventana emitir dictamen propuesta doy click en el boton procesar")
     public void enLaVentanaEmitirDictamenPropuestaDoyClickEnElBotonProcesar() {
         aprobarDictamenPropuesta.ClickbtnProcesar();
+        //aprobarDictamenPropuesta.CerrarVentanaAprobarDictamenPropuesta();
     }
 
-    @And("en la ventana propuesta de financiamiento aceptar la alerta")
-    public void enLaVentanaPropuestaDeFinanciamientoAceptarLaAlerta() {
-        try {
-            operacioncredito.ObtenerAlerta();
-            operacioncredito.CerrarVentanaOperacionCredito();
-        }
-        catch (Exception Error){
-            System.out.println(Error.getMessage());
-        }
+    @And("muestra a la ventana grabar informacion y doy click en el boton cerrar")
+    public void muestraALaVentanaGrabarInformacionYDoyClickEnElBotonCerrar() {
+        //grabarDocumentoPropuesta.AbrirVentanaGrabarPropuesta();
+        grabarDocumentoPropuesta.ClickbtnCerrar();
+        grabarDocumentoPropuesta.CerrarVentanaGrabarPropuesta();
     }
+
+    @And("direcciona a la ventana listado propuesta y doy click en el boton regresar")
+    public void direccionaALaVentanaListadoPropuestaYDoyClickEnElBotonRegresar() {
+
+        listadoPropuesta.clickRegresar();
+    }
+
+    @And("direcciona al menu principal y doy click en la opcion cerrar sesion")
+    public void direccionaAlMenuPrincipalYDoyClickEnLaOpcionCerrarSesion() {
+
+        menuPrincipal.ClickCerrarSesion();
+    }
+
+    @And("direcciona al login y doy click en el boton cerrar sesion")
+    public void direccionaAlLoginYDoyClickEnElBotonCerrarSesion() {
+
+        login.ClickCerrarSesion();
+    }
+
 }

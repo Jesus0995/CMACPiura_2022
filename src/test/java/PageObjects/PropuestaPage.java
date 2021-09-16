@@ -28,10 +28,10 @@ public class PropuestaPage {
     @FindBy(name = "btnEnviar2") private WebElement btn_AgregarSeguro;
     @FindBy(xpath = "/html/body/form/table[1]/tbody/tr[3]/td/div/table[8]/tbody/tr[1]/td[2]/button") private WebElement btn_AnexarChecklist;
 
-    @FindBy(xpath = "//textarea[@name='caracteristicaNegocio']") private WebElement txt_caracteristicaNegocio;
-    @FindBy(xpath = "//textarea[@id='txtclasificac']") private WebElement txt_clasificacionRiesgoCliente;
-    @FindBy(xpath = "//textarea[@id='txtclasificaAval']")private  WebElement txt_clasificacionRiesgoAval;
-    @FindBy(xpath = "//textarea[@id='txtanalisisUEF']") private WebElement txt_analisisUnidadFinanciera;
+    @FindBy(xpath = "//textarea[@name='caracteristicaNegocio']") private WebElement txt_CaracteristicaNegocio;
+    @FindBy(xpath = "//textarea[@id='txtclasificac']") private WebElement txt_ClasificacionRiesgoCliente;
+    @FindBy(xpath = "//textarea[@id='txtclasificaAval']")private  WebElement txt_ClasificacionRiesgoAval;
+    @FindBy(xpath = "//textarea[@id='txtanalisisUEF']") private WebElement txt_AnalisisUnidadFinanciera;
 
     @FindBy(xpath = "//button[@name=\"btnGaranExist\"]") private WebElement btn_AnexarGarantias;
 
@@ -44,6 +44,7 @@ public class PropuestaPage {
 
     //@FindBy(xpath = "//img[@alt='Aprobar']") private WebElement btn_Aprobar;
     @FindBy(xpath = "//img[@alt='Aprobar']") private WebElement btn_Aprobar;
+
     @FindBy(xpath = "//td[@id='NewDdTD']") private WebElement btn_Dictamen;
 
 
@@ -93,24 +94,24 @@ public class PropuestaPage {
     }
 
     public void IngresarCaracteristicaNegocio(String CaracteristicaNegocio){
-        txt_caracteristicaNegocio.clear();
-        txt_caracteristicaNegocio.sendKeys(CaracteristicaNegocio);
+        txt_CaracteristicaNegocio.clear();
+        txt_CaracteristicaNegocio.sendKeys(CaracteristicaNegocio);
     }
 
     public void IngresarClasificacionRiesgoCliente(String ClasificacionRiesgoNegocio){
-        txt_clasificacionRiesgoCliente.clear();
-        txt_clasificacionRiesgoCliente.sendKeys(ClasificacionRiesgoNegocio);
+        txt_ClasificacionRiesgoCliente.clear();
+        txt_ClasificacionRiesgoCliente.sendKeys(ClasificacionRiesgoNegocio);
 
     }
 
     public void IngresarClasificacionRiesgoAval(String ClasificacionRiesgoAval){
-        txt_clasificacionRiesgoAval.clear();
-        txt_clasificacionRiesgoAval.sendKeys(ClasificacionRiesgoAval);
+        txt_ClasificacionRiesgoAval.clear();
+        txt_ClasificacionRiesgoAval.sendKeys(ClasificacionRiesgoAval);
     }
 
     public void IngresarAnalisisUnidadF(String AnalisisUnidadFinanciera){
-        txt_analisisUnidadFinanciera.clear();
-        txt_analisisUnidadFinanciera.sendKeys(AnalisisUnidadFinanciera);
+        txt_AnalisisUnidadFinanciera.clear();
+        txt_AnalisisUnidadFinanciera.sendKeys(AnalisisUnidadFinanciera);
     }
 
 
@@ -148,9 +149,6 @@ public class PropuestaPage {
         Esperar(2);
     }
 
-
-
-
     public void ClickEnlazarInformeVisita(){
         WebElement btn_enlazarInformeVisita = driver.findElement(By.xpath("/html/body/form/table[2]/tbody/tr[1]/td[3]/button"));
         String JScript = btn_enlazarInformeVisita.getAttribute("onclick");
@@ -158,7 +156,6 @@ public class PropuestaPage {
         Esperar(2);
 
     }
-
     public void ClickEnlazarInformeVisitaConsumo() {
         WebElement btn_enlazarInformeVisitaConsumo = driver.findElement(By.xpath("/html/body/form/table/tbody/tr[3]/td/div/table[18]/tbody/tr[1]/td[3]/button"));
         String JScript = btn_enlazarInformeVisitaConsumo.getAttribute("onclick");
@@ -188,8 +185,6 @@ public class PropuestaPage {
         Esperar(2);
     }
 
-
-
     public void ClickGrabar() {
         wait.until(ExpectedConditions.elementToBeClickable(btn_Grabar));
         btn_Grabar.click();
@@ -199,17 +194,19 @@ public class PropuestaPage {
         btn_Dictamen.click();
     }
 
-
-
-
     public void ClickbtnAprobar(){
        WebElement btn_AprobarNormal = driver.findElement(By.xpath("/html/body/form/table[1]/tbody/tr[2]/td/table[2]/tbody/tr[1]/td/a"));
        String JScript = btn_AprobarNormal.getAttribute("onclick");
-        ((JavascriptExecutor)driver).executeScript(JScript);
-        Esperar(1);
-
+       ((JavascriptExecutor)driver).executeScript(JScript);
+       Esperar(1);
     }
 
+    public void ClickbtnAprobarCreditoConsumo(){
+        WebElement btn_AprobarConsumo = driver.findElement(By.xpath("/html/body/form/table/tbody/tr[2]/td/table[2]/tbody/tr[1]/td/a"));
+        String JScript = btn_AprobarConsumo.getAttribute("onclick");
+        ((JavascriptExecutor)driver).executeScript(JScript);
+        Esperar(1);
+    }
 
 
     private void Esperar(Integer Segundos){
@@ -220,7 +217,5 @@ public class PropuestaPage {
             e.printStackTrace();
         }
     }
-
-
 
 }

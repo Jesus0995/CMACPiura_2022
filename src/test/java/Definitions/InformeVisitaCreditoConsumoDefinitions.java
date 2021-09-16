@@ -180,10 +180,4 @@ public class InformeVisitaCreditoConsumoDefinitions {
         loginInforme.ClickCerrarSesion();
     }
 
-    @And("cerrar la web")
-    public void cerrarLaWeb() {
-
-        Hooks.driver.close();
-    }
-
 }
