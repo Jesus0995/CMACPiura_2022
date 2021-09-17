@@ -396,7 +396,8 @@ public class CreditoConsumoDefinitions {
 
     @And("en la ventana propuesta de financiamiento doy clik en el boton grabar")
     public void enLaVentanaPropuestaDeFinanciamientoDoyClikEnElBotonGrabar() {
-        propuesta.ClickGrabar();
+
+        propuesta.ClickGrabarDocumento();
     }
 
     @And("muestra ventana grabar informacion y doy click en el boton cerrar")

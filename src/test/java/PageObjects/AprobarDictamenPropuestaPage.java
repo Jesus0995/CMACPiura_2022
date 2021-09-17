@@ -22,7 +22,7 @@ public class AprobarDictamenPropuestaPage {
 
 
     public void AbrirVentanaAprobarDictamenPropuesta(){
-        Esperar(2);
+
         identificadoresAprobarDictamenPropuesta = driver.getWindowHandles();
         System.out.println(identificadoresAprobarDictamenPropuesta);
         String LastHandle ="";
@@ -31,7 +31,7 @@ public class AprobarDictamenPropuestaPage {
             LastHandle = identificadorAprobarDictamenPropuesta;
         }
         driver.switchTo().window(LastHandle);
-        System.out.println("Titulo LastHandles :" + driver.getWindowHandles() +driver.getTitle());
+        System.out.println("Titulo :"+driver.getTitle());
 
     }
 
@@ -74,7 +74,7 @@ public class AprobarDictamenPropuestaPage {
     public void ClickbtnProcesar(){
         wait.until(ExpectedConditions.elementToBeClickable(btn_procesar));
         btn_procesar.click();
-        Esperar(2);
+        Esperar(3);
 
 
     }

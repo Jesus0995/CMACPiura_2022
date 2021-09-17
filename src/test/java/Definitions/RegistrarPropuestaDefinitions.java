@@ -567,7 +567,7 @@ public class RegistrarPropuestaDefinitions {
     @And("el sistema direcciona a la ventana Propuesta y doy click en la opcion grabar")
     public void elSistemaDireccionaALaVentanaPropuestaYDoyClickEnLaOpcionGrabar() {
 
-        propuesta.ClickGrabar();
+        propuesta.ClickGrabarDocumento();
     }
 
     @And("en la ventana Grabar documento doy click en el boton Cerrar")
@@ -597,14 +597,14 @@ public class RegistrarPropuestaDefinitions {
     @And("en la ventana Emitir Dictamen de Propuesta doy click en el boton Procesar")
     public void enLaVentanaEmitirDictamenDePropuestaDoyClickEnElBotonProcesar() {
         aprobarDictamenPropuesta.ClickbtnProcesar();
-        aprobarDictamenPropuesta.CerrarVentanaAprobarDictamenPropuesta();
+       // aprobarDictamenPropuesta.CerrarVentanaAprobarDictamenPropuesta();
     }
 
-    @And("en la ventana Grabar Informacion doy click en boton cerrar y cerrar ventana")
-    public void enLaVentanaGrabarInformacionDoyClickEnBotonCerrarYCerrarVentana() {
-        grabarInformacionErrores.AbrirVentanaGrabarInformacion();
-        grabarInformacionErrores.ClickbtnCerrar();
-        grabarInformacionErrores.CerrarVentanaGrabarInformacion();
+    @And("en la ventana Grabar Informacion doy click en boton cerrar")
+    public void enLaVentanaGrabarInformacionDoyClickEnBotonCerrar() {
+        //grabarPropuesta.AbrirVentanaGrabarPropuesta();
+        grabarPropuesta.ClickbtnCerrar();
+        grabarPropuesta.CerrarVentanaGrabarPropuesta();
 
     }
 

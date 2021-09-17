@@ -35,7 +35,6 @@ public class SeleccionarGarantiaPage {
 
         }
         driver.switchTo().window(LastHandle);
-
         System.out.println("Titulo : " +driver.getTitle());
     }
 

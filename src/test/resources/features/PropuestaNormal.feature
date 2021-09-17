@@ -74,10 +74,10 @@ Feature: Crear una propuesta de Credito Empresarial de tipo NORMAL en el Sistema
     Then el sistema direcciona a la ventana Estados Financieros y doy click en Enlazar
     And en la ventana Propuesta doy click en Desenlazar el Informe de Visita precargado por defecto
     Then el sistema muestra la ventana Desenlazar Informe de Visita y doy click en el boton Realizar
-    And el sistema realiza la accion y direcciona a la ventana Propuesta y doy click en Enlazar el nuevo Informe Visita
-    Then el sistema muestra la ventana Enlazar Informe de Visita y le doy click en el boton Realizar
     And el sistema realiza la accion y direcciona a la ventana Propuesta y doy click en Enlazar Informe Comercial Nuevo
     Then el sistema muestra la ventana Enlazar Informe Comercial y le doy click en el boton Realizar
+    And el sistema realiza la accion y direcciona a la ventana Propuesta y doy click en Enlazar el nuevo Informe Visita
+    Then el sistema muestra la ventana Enlazar Informe de Visita y le doy click en el boton Realizar
     And el sistema muestra la ventana Propuesta y debe ingresar comentarios de los principales ratios "Comentarios positivos"
     And el sistema direcciona a la ventana Propuesta y doy click en la opcion grabar
     And en la ventana Grabar documento doy click en el boton Cerrar
@@ -86,7 +86,7 @@ Feature: Crear una propuesta de Credito Empresarial de tipo NORMAL en el Sistema
     |Observaciones|Contrasena|
     |Aprobado     |prueba  |
     And en la ventana Emitir Dictamen de Propuesta doy click en el boton Procesar
-    And en la ventana Grabar Informacion doy click en boton cerrar y cerrar ventana
+    And en la ventana Grabar Informacion doy click en boton cerrar
 
     Examples:
       | cliente  |

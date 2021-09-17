@@ -150,12 +150,14 @@ public class PropuestaPage {
     }
 
     public void ClickEnlazarInformeVisita(){
+        Esperar(2);
         WebElement btn_enlazarInformeVisita = driver.findElement(By.xpath("/html/body/form/table[2]/tbody/tr[1]/td[3]/button"));
         String JScript = btn_enlazarInformeVisita.getAttribute("onclick");
         ((JavascriptExecutor)driver).executeScript(JScript);
         Esperar(2);
 
     }
+
     public void ClickEnlazarInformeVisitaConsumo() {
         WebElement btn_enlazarInformeVisitaConsumo = driver.findElement(By.xpath("/html/body/form/table/tbody/tr[3]/td/div/table[18]/tbody/tr[1]/td[3]/button"));
         String JScript = btn_enlazarInformeVisitaConsumo.getAttribute("onclick");
@@ -165,8 +167,8 @@ public class PropuestaPage {
 
     public void ClickEnlazarInformeComercialNuevo () {
         WebElement btn_enlazarInformeComercial = driver.findElement(By.xpath("/html/body/form/table[2]/tbody/tr[3]/td[3]/button"));
-        String JScript = btn_enlazarInformeComercial.getAttribute("onclick");
-        ((JavascriptExecutor)driver).executeScript(JScript);
+        String JScript2 = btn_enlazarInformeComercial.getAttribute("onclick");
+        ((JavascriptExecutor)driver).executeScript(JScript2);
         Esperar(2);
 
     }
@@ -185,20 +187,23 @@ public class PropuestaPage {
         Esperar(2);
     }
 
-    public void ClickGrabar() {
+    public void ClickGrabarDocumento() {
         wait.until(ExpectedConditions.elementToBeClickable(btn_Grabar));
         btn_Grabar.click();
+        Esperar(2);
     }
 
     public void AbrirOpcionesDictamen(){
+
         btn_Dictamen.click();
     }
 
     public void ClickbtnAprobar(){
+       Esperar(2);
        WebElement btn_AprobarNormal = driver.findElement(By.xpath("/html/body/form/table[1]/tbody/tr[2]/td/table[2]/tbody/tr[1]/td/a"));
        String JScript = btn_AprobarNormal.getAttribute("onclick");
        ((JavascriptExecutor)driver).executeScript(JScript);
-       Esperar(1);
+       //Esperar(1);
     }
 
     public void ClickbtnAprobarCreditoConsumo(){

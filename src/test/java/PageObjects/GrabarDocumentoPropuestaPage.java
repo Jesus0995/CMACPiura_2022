@@ -16,10 +16,9 @@ public class GrabarDocumentoPropuestaPage {
     private WebDriverWait wait;
     private Set<String> identificadoresGrabarPropuesta;
 
-    @FindBy(xpath = "//button[@type='button']") private WebElement btn_cerrar;
+
 
     public void AbrirVentanaGrabarPropuesta(){
-        Esperar(5);
 
         /*validar handles activos
         String handleActual = driver.getWindowHandle();
@@ -29,7 +28,7 @@ public class GrabarDocumentoPropuestaPage {
         }
         driver.switchTo().window(handleActual);*/
 
-        System.out.println(driver.getWindowHandles());
+        //System.out.println(driver.getWindowHandles());
         identificadoresGrabarPropuesta = driver.getWindowHandles();
         System.out.println(identificadoresGrabarPropuesta);
         String LastHandle ="";
@@ -38,7 +37,7 @@ public class GrabarDocumentoPropuestaPage {
             LastHandle = identificadorGrabarPropuesta;
         }
         driver.switchTo().window(LastHandle);
-        System.out.println("Titulo LastHandle: "+ driver.getWindowHandle() +" - "+driver.getTitle());
+        System.out.println("Titulo: "+ driver.getTitle());
 
     }
 
@@ -53,7 +52,7 @@ public class GrabarDocumentoPropuestaPage {
         System.out.println(Handles[0]);
         driver.switchTo().window(Handles[0]);
 
-        Esperar(5);
+        //Esperar(1);
     }
 
 
@@ -65,7 +64,9 @@ public class GrabarDocumentoPropuestaPage {
 
     public void ClickbtnCerrar(){
 
-        String JScript = btn_cerrar.getAttribute("onclick");
+     WebElement btn_Cerrar= driver.findElement(By.xpath("//button[@type='button']"));
+
+        String JScript = btn_Cerrar.getAttribute("onclick");
         ((JavascriptExecutor)driver).executeScript(JScript);
 
     }
