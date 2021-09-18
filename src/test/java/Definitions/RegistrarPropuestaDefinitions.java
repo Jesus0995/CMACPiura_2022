@@ -489,7 +489,7 @@ public class RegistrarPropuestaDefinitions {
     public void enLaVentanaSeleccionarGarantiasDoyClickEnRegistrarGarantias() {
         seleccionarGarantia.AbrirVentanaGarantia();
         seleccionarGarantia.ClickRegistrarGarantia();
-        seleccionarGarantia.CerrarVentanaGarantia();
+
     }
 
     @And("en la ventana Garantias Existentes seleccionar garantia correspondiente y doy click en Aceptar")
@@ -498,6 +498,7 @@ public class RegistrarPropuestaDefinitions {
         seleccionarGarantiasExistentes.SeleccionarCheckGarantiasExistentes();
         seleccionarGarantiasExistentes.ClickbtnAceptar();
         seleccionarGarantiasExistentes.CerrarVentanaGarantiasExistentes();
+        seleccionarGarantia.CerrarVentanaGarantia();
     }
 
     @And("el sistema muestra una ventana de cancelacion de pagares y se cierra automaticamente")
