@@ -37,16 +37,16 @@ Feature: Crear una propuesta de Credito Empresarial de tipo NORMAL en el Sistema
     And en la ventana Operacion Credito seleccionar plaza de desembolso
       | Departamento | Provincia | Distrito |
       | LIMA         | LIMA      | LIMA     |
-    And en la ventana Operacion Credito ingresar fecha probable del desembolso "17/09/2021"
+    And en la ventana Operacion Credito ingresar fecha probable del desembolso "21/09/2021"
     And en la ventana Operacion Credito Ingresar notas "Prueba"
     And en la ventana Operacion Credito doy click en grabar
     And en la ventana Operacion Credito aceptar la alerta
     Then el sistema direcciona a la ventana propuesta y doy click al boton Registro de seguros
     And en la ventana Seleccion de seguros doy click en boton Confirmar
     And el sistema direcciona a la ventana Registro Seguros y check en seguro desgravamen flat MN
-    And en la ventana Registro Seguros ingresar el numero DPS "12345"
+    And en la ventana Registro Seguros ingresar el numero DPS "1234"
     And en la ventana Registro Seguros hacer check en seguro todo riesgo Plan Pymes
-    And en la ventana Registro Seguros ingresar el numero DPS "6789" del seguro Plan Pymes
+    And en la ventana Registro Seguros ingresar el numero DPS "5678" del seguro Plan Pymes
     And en la ventana Registro Seguros doy click en Confirmar
     And en la ventana seguros seleccionados visualizar información y doy click en cerrar
     Then el sistema direcciona a la ventana propuesta y doy click en Anexar CheckList creditos
@@ -81,16 +81,12 @@ Feature: Crear una propuesta de Credito Empresarial de tipo NORMAL en el Sistema
     And el sistema muestra la ventana Propuesta y debe ingresar comentarios de los principales ratios "Comentarios positivos"
     And el sistema direcciona a la ventana Propuesta y doy click en la opcion grabar
     And en la ventana Grabar documento doy click en el boton Cerrar
-    And en la ventana Propuesta seleccionar la opcion Aprobar para Emitir Dictamen de Propuesta
-    And en la ventana Emitir Dictamen de Propuesta ingresar observaciones y password
-    |Observaciones|Contrasena|
-    |Aprobado     |prueba  |
-    And en la ventana Emitir Dictamen de Propuesta doy click en el boton Procesar
-    And en la ventana Grabar Informacion doy click en boton cerrar
+
+
 
     Examples:
       | cliente  |
-      | 23397676 |
+      | 10818052 |
 
 
 

@@ -154,10 +154,8 @@ public class OperacionCreditoPage {
     }
 
     public void SeleccionarDiaPagos(String DiaPagos) {
-        cbx_diaPagos.sendKeys(DiaPagos);
-        WebElement Opcion = driver.findElement(By.xpath("//select[@name='pago']//option[@value = '"+DiaPagos+"']"));
-        String JScript = Opcion.getAttribute("onclick");
-        ((JavascriptExecutor) driver).executeScript(JScript);
+        Select Opcion = new Select(driver.findElement(By.xpath("//select[@name='pago']")));
+        Opcion.selectByVisibleText(DiaPagos);
         Esperar(3);
     }
 
@@ -181,10 +179,8 @@ public class OperacionCreditoPage {
     }
 
     public void SeleccionarCodigoCuenta(String CodigoCuenta){
-        cbx_codigoCuenta.sendKeys(CodigoCuenta);
-        WebElement desembolso = driver.findElement(By.xpath("//select[@name='codigocuenta']//option[@value = '"+CodigoCuenta+ "']"));
-        String JScript = desembolso.getAttribute("onclick");
-        ((JavascriptExecutor) driver).executeScript(JScript);
+        Select Cuenta = new Select(driver.findElement(By.xpath("//select[@name='codigocuenta']")));
+        Cuenta.selectByVisibleText(CodigoCuenta);
         Esperar (3);
     }
 

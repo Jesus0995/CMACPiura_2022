@@ -47,7 +47,7 @@ public class EnlazarEvaluacionEconomicaPage {
         driver.switchTo().window(Handles[0]);
     }
 
-    public void ClickbtnRealizar(){
+    public void ClickRealizar(){
         wait.until(ExpectedConditions.elementToBeClickable(btn_realizar));
         btn_realizar.click();
     }

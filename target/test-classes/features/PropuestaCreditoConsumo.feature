@@ -30,12 +30,12 @@ Feature: Crear una propuesta de Creditos de Consumo de tipo Normal en el sistema
     And en la ventana operacion credito seleccionar el plan de pagos "Fija Vencida"
     And en la ventana operacion credito seleccionar la modalidad de amortizacion "Cronograma Pagos"
     And en la ventana operacion credito seleccionar la opcion de pago "Fecha Fija"
-    And en la ventana operacion credito ingresar el dia de pago "15"
+    And en la ventana operacion credito ingresar el dia de pago "19"
     And en la ventana operacion credito seleccionar el numero de cuotas "18"
     And en la ventana operacion credito ingresar la tasa preferencial "30"
     And en la ventana operacion credito seleccionar la forma desembolso "ABONO EN CUENTA"
     And en la ventana operacion credito seleccionar el codigo de cuenta "210-01-0037566"
-    And en la ventana operacion credito seleccionar la fecha desembolso "16/09/2021"
+    And en la ventana operacion credito seleccionar la fecha desembolso "21/09/2021"
     And en la ventana operacion credito ingresar una nota "prueba de nueva propuesta"
     And en la ventana operacion credito doy click en el boton grabar
     And en la ventana operacion credito aceptar la alerta
@@ -64,7 +64,8 @@ Feature: Crear una propuesta de Creditos de Consumo de tipo Normal en el sistema
     And en la ventana propuesta de financiamiento ingresar la justificacion de credito "prueba justificacion"
     And en la ventana propuesta de financiamiento doy clik en el boton grabar
     And muestra ventana grabar informacion y doy click en el boton cerrar
-    And en la ventana propuesta de financiamiento seleccionar la opcion aprobar
+    And en la ventana propuesta de financiamiento doy clik al boton emitir dictamen
+    And en la tabla de emitir dictamen seleccionar la opcion aprobar
     And muestra la ventana emitir dictamen propuesta ingresar observaciones y contrasena del usuario
       |Observaciones    |Contrasena|
       |Aprobar propuesta|prueba    |

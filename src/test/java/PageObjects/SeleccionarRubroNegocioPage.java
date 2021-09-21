@@ -52,7 +52,7 @@ public class SeleccionarRubroNegocioPage {
 
     }
 
-    public void ClickbtnCargar() {
+    public void ClickBtnCargar() {
         wait.until(ExpectedConditions.elementToBeClickable(btn_Cargar));
         btn_Cargar.click();
     }

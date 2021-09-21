@@ -53,7 +53,7 @@ public class EnlazarInformeVisitaPage {
 
     }
 
-    public void ClickbtnRealizar(){
+    public void ClickBtnRealizar(){
         wait.until(ExpectedConditions.elementToBeClickable(btn_realizar));
         btn_realizar.click();
 

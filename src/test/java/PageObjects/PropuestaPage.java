@@ -15,11 +15,7 @@ public class PropuestaPage {
     private WebDriverWait wait;
 
     //mapeo de locator
-    //span[@class='ui-icon ui-icon-closethick
 
-    //@FindBy(xpath = "/html/body/div[1]/div[1]/a/span") private WebElement xxx;
-    //@FindBy(xpath = "//div[@class='ui-dialog-titlebar ui-widget-header ui-corner-all ui-helper-clearfix']") private WebElement AlertaComunicado;
-    //@FindBy(xpath= "i")private WebElement PopUpComunicado;
     @FindBy(xpath = "//textarea[@name='comentCalifCred']") private WebElement txt_ClasificacionCrediticia;
     @FindBy(id = "txtobjetivo") private WebElement txt_ObjetivoCredito;
     @FindBy(id = "justificacion") private WebElement txt_JustificacionCredito;
@@ -27,26 +23,15 @@ public class PropuestaPage {
     @FindBy(xpath = "//img[@src='./images/mail-send-receive.png']") private WebElement icn_CambioTasa;
     @FindBy(name = "btnEnviar2") private WebElement btn_AgregarSeguro;
     @FindBy(xpath = "/html/body/form/table[1]/tbody/tr[3]/td/div/table[8]/tbody/tr[1]/td[2]/button") private WebElement btn_AnexarChecklist;
-
     @FindBy(xpath = "//textarea[@name='caracteristicaNegocio']") private WebElement txt_CaracteristicaNegocio;
     @FindBy(xpath = "//textarea[@id='txtclasificac']") private WebElement txt_ClasificacionRiesgoCliente;
     @FindBy(xpath = "//textarea[@id='txtclasificaAval']")private  WebElement txt_ClasificacionRiesgoAval;
     @FindBy(xpath = "//textarea[@id='txtanalisisUEF']") private WebElement txt_AnalisisUnidadFinanciera;
-
     @FindBy(xpath = "//button[@name=\"btnGaranExist\"]") private WebElement btn_AnexarGarantias;
-
-    @FindBy(xpath = "//textarea[@id='txtPrincipalRatio']")private  WebElement txt_comentariosRatios;
-
-
-
+    @FindBy(xpath = "//textarea[@id='txtPrincipalRatio']")private  WebElement txt_ComentariosRatios;
     @FindBy(xpath = "/html/body/form/table[1]/tbody/tr[2]/td/table[1]/tbody/tr[2]/td[1]/table/tbody/tr/td[5]/a")private WebElement btn_Grabar;
-    //@FindBy(xpath = "/html/body/form/table[1]/tbody/tr[2]/td/table[2]/tbody/tr[1]/td/a") private WebElement btn_Aprobar;
-
-    //@FindBy(xpath = "//img[@alt='Aprobar']") private WebElement btn_Aprobar;
-    @FindBy(xpath = "//img[@alt='Aprobar']") private WebElement btn_Aprobar;
-
     @FindBy(xpath = "//td[@id='NewDdTD']") private WebElement btn_Dictamen;
-
+    @FindBy(xpath = "//img[@alt='Aprobar']") private WebElement btn_AprobarPropuesta;
 
     public PropuestaPage(WebDriver d) {
         driver = d;
@@ -116,6 +101,7 @@ public class PropuestaPage {
 
 
     public void ClickAnexarGarantias () {
+        Esperar(2);
         wait.until(ExpectedConditions.elementToBeClickable(btn_AnexarGarantias));
         btn_AnexarGarantias.click();
     }
@@ -131,8 +117,8 @@ public class PropuestaPage {
 
 
     public void IngresarComentariosRatios(String ComentariosRatios){
-        txt_comentariosRatios.clear();
-        txt_comentariosRatios.sendKeys(ComentariosRatios);
+        txt_ComentariosRatios.clear();
+        txt_ComentariosRatios.sendKeys(ComentariosRatios);
     }
 
     public void ClickDesenlazarInformeVisita() {
@@ -150,7 +136,7 @@ public class PropuestaPage {
     }
 
     public void ClickEnlazarInformeVisita(){
-        Esperar(2);
+
         WebElement btn_enlazarInformeVisita = driver.findElement(By.xpath("/html/body/form/table[2]/tbody/tr[1]/td[3]/button"));
         String JScript = btn_enlazarInformeVisita.getAttribute("onclick");
         ((JavascriptExecutor)driver).executeScript(JScript);
@@ -167,8 +153,8 @@ public class PropuestaPage {
 
     public void ClickEnlazarInformeComercialNuevo () {
         WebElement btn_enlazarInformeComercial = driver.findElement(By.xpath("/html/body/form/table[2]/tbody/tr[3]/td[3]/button"));
-        String JScript2 = btn_enlazarInformeComercial.getAttribute("onclick");
-        ((JavascriptExecutor)driver).executeScript(JScript2);
+        String JScript= btn_enlazarInformeComercial.getAttribute("onclick");
+        ((JavascriptExecutor)driver).executeScript(JScript);
         Esperar(2);
 
     }
@@ -187,10 +173,10 @@ public class PropuestaPage {
         Esperar(2);
     }
 
-    public void ClickGrabarDocumento() {
+    public void ClickMenuGrabarPropuesta() {
         wait.until(ExpectedConditions.elementToBeClickable(btn_Grabar));
         btn_Grabar.click();
-        Esperar(2);
+        Esperar(30);
     }
 
     public void AbrirOpcionesDictamen(){
@@ -198,21 +184,19 @@ public class PropuestaPage {
         btn_Dictamen.click();
     }
 
-    public void ClickbtnAprobar(){
-       Esperar(2);
+
+   /* public void ClickBtnAprobarEmpresarial(){
        WebElement btn_AprobarNormal = driver.findElement(By.xpath("/html/body/form/table[1]/tbody/tr[2]/td/table[2]/tbody/tr[1]/td/a"));
        String JScript = btn_AprobarNormal.getAttribute("onclick");
        ((JavascriptExecutor)driver).executeScript(JScript);
        //Esperar(1);
-    }
+    }*/
 
-    public void ClickbtnAprobarCreditoConsumo(){
-        WebElement btn_AprobarConsumo = driver.findElement(By.xpath("/html/body/form/table/tbody/tr[2]/td/table[2]/tbody/tr[1]/td/a"));
-        String JScript = btn_AprobarConsumo.getAttribute("onclick");
-        ((JavascriptExecutor)driver).executeScript(JScript);
+
+    public void ClickBtnAprobarPropuesta(){
+        btn_AprobarPropuesta.click();
         Esperar(1);
     }
-
 
     private void Esperar(Integer Segundos){
         Integer Milisegundos = Segundos * 1000;

@@ -2,7 +2,6 @@ package Definitions;
 
 
 import PageObjects.*;
-import com.sun.istack.internal.NotNull;
 import io.cucumber.datatable.DataTable;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
@@ -13,13 +12,13 @@ import java.util.List;
 import java.util.Map;
 
 
-public class CreditoConsumoDefinitions {
+public class PropuestaCreditoConsumoDefinitions {
     LoginPage login;
     MenuPrincipalPage menuPrincipal;
     ListadoPropuestaPage listadoPropuesta;
     ListadoClientesPage listadoClientes;
-    SeleccionarServicioPage Servicio;
-    PopUpComunicadoPage PopUpComunicado;
+    SeleccionarServicioPage servicio;
+    PopUpComunicadoPage popUpComunicado;
     PropuestaPage propuesta;
     SeleccionarOperacionCreditoPage seleccionarOpeCred;
     OperacionCreditoPage operacioncredito;
@@ -37,14 +36,14 @@ public class CreditoConsumoDefinitions {
     AprobarDictamenPropuestaPage aprobarDictamenPropuesta;
 
     //Constructor
-    public CreditoConsumoDefinitions() {
+    public PropuestaCreditoConsumoDefinitions() {
         //Inicializar las paginas
         login = new LoginPage(Hooks.driver);
         menuPrincipal = new MenuPrincipalPage(Hooks.driver);
         listadoPropuesta = new ListadoPropuestaPage(Hooks.driver);
         listadoClientes = new ListadoClientesPage(Hooks.driver);
-        Servicio = new SeleccionarServicioPage(Hooks.driver);
-        PopUpComunicado = new PopUpComunicadoPage(Hooks.driver);
+        servicio = new SeleccionarServicioPage(Hooks.driver);
+        popUpComunicado = new PopUpComunicadoPage(Hooks.driver);
         propuesta = new PropuestaPage(Hooks.driver);
         seleccionarOpeCred = new SeleccionarOperacionCreditoPage(Hooks.driver);
         operacioncredito = new OperacionCreditoPage(Hooks.driver);
@@ -95,7 +94,7 @@ public class CreditoConsumoDefinitions {
 
     @And("doy click en el boton Crear_Propuesta de la ventana Listado Propuesta")
     public void doyClickEnElBotonCrear_PropuestaDeLaVentanaListadoPropuesta() {
-        listadoPropuesta.clickCrearPropuesta();
+        listadoPropuesta.ClickCrearPropuesta();
         //pantallazo();
     }
 
@@ -124,27 +123,27 @@ public class CreditoConsumoDefinitions {
     }
 
     @And("el sistema muestra la ventana de requisitos de propuesta e ingresamos la informacion")
-    public void elSistemaMuestraLaVentanaDeRequisitosDePropuestaEIngresamosLaInformacion(DataTable tipoServicio) throws IOException {
+    public void elSistemaMuestraLaVentanaDeRequisitosDePropuestaEIngresamosLaInformacion(DataTable TipoServicio) throws IOException {
 
-        Servicio.AbrirVentanaServicio();
+        servicio.AbrirVentanaServicio();
 
-        List<Map<String, String>> lista = tipoServicio.asMaps(String.class, String.class);
+        List<Map<String, String>> lista = TipoServicio.asMaps(String.class, String.class);
         for (int i = 0; i < lista.size(); i++) {
-            Servicio.SeleccionarServicio(lista.get(i).get("TipoServicio"));
-            Servicio.SeleccionarServicioCredito(lista.get(i).get("ServicioCredito"));
-            Servicio.SeleccionarTipoPropuesta(lista.get(i).get("TipoPropuesta"));
-            Servicio.SeleccionarSubTipoPropuesta(lista.get(i).get("SubTipoPropuesta"));
-            Servicio.SeleccionarPromocion(lista.get(i).get("Promocion"));
+            servicio.SeleccionarServicio(lista.get(i).get("TipoServicio"));
+            servicio.SeleccionarServicioCredito(lista.get(i).get("ServicioCredito"));
+            servicio.SeleccionarTipoPropuesta(lista.get(i).get("TipoPropuesta"));
+            servicio.SeleccionarSubTipoPropuesta(lista.get(i).get("SubTipoPropuesta"));
+            servicio.SeleccionarPromocion(lista.get(i).get("Promocion"));
             //Servicio.SeleccionarNegocio(lista.get(i).get("Negocio"));
             //Servicio.SeleccionarTipoOperacion(lista.get(i).get("TipoOperacion"));
         }
 
         try {
-            Servicio.ClickCargar();
+            servicio.ClickCargar();
         } catch (Exception Error){
             System.out.println(Error.getMessage());
         }
-        Servicio.CerrarVentanaServicio();
+        servicio.CerrarVentanaServicio();
         //pantallazo();
     }
 
@@ -156,7 +155,7 @@ public class CreditoConsumoDefinitions {
     public void ValidarElPopupComunicado() throws IOException {
 
         try {
-            PopUpComunicado.ValidarComunicado();
+            popUpComunicado.ValidarComunicado();
         }
         catch (Exception Error){
             System.out.println(Error.getMessage());
@@ -243,6 +242,7 @@ public class CreditoConsumoDefinitions {
 
     @And("en la ventana operacion credito ingresar una nota {string}")
     public void enLaVentanaOperacionCreditoIngresarUnaNota(String Notas) {
+
         operacioncredito.IngresarNotas(Notas);
     }
 
@@ -336,7 +336,7 @@ public class CreditoConsumoDefinitions {
     @And("muestra la ventana evaluacion economica y doy click en el boton realizar")
     public void muestraLaVentanaEvaluacionEconomicaYDoyClickEnElBotonRealizar() {
         enlazarEvaluacionEconomica.AbrirVentanaEvaluacionEconomica();
-        enlazarEvaluacionEconomica.ClickbtnRealizar();
+        enlazarEvaluacionEconomica.ClickRealizar();
         enlazarEvaluacionEconomica.CerrarVentanaEvaluacionEconomica();
     }
 
@@ -348,7 +348,7 @@ public class CreditoConsumoDefinitions {
     @And("muestra la ventana desenlazar informe visita y doy click en el boton realizar")
     public void muestraLaVentanaDesenlazarInformeVisitaYDoyClickEnElBotonRealizar() {
         desenlazarInformeVisita.AbrirVentanaDesenlazarInformeVisita();
-        desenlazarInformeVisita.clickbtnRealizar();
+        desenlazarInformeVisita.ClickRealizar();
         desenlazarInformeVisita.CerrarVentanaDesenlazarInformeVisita();
     }
 
@@ -360,7 +360,7 @@ public class CreditoConsumoDefinitions {
     @And("muestra la ventana enlazar informe visita y doy click en el boton realizar")
     public void muestraLaVentanaEnlazarInformeVisitaYDoyClickEnElBotonRealizar() {
         enlazarInformeVisita.AbrirVentanaEnlazarInformeVisita();
-        enlazarInformeVisita.ClickbtnRealizar();
+        enlazarInformeVisita.ClickBtnRealizar();
         enlazarInformeVisita.CerrarVentanaEnlazarInformeVisita();
     }
 
@@ -372,7 +372,7 @@ public class CreditoConsumoDefinitions {
     @And("muestra la ventana enlazar informe comercial y doy click en el boton realizar")
     public void muestraLaVentanaEnlazarInformeComercialYDoyClickEnElBotonRealizar() {
         enlazarInformeComercialNuevo.AbrirVentanaEnlazarInformeComercialNuevo();
-        enlazarInformeComercialNuevo.ClickbtnRealizar();
+        enlazarInformeComercialNuevo.ClickBtnRealizar();
         enlazarInformeComercialNuevo.CerrarVentanaEnlazarInformeComercialNuevo();
     }
 
@@ -397,19 +397,26 @@ public class CreditoConsumoDefinitions {
     @And("en la ventana propuesta de financiamiento doy clik en el boton grabar")
     public void enLaVentanaPropuestaDeFinanciamientoDoyClikEnElBotonGrabar() {
 
-        propuesta.ClickGrabarDocumento();
+        propuesta.ClickMenuGrabarPropuesta();
     }
 
     @And("muestra ventana grabar informacion y doy click en el boton cerrar")
     public void muestraVentanaGrabarInformacionYDoyClickEnElBotonCerrar() {
         grabarDocumentoPropuesta.AbrirVentanaGrabarPropuesta();
-        grabarDocumentoPropuesta.ClickbtnCerrar();
+        grabarDocumentoPropuesta.ClickbtnCerrarInformacion();
         grabarDocumentoPropuesta.CerrarVentanaGrabarPropuesta();
     }
 
-    @And("en la ventana propuesta de financiamiento seleccionar la opcion aprobar")
-    public void enLaVentanaPropuestaDeFinanciamientoSeleccionarLaOpcionAprobar() {
-        propuesta.ClickbtnAprobarCreditoConsumo();
+    @And("en la ventana propuesta de financiamiento doy clik al boton emitir dictamen")
+    public void enLaVentanaPropuestaDeFinanciamientoDoyClikAlBotonEmitirDictamen() {
+        propuesta.AbrirOpcionesDictamen();
+
+    }
+
+    @And("en la tabla de emitir dictamen seleccionar la opcion aprobar")
+    public void enLaTablaDeEmitirDictamenSeleccionarLaOpcionAprobar()
+    {
+        propuesta.ClickBtnAprobarPropuesta();
     }
 
     @And("muestra la ventana emitir dictamen propuesta ingresar observaciones y contrasena del usuario")
@@ -425,20 +432,20 @@ public class CreditoConsumoDefinitions {
     @And("en la ventana emitir dictamen propuesta doy click en el boton procesar")
     public void enLaVentanaEmitirDictamenPropuestaDoyClickEnElBotonProcesar() {
         aprobarDictamenPropuesta.ClickbtnProcesar();
-        //aprobarDictamenPropuesta.CerrarVentanaAprobarDictamenPropuesta();
+        aprobarDictamenPropuesta.CerrarVentanaAprobarDictamenPropuesta();
     }
 
     @And("muestra a la ventana grabar informacion y doy click en el boton cerrar")
     public void muestraALaVentanaGrabarInformacionYDoyClickEnElBotonCerrar() {
-        //grabarDocumentoPropuesta.AbrirVentanaGrabarPropuesta();
-        grabarDocumentoPropuesta.ClickbtnCerrar();
+        grabarDocumentoPropuesta.AbrirVentanaGrabarPropuesta();
+        grabarDocumentoPropuesta.ClickbtnCerrarInformacion();
         grabarDocumentoPropuesta.CerrarVentanaGrabarPropuesta();
     }
 
     @And("direcciona a la ventana listado propuesta y doy click en el boton regresar")
     public void direccionaALaVentanaListadoPropuestaYDoyClickEnElBotonRegresar() {
 
-        listadoPropuesta.clickRegresar();
+        listadoPropuesta.ClickRegresar();
     }
 
     @And("direcciona al menu principal y doy click en la opcion cerrar sesion")
@@ -452,5 +459,6 @@ public class CreditoConsumoDefinitions {
 
         login.ClickCerrarSesion();
     }
+
 
 }

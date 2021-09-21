@@ -12,7 +12,7 @@ import java.util.List;
 import java.util.Map;
 
 
-public class RegistrarPropuestaDefinitions {
+public class PropuestaCreditoEmpresarialDefinitions {
     //crear variables de los pages
     LoginPage login;
     MenuPrincipalPage menuPrincipal;
@@ -43,7 +43,7 @@ public class RegistrarPropuestaDefinitions {
 
 
     //Constructor
-    public RegistrarPropuestaDefinitions() {
+    public PropuestaCreditoEmpresarialDefinitions() {
         //Inicializar las paginas
         login = new LoginPage(Hooks.driver);
         menuPrincipal = new MenuPrincipalPage(Hooks.driver);
@@ -111,7 +111,7 @@ public class RegistrarPropuestaDefinitions {
     @And("doy click en el boton crear_propuesta de la ventana Listado Propuesta")
     public void doyClickEnElBotonCrear_propuestaDeLaVentanaListadoPropuesta(){
         //listadoPropuesta.AbrirVentana();
-        listadoPropuesta.clickCrearPropuesta();
+        listadoPropuesta.ClickCrearPropuesta();
         //pantallazo();
     }
 
@@ -172,7 +172,7 @@ public class RegistrarPropuestaDefinitions {
 
     @And("validar el mensaje del popup Comunicado")
     public void validarElMensajeDelPopupComunicado(){
-       // PopUpComunicado.UbicarVentanaComunicado();
+        // PopUpComunicado.UbicarVentanaComunicado();
         PopUpComunicado.ValidarComunicado();
 
     }
@@ -291,7 +291,7 @@ public class RegistrarPropuestaDefinitions {
 
         operacioncredito.CerrarVentanaOperacionCredito();
     }
-/*
+
     @Then("el sistema direcciona a ventana Propuesta y doy click icono cambio de tasa")
     public void elSistemaDireccionaAVentanaPropuestaYDoyClickIconoCambioDeTasa() {
         propuesta.ClickIcnCambioTasa();
@@ -311,7 +311,7 @@ public class RegistrarPropuestaDefinitions {
         cambioTasaCredito.CerrarVentanaCambioTasaCredito();
 
     }
-*/
+
     @Then("el sistema direcciona a la ventana propuesta y doy click al boton Registro de seguros")
     public void elSistemaDireccionaALaVentanaPropuestaYDoyClickAlBotonRegistroDeSeguros() {
         propuesta.ClickBotonRegistrarSeguro();
@@ -352,7 +352,7 @@ public class RegistrarPropuestaDefinitions {
     public void enLaVentanaRegistroSegurosDoyClickEnConfirmar() {
         registrarSeguros.ClickConfirmar();
         registrarSeguros.CerrarVentanaRegistrarSeguros();
-        
+
     }
 
     @And("en la ventana seguros seleccionados visualizar información y doy click en cerrar")
@@ -387,13 +387,13 @@ public class RegistrarPropuestaDefinitions {
         anexarCheckListCreditos.Seleccionar_9FotoNegocio();
         anexarCheckListCreditos.Seleccionar_10SustentoVigencia();
         anexarCheckListCreditos.Seleccionar_11InformeComercial();
-        
+
     }
 
     @And("en la ventana CheckList Seccion Operaciones Propuestas seleccionar la opcion doce")
     public void enLaVentanaCheckListSeccionOperacionesPropuestasSeleccionarLaOpcionDoce() {
         anexarCheckListCreditos.Seleccionar_12SolicitudCredito();
-        
+
     }
 
     @And("en la ventana CheckList Seccion Seguro del Cliente seleccionar la opcion trece")
@@ -489,7 +489,7 @@ public class RegistrarPropuestaDefinitions {
     public void enLaVentanaSeleccionarGarantiasDoyClickEnRegistrarGarantias() {
         seleccionarGarantia.AbrirVentanaGarantia();
         seleccionarGarantia.ClickRegistrarGarantia();
-
+        seleccionarGarantia.CerrarVentanaGarantia();
     }
 
     @And("en la ventana Garantias Existentes seleccionar garantia correspondiente y doy click en Aceptar")
@@ -498,13 +498,12 @@ public class RegistrarPropuestaDefinitions {
         seleccionarGarantiasExistentes.SeleccionarCheckGarantiasExistentes();
         seleccionarGarantiasExistentes.ClickbtnAceptar();
         seleccionarGarantiasExistentes.CerrarVentanaGarantiasExistentes();
-        seleccionarGarantia.CerrarVentanaGarantia();
     }
 
     @And("el sistema muestra una ventana de cancelacion de pagares y se cierra automaticamente")
     public void elSistemaMuestraUnaVentanaDeCancelacionDePagaresYSeCierraAutomaticamente() {
-            cancelandoPagares.AbrirVentanaCancelandoPagares();
-            cancelandoPagares.CerrarVentanaCancelandoPagares();
+        cancelandoPagares.AbrirVentanaCancelandoPagares();
+        cancelandoPagares.CerrarVentanaCancelandoPagares();
 
     }
 
@@ -530,7 +529,7 @@ public class RegistrarPropuestaDefinitions {
     @Then("el sistema muestra la ventana Desenlazar Informe de Visita y doy click en el boton Realizar")
     public void elSistemaMuestraLaVentanaDesenlazarInformeDeVisitaYDoyClickEnElBotonRealizar() {
         desenlazarinformevisita.AbrirVentanaDesenlazarInformeVisita();
-        desenlazarinformevisita.clickbtnRealizar();
+        desenlazarinformevisita.ClickRealizar();
         desenlazarinformevisita.CerrarVentanaDesenlazarInformeVisita();
     }
 
@@ -542,7 +541,7 @@ public class RegistrarPropuestaDefinitions {
     @Then("el sistema muestra la ventana Enlazar Informe de Visita y le doy click en el boton Realizar")
     public void elSistemaMuestraLaVentanaEnlazarInformeDeVisitaYLeDoyClickEnElBotonRealizar() {
         enlazarInformeVisita.AbrirVentanaEnlazarInformeVisita();
-        enlazarInformeVisita.ClickbtnRealizar();
+        enlazarInformeVisita.ClickBtnRealizar();
         enlazarInformeVisita.CerrarVentanaEnlazarInformeVisita();
     }
 
@@ -554,7 +553,7 @@ public class RegistrarPropuestaDefinitions {
     @Then("el sistema muestra la ventana Enlazar Informe Comercial y le doy click en el boton Realizar")
     public void elSistemaMuestraLaVentanaEnlazarInformeComercialYLeDoyClickEnElBotonRealizar() {
         enlazarInformeComercialNuevo.AbrirVentanaEnlazarInformeComercialNuevo();
-        enlazarInformeComercialNuevo.ClickbtnRealizar();
+        enlazarInformeComercialNuevo.ClickBtnRealizar();
         enlazarInformeComercialNuevo.CerrarVentanaEnlazarInformeComercialNuevo();
     }
 
@@ -568,7 +567,7 @@ public class RegistrarPropuestaDefinitions {
     @And("el sistema direcciona a la ventana Propuesta y doy click en la opcion grabar")
     public void elSistemaDireccionaALaVentanaPropuestaYDoyClickEnLaOpcionGrabar() {
 
-        propuesta.ClickGrabarDocumento();
+        propuesta.ClickBtnAprobarPropuesta();
     }
 
     @And("en la ventana Grabar documento doy click en el boton Cerrar")
@@ -581,7 +580,7 @@ public class RegistrarPropuestaDefinitions {
 
     @And("en la ventana Propuesta seleccionar la opcion Aprobar para Emitir Dictamen de Propuesta")
     public void enLaVentanaPropuestaSeleccionarLaOpcionAprobarParaEmitirDictamenDePropuesta() {
-        propuesta.ClickbtnAprobar();
+        propuesta.ClickBtnAprobarPropuesta();
     }
 
     @And("en la ventana Emitir Dictamen de Propuesta ingresar observaciones y password")
@@ -598,20 +597,19 @@ public class RegistrarPropuestaDefinitions {
     @And("en la ventana Emitir Dictamen de Propuesta doy click en el boton Procesar")
     public void enLaVentanaEmitirDictamenDePropuestaDoyClickEnElBotonProcesar() {
         aprobarDictamenPropuesta.ClickbtnProcesar();
-       // aprobarDictamenPropuesta.CerrarVentanaAprobarDictamenPropuesta();
+        aprobarDictamenPropuesta.CerrarVentanaAprobarDictamenPropuesta();
     }
 
-    @And("en la ventana Grabar Informacion doy click en boton cerrar")
-    public void enLaVentanaGrabarInformacionDoyClickEnBotonCerrar() {
-        //grabarPropuesta.AbrirVentanaGrabarPropuesta();
-        grabarPropuesta.ClickbtnCerrar();
-        grabarPropuesta.CerrarVentanaGrabarPropuesta();
+    @And("en la ventana Grabar Informacion doy click en boton cerrar y cerrar ventana")
+    public void enLaVentanaGrabarInformacionDoyClickEnBotonCerrarYCerrarVentana() {
+        grabarInformacionErrores.AbrirVentanaGrabarInformacion();
+        grabarInformacionErrores.ClickbtnCerrar();
+        grabarInformacionErrores.CerrarVentanaGrabarInformacion();
 
     }
 
 
 
 }
-
 
 
