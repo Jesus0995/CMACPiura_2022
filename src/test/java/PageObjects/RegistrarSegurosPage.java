@@ -27,7 +27,6 @@ public class RegistrarSegurosPage {
     @FindBy(xpath = "//input[@id='6_91001']") private WebElement chk_SeguroVidaPlan1;
     @FindBy(xpath = "//input[@id='dps91001']") private WebElement txt_SeguroVidaPlan1;
 
-
     @FindBy(xpath ="//button[@type=\"submit\"]") private WebElement btn_confirmar;
 
     public void AbrirVentanaRegistrarSeguros(){
@@ -78,7 +77,8 @@ public class RegistrarSegurosPage {
 
     public void ClickCheckSeguroRiesgoPlanPymes() {
         wait.until(ExpectedConditions.elementToBeClickable(chk_SeguroRiesgoPlanPymes));
-        chk_SeguroRiesgoPlanPymes.click(); }
+        chk_SeguroRiesgoPlanPymes.click();
+    }
 
     public void IngresarSeguroRiesgoPlanPymes (String seguroRiesgoPlanPymes) {
         txt_SeguroRiesgoPlanPymes.click();
@@ -94,12 +94,12 @@ public class RegistrarSegurosPage {
     public void IngresarSeguroDesgravamenSaldo (String seguroDesgravameSaldo){
         txt_SeguroDesgravamenSaldo.clear();
         txt_SeguroDesgravamenSaldo.sendKeys(seguroDesgravameSaldo);
-
     }
 
     public void ClickCheckSeguroVidaPlan1() {
         wait.until(ExpectedConditions.elementToBeClickable(chk_SeguroVidaPlan1));
-        chk_SeguroVidaPlan1.click(); }
+        chk_SeguroVidaPlan1.click();
+    }
 
     public void IngresarSeguroVidaPlan1 (String seguroVidaPlan1) {
         txt_SeguroVidaPlan1.click();

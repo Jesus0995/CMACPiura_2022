@@ -182,6 +182,7 @@ public class PropuestaPage {
     public void AbrirOpcionesDictamen(){
 
         btn_Dictamen.click();
+        Esperar(1);
     }
 
 

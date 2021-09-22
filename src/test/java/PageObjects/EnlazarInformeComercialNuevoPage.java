@@ -17,8 +17,7 @@ public class EnlazarInformeComercialNuevoPage {
 
     private Set<String> identificadoresEnlazarInformeComercialNuevo;
 
-    @FindBy(xpath = "//button[@type='submit']")
-    private WebElement btn_realizar;
+    @FindBy(xpath = "//button[@type='submit']") private WebElement btn_Realizar;
 
 
     public void AbrirVentanaEnlazarInformeComercialNuevo() {
@@ -52,14 +51,12 @@ public class EnlazarInformeComercialNuevoPage {
         driver = d;
         wait = new WebDriverWait(driver, 30);
         PageFactory.initElements(driver, this);
-
     }
-
 
     public void ClickBtnRealizar() {
 
-        wait.until(ExpectedConditions.elementToBeClickable(btn_realizar));
-        btn_realizar.click();
+        wait.until(ExpectedConditions.elementToBeClickable(btn_Realizar));
+        btn_Realizar.click();
         Esperar(2);
     }
 
@@ -71,7 +68,6 @@ public class EnlazarInformeComercialNuevoPage {
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
-
-
     }
+
 }

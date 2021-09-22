@@ -336,7 +336,7 @@ public class PropuestaCreditoConsumoDefinitions {
     @And("muestra la ventana evaluacion economica y doy click en el boton realizar")
     public void muestraLaVentanaEvaluacionEconomicaYDoyClickEnElBotonRealizar() {
         enlazarEvaluacionEconomica.AbrirVentanaEvaluacionEconomica();
-        enlazarEvaluacionEconomica.ClickRealizar();
+        enlazarEvaluacionEconomica.ClickBtnRealizar();
         enlazarEvaluacionEconomica.CerrarVentanaEvaluacionEconomica();
     }
 
@@ -348,7 +348,7 @@ public class PropuestaCreditoConsumoDefinitions {
     @And("muestra la ventana desenlazar informe visita y doy click en el boton realizar")
     public void muestraLaVentanaDesenlazarInformeVisitaYDoyClickEnElBotonRealizar() {
         desenlazarInformeVisita.AbrirVentanaDesenlazarInformeVisita();
-        desenlazarInformeVisita.ClickRealizar();
+        desenlazarInformeVisita.ClickBtnRealizar();
         desenlazarInformeVisita.CerrarVentanaDesenlazarInformeVisita();
     }
 

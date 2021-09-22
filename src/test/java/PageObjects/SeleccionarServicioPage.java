@@ -16,16 +16,16 @@ public class SeleccionarServicioPage {
     private Set<String> identificadoresServicio;
 
     //mapeo de objetos
-    @FindBy(xpath = "//select[@name='servicio']") private WebElement cbx_servicio;
-    @FindBy(xpath = "//select[@name='idServicioSofia']") private WebElement cbx_servicioCredito;
-    @FindBy(xpath = "//select[@name='idTipoPropuesta']") private  WebElement cbx_tipoPropuesta;
-    @FindBy(xpath = "//select[@name='idSubTipoPropuesta']") private WebElement cbx_subTipoPropuesta;
-    @FindBy(xpath = "//select[@name='idPromocion']") private WebElement cbx_promocion;
-    //@FindBy(xpath = "//select[@name='idnegocio']") private WebElement cbx_negocio;
-    //@FindBy(xpath = "//select[@name='idTipoOperacion']") private  WebElement cbx_tipoOperacion;
-    @FindBy(xpath = "//*[@id=\"bCargar\"]")private  WebElement btn_cargar;
+    @FindBy(xpath = "//select[@name='servicio']") private WebElement cbx_Servicio;
+    @FindBy(xpath = "//select[@name='idServicioSofia']") private WebElement cbx_ServicioCredito;
+    @FindBy(xpath = "//select[@name='idTipoPropuesta']") private  WebElement cbx_TipoPropuesta;
+    @FindBy(xpath = "//select[@name='idSubTipoPropuesta']") private WebElement cbx_SubTipoPropuesta;
+    @FindBy(xpath = "//select[@name='idPromocion']") private WebElement cbx_Promocion;
+    //@FindBy(xpath = "//select[@name='idnegocio']") private WebElement cbx_Negocio;
+    //@FindBy(xpath = "//select[@name='idTipoOperacion']") private  WebElement cbx_TipoOperacion;
+    @FindBy(xpath = "//*[@id=\"bCargar\"]")private  WebElement btn_Cargar;
 
-    //crear meotodo para abrir ventana
+    //crear metodo para abrir ventana
     public void AbrirVentanaServicio(){
 
         identificadoresServicio = driver.getWindowHandles();
@@ -35,11 +35,10 @@ public class SeleccionarServicioPage {
         for (String identificadorservicio : identificadoresServicio){
             LastHandle = identificadorservicio;
         }
-
         driver.switchTo().window(LastHandle);
     }
 
-    //crear meotodo para abrir ventana
+    //crear metodo para salir de ventana
     public void CerrarVentanaServicio(){
         //Actions Acciones = new Actions(driver);
 
@@ -51,7 +50,6 @@ public class SeleccionarServicioPage {
             Handles[Index] = identificadorservicio;
             Index++;
         }
-
         System.out.println(Handles[0]);
         driver.switchTo().window(Handles[0]);
     }
@@ -64,45 +62,41 @@ public class SeleccionarServicioPage {
     }
 
     public void SeleccionarServicio(String TipoServicio){
-        wait.until(ExpectedConditions.elementToBeClickable(cbx_servicio));
-        new Select(cbx_servicio).selectByVisibleText(TipoServicio);
-        //"CREDITO EMPRESARIAL"
-
+        wait.until(ExpectedConditions.elementToBeClickable(cbx_Servicio));
+        new Select(cbx_Servicio).selectByVisibleText(TipoServicio);
         //System.out.println(cbx_servicio);
+        //"CREDITO EMPRESARIAL"
     }
 
     public void SeleccionarServicioCredito(String ServicioCredito){
-        wait.until(ExpectedConditions.elementToBeClickable(cbx_servicioCredito));
-        new Select(cbx_servicioCredito).selectByVisibleText(ServicioCredito);
+        wait.until(ExpectedConditions.elementToBeClickable(cbx_ServicioCredito));
+        new Select(cbx_ServicioCredito).selectByVisibleText(ServicioCredito);
         //System.out.println(cbx_servicioCredito);
         //"CREDITOS PYMES"
 
     }
 
-
     public void SeleccionarTipoPropuesta (String TipoPropuesta){
-        wait.until(ExpectedConditions.elementToBeClickable(cbx_tipoPropuesta));
-        new Select(cbx_tipoPropuesta).selectByVisibleText(TipoPropuesta);
+        wait.until(ExpectedConditions.elementToBeClickable(cbx_TipoPropuesta));
+        new Select(cbx_TipoPropuesta).selectByVisibleText(TipoPropuesta);
         //System.out.println(cbx_tipoPropuesta);
         //"NORMAL"
     }
 
     public void SeleccionarSubTipoPropuesta (String SubTipoPropuesta){
-        wait.until(ExpectedConditions.elementToBeClickable(cbx_subTipoPropuesta));
-        new Select(cbx_subTipoPropuesta).selectByVisibleText(SubTipoPropuesta);
+        wait.until(ExpectedConditions.elementToBeClickable(cbx_SubTipoPropuesta));
+        new Select(cbx_SubTipoPropuesta).selectByVisibleText(SubTipoPropuesta);
         //System.out.println(cbx_subTipoPropuesta);
         //"NORMAL"
     }
 
     public void SeleccionarPromocion (String Promocion){
-        wait.until(ExpectedConditions.elementToBeClickable(cbx_promocion));
-        new Select(cbx_promocion).selectByVisibleText(Promocion);
+        wait.until(ExpectedConditions.elementToBeClickable(cbx_Promocion));
+        new Select(cbx_Promocion).selectByVisibleText(Promocion);
         //System.out.println(cbx_promocion);
         //"SIN PROMOCION"
-
-
-
     }
+
     /*
     public void SeleccionarNegocio (String Negocio){
         wait.until(ExpectedConditions.elementToBeClickable(cbx_negocio));
@@ -118,29 +112,11 @@ public class SeleccionarServicioPage {
         //"SIMPLE"
     }
     */
+
     public void ClickCargar() throws InterruptedException {
-        wait.until(ExpectedConditions.elementToBeClickable(btn_cargar));
-
-        btn_cargar.click();
-
-        //wait = new WebDriverWait(driver,10);
+        wait.until(ExpectedConditions.elementToBeClickable(btn_Cargar));
+        btn_Cargar.click();
         Thread.sleep(10000);
-
-       // Actions action = new Actions(driver);
-       // action.sendKeys(Keys.ESCAPE);
-
-       // Thread.sleep(5000);
-        //Actions Accion = new Actions(driver);
-        //Accion.sendKeys(Keys.ESCAPE).build().perform();
-
-       // driver.switchTo().activeElement().sendKeys(Keys.ESCAPE);
-       //currentElement().sendKeys(Keys.ESCAPE);
-       // Thread.sleep(5000);
-
     }
-
-    //public void CerrarServicio() {driver.close();}
-
-
 
 }

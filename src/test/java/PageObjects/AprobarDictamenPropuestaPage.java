@@ -1,5 +1,6 @@
 package PageObjects;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -15,14 +16,14 @@ public class AprobarDictamenPropuestaPage {
     private WebDriverWait wait;
     private Set<String> identificadoresAprobarDictamenPropuesta;
 
-    @FindBy(xpath = "//textarea[@name='observaciones']") private WebElement txt_observaciones;
-    @FindBy(xpath = "//input[@name='clave']") private WebElement txt_password;
-    @FindBy(xpath = "//button[@type='submit']") private WebElement btn_procesar;
+    @FindBy(xpath = "//textarea[@name='observaciones']") private WebElement txt_Observaciones;
+    @FindBy(xpath = "//input[@name='clave']") private WebElement txt_Password;
+    @FindBy(xpath = "//button[@type='submit']") private WebElement btn_Procesar;
 
 
 
     public void AbrirVentanaAprobarDictamenPropuesta(){
-
+        Esperar(2);
         identificadoresAprobarDictamenPropuesta = driver.getWindowHandles();
         System.out.println(identificadoresAprobarDictamenPropuesta);
         String LastHandle ="";
@@ -31,8 +32,7 @@ public class AprobarDictamenPropuestaPage {
             LastHandle = identificadorAprobarDictamenPropuesta;
         }
         driver.switchTo().window(LastHandle);
-        System.out.println("Titulo :"+driver.getTitle());
-
+        System.out.println("Ultimo Handle :" + driver.getWindowHandle() +driver.getTitle());
     }
 
     public void CerrarVentanaAprobarDictamenPropuesta(){
@@ -44,49 +44,56 @@ public class AprobarDictamenPropuestaPage {
             Handles[Index] = identificadorAprobarDictamenPropuesta;
             Index++;
         }
-        System.out.println(Handles[0]);
         driver.switchTo().window(Handles[0]);
-
+        System.out.println("Handle Inicial:"+Handles[0]+"-"+driver.getTitle());
     }
-
 
     public AprobarDictamenPropuestaPage(WebDriver d) {
         driver = d;
         wait = new WebDriverWait(driver,30);
         PageFactory.initElements(driver,this);
-
-
     }
-
 
     public void IngresarObservaciones(String Observaciones){
-        txt_observaciones.clear();
-        txt_observaciones.sendKeys(Observaciones);
+        txt_Observaciones.clear();
+        Esperar(1);
+        txt_Observaciones.sendKeys(Observaciones);
+        Esperar(2);
     }
-
 
     public void IngresarContrasena(String Contrasena){
-        txt_password.clear();
-        txt_password.sendKeys(Contrasena);
+        txt_Password.clear();
+        Esperar(1);
+        txt_Password.sendKeys(Contrasena);
+        Esperar(2);
     }
 
-
     public void ClickbtnProcesar(){
-        wait.until(ExpectedConditions.elementToBeClickable(btn_procesar));
-        btn_procesar.click();
-        Esperar(3);
-
-
+        //wait.until(ExpectedConditions.elementToBeClickable(btn_procesar));
+        System.out.println("Esperar el inicio de procesar");
+        Esperar(2);
+        WebElement Procesar = driver.findElement(By.xpath("//button[@type='submit']"));
+        Procesar.click();
+        System.out.println("Esperar el fin de procesar");
+        for (int i = 0; i <= 60; i += 1) {
+            if (driver.getWindowHandles().size() > 1) {
+                Esperar(1);
+                System.out.println("Esperando cierre de handle"+driver.getTitle()+" - "+i);
+                System.out.println(driver.getWindowHandles());
+            } else {
+                i = 61;
+            }
+        }
+        System.out.println("Despues de esperar muchos segundos");
     }
 
     private void Esperar(Integer Segundos){
         Integer Milisegundos = Segundos*1000;
         try {
-            Thread.sleep(Segundos);
+            Thread.sleep(Milisegundos);
         }catch (InterruptedException e){
             e.printStackTrace();
         }
-
     }
 
 

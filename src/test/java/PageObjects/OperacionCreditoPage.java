@@ -19,34 +19,31 @@ public class OperacionCreditoPage {
     private Alert MensajeAlerta;
 
     //Mapear objetos
-    @FindBy(xpath = "//select[@name='moneda']") private WebElement cbx_moneda;
-    @FindBy(xpath = "//input[@name='montoOperacion']") private WebElement txt_monto;
+    @FindBy(xpath = "//select[@name='moneda']") private WebElement cbx_Moneda;
+    @FindBy(xpath = "//input[@name='montoOperacion']") private WebElement txt_Monto;
     @FindBy(xpath = "//input[@name='TasaInicial']") private WebElement lista_TasaInicial;
 
+    @FindBy(xpath = "//button[@type=\"submit\"]") private WebElement btn_Calcular;
 
-    @FindBy(xpath = "//button[@type=\"submit\"]") private WebElement btn_calcular;
+    @FindBy(xpath = "//select[@name='planPagos']") private WebElement cbx_PlanPagos; //Fija Vencida
+    @FindBy(xpath = "//select[@name='modalidad']") private WebElement cbx_Modalidad; //Libre Amortizacion
+    @FindBy(xpath = "//input[@name='diasPlazo']") private WebElement txt_DiasPlazo;
 
-    @FindBy(xpath = "//select[@name='planPagos']") private WebElement cbx_planPagos; //Fija Vencida
-    @FindBy(xpath = "//select[@name='modalidad']") private WebElement cbx_modalidad; //Libre Amortizacion
-    @FindBy(xpath = "//input[@name='diasPlazo']") private WebElement txt_diasPlazo;
-
-    @FindBy(xpath = "//select[@name='opcion']") private WebElement cbx_opcionPagos;
-    @FindBy(xpath = "//select[@name='pago']") private WebElement cbx_diaPagos;
-    @FindBy(xpath = "//input[@name='numeroCuotas']") private WebElement txt_numeroCuotas;
-
-
+    @FindBy(xpath = "//select[@name='opcion']") private WebElement cbx_OpcionPagos;
+    @FindBy(xpath = "//select[@name='pago']") private WebElement cbx_DiaPagos;
+    @FindBy(xpath = "//input[@name='numeroCuotas']") private WebElement txt_NumeroCuotas;
 
     @FindBy(xpath = "//input[@name='tasaPropuesta']") private WebElement txt_TasaPreferencial;
-    @FindBy(xpath = "//select[@name='flgCuenta']") private WebElement cbx_desembolso; //GIRO BANCO DE LA NACION
+    @FindBy(xpath = "//select[@name='flgCuenta']") private WebElement cbx_Desembolso; //GIRO BANCO DE LA NACION
 
-    @FindBy(xpath = "//select[@name='codigocuenta']") private WebElement cbx_codigoCuenta;
+    @FindBy(xpath = "//select[@name='codigocuenta']") private WebElement cbx_CodigoCuenta;
 
     @FindBy(xpath = "//select[@name='idDepartamento']") private WebElement cbx_Departamento;
     @FindBy(xpath = "//select[@name='idProvincia']") private WebElement cbx_Provincia;
     @FindBy(xpath = "//select[@name='idDistrito']") private WebElement cbx_Distrito;
-    @FindBy(xpath = "//input[@name='fechaProbableDesembolso']") private WebElement txt_fechaDesembolso;
-    @FindBy(xpath = "//textarea[@name='notas']") private WebElement txt_notas;
-    @FindBy(xpath = "//button[@type=\"submit\"]") private WebElement btn_grabar; //windows onload
+    @FindBy(xpath = "//input[@name='fechaProbableDesembolso']") private WebElement txt_FechaDesembolso;
+    @FindBy(xpath = "//textarea[@name='notas']") private WebElement txt_Notas;
+    @FindBy(xpath = "//button[@type=\"submit\"]") private WebElement btn_Grabar; //windows onload
 
 
     public void AbrirVentanaOperacionCredito(){
@@ -57,8 +54,9 @@ public class OperacionCreditoPage {
         for (String identificadorOperacionCredito :identificadoresOperacionCredito ){
             LastHandle = identificadorOperacionCredito;
         }
+        System.out.println(driver.getWindowHandles());
         driver.switchTo().window(LastHandle);
-        System.out.println("Titulo:" + driver.getTitle());
+        System.out.println("Ultimo handle: "+driver.getWindowHandle()+"-"+driver.getTitle());
 
     }
 
@@ -71,9 +69,8 @@ public class OperacionCreditoPage {
             Handles[Index] = identificadorOperacionCredito;
             Index++;
         }
-        System.out.println(Handles[0]);
         driver.switchTo().window(Handles[0]);
-
+        System.out.println("Handle inicial: "+Handles[0]+"-"+driver.getTitle());
     }
 
 
@@ -84,13 +81,13 @@ public class OperacionCreditoPage {
     }
 
     public void SeleccionarMoneda(String Moneda){
-        wait.until(ExpectedConditions.elementToBeClickable(cbx_moneda));
-        new Select(cbx_moneda).selectByVisibleText(Moneda);
+        wait.until(ExpectedConditions.elementToBeClickable(cbx_Moneda));
+        new Select(cbx_Moneda).selectByVisibleText(Moneda);
     }
 
     public void IngresarMonto(String Monto){
-        txt_monto.clear();
-        txt_monto.sendKeys(Monto);
+        txt_Monto.clear();
+        txt_Monto.sendKeys(Monto);
     }
 
     public void IngresarTasaInicial(String TasaInicial){
@@ -100,14 +97,14 @@ public class OperacionCreditoPage {
     }
 
     public void ClickCalcular () throws InterruptedException {
-        wait.until(ExpectedConditions.elementToBeClickable(btn_calcular));
-        btn_calcular.click();
+        wait.until(ExpectedConditions.elementToBeClickable(btn_Calcular));
+        btn_Calcular.click();
         Thread.sleep(10000);
     }
 
     public void SeleccionarPlanPagos (String PlanPagos)  {
         // Seleccionamos el valor textual de la opcion 'PlanPagos' en el combobox.
-        cbx_planPagos.sendKeys(PlanPagos);
+        cbx_PlanPagos.sendKeys(PlanPagos);
 
         // Buscamos el webelement de la opcion indicada en el xpath.
         WebElement Opcion = driver.findElement(By.xpath("//*[text() = '" + PlanPagos + "']"));
@@ -124,7 +121,7 @@ public class OperacionCreditoPage {
 
     public void SeleccionarModalidad (String Modalidad) {
         // Seleccionamos el valor textual de la opcion 'PlanPagos' en el combobox.
-        cbx_modalidad.sendKeys(Modalidad);
+        cbx_Modalidad.sendKeys(Modalidad);
 
         // Buscamos el webelement de la opcion indicada en el xpath.
         WebElement Opcion = driver.findElement(By.xpath("//*[text() = '" + Modalidad + "']"));
@@ -141,12 +138,12 @@ public class OperacionCreditoPage {
     }
 
     public void IngresarDias (String Dias) {
-        txt_diasPlazo.clear();
-        txt_diasPlazo.sendKeys(Dias);
+        txt_DiasPlazo.clear();
+        txt_DiasPlazo.sendKeys(Dias);
     }
 
     public void SeleccionarOpcionPagos(String OpcionPagos) {
-        cbx_opcionPagos.sendKeys(OpcionPagos);
+        cbx_OpcionPagos.sendKeys(OpcionPagos);
         WebElement Opcion = driver.findElement(By.xpath("//*[text() = '" + OpcionPagos + "']"));
         String JScript = Opcion.getAttribute("onclick");
         ((JavascriptExecutor) driver).executeScript(JScript);
@@ -160,8 +157,8 @@ public class OperacionCreditoPage {
     }
 
     public void IngresarNumeroCuotas(String NumeroCuotas) {
-        txt_numeroCuotas.clear();
-        txt_numeroCuotas.sendKeys(NumeroCuotas);
+        txt_NumeroCuotas.clear();
+        txt_NumeroCuotas.sendKeys(NumeroCuotas);
     }
 
 
@@ -171,7 +168,7 @@ public class OperacionCreditoPage {
     }
 
     public void SeleccionarFormaDesembolso (String FormaDesembolso) {
-        cbx_desembolso.sendKeys(FormaDesembolso);
+        cbx_Desembolso.sendKeys(FormaDesembolso);
         WebElement desembolso = driver.findElement(By.xpath("//*[text()='" + FormaDesembolso + "']"));
         String JScript = desembolso.getAttribute("onclick");
         ((JavascriptExecutor) driver).executeScript(JScript);
@@ -187,10 +184,6 @@ public class OperacionCreditoPage {
     public void SeleccionarDepartamento (String Departamento) {
         wait.until(ExpectedConditions.elementToBeClickable(cbx_Departamento));
         new Select (cbx_Departamento).selectByVisibleText(Departamento);
-
-        //String JScript = cbx_dptoDesembolso.getAttribute("click");
-        //((JavascriptExecutor) driver).executeScript(JScript);
-        //Esperar(1);
     }
 
     public void SeleccionarProvincia (String Provincia) {
@@ -206,37 +199,34 @@ public class OperacionCreditoPage {
     }
 
     public void IngresarFechaDesembolso (String FechaDesembolso) {
-        txt_fechaDesembolso.clear();
-        txt_fechaDesembolso.sendKeys(FechaDesembolso);
+        txt_FechaDesembolso.clear();
+        txt_FechaDesembolso.sendKeys(FechaDesembolso);
     }
 
     public void IngresarNotas (String Notas) {
-        txt_notas.clear();
-        txt_notas.sendKeys(Notas);
+        txt_Notas.clear();
+        txt_Notas.sendKeys(Notas);
     }
 
     public void ClickGrabar () {
-        wait.until(ExpectedConditions.elementToBeClickable(btn_grabar));
-        btn_grabar.click();
-        //Esperar(1);
+        wait.until(ExpectedConditions.elementToBeClickable(btn_Grabar));
+        btn_Grabar.click();
     }
-    public void ObtenerAlerta() {
 
+    public void ObtenerAlerta() {
         MensajeAlerta = driver.switchTo().alert();
         System.out.println("El mensaje de alerta es:" + MensajeAlerta.getText());
         MensajeAlerta.accept();
-
         Esperar(2);
-        }
-
-
+    }
 
     private void Esperar(Integer Segundos){
         Integer Milisegundos = Segundos * 1000;
-        try{Thread.sleep(Milisegundos);}
+        try{
+            Thread.sleep(Milisegundos);
+        }
         catch (InterruptedException e){
             e.printStackTrace();
-
         }
     }
 

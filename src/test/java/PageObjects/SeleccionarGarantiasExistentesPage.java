@@ -17,7 +17,7 @@ public class SeleccionarGarantiasExistentesPage {
 
     //mapeo objetos
 
-    @FindBy(xpath = "//input[@name='garantia']") private WebElement chk_garantiaExistentes;
+    @FindBy(xpath = "//input[@name='garantia']") private WebElement chk_GarantiaExistentes;
     @FindBy(xpath = "//button[@type=\"submit\"]") private  WebElement btn_Aceptar;
     @FindBy(xpath = "//input[@value='611-1-4695337']") private WebElement chk_GarantiaMaquinaria;
 
@@ -58,8 +58,8 @@ public class SeleccionarGarantiasExistentesPage {
     }
 
     public void SeleccionarCheckGarantiasExistentes() {
-        wait.until(ExpectedConditions.elementToBeClickable(chk_garantiaExistentes));
-        chk_garantiaExistentes.click();
+        wait.until(ExpectedConditions.elementToBeClickable(chk_GarantiaExistentes));
+        chk_GarantiaExistentes.click();
     }
 
 
@@ -82,9 +82,6 @@ public class SeleccionarGarantiasExistentesPage {
         }catch (InterruptedException e){
             e.printStackTrace();
         }
-
-
     }
-
 
 }

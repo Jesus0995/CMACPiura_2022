@@ -27,7 +27,7 @@ public class SeleccionarOperacionCreditoPage {
             LastHandle = identificadorSeleccionarOP;
         }
         driver.switchTo().window(LastHandle);
-
+        Esperar(3);
     }
 
     public void CerrarVentanaSeleccionarOP(){
@@ -40,7 +40,6 @@ public class SeleccionarOperacionCreditoPage {
         }
         System.out.println(Handles[0]);
         driver.switchTo().window(Handles[0]);
-
     }
 
     //constructor
@@ -55,9 +54,9 @@ public class SeleccionarOperacionCreditoPage {
         System.out.println("Handles :" + driver.getWindowHandle());
         System.out.println("Title :" + driver.getTitle());
 
-        WebElement btn_aceptar = driver.findElement(By.xpath("//button[@type='submit']"));
+        WebElement btn_Aceptar = driver.findElement(By.xpath("//button[@type='submit']"));
 
-        btn_aceptar.click();
+        btn_Aceptar.click();
 
         Esperar(3);
 
@@ -72,7 +71,6 @@ public class SeleccionarOperacionCreditoPage {
         }catch (InterruptedException e){
             e.printStackTrace();
         }
-
     }
 
 

@@ -15,7 +15,7 @@ public class ConfirmarSegurosSeleccionadosPage {
     private WebDriverWait wait;
     private Set<String> identificadoresConfirmacionSeguros;
 
-    @FindBy(xpath = "//button[@type=\"button\"]") private WebElement btn_cerrar;
+    @FindBy(xpath = "//button[@type=\"button\"]") private WebElement btn_Cerrar;
 
 
     public void AbrirVentanaConfirmacionSeguros(){
@@ -34,19 +34,16 @@ public class ConfirmarSegurosSeleccionadosPage {
 
     public void CerrarVentanaConfirmacionSeguros()  {
 
-            Integer SetSize = identificadoresConfirmacionSeguros.size();
-            Integer Index = 0;
-            String[] Handles = new String[SetSize];
-            for (String identificadorConfirmacionSeguros : identificadoresConfirmacionSeguros) {
-                Handles[Index] = identificadorConfirmacionSeguros;
-                Index++;
-            }
-            System.out.println(Handles[0]);
-            driver.switchTo().window(Handles[0]);
-
+        Integer SetSize = identificadoresConfirmacionSeguros.size();
+        Integer Index = 0;
+        String[] Handles = new String[SetSize];
+        for (String identificadorConfirmacionSeguros : identificadoresConfirmacionSeguros) {
+            Handles[Index] = identificadorConfirmacionSeguros;
+            Index++;
         }
-
-
+        System.out.println(Handles[0]);
+        driver.switchTo().window(Handles[0]);
+    }
 
     public ConfirmarSegurosSeleccionadosPage(WebDriver d) {
         driver = d;
@@ -56,6 +53,7 @@ public class ConfirmarSegurosSeleccionadosPage {
     }
 
     public void ClickCerrar() {
-        wait.until(ExpectedConditions.elementToBeClickable(btn_cerrar));
-        btn_cerrar.click();}
+        wait.until(ExpectedConditions.elementToBeClickable(btn_Cerrar));
+        btn_Cerrar.click();
+    }
 }

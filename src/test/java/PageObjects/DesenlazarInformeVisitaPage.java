@@ -15,10 +15,10 @@ public class DesenlazarInformeVisitaPage {
     private WebDriverWait wait;
     private Set<String> identificadoresDesenlazarInformeVisita;
 
-    @FindBy(xpath = "//button[@type='submit']") private WebElement btn_realizar;
-
+    @FindBy(xpath = "//button[@type='submit']") private WebElement btn_Realizar;
 
     public void AbrirVentanaDesenlazarInformeVisita(){
+        Esperar(2);
         identificadoresDesenlazarInformeVisita = driver.getWindowHandles();
         String LastHandle = "";
 
@@ -28,7 +28,6 @@ public class DesenlazarInformeVisitaPage {
         }
         driver.switchTo().window(LastHandle);
         System.out.println("Titulo:" + driver.getTitle());
-
     }
 
 
@@ -51,17 +50,12 @@ public class DesenlazarInformeVisitaPage {
         driver = d;
         wait = new WebDriverWait(driver,30);
         PageFactory.initElements(driver,this);
-
     }
 
-
-    public void ClickRealizar(){
-
-        wait.until(ExpectedConditions.elementToBeClickable(btn_realizar));
-        btn_realizar.click();
+    public void ClickBtnRealizar(){
+        wait.until(ExpectedConditions.elementToBeClickable(btn_Realizar));
+        btn_Realizar.click();
         Esperar(2);
-
-
     }
 
     private void Esperar(Integer Segundos){
@@ -72,13 +66,6 @@ public class DesenlazarInformeVisitaPage {
         }catch (InterruptedException e){
             e.printStackTrace();
         }
-
     }
 
-
 }
-
-
-
-
-

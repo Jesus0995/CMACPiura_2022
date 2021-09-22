@@ -17,9 +17,10 @@ public class EnlazarInformeVisitaPage {
     private Set<String> identificadoresEnlazarInformeVisita;
 
     //mapeop elementos
-    @FindBy(xpath = "//button[@type='submit']") private WebElement btn_realizar;
+    @FindBy(xpath = "//button[@type='submit']") private WebElement btn_Realizar;
 
     public void AbrirVentanaEnlazarInformeVisita(){
+        Esperar(2);
         identificadoresEnlazarInformeVisita = driver.getWindowHandles();
         System.out.println(identificadoresEnlazarInformeVisita);
         String LastHandle="";
@@ -54,11 +55,9 @@ public class EnlazarInformeVisitaPage {
     }
 
     public void ClickBtnRealizar(){
-        wait.until(ExpectedConditions.elementToBeClickable(btn_realizar));
-        btn_realizar.click();
-
+        wait.until(ExpectedConditions.elementToBeClickable(btn_Realizar));
+        btn_Realizar.click();
         Esperar (2);
-
     }
 
     private void Esperar (Integer Segundos){
@@ -69,9 +68,6 @@ public class EnlazarInformeVisitaPage {
         }catch (InterruptedException e){
             e.printStackTrace();
         }
-
     }
-
-
 
 }

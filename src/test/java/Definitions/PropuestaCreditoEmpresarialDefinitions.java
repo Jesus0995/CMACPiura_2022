@@ -529,7 +529,7 @@ public class PropuestaCreditoEmpresarialDefinitions {
     @Then("el sistema muestra la ventana Desenlazar Informe de Visita y doy click en el boton Realizar")
     public void elSistemaMuestraLaVentanaDesenlazarInformeDeVisitaYDoyClickEnElBotonRealizar() {
         desenlazarinformevisita.AbrirVentanaDesenlazarInformeVisita();
-        desenlazarinformevisita.ClickRealizar();
+        desenlazarinformevisita.ClickBtnRealizar();
         desenlazarinformevisita.CerrarVentanaDesenlazarInformeVisita();
     }
 
