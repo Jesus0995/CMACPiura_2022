@@ -11,6 +11,8 @@ import java.io.IOException;
 import java.util.List;
 import java.util.Map;
 
+import static Support.screenshot.pantallazo;
+
 
 public class PropuestaCreditoEmpresarialDefinitions {
     //crear variables de los pages
@@ -495,7 +497,7 @@ public class PropuestaCreditoEmpresarialDefinitions {
     @And("en la ventana Garantias Existentes seleccionar garantia correspondiente y doy click en Aceptar")
     public void enLaVentanaGarantiasExistentesSeleccionarGarantiaCorrespondienteYDoyClickEnAceptar() {
         seleccionarGarantiasExistentes.AbrirVentanaGarantiasExistentes();
-        seleccionarGarantiasExistentes.SeleccionarCheckGarantiasExistentes();
+        seleccionarGarantiasExistentes.SeleccionarCheckGarantiaMaquinaria();
         seleccionarGarantiasExistentes.ClickbtnAceptar();
         seleccionarGarantiasExistentes.CerrarVentanaGarantiasExistentes();
     }
@@ -567,24 +569,29 @@ public class PropuestaCreditoEmpresarialDefinitions {
     @And("el sistema direcciona a la ventana Propuesta y doy click en la opcion grabar")
     public void elSistemaDireccionaALaVentanaPropuestaYDoyClickEnLaOpcionGrabar() {
 
-        propuesta.ClickBtnAprobarPropuesta();
+        propuesta.ClickMenuGrabarPropuesta();
     }
 
-    @And("en la ventana Grabar documento doy click en el boton Cerrar")
-    public void enLaVentanaGrabarDocumentoDoyClickEnElBotonCerrar() {
+    @And("en la ventana Grabar Informacion doy click en el boton Cerrar")
+    public void enLaVentanaGrabarInformacionDoyClickEnElBotonCerrar() {
         grabarPropuesta.AbrirVentanaGrabarPropuesta();
-        grabarPropuesta.ClickbtnCerrar();
+        grabarPropuesta.ClickbtnCerrarInformacion();
         grabarPropuesta.CerrarVentanaGrabarPropuesta();
     }
 
+    @Then("en la ventana Propuesta doy click en el Menu Emitir Dictamen")
+    public void enLaVentanaPropuestaDoyClickEnElMenuEmitirDictamen() {
+        propuesta.AbrirOpcionesDictamen();
+    }
 
-    @And("en la ventana Propuesta seleccionar la opcion Aprobar para Emitir Dictamen de Propuesta")
-    public void enLaVentanaPropuestaSeleccionarLaOpcionAprobarParaEmitirDictamenDePropuesta() {
+    @And("en las opciones del menu Emitir Dictamen seleccionar el boton Aprobar")
+    public void enLasOpcionesDelMenuEmitirDictamenSeleccionarElBotonAprobar() {
         propuesta.ClickBtnAprobarPropuesta();
     }
 
-    @And("en la ventana Emitir Dictamen de Propuesta ingresar observaciones y password")
-    public void enLaVentanaEmitirDictamenDePropuestaIngresarObservacionesYPassword(DataTable DatosAprobacion) {
+
+    @And("en la ventana Emitir Dictamen Propuesta ingresar observaciones y password del usuario asesor")
+    public void enLaVentanaEmitirDictamenPropuestaIngresarObservacionesYPasswordDelUsuarioAsesor(DataTable DatosAprobacion) {
         aprobarDictamenPropuesta.AbrirVentanaAprobarDictamenPropuesta();
         List<Map<String,String>> lista = DatosAprobacion.asMaps(String.class,String.class);
         for (Integer i = 0; i < lista.size() ;i++){
@@ -594,22 +601,40 @@ public class PropuestaCreditoEmpresarialDefinitions {
 
     }
 
-    @And("en la ventana Emitir Dictamen de Propuesta doy click en el boton Procesar")
-    public void enLaVentanaEmitirDictamenDePropuestaDoyClickEnElBotonProcesar() {
+
+    @And("en la ventana Emitir Dictamen Propuesta doy click en el boton Procesar")
+    public void enLaVentanaEmitirDictamenPropuestaDoyClickEnElBotonProcesar() {
         aprobarDictamenPropuesta.ClickbtnProcesar();
         aprobarDictamenPropuesta.CerrarVentanaAprobarDictamenPropuesta();
-    }
 
-    @And("en la ventana Grabar Informacion doy click en boton cerrar y cerrar ventana")
-    public void enLaVentanaGrabarInformacionDoyClickEnBotonCerrarYCerrarVentana() {
-        grabarInformacionErrores.AbrirVentanaGrabarInformacion();
-        grabarInformacionErrores.ClickbtnCerrar();
-        grabarInformacionErrores.CerrarVentanaGrabarInformacion();
 
     }
 
+    @And("el sistema muestra la ventana Grabar Informacion y le doy click en el boton Cerrar")
+    public void elSistemaMuestraLaVentanaGrabarInformacionYLeDoyClickEnElBotonCerrar() throws IOException {
+        grabarPropuesta.AbrirVentanaGrabarPropuesta();
+        pantallazo();
+        grabarPropuesta.ClickbtnCerrarInformacion();
+        grabarPropuesta.CerrarVentanaGrabarPropuesta();
 
+    }
 
+    @And("el sistema direcciona a la ventana listado propuesta y doy click en boton Regresar")
+    public void elSistemaDireccionaALaVentanaListadoPropuestaYDoyClickEnBotonRegresar() {
+        listadoPropuesta.ClickRegresar();
+
+    }
+
+    @And("el sistema direcciona al Menu Principal y seleccionar opcion Cerrar Sesion")
+    public void elSistemaDireccionaAlMenuPrincipalYSeleccionarOpcionCerrarSesion() {
+        menuPrincipal.ClickCerrarSesion();
+
+    }
+
+    @And("el sistema direcciona al login y doy click en boton Cerrar Sesion")
+    public void elSistemaDireccionaAlLoginYDoyClickEnBotonCerrarSesion() {
+        login.ClickCerrarSesion();
+    }
 }
 
 

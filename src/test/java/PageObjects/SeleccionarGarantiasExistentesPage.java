@@ -19,7 +19,7 @@ public class SeleccionarGarantiasExistentesPage {
 
     @FindBy(xpath = "//input[@name='garantia']") private WebElement chk_GarantiaExistentes;
     @FindBy(xpath = "//button[@type=\"submit\"]") private  WebElement btn_Aceptar;
-    @FindBy(xpath = "//input[@value='611-1-4695337']") private WebElement chk_GarantiaMaquinaria;
+    @FindBy(xpath = "//input[@value='611-1-4695340']") private WebElement chk_GarantiaMaquinaria;
 
 
 

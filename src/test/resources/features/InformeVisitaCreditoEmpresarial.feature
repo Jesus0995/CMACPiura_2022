@@ -38,4 +38,4 @@ Feature: Registrar informe de visita con el perfil Asesor de Finanzas Empresaria
 
     Examples:
       | cliente  |
-      | 12933991 |
+      | 24368939 |

@@ -32,6 +32,14 @@ public class InformeVisita_CrearPage {
     @FindBy(xpath = "//select[@name=\"estadoGarantia\"]") private WebElement cbx_relacionLaboral;
     @FindBy(xpath = "//select[@name=\"documentacionGarantia\"]") private WebElement cbx_documentoSustento;
 
+
+    //verificacion del negocio;
+    @FindBy(xpath = "//select[@name='esDireccionCorrecta1']") private  WebElement cbx_DireccionNegocio;
+    @FindBy(xpath = "//select[@name='estadoGarantia']") private  WebElement cbx_EstadoGarantia;
+    @FindBy(xpath = "//select[@name='documentacionGarantia']") private WebElement cbx_DocumentoGarantia;
+
+
+
     @FindBy(name="valuacionPerito") private WebElement opt_conforme;
     @FindBy(name="lavact1") private WebElement opt_lavadoActivo;
     @FindBy(name = "lavact2") private WebElement opt_senalesAlerta;
