@@ -33,7 +33,7 @@ public class AprobarPropuestaCreditoConsumoDefinitons {
     @Given("la web SGCRED se encuentra disponible")
     public void laWebSGCREDSeEncuentraDisponible() {
 
-        Hooks.driver.get("http://10.0.203.12:8082/propuesta/");
+        Hooks.driver.get("http://10.0.203.12:8081/propuesta/");
     }
 
     @When("ingreso usuario y password del perfil Administrador")
@@ -63,10 +63,31 @@ public class AprobarPropuestaCreditoConsumoDefinitons {
         menuPrincipal.ClickPropuestaFinanciamiento();
     }
 
-    @And("muestra el listado de propuestas y doy click en el boton editar propuesta")
-    public void muestraElListadoDePropuestasYDoyClickEnElBotonEditarPropuesta() {
+    @And("muestra el listado de propuestas y seleciono el tipo de busqueda por numero de propuesta")
+    public void muestraElListadoDePropuestasYSelecionoElTipoDeBusquedaPorNumeroDePropuesta() {
 
-        listadoPropuesta.ClickEditarPropuestaAprobacion();
+        listadoPropuesta.ClickTipoBusquedaAprobacion();
+
+    }
+
+    @And("en la ventana listado de propuestas ingresar el numero de propuesta {string}")
+    public void enLaVentanaListadoDePropuestasIngresarElNumeroDePropuesta(String NumeroPropuesta) {
+
+        listadoPropuesta.IngresarNumeroPropuesta(NumeroPropuesta);
+
+    }
+
+    @And("en la ventana listado de propuestas doy click en el boton buscar")
+    public void enLaVentanaListadoDePropuestasDoyClickEnElBotonBuscar() {
+
+        listadoPropuesta.ClickBtnBuscar();
+
+    }
+
+    @And("en la ventana listado de propuestas doy click en el boton editar propuesta")
+    public void enLaVentanaListadoDePropuestasDoyClickEnElBotonEditarPropuesta() {
+
+        listadoPropuesta.ClickEditarPropuesta();
 
     }
 
@@ -129,4 +150,5 @@ public class AprobarPropuestaCreditoConsumoDefinitons {
         login.ClickCerrarSesion();
 
     }
+
 }

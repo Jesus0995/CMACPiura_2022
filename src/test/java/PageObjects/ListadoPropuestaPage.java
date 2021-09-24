@@ -5,6 +5,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.util.Set;
@@ -21,8 +22,9 @@ public class ListadoPropuestaPage {
     @FindBy(xpath = "//button[@type=\"submit\"]") private WebElement btn_Buscar;
     @FindBy(xpath = "/html/body/table/tbody/tr[2]/td/table[1]/tbody/tr/td[2]/div/button[1]") private WebElement btn_CrearPropuesta;
     @FindBy(xpath = "/html/body/table/tbody/tr[2]/td/table[1]/tbody/tr/td[2]/div/button[2]") private WebElement btn_Regresar;
-    @FindBy(xpath = "//img[@alt='Editar']") private WebElement icn_EditarAprobacion;
-
+    @FindBy(xpath = "//select[@name='tipoBusqueda']") private WebElement cbx_BusquedaAprobacion;
+    @FindBy(xpath = "//input[@name='valorBuscado']") private WebElement txt_NumeroPropuestaAprobacion;
+    @FindBy(xpath = "//img[@alt='Editar']") private WebElement icn_Editar;
 
     public ListadoPropuestaPage(WebDriver d) {
         //Iniciar las variables
@@ -50,9 +52,24 @@ public class ListadoPropuestaPage {
         System.out.println("Fin regresar");
     }
 
-    public void ClickEditarPropuestaAprobacion(){
-        wait.until(ExpectedConditions.elementToBeClickable(icn_EditarAprobacion));
-        icn_EditarAprobacion.click();
+
+    public void ClickTipoBusquedaAprobacion(){
+        Select TipoBusquedaAprobacion = new Select(cbx_BusquedaAprobacion);
+        TipoBusquedaAprobacion.selectByVisibleText("NUMERO PROPUESTA");
+    }
+
+    public void IngresarNumeroPropuesta (String NumeroPropuesta){
+        txt_NumeroPropuestaAprobacion.clear();
+        txt_NumeroPropuestaAprobacion.sendKeys(NumeroPropuesta);
+    }
+
+    public void ClickBtnBuscar (){
+        btn_Buscar.click();
+    }
+
+    public void ClickEditarPropuesta(){
+        wait.until(ExpectedConditions.elementToBeClickable(icn_Editar));
+        icn_Editar.click();
     }
 
 }

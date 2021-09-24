@@ -13,7 +13,7 @@ Feature: Registrar informe comercial nuevo con el perfil Asesor de Negocios
     And muestra el home principal de SGCRED
     And doy click en la opcion informe comercial
     And muestra la busqueda de clientes y realizar la busqueda en el tab codigo
-    And en la ventana busqueda de clientes digitar el codigo "24491978"
+    And en la ventana busqueda de clientes digitar el codigo "26623090"
     And en la ventana busqueda de clientes y doy click en boton buscar
     And en la ventana busqueda de clientes y doy click en el icono informe comercial
     And muestra ventana definir negocio y doy click en el boton cargar

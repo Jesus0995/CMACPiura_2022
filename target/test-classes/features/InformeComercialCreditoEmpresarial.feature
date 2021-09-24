@@ -8,7 +8,7 @@ Feature: Registrar Informe Comercial con el perfil Asesor de Finanzas Empresaria
     Given el sistema SGCRED esta disponible para usarla
     When en la ventana login ingreso usuario y password del perfil Asesor de Finanzas Empresariales
       | usuario | password |
-      | ALPAMA | prueba   |
+      | ALPAMA  | prueba   |
     And en la ventana Login doy click en boton ingresar al SGCRED
     And el sistema muestra el home principal de SGCRED
     And en el menu principal seleccionar la opcion Informe Comercial Nuevo Formato
@@ -27,4 +27,4 @@ Feature: Registrar Informe Comercial con el perfil Asesor de Finanzas Empresaria
 
     Examples:
       | cliente  |
-      | 21672084|
+      | 21672084 |
