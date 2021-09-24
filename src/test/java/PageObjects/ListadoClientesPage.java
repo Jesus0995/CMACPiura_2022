@@ -20,9 +20,6 @@ public class ListadoClientesPage {
     @FindBy(css = "#tab-bg\\:1 > i:nth-child(1)") private WebElement tab_Codigo;
     @FindBy(xpath = "//*[@id=\"valorCodigo\"]") private WebElement txt_Codigo;
     @FindBy(css ="#form2 > table:nth-child(2) > tbody:nth-child(1) > tr:nth-child(2) > td:nth-child(1) > button:nth-child(1)") private WebElement btn_Buscar;
-    @FindBy(xpath = "/html/body/table/tbody/tr[2]/td/table[1]/tbody/tr/td/div[2]/form/table/tbody/tr[1]/td[2]/input") private WebElement txt_CodClienteIV;
-    @FindBy(xpath = "/html/body/table/tbody/tr[2]/td/table[1]/tbody/tr/td/div[2]/form/table/tbody/tr[2]/td/button[1]") private WebElement btn_BuscarClienteIV;
-    @FindBy(xpath = "/html/body/table/tbody/tr[2]/td/table[2]/tbody/tr[2]/td[6]/span/img") private  WebElement icn_InformeVisita;
 
 
     public ListadoClientesPage(WebDriver d) {
@@ -41,11 +38,6 @@ public class ListadoClientesPage {
         txt_Codigo.sendKeys(CodCliente);
     }
 
-    public void IngresarCodClienteIV(String CodClienteIV){
-        txt_CodClienteIV.clear();
-        txt_CodClienteIV.sendKeys(CodClienteIV);
-    }
-
     public void ClickBuscarCliente(){
         wait.until(ExpectedConditions.elementToBeClickable(btn_Buscar));
         btn_Buscar.click();
@@ -57,14 +49,6 @@ public class ListadoClientesPage {
         icn_nuevaPropuesta.click();
     }
 
-    public void ClickbtnBuscarClienteIV(){
-        wait.until(ExpectedConditions.elementToBeClickable(btn_BuscarClienteIV));
-        btn_BuscarClienteIV.click();
-    }
 
-    public void SeleccionarIconoInformeVisita(){
-        String JScript = icn_InformeVisita.getAttribute("onclick");
-        ((JavascriptExecutor)driver).executeScript(JScript);
-    }
 
 }

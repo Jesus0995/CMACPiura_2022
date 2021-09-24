@@ -12,8 +12,11 @@ public class InformeComercialNuevoPage {
     private WebDriverWait wait;
 
     @FindBy(xpath = "//input[@id='patrimoniopersonal']") private WebElement txt_patrimonio;
+    @FindBy(xpath = "//input[@name='patrimoniopersonal']") private WebElement txt_PatrimonioComercial;
     @FindBy(xpath = "//img[@alt='Grabar']") private WebElement btn_grabar;
     @FindBy(xpath = "//img[@alt='Regresar']") private WebElement btn_regresar;
+
+    ///html/body/table/tbody/tr[2]/td/table/tbody/tr[2]/td[1]/table/tbody/tr/td[5]/a
 
     public InformeComercialNuevoPage(WebDriver d){
         driver = d;
@@ -25,6 +28,12 @@ public class InformeComercialNuevoPage {
         txt_patrimonio.clear();
         txt_patrimonio.sendKeys(Patrimonio);
     }
+
+    public  void IngresarPatrimonioComercial(String PatrimonioComercial){
+        txt_PatrimonioComercial.clear();
+        txt_PatrimonioComercial.sendKeys(PatrimonioComercial);
+    }
+
 
     public void ClickGrabar(){
         wait.until(ExpectedConditions.elementToBeClickable(btn_grabar));

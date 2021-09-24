@@ -152,6 +152,52 @@ public class InformeVisita_CrearPage {
         }
     }
 
+    public void SeleccionarDireccionCorrecta(String DireccionNegocio){
+        cbx_DireccionNegocio.sendKeys(DireccionNegocio);
+        Esperar(3);
+        try{
+            WebElement direccionNegocio = driver.findElement(By.xpath("//select[@name='esDireccionCorrecta1']//option[text()='"+DireccionNegocio+"']"));
+            String JScript = direccionNegocio.getAttribute("onclick");
+            ((JavascriptExecutor)driver).executeScript(JScript);
+
+        }catch (Exception error){
+            System.out.println(error.getMessage());
+
+        }
+
+    }
+
+
+    public void SeleccionarEstadoGarantia(String EstadoGarantia){
+        cbx_EstadoGarantia.sendKeys(EstadoGarantia);
+        Esperar(3);
+        try{
+            WebElement estadoGarantia = driver.findElement(By.xpath("//select[@name='estadoGarantia']//option[text()='"+EstadoGarantia+"']"));
+            String JScript = estadoGarantia.getAttribute("onclick");
+            ((JavascriptExecutor)driver).executeScript(JScript);
+
+        }catch (Exception error){
+            System.out.println(error.getMessage());
+
+        }
+
+    }
+
+    public void SeleccionarDocumentoGarantia(String DocumentoGarantia){
+        cbx_DocumentoGarantia.sendKeys(DocumentoGarantia);
+        Esperar(2);
+        try{
+            WebElement documentoGarantia = driver.findElement(By.xpath("//select[@name='documentacionGarantia']//option[text()='"+DocumentoGarantia+"']"));
+            String JScript = documentoGarantia.getAttribute("onclick");
+            ((JavascriptExecutor)driver).executeScript(JScript);
+
+        }catch (Exception error){
+            System.out.println(error.getMessage());
+
+        }
+
+    }
+
     public void SeleccionarConforme(){
         wait.until(ExpectedConditions.elementToBeClickable(opt_conforme));
         opt_conforme.click();
@@ -185,6 +231,7 @@ public class InformeVisita_CrearPage {
     public void ClickRegresar(){
         wait.until(ExpectedConditions.elementToBeClickable(btn_regresar));
         btn_regresar.click();
+        Esperar(1);
     }
 
     private void Esperar(Integer Segundos){

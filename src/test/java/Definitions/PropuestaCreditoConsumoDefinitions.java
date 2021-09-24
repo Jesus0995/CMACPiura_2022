@@ -32,7 +32,7 @@ public class PropuestaCreditoConsumoDefinitions {
     DesenlazarInformeVisitaPage desenlazarInformeVisita;
     EnlazarInformeVisitaPage enlazarInformeVisita;
     EnlazarInformeComercialNuevoPage enlazarInformeComercialNuevo;
-    GrabarDocumentoPropuestaPage grabarDocumentoPropuesta;
+    GrabarInformacionDocumentoPage grabarDocumentoPropuesta;
     AprobarDictamenPropuestaPage aprobarDictamenPropuesta;
 
     //Constructor
@@ -57,7 +57,7 @@ public class PropuestaCreditoConsumoDefinitions {
         desenlazarInformeVisita = new DesenlazarInformeVisitaPage(Hooks.driver);
         enlazarInformeVisita = new EnlazarInformeVisitaPage(Hooks.driver);
         enlazarInformeComercialNuevo = new EnlazarInformeComercialNuevoPage(Hooks.driver);
-        grabarDocumentoPropuesta = new GrabarDocumentoPropuestaPage(Hooks.driver);
+        grabarDocumentoPropuesta = new GrabarInformacionDocumentoPage(Hooks.driver);
         aprobarDictamenPropuesta = new AprobarDictamenPropuestaPage(Hooks.driver);
     }
 

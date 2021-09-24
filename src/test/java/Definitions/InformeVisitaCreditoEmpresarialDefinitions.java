@@ -16,24 +16,28 @@ public class InformeVisitaCreditoEmpresarialDefinitions {
 
     MenuPrincipalPage menuPrincipal;
     LoginPage loginInforme;
-    ListadoClientesPage listadoClientes;
+    ListadoInformeVisitaPage listadoInformeVisita;
     SeleccionarRubroNegocioPage seleccionarRubroNegocio;
     InformeVisita_InformePage listaInformes;
+    InformeVisita_CrearPage crearInformeVisita;
+    GrabarInformacionDocumentoPage grabarInformeVisita;
 
 
     public InformeVisitaCreditoEmpresarialDefinitions() {
         menuPrincipal = new MenuPrincipalPage(Hooks.driver);
         loginInforme = new LoginPage(Hooks.driver);
-        listadoClientes = new ListadoClientesPage(Hooks.driver);
+        listadoInformeVisita = new ListadoInformeVisitaPage(Hooks.driver);
         seleccionarRubroNegocio = new SeleccionarRubroNegocioPage(Hooks.driver);
         listaInformes = new InformeVisita_InformePage(Hooks.driver);
+        crearInformeVisita = new InformeVisita_CrearPage(Hooks.driver);
+        grabarInformeVisita = new GrabarInformacionDocumentoPage(Hooks.driver);
 
 
     }
 
     @Given("la web SGCRED esta disponible para usarla")
     public void laWebSGCREDEstaDisponibleParaUsarla() {
-        Hooks.driver.get("http://10.0.203.12:8082/propuesta/");
+        Hooks.driver.get("http://10.0.203.12:8081/propuesta/");
     }
 
     @When("ingreso usuario y password del perfil Asesor de Finanzas Empresariales")
@@ -63,20 +67,21 @@ public class InformeVisitaCreditoEmpresarialDefinitions {
     }
 
     @And("en la ventana busqueda de clientes seleccionar el tab por Codigo e ingresar el codigo {string}")
-    public void enLaVentanaBusquedaDeClientesSeleccionarElTabPorCodigoEIngresarElCodigo(String CodClienteIV) {
-        listadoClientes.SeleccionarTabCodigo();
-        listadoClientes.IngresarCodClienteIV(CodClienteIV);
+    public void enLaVentanaBusquedaDeClientesSeleccionarElTabPorCodigoEIngresarElCodigo(String CodCliente) {
+        listadoInformeVisita.SeleccionarTabCodigo();
+        listadoInformeVisita.IngresarCodigoCliente(CodCliente);
 
     }
 
-    @And("en la ventana busqueda de clientes doy click en el boton buscar")
-    public void enLaVentanaBusquedaDeClientesDoyClickEnElBotonBuscar() {
-        listadoClientes.ClickbtnBuscarClienteIV();
+    @And("en la ventana busqueda de cliente doy click en el boton Buscar")
+    public void enLaVentanaBusquedaDeClienteDoyClickEnElBotonBuscar() {
+        listadoInformeVisita.ClickBuscarCliente();
     }
+
 
     @And("en la grilla de la ventana seleccionar el icono informe visita")
     public void enLaGrillaDeLaVentanaSeleccionarElIconoInformeVisita() {
-        listadoClientes.SeleccionarIconoInformeVisita();
+        listadoInformeVisita.SeleccionarIconoInformeVisita();
     }
 
     @Then("el sistema direcciona a la ventana SeleccionarRubroNegocio y doy click en boton Cargar")
@@ -94,66 +99,104 @@ public class InformeVisitaCreditoEmpresarialDefinitions {
     }
 
     @And("el sistema muestra la ventana principal informe de visita e ingresar datos de visita")
-    public void elSistemaMuestraLaVentanaPrincipalInformeDeVisitaEIngresarDatosDeVisita() {
+    public void elSistemaMuestraLaVentanaPrincipalInformeDeVisitaEIngresarDatosDeVisita(DataTable DatosInformeVisita) {
+        List<Map<String,String>> listado = DatosInformeVisita.asMaps(String.class,String.class);
+        for (int i = 0; i < listado.size(); i++) {
+            crearInformeVisita.IngresarFechaVisita(listado.get(i).get("FechaVisita"));
+            crearInformeVisita.IngresarHoraVisita(listado.get(i).get("HoraVisita"));
+            crearInformeVisita.IngresarMinutoVisita(listado.get(i).get("MinutoVisita"));
+            crearInformeVisita.IngresarFranjaHoraria(listado.get(i).get("FranjaHora"));
+        }
         
     }
 
     @And("en la ventana principal informe de visita ingresar datos de verificacion domiciliaria")
-    public void enLaVentanaPrincipalInformeDeVisitaIngresarDatosDeVerificacionDomiciliaria() {
-        
+    public void enLaVentanaPrincipalInformeDeVisitaIngresarDatosDeVerificacionDomiciliaria(DataTable DatosDomicilio) {
+        List<Map<String, String>> lista = DatosDomicilio.asMaps(String.class, String.class);
+        for (int i = 0; i < lista.size(); i++) {
+            crearInformeVisita.IngresarNroInteg(lista.get(i).get("NumeroIntegrantes"));
+            crearInformeVisita.SeleccionarRelacion(lista.get(i).get("Relacion"));
+            crearInformeVisita.SeleccionarHabitos(lista.get(i).get("Habitos"));
+            crearInformeVisita.SeleccionarOtrosIngresos(lista.get(i).get("OtrosIngresos"));
+
+        }
+
     }
+
 
     @And("en la ventana principal informe de visita ingresar datos de verificacion del negocio")
-    public void enLaVentanaPrincipalInformeDeVisitaIngresarDatosDeVerificacionDelNegocio() {
+    public void enLaVentanaPrincipalInformeDeVisitaIngresarDatosDeVerificacionDelNegocio(DataTable DatosNegocio) {
+        List<Map<String,String>> lista = DatosNegocio.asMaps(String.class,String.class);
+        for (int i=0;i<lista.size();i++ ){
+            crearInformeVisita.SeleccionarDireccionCorrecta(lista.get(i).get("DireccionNegocio"));
+            crearInformeVisita.SeleccionarEstadoGarantia(lista.get(i).get("EstadoGarantia"));
+            crearInformeVisita.SeleccionarDocumentoGarantia(lista.get(i).get("DocumentoGarantia"));
+
+        }
+
         
     }
 
-    @And("en la ventana principal informe de visita la evaluacion del perito")
-    public void enLaVentanaPrincipalInformeDeVisitaLaEvaluacionDelPerito() {
+    @And("en la ventana principal informe de visita la evaluacion del perito es:")
+    public void enLaVentanaPrincipalInformeDeVisitaLaEvaluacionDelPeritoEs() {
+        crearInformeVisita.SeleccionarConforme();
         
     }
 
     @And("en la ventana principal informe de visita seleccionar declaracion Prevencion de Lavado de Activo")
     public void enLaVentanaPrincipalInformeDeVisitaSeleccionarDeclaracionPrevencionDeLavadoDeActivo() {
-        
+        crearInformeVisita.SeleccionarNoLavado();
     }
 
     @And("en la ventana principal informe de visita seleccionar Senales de Alerta")
     public void enLaVentanaPrincipalInformeDeVisitaSeleccionarSenalesDeAlerta() {
-        
+        crearInformeVisita.SeleccionarAlerta();
     }
 
     @And("en la ventana principal informe de visita seleccionar Actividad economica del cliente tiene fundamento legal")
     public void enLaVentanaPrincipalInformeDeVisitaSeleccionarActividadEconomicaDelClienteTieneFundamentoLegal() {
-        
+        crearInformeVisita.SeleccionarLegal();
     }
 
     @And("en la ventana principal informe de visita registrar observaciones {string}")
-    public void enLaVentanaPrincipalInformeDeVisitaRegistrarObservaciones(String arg0) {
-        
+    public void enLaVentanaPrincipalInformeDeVisitaRegistrarObservaciones(String Observacion) {
+        crearInformeVisita.IngresarObservacion(Observacion);
     }
 
     @And("en la ventana principal informe de visita doy click en el boton grabar")
     public void enLaVentanaPrincipalInformeDeVisitaDoyClickEnElBotonGrabar() {
+        crearInformeVisita.ClickGrabar();
         
+    }
+
+    @And("en la ventana Grabar Documento doy click en el boton Cerrar")
+    public void enLaVentanaGrabarDocumentoDoyClickEnElBotonCerrar() {
+        grabarInformeVisita.AbrirVentanaGrabarPropuesta();
+        grabarInformeVisita.ClickbtnCerrarInformacion();
+        grabarInformeVisita.CerrarVentanaGrabarPropuesta();
     }
 
     @And("en la ventana principal informe de visita doy click en el boton regresar")
     public void enLaVentanaPrincipalInformeDeVisitaDoyClickEnElBotonRegresar() {
-        
+        crearInformeVisita.ClickRegresar();
     }
 
     @And("el sistema direcciona a ventana listado informe de visita y doy click en el boton regresar")
     public void elSistemaDireccionaAVentanaListadoInformeDeVisitaYDoyClickEnElBotonRegresar() {
-        
+       listaInformes.ClickRegresar();
+
     }
 
     @And("el sistema direcciona a menu principal y doy click al menu cerrar sesion")
     public void elSistemaDireccionaAMenuPrincipalYDoyClickAlMenuCerrarSesion() {
-        
+        menuPrincipal.ClickCerrarSesion();
     }
 
     @And("direcciona a la ventana login y doy click en el boton cerrar sesion")
     public void direccionaALaVentanaLoginYDoyClickEnElBotonCerrarSesion() {
+        loginInforme.ClickCerrarSesion();
     }
+
+
+
 }

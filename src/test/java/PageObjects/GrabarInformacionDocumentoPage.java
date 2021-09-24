@@ -11,7 +11,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.util.Set;
 
-public class GrabarDocumentoPropuestaPage {
+public class GrabarInformacionDocumentoPage {
     private WebDriver driver;
     private WebDriverWait wait;
     private Set<String> identificadoresGrabarPropuesta;
@@ -74,7 +74,7 @@ public class GrabarDocumentoPropuestaPage {
     }
 
 
-    public GrabarDocumentoPropuestaPage(WebDriver d) {
+    public GrabarInformacionDocumentoPage(WebDriver d) {
         driver = d;
         wait = new WebDriverWait(driver,30);
         PageFactory.initElements(driver,this);

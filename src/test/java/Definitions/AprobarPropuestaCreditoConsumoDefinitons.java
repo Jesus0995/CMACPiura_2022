@@ -16,7 +16,7 @@ public class AprobarPropuestaCreditoConsumoDefinitons {
     PopUpComunicadoPage popUpComunicado;
     PropuestaPage propuesta;
     AprobarDictamenPropuestaPage aprobarDictamenPropuesta;
-    GrabarDocumentoPropuestaPage grabarDocumentoPropuesta;
+    GrabarInformacionDocumentoPage grabarDocumentoPropuesta;
 
     //Constructor
     public AprobarPropuestaCreditoConsumoDefinitons() {
@@ -27,7 +27,7 @@ public class AprobarPropuestaCreditoConsumoDefinitons {
         popUpComunicado = new PopUpComunicadoPage(Hooks.driver);
         propuesta = new PropuestaPage(Hooks.driver);
         aprobarDictamenPropuesta = new AprobarDictamenPropuestaPage(Hooks.driver);
-        grabarDocumentoPropuesta = new GrabarDocumentoPropuestaPage(Hooks.driver);
+        grabarDocumentoPropuesta = new GrabarInformacionDocumentoPage(Hooks.driver);
     }
 
     @Given("la web SGCRED se encuentra disponible")

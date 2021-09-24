@@ -34,13 +34,13 @@ public class PropuestaCreditoEmpresarialDefinitions {
     SeleccionarGarantiaPage seleccionarGarantia;
     SeleccionarGarantiasExistentesPage seleccionarGarantiasExistentes;
     CancelandoPagaresPage cancelandoPagares;
-    GrabarDocumentoPropuestaPage grabarPropuesta;
+    GrabarInformacionDocumentoPage grabarPropuesta;
     EnlazarEstadosFinancierosPage enlazarEstadosFinancieros;
     DesenlazarInformeVisitaPage desenlazarinformevisita;
     EnlazarInformeVisitaPage enlazarInformeVisita;
     EnlazarInformeComercialNuevoPage enlazarInformeComercialNuevo;
     AprobarDictamenPropuestaPage aprobarDictamenPropuesta;
-    GrabarInformacionErroresPage grabarInformacionErrores;
+
 
 
 
@@ -65,13 +65,13 @@ public class PropuestaCreditoEmpresarialDefinitions {
         seleccionarGarantia = new SeleccionarGarantiaPage(Hooks.driver);
         seleccionarGarantiasExistentes = new SeleccionarGarantiasExistentesPage(Hooks.driver);
         cancelandoPagares = new CancelandoPagaresPage(Hooks.driver);
-        grabarPropuesta = new GrabarDocumentoPropuestaPage(Hooks.driver);
+        grabarPropuesta = new GrabarInformacionDocumentoPage(Hooks.driver);
         enlazarEstadosFinancieros = new EnlazarEstadosFinancierosPage(Hooks.driver);
         desenlazarinformevisita = new DesenlazarInformeVisitaPage(Hooks.driver);
         enlazarInformeVisita = new EnlazarInformeVisitaPage(Hooks.driver);
         enlazarInformeComercialNuevo = new EnlazarInformeComercialNuevoPage(Hooks.driver);
         aprobarDictamenPropuesta = new AprobarDictamenPropuestaPage(Hooks.driver);
-        grabarInformacionErrores = new GrabarInformacionErroresPage(Hooks.driver);
+
 
     }
 

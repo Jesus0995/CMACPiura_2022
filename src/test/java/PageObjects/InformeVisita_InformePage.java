@@ -12,7 +12,9 @@ public class InformeVisita_InformePage {
     WebDriverWait wait;
 
     @FindBy(xpath = "//td[@class='Invisible']//button[1]") private WebElement btn_crearVisita;
-    @FindBy(xpath = "//button[@type=\"button\"]") private WebElement btn_regresar;
+    @FindBy(xpath = "/html/body/table/tbody/tr[2]/td/div/table[2]/tbody/tr[4]/td/button[2]") private WebElement btn_regresar;
+
+    ///html/body/table/tbody/tr[2]/td/div/table[2]/tbody/tr[12]/td/button[2]
 
     public InformeVisita_InformePage(WebDriver d) {
 
