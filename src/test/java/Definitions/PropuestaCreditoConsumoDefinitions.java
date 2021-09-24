@@ -64,7 +64,7 @@ public class PropuestaCreditoConsumoDefinitions {
     @Given("la pagina web SGCRED esta disponible")
     public void laPaginaWebSGCREDEstaDisponible() {
 
-        Hooks.driver.get("http://10.0.203.12:8082/propuesta/");
+        Hooks.driver.get("http://10.0.203.12:8081/propuesta/");
     }
 
     @When("se completa el usuario y password")
@@ -192,6 +192,7 @@ public class PropuestaCreditoConsumoDefinitions {
             operacioncredito.IngresarTasaInicial(lista.get(i).get("TasaInicial"));
         }
         operacioncredito.ClickCalcular();
+
     }
 
     @And("en la ventana operacion credito seleccionar el plan de pagos {string}")

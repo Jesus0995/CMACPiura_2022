@@ -78,7 +78,7 @@ public class PropuestaCreditoEmpresarialDefinitions {
     @Given("la web SGCRED esta disponible")
     public void la_web_sgcred_esta_disponible() {
 
-        Hooks.driver.get("http://10.0.203.12:8082/propuesta/");
+        Hooks.driver.get("http://10.0.203.12:8081/propuesta/");
     }
 
     @When("ingreso usuario y password")

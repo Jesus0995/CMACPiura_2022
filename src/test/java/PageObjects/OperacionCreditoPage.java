@@ -96,27 +96,27 @@ public class OperacionCreditoPage {
 
     }
 
-    public void ClickCalcular () throws InterruptedException {
+    public void ClickCalcular () {
         wait.until(ExpectedConditions.elementToBeClickable(btn_Calcular));
         btn_Calcular.click();
-        Thread.sleep(10000);
+        Esperar(26);
     }
 
-    public void SeleccionarPlanPagos (String PlanPagos)  {
-        // Seleccionamos el valor textual de la opcion 'PlanPagos' en el combobox.
+    public void SeleccionarPlanPagos (String PlanPagos) {
         cbx_PlanPagos.sendKeys(PlanPagos);
-
-        // Buscamos el webelement de la opcion indicada en el xpath.
         WebElement Opcion = driver.findElement(By.xpath("//*[text() = '" + PlanPagos + "']"));
-
-        // Obtenemos el valor del atributo 'onclick' de la opcion indicada
         String JScript = Opcion.getAttribute("onclick");
-
-        // Ejecutamos el script del contenido 'onclick' para simular el arraque del mismo como un click humano.
         ((JavascriptExecutor) driver).executeScript(JScript);
-
-        // Esperamos unos segundos para que aparezca el proximo combobox.
         Esperar(2);
+
+          /*
+        Select OpcionPlanPagos = new Select(driver.findElement(By.xpath("/html/body/table[4]/tbody/tr[2]/td[3]/table/tbody/tr/td[2]/select")));
+        OpcionPlanPagos.selectByVisibleText(PlanPagos);
+        Esperar(3);
+        */
+
+
+
     }
 
     public void SeleccionarModalidad (String Modalidad) {
