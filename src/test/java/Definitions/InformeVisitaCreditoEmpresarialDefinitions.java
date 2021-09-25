@@ -178,22 +178,24 @@ public class InformeVisitaCreditoEmpresarialDefinitions {
 
     @And("en la ventana principal informe de visita doy click en el boton regresar")
     public void enLaVentanaPrincipalInformeDeVisitaDoyClickEnElBotonRegresar() {
-        crearInformeVisita.ClickRegresar();
+        crearInformeVisita.ClickBtnRegresarCE();
     }
 
     @And("el sistema direcciona a ventana listado informe de visita y doy click en el boton regresar")
     public void elSistemaDireccionaAVentanaListadoInformeDeVisitaYDoyClickEnElBotonRegresar() {
-       listaInformes.ClickRegresar();
+       listaInformes.ClickBtnRegresarCE();
 
     }
 
     @And("el sistema direcciona a menu principal y doy click al menu cerrar sesion")
-    public void elSistemaDireccionaAMenuPrincipalYDoyClickAlMenuCerrarSesion() {
+    public void elSistemaDireccionaAMenuPrincipalYDoyClickAlMenuCerrarSesion()
+    {
         menuPrincipal.ClickCerrarSesion();
     }
 
     @And("direcciona a la ventana login y doy click en el boton cerrar sesion")
     public void direccionaALaVentanaLoginYDoyClickEnElBotonCerrarSesion() {
+
         loginInforme.ClickCerrarSesion();
     }
 

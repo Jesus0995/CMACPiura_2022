@@ -47,6 +47,7 @@ public class InformeVisita_CrearPage {
     @FindBy(name="observaciones") private WebElement txt_observacion;
     @FindBy(xpath = "/html/body/table/tbody/tr[2]/td/table/tbody/tr[2]/td[1]/table/tbody/tr/td[3]/a/img") private WebElement btn_grabar;
     @FindBy(css = "td.P:nth-child(10) > a:nth-child(1)") private WebElement btn_regresar;
+    @FindBy(xpath = "//img[@alt='Regresar']") private WebElement btn_RegresarCE;
 
     public InformeVisita_CrearPage(WebDriver d) {
         driver = d;
@@ -231,8 +232,14 @@ public class InformeVisita_CrearPage {
     public void ClickRegresar(){
         wait.until(ExpectedConditions.elementToBeClickable(btn_regresar));
         btn_regresar.click();
-        Esperar(1);
+        //Esperar(1);
     }
+
+    public void ClickBtnRegresarCE(){
+        wait.until(ExpectedConditions.elementToBeClickable(btn_RegresarCE));
+        btn_RegresarCE.click();
+    }
+
 
     private void Esperar(Integer Segundos){
         Integer Milisegundos = Segundos * 1000;

@@ -19,7 +19,6 @@ Feature: Registrar Informe Comercial con el perfil Asesor de Finanzas Empresaria
     And en la ventana Informes Comerciales doy click en el boton Crear Informe Comercial
     Then el sistema muestra la ventana principal Informe Comercial para ingresar el Patrimonio Personal "30000"
     And en la ventana principal Informe Comercial doy click en el boton grabar
-    And en la ventana Grabar Informe doy click en el boton Cerrar
     And en la ventana principal Informe Comercial doy click en el boton Regresar
     And el sistema direcciona a la ventana listado de informes comerciales y doy click en Regresar
     And el sistema direcciona al Menu Principal SGCRED y doy click en la opcion Cerrar Sesion

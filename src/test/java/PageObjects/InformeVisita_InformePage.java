@@ -12,9 +12,9 @@ public class InformeVisita_InformePage {
     WebDriverWait wait;
 
     @FindBy(xpath = "//td[@class='Invisible']//button[1]") private WebElement btn_crearVisita;
-    @FindBy(xpath = "/html/body/table/tbody/tr[2]/td/div/table[2]/tbody/tr[4]/td/button[2]") private WebElement btn_regresar;
+    @FindBy(xpath = "//button[@type='button']") private WebElement btn_regresar;
 
-    ///html/body/table/tbody/tr[2]/td/div/table[2]/tbody/tr[12]/td/button[2]
+    @FindBy(xpath = "//button[@onclick=\"window.location='login.jsp'\"]") private WebElement btn_RegresarCE;
 
     public InformeVisita_InformePage(WebDriver d) {
 
@@ -31,6 +31,8 @@ public class InformeVisita_InformePage {
             e.printStackTrace();
         }
         btn_crearVisita.click();
+        Esperar(2);
+
     }
 
     public void ClickRegresar() {
@@ -38,4 +40,23 @@ public class InformeVisita_InformePage {
         btn_regresar.click();
 
     }
+
+
+    public void ClickBtnRegresarCE(){
+        wait.until(ExpectedConditions.elementToBeClickable(btn_RegresarCE));
+        btn_RegresarCE.click();
+
+    }
+
+    private void Esperar(Integer Segundos){
+        Integer Milisegundos = Segundos * 1000;
+        try {
+            Thread.sleep(Milisegundos);
+        }catch (InterruptedException e){
+            e.printStackTrace();
+        }
+
+
+    }
+
 }

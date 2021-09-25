@@ -98,15 +98,10 @@ public class InformeComercialCreditoEmpresarialDefinitions {
         informeComercial.ClickGrabar();
     }
 
-    @And("en la ventana Grabar Informe doy click en el boton Cerrar")
-    public void enLaVentanaGrabarInformeDoyClickEnElBotonCerrar() {
-        grabarInformeComercial.AbrirVentanaGrabarPropuesta();
-        grabarInformeComercial.ClickbtnCerrarInformacion();
-        grabarInformeComercial.CerrarVentanaGrabarPropuesta();
-    }
 
     @And("en la ventana principal Informe Comercial doy click en el boton Regresar")
     public void enLaVentanaPrincipalInformeComercialDoyClickEnElBotonRegresar() {
+
         informeComercial.ClickRegresar();
     }
 

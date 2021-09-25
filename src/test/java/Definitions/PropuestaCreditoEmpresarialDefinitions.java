@@ -613,8 +613,8 @@ public class PropuestaCreditoEmpresarialDefinitions {
     @And("el sistema muestra la ventana Grabar Informacion y le doy click en el boton Cerrar")
     public void elSistemaMuestraLaVentanaGrabarInformacionYLeDoyClickEnElBotonCerrar() throws IOException {
         grabarPropuesta.AbrirVentanaGrabarPropuesta();
-        pantallazo();
         grabarPropuesta.ClickbtnCerrarInformacion();
+        pantallazo();
         grabarPropuesta.CerrarVentanaGrabarPropuesta();
 
     }
@@ -633,6 +633,7 @@ public class PropuestaCreditoEmpresarialDefinitions {
 
     @And("el sistema direcciona al login y doy click en boton Cerrar Sesion")
     public void elSistemaDireccionaAlLoginYDoyClickEnBotonCerrarSesion() {
+
         login.ClickCerrarSesion();
     }
 }

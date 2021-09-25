@@ -19,7 +19,7 @@ Feature: Registrar informe de visita con el perfil Asesor de Finanzas Empresaria
     And en la ventana lista de informes visita doy click en el boton crear informe visita
     And el sistema muestra la ventana principal informe de visita e ingresar datos de visita
       | FechaVisita | HoraVisita | MinutoVisita | FranjaHora |
-      | 23/09/2021  | 09         | 00           | A.M        |
+      | 24/09/2021  | 09         | 00           | A.M        |
     And en la ventana principal informe de visita ingresar datos de verificacion domiciliaria
       | NumeroIntegrantes | Relacion | Habitos             | OtrosIngresos |
       | 3                 | Estable  | Dentro de lo Normal | NO            |
@@ -40,4 +40,4 @@ Feature: Registrar informe de visita con el perfil Asesor de Finanzas Empresaria
 
     Examples:
       | cliente  |
-      | 24368939 |
+      | 21672084 |
