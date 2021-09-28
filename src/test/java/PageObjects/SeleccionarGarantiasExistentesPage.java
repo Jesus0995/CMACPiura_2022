@@ -19,8 +19,8 @@ public class SeleccionarGarantiasExistentesPage {
 
     @FindBy(xpath = "//input[@name='garantia']") private WebElement chk_GarantiaExistentes;
     @FindBy(xpath = "//button[@type=\"submit\"]") private  WebElement btn_Aceptar;
-    @FindBy(xpath = "//input[@value='611-1-4725260']") private WebElement chk_GarantiaMaquinaria;
-
+    //@FindBy(xpath = "//input[@value='611-1-4725262']") private WebElement chk_GarantiaMaquinaria;
+    //@FindBy(xpath = "//input[@value='611-1-4725261']") private WebElement chk_GarantiaMaquinaria;
 
 
     public void AbrirVentanaGarantiasExistentes(){
@@ -62,11 +62,11 @@ public class SeleccionarGarantiasExistentesPage {
         chk_GarantiaExistentes.click();
     }
 
-
+    /*
     public void SeleccionarCheckGarantiaMaquinaria(){
         wait.until(ExpectedConditions.elementToBeClickable(chk_GarantiaMaquinaria));
         chk_GarantiaMaquinaria.click();
-    }
+    }*/
 
     public void ClickbtnAceptar (){
         wait.until(ExpectedConditions.elementToBeClickable(btn_Aceptar));

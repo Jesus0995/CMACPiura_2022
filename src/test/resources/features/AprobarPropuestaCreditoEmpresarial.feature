@@ -7,13 +7,13 @@ Feature: Registrar Aprobacion de Propuestas con el perfil Jefe de Credito
   Scenario: Aprobar una propuesta de Credito Empresarial del cliente en el sistema SGCRED
     Given el sistema SGCRED se encuentra disponible
     When ingreso usuario y password del Perfil Jefe de Credito Agencia
-      | usuario | password |
-      | OSAL   | prueba   |
+      | nombre | password |
+      | osal   | prueba   |
     And en la ventana doy click en el boton Ingresar de la web SGCRED
     And el sistema muestra el menu principal de SGCRED
     And en el menu doy click en la opcion propuesta de financiamiento
     And en la ventana Listado de Propuestas seleccionar el tipo de busqueda por numero de propuesta
-    And en la ventana Listado de Propuestas ingresar el numero de propuesta "4787570"
+    And en la ventana Listado de Propuestas ingresar el numero de propuesta "4787593"
     And en la ventana Listado de Propuestas doy click en el boton Buscar
     And en la ventana Listado de Propuestas doy click en el boton Editar
     And el sistema muestra Comunicado y doy en cerrar

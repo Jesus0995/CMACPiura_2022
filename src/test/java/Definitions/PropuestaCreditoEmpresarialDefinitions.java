@@ -497,7 +497,7 @@ public class PropuestaCreditoEmpresarialDefinitions {
     @And("en la ventana Garantias Existentes seleccionar garantia correspondiente y doy click en Aceptar")
     public void enLaVentanaGarantiasExistentesSeleccionarGarantiaCorrespondienteYDoyClickEnAceptar() {
         seleccionarGarantiasExistentes.AbrirVentanaGarantiasExistentes();
-        seleccionarGarantiasExistentes.SeleccionarCheckGarantiaMaquinaria();
+        seleccionarGarantiasExistentes.SeleccionarCheckGarantiasExistentes();
         seleccionarGarantiasExistentes.ClickbtnAceptar();
         seleccionarGarantiasExistentes.CerrarVentanaGarantiasExistentes();
     }

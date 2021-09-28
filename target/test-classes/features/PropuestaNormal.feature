@@ -28,7 +28,7 @@ Feature: Crear una propuesta de Credito Empresarial de tipo NORMAL en el Sistema
     And validar la ventana seleccionar operacion de credito luego doy click en boton aceptar
     And posicionarse en la ventana Operacion Credito e ingresar la Operacion y doy click en Calcular
       | Moneda | Monto | TasaInicial |
-      | S/     | 2000  | 10          |
+      | S/     | 5000  | 10          |
     And en la ventana Operacion Credito seleccionar plan de pagos "Fija Vencida"
     And en la ventana Operacion Credito seleccionar modalidad "Libre Amortizacion"
     And en la ventana Operacion Credito Ingresar los dias "90"
@@ -37,7 +37,7 @@ Feature: Crear una propuesta de Credito Empresarial de tipo NORMAL en el Sistema
     And en la ventana Operacion Credito seleccionar plaza de desembolso
       | Departamento | Provincia | Distrito |
       | LIMA         | LIMA      | LIMA     |
-    And en la ventana Operacion Credito ingresar fecha probable del desembolso "24/09/2021"
+    And en la ventana Operacion Credito ingresar fecha probable del desembolso "28/09/2021"
     And en la ventana Operacion Credito Ingresar notas "Prueba"
     And en la ventana Operacion Credito doy click en grabar
     And en la ventana Operacion Credito aceptar la alerta
@@ -94,7 +94,7 @@ Feature: Crear una propuesta de Credito Empresarial de tipo NORMAL en el Sistema
 
     Examples:
       | cliente  |
-      | 24368939 |
+      | 11833292 |
 
 
 

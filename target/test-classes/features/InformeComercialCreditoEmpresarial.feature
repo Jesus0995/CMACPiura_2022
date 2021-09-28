@@ -26,4 +26,4 @@ Feature: Registrar Informe Comercial con el perfil Asesor de Finanzas Empresaria
 
     Examples:
       | cliente  |
-      | 21672084 |
+      | 10818052 |
