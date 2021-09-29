@@ -19,14 +19,14 @@ Feature: Registrar informe de visita con el perfil Asesor de Negocios
     And muestra ventana seleccionar rubro y doy click en el boton cargar
     And muestra la ventana lista de informes y doy click en el boton crear informe
     And muestra la ventana informe de visita e ingresar datos de visita
-      |FechaVisita|HoraVisita|MinutoVisita|FranjaHora|
-      |15/09/2021 |09        |30          |A.M|
+      | FechaVisita | HoraVisita | MinutoVisita | FranjaHora |
+      | 15/09/2021  | 09         | 30           | A.M        |
     And en la ventana informe de visita ingresar datos de verificacion domiciliaria
-      |NumeroIntegrantes|Relacion|Habitos            |OtrosIngresos|
-      |3                |Estable |Dentro de lo Normal|NO           |
+      | NumeroIntegrantes | Relacion | Habitos             | OtrosIngresos |
+      | 3                 | Estable  | Dentro de lo Normal | NO            |
     And en la ventana informe de visita ingresar datos de verificacion del negocio
-      |RelacionLaboral|DocumentoSustento              |
-      |Buena          |Presentada en Regla(Originales)|
+      | RelacionLaboral | DocumentoSustento                |
+      | Buena           | Presentada en Regla (Originales) |
     And en la ventana informe de visita seleccionar el tipo de evaluacion
     And en la ventana informe de visita seleccionar la declaracion de SPLAFT
     And en la ventana informe de visita ingresar la observacion "Prueba informe visita"

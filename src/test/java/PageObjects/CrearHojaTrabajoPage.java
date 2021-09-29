@@ -26,12 +26,12 @@ public class CrearHojaTrabajoPage {
     }
 
     public void CrearHojaTrabajo() {
-
+        wait.until(ExpectedConditions.elementToBeClickable(btn_crearHojaTrabajo));
         btn_crearHojaTrabajo.click();
     }
 
     public void RegresarListado(){
-
+        wait.until(ExpectedConditions.elementToBeClickable(btn_regresarListado));
         btn_regresarListado.click();
     }
 

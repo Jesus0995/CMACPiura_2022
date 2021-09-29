@@ -94,7 +94,7 @@ public class InformeVisitaCreditoEmpresarialDefinitions {
     @And("en la ventana lista de informes visita doy click en el boton crear informe visita")
     public void enLaVentanaListaDeInformesVisitaDoyClickEnElBotonCrearInformeVisita() {
 
-        listaInformes.ClickCrear();
+        listaInformes.ClickBtnCrear();
         
     }
 

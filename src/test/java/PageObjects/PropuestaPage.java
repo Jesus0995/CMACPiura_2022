@@ -33,6 +33,8 @@ public class PropuestaPage {
     @FindBy(xpath = "//td[@id='NewDdTD']") private WebElement btn_Dictamen;
     @FindBy(xpath = "//img[@alt='Aprobar']") private WebElement btn_AprobarPropuesta;
 
+    @FindBy(xpath = "//button[@name='btnEnviar2']") private WebElement btn_VerificarCheckListCredito;
+
     public PropuestaPage(WebDriver d) {
         driver = d;
         wait = new WebDriverWait(driver,140);
@@ -197,6 +199,11 @@ public class PropuestaPage {
     public void ClickBtnAprobarPropuesta(){
         btn_AprobarPropuesta.click();
         Esperar(1);
+    }
+
+    public void ClickBtnVerificarCheckListCredito(){
+        wait.until(ExpectedConditions.elementToBeClickable(btn_VerificarCheckListCredito));
+        btn_VerificarCheckListCredito.click();
     }
 
     private void Esperar(Integer Segundos){

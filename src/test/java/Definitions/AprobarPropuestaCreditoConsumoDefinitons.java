@@ -98,8 +98,16 @@ public class AprobarPropuestaCreditoConsumoDefinitons {
 
     }
 
-    @And("muestra la propuesta de financiamiento y doy click en la opcion aprobar")
-    public void muestraLaPropuestaDeFinanciamientoYDoyClickEnLaOpcionAprobar() {
+
+    @And("muestra la propuesta de financiamiento y doy click en el menu emitir dictamen")
+    public void muestraLaPropuestaDeFinanciamientoYDoyClickEnElMenuEmitirDictamen() {
+
+        propuesta.AbrirOpcionesDictamen();
+
+    }
+
+    @And("de la tabla de emitir dictamen selecciono la opcion aprobar")
+    public void deLaTablaDeEmitirDictamenSeleccionoLaOpcionAprobar() {
 
         propuesta.ClickBtnAprobarPropuesta();
 

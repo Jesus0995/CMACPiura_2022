@@ -18,9 +18,7 @@ public class HojaTrabajoDefinitions {
     ListadoHojaTrabajoPage listadoHojaTrabajo;
     CrearHojaTrabajoPage crearHojaTrabajo;
     RegistrarHojaTrabajoPage registrarHojaTrabajo;
-    GrabarDocumentoHojaTrabajoPage grabarDocumentoHojaTrabajoPage;
-
-
+    GrabarInformacionDocumentoPage grabarDocumentoHojaTrabajoPage;
 
     //Constructor
     public HojaTrabajoDefinitions() {
@@ -30,13 +28,13 @@ public class HojaTrabajoDefinitions {
         listadoHojaTrabajo = new ListadoHojaTrabajoPage( Hooks.driver);
         crearHojaTrabajo = new CrearHojaTrabajoPage( Hooks.driver);
         registrarHojaTrabajo = new RegistrarHojaTrabajoPage( Hooks.driver);
-        grabarDocumentoHojaTrabajoPage = new GrabarDocumentoHojaTrabajoPage(Hooks.driver);
+        grabarDocumentoHojaTrabajoPage = new GrabarInformacionDocumentoPage(Hooks.driver);
     }
 
     @Given("la pagina SGCRED esta disponible")
     public void la_web_sgcred_esta_disponible() {
 
-        Hooks.driver.get("http://10.0.203.12:8082/propuesta/");
+        Hooks.driver.get("http://10.0.203.12:8081/propuesta/");
     }
 
     @When("se ingresa usuario y password")
@@ -140,13 +138,13 @@ public class HojaTrabajoDefinitions {
 
     @And("en la ventana grabar documento hoja de trabajo doy click en el botón cerrar")
     public void enLaVentanaGrabarDocumentoHojaDeTrabajoDoyClickEnElBotónCerrar() throws IOException {
-        grabarDocumentoHojaTrabajoPage.AbrirVentanaGrabarDocumento();
+        grabarDocumentoHojaTrabajoPage.AbrirVentanaGrabarPropuesta();
         try {
-            grabarDocumentoHojaTrabajoPage.GrabarDocumentoHojaTrabajo();
+            grabarDocumentoHojaTrabajoPage.ClickbtnCerrarInformacion();
         } catch (Exception Error) {
-                System.out.println(Error.getMessage());
+            System.out.println(Error.getMessage());
         }
-        grabarDocumentoHojaTrabajoPage.CerrarVentanaGrabarDocumento();
+        grabarDocumentoHojaTrabajoPage.CerrarVentanaGrabarPropuesta();
     }
 
     @And("en la ventana hojas de trabajo doy click en el boton regresar")
@@ -166,12 +164,5 @@ public class HojaTrabajoDefinitions {
 
         login.ClickCerrarSesion();
     }
-
-    @And("doy cerrar la pagina web")
-    public void doyCerrarLaPaginaWeb() {
-
-        Hooks.driver.close();
-    }
-
 
 }

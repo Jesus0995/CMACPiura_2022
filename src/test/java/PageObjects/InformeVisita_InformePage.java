@@ -12,7 +12,11 @@ public class InformeVisita_InformePage {
     WebDriverWait wait;
 
     @FindBy(xpath = "//td[@class='Invisible']//button[1]") private WebElement btn_crearVisita;
-    @FindBy(xpath = "//button[@type='button']") private WebElement btn_regresar;
+    @FindBy(xpath = "//td[@class='Invisible']//button[2]") private WebElement btn_regresar;
+    @FindBy(xpath = "//td[@class='Invisible']//button[1]") private WebElement btn_regresarInformeComercial;
+
+
+
 
     @FindBy(xpath = "//button[@onclick=\"window.location='login.jsp'\"]") private WebElement btn_RegresarCE;
 
@@ -23,7 +27,7 @@ public class InformeVisita_InformePage {
         PageFactory.initElements(driver, this);
     }
 
-    public void ClickCrear() {
+    public void ClickBtnCrear() {
         //wait.until(ExpectedConditions.elementToBeClickable(btn_crearVisita));
         try {
             Thread.sleep(3000);
@@ -35,14 +39,20 @@ public class InformeVisita_InformePage {
 
     }
 
-    public void ClickRegresar() {
+    public void ClickBtnRegresar() {
         wait.until(ExpectedConditions.elementToBeClickable(btn_regresar));
         btn_regresar.click();
 
     }
 
+    public void ClickBtnRegresarInformeComercial() {
+        wait.until(ExpectedConditions.elementToBeClickable(btn_regresarInformeComercial));
+        btn_regresarInformeComercial.click();
+    }
 
-    public void ClickBtnRegresarCE(){
+
+
+        public void ClickBtnRegresarCE(){
         wait.until(ExpectedConditions.elementToBeClickable(btn_RegresarCE));
         btn_RegresarCE.click();
 

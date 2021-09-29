@@ -451,7 +451,6 @@ public class PropuestaCreditoConsumoDefinitions {
 
     @And("direcciona al menu principal y doy click en la opcion cerrar sesion")
     public void direccionaAlMenuPrincipalYDoyClickEnLaOpcionCerrarSesion() {
-
         menuPrincipal.ClickCerrarSesion();
     }
 

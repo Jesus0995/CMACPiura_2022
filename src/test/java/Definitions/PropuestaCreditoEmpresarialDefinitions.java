@@ -611,10 +611,9 @@ public class PropuestaCreditoEmpresarialDefinitions {
     }
 
     @And("el sistema muestra la ventana Grabar Informacion y le doy click en el boton Cerrar")
-    public void elSistemaMuestraLaVentanaGrabarInformacionYLeDoyClickEnElBotonCerrar() throws IOException {
+    public void elSistemaMuestraLaVentanaGrabarInformacionYLeDoyClickEnElBotonCerrar() {
         grabarPropuesta.AbrirVentanaGrabarPropuesta();
         grabarPropuesta.ClickbtnCerrarInformacion();
-        pantallazo();
         grabarPropuesta.CerrarVentanaGrabarPropuesta();
 
     }
@@ -628,7 +627,6 @@ public class PropuestaCreditoEmpresarialDefinitions {
     @And("el sistema direcciona al Menu Principal y seleccionar opcion Cerrar Sesion")
     public void elSistemaDireccionaAlMenuPrincipalYSeleccionarOpcionCerrarSesion() {
         menuPrincipal.ClickCerrarSesion();
-
     }
 
     @And("el sistema direcciona al login y doy click en boton Cerrar Sesion")

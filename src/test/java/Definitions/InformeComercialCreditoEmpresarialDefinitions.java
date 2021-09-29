@@ -84,7 +84,7 @@ public class InformeComercialCreditoEmpresarialDefinitions {
 
     @And("en la ventana Informes Comerciales doy click en el boton Crear Informe Comercial")
     public void enLaVentanaInformesComercialesDoyClickEnElBotonCrearInformeComercial() {
-        listaInformes.ClickCrear();
+        listaInformes.ClickBtnCrear();
         
     }
 
@@ -107,7 +107,7 @@ public class InformeComercialCreditoEmpresarialDefinitions {
 
     @And("el sistema direcciona a la ventana listado de informes comerciales y doy click en Regresar")
     public void elSistemaDireccionaALaVentanaListadoDeInformesComercialesYDoyClickEnRegresar() {
-        listaInformes.ClickRegresar();
+        listaInformes.ClickBtnRegresar();
     }
 
     @And("el sistema direcciona al Menu Principal SGCRED y doy click en la opcion Cerrar Sesion")

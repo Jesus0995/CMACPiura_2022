@@ -28,7 +28,8 @@ public class InformeComercialCreditoConsumoDefinitions {
 
     @Given("la pagina web del SGCRED se encuentra disponible")
     public void laPaginaWebDelSGCREDSeEncuentraDisponible() {
-        Hooks.driver.get("http://10.0.203.12:8082/propuesta/");
+
+        Hooks.driver.get("http://10.0.203.12:8081/propuesta/");
     }
 
     @When("ingreso usuario y password del Asesor de Negocios")
@@ -83,7 +84,8 @@ public class InformeComercialCreditoConsumoDefinitions {
 
     @And("muestra la ventana informes comerciales y doy click en el boton crear informe")
     public void muestraLaVentanaInformesComercialesYDoyClickEnElBotonCrearInforme() {
-        listaInformes.ClickCrear();
+
+        listaInformes.ClickBtnCrear();
     }
 
     @And("muestra la ventana nuevo informe comercial e ingresar datos el patrimonio {string}")
@@ -106,7 +108,7 @@ public class InformeComercialCreditoConsumoDefinitions {
     @And("muestra la ventana informes comerciales y doy click en el boton regresar")
     public void muestraLaVentanaInformesComercialesYDoyClickEnElBotonRegresar() {
 
-        listaInformes.ClickRegresar();
+        listaInformes.ClickBtnRegresarInformeComercial();
     }
 
     @And("posiciona en menu principal y doy click en la opcion cerrar sesion")

@@ -19,6 +19,7 @@ public class AnexarChecklistPage {
     private Alert MensajeAlerta;
 
     //Informacion basica cliente
+
     @FindBy(xpath = "//input[@id='item_1' and @value='2']") private WebElement opt_1cliTarjetaBasica;
     @FindBy(xpath = "//input[@id='item_2' and @value='2']") private WebElement opt_2cliCopiaFedateada;
     @FindBy(xpath = "//input[@id='item_3' and @value='2']") private WebElement opt_3cliVigenciaActualizada;

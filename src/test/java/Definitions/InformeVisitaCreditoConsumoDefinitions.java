@@ -16,7 +16,7 @@ public class InformeVisitaCreditoConsumoDefinitions {
     InformeVisita_SeleccionarRubroNegocioPage seleccionarRubroNegocio;
     InformeVisita_InformePage listaInformes;
     InformeVisita_CrearPage crearInformeVisita;
-    GrabarDocumentoHojaTrabajoPage grabarDocumentoInformeVisita;
+    GrabarInformacionDocumentoPage grabarDocumentoInformeVisita;
 
     public InformeVisitaCreditoConsumoDefinitions() {
         loginInforme = new LoginPage(Hooks.driver);
@@ -25,13 +25,13 @@ public class InformeVisitaCreditoConsumoDefinitions {
         seleccionarRubroNegocio = new InformeVisita_SeleccionarRubroNegocioPage(Hooks.driver);
         listaInformes = new InformeVisita_InformePage(Hooks.driver);
         crearInformeVisita = new InformeVisita_CrearPage(Hooks.driver);
-        grabarDocumentoInformeVisita = new GrabarDocumentoHojaTrabajoPage(Hooks.driver);
+        grabarDocumentoInformeVisita = new GrabarInformacionDocumentoPage(Hooks.driver);
     }
 
     @Given("la pagina web SGCRED se encuentra disponible")
     public void laPaginaWebSGCREDSeEncuentraDisponible() {
 
-        Hooks.driver.get("http://10.0.203.12:8082/propuesta/");
+        Hooks.driver.get("http://10.0.203.12:8081/propuesta/");
     }
 
     @When("ingreso usuario y password del perfil Asesor de Negocios")
@@ -90,7 +90,7 @@ public class InformeVisitaCreditoConsumoDefinitions {
     @And("muestra la ventana lista de informes y doy click en el boton crear informe")
     public void muestraLaVentanaListaDeInformesYDoyClickEnElBotonCrearInforme() {
 
-        listaInformes.ClickCrear();
+        listaInformes.ClickBtnCrear();
     }
 
     @And("muestra la ventana informe de visita e ingresar datos de visita")
@@ -151,9 +151,9 @@ public class InformeVisitaCreditoConsumoDefinitions {
 
     @And("muestra la ventana grabar informacion y doy click en el boton cerrar")
     public void muestraLaVentanaGrabarInformacionYDoyClickEnElBotonCerrar() throws InterruptedException {
-        grabarDocumentoInformeVisita.AbrirVentanaGrabarDocumento();
-        grabarDocumentoInformeVisita.GrabarDocumentoHojaTrabajo();
-        grabarDocumentoInformeVisita.CerrarVentanaGrabarDocumento();
+        grabarDocumentoInformeVisita.AbrirVentanaGrabarPropuesta();
+        grabarDocumentoInformeVisita.ClickbtnCerrarInformacion();
+        grabarDocumentoInformeVisita.CerrarVentanaGrabarPropuesta();
     }
 
     @And("el sistema direcciona a informe de visita y doy click en el boton regresar")
@@ -165,7 +165,7 @@ public class InformeVisitaCreditoConsumoDefinitions {
     @And("muestra la ventana lista de informes y doy click en el boton regresar")
     public void muestraLaVentanaListaDeInformesYDoyClickEnElBotonRegresar() {
 
-        listaInformes.ClickRegresar();
+        listaInformes.ClickBtnRegresar();
     }
 
     @And("el sistema direcciona a menu principal y doy click en la opcion cerrar sesion")

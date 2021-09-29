@@ -28,7 +28,7 @@ Feature: Crear una propuesta de Credito Empresarial de tipo NORMAL en el Sistema
     And validar la ventana seleccionar operacion de credito luego doy click en boton aceptar
     And posicionarse en la ventana Operacion Credito e ingresar la Operacion y doy click en Calcular
       | Moneda | Monto | TasaInicial |
-      | S/     | 5000  | 10          |
+      | S/     | 5000  | 1           |
     And en la ventana Operacion Credito seleccionar plan de pagos "Fija Vencida"
     And en la ventana Operacion Credito seleccionar modalidad "Libre Amortizacion"
     And en la ventana Operacion Credito Ingresar los dias "90"
@@ -44,9 +44,9 @@ Feature: Crear una propuesta de Credito Empresarial de tipo NORMAL en el Sistema
     Then el sistema direcciona a la ventana propuesta y doy click al boton Registro de seguros
     And en la ventana Seleccion de seguros doy click en boton Confirmar
     And el sistema direcciona a la ventana Registro Seguros y check en seguro desgravamen flat MN
-    And en la ventana Registro Seguros ingresar el numero DPS "1234"
+    And en la ventana Registro Seguros ingresar el numero DPS "333333333"
     And en la ventana Registro Seguros hacer check en seguro todo riesgo Plan Pymes
-    And en la ventana Registro Seguros ingresar el numero DPS "5678" del seguro Plan Pymes
+    And en la ventana Registro Seguros ingresar el numero DPS "222222222111" del seguro Plan Pymes
     And en la ventana Registro Seguros doy click en Confirmar
     And en la ventana seguros seleccionados visualizar información y doy click en cerrar
     Then el sistema direcciona a la ventana propuesta y doy click en Anexar CheckList creditos
@@ -93,8 +93,10 @@ Feature: Crear una propuesta de Credito Empresarial de tipo NORMAL en el Sistema
     And el sistema direcciona al login y doy click en boton Cerrar Sesion
 
     Examples:
-      | cliente  |
-      | 11833292 |
+      | cliente |
+      | 9560262 |
+
+
 
 
 

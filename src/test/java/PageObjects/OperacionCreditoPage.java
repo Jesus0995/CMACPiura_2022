@@ -108,15 +108,6 @@ public class OperacionCreditoPage {
         String JScript = Opcion.getAttribute("onclick");
         ((JavascriptExecutor) driver).executeScript(JScript);
         Esperar(2);
-
-          /*
-        Select OpcionPlanPagos = new Select(driver.findElement(By.xpath("/html/body/table[4]/tbody/tr[2]/td[3]/table/tbody/tr/td[2]/select")));
-        OpcionPlanPagos.selectByVisibleText(PlanPagos);
-        Esperar(3);
-        */
-
-
-
     }
 
     public void SeleccionarModalidad (String Modalidad) {
