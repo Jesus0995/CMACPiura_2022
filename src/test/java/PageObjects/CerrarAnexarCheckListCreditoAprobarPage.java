@@ -15,7 +15,7 @@ public class CerrarAnexarCheckListCreditoAprobarPage {
     private WebDriverWait wait;
     private Set<String> identfCerrarAnexarCheckListAprobar;
 
-    @FindBy(xpath = "//*[@onclick='window.close();']") private WebElement btn_Cerrar;
+    @FindBy(xpath = "/html/body/fieldset/form/table/tbody/tr[2]/td/button") private WebElement btn_Cerrar;
 
 
     public void AbrirVentanaCerrarAnexarCheckListAprobar(){
@@ -54,8 +54,35 @@ public class CerrarAnexarCheckListCreditoAprobarPage {
     }
 
     public void ClickBtnCerrar(){
-        wait.until(ExpectedConditions.elementToBeClickable(btn_Cerrar));
+        System.out.println("Click en el boton cerrar");
+        System.out.println("Handles iniciales"+driver.getWindowHandles());
+        Integer numeroHandles = driver.getWindowHandles().size();
+        Esperar(3);
         btn_Cerrar.click();
+        for (int i=0; i<=240;i+=1 ){
+            if (driver.getWindowHandles().size()==numeroHandles){
+                Esperar(1);
+                System.out.println("Esperando cierre de handle:" +i);
+
+            } else
+            {
+                i=241;
+            }
+
+        }
+        System.out.println("Handles final" + driver.getWindowHandles());
+        System.out.println("fin del boton cerrar");
+
+    }
+
+    private void Esperar(Integer Segundos){
+        Integer Milisegundos = Segundos*1000;
+
+        try {
+            Thread.sleep(Milisegundos);
+        }catch (InterruptedException error){
+            error.printStackTrace();
+        }
 
     }
 }

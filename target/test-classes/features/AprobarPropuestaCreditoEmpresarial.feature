@@ -17,10 +17,15 @@ Feature: Registrar Aprobacion de Propuestas con el perfil Jefe de Credito
     And en la ventana Listado de Propuestas doy click en el boton Buscar
     And en la ventana Listado de Propuestas doy click en el boton Editar
     And el sistema muestra Comunicado y doy en cerrar
-    And en la ventana Propuesta doy click en el Boton Verificar CheckListCredito
-    And el sistema muestra la ventana Anexar Checklist Credito y doy click en la Opcion Aprobar
-    And en la misma ventana Anexar ingreso un comentario de aprobacion "prueba"
-    And en la misma ventana Anexar doy click en el boton Guardar
-    Then el sistema me direcciona a la misma ventana para cerrar y regresar a Propuesta
+    And en la ventana principal de Propuesta doy click en el Menu Emitir Dictamen
+    And en las opciones del Menu Emitir Dictamen seleccionar el boton Aprobar
+    And en la ventana ventana Emitir Dictamen ingresar Observaciones y Clave
+      | Observaciones   | Contrasena |
+      | Aprobar credito | prueba     |
+    And en la misma ventana doy click en el boton Procesar
+    Then el sistema muestra la ventana Grabar Informacion y doy click en el boton Cerrar
+    And el sistema direcciona al listado de propuestas y doy click en el boton Regresar
+    And el sistema direcciona al menu principal y le doy click en Cerrar Sesion
+    And el sistema direcciona al login y le doy click en el boton Cerrar Sesion
 
 

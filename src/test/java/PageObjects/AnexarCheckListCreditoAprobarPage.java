@@ -67,9 +67,19 @@ public class AnexarCheckListCreditoAprobarPage {
     public void ClickBtnGuardar(){
         wait.until(ExpectedConditions.elementToBeClickable(btn_Guardar));
         btn_Guardar.click();
+        Esperar (3);
     }
 
 
+    private void Esperar(Integer Segundos){
+        Integer Milisegundos = Segundos * 1000;
+        try {
+            Thread.sleep(Milisegundos);
+        }catch (InterruptedException e){
+            e.printStackTrace();
+        }
+
+    }
 
 
 

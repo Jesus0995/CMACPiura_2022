@@ -370,8 +370,8 @@ public class PropuestaCreditoEmpresarialDefinitions {
         propuesta.ClickAnexarCheckListCreditos();
     }
 
-    @And("en la ventana CheckList Seccion Informacion Basica Cliente seleccionar las opciones del uno al siete")
-    public void enLaVentanaCheckListSeccionInformacionBasicaDelClienteSeleccionarLasOpcionesDelUnoAlSiete() {
+    @And("en la ventana CheckList Seccion Informacion Basica Cliente seleccionar las opciones correspondientes")
+    public void enLaVentanaCheckListSeccionInformacionBasicaDelClienteSeleccionarLasOpcionesCorrespondientes() {
         anexarCheckListCreditos.AbrirVentanaAnexarCheckList();
         anexarCheckListCreditos.Seleccionar_1TarjetaInformacion();
         anexarCheckListCreditos.Seleccionar_2CopiaFedatariaDOI();
@@ -383,8 +383,8 @@ public class PropuestaCreditoEmpresarialDefinitions {
 
     }
 
-    @And("en la ventana CheckList Seccion Información del Negocio seleccionar las opciones ocho al once")
-    public void enLaVentanaCheckListSeccionInformaciónDelNegocioSeleccionarLasOpcionesOchoAlOnce() {
+    @And("en la ventana CheckList Seccion Informacion del Negocio seleccionar las opciones correspondientes")
+    public void enLaVentanaCheckListSeccionInformacionDelNegocioSeleccionarLasOpcionesCorrespondientes() {
         anexarCheckListCreditos.Seleccionar_8ReciboSSBB();
         anexarCheckListCreditos.Seleccionar_9FotoNegocio();
         anexarCheckListCreditos.Seleccionar_10SustentoVigencia();
@@ -392,65 +392,83 @@ public class PropuestaCreditoEmpresarialDefinitions {
 
     }
 
-    @And("en la ventana CheckList Seccion Operaciones Propuestas seleccionar la opcion doce")
-    public void enLaVentanaCheckListSeccionOperacionesPropuestasSeleccionarLaOpcionDoce() {
+    @And("en la ventana CheckList Seccion Operaciones Propuestas seleccionar las opciones correspondientes")
+    public void enLaVentanaCheckListSeccionOperacionesPropuestasSeleccionarLasOpcionesCorrespondientes() {
         anexarCheckListCreditos.Seleccionar_12SolicitudCredito();
 
     }
 
-    @And("en la ventana CheckList Seccion Seguro del Cliente seleccionar la opcion trece")
-    public void enLaVentanaCheckListSeccionSeguroDelClienteSeleccionarLaOpcionTrece() {
+    @And("en la ventana CheckList Seccion Seguro del Cliente seleccionar las opciones correspondientes")
+    public void enLaVentanaCheckListSeccionSeguroDelClienteSeleccionarLasOpcionesCorrespondientes() {
         anexarCheckListCreditos.Seleccionar_13CopiaDPS();
     }
 
-    @And("en la ventana CheckList Seccion Seguro de Garantia seleccionar la opcion catorce")
-    public void enLaVentanaCheckListSeccionSeguroDeGarantiaSeleccionarLaOpcionCatorce() {
+    @And("en la ventana CheckList Seccion Seguro de Garantia seleccionar las opciones correspondientes")
+    public void enLaVentanaCheckListSeccionSeguroDeGarantiaSeleccionarLasOpcionesCorrespondientes() {
         anexarCheckListCreditos.Seleccionar_14CopiaPolizaSeguro();
     }
 
-    @And("en la ventana CheckList Seccion Informacion Economica Financiera seleccionar las opciones quince y dieciseis")
-    public void enLaVentanaCheckListSeccionInformacionEconomicaFinancieraSeleccionarLasOpcionesQuinceYDieciseis() {
+    @And("en la ventana CheckList Seccion Informacion Economica Financiera seleccionar las opciones correspondientes")
+    public void enLaVentanaCheckListSeccionInformacionEconomicaFinancieraSeleccionarLasOpcionesCorrespondientes() {
         anexarCheckListCreditos.Seleccionar_15EstadosFinancieros();
         anexarCheckListCreditos.Seleccionar_16FlujodeCaja();
+        anexarCheckListCreditos.Seleccionar_17EstadosFinancieros();
+        anexarCheckListCreditos.Seleccionar_18FlujoCajaProyectado();
+        anexarCheckListCreditos.Seleccionar_19BalanceGeneralProyectado();
+        anexarCheckListCreditos.Seleccionar_20EEGGYPPAnual();
+        anexarCheckListCreditos.Seleccionar_21FlujoCajaHistoricoAnual();
+        anexarCheckListCreditos.Seleccionar_22EstadosFinancierosSemestral();
+        anexarCheckListCreditos.Seleccionar_23FlujoCajaHistoricoProyectado();
 
     }
 
-    @And("en la ventana CheckList Seccion Informe Verificacion Previa seleccionar la opcion diecisiete")
-    public void enLaVentanaCheckListSeccionInformeVerificacionPreviaSeleccionarLaOpcionDiecisiete() {
-        anexarCheckListCreditos.Seleccionar_17InformeVisitaSectorista();
+    @And("en la ventana CheckList Seccion Declaracion Patrimonial seleccionar las opciones correspondientes")
+    public void enLaVentanaCheckListSeccionDeclaracionPatrimonialSeleccionarLasOpcionesCorrespondientes() {
+        anexarCheckListCreditos.Seleccionar_24PersonasNaturalesDeudores();
     }
 
-    @And("en la ventana CheckList Seccion Garantias No Inscribibles seleccionar las opciones dieciocho al veintidos")
-    public void enLaVentanaCheckListSeccionGarantiasNoInscribiblesSeleccionarLasOpcionesDieciochoAlVeintidos() {
-        anexarCheckListCreditos.Seleccionar_18BusquedaBienes();
-        anexarCheckListCreditos.Seleccionar_19DocumentosSustentatorios();
-        anexarCheckListCreditos.Seleccionar_20BoletaInformativa();
-        anexarCheckListCreditos.Seleccionar_21ContratoPrestamo();
-        anexarCheckListCreditos.Seleccionar_22DeclaracionJuradaBienes();
+    @And("en la ventana CheckList Seccion Informe Verificacion Previa seleccionar las opciones correspondientes")
+    public void enLaVentanaCheckListSeccionInformeVerificacionPreviaSeleccionarLasOpcionesCorrespondientes() {
+        anexarCheckListCreditos.Seleccionar_25InformeVisitaSectoristaLider();
     }
 
-    @And("en la ventana CheckList Seccion Garantias Con Deposicion seleccionar las opciones veintitres y veiniticuatro")
-    public void enLaVentanaCheckListSeccionGarantiasConDeposicionSeleccionarLasOpcionesVeintitresYVeiniticuatro() {
-        anexarCheckListCreditos.Seleccionar_23CopiaCertificadoTasacion();
-        anexarCheckListCreditos.Seleccionar_24CopiaCertificadoPlazoFijo();
+    @And("en la ventana CheckList Seccion Reporte Unidad de Riesgo seleccionar las opciones correspondientes")
+    public void enLaVentanaCheckListSeccionReporteUnidadDeRiesgoSeleccionarLasOpcionesCorrespondientes() {
+        anexarCheckListCreditos.Seleccionar_26OpinionRiesgosPropuestaIguales();
+    }
+
+
+    @And("en la ventana CheckList Seccion Garantias No Inscribibles seleccionar las opciones correspondientes")
+    public void enLaVentanaCheckListSeccionGarantiasNoInscribiblesSeleccionarLasOpcionesCorrespondientes() {
+        anexarCheckListCreditos.Seleccionar_27VaBusquedaBienes();
+        anexarCheckListCreditos.Seleccionar_28DocumentoPropiedad();
+        anexarCheckListCreditos.Seleccionar_29BoletaInformativa();
+        anexarCheckListCreditos.Seleccionar_30ContratoPrestamo();
+        anexarCheckListCreditos.Seleccionar_31DeclaracionJuradaBienes();
+    }
+
+    @And("en la ventana CheckList Seccion Garantias Con Deposicion seleccionar las opciones correspondientes")
+    public void enLaVentanaCheckListSeccionGarantiasConDeposicionSeleccionarLasOpcionesCorrespondientes() {
+        anexarCheckListCreditos.Seleccionar_32CopiaCertificadoTasacion();
+        anexarCheckListCreditos.Seleccionar_33CopiasPlazoFijo();
 
     }
 
-    @And("en la ventana CheckList Seccion Garantias Inscribibles seleccionar las opciones veinticinco al treintaiuno")
-    public void enLaVentanaCheckListSeccionGarantiasInscribiblesSeleccionarLasOpcionesVeinticincoAlTreintaiuno() {
-        anexarCheckListCreditos.Seleccionar_25CertificadoLiteral();
-        anexarCheckListCreditos.Seleccionar_26CertificadoLiteral();
-        anexarCheckListCreditos.Seleccionar_27ValuacionDelBien();
-        anexarCheckListCreditos.Seleccionar_28OpinionLegal();
-        anexarCheckListCreditos.Seleccionar_29ContratoPrestamo();
-        anexarCheckListCreditos.Seleccionar_30ContratoPrestamoPre();
-        anexarCheckListCreditos.Seleccionar_31Testimonio();
+    @And("en la ventana CheckList Seccion Garantias Inscribibles seleccionar las opciones correspondientes")
+    public void enLaVentanaCheckListSeccionGarantiasInscribiblesSeleccionarLasOpcionesCorrespondientes() {
+        anexarCheckListCreditos.Seleccionar_34CertificadoLiteralDomicilio();
+        anexarCheckListCreditos.Seleccionar_35GarantiaInscribible();
+        anexarCheckListCreditos.Seleccionar_36TasacionBien();
+        anexarCheckListCreditos.Seleccionar_37opinionLegal();
+        anexarCheckListCreditos.Seleccionar_38ContratoGarantiaMobiliaria();
+        anexarCheckListCreditos.Seleccionar_39ContratoPrestamoMobiliariaPreConst();
+        anexarCheckListCreditos.Seleccionar_40CopiaTestimonio();
     }
 
-    @And("en la ventana CheckList Seccion Desembolso de credito con Inscripcion seleccionar las opciones treintaidos y treintaitres")
-    public void enLaVentanaCheckListSeccionDesembolsoDeCreditoConInscripcionSeleccionarLasOpcionesTreintaidosYTreintaitres() {
-        anexarCheckListCreditos.Seleccionar_32FichaIngresoRRPP();
-        anexarCheckListCreditos.Seleccionar_33CopiaLiteralPartida();
+    @And("en la ventana CheckList Seccion Desembolso de credito con Inscripcion seleccionar las opciones correspondientes")
+    public void enLaVentanaCheckListSeccionDesembolsoDeCreditoConInscripcionSeleccionarLasOpcionesCorrespondientes() {
+        anexarCheckListCreditos.Seleccionar_41FichaIngresoRRPP();
+        anexarCheckListCreditos.Seleccionar_42CopiaLiteralPartida();
     }
 
     @And("en la ventana CheckList doy clic en Guardar y Terminar finalmente acepto la alerta")
@@ -474,9 +492,12 @@ public class PropuestaCreditoEmpresarialDefinitions {
         List<Map<String,String>> listaComentarios = ComentariosJustificados.asMaps(String.class,String.class);
         for (Integer i = 0; i < listaComentarios.size() ;i++){
             propuesta.IngresarCaracteristicaNegocio(listaComentarios.get(i).get("CaracteristicaNegocio"));
-            propuesta.IngresarClasificacionRiesgoCliente(listaComentarios.get(i).get("ClasificacionRiesgoNegocio"));
-            propuesta.IngresarClasificacionRiesgoAval(listaComentarios.get(i).get("ClasificacionRiesgoAval"));
-            propuesta.IngresarAnalisisUnidadF(listaComentarios.get(i).get("AnalisisUnidadFinanciera"));
+            propuesta.IngresarProductosNegocio(listaComentarios.get(i).get("ProductosNegocio"));
+            propuesta.IngresarPrincipalesClientes(listaComentarios.get(i).get("PrincipalesClientes"));
+            propuesta.IngresarPersonalNegocio(listaComentarios.get(i).get("PersonalNegocio"));
+            propuesta.IngresarAnalisisSector(listaComentarios.get(i).get("AnalisisSector"));
+            propuesta.IngresarProyeccionesCrecimiento(listaComentarios.get(i).get("ProyeccionesCrecimiento"));
+
         }
 
     }
@@ -634,6 +655,8 @@ public class PropuestaCreditoEmpresarialDefinitions {
 
         login.ClickCerrarSesion();
     }
+
+
 }
 
 

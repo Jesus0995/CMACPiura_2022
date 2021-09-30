@@ -128,12 +128,12 @@ public class AprobarPropuestaCreditoEmpresarialDefinitions {
     @And("en la misma ventana Anexar doy click en el boton Guardar")
     public void enLaMismaVentanaAnexarDoyClickEnElBotonGuardar() {
         aprobarcheckListCredito.ClickBtnGuardar();
-        aprobarcheckListCredito.CerrarVentanaAnexarCheckListAprobar();
+        //aprobarcheckListCredito.CerrarVentanaAnexarCheckListAprobar();
 
     }
 
-    @Then("el sistema me direcciona a la misma ventana para cerrar y regresar a Propuesta")
-    public void elSistemaMeDireccionaALaMismaVentanaParaCerrarYRegresarAPropuesta() {
+    @And("el sistema me direcciona a la misma ventana y doy click en el boton cerrar")
+    public void elSistemaMeDireccionaALaMismaVentanaYDoyClickEnElBotonCerrar() {
         cerrarAprobarCheckListCredito.AbrirVentanaCerrarAnexarCheckListAprobar();
         cerrarAprobarCheckListCredito.ClickBtnCerrar();
         cerrarAprobarCheckListCredito.CerrarVentanaCerrarAnexarCheckListAprobar();
@@ -188,6 +188,7 @@ public class AprobarPropuestaCreditoEmpresarialDefinitions {
 
     @And("el sistema direcciona al login y le doy click en el boton Cerrar Sesion")
     public void elSistemaDireccionaAlLoginYLeDoyClickEnElBotonCerrarSesion() {
+
         loginAprobar.ClickCerrarSesion();
     }
 

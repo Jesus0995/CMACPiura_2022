@@ -23,10 +23,19 @@ public class PropuestaPage {
     @FindBy(xpath = "//img[@src='./images/mail-send-receive.png']") private WebElement icn_CambioTasa;
     @FindBy(name = "btnEnviar2") private WebElement btn_AgregarSeguro;
     @FindBy(xpath = "/html/body/form/table[1]/tbody/tr[3]/td/div/table[8]/tbody/tr[1]/td[2]/button") private WebElement btn_AnexarChecklist;
-    @FindBy(xpath = "//textarea[@name='caracteristicaNegocio']") private WebElement txt_CaracteristicaNegocio;
+    @FindBy(xpath = "//textarea[@name='caractNegocio']") private WebElement txt_CaracteristicaNegocio; //se cambio el name del nuevo ambiente
     @FindBy(xpath = "//textarea[@id='txtclasificac']") private WebElement txt_ClasificacionRiesgoCliente;
     @FindBy(xpath = "//textarea[@id='txtclasificaAval']")private  WebElement txt_ClasificacionRiesgoAval;
     @FindBy(xpath = "//textarea[@id='txtanalisisUEF']") private WebElement txt_AnalisisUnidadFinanciera;
+    //nuevos cambios 29/09
+    @FindBy(xpath = "//textarea[@id='txtProducServic']") private WebElement txt_Productos;
+    @FindBy(xpath = "//textarea[@id='txtPrincClienProv']") private WebElement txt_PrincipalesClientes;
+    @FindBy(xpath = "//textarea[@id='txtPersonalLabora']") private WebElement txt_PersonalLaboral;
+    @FindBy(xpath = "//textarea[@id='txtSectorEconomic']") private WebElement txt_AnalisisSector;
+    @FindBy(xpath = "//textarea[@id='txtProyeccCreci']") private WebElement txt_ProyeccionesCrecimiento;
+
+
+
     @FindBy(xpath = "//button[@name=\"btnGaranExist\"]") private WebElement btn_AnexarGarantias;
     @FindBy(xpath = "//textarea[@id='txtPrincipalRatio']")private  WebElement txt_ComentariosRatios;
     @FindBy(xpath = "/html/body/form/table[1]/tbody/tr[2]/td/table[1]/tbody/tr[2]/td[1]/table/tbody/tr/td[5]/a")private WebElement btn_Grabar;
@@ -100,6 +109,8 @@ public class PropuestaPage {
         txt_AnalisisUnidadFinanciera.clear();
         txt_AnalisisUnidadFinanciera.sendKeys(AnalisisUnidadFinanciera);
     }
+
+
 
 
     public void ClickAnexarGarantias () {
@@ -205,6 +216,32 @@ public class PropuestaPage {
         wait.until(ExpectedConditions.elementToBeClickable(btn_VerificarCheckListCredito));
         btn_VerificarCheckListCredito.click();
     }
+
+
+    public void IngresarProductosNegocio(String ProductosNegocio){
+        txt_Productos.clear();
+        txt_Productos.sendKeys(ProductosNegocio);
+    }
+
+    public void IngresarPrincipalesClientes(String PrincipalesClientes){
+        txt_PrincipalesClientes.clear();
+        txt_PrincipalesClientes.sendKeys(PrincipalesClientes);
+    }
+
+    public void IngresarPersonalNegocio(String PersonalNegocio){
+        txt_PersonalLaboral.clear();
+        txt_PersonalLaboral.sendKeys(PersonalNegocio);
+    }
+    public void IngresarAnalisisSector(String AnalisisSector){
+        txt_AnalisisSector.clear();
+        txt_AnalisisSector.sendKeys(AnalisisSector);
+    }
+    public void IngresarProyeccionesCrecimiento(String ProyeccionesCrecimiento){
+        txt_ProyeccionesCrecimiento.clear();
+        txt_ProyeccionesCrecimiento.sendKeys(ProyeccionesCrecimiento);
+    }
+
+
 
     private void Esperar(Integer Segundos){
         Integer Milisegundos = Segundos * 1000;

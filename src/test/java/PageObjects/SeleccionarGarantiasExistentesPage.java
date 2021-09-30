@@ -23,6 +23,9 @@ public class SeleccionarGarantiasExistentesPage {
     //@FindBy(xpath = "//input[@value='611-1-4725261']") private WebElement chk_GarantiaMaquinaria;
 
 
+    ///html/body/form/table/tbody/tr[4]/td[5]
+
+
     public void AbrirVentanaGarantiasExistentes(){
         identificadoresGarantiasExistentes = driver.getWindowHandles();
         System.out.println(identificadoresGarantiasExistentes);
