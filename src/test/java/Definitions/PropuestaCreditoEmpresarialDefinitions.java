@@ -2,18 +2,11 @@ package Definitions;
 
 import PageObjects.*;
 import io.cucumber.datatable.DataTable;
-import io.cucumber.java.en.And;
-import io.cucumber.java.en.Given;
-import io.cucumber.java.en.Then;
-import io.cucumber.java.en.When;
-
+import io.cucumber.java.en.*;
 import java.io.IOException;
 import java.util.List;
 import java.util.Map;
-
 import static Support.screenshot.pantallazo;
-
-
 public class PropuestaCreditoEmpresarialDefinitions {
     //crear variables de los pages
     LoginPage login;
@@ -40,9 +33,6 @@ public class PropuestaCreditoEmpresarialDefinitions {
     EnlazarInformeVisitaPage enlazarInformeVisita;
     EnlazarInformeComercialNuevoPage enlazarInformeComercialNuevo;
     AprobarDictamenPropuestaPage aprobarDictamenPropuesta;
-
-
-
 
     //Constructor
     public PropuestaCreditoEmpresarialDefinitions() {
@@ -72,12 +62,9 @@ public class PropuestaCreditoEmpresarialDefinitions {
         enlazarInformeComercialNuevo = new EnlazarInformeComercialNuevoPage(Hooks.driver);
         aprobarDictamenPropuesta = new AprobarDictamenPropuestaPage(Hooks.driver);
 
-
     }
-
     @Given("la web SGCRED esta disponible")
     public void la_web_sgcred_esta_disponible() {
-
         Hooks.driver.get("http://10.0.203.12:8081/propuesta/");
     }
 
@@ -204,7 +191,6 @@ public class PropuestaCreditoEmpresarialDefinitions {
         } catch(Exception Error){
 
         }
-
         seleccionarOpeCred.CerrarVentanaSeleccionarOP();
 
     }
@@ -328,7 +314,6 @@ public class PropuestaCreditoEmpresarialDefinitions {
 
     }
 
-
     @And("el sistema direcciona a la ventana Registro Seguros y check en seguro desgravamen flat MN")
     public void elSistemaDireccionaALaVentanaRegistroSegurosYCheckEnSeguroDesgravamenFlatMN() {
         registrarSeguros.AbrirVentanaRegistrarSeguros();
@@ -437,7 +422,6 @@ public class PropuestaCreditoEmpresarialDefinitions {
         anexarCheckListCreditos.Seleccionar_26OpinionRiesgosPropuestaIguales();
     }
 
-
     @And("en la ventana CheckList Seccion Garantias No Inscribibles seleccionar las opciones correspondientes")
     public void enLaVentanaCheckListSeccionGarantiasNoInscribiblesSeleccionarLasOpcionesCorrespondientes() {
         anexarCheckListCreditos.Seleccionar_27VaBusquedaBienes();
@@ -497,11 +481,9 @@ public class PropuestaCreditoEmpresarialDefinitions {
             propuesta.IngresarPersonalNegocio(listaComentarios.get(i).get("PersonalNegocio"));
             propuesta.IngresarAnalisisSector(listaComentarios.get(i).get("AnalisisSector"));
             propuesta.IngresarProyeccionesCrecimiento(listaComentarios.get(i).get("ProyeccionesCrecimiento"));
-
         }
 
     }
-
     @And("en la ventana Propuesta doy click en Anexar Garantias Existentes")
     public void enLaVentanaPropuestaDoyClickEnAnexarGarantiasExistentes() {
         propuesta.ClickAnexarGarantias();
@@ -585,11 +567,8 @@ public class PropuestaCreditoEmpresarialDefinitions {
         propuesta.IngresarComentariosRatios(ComentariosRatios);
     }
 
-
-
     @And("el sistema direcciona a la ventana Propuesta y doy click en la opcion grabar")
     public void elSistemaDireccionaALaVentanaPropuestaYDoyClickEnLaOpcionGrabar() {
-
         propuesta.ClickMenuGrabarPropuesta();
     }
 
@@ -619,16 +598,11 @@ public class PropuestaCreditoEmpresarialDefinitions {
             aprobarDictamenPropuesta.IngresarObservaciones(lista.get(i).get("Observaciones"));
             aprobarDictamenPropuesta.IngresarContrasena(lista.get(i).get("Contrasena"));
         }
-
     }
-
-
     @And("en la ventana Emitir Dictamen Propuesta doy click en el boton Procesar")
     public void enLaVentanaEmitirDictamenPropuestaDoyClickEnElBotonProcesar() {
         aprobarDictamenPropuesta.ClickbtnProcesar();
         aprobarDictamenPropuesta.CerrarVentanaAprobarDictamenPropuesta();
-
-
     }
 
     @And("el sistema muestra la ventana Grabar Informacion y le doy click en el boton Cerrar")
@@ -636,27 +610,19 @@ public class PropuestaCreditoEmpresarialDefinitions {
         grabarPropuesta.AbrirVentanaGrabarPropuesta();
         grabarPropuesta.ClickbtnCerrarInformacion();
         grabarPropuesta.CerrarVentanaGrabarPropuesta();
-
     }
-
     @And("el sistema direcciona a la ventana listado propuesta y doy click en boton Regresar")
     public void elSistemaDireccionaALaVentanaListadoPropuestaYDoyClickEnBotonRegresar() {
         listadoPropuesta.ClickRegresar();
-
     }
-
     @And("el sistema direcciona al Menu Principal y seleccionar opcion Cerrar Sesion")
     public void elSistemaDireccionaAlMenuPrincipalYSeleccionarOpcionCerrarSesion() {
         menuPrincipal.ClickCerrarSesion();
     }
-
     @And("el sistema direcciona al login y doy click en boton Cerrar Sesion")
     public void elSistemaDireccionaAlLoginYDoyClickEnBotonCerrarSesion() {
-
         login.ClickCerrarSesion();
     }
-
-
 }
 
 

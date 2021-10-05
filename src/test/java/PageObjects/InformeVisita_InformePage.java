@@ -15,9 +15,6 @@ public class InformeVisita_InformePage {
     @FindBy(xpath = "//td[@class='Invisible']//button[2]") private WebElement btn_regresar;
     @FindBy(xpath = "//td[@class='Invisible']//button[1]") private WebElement btn_regresarInformeComercial;
 
-
-
-
     @FindBy(xpath = "//button[@onclick=\"window.location='login.jsp'\"]") private WebElement btn_RegresarCE;
 
     public InformeVisita_InformePage(WebDriver d) {

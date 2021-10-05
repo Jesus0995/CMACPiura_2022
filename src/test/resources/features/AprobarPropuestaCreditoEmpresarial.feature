@@ -8,7 +8,7 @@ Feature: Registrar Aprobacion de Propuestas con el perfil Jefe de Credito
     Given el sistema SGCRED se encuentra disponible
     When ingreso usuario y password del Perfil Jefe de Credito Agencia
       | nombre | password |
-      | osal   | prueba   |
+      | OSAL   | prueba   |
     And en la ventana doy click en el boton Ingresar de la web SGCRED
     Then el sistema muestra el menu principal de SGCRED
     And en el menu doy click en la opcion propuesta de financiamiento
@@ -20,8 +20,8 @@ Feature: Registrar Aprobacion de Propuestas con el perfil Jefe de Credito
     And en la ventana principal de Propuesta doy click en el Menu Emitir Dictamen
     And en las opciones del Menu Emitir Dictamen seleccionar el boton Aprobar
     And en la ventana ventana Emitir Dictamen ingresar Observaciones y Clave
-      | Observaciones   | Contrasena |
-      | Aprobar credito | prueba     |
+      | Observaciones     | Contrasena |
+      | Aprobar propuesta | prueba     |
     And en la misma ventana doy click en el boton Procesar
     Then el sistema muestra la ventana Grabar Informacion y doy click en el boton Cerrar
     And el sistema direcciona al listado de propuestas y doy click en el boton Regresar

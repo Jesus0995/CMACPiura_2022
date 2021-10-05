@@ -1,4 +1,4 @@
-Feature: Registrar informe de visita con el perfil Asesor de Finanzas Empresariales
+Feature: Registrar informe de visita con el perfil Asesor de Negocio
   Yo como usuario Asesor de Finanzas Empresariales
   Quiero registrar informe de visitas
   Para enlazar a la creacion de Propuestas
@@ -6,7 +6,7 @@ Feature: Registrar informe de visita con el perfil Asesor de Finanzas Empresaria
   @Prueba
   Scenario Outline: Registrar informe de visitas de los clientes en el sistema SGCRED
     Given la web SGCRED esta disponible para usarla
-    When ingreso usuario y password del perfil Asesor de Finanzas Empresariales
+    When ingreso usuario y password del perfil Asesor de Negocio
       | nombre | password |
       | ALPAMA | prueba   |
     And doy click en boton ingresar al SGCRED
