@@ -30,25 +30,23 @@ public class GrabarInformacionDocumentoPage {
             LastHandle = identificadorGrabarPropuesta;
         }
         driver.switchTo().window(LastHandle);
-        System.out.println("Titulo LastHandle: "+ driver.getWindowHandle() +" - "+driver.getTitle());
-
+        System.out.println("Título última ventana: "+ driver.getWindowHandle() +" - "+driver.getTitle());
 
     }
 
     public void CerrarVentanaGrabarPropuesta(){
+
         System.out.println("Inicio cerrar ventana");
         for (int i = 0; i <=240; i+=1)
         {
             if(driver.getWindowHandles().size()>1){
                 Esperar (1);
-                System.out.println("Esperar el cierre de handle" +i);
+                System.out.println("Esperando el cierre de ventana" +i);
             }
             else{
                 i = 241;
             }
-
         }
-
 
         Integer SetSize = driver.getWindowHandles().size();
         Integer Index=0;
@@ -64,7 +62,7 @@ public class GrabarInformacionDocumentoPage {
             Index++;
         }
 
-        System.out.println("Ventana Inicial:"+Handles[0]);
+        System.out.println("Ventana principal: "+Handles[0]);
         driver.switchTo().window(Handles[0]);
         System.out.println(driver.getWindowHandle()+" - "+driver.getTitle());
 
@@ -72,7 +70,6 @@ public class GrabarInformacionDocumentoPage {
 
         System.out.println("Fin cerrar ventana");
     }
-
 
     public GrabarInformacionDocumentoPage(WebDriver d) {
         driver = d;
@@ -91,7 +88,7 @@ public class GrabarInformacionDocumentoPage {
     public void ClickbtnCerrarInformacion(){
 
         System.out.println("Click en boton cerrar");
-        System.out.println("Handles iniciales: " +driver.getWindowHandles());
+        System.out.println("Ventanas actuales: " +driver.getWindowHandles());
 
         Integer numeroHandles = driver.getWindowHandles().size();
 
@@ -102,17 +99,15 @@ public class GrabarInformacionDocumentoPage {
         {
             if (driver.getWindowHandles().size() == numeroHandles){
                 Esperar(1);
-                System.out.println("Esperando cierre de handle "+i);
+                System.out.println("Esperando la ejecución del boton cerrar "+i);
             }
             else {
                 i=241;
             }
         }
-        System.out.println("Handles final: " +driver.getWindowHandles());
+        System.out.println("Ventana vigente: " +driver.getWindowHandles());
         System.out.println("Fin click en boton cerrar");
     }
-
-
 
     private void Esperar(Integer Segundos) {
         Integer Milisegundos = Segundos * 1000;

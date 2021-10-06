@@ -51,8 +51,10 @@ public class MenuPrincipalPage {
     }
 
     public void ClickCerrarSesion(){
+        Esperar(5);
         wait.until(ExpectedConditions.elementToBeClickable(lnk_CerrarSesion));
         lnk_CerrarSesion.click();
+        Esperar(35);
 
     }
 

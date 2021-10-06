@@ -32,10 +32,11 @@ public class AprobarDictamenPropuestaPage {
             LastHandle = identificadorAprobarDictamenPropuesta;
         }
         driver.switchTo().window(LastHandle);
-        System.out.println("Ultimo Handle :" + driver.getWindowHandle() +driver.getTitle());
+        System.out.println("Título última ventana: " + driver.getWindowHandle() +driver.getTitle());
     }
 
     public void CerrarVentanaAprobarDictamenPropuesta(){
+
         Integer SetSize = identificadoresAprobarDictamenPropuesta.size();
         Integer Index=0;
 
@@ -45,7 +46,7 @@ public class AprobarDictamenPropuestaPage {
             Index++;
         }
         driver.switchTo().window(Handles[0]);
-        System.out.println("Handle Inicial:"+Handles[0]+"-"+driver.getTitle());
+        System.out.println("Ventana principal:"+Handles[0]+"-"+driver.getTitle());
     }
 
     public AprobarDictamenPropuestaPage(WebDriver d) {
@@ -70,21 +71,22 @@ public class AprobarDictamenPropuestaPage {
 
     public void ClickbtnProcesar(){
         //wait.until(ExpectedConditions.elementToBeClickable(btn_procesar));
-        System.out.println("Esperar el inicio de procesar");
+        System.out.println("Inicio click boton procesar dictamen");
         Esperar(2);
         WebElement Procesar = driver.findElement(By.xpath("//button[@type='submit']"));
         Procesar.click();
         System.out.println("Esperar el fin de procesar");
+
         for (int i = 0; i <= 60; i += 1) {
             if (driver.getWindowHandles().size() > 1) {
                 Esperar(1);
-                System.out.println("Esperando cierre de handle"+driver.getTitle()+" - "+i);
+                System.out.println("Esperando cierre de la ventana "+driver.getTitle()+" - "+i);
                 System.out.println(driver.getWindowHandles());
             } else {
                 i = 61;
             }
         }
-        System.out.println("Despues de esperar muchos segundos");
+        System.out.println("Fin click boton procesar dictamen");
     }
 
     private void Esperar(Integer Segundos){

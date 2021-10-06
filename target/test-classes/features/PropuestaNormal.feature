@@ -37,7 +37,7 @@ Feature: Crear una propuesta de Credito Empresarial de tipo NORMAL en el Sistema
     And en la ventana Operacion Credito seleccionar plaza de desembolso
       | Departamento | Provincia | Distrito |
       | LIMA         | LIMA      | LIMA     |
-    And en la ventana Operacion Credito ingresar fecha probable del desembolso "05/10/2021"
+    And en la ventana Operacion Credito ingresar fecha probable del desembolso "06/10/2021"
     And en la ventana Operacion Credito Ingresar notas "Prueba"
     And en la ventana Operacion Credito doy click en grabar
     And en la ventana Operacion Credito aceptar la alerta
@@ -96,7 +96,7 @@ Feature: Crear una propuesta de Credito Empresarial de tipo NORMAL en el Sistema
 
     Examples:
       | cliente  |
-      | 23397676 |
+      | 20415347 |
 
 
 
