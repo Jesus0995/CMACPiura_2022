@@ -96,7 +96,7 @@ Feature: Crear una propuesta de Credito Empresarial de tipo NORMAL en el Sistema
 
     Examples:
       | cliente  |
-      | 20415347 |
+      | 24694550 |
 
 
 

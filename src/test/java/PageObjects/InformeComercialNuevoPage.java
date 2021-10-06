@@ -30,6 +30,7 @@ public class InformeComercialNuevoPage {
     }
 
     public  void IngresarPatrimonioComercial(String PatrimonioComercial){
+        Esperar (6);
         txt_PatrimonioComercial.clear();
         txt_PatrimonioComercial.sendKeys(PatrimonioComercial);
     }
@@ -43,6 +44,17 @@ public class InformeComercialNuevoPage {
     public void ClickRegresar(){
         wait.until(ExpectedConditions.elementToBeClickable(btn_regresar));
         btn_regresar.click();
+    }
+
+    private void Esperar (Integer Segundos) {
+        Integer Milisegundos = Segundos * 1000;
+        try {
+            Thread.sleep(Milisegundos);
+        }catch (InterruptedException error){
+            error.printStackTrace();
+        }
+
+
     }
 
 }

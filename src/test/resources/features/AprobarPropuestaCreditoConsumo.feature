@@ -13,7 +13,7 @@ Feature: Registrar informe de visita con el perfil Administrador
     And muestra el menu principal de SGCRED
     And doy click en la opcion propuesta de financiamiento
     And muestra el listado de propuestas y seleciono el tipo de busqueda por numero de propuesta
-    And en la ventana listado de propuestas ingresar el numero de propuesta "4787570"
+    And en la ventana listado de propuestas ingresar el numero de propuesta "4787691"
     And en la ventana listado de propuestas doy click en el boton buscar
     And en la ventana listado de propuestas doy click en el boton editar propuesta
     And doy cerrar el comunicado
