@@ -17,7 +17,7 @@ Feature: Registrar Informe Comercial con el perfil Asesor de Negocio
     And en la ventana Busqueda de Clientes doy click en el icono Ver Informe
     And el sistema direcciona a la ventana Defina el negocio y doy click en el boton Cargar
     And en la ventana Informes Comerciales doy click en el boton Crear Informe Comercial
-    Then el sistema muestra la ventana principal Informe Comercial para ingresar el Patrimonio Personal "30000"
+    Then el sistema muestra la ventana principal Informe Comercial para ingresar el Patrimonio Personal "10000"
     And en la ventana principal Informe Comercial doy click en el boton grabar
     And en la ventana principal Informe Comercial doy click en el boton Regresar
     And el sistema direcciona a la ventana listado de informes comerciales y doy click en Regresar
@@ -25,4 +25,4 @@ Feature: Registrar Informe Comercial con el perfil Asesor de Negocio
     And el sistema direcciona al Login y doy click en el boton Cerrar Sesion
     Examples:
       | cliente  |
-      | 10818052 |
+      | 26770114 |

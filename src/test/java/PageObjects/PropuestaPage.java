@@ -44,6 +44,10 @@ public class PropuestaPage {
 
     @FindBy(xpath = "//button[@name='btnEnviar2']") private WebElement btn_VerificarCheckListCredito;
 
+
+    @FindBy(xpath = "/html/body/form/table[2]/tbody/tr[6]/td[3]/button") private WebElement btn_EnlazarEEFFGrupoVinculado;
+
+
     public PropuestaPage(WebDriver d) {
         driver = d;
         wait = new WebDriverWait(driver,140);
@@ -241,6 +245,10 @@ public class PropuestaPage {
         txt_ProyeccionesCrecimiento.sendKeys(ProyeccionesCrecimiento);
     }
 
+    public void ClickBtnEnlazarEEFFGrupoVinculadO(){
+        wait.until(ExpectedConditions.elementToBeClickable(btn_EnlazarEEFFGrupoVinculado));
+        btn_EnlazarEEFFGrupoVinculado.click();
+    }
 
 
     private void Esperar(Integer Segundos){

@@ -6,6 +6,8 @@ import io.cucumber.java.en.*;
 import java.io.IOException;
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
+
 import static Support.screenshot.pantallazo;
 public class PropuestaCreditoEmpresarialDefinitions {
     //crear variables de los pages
@@ -33,6 +35,7 @@ public class PropuestaCreditoEmpresarialDefinitions {
     EnlazarInformeVisitaPage enlazarInformeVisita;
     EnlazarInformeComercialNuevoPage enlazarInformeComercialNuevo;
     AprobarDictamenPropuestaPage aprobarDictamenPropuesta;
+    EnlazarEEFFGrupoVinculadoPage enlazarEEFFGrupoVinculado;
 
     //Constructor
     public PropuestaCreditoEmpresarialDefinitions() {
@@ -61,6 +64,7 @@ public class PropuestaCreditoEmpresarialDefinitions {
         enlazarInformeVisita = new EnlazarInformeVisitaPage(Hooks.driver);
         enlazarInformeComercialNuevo = new EnlazarInformeComercialNuevoPage(Hooks.driver);
         aprobarDictamenPropuesta = new AprobarDictamenPropuestaPage(Hooks.driver);
+        enlazarEEFFGrupoVinculado = new EnlazarEEFFGrupoVinculadoPage(Hooks.driver);
 
     }
     @Given("la web SGCRED esta disponible")
@@ -623,6 +627,38 @@ public class PropuestaCreditoEmpresarialDefinitions {
     public void elSistemaDireccionaAlLoginYDoyClickEnBotonCerrarSesion() {
         login.ClickCerrarSesion();
     }
+
+    @And("en la ventana propuesta doy click en el boton estados financieros consolidados del grupo vinculado")
+    public void enLaVentanaPropuestaDoyClickEnElBotonEstadosFinancierosConsolidadosDelGrupoVinculado() {
+        propuesta.ClickBtnEnlazarEEFFGrupoVinculadO();
+
+    }
+
+    @And("en la ventana Enlazar EEFFGrupoVinculado ingresar los comentarios correspondientes")
+    public void enLaVentanaEnlazarEEFFGrupoVinculadoIngresarLosComentariosCorrespondientes(DataTable datosEEFFGrupo) {
+        enlazarEEFFGrupoVinculado.AbrirVentanaEnlazarEEFFGrupoVinculado();
+
+        List<Map<String,String>> lista = datosEEFFGrupo.asMaps(String.class,String.class);
+            for(int i = 0; i < lista.size(); i++){
+                enlazarEEFFGrupoVinculado.IngresarAnalisisEEFF(lista.get(i).get("AnalisisEEFF"));
+                enlazarEEFFGrupoVinculado.IngresarComentarioComportamientoPago(lista.get(i).get("ComportamientoPago"));
+
+            }
+
+
+
+        }
+
+    @And("en la ventana Enlazar EEFFGrupoVinculado doy click en el boton Grabar")
+    public void enLaVentanaEnlazarEEFFGrupoVinculadoDoyClickEnElBotonGrabar() {
+        enlazarEEFFGrupoVinculado.ClickBtnGrabar();
+    }
+
+    @And("en la ventana Enlazar EEFFGrupoVinculado doy click en el boton Regresar")
+    public void enLaVentanaEnlazarEEFFGrupoVinculadoDoyClickEnElBotonRegresar() {
+
+    }
 }
+
 
 

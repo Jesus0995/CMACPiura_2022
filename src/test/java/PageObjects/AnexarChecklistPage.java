@@ -338,7 +338,7 @@ public class AnexarChecklistPage {
     public void Seleccionar_36TasacionBien() {
         wait.until(ExpectedConditions.elementToBeClickable(opt_36TasacionBien));
         opt_36TasacionBien.click();
-        Esperar(1);
+        //Esperar(1);
 
     }
 
@@ -348,7 +348,7 @@ public class AnexarChecklistPage {
 
         WebElement opcion37 = driver.findElement(By.xpath("//input[@id='item_71' and @value='1']"));
         try {
-            Esperar(5);
+            Esperar(9);
             opcion37.click();
 
         }catch (Exception error){

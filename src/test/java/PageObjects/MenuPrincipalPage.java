@@ -7,6 +7,7 @@ import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import java.io.IOException;
 import java.util.Set;
 
 public class MenuPrincipalPage {
@@ -52,6 +53,17 @@ public class MenuPrincipalPage {
     public void ClickCerrarSesion(){
         wait.until(ExpectedConditions.elementToBeClickable(lnk_CerrarSesion));
         lnk_CerrarSesion.click();
+
+    }
+
+    private void Esperar(Integer Segundos){
+        Integer Milisegundos = Segundos * 1000;
+        try {
+            Thread.sleep(Milisegundos);
+        }catch (InterruptedException error){
+            error.printStackTrace();
+        }
+
     }
 
 }

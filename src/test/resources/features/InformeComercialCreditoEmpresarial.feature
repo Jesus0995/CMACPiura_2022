@@ -25,4 +25,4 @@ Feature: Registrar Informe Comercial con el perfil Asesor de Negocio
     And el sistema direcciona al Login y doy click en el boton Cerrar Sesion
     Examples:
       | cliente  |
-      | 10818052 |
+      | 26770114 |

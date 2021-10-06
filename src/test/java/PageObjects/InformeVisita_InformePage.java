@@ -15,7 +15,8 @@ public class InformeVisita_InformePage {
     @FindBy(xpath = "//td[@class='Invisible']//button[2]") private WebElement btn_regresar;
     @FindBy(xpath = "//td[@class='Invisible']//button[1]") private WebElement btn_regresarInformeComercial;
 
-    @FindBy(xpath = "//button[@onclick=\"window.location='login.jsp'\"]") private WebElement btn_RegresarCE;
+
+    @FindBy(xpath = "/html/body/table/tbody/tr[2]/td/div/table[2]/tbody/tr[8]/td/button") private WebElement btn_RegresarCE;
 
     public InformeVisita_InformePage(WebDriver d) {
 
@@ -50,6 +51,7 @@ public class InformeVisita_InformePage {
 
 
         public void ClickBtnRegresarCE(){
+        Esperar(30);
         wait.until(ExpectedConditions.elementToBeClickable(btn_RegresarCE));
         btn_RegresarCE.click();
 
