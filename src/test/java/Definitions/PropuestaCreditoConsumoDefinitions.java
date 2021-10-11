@@ -324,7 +324,7 @@ public class PropuestaCreditoConsumoDefinitions {
 
     @And("en la ventana garantias existentes doy click al boton aceptar")
     public void enLaVentanaGarantiasExistentesDoyClickAlBotonAceptar() {
-        seleccionarGarantiasExistentes.ClickbtnAceptar();
+        seleccionarGarantiasExistentes.ClickBtnAceptar();
         seleccionarGarantiasExistentes.CerrarVentanaGarantiasExistentes();
     }
 

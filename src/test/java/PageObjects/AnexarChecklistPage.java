@@ -7,6 +7,8 @@ import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import javax.xml.bind.Element;
+import java.util.List;
 import java.util.Set;
 
 public class AnexarChecklistPage {
@@ -16,96 +18,139 @@ public class AnexarChecklistPage {
     private Set<String> identificadoresAnexarCheckList;
     private Alert MensajeAlerta;
 
+
     //Informacion basica cliente
-    @FindBy(xpath = "//input[@id='item_1' and @value='2']") private WebElement opt_1TarjetaBasica;
-    @FindBy(xpath = "//input[@id='item_2' and @value='2']") private WebElement opt_2CopiaFedateada;
-    @FindBy(xpath = "//input[@id='item_20' and @value='2']") private WebElement opt_3VigenciaActualizada;
-    @FindBy(xpath = "//input[@id='item_21' and @value='2']") private WebElement opt_4ReciboLuz;
-    @FindBy(xpath = "//input[@id='item_5' and @value='2']") private WebElement opt_5CroquisDomicilio;
-    @FindBy(xpath = "//input[@id='item_6' and @value='2']") private WebElement opt_6Agricolas;
-    @FindBy(xpath = "//input[@id='item_7' and @value='2']") private WebElement opt_7FotoPanoramica;
+    @FindBy(xpath = "//input[@id='item_1' and @value='2']")
+    private WebElement opt_1TarjetaBasica;
+    @FindBy(xpath = "//input[@id='item_2' and @value='2']")
+    private WebElement opt_2CopiaFedateada;
+    @FindBy(xpath = "//input[@id='item_20' and @value='2']")
+    private WebElement opt_3VigenciaActualizada;
+    @FindBy(xpath = "//input[@id='item_21' and @value='2']")
+    private WebElement opt_4ReciboLuz;
+    @FindBy(xpath = "//input[@id='item_5' and @value='2']")
+    private WebElement opt_5CroquisDomicilio;
+    @FindBy(xpath = "//input[@id='item_6' and @value='2']")
+    private WebElement opt_6Agricolas;
+    @FindBy(xpath = "//input[@id='item_7' and @value='2']")
+    private WebElement opt_7FotoPanoramica;
 
     // Informacion del negocio
-    @FindBy(xpath = "//input[@id='item_12' and @value='2']") private WebElement opt_8NegocioLuz;
-    @FindBy(xpath = "//input[@id='item_9' and @value='2']") private WebElement opt_9NegocioFoto;
-    @FindBy(xpath = "//input[@id='item_10' and @value='2']") private WebElement opt_10NegocioSustento;
-    @FindBy(xpath = "//input[@id='item_11' and @value='2']") private WebElement opt_11NegocioInforme;
+    @FindBy(xpath = "//input[@id='item_12' and @value='2']")
+    private WebElement opt_8NegocioLuz;
+    @FindBy(xpath = "//input[@id='item_9' and @value='2']")
+    private WebElement opt_9NegocioFoto;
+    @FindBy(xpath = "//input[@id='item_10' and @value='2']")
+    private WebElement opt_10NegocioSustento;
+    @FindBy(xpath = "//input[@id='item_11' and @value='2']")
+    private WebElement opt_11NegocioInforme;
 
     //operaciones propuestas
-    @FindBy(xpath = "//input[@id='item_15' and @value='2']") private WebElement opt_12OSolicitud;
+    @FindBy(xpath = "//input[@id='item_15' and @value='2']")
+    private WebElement opt_12OSolicitud;
 
     //seguro cliente
-    @FindBy(xpath = "//input[@id='item_22' and @value='2']") private WebElement opt_13SeguroCopiaDPS;
+    @FindBy(xpath = "//input[@id='item_22' and @value='2']")
+    private WebElement opt_13SeguroCopiaDPS;
 
     //seguro garantia
-    @FindBy(xpath = "//input[@id='item_17' and @value='2']") private WebElement opt_14SeguroPolizas;
+    @FindBy(xpath = "//input[@id='item_17' and @value='2']")
+    private WebElement opt_14SeguroPolizas;
 
     //informacion economica financiera del cliente
-    @FindBy(xpath = "//input[@id='item_23' and @value='2']") private WebElement opt_15EEFFSectorista;
-    @FindBy(xpath = "//input[@id='item_24' and @value='2']") private WebElement opt_16FlujoCaja;
+    @FindBy(xpath = "//input[@id='item_23' and @value='2']")
+    private WebElement opt_15EEFFSectorista;
+    @FindBy(xpath = "//input[@id='item_24' and @value='2']")
+    private WebElement opt_16FlujoCaja;
     //Se agrego estas opciones el dia 29/09
-    @FindBy(xpath = "//input[@id='item_26' and @value='2']") private WebElement opt_17EstadosFinancieros;
-    @FindBy(xpath = "//input[@id='item_32' and @value='2']") private WebElement opt_18FlujoCajaProyectado;
-    @FindBy(xpath = "//input[@id='item_27' and @value='2']") private WebElement opt_19BalanceGeneralProyectado;
-    @FindBy(xpath = "//input[@id='item_28' and @value='2']") private WebElement opt_20EEGGYPPAnual;
-    @FindBy(xpath = "//input[@id='item_29' and @value='2']") private WebElement opt_21FlujoCajaHistoricoAnual;
-    @FindBy(xpath = "//input[@id='item_30' and @value='2']") private WebElement opt_22EstadosFinancierosSemestral;
-    @FindBy(xpath = "//input[@id='item_31' and @value='2']") private WebElement opt_23FlujoCajaHistoricoProyectado;
+    @FindBy(xpath = "//input[@id='item_26' and @value='2']")
+    private WebElement opt_17EstadosFinancieros;
+    @FindBy(xpath = "//input[@id='item_32' and @value='2']")
+    private WebElement opt_18FlujoCajaProyectado;
+    @FindBy(xpath = "//input[@id='item_27' and @value='2']")
+    private WebElement opt_19BalanceGeneralProyectado;
+    @FindBy(xpath = "//input[@id='item_28' and @value='2']")
+    private WebElement opt_20EEGGYPPAnual;
+    @FindBy(xpath = "//input[@id='item_29' and @value='2']")
+    private WebElement opt_21FlujoCajaHistoricoAnual;
+    @FindBy(xpath = "//input[@id='item_30' and @value='2']")
+    private WebElement opt_22EstadosFinancierosSemestral;
+    @FindBy(xpath = "//input[@id='item_31' and @value='2']")
+    private WebElement opt_23FlujoCajaHistoricoProyectado;
 
     //Declaracion Patrimonial nuevo 29/09
-    @FindBy(xpath = "//input[@id='item_57' and @value='2']") private WebElement opt_24PersonasNaturalesDeudores;
+    @FindBy(xpath = "//input[@id='item_57' and @value='2']")
+    private WebElement opt_24PersonasNaturalesDeudores;
 
     //informe verificacion previa cambio de nombre 29/09
-    @FindBy(xpath = "//input[@id='item_56' and @value='2']") private WebElement opt_25InformeVisitaSectoristaLider;
+    @FindBy(xpath = "//input[@id='item_56' and @value='2']")
+    private WebElement opt_25InformeVisitaSectoristaLider;
 
     //reporte de unidad de riesgo - nuevo 29/09
-    @FindBy(xpath = "//input[@id='item_58' and @value='2']") private WebElement opt_26OpinionRiesgosPropuestasIguales;
+    @FindBy(xpath = "//input[@id='item_58' and @value='2']")
+    private WebElement opt_26OpinionRiesgosPropuestasIguales;
 
     //garantias no inscribibles
-    @FindBy(xpath = "//input[@id='item_59' and @value='2']") private WebElement opt_27BusquedaBienes;
-    @FindBy(xpath = "//input[@id='item_60' and @value='2']") private WebElement opt_28DocumentoPropiedad;
-    @FindBy(xpath = "//input[@id='item_61' and @value='2']") private WebElement opt_29BoletaInformativa;
-    @FindBy(xpath = "//input[@id='item_63' and @value='2']") private WebElement opt_30ContratoPrestamo;
-    @FindBy(xpath = "//input[@id='item_64' and @value='2']") private WebElement opt_31DeclaracionJuradaBienes;
+    @FindBy(xpath = "//input[@id='item_59' and @value='2']")
+    private WebElement opt_27BusquedaBienes;
+    @FindBy(xpath = "//input[@id='item_60' and @value='2']")
+    private WebElement opt_28DocumentoPropiedad;
+    @FindBy(xpath = "//input[@id='item_61' and @value='2']")
+    private WebElement opt_29BoletaInformativa;
+    @FindBy(xpath = "//input[@id='item_63' and @value='2']")
+    private WebElement opt_30ContratoPrestamo;
+    @FindBy(xpath = "//input[@id='item_64' and @value='2']")
+    private WebElement opt_31DeclaracionJuradaBienes;
 
     //garantia con desposesion
-    @FindBy(xpath = "//input[@id='item_65' and @value='2']") private WebElement opt_32CopiaCertificadoTasacion;
-    @FindBy(xpath = "//input[@id='item_67' and @value='2']") private WebElement opt_33CopiasPlazoFijo;
+    @FindBy(xpath = "//input[@id='item_65' and @value='2']")
+    private WebElement opt_32CopiaCertificadoTasacion;
+    @FindBy(xpath = "//input[@id='item_67' and @value='2']")
+    private WebElement opt_33CopiasPlazoFijo;
 
 
     //garantias inscribibles
-    @FindBy(xpath = "//input[@id='item_68' and @value='2']") private WebElement opt_34CertificadoLiteralDomicilio;
-    @FindBy(xpath = "//input[@id='item_75' and @value='2']") private WebElement opt_35GarantiaInscribible;
-    @FindBy(xpath = "//input[@id='item_76' and @value='2']") private WebElement opt_36TasacionBien;
+    @FindBy(xpath = "//input[@id='item_68' and @value='2']")
+    private WebElement opt_34CertificadoLiteralDomicilio;
+    @FindBy(xpath = "//input[@id='item_75' and @value='2']")
+    private WebElement opt_35GarantiaInscribible;
+    @FindBy(xpath = "//input[@id='item_76' and @value='2']")
+    private WebElement opt_36TasacionBien;
     //@FindBy(xpath = "//input[@name='item_71' and @value='2']") private WebElement opt_37opinionLegal;
-    @FindBy(xpath = "//input[@name='item_72' and @value='2']") private WebElement opt_38ContratoGarantiaMobiliaria;
-    @FindBy(xpath = "//input[@name='item_73' and @value='2']") private WebElement opt_39ContratoPrestamoMobiliariaPreConst;
-    @FindBy(xpath = "//input[@id='item_74' and @value='2']") private WebElement opt_40CopiaTestimonio;
+    @FindBy(xpath = "//input[@name='item_72' and @value='2']")
+    private WebElement opt_38ContratoGarantiaMobiliaria;
+    @FindBy(xpath = "//input[@name='item_73' and @value='2']")
+    private WebElement opt_39ContratoPrestamoMobiliariaPreConst;
+    @FindBy(xpath = "//input[@id='item_74' and @value='2']")
+    private WebElement opt_40CopiaTestimonio;
 
     //Desembolso de credito
-    @FindBy(xpath = "//input[@id='item_80' and @value='2']") private WebElement opt_41FichaIngresoRRPP;
-    @FindBy(xpath = "//input[@id='item_81' and @value='2']") private WebElement opt_42CopiaLiteralPartida;
+    @FindBy(xpath = "//input[@id='item_80' and @value='2']")
+    private WebElement opt_41FichaIngresoRRPP;
+    @FindBy(xpath = "//input[@id='item_81' and @value='2']")
+    private WebElement opt_42CopiaLiteralPartida;
 
 
-    @FindBy(id="idSaveSend") private WebElement btn_guardarTerminar;
+    @FindBy(id = "idSaveSend")
+    private WebElement btn_guardarTerminar;
 
-    public void AbrirVentanaAnexarCheckList(){
+    public void AbrirVentanaAnexarCheckList() {
         identificadoresAnexarCheckList = driver.getWindowHandles();
         System.out.println(identificadoresAnexarCheckList);
-        String LastHandle ="";
+        String LastHandle = "";
 
-        for (String identificadorAnexarCheckList :identificadoresAnexarCheckList ){
+        for (String identificadorAnexarCheckList : identificadoresAnexarCheckList) {
             LastHandle = identificadorAnexarCheckList;
         }
         driver.switchTo().window(LastHandle);
-        System.out.println("Titulo:"+ driver.getTitle());
+        System.out.println("Titulo:" + driver.getTitle());
 
     }
 
-    public void CerrarVentanaAnexarCheckList(){
+    public void CerrarVentanaAnexarCheckList() {
         Integer SetSize = identificadoresAnexarCheckList.size();
-        Integer Index=0;
-        String[] Handles = new String[SetSize] ;
+        Integer Index = 0;
+        String[] Handles = new String[SetSize];
         for (String identificadorAnexarCheckList : identificadoresAnexarCheckList) {
             Handles[Index] = identificadorAnexarCheckList;
             Index++;
@@ -118,8 +163,23 @@ public class AnexarChecklistPage {
 
     public AnexarChecklistPage(WebDriver d) {
         driver = d;
-        wait = new WebDriverWait(driver,30);
-        PageFactory.initElements(driver,this);
+        wait = new WebDriverWait(driver, 30);
+        PageFactory.initElements(driver, this);
+    }
+
+
+    public void SeleccionarOpcionesCheckListCredito() {
+        Esperar(5);
+        try {
+           List<WebElement> checks = driver.findElements(By.xpath("//input[@Title='Expediente']"));
+           for (WebElement check : checks) {
+                check.click();
+
+            }
+        } catch (Exception error) {
+            error.printStackTrace();
+            System.out.println("Error al seleccionar las opciones del check list credito" + error.getMessage());
+        }
     }
 
     public void Seleccionar_1TarjetaInformacion() {
@@ -343,34 +403,32 @@ public class AnexarChecklistPage {
     }
 
     public void Seleccionar_37opinionLegal() {
-        //Esperar(5);
-        //wait.until(ExpectedConditions.elementToBeClickable(opt_37opinionLegal));
-
-        WebElement opcion37 = driver.findElement(By.xpath("//input[@id='item_71' and @value='1']"));
+    WebElement opcion37 = driver.findElement(By.xpath("//input[@id='item_71' and @value='1']"));
         try {
             Esperar(9);
             opcion37.click();
 
-        }catch (Exception error){
-            error.printStackTrace();
-            System.out.println(error.getMessage());
-        }
-    }
-/*
-    public void Seleccionar_37opinionLegal1(){
-        Esperar (3);
-        try{
-        String JScript = opt_37opinionLegal.getAttribute("click");
-        ((JavascriptExecutor) driver).executeScript(JScript);
         } catch (Exception error) {
-
             error.printStackTrace();
-
-            System.out.println(error.getMessage());
-
+            System.out.println("Error al seleccionar la opcion"+error.getMessage());
         }
     }
-*/
+
+    /*
+        public void Seleccionar_37opinionLegal1(){
+            Esperar (3);
+            try{
+            String JScript = opt_37opinionLegal.getAttribute("click");
+            ((JavascriptExecutor) driver).executeScript(JScript);
+            } catch (Exception error) {
+
+                error.printStackTrace();
+
+                System.out.println(error.getMessage());
+
+            }
+        }
+    */
     public void Seleccionar_38ContratoGarantiaMobiliaria() {
         wait.until(ExpectedConditions.elementToBeClickable(opt_38ContratoGarantiaMobiliaria));
         opt_38ContratoGarantiaMobiliaria.click();
@@ -400,16 +458,17 @@ public class AnexarChecklistPage {
     public void Seleccionar_42CopiaLiteralPartida() {
         wait.until(ExpectedConditions.elementToBeClickable(opt_42CopiaLiteralPartida));
         opt_42CopiaLiteralPartida.click();
-        }
+    }
 
-    public void ClickGuardarTerminar(){
+    public void ClickGuardarTerminar() {
         wait.until(ExpectedConditions.elementToBeClickable(btn_guardarTerminar));
         btn_guardarTerminar.click();
 
         //Esperar (1);
     }
 
-    public void AceptarAlerta(){
+    public void AceptarAlerta() {
+
         MensajeAlerta = driver.switchTo().alert();
         System.out.println("El mensaje alerta: " + MensajeAlerta.getText());
         MensajeAlerta.accept();
@@ -417,11 +476,11 @@ public class AnexarChecklistPage {
 
     }
 
-    private void Esperar(Integer Segundos){
+    private void Esperar(Integer Segundos) {
         Integer Milisegundos = Segundos * 1000;
         try {
-            Thread.sleep(Milisegundos); }
-        catch (InterruptedException e){
+            Thread.sleep(Milisegundos);
+        } catch (InterruptedException e) {
             e.printStackTrace();
         }
 

@@ -7,6 +7,7 @@ import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
+
 import java.util.Set;
 
 public class SeleccionarServicioPage {
@@ -16,85 +17,126 @@ public class SeleccionarServicioPage {
     private Set<String> identificadoresServicio;
 
     //mapeo de objetos
-    @FindBy(xpath = "//select[@name='servicio']") private WebElement cbx_Servicio;
-    @FindBy(xpath = "//select[@name='idServicioSofia']") private WebElement cbx_ServicioCredito;
-    @FindBy(xpath = "//select[@name='idTipoPropuesta']") private  WebElement cbx_TipoPropuesta;
-    @FindBy(xpath = "//select[@name='idSubTipoPropuesta']") private WebElement cbx_SubTipoPropuesta;
-    @FindBy(xpath = "//select[@name='idPromocion']") private WebElement cbx_Promocion;
+    @FindBy(xpath = "//select[@name='servicio']")
+    private WebElement cbx_Servicio;
+    @FindBy(xpath = "//select[@name='idServicioSofia']")
+    private WebElement cbx_ServicioCredito;
+    @FindBy(xpath = "//select[@name='idTipoPropuesta']")
+    private WebElement cbx_TipoPropuesta;
+    @FindBy(xpath = "//select[@name='idSubTipoPropuesta']")
+    private WebElement cbx_SubTipoPropuesta;
+    @FindBy(xpath = "//select[@name='idPromocion']")
+    private WebElement cbx_Promocion;
     //@FindBy(xpath = "//select[@name='idnegocio']") private WebElement cbx_Negocio;
     //@FindBy(xpath = "//select[@name='idTipoOperacion']") private  WebElement cbx_TipoOperacion;
-    @FindBy(xpath = "//*[@id=\"bCargar\"]")private  WebElement btn_Cargar;
+    @FindBy(xpath = "//*[@id=\"bCargar\"]")
+    private WebElement btn_Cargar;
 
     //crear metodo para abrir ventana
-    public void AbrirVentanaServicio(){
+    public void AbrirVentanaServicio() {
 
-        identificadoresServicio = driver.getWindowHandles();
-        System.out.println(identificadoresServicio);
-        String LastHandle = "";
+        try {
+            identificadoresServicio = driver.getWindowHandles();
+            System.out.println(identificadoresServicio);
+            String LastHandle = "";
 
-        for (String identificadorservicio : identificadoresServicio){
-            LastHandle = identificadorservicio;
+            for (String identificadorservicio : identificadoresServicio) {
+                LastHandle = identificadorservicio;
+            }
+            driver.switchTo().window(LastHandle);
+        } catch (Exception error) {
+            error.printStackTrace();
+            System.out.println("La ventana servicio tiene los siguientes errores" + error.getMessage());
         }
-        driver.switchTo().window(LastHandle);
     }
 
     //crear metodo para salir de ventana
-    public void CerrarVentanaServicio(){
+    public void CerrarVentanaServicio() {
         //Actions Acciones = new Actions(driver);
+        try {
+            Integer SetSize = identificadoresServicio.size();
+            Integer Index = 0;
+            String[] Handles = new String[SetSize];
 
-        Integer SetSize = identificadoresServicio.size();
-        Integer Index = 0;
-        String[] Handles = new String[SetSize];
-
-        for (String identificadorservicio : identificadoresServicio){
-            Handles[Index] = identificadorservicio;
-            Index++;
+            for (String identificadorservicio : identificadoresServicio) {
+                Handles[Index] = identificadorservicio;
+                Index++;
+            }
+            System.out.println(Handles[0]);
+            driver.switchTo().window(Handles[0]);
+        } catch (Exception error) {
+            error.printStackTrace();
+            System.out.println("Al cerrar la ventana tiene el siguiente error" + error.getMessage());
         }
-        System.out.println(Handles[0]);
-        driver.switchTo().window(Handles[0]);
     }
 
     public SeleccionarServicioPage(WebDriver d) {
         driver = d;
-        wait = new WebDriverWait(driver,120);
-        PageFactory.initElements(driver,this);
+        wait = new WebDriverWait(driver, 120);
+        PageFactory.initElements(driver, this);
 
     }
 
-    public void SeleccionarServicio(String TipoServicio){
-        wait.until(ExpectedConditions.elementToBeClickable(cbx_Servicio));
-        new Select(cbx_Servicio).selectByVisibleText(TipoServicio);
-        //System.out.println(cbx_servicio);
-        //"CREDITO EMPRESARIAL"
+    public void SeleccionarServicio(String TipoServicio) {
+        try {
+            wait.until(ExpectedConditions.elementToBeClickable(cbx_Servicio));
+            new Select(cbx_Servicio).selectByVisibleText(TipoServicio);
+            //System.out.println(cbx_servicio);
+            //"CREDITO EMPRESARIAL"
+        } catch (Exception error) {
+            error.printStackTrace();
+            System.out.println("Error al seleccionar el tipo servicio" + error.getMessage());
+        }
     }
 
-    public void SeleccionarServicioCredito(String ServicioCredito){
-        wait.until(ExpectedConditions.elementToBeClickable(cbx_ServicioCredito));
-        new Select(cbx_ServicioCredito).selectByVisibleText(ServicioCredito);
-        //System.out.println(cbx_servicioCredito);
-        //"CREDITOS PYMES"
+    public void SeleccionarServicioCredito(String ServicioCredito) {
+        try {
+            wait.until(ExpectedConditions.elementToBeClickable(cbx_ServicioCredito));
+            new Select(cbx_ServicioCredito).selectByVisibleText(ServicioCredito);
+            //System.out.println(cbx_servicioCredito);
+            //"CREDITOS PYMES"
 
+        } catch (Exception error) {
+            error.printStackTrace();
+            System.out.println("Error al seleccionar servicio de credito" + error.getMessage());
+        }
     }
 
-    public void SeleccionarTipoPropuesta (String TipoPropuesta){
-        wait.until(ExpectedConditions.elementToBeClickable(cbx_TipoPropuesta));
-        new Select(cbx_TipoPropuesta).selectByVisibleText(TipoPropuesta);
-        //System.out.println(cbx_tipoPropuesta);
-        //"NORMAL"
+    public void SeleccionarTipoPropuesta(String TipoPropuesta) {
+        try {
+            wait.until(ExpectedConditions.elementToBeClickable(cbx_TipoPropuesta));
+            new Select(cbx_TipoPropuesta).selectByVisibleText(TipoPropuesta);
+            //System.out.println(cbx_tipoPropuesta);
+            //"NORMAL"
+        } catch (Exception error) {
+            error.printStackTrace();
+            System.out.println("Error al seleccionar tipo propuesta" + error.getMessage());
+        }
     }
 
-    public void SeleccionarSubTipoPropuesta (String SubTipoPropuesta){
-        wait.until(ExpectedConditions.elementToBeClickable(cbx_SubTipoPropuesta));
-        new Select(cbx_SubTipoPropuesta).selectByVisibleText(SubTipoPropuesta);
-        //System.out.println(cbx_subTipoPropuesta);
-        //"NORMAL"
+    public void SeleccionarSubTipoPropuesta(String SubTipoPropuesta) {
+
+        try {
+            wait.until(ExpectedConditions.elementToBeClickable(cbx_SubTipoPropuesta));
+            new Select(cbx_SubTipoPropuesta).selectByVisibleText(SubTipoPropuesta);
+            //System.out.println(cbx_subTipoPropuesta);
+            //"NORMAL"
+        } catch (Exception error) {
+            error.printStackTrace();
+            System.out.println("Error al seleccionar subtipopropuesta" + error.getMessage());
+        }
     }
 
-    public void SeleccionarPromocion (String Promocion){
-        wait.until(ExpectedConditions.elementToBeClickable(cbx_Promocion));
-        new Select(cbx_Promocion).selectByVisibleText(Promocion);
-        //System.out.println(cbx_promocion);
-        //"SIN PROMOCION"
+    public void SeleccionarPromocion(String Promocion) {
+        try {
+            wait.until(ExpectedConditions.elementToBeClickable(cbx_Promocion));
+            new Select(cbx_Promocion).selectByVisibleText(Promocion);
+            //System.out.println(cbx_promocion);
+            //"SIN PROMOCION"
+        } catch (Exception error) {
+            error.printStackTrace();
+            System.out.println("Error al seleccionar promocion" + error.getMessage());
+        }
     }
 
     /*
@@ -114,9 +156,16 @@ public class SeleccionarServicioPage {
     */
 
     public void ClickCargar() throws InterruptedException {
-        wait.until(ExpectedConditions.elementToBeClickable(btn_Cargar));
-        btn_Cargar.click();
-        Thread.sleep(10000);
+
+        try {
+
+            wait.until(ExpectedConditions.elementToBeClickable(btn_Cargar));
+            btn_Cargar.click();
+            Thread.sleep(10000);
+        } catch (Exception error) {
+            error.printStackTrace();
+            System.out.println("Error al hacer click en el boton cargar" + error.getMessage());
+        }
     }
 
 }

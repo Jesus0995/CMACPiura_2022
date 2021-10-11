@@ -17,7 +17,7 @@ Feature: Crear una propuesta de Credito Empresarial de tipo NORMAL en el Sistema
     And en la ventana cliente ingresar el codigo a buscar "<cliente>"
     And en la ventana cliente doy click en el boton buscar
     And en la ventana cliente hacer click en el icono propuesta
-    And el sistema muestra la ventana de servicio e ingresamos la informacion
+    And el sistema muestra la ventana de servicio e ingresamos la informacion y doy click en el boton cargar
       | TipoServicio        | ServicioCredito | TipoPropuesta | SubTipoPropuesta | Promocion     |
       | CREDITO EMPRESARIAL | CREDITOS PYMES  | NORMAL        | NORMAL           | SIN PROMOCION |
     And validar el mensaje del popup Comunicado
@@ -28,7 +28,7 @@ Feature: Crear una propuesta de Credito Empresarial de tipo NORMAL en el Sistema
     And validar la ventana seleccionar operacion de credito luego doy click en boton aceptar
     And posicionarse en la ventana Operacion Credito e ingresar la Operacion y doy click en Calcular
       | Moneda | Monto | TasaInicial |
-      | S/     | 5000  | 1           |
+      | S/     | 3000  | 1           |
     And en la ventana Operacion Credito seleccionar plan de pagos "Fija Vencida"
     And en la ventana Operacion Credito seleccionar modalidad "Libre Amortizacion"
     And en la ventana Operacion Credito Ingresar los dias "90"
@@ -37,40 +37,28 @@ Feature: Crear una propuesta de Credito Empresarial de tipo NORMAL en el Sistema
     And en la ventana Operacion Credito seleccionar plaza de desembolso
       | Departamento | Provincia | Distrito |
       | LIMA         | LIMA      | LIMA     |
-    And en la ventana Operacion Credito ingresar fecha probable del desembolso "06/10/2021"
+    And en la ventana Operacion Credito ingresar fecha probable del desembolso "07/10/2021"
     And en la ventana Operacion Credito Ingresar notas "Prueba"
     And en la ventana Operacion Credito doy click en grabar
     And en la ventana Operacion Credito aceptar la alerta
     Then el sistema direcciona a la ventana propuesta y doy click al boton Registro de seguros
     And en la ventana Seleccion de seguros doy click en boton Confirmar
     And el sistema direcciona a la ventana Registro Seguros y check en seguro desgravamen flat MN
-    And en la ventana Registro Seguros ingresar el numero DPS "333333333"
+    And en la ventana Registro Seguros ingresar el numero DPS "1234567890"
     And en la ventana Registro Seguros hacer check en seguro todo riesgo Plan Pymes
-    And en la ventana Registro Seguros ingresar el numero DPS "444444444" del seguro Plan Pymes
+    And en la ventana Registro Seguros ingresar el numero DPS "0987654321" del seguro Plan Pymes
     And en la ventana Registro Seguros doy click en Confirmar
     And en la ventana seguros seleccionados visualizar información y doy click en cerrar
     Then el sistema direcciona a la ventana propuesta y doy click en Anexar CheckList creditos
-    And en la ventana CheckList Seccion Informacion Basica Cliente seleccionar las opciones correspondientes
-    And en la ventana CheckList Seccion Informacion del Negocio seleccionar las opciones correspondientes
-    And en la ventana CheckList Seccion Operaciones Propuestas seleccionar las opciones correspondientes
-    And en la ventana CheckList Seccion Seguro del Cliente seleccionar las opciones correspondientes
-    And en la ventana CheckList Seccion Seguro de Garantia seleccionar las opciones correspondientes
-    And en la ventana CheckList Seccion Informacion Economica Financiera seleccionar las opciones correspondientes
-    And en la ventana CheckList Seccion Declaracion Patrimonial seleccionar las opciones correspondientes
-    And en la ventana CheckList Seccion Informe Verificacion Previa seleccionar las opciones correspondientes
-    And en la ventana CheckList Seccion Reporte Unidad de Riesgo seleccionar las opciones correspondientes
-    And en la ventana CheckList Seccion Garantias No Inscribibles seleccionar las opciones correspondientes
-    And en la ventana CheckList Seccion Garantias Con Deposicion seleccionar las opciones correspondientes
-    And en la ventana CheckList Seccion Garantias Inscribibles seleccionar las opciones correspondientes
-    And en la ventana CheckList Seccion Desembolso de credito con Inscripcion seleccionar las opciones correspondientes
+    And en la ventana CheckList Credito seleccionar todas las opciones de Expedientes
     And en la ventana CheckList doy clic en Guardar y Terminar finalmente acepto la alerta
     And el sistema direcciona a la ventana Confirmar Checklist de Credito y doy click en cerrar
     Then el sistema direcciona a la ventana propuesta y se procede a ingresar los siguientes comentarios
-      | CaracteristicaNegocio | ProductosNegocio | PrincipalesClientes | PersonalNegocio | AnalisisSector | ProyeccionesCrecimiento |
-      | prueba                | prueba           | prueba              | prueba          | prueba         | prueba                  |
+      | CaracteristicaNegocio | ClasificacionRiesgoNegocio | ClasificacionRiesgoAvales | AnalisisUnidadEconomicaFinanciera |
+      | prueba                | prueba                     | prueba                    | prueba                            |
     And en la ventana Propuesta doy click en Anexar Garantias Existentes
     And en la ventana Seleccionar Garantias doy click en Registrar Garantias
-    And en la ventana Garantias Existentes seleccionar garantia correspondiente y doy click en Aceptar
+    And en la ventana Garantias Existentes seleccionar todas las garantias existentes y doy click en el boton Aceptar
     And el sistema muestra una ventana de cancelacion de pagares y se cierra automaticamente
     And en la ventana Propuesta doy click en Enlazar Estados Financieros
     Then el sistema direcciona a la ventana Estados Financieros y doy click en Enlazar
@@ -96,7 +84,7 @@ Feature: Crear una propuesta de Credito Empresarial de tipo NORMAL en el Sistema
 
     Examples:
       | cliente  |
-      | 24694550 |
+      | 25358007 |
 
 
 

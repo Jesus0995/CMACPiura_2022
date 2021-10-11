@@ -3,12 +3,15 @@ package Definitions;
 import PageObjects.*;
 import io.cucumber.datatable.DataTable;
 import io.cucumber.java.en.*;
+import org.bouncycastle.tsp.TSPUtil;
+
 import java.io.IOException;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
 import static Support.screenshot.pantallazo;
+
 public class PropuestaCreditoEmpresarialDefinitions {
     //crear variables de los pages
     LoginPage login;
@@ -67,6 +70,7 @@ public class PropuestaCreditoEmpresarialDefinitions {
         enlazarEEFFGrupoVinculado = new EnlazarEEFFGrupoVinculadoPage(Hooks.driver);
 
     }
+
     @Given("la web SGCRED esta disponible")
     public void la_web_sgcred_esta_disponible() {
         Hooks.driver.get("http://10.0.203.12:8081/propuesta/");
@@ -102,7 +106,7 @@ public class PropuestaCreditoEmpresarialDefinitions {
     }
 
     @And("doy click en el boton crear_propuesta de la ventana Listado Propuesta")
-    public void doyClickEnElBotonCrear_propuestaDeLaVentanaListadoPropuesta(){
+    public void doyClickEnElBotonCrear_propuestaDeLaVentanaListadoPropuesta() {
         //listadoPropuesta.AbrirVentana();
         listadoPropuesta.ClickCrearPropuesta();
         //pantallazo();
@@ -132,8 +136,8 @@ public class PropuestaCreditoEmpresarialDefinitions {
         listadoClientes.SeleccionarIconoPropuesta();
     }
 
-    @And("el sistema muestra la ventana de servicio e ingresamos la informacion")
-    public void elSistemaMuestraLaVentanaDeServicioEIngresamosLaInformacion(DataTable tipoServicio) throws IOException {
+    @And("el sistema muestra la ventana de servicio e ingresamos la informacion y doy click en el boton cargar")
+    public void elSistemaMuestraLaVentanaDeServicioEIngresamosLaInformacionYDoyClickEnElBotonCargar(DataTable tipoServicio) throws IOException {
 
         Servicio.AbrirVentanaServicio();
 
@@ -150,7 +154,9 @@ public class PropuestaCreditoEmpresarialDefinitions {
 
         try {
             Servicio.ClickCargar();
-        } catch (Exception Error) {
+        } catch (Exception error) {
+            error.printStackTrace();
+            System.out.println("Error al hacer click en el boton cargar" + error.getMessage());
         }
 
         Servicio.CerrarVentanaServicio();
@@ -164,7 +170,7 @@ public class PropuestaCreditoEmpresarialDefinitions {
     }
 
     @And("validar el mensaje del popup Comunicado")
-    public void validarElMensajeDelPopupComunicado(){
+    public void validarElMensajeDelPopupComunicado() {
         // PopUpComunicado.UbicarVentanaComunicado();
         PopUpComunicado.ValidarComunicado();
 
@@ -172,8 +178,8 @@ public class PropuestaCreditoEmpresarialDefinitions {
 
     @And("en la ventana propuesta ingresar comentarios en clasificacion, objetivo y justificacion")
     public void enLaVentanaPropuestaIngresarComentariosEnClasificacionObjetivoYJustificacion(DataTable comentarios) {
-        List<Map<String, String>> lista = comentarios.asMaps(String.class,String.class);
-        for (Integer i = 0;i < lista.size(); i++){
+        List<Map<String, String>> lista = comentarios.asMaps(String.class, String.class);
+        for (Integer i = 0; i < lista.size(); i++) {
             propuesta.IngresarClasificacionCrediticia(lista.get(i).get("clasificacion"));
             propuesta.IngresarObjetivoCredito(lista.get(i).get("objetivo"));
             propuesta.IngresarJustificacionCredito(lista.get(i).get("justificacion"));
@@ -181,8 +187,7 @@ public class PropuestaCreditoEmpresarialDefinitions {
     }
 
     @And("en la ventana propuesta doy click en el boton nueva operacion")
-    public void enLaVentanaPropuestaDoyClickEnElBotonNuevaOperacion()
-    {
+    public void enLaVentanaPropuestaDoyClickEnElBotonNuevaOperacion() {
         propuesta.ClickBotonOperacion();
     }
 
@@ -192,7 +197,7 @@ public class PropuestaCreditoEmpresarialDefinitions {
         seleccionarOpeCred.AbrirVentanaSeleccionarOP();
         try {
             seleccionarOpeCred.ValidarVentanaOP();
-        } catch(Exception Error){
+        } catch (Exception Error) {
 
         }
         seleccionarOpeCred.CerrarVentanaSeleccionarOP();
@@ -249,7 +254,7 @@ public class PropuestaCreditoEmpresarialDefinitions {
     @And("en la ventana Operacion Credito seleccionar plaza de desembolso")
     public void enLaVentanaOperacionCreditoSeleccionarPlazaDeDesembolso(DataTable PlazaDesembolso) {
 
-        List<Map<String,String>> lista = PlazaDesembolso.asMaps(String.class,String.class);
+        List<Map<String, String>> lista = PlazaDesembolso.asMaps(String.class, String.class);
         for (int i = 0; i < lista.size(); i++) {
             operacioncredito.SeleccionarDepartamento(lista.get(i).get("Departamento"));
             operacioncredito.SeleccionarProvincia(lista.get(i).get("Provincia"));
@@ -359,6 +364,12 @@ public class PropuestaCreditoEmpresarialDefinitions {
         propuesta.ClickAnexarCheckListCreditos();
     }
 
+    @And("en la ventana CheckList Credito seleccionar todas las opciones de Expedientes")
+    public void enLaVentanaCheckListCreditoSeleccionarTodasLasOpcionesDeExpedientes() {
+        anexarCheckListCreditos.AbrirVentanaAnexarCheckList();
+        anexarCheckListCreditos.SeleccionarOpcionesCheckListCredito();
+    }
+
     @And("en la ventana CheckList Seccion Informacion Basica Cliente seleccionar las opciones correspondientes")
     public void enLaVentanaCheckListSeccionInformacionBasicaDelClienteSeleccionarLasOpcionesCorrespondientes() {
         anexarCheckListCreditos.AbrirVentanaAnexarCheckList();
@@ -462,9 +473,7 @@ public class PropuestaCreditoEmpresarialDefinitions {
     @And("en la ventana CheckList doy clic en Guardar y Terminar finalmente acepto la alerta")
     public void enLaVentanaCheckListDoyClicEnGuardarYTerminarFinalmenteAceptoLaAlerta() {
         anexarCheckListCreditos.ClickGuardarTerminar();
-
         anexarCheckListCreditos.AceptarAlerta();
-
         anexarCheckListCreditos.CerrarVentanaAnexarCheckList();
     }
 
@@ -476,7 +485,17 @@ public class PropuestaCreditoEmpresarialDefinitions {
     }
 
     @Then("el sistema direcciona a la ventana propuesta y se procede a ingresar los siguientes comentarios")
-    public void elSistemaDireccionaALaVentanaPropuestaYSeProcedeAIngresarLosSiguientesComentarios(DataTable ComentariosJustificados) {
+    public void elSistemaDireccionaALaVentanaPropuestaYSeProcedeAIngresarLosSiguientesComentarios(DataTable FundamentacionCredito) {
+        List<Map<String, String>> listaComentarios = FundamentacionCredito.asMaps(String.class, String.class);
+        for (Integer i = 0; i < listaComentarios.size(); i++) {
+            propuesta.IngresarCaracteristicaNegocio(listaComentarios.get(i).get("CaracteristicaNegocio"));
+            propuesta.IngresarClasificacionRiesgoCliente(listaComentarios.get(i).get("ClasificacionRiesgoNegocio"));
+            propuesta.IngresarClasificacionRiesgoAvales(listaComentarios.get(i).get("ClasificacionRiesgoAvales"));
+            propuesta.IngresarAnalisisUnidadEconomicaFinanciera(listaComentarios.get(i).get("AnalisisUnidadEconomicaFinanciera"));
+
+        }
+
+        /*
         List<Map<String,String>> listaComentarios = ComentariosJustificados.asMaps(String.class,String.class);
         for (Integer i = 0; i < listaComentarios.size() ;i++){
             propuesta.IngresarCaracteristicaNegocio(listaComentarios.get(i).get("CaracteristicaNegocio"));
@@ -486,8 +505,11 @@ public class PropuestaCreditoEmpresarialDefinitions {
             propuesta.IngresarAnalisisSector(listaComentarios.get(i).get("AnalisisSector"));
             propuesta.IngresarProyeccionesCrecimiento(listaComentarios.get(i).get("ProyeccionesCrecimiento"));
         }
+        */
+
 
     }
+
     @And("en la ventana Propuesta doy click en Anexar Garantias Existentes")
     public void enLaVentanaPropuestaDoyClickEnAnexarGarantiasExistentes() {
         propuesta.ClickAnexarGarantias();
@@ -501,11 +523,11 @@ public class PropuestaCreditoEmpresarialDefinitions {
         seleccionarGarantia.CerrarVentanaGarantia();
     }
 
-    @And("en la ventana Garantias Existentes seleccionar garantia correspondiente y doy click en Aceptar")
-    public void enLaVentanaGarantiasExistentesSeleccionarGarantiaCorrespondienteYDoyClickEnAceptar() {
+    @And("en la ventana Garantias Existentes seleccionar todas las garantias existentes y doy click en el boton Aceptar")
+    public void enLaVentanaGarantiasExistentesSeleccionarTodasLasGarantiasExistentesYDoyClickEnElBotonAceptar() {
         seleccionarGarantiasExistentes.AbrirVentanaGarantiasExistentes();
         seleccionarGarantiasExistentes.SeleccionarCheckGarantiasExistentes();
-        seleccionarGarantiasExistentes.ClickbtnAceptar();
+        seleccionarGarantiasExistentes.ClickBtnAceptar();
         seleccionarGarantiasExistentes.CerrarVentanaGarantiasExistentes();
     }
 
@@ -597,12 +619,13 @@ public class PropuestaCreditoEmpresarialDefinitions {
     @And("en la ventana Emitir Dictamen Propuesta ingresar observaciones y password del usuario asesor")
     public void enLaVentanaEmitirDictamenPropuestaIngresarObservacionesYPasswordDelUsuarioAsesor(DataTable DatosAprobacion) {
         aprobarDictamenPropuesta.AbrirVentanaAprobarDictamenPropuesta();
-        List<Map<String,String>> lista = DatosAprobacion.asMaps(String.class,String.class);
-        for (Integer i = 0; i < lista.size() ;i++){
+        List<Map<String, String>> lista = DatosAprobacion.asMaps(String.class, String.class);
+        for (Integer i = 0; i < lista.size(); i++) {
             aprobarDictamenPropuesta.IngresarObservaciones(lista.get(i).get("Observaciones"));
             aprobarDictamenPropuesta.IngresarContrasena(lista.get(i).get("Contrasena"));
         }
     }
+
     @And("en la ventana Emitir Dictamen Propuesta doy click en el boton Procesar")
     public void enLaVentanaEmitirDictamenPropuestaDoyClickEnElBotonProcesar() {
         aprobarDictamenPropuesta.ClickbtnProcesar();
@@ -615,14 +638,17 @@ public class PropuestaCreditoEmpresarialDefinitions {
         grabarPropuesta.ClickbtnCerrarInformacion();
         grabarPropuesta.CerrarVentanaGrabarPropuesta();
     }
+
     @And("el sistema direcciona a la ventana listado propuesta y doy click en boton Regresar")
     public void elSistemaDireccionaALaVentanaListadoPropuestaYDoyClickEnBotonRegresar() {
         listadoPropuesta.ClickRegresar();
     }
+
     @And("el sistema direcciona al Menu Principal y seleccionar opcion Cerrar Sesion")
     public void elSistemaDireccionaAlMenuPrincipalYSeleccionarOpcionCerrarSesion() {
         menuPrincipal.ClickCerrarSesion();
     }
+
     @And("el sistema direcciona al login y doy click en boton Cerrar Sesion")
     public void elSistemaDireccionaAlLoginYDoyClickEnBotonCerrarSesion() {
         login.ClickCerrarSesion();
@@ -638,27 +664,22 @@ public class PropuestaCreditoEmpresarialDefinitions {
     public void enLaVentanaEnlazarEEFFGrupoVinculadoIngresarLosComentariosCorrespondientes(DataTable datosEEFFGrupo) {
         enlazarEEFFGrupoVinculado.AbrirVentanaEnlazarEEFFGrupoVinculado();
 
-        List<Map<String,String>> lista = datosEEFFGrupo.asMaps(String.class,String.class);
-            for(int i = 0; i < lista.size(); i++){
-                enlazarEEFFGrupoVinculado.IngresarAnalisisEEFF(lista.get(i).get("AnalisisEEFF"));
-                enlazarEEFFGrupoVinculado.IngresarComentarioComportamientoPago(lista.get(i).get("ComportamientoPago"));
-
-            }
-
-
+        List<Map<String, String>> lista = datosEEFFGrupo.asMaps(String.class, String.class);
+        for (int i = 0; i < lista.size(); i++) {
+            enlazarEEFFGrupoVinculado.IngresarAnalisisEEFF(lista.get(i).get("AnalisisEEFF"));
+            enlazarEEFFGrupoVinculado.IngresarComentarioComportamientoPago(lista.get(i).get("ComportamientoPago"));
 
         }
 
-    @And("en la ventana Enlazar EEFFGrupoVinculado doy click en el boton Grabar")
-    public void enLaVentanaEnlazarEEFFGrupoVinculadoDoyClickEnElBotonGrabar() {
-        enlazarEEFFGrupoVinculado.ClickBtnGrabar();
-    }
-
-    @And("en la ventana Enlazar EEFFGrupoVinculado doy click en el boton Regresar")
-    public void enLaVentanaEnlazarEEFFGrupoVinculadoDoyClickEnElBotonRegresar() {
 
     }
+
+
+
 }
+
+
+
 
 
 

@@ -143,7 +143,8 @@ public class InformeVisitaCreditoEmpresarialDefinitions {
     }
     @And("el sistema direcciona a ventana listado informe de visita y doy click en el boton regresar")
     public void elSistemaDireccionaAVentanaListadoInformeDeVisitaYDoyClickEnElBotonRegresar() {
-       listaInformes.ClickBtnRegresarCE();
+
+        listaInformes.ClickBtnRegresar();
     }
 
     @And("el sistema direcciona a menu principal y doy click al menu cerrar sesion")

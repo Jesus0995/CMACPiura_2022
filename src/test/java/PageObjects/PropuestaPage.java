@@ -23,7 +23,7 @@ public class PropuestaPage {
     @FindBy(xpath = "//img[@src='./images/mail-send-receive.png']") private WebElement icn_CambioTasa;
     @FindBy(name = "btnEnviar2") private WebElement btn_AgregarSeguro;
     @FindBy(xpath = "/html/body/form/table[1]/tbody/tr[3]/td/div/table[8]/tbody/tr[1]/td[2]/button") private WebElement btn_AnexarChecklist;
-    @FindBy(xpath = "//textarea[@name='caractNegocio']") private WebElement txt_CaracteristicaNegocio; //se cambio el name del nuevo ambiente
+    @FindBy(xpath = "//textarea[@id='txtcaracter']") private WebElement txt_CaracteristicaNegocio; //se cambio el name del nuevo ambiente //textarea[@name='caractNegocio']
     @FindBy(xpath = "//textarea[@id='txtclasificac']") private WebElement txt_ClasificacionRiesgoCliente;
     @FindBy(xpath = "//textarea[@id='txtclasificaAval']")private  WebElement txt_ClasificacionRiesgoAval;
     @FindBy(xpath = "//textarea[@id='txtanalisisUEF']") private WebElement txt_AnalisisUnidadFinanciera;
@@ -104,14 +104,14 @@ public class PropuestaPage {
 
     }
 
-    public void IngresarClasificacionRiesgoAval(String ClasificacionRiesgoAval){
+    public void IngresarClasificacionRiesgoAvales(String ClasificacionRiesgoAvales){
         txt_ClasificacionRiesgoAval.clear();
-        txt_ClasificacionRiesgoAval.sendKeys(ClasificacionRiesgoAval);
+        txt_ClasificacionRiesgoAval.sendKeys(ClasificacionRiesgoAvales);
     }
 
-    public void IngresarAnalisisUnidadF(String AnalisisUnidadFinanciera){
+    public void IngresarAnalisisUnidadEconomicaFinanciera(String AnalisisUnidadEconomicaFinanciera){
         txt_AnalisisUnidadFinanciera.clear();
-        txt_AnalisisUnidadFinanciera.sendKeys(AnalisisUnidadFinanciera);
+        txt_AnalisisUnidadFinanciera.sendKeys(AnalisisUnidadEconomicaFinanciera);
     }
 
 
@@ -203,14 +203,6 @@ public class PropuestaPage {
     }
 
 
-   /* public void ClickBtnAprobarEmpresarial(){
-       WebElement btn_AprobarNormal = driver.findElement(By.xpath("/html/body/form/table[1]/tbody/tr[2]/td/table[2]/tbody/tr[1]/td/a"));
-       String JScript = btn_AprobarNormal.getAttribute("onclick");
-       ((JavascriptExecutor)driver).executeScript(JScript);
-       //Esperar(1);
-    }*/
-
-
     public void ClickBtnAprobarPropuesta(){
         btn_AprobarPropuesta.click();
         Esperar(1);
@@ -221,7 +213,7 @@ public class PropuestaPage {
         btn_VerificarCheckListCredito.click();
     }
 
-
+    //Fundamentacion credito adicionado el 29/09/2020---- inicio-----------
     public void IngresarProductosNegocio(String ProductosNegocio){
         txt_Productos.clear();
         txt_Productos.sendKeys(ProductosNegocio);
@@ -244,6 +236,8 @@ public class PropuestaPage {
         txt_ProyeccionesCrecimiento.clear();
         txt_ProyeccionesCrecimiento.sendKeys(ProyeccionesCrecimiento);
     }
+    //----------- fin de cambio 29/09/2021-----------------------
+
 
     public void ClickBtnEnlazarEEFFGrupoVinculadO(){
         wait.until(ExpectedConditions.elementToBeClickable(btn_EnlazarEEFFGrupoVinculado));

@@ -38,6 +38,7 @@ public class InformeVisita_InformePage {
     }
 
     public void ClickBtnRegresar() {
+        Esperar(60);
         wait.until(ExpectedConditions.elementToBeClickable(btn_regresar));
         btn_regresar.click();
 
@@ -48,20 +49,18 @@ public class InformeVisita_InformePage {
         btn_regresarInformeComercial.click();
     }
 
-
-
-        public void ClickBtnRegresarCE(){
-        Esperar(30);
+    public void ClickBtnRegresarCE() {
+        Esperar(60);
         wait.until(ExpectedConditions.elementToBeClickable(btn_RegresarCE));
         btn_RegresarCE.click();
 
     }
 
-    private void Esperar(Integer Segundos){
+    private void Esperar(Integer Segundos) {
         Integer Milisegundos = Segundos * 1000;
         try {
             Thread.sleep(Milisegundos);
-        }catch (InterruptedException e){
+        } catch (InterruptedException e) {
             e.printStackTrace();
         }
 

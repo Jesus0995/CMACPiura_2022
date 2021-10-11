@@ -87,7 +87,7 @@ public class InformeComercialCreditoEmpresarialDefinitions {
     }
     @And("el sistema direcciona a la ventana listado de informes comerciales y doy click en Regresar")
     public void elSistemaDireccionaALaVentanaListadoDeInformesComercialesYDoyClickEnRegresar() {
-        listaInformes.ClickBtnRegresarCE();
+        listaInformes.ClickBtnRegresarInformeComercial();
     }
     @And("el sistema direcciona al Menu Principal SGCRED y doy click en la opcion Cerrar Sesion")
     public void elSistemaDireccionaAlMenuPrincipalSGCREDYDoyClickEnLaOpcionCerrarSesion() {

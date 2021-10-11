@@ -56,10 +56,18 @@ public class AprobarDictamenPropuestaPage {
     }
 
     public void IngresarObservaciones(String Observaciones){
-        txt_Observaciones.clear();
-        Esperar(1);
-        txt_Observaciones.sendKeys(Observaciones);
-        Esperar(2);
+
+        try{
+            txt_Observaciones.clear();
+            Esperar(1);
+            txt_Observaciones.sendKeys(Observaciones);
+            Esperar(2);
+
+        } catch (Exception error){
+            error.printStackTrace();
+            System.out.println("Error al ingresar observaciones en el dictamen" +error.getMessage());
+        }
+
     }
 
     public void IngresarContrasena(String Contrasena){

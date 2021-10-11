@@ -1,5 +1,7 @@
 package PageObjects;
 
+import org.junit.Assert;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -7,6 +9,7 @@ import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import java.util.List;
 import java.util.Set;
 
 public class SeleccionarGarantiasExistentesPage {
@@ -14,36 +17,34 @@ public class SeleccionarGarantiasExistentesPage {
     private WebDriver driver;
     private WebDriverWait wait;
     private Set<String> identificadoresGarantiasExistentes;
+    protected static String Maquinaria;
 
     //mapeo objetos
 
-    @FindBy(xpath = "//input[@name='garantia']") private WebElement chk_GarantiaExistentes;
-    @FindBy(xpath = "//button[@type=\"submit\"]") private  WebElement btn_Aceptar;
-    //@FindBy(xpath = "//input[@value='611-1-4725262']") private WebElement chk_GarantiaMaquinaria;
-    //@FindBy(xpath = "//input[@value='611-1-4725261']") private WebElement chk_GarantiaMaquinaria;
+    //@FindBy(xpath = "//input[@name='garantia']") private WebElement chk_GarantiasExistentes;
+    @FindBy(xpath = "//button[@type=\"submit\"]")
+    private WebElement btn_Aceptar;
 
+    //@FindBy(xpath = "//table/tbody/tr[4]/td[5]") private WebElement lbl_MaquinariaEquipo;
 
-    ///html/body/form/table/tbody/tr[4]/td[5]
-
-
-    public void AbrirVentanaGarantiasExistentes(){
+    public void AbrirVentanaGarantiasExistentes() {
         identificadoresGarantiasExistentes = driver.getWindowHandles();
         System.out.println(identificadoresGarantiasExistentes);
-        String LastHandle ="";
+        String LastHandle = "";
 
-        for (String identificadorOperacionCredito :identificadoresGarantiasExistentes ){
+        for (String identificadorOperacionCredito : identificadoresGarantiasExistentes) {
             LastHandle = identificadorOperacionCredito;
         }
         driver.switchTo().window(LastHandle);
 
-        System.out.println("Titulo : " +driver.getTitle() );
+        System.out.println("Titulo : " + driver.getTitle());
 
     }
 
-    public void CerrarVentanaGarantiasExistentes(){
+    public void CerrarVentanaGarantiasExistentes() {
         Integer SetSize = identificadoresGarantiasExistentes.size();
-        Integer Index=0;
-        String[] Handles = new String[SetSize] ;
+        Integer Index = 0;
+        String[] Handles = new String[SetSize];
         for (String identificadorGarantiasExistentes : identificadoresGarantiasExistentes) {
             Handles[Index] = identificadorGarantiasExistentes;
             Index++;
@@ -59,10 +60,25 @@ public class SeleccionarGarantiasExistentesPage {
         wait = new WebDriverWait(driver, 30);
         PageFactory.initElements(driver, this);
     }
+/*
+    public void ValidarTipoGarantiaMaquinaria(String MaquinariaEquipo){
+        wait.until(ExpectedConditions.visibilityOf(lbl_MaquinariaEquipo));
+        Assert.assertEquals(MaquinariaEquipo,lbl_MaquinariaEquipo.getText());
+        System.out.println("El tipo de garantia es:"+lbl_MaquinariaEquipo.getText());
+        }
+*/
 
     public void SeleccionarCheckGarantiasExistentes() {
-        wait.until(ExpectedConditions.elementToBeClickable(chk_GarantiaExistentes));
-        chk_GarantiaExistentes.click();
+
+        List<WebElement> allGarantias = driver.findElements(By.name("garantia"));
+        try {
+            for (WebElement Garantias : allGarantias) {
+                Garantias.click();
+            }
+        } catch (Exception error) {
+            error.printStackTrace();
+            System.out.println("Error al seleccionar las garantias" + error.getMessage());
+        }
     }
 
     /*
@@ -71,18 +87,18 @@ public class SeleccionarGarantiasExistentesPage {
         chk_GarantiaMaquinaria.click();
     }*/
 
-    public void ClickbtnAceptar (){
+    public void ClickBtnAceptar() {
         wait.until(ExpectedConditions.elementToBeClickable(btn_Aceptar));
         btn_Aceptar.click();
         //Esperar(1);
     }
 
-    private void Esperar(Integer Segundos){
+    private void Esperar(Integer Segundos) {
         Integer Milisegundos = Segundos * 1000;
 
         try {
             Thread.sleep(Milisegundos);
-        }catch (InterruptedException e){
+        } catch (InterruptedException e) {
             e.printStackTrace();
         }
     }
