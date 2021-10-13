@@ -169,18 +169,21 @@ public class AnexarChecklistPage {
 
 
     public void SeleccionarOpcionesCheckListCredito() {
-        Esperar(5);
+        Esperar(7);
         try {
            List<WebElement> checks = driver.findElements(By.xpath("//input[@Title='Expediente']"));
            for (WebElement check : checks) {
-                check.click();
+               check.click();
 
             }
         } catch (Exception error) {
             error.printStackTrace();
             System.out.println("Error al seleccionar las opciones del check list credito" + error.getMessage());
         }
+
+
     }
+
 
     public void Seleccionar_1TarjetaInformacion() {
         wait.until(ExpectedConditions.elementToBeClickable(opt_1TarjetaBasica));
@@ -403,7 +406,7 @@ public class AnexarChecklistPage {
     }
 
     public void Seleccionar_37opinionLegal() {
-    WebElement opcion37 = driver.findElement(By.xpath("//input[@id='item_71' and @value='1']"));
+    WebElement opcion37 = driver.findElement(By.xpath("//input[@id='item_71' and @value='2']"));
         try {
             Esperar(9);
             opcion37.click();

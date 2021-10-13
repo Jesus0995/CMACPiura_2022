@@ -215,11 +215,9 @@ public class PropuestaCreditoEmpresarialDefinitions {
             operacioncredito.SeleccionarMoneda(lista.get(i).get("Moneda"));
             operacioncredito.IngresarMonto(lista.get(i).get("Monto"));
             operacioncredito.IngresarTasaInicial(lista.get(i).get("TasaInicial"));
-
         }
 
         operacioncredito.ClickCalcular();
-
     }
 
     @And("en la ventana Operacion Credito seleccionar plan de pagos {string}")
@@ -264,9 +262,9 @@ public class PropuestaCreditoEmpresarialDefinitions {
 
     }
 
-    @And("en la ventana Operacion Credito ingresar fecha probable del desembolso {string}")
-    public void enLaVentanaOperacionCreditoIngresarFechaProbableDelDesembolso(String FechaDesembolso) {
-        operacioncredito.IngresarFechaDesembolso(FechaDesembolso);
+    @And("en la ventana Operacion Credito ingresar fecha probable del desembolso")
+    public void enLaVentanaOperacionCreditoIngresarFechaProbableDelDesembolso() {
+        operacioncredito.ObtenerFechaDesembolso();
 
     }
 
@@ -368,6 +366,7 @@ public class PropuestaCreditoEmpresarialDefinitions {
     public void enLaVentanaCheckListCreditoSeleccionarTodasLasOpcionesDeExpedientes() {
         anexarCheckListCreditos.AbrirVentanaAnexarCheckList();
         anexarCheckListCreditos.SeleccionarOpcionesCheckListCredito();
+        anexarCheckListCreditos.Seleccionar_37opinionLegal();
     }
 
     @And("en la ventana CheckList Seccion Informacion Basica Cliente seleccionar las opciones correspondientes")
@@ -484,8 +483,11 @@ public class PropuestaCreditoEmpresarialDefinitions {
         confirmarCheckList.CerrarVentanaConfirmacionCheckList();
     }
 
-    @Then("el sistema direcciona a la ventana propuesta y se procede a ingresar los siguientes comentarios")
-    public void elSistemaDireccionaALaVentanaPropuestaYSeProcedeAIngresarLosSiguientesComentarios(DataTable FundamentacionCredito) {
+    @Then("el sistema direcciona a la ventana propuesta y se procede a ingresar comentarios en la propuesta")
+    public void elSistemaDireccionaALaVentanaPropuestaYSeProcedeAIngresarComentariosEnLaPropuesta() {
+
+        propuesta.IngresarComentariosPropuesta();
+        /*
         List<Map<String, String>> listaComentarios = FundamentacionCredito.asMaps(String.class, String.class);
         for (Integer i = 0; i < listaComentarios.size(); i++) {
             propuesta.IngresarCaracteristicaNegocio(listaComentarios.get(i).get("CaracteristicaNegocio"));
@@ -495,7 +497,7 @@ public class PropuestaCreditoEmpresarialDefinitions {
 
         }
 
-        /*
+
         List<Map<String,String>> listaComentarios = ComentariosJustificados.asMaps(String.class,String.class);
         for (Integer i = 0; i < listaComentarios.size() ;i++){
             propuesta.IngresarCaracteristicaNegocio(listaComentarios.get(i).get("CaracteristicaNegocio"));
@@ -673,7 +675,6 @@ public class PropuestaCreditoEmpresarialDefinitions {
 
 
     }
-
 
 
 }

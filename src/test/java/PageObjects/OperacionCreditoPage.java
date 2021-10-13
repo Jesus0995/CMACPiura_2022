@@ -9,6 +9,8 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
 import java.util.Set;
 
@@ -99,7 +101,7 @@ public class OperacionCreditoPage {
     public void ClickCalcular () {
         wait.until(ExpectedConditions.elementToBeClickable(btn_Calcular));
         btn_Calcular.click();
-        Esperar(26);
+        Esperar(60);
     }
 
     public void SeleccionarPlanPagos (String PlanPagos) {
@@ -186,6 +188,15 @@ public class OperacionCreditoPage {
     public void SeleccionarDistrito (String Distrito) {
         wait.until(ExpectedConditions.elementToBeClickable(cbx_Distrito));
         new Select(cbx_Distrito).selectByVisibleText(Distrito);
+
+    }
+
+    public void ObtenerFechaDesembolso(){
+        Date Date = new Date();
+        SimpleDateFormat fecha = new SimpleDateFormat("dd/MM/yyyy");
+        txt_FechaDesembolso.clear();
+        txt_FechaDesembolso.sendKeys(fecha.format(Date));
+        Esperar(1);
 
     }
 

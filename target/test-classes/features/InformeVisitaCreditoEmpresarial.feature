@@ -18,8 +18,8 @@ Feature: Registrar informe de visita con el perfil Asesor de Negocio
     Then el sistema direcciona a la ventana SeleccionarRubroNegocio y doy click en boton Cargar
     And en la ventana lista de informes visita doy click en el boton crear informe visita
     And el sistema muestra la ventana principal informe de visita e ingresar datos de visita
-      | FechaVisita | HoraVisita | MinutoVisita | FranjaHora |
-      | 01/10/2021  | 09         | 00           | A.M        |
+      | HoraVisita | MinutoVisita | FranjaHora |
+      | 09         | 00           | A.M        |
     And en la ventana principal informe de visita ingresar datos de verificacion domiciliaria
       | NumeroIntegrantes | Relacion | Habitos             | OtrosIngresos |
       | 3                 | Estable  | Dentro de lo Normal | NO            |
@@ -39,6 +39,9 @@ Feature: Registrar informe de visita con el perfil Asesor de Negocio
     And direcciona a la ventana login y doy click en el boton cerrar sesion
 
     Examples:
-      | cliente  |
-      | 25358007 |
-
+      | cliente |
+      | 216     |
+      | 238     |
+      | 476     |
+      | 491     |
+      | 629     |

@@ -6,7 +6,7 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-
+import Functions.funcionEsperar;
 import java.util.Set;
 
 public class AnexarCheckListCreditoAprobarPage {
@@ -14,7 +14,7 @@ public class AnexarCheckListCreditoAprobarPage {
     private WebDriver driver;
     private WebDriverWait wait;
     private Set<String> identfAnexarCheckListAprobar;
-
+    private funcionEsperar objFuncionEsperar;
 
     @FindBy(xpath = "//*[@value=\"2\"]") private WebElement opt_Aprobar;
     @FindBy(xpath = "//*[@name=\"comRevisionCheck\"]") private WebElement txt_Comentarios;
@@ -67,7 +67,8 @@ public class AnexarCheckListCreditoAprobarPage {
     public void ClickBtnGuardar(){
         wait.until(ExpectedConditions.elementToBeClickable(btn_Guardar));
         btn_Guardar.click();
-        Esperar (3);
+        objFuncionEsperar.EsperarTiempo(3);
+
     }
 
 

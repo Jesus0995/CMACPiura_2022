@@ -58,7 +58,7 @@ public class SeleccionarOperacionCreditoPage {
 
         btn_Aceptar.click();
 
-        Esperar(3);
+        Esperar(11);
 
     }
 

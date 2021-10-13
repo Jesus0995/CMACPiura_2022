@@ -38,9 +38,10 @@ public class InformeVisita_InformePage {
     }
 
     public void ClickBtnRegresar() {
-        Esperar(60);
+        Esperar(40);
         wait.until(ExpectedConditions.elementToBeClickable(btn_regresar));
         btn_regresar.click();
+        Esperar(5);
 
     }
 

@@ -76,9 +76,9 @@ public class InformeVisitaCreditoEmpresarialDefinitions {
     }
     @And("el sistema muestra la ventana principal informe de visita e ingresar datos de visita")
     public void elSistemaMuestraLaVentanaPrincipalInformeDeVisitaEIngresarDatosDeVisita(DataTable DatosInformeVisita) {
+        crearInformeVisita.ObtenerFechaVisita();
         List<Map<String,String>> listado = DatosInformeVisita.asMaps(String.class,String.class);
         for (int i = 0; i < listado.size(); i++) {
-            crearInformeVisita.IngresarFechaVisita(listado.get(i).get("FechaVisita"));
             crearInformeVisita.IngresarHoraVisita(listado.get(i).get("HoraVisita"));
             crearInformeVisita.IngresarMinutoVisita(listado.get(i).get("MinutoVisita"));
             crearInformeVisita.IngresarFranjaHoraria(listado.get(i).get("FranjaHora"));

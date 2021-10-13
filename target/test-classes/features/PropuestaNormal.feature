@@ -21,9 +21,6 @@ Feature: Crear una propuesta de Credito Empresarial de tipo NORMAL en el Sistema
       | TipoServicio        | ServicioCredito | TipoPropuesta | SubTipoPropuesta | Promocion     |
       | CREDITO EMPRESARIAL | CREDITOS PYMES  | NORMAL        | NORMAL           | SIN PROMOCION |
     And validar el mensaje del popup Comunicado
-    And en la ventana propuesta ingresar comentarios en clasificacion, objetivo y justificacion
-      | clasificacion | objetivo | justificacion |
-      | prueba        | prueba   | prueba        |
     And en la ventana propuesta doy click en el boton nueva operacion
     And validar la ventana seleccionar operacion de credito luego doy click en boton aceptar
     And posicionarse en la ventana Operacion Credito e ingresar la Operacion y doy click en Calcular
@@ -37,7 +34,7 @@ Feature: Crear una propuesta de Credito Empresarial de tipo NORMAL en el Sistema
     And en la ventana Operacion Credito seleccionar plaza de desembolso
       | Departamento | Provincia | Distrito |
       | LIMA         | LIMA      | LIMA     |
-    And en la ventana Operacion Credito ingresar fecha probable del desembolso "07/10/2021"
+    And en la ventana Operacion Credito ingresar fecha probable del desembolso
     And en la ventana Operacion Credito Ingresar notas "Prueba"
     And en la ventana Operacion Credito doy click en grabar
     And en la ventana Operacion Credito aceptar la alerta
@@ -53,9 +50,7 @@ Feature: Crear una propuesta de Credito Empresarial de tipo NORMAL en el Sistema
     And en la ventana CheckList Credito seleccionar todas las opciones de Expedientes
     And en la ventana CheckList doy clic en Guardar y Terminar finalmente acepto la alerta
     And el sistema direcciona a la ventana Confirmar Checklist de Credito y doy click en cerrar
-    Then el sistema direcciona a la ventana propuesta y se procede a ingresar los siguientes comentarios
-      | CaracteristicaNegocio | ClasificacionRiesgoNegocio | ClasificacionRiesgoAvales | AnalisisUnidadEconomicaFinanciera |
-      | prueba                | prueba                     | prueba                    | prueba                            |
+    Then el sistema direcciona a la ventana propuesta y se procede a ingresar comentarios en la propuesta
     And en la ventana Propuesta doy click en Anexar Garantias Existentes
     And en la ventana Seleccionar Garantias doy click en Registrar Garantias
     And en la ventana Garantias Existentes seleccionar todas las garantias existentes y doy click en el boton Aceptar
@@ -83,8 +78,8 @@ Feature: Crear una propuesta de Credito Empresarial de tipo NORMAL en el Sistema
     And el sistema direcciona al login y doy click en boton Cerrar Sesion
 
     Examples:
-      | cliente  |
-      | 25358007 |
+      | cliente |
+      | 476     |
 
 
 

@@ -22,7 +22,11 @@ Feature: Registrar Informe Comercial con el perfil Asesor de Negocio
     And en la ventana principal Informe Comercial doy click en el boton Regresar
     And el sistema direcciona a la ventana listado de informes comerciales y doy click en Regresar
     And el sistema direcciona al Menu Principal SGCRED y doy click en la opcion Cerrar Sesion
-    And el sistema direcciona al Login y doy click en el boton Cerrar Sesion
+    And el sistema direcciona al Login y doy click en el boton Cerrar Sesion     | 238     |
     Examples:
-      | cliente  |
-      | 25358007 |
+      | cliente |
+      | 216     |
+
+      | 476     |
+      | 491     |
+      | 629     |

@@ -96,5 +96,6 @@ public class InformeComercialCreditoEmpresarialDefinitions {
     @And("el sistema direcciona al Login y doy click en el boton Cerrar Sesion")
     public void elSistemaDireccionaAlLoginYDoyClickEnElBotonCerrarSesion() {
         loginSGCRED.ClickCerrarSesion();
+
     }
 }

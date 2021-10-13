@@ -38,11 +38,15 @@ public class LoginPage {
     }
 
     public void ClickCerrarSesion(){
-        Esperar(30);
+        Esperar(32);
         wait.until(ExpectedConditions.elementToBeClickable(btn_Cerrar));
         btn_Cerrar.click();
+        Esperar(2);
+        driver.close();
 
     }
+
+
 
 
     private void Esperar(Integer Segundos){
