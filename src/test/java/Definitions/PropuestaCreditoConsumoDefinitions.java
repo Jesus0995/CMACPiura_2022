@@ -319,7 +319,7 @@ public class PropuestaCreditoConsumoDefinitions {
     @And("muestra la ventana garantias existentes y doy check a garantia personal")
     public void muestraLaVentanaGarantiasExistentesYDoyCheckAGarantiaPersonal() {
         seleccionarGarantiasExistentes.AbrirVentanaGarantiasExistentes();
-        seleccionarGarantiasExistentes.SeleccionarCheckGarantiasExistentes();
+        seleccionarGarantiasExistentes.SeleccionarCheckGarantiasExistentesMaquinayEquipo();
     }
 
     @And("en la ventana garantias existentes doy click al boton aceptar")

@@ -30,7 +30,7 @@ public class Hooks {
             byte[] screenshot = ((TakesScreenshot)driver).getScreenshotAs(OutputType.BYTES);
             scenario.attach(screenshot,"image/png","Failed");
         }
-        driver.manage().deleteAllCookies();
+        //driver.manage().deleteAllCookies();
         //driver.close();
 
     }

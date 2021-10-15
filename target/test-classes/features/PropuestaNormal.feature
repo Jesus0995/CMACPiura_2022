@@ -41,9 +41,9 @@ Feature: Crear una propuesta de Credito Empresarial de tipo NORMAL en el Sistema
     Then el sistema direcciona a la ventana propuesta y doy click al boton Registro de seguros
     And en la ventana Seleccion de seguros doy click en boton Confirmar
     And el sistema direcciona a la ventana Registro Seguros y check en seguro desgravamen flat MN
-    And en la ventana Registro Seguros ingresar el numero DPS "1234567890"
+    And en la ventana Registro Seguros ingresar el numero DPS Seguro Desgravamen
     And en la ventana Registro Seguros hacer check en seguro todo riesgo Plan Pymes
-    And en la ventana Registro Seguros ingresar el numero DPS "0987654321" del seguro Plan Pymes
+    And en la ventana Registro Seguros ingresar el numero DPS Seguro Plan Pymes
     And en la ventana Registro Seguros doy click en Confirmar
     And en la ventana seguros seleccionados visualizar información y doy click en cerrar
     Then el sistema direcciona a la ventana propuesta y doy click en Anexar CheckList creditos
@@ -53,7 +53,8 @@ Feature: Crear una propuesta de Credito Empresarial de tipo NORMAL en el Sistema
     Then el sistema direcciona a la ventana propuesta y se procede a ingresar comentarios en la propuesta
     And en la ventana Propuesta doy click en Anexar Garantias Existentes
     And en la ventana Seleccionar Garantias doy click en Registrar Garantias
-    And en la ventana Garantias Existentes seleccionar todas las garantias existentes y doy click en el boton Aceptar
+    And en la ventana Garantias Existentes seleccionar todas las garantias existentes
+    And en la ventana Garantias Existentes doy click en el boton Aceptar
     And el sistema muestra una ventana de cancelacion de pagares y se cierra automaticamente
     And en la ventana Propuesta doy click en Enlazar Estados Financieros
     Then el sistema direcciona a la ventana Estados Financieros y doy click en Enlazar
@@ -79,7 +80,7 @@ Feature: Crear una propuesta de Credito Empresarial de tipo NORMAL en el Sistema
 
     Examples:
       | cliente |
-      | 476     |
+      | 967     |
 
 
 

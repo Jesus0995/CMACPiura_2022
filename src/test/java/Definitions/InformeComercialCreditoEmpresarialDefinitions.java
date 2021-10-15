@@ -98,4 +98,10 @@ public class InformeComercialCreditoEmpresarialDefinitions {
         loginSGCRED.ClickCerrarSesion();
 
     }
+
+    @And("finalmente cerrar el navegador")
+    public void finalmenteCerrarElNavegador() {
+        loginSGCRED.CerrarNavegador();
+
+    }
 }

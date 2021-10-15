@@ -327,9 +327,11 @@ public class PropuestaCreditoEmpresarialDefinitions {
         registrarSeguros.ClickCheckSeguroDesgravamenMN();
     }
 
-    @And("en la ventana Registro Seguros ingresar el numero DPS {string}")
-    public void enLaVentanaRegistroSegurosIngresarElNumeroDPS(String seguroDesgravameMN) {
-        registrarSeguros.IngresarSeguroDesgravamenMN(seguroDesgravameMN);
+    @And("en la ventana Registro Seguros ingresar el numero DPS Seguro Desgravamen")
+    public void enLaVentanaRegistroSegurosIngresarElNumeroDPSSeguroDesgravamen() {
+        //String seguroDesgravameMN
+        //registrarSeguros.IngresarSeguroDesgravamenMN(seguroDesgravameMN);
+        registrarSeguros.ObtenerNumeroAleatorioDPSSeguroDesgravamen();
     }
 
     @And("en la ventana Registro Seguros hacer check en seguro todo riesgo Plan Pymes")
@@ -337,9 +339,11 @@ public class PropuestaCreditoEmpresarialDefinitions {
         registrarSeguros.ClickCheckSeguroRiesgoPlanPymes();
     }
 
-    @And("en la ventana Registro Seguros ingresar el numero DPS {string} del seguro Plan Pymes")
-    public void enLaVentanaRegistroSegurosIngresarElNumeroDPSDelSeguroPlanPymes(String seguroRiesgoPlanPymes) {
-        registrarSeguros.IngresarSeguroRiesgoPlanPymes(seguroRiesgoPlanPymes);
+    @And("en la ventana Registro Seguros ingresar el numero DPS Seguro Plan Pymes")
+    public void enLaVentanaRegistroSegurosIngresarElNumeroDPSDelSeguroPlanPymes() {
+        //String seguroRiesgoPlanPymes
+        //registrarSeguros.IngresarSeguroRiesgoPlanPymes(seguroRiesgoPlanPymes);
+        registrarSeguros.ObtenerNumeroAleatorioDPSeguroRiesgoPlanPymes();
     }
 
     @And("en la ventana Registro Seguros doy click en Confirmar")
@@ -525,10 +529,15 @@ public class PropuestaCreditoEmpresarialDefinitions {
         seleccionarGarantia.CerrarVentanaGarantia();
     }
 
-    @And("en la ventana Garantias Existentes seleccionar todas las garantias existentes y doy click en el boton Aceptar")
-    public void enLaVentanaGarantiasExistentesSeleccionarTodasLasGarantiasExistentesYDoyClickEnElBotonAceptar() {
+    @And("en la ventana Garantias Existentes seleccionar todas las garantias existentes")
+    public void enLaVentanaGarantiasExistentesSeleccionarTodasLasGarantiasExistentes() {
         seleccionarGarantiasExistentes.AbrirVentanaGarantiasExistentes();
-        seleccionarGarantiasExistentes.SeleccionarCheckGarantiasExistentes();
+        seleccionarGarantiasExistentes.SeleccionarCheckGarantiasExistentesMaquinayEquipo();
+    }
+
+
+    @And("en la ventana Garantias Existentes doy click en el boton Aceptar")
+    public void enLaVentanaGarantiasExistentesDoyClickEnElBotonAceptar() {
         seleccionarGarantiasExistentes.ClickBtnAceptar();
         seleccionarGarantiasExistentes.CerrarVentanaGarantiasExistentes();
     }
@@ -675,6 +684,7 @@ public class PropuestaCreditoEmpresarialDefinitions {
 
 
     }
+
 
 
 }

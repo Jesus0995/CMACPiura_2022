@@ -157,4 +157,9 @@ public class InformeVisitaCreditoEmpresarialDefinitions {
     public void direccionaALaVentanaLoginYDoyClickEnElBotonCerrarSesion() {
         loginInforme.ClickCerrarSesion();
     }
+
+    @And("finalmente cerramos el navegador")
+    public void finalmenteCerramosElNavegador() {
+        loginInforme.CerrarNavegador();
+    }
 }

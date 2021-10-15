@@ -1,5 +1,6 @@
 package PageObjects;
 
+import org.apache.commons.math3.analysis.function.Abs;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -7,14 +8,25 @@ import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Random;
 import java.util.Set;
-
+import Functions.funcionEsperar;
+import sun.security.util.Length;
+import java.lang.Math.*;
 public class RegistrarSegurosPage {
     //2. crear variables
-
+    private funcionEsperar objFuncionEsperar;
     private WebDriver driver;
     private WebDriverWait wait;
     private Set<String> identificadoresRegistrarSeguros;
+
+
+
+
+
+
 
     //Mapear los locator de la pagina
     @FindBy(xpath = "//input[@name=\"seguro\" and @value=\"4_02201\"]") private WebElement chk_SeguroDesgravamenFlatMN;
@@ -69,9 +81,25 @@ public class RegistrarSegurosPage {
     }
 
     public void IngresarSeguroDesgravamenMN (String seguroDesgravameMN){
-        //wait.until(ExpectedCondition.visibilityof(txt_segdesgrnmdps));
         txt_SeguroDesgravamenFlatMN.clear();
         txt_SeguroDesgravamenFlatMN.sendKeys(seguroDesgravameMN);
+
+    }
+
+    public void ObtenerNumeroAleatorioDPSSeguroDesgravamen(){
+        int a = -8;
+        //int  numero = Abs(-80000000);
+
+        int min_val = 10000000;
+        int max_val = 99999999;
+        Random rand = new Random();
+        int rand_val = Math.abs(rand.nextInt((max_val-min_val+1))+min_val);
+        String DPSDesgravamen = '9'+String.valueOf(rand_val);
+        System.out.println(Math.abs(a));
+        System.out.println(rand.nextInt());
+        System.out.println("el numero aleatorio es:"+(rand_val));
+        txt_SeguroDesgravamenFlatMN.clear();
+        txt_SeguroDesgravamenFlatMN.sendKeys(DPSDesgravamen);
 
     }
 
@@ -83,6 +111,18 @@ public class RegistrarSegurosPage {
     public void IngresarSeguroRiesgoPlanPymes (String seguroRiesgoPlanPymes) {
         txt_SeguroRiesgoPlanPymes.click();
         txt_SeguroRiesgoPlanPymes.sendKeys(seguroRiesgoPlanPymes);
+    }
+
+
+    public void ObtenerNumeroAleatorioDPSeguroRiesgoPlanPymes(){
+        int min_val = 10000000;
+        int max_val = 99999999;
+        Random rand = new Random();
+        int rand_val1 = Math.abs(rand.nextInt(max_val-min_val+2)+min_val);
+        String DPSPlanPymes = '9'+String.valueOf(rand_val1);
+        System.out.println("el numero aleatorio es:"+DPSPlanPymes);
+        txt_SeguroRiesgoPlanPymes.clear();
+        txt_SeguroRiesgoPlanPymes.sendKeys(DPSPlanPymes);
     }
 
     public void ClickCheckSeguroDesgravamenSaldo (){

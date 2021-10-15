@@ -67,19 +67,36 @@ public class SeleccionarGarantiasExistentesPage {
         System.out.println("El tipo de garantia es:"+lbl_MaquinariaEquipo.getText());
         }
 */
-
+/*
     public void SeleccionarCheckGarantiasExistentes() {
 
-        List<WebElement> allGarantias = driver.findElements(By.name("garantia"));
+        //List<WebElement> checksGarantias = driver.findElements(By.name("garantia"));
+        //List<WebElement> nombreGarantias = driver.findElements(By.xpath("//td[contains(text(),'MAQUINARIA Y EQUIPO                               ')]/preceding-sibling::td/input[@type='checkbox']"));
+        //List<WebElement> checks2Garantias = driver.findElements(By.cssSelector("#frmGarantia > table:nth-child(1) > tbody:nth-child(1) > tr:nth-child(5) > td)"));
         try {
-            for (WebElement Garantias : allGarantias) {
-                Garantias.click();
+            for (WebElement Garantias : nombreGarantias) {
+                    Garantias.click();
             }
         } catch (Exception error) {
             error.printStackTrace();
             System.out.println("Error al seleccionar las garantias" + error.getMessage());
         }
-    }
+*/
+        public void SeleccionarCheckGarantiasExistentesMaquinayEquipo() {
+            List<WebElement> checkBoxGarantiaPersonal = driver.findElements(By.xpath("//td[contains(text(),'MAQUINARIA Y EQUIPO                               ')]/preceding-sibling::td/input[@type='checkbox']"));
+            try {
+                for (WebElement checkBox : checkBoxGarantiaPersonal) {
+                    checkBox.click();
+                }
+
+            } catch (Exception error) {
+                error.printStackTrace();
+                System.out.println("Error al seleccionar las garantias" + error.getMessage());
+            }
+        }
+
+
+
 
     /*
     public void SeleccionarCheckGarantiaMaquinaria(){

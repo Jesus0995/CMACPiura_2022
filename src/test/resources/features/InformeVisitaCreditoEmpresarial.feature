@@ -37,11 +37,9 @@ Feature: Registrar informe de visita con el perfil Asesor de Negocio
     And el sistema direcciona a ventana listado informe de visita y doy click en el boton regresar
     And el sistema direcciona a menu principal y doy click al menu cerrar sesion
     And direcciona a la ventana login y doy click en el boton cerrar sesion
+    And finalmente cerramos el navegador
 
     Examples:
       | cliente |
-      | 216     |
-      | 238     |
-      | 476     |
-      | 491     |
-      | 629     |
+      | 967     |
+      | 1145    |

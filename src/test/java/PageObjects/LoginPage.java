@@ -41,13 +41,13 @@ public class LoginPage {
         Esperar(32);
         wait.until(ExpectedConditions.elementToBeClickable(btn_Cerrar));
         btn_Cerrar.click();
-        Esperar(2);
-        driver.close();
-
     }
 
 
-
+    public void CerrarNavegador(){
+        Esperar(2);
+        driver.close();
+    }
 
     private void Esperar(Integer Segundos){
         Integer Milisegundos = Segundos * 1000;
