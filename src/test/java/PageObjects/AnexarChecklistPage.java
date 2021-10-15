@@ -1,6 +1,6 @@
 package PageObjects;
 
-
+import Functions.funcionEsperar;
 import org.openqa.selenium.*;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
@@ -17,7 +17,7 @@ public class AnexarChecklistPage {
     private WebDriverWait wait;
     private Set<String> identificadoresAnexarCheckList;
     private Alert MensajeAlerta;
-
+    private funcionEsperar objFuncionEsperar;
 
     //Informacion basica cliente
     @FindBy(xpath = "//input[@id='item_1' and @value='2']")
@@ -149,7 +149,7 @@ public class AnexarChecklistPage {
 
     public void CerrarVentanaAnexarCheckList() {
         Integer SetSize = identificadoresAnexarCheckList.size();
-        Integer Index = 0;
+        Integer Index=0;
         String[] Handles = new String[SetSize];
         for (String identificadorAnexarCheckList : identificadoresAnexarCheckList) {
             Handles[Index] = identificadorAnexarCheckList;
@@ -169,18 +169,16 @@ public class AnexarChecklistPage {
 
 
     public void SeleccionarOpcionesCheckListCredito() {
-        Esperar(7);
+        objFuncionEsperar.EsperarTiempo(7);
         try {
            List<WebElement> checks = driver.findElements(By.xpath("//input[@Title='Expediente']"));
            for (WebElement check : checks) {
                check.click();
-
             }
         } catch (Exception error) {
             error.printStackTrace();
             System.out.println("Error al seleccionar las opciones del check list credito" + error.getMessage());
         }
-
 
     }
 
@@ -401,14 +399,12 @@ public class AnexarChecklistPage {
     public void Seleccionar_36TasacionBien() {
         wait.until(ExpectedConditions.elementToBeClickable(opt_36TasacionBien));
         opt_36TasacionBien.click();
-        //Esperar(1);
-
-    }
+          }
 
     public void Seleccionar_37opinionLegal() {
     WebElement opcion37 = driver.findElement(By.xpath("//input[@id='item_71' and @value='2']"));
         try {
-            Esperar(9);
+            objFuncionEsperar.EsperarTiempo(9);
             opcion37.click();
 
         } catch (Exception error) {
@@ -417,21 +413,6 @@ public class AnexarChecklistPage {
         }
     }
 
-    /*
-        public void Seleccionar_37opinionLegal1(){
-            Esperar (3);
-            try{
-            String JScript = opt_37opinionLegal.getAttribute("click");
-            ((JavascriptExecutor) driver).executeScript(JScript);
-            } catch (Exception error) {
-
-                error.printStackTrace();
-
-                System.out.println(error.getMessage());
-
-            }
-        }
-    */
     public void Seleccionar_38ContratoGarantiaMobiliaria() {
         wait.until(ExpectedConditions.elementToBeClickable(opt_38ContratoGarantiaMobiliaria));
         opt_38ContratoGarantiaMobiliaria.click();
@@ -463,11 +444,10 @@ public class AnexarChecklistPage {
         opt_42CopiaLiteralPartida.click();
     }
 
-    public void ClickGuardarTerminar() {
+    public void ClickBtnGuardarTerminar() {
         wait.until(ExpectedConditions.elementToBeClickable(btn_guardarTerminar));
         btn_guardarTerminar.click();
 
-        //Esperar (1);
     }
 
     public void AceptarAlerta() {
@@ -475,20 +455,8 @@ public class AnexarChecklistPage {
         MensajeAlerta = driver.switchTo().alert();
         System.out.println("El mensaje alerta: " + MensajeAlerta.getText());
         MensajeAlerta.accept();
-        Esperar(3);
+        objFuncionEsperar.EsperarTiempo(3);
 
     }
-
-    private void Esperar(Integer Segundos) {
-        Integer Milisegundos = Segundos * 1000;
-        try {
-            Thread.sleep(Milisegundos);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
-
-
-    }
-
 
 }

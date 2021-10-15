@@ -139,7 +139,7 @@ public class PropuestaCreditoConsumoDefinitions {
         }
 
         try {
-            servicio.ClickCargar();
+            servicio.ClickBtnCargar();
         } catch (Exception Error){
             System.out.println(Error.getMessage());
         }
@@ -164,7 +164,7 @@ public class PropuestaCreditoConsumoDefinitions {
 
     @And("en la ventana propuesta de financiamiento doy clik al boton nueva operacion")
     public void enLaVentanaPropuestaDeFinanciamientoDoyClikAlBotonNuevaOperacion() {
-        propuesta.ClickBotonOperacion();
+        propuesta.ClickBtnOperacion();
         //pantallazo();
     }
 
@@ -191,7 +191,7 @@ public class PropuestaCreditoConsumoDefinitions {
             operacioncredito.IngresarMonto(lista.get(i).get("Monto"));
             operacioncredito.IngresarTasaInicial(lista.get(i).get("TasaInicial"));
         }
-        operacioncredito.ClickCalcular();
+        operacioncredito.ClickBtnCalcular();
 
     }
 
@@ -231,14 +231,14 @@ public class PropuestaCreditoConsumoDefinitions {
         operacioncredito.SeleccionarFormaDesembolso(FormaDesembolso);
     }
 
-    @And("en la ventana operacion credito seleccionar el codigo de cuenta {string}")
-    public void enLaVentanaOperacionCreditoSeleccionarElNumeroDeCuenta(String CodigoCuenta) {
-        operacioncredito.SeleccionarCodigoCuenta(CodigoCuenta);
+    @And("en la ventana operacion credito seleccionar el codigo de cuenta")
+    public void enLaVentanaOperacionCreditoSeleccionarElNumeroDeCuenta() {
+        operacioncredito.SeleccionarCodigoCuenta();
     }
 
-    @And("en la ventana operacion credito seleccionar la fecha desembolso {string}")
-    public void enLaVentanaOperacionCreditoSeleccionarLaFechaDesembolso(String FechaDesembolso) {
-        operacioncredito.IngresarFechaDesembolso(FechaDesembolso);
+    @And("en la ventana operacion credito seleccionar la fecha desembolso")
+    public void enLaVentanaOperacionCreditoSeleccionarLaFechaDesembolso() {
+        operacioncredito.IngresarFechaDesembolso();
     }
 
     @And("en la ventana operacion credito ingresar una nota {string}")
@@ -249,7 +249,8 @@ public class PropuestaCreditoConsumoDefinitions {
 
     @And("en la ventana operacion credito doy click en el boton grabar")
     public void enLaVentanaOperacionCreditoDoyClickEnElBotonGrabar() {
-        operacioncredito.ClickGrabar();
+
+        operacioncredito.ClickBtnGrabar();
     }
 
     @And("en la ventana operacion credito aceptar la alerta")
@@ -260,7 +261,7 @@ public class PropuestaCreditoConsumoDefinitions {
 
     @And("el sistema direcciona a la ventana propuesta y doy clik en el boton registro de seguro")
     public void elSistemaDireccionaALaVentanaPropuestaYDoyClikEnElBotonRegistroDeSeguro() {
-        propuesta.ClickBotonRegistrarSeguro();
+        propuesta.ClickBtnRegistrarSeguro();
     }
 
     @And("muestra la ventana seleccionar seguros y doy click en el boton confirmar")
@@ -276,9 +277,9 @@ public class PropuestaCreditoConsumoDefinitions {
         registrarSeguros.ClickCheckSeguroDesgravamenSaldo();
     }
 
-    @And("en la ventana registrar seguros ingresar el numero DPS {string} del seguro desgravamen")
-    public void enLaVentanaRegistrarSegurosIngresarElNumeroDPSDelSeguroDesgravamen(String seguroDesgravameSaldo) {
-        registrarSeguros.IngresarSeguroDesgravamenSaldo(seguroDesgravameSaldo);
+    @And("en la ventana registrar seguros ingresar el numero DPS del seguro desgravamen")
+    public void enLaVentanaRegistrarSegurosIngresarElNumeroDPSDelSeguroDesgravamen() {
+        registrarSeguros.IngresarSeguroDesgravamenSaldo();
     }
 
     @And("en la ventana registrar seguros doy check en el seguro vida plan1")
@@ -286,14 +287,14 @@ public class PropuestaCreditoConsumoDefinitions {
         registrarSeguros.ClickCheckSeguroVidaPlan1();
     }
 
-    @And("en la ventana registrar seguros ingresar el numero DPS {string} del seguro vida plan1")
-    public void enLaVentanaRegistrarSegurosIngresarElNumeroDPSDelSeguroVidaPlan1(String seguroVidaPlan1) {
-        registrarSeguros.IngresarSeguroVidaPlan1(seguroVidaPlan1);
+    @And("en la ventana registrar seguros ingresar el numero DPS del seguro vida plan1")
+    public void enLaVentanaRegistrarSegurosIngresarElNumeroDPSDelSeguroVidaPlan1() {
+        registrarSeguros.IngresarSeguroVidaPlan1();
     }
 
     @And("en la ventana registrar seguros doy click en el boton confirmar")
     public void enLaVentanaRegistrarSegurosDoyClickEnElBotonConfirmar() {
-        registrarSeguros.ClickConfirmar();
+        registrarSeguros.ClickBtnConfirmar();
         registrarSeguros.CerrarVentanaRegistrarSeguros();
     }
 
@@ -319,7 +320,7 @@ public class PropuestaCreditoConsumoDefinitions {
     @And("muestra la ventana garantias existentes y doy check a garantia personal")
     public void muestraLaVentanaGarantiasExistentesYDoyCheckAGarantiaPersonal() {
         seleccionarGarantiasExistentes.AbrirVentanaGarantiasExistentes();
-        seleccionarGarantiasExistentes.SeleccionarCheckGarantiasExistentesMaquinayEquipo();
+        seleccionarGarantiasExistentes.SeleccionarCheckGarantiasExistentesCC();
     }
 
     @And("en la ventana garantias existentes doy click al boton aceptar")
@@ -404,7 +405,7 @@ public class PropuestaCreditoConsumoDefinitions {
     @And("muestra ventana grabar informacion y doy click en el boton cerrar")
     public void muestraVentanaGrabarInformacionYDoyClickEnElBotonCerrar() {
         grabarDocumentoPropuesta.AbrirVentanaGrabarPropuesta();
-        grabarDocumentoPropuesta.ClickbtnCerrarInformacion();
+        grabarDocumentoPropuesta.ClickBtnCerrarInformacion();
         grabarDocumentoPropuesta.CerrarVentanaGrabarPropuesta();
     }
 
@@ -432,14 +433,14 @@ public class PropuestaCreditoConsumoDefinitions {
 
     @And("en la ventana emitir dictamen propuesta doy click en el boton procesar")
     public void enLaVentanaEmitirDictamenPropuestaDoyClickEnElBotonProcesar() {
-        aprobarDictamenPropuesta.ClickbtnProcesar();
+        aprobarDictamenPropuesta.ClickBtnProcesar();
         aprobarDictamenPropuesta.CerrarVentanaAprobarDictamenPropuesta();
     }
 
     @And("muestra a la ventana grabar informacion y doy click en el boton cerrar")
     public void muestraALaVentanaGrabarInformacionYDoyClickEnElBotonCerrar() {
         grabarDocumentoPropuesta.AbrirVentanaGrabarPropuesta();
-        grabarDocumentoPropuesta.ClickbtnCerrarInformacion();
+        grabarDocumentoPropuesta.ClickBtnCerrarInformacion();
         grabarDocumentoPropuesta.CerrarVentanaGrabarPropuesta();
     }
 
@@ -458,6 +459,13 @@ public class PropuestaCreditoConsumoDefinitions {
     public void direccionaAlLoginYDoyClickEnElBotonCerrarSesion() {
 
         login.ClickCerrarSesion();
+    }
+
+    @And("cierro sesion de navegador")
+    public void cierroSesionDeNavegador() {
+
+        Hooks.driver.close();
+
     }
 
 

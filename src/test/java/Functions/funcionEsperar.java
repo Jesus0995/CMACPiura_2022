@@ -16,14 +16,14 @@ public class funcionEsperar {
         }
     }
 
-    public void EsperarCierreVentana(String idVentana){
+    public void EsperarCierreVentana(String VentanaUltima){
         WebDriver driver = Hooks.driver;
 
         System.out.println("Inicio cerrar ventana");
 
         for (int i = 0; i <=240; i+=1)
         {
-            if(driver.getWindowHandles().contains(idVentana)){
+            if(driver.getWindowHandles().contains(VentanaUltima)){
                 EsperarTiempo (1);
                 System.out.println("Esperando el cierre de ventana:" +i);
             }
@@ -32,10 +32,4 @@ public class funcionEsperar {
             }
         }
     }
-
-    /*public void EsperarControlClick(WebElement Control){
-
-    wait.unit.
-    }*/
-
 }

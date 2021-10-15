@@ -1,5 +1,6 @@
 package PageObjects;
 
+import Functions.funcionEsperar;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -10,6 +11,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 public class InformeComercialNuevoPage {
     private WebDriver driver;
     private WebDriverWait wait;
+    private funcionEsperar objFuncionEsperar;
 
     @FindBy(xpath = "//input[@id='patrimoniopersonal']") private WebElement txt_patrimonio;
     @FindBy(xpath = "//input[@name='patrimoniopersonal']") private WebElement txt_PatrimonioComercial;
@@ -30,7 +32,7 @@ public class InformeComercialNuevoPage {
     }
 
     public  void IngresarPatrimonioComercial(String PatrimonioComercial){
-        Esperar (6);
+        objFuncionEsperar.EsperarTiempo (6);
         txt_PatrimonioComercial.clear();
         txt_PatrimonioComercial.sendKeys(PatrimonioComercial);
     }
@@ -44,17 +46,6 @@ public class InformeComercialNuevoPage {
     public void ClickRegresar(){
         wait.until(ExpectedConditions.elementToBeClickable(btn_regresar));
         btn_regresar.click();
-    }
-
-    private void Esperar (Integer Segundos) {
-        Integer Milisegundos = Segundos * 1000;
-        try {
-            Thread.sleep(Milisegundos);
-        }catch (InterruptedException error){
-            error.printStackTrace();
-        }
-
-
     }
 
 }

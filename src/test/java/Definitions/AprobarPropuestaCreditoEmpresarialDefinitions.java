@@ -16,8 +16,7 @@ public class AprobarPropuestaCreditoEmpresarialDefinitions {
     ListadoPropuestaPage listadoPropuesta;
     PopUpComunicadoPage popUpComunicado;
     PropuestaPage propuesta;
-    AnexarCheckListCreditoAprobarPage aprobarcheckListCredito;
-    CerrarAnexarCheckListCreditoAprobarPage cerrarAprobarCheckListCredito;
+    AprobarCheckListCreditoPage aprobarcheckListCredito;
 
     AprobarDictamenPropuestaPage aprobarDictamenPropuesta;
     GrabarInformacionDocumentoPage grabarDocumentoPropuesta;
@@ -29,8 +28,8 @@ public class AprobarPropuestaCreditoEmpresarialDefinitions {
         listadoPropuesta = new ListadoPropuestaPage(Hooks.driver);
         popUpComunicado = new PopUpComunicadoPage(Hooks.driver);
         propuesta = new PropuestaPage(Hooks.driver);
-        aprobarcheckListCredito = new AnexarCheckListCreditoAprobarPage(Hooks.driver);
-        cerrarAprobarCheckListCredito = new CerrarAnexarCheckListCreditoAprobarPage(Hooks.driver);
+        aprobarcheckListCredito = new AprobarCheckListCreditoPage(Hooks.driver);
+
 
         aprobarDictamenPropuesta = new AprobarDictamenPropuestaPage(Hooks.driver);
         grabarDocumentoPropuesta = new GrabarInformacionDocumentoPage(Hooks.driver);
@@ -89,35 +88,9 @@ public class AprobarPropuestaCreditoEmpresarialDefinitions {
         popUpComunicado.ValidarComunicado();
     }
 
-    @And("en la ventana Propuesta doy click en el Boton Verificar CheckListCredito")
-    public void enLaVentanaPropuestaDoyClickEnElBotonVerificarCheckListCredito() {
-        propuesta.ClickBtnVerificarCheckListCredito();
-    }
-    @And("el sistema muestra la ventana Anexar Checklist Credito y doy click en la Opcion Aprobar")
-    public void elSistemaMuestraLaVentanaAnexarChecklistCreditoYDoyClickEnLaOpcionAprobar() {
-        aprobarcheckListCredito.AbrirVentanaAnexarCheckListAprobar();
-        aprobarcheckListCredito.SeleccionarOptAprobar();
-
-    }
-    @And("en la misma ventana Anexar ingreso un comentario de aprobacion {string}")
-    public void enLaMismaVentanaAnexarIngresoUnComentarioDeAprobacion(String ComentariosAprobacion) {
-        aprobarcheckListCredito.IngresarComentarios(ComentariosAprobacion);
-
-    }
-    @And("en la misma ventana Anexar doy click en el boton Guardar")
-    public void enLaMismaVentanaAnexarDoyClickEnElBotonGuardar() {
-        aprobarcheckListCredito.ClickBtnGuardar();
-        //aprobarcheckListCredito.CerrarVentanaAnexarCheckListAprobar();
-    }
-
-    @And("el sistema me direcciona a la misma ventana y doy click en el boton cerrar")
-    public void elSistemaMeDireccionaALaMismaVentanaYDoyClickEnElBotonCerrar() {
-        cerrarAprobarCheckListCredito.AbrirVentanaCerrarAnexarCheckListAprobar();
-        cerrarAprobarCheckListCredito.ClickBtnCerrar();
-        cerrarAprobarCheckListCredito.CerrarVentanaCerrarAnexarCheckListAprobar();
-    }
     @And("en la ventana principal de Propuesta doy click en el Menu Emitir Dictamen")
     public void enLaVentanaPrincipalDePropuestaDoyClickEnElMenuEmitirDictamen() {
+
         propuesta.AbrirOpcionesDictamen();
     }
     @And("en las opciones del Menu Emitir Dictamen seleccionar el boton Aprobar")
@@ -161,4 +134,27 @@ public class AprobarPropuestaCreditoEmpresarialDefinitions {
         loginAprobar.ClickCerrarSesion();
     }
 
+    @And("en la ventana principal de Propuesta doy click en el boton verificar checklist credito")
+    public void enLaVentanaPrincipalDePropuestaDoyClickEnElBotonVerificarChecklistCredito() {
+        propuesta.ClickBtnVerificarCheckListCredito();
+    }
+
+    @And("en la ventana Anexar CheckList Credito seleccionar Aprobar e ingresar un comentario")
+    public void enLaVentanaAnexarCheckListCreditoSeleccionarAprobarEIngresarUnComentario() {
+        aprobarcheckListCredito.AbrirVentanaAprobarCheckListCredito();
+        aprobarcheckListCredito.SeleccionarOptAprobar();
+        aprobarcheckListCredito.IngresarComentarios();
+    }
+
+    @And("en la ventana Anexar CheckList Credito doy click en el boton Guardar")
+    public void enLaVentanaAnexarCheckListCreditoDoyClickEnElBotonGuardar() {
+        aprobarcheckListCredito.ClickBtnGuardar();
+        
+    }
+
+    @And("en la ventana Anexar CheckList Credito doy click en el boton Cerrar")
+    public void enLaVentanaAnexarCheckListCreditoDoyClickEnElBotonCerrar() {
+        aprobarcheckListCredito.ClickBtnCerrar();
+        aprobarcheckListCredito.CerrarVentanaAprobarCheckListCredito();
+    }
 }

@@ -26,7 +26,7 @@ public class SeleccionarSegurosPage {
             LastHandle = identificadorSeleccionarOP;
         }
         driver.switchTo().window(LastHandle);
-        System.out.println("Titulo:" + driver.getTitle());
+        System.out.println("Titulo:" + driver.getWindowHandle()+"-"+ driver.getTitle());
 
     }
 
@@ -38,7 +38,7 @@ public class SeleccionarSegurosPage {
             Handles[Index] = identificadorSeleccionarSeguros;
             Index++;
         }
-        System.out.println(Handles[0]);
+        System.out.println("Ventana Principal:" +Handles[0]);
         driver.switchTo().window(Handles[0]);
 
     }
@@ -51,7 +51,13 @@ public class SeleccionarSegurosPage {
 
     }
     public void ClickbtnConfirmar(){
+        try{
         wait.until(ExpectedConditions.elementToBeClickable(btn_Confirmar));
         btn_Confirmar.click();}
+        catch (Exception error) {
+        error.printStackTrace();
+            System.out.println("Error al hacer click en boton confirmar:"+error.getMessage());
+        }
+    }
 
 }

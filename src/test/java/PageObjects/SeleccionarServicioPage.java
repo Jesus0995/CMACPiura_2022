@@ -155,10 +155,8 @@ public class SeleccionarServicioPage {
     }
     */
 
-    public void ClickCargar() throws InterruptedException {
-
+    public void ClickBtnCargar() throws InterruptedException {
         try {
-
             wait.until(ExpectedConditions.elementToBeClickable(btn_Cargar));
             btn_Cargar.click();
             Thread.sleep(10000);

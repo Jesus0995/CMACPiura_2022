@@ -1,5 +1,6 @@
 package PageObjects;
 
+import Functions.funcionEsperar;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -14,65 +15,50 @@ public class EnlazarEstadosFinancierosPage {
     private WebDriver driver;
     private WebDriverWait wait;
     private Set<String> identificadoresEnlazarEstadosFinancieros;
+    private funcionEsperar objFuncionEsperar;
 
     //mapeo elementos
-    @FindBy(xpath = "//button[@type=\"submit\"]") private WebElement btn_enlazar;
+    @FindBy(xpath = "//button[@type=\"submit\"]")
+    private WebElement btn_Enlazar;
 
-    public void AbrirVentanaEnlazarEstadosFinancieros(){
+    public void AbrirVentanaEnlazarEstadosFinancieros() {
         identificadoresEnlazarEstadosFinancieros = driver.getWindowHandles();
         System.out.println(identificadoresEnlazarEstadosFinancieros);
-        String LastHandle="";
+        String LastHandle = "";
 
-        for (String identificadorEnlazarEstadosFinancieros : identificadoresEnlazarEstadosFinancieros){
-            LastHandle=identificadorEnlazarEstadosFinancieros;
+        for (String identificadorEnlazarEstadosFinancieros : identificadoresEnlazarEstadosFinancieros) {
+            LastHandle = identificadorEnlazarEstadosFinancieros;
         }
         driver.switchTo().window(LastHandle);
         System.out.println("Titulo:" + driver.getTitle());
     }
 
-    public void CerrarVentanaEnlazarEstadosFinancieros(){
+    public void CerrarVentanaEnlazarEstadosFinancieros() {
         Integer SetSize = identificadoresEnlazarEstadosFinancieros.size();
-        Integer Index= 0;
+        Integer Index = 0;
 
-        String[]Handles = new String[SetSize];
+        String[] Handles = new String[SetSize];
 
-        for (String identificadorEnlazarEstadosFinancieros : identificadoresEnlazarEstadosFinancieros){
-                Handles[Index] = identificadorEnlazarEstadosFinancieros;
-                Index++;
-            }
-            System.out.println(Handles[0]);
-            driver.switchTo().window(Handles[0]);
-
+        for (String identificadorEnlazarEstadosFinancieros : identificadoresEnlazarEstadosFinancieros) {
+            Handles[Index] = identificadorEnlazarEstadosFinancieros;
+            Index++;
         }
+        System.out.println(Handles[0]);
+        driver.switchTo().window(Handles[0]);
+
+    }
 
     public EnlazarEstadosFinancierosPage(WebDriver d) {
         driver = d;
-        wait =  new WebDriverWait(driver,30);
-        PageFactory.initElements(driver,this);
+        wait = new WebDriverWait(driver, 30);
+        PageFactory.initElements(driver, this);
 
     }
 
-    public void ClickbtnEnlazar(){
-        wait.until(ExpectedConditions.elementToBeClickable(btn_enlazar));
-        btn_enlazar.click();
-        Esperar(2);
-
-    }
-
-
-
-
-    private void Esperar (Integer Segundos){
-        Integer Milisegundos = Segundos * 10000;
-
-        try {
-            Thread.sleep(Milisegundos);
-        }catch (InterruptedException e){
-            e.printStackTrace();
-        }
-
-
-
+    public void ClickbtnEnlazar() {
+        wait.until(ExpectedConditions.elementToBeClickable(btn_Enlazar));
+        btn_Enlazar.click();
+        objFuncionEsperar.EsperarTiempo(2);
     }
 
 }

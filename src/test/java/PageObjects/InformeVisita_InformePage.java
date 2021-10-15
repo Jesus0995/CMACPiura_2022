@@ -1,5 +1,6 @@
 package PageObjects;
 
+import Functions.funcionEsperar;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -8,8 +9,10 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class InformeVisita_InformePage {
-    WebDriver driver;
-    WebDriverWait wait;
+    private WebDriver driver;
+    private WebDriverWait wait;
+    private funcionEsperar objFuncionEsperar;
+
 
     @FindBy(xpath = "//td[@class='Invisible']//button[1]") private WebElement btn_crearVisita;
     @FindBy(xpath = "//td[@class='Invisible']//button[2]") private WebElement btn_regresar;
@@ -26,22 +29,21 @@ public class InformeVisita_InformePage {
     }
 
     public void ClickBtnCrear() {
-        //wait.until(ExpectedConditions.elementToBeClickable(btn_crearVisita));
         try {
             Thread.sleep(3000);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
         btn_crearVisita.click();
-        Esperar(2);
+        objFuncionEsperar.EsperarTiempo(2);
 
     }
 
     public void ClickBtnRegresar() {
-        Esperar(40);
+        objFuncionEsperar.EsperarTiempo(40);
         wait.until(ExpectedConditions.elementToBeClickable(btn_regresar));
         btn_regresar.click();
-        Esperar(5);
+        objFuncionEsperar.EsperarTiempo(5);
 
     }
 
@@ -51,21 +53,11 @@ public class InformeVisita_InformePage {
     }
 
     public void ClickBtnRegresarCE() {
-        Esperar(60);
+        objFuncionEsperar.EsperarTiempo(60);
         wait.until(ExpectedConditions.elementToBeClickable(btn_RegresarCE));
         btn_RegresarCE.click();
 
     }
 
-    private void Esperar(Integer Segundos) {
-        Integer Milisegundos = Segundos * 1000;
-        try {
-            Thread.sleep(Milisegundos);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
-
-
-    }
 
 }

@@ -1,6 +1,6 @@
 package PageObjects;
 
-import org.junit.Assert;
+import Functions.funcionEsperar;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -17,15 +17,10 @@ public class SeleccionarGarantiasExistentesPage {
     private WebDriver driver;
     private WebDriverWait wait;
     private Set<String> identificadoresGarantiasExistentes;
-    protected static String Maquinaria;
+    private funcionEsperar objFuncionEsperar;
 
-    //mapeo objetos
-
-    //@FindBy(xpath = "//input[@name='garantia']") private WebElement chk_GarantiasExistentes;
     @FindBy(xpath = "//button[@type=\"submit\"]")
     private WebElement btn_Aceptar;
-
-    //@FindBy(xpath = "//table/tbody/tr[4]/td[5]") private WebElement lbl_MaquinariaEquipo;
 
     public void AbrirVentanaGarantiasExistentes() {
         identificadoresGarantiasExistentes = driver.getWindowHandles();
@@ -37,7 +32,7 @@ public class SeleccionarGarantiasExistentesPage {
         }
         driver.switchTo().window(LastHandle);
 
-        System.out.println("Titulo : " + driver.getTitle());
+        System.out.println("Titulo:" + driver.getTitle());
 
     }
 
@@ -49,7 +44,7 @@ public class SeleccionarGarantiasExistentesPage {
             Handles[Index] = identificadorGarantiasExistentes;
             Index++;
         }
-        System.out.println(Handles[0]);
+        System.out.println("Ventana principal: " + Handles[0]);
         driver.switchTo().window(Handles[0]);
 
     }
@@ -60,64 +55,57 @@ public class SeleccionarGarantiasExistentesPage {
         wait = new WebDriverWait(driver, 30);
         PageFactory.initElements(driver, this);
     }
-/*
-    public void ValidarTipoGarantiaMaquinaria(String MaquinariaEquipo){
-        wait.until(ExpectedConditions.visibilityOf(lbl_MaquinariaEquipo));
-        Assert.assertEquals(MaquinariaEquipo,lbl_MaquinariaEquipo.getText());
-        System.out.println("El tipo de garantia es:"+lbl_MaquinariaEquipo.getText());
-        }
-*/
-/*
-    public void SeleccionarCheckGarantiasExistentes() {
 
-        //List<WebElement> checksGarantias = driver.findElements(By.name("garantia"));
-        //List<WebElement> nombreGarantias = driver.findElements(By.xpath("//td[contains(text(),'MAQUINARIA Y EQUIPO                               ')]/preceding-sibling::td/input[@type='checkbox']"));
-        //List<WebElement> checks2Garantias = driver.findElements(By.cssSelector("#frmGarantia > table:nth-child(1) > tbody:nth-child(1) > tr:nth-child(5) > td)"));
-        try {
-            for (WebElement Garantias : nombreGarantias) {
-                    Garantias.click();
+    /*
+        public void ValidarTipoGarantiaMaquinaria(String MaquinariaEquipo){
+            wait.until(ExpectedConditions.visibilityOf(lbl_MaquinariaEquipo));
+            Assert.assertEquals(MaquinariaEquipo,lbl_MaquinariaEquipo.getText());
+            System.out.println("El tipo de garantia es:"+lbl_MaquinariaEquipo.getText());
             }
-        } catch (Exception error) {
-            error.printStackTrace();
-            System.out.println("Error al seleccionar las garantias" + error.getMessage());
-        }
-*/
-        public void SeleccionarCheckGarantiasExistentesMaquinayEquipo() {
-            List<WebElement> checkBoxGarantiaPersonal = driver.findElements(By.xpath("//td[contains(text(),'MAQUINARIA Y EQUIPO                               ')]/preceding-sibling::td/input[@type='checkbox']"));
-            try {
-                for (WebElement checkBox : checkBoxGarantiaPersonal) {
-                    checkBox.click();
-                }
+        public void SeleccionarCheckGarantiasExistentes() {
 
+            //List<WebElement> checksGarantias = driver.findElements(By.name("garantia"));
+            //List<WebElement> nombreGarantias = driver.findElements(By.xpath("//td[contains(text(),'MAQUINARIA Y EQUIPO                               ')]/preceding-sibling::td/input[@type='checkbox']"));
+            //List<WebElement> checks2Garantias = driver.findElements(By.cssSelector("#frmGarantia > table:nth-child(1) > tbody:nth-child(1) > tr:nth-child(5) > td)"));
+            try {
+                for (WebElement Garantias : nombreGarantias) {
+                        Garantias.click();
+                }
             } catch (Exception error) {
                 error.printStackTrace();
                 System.out.println("Error al seleccionar las garantias" + error.getMessage());
             }
+    */
+    public void SeleccionarCheckGarantiasExistentesMaquinayEquipo() {
+        List<WebElement> checkBoxGarantiaMaquinaria = driver.findElements(By.xpath("//td[contains(text(),'MAQUINARIA Y EQUIPO                               ')]/preceding-sibling::td/input[@type='checkbox']"));
+        try {
+            for (WebElement checkBox : checkBoxGarantiaMaquinaria) {
+                checkBox.click();
+            }
+
+        } catch (Exception error) {
+            error.printStackTrace();
+            System.out.println("Error al seleccionar las garantias" + error.getMessage());
         }
+    }
 
+    public void SeleccionarCheckGarantiasExistentesCC() {
+        List<WebElement> checkBoxGarantiaPersonal = driver.findElements(By.xpath("//td[contains(text(),'GARANTIA PERSONAL                                 ')]/preceding-sibling::td/input[@type='checkbox']"));
+        try {
+            for (WebElement checkBox : checkBoxGarantiaPersonal) {
+                checkBox.click();
+            }
 
-
-
-    /*
-    public void SeleccionarCheckGarantiaMaquinaria(){
-        wait.until(ExpectedConditions.elementToBeClickable(chk_GarantiaMaquinaria));
-        chk_GarantiaMaquinaria.click();
-    }*/
+        } catch (Exception error) {
+            error.printStackTrace();
+            System.out.println("Error al seleccionar las garantias" + error.getMessage());
+        }
+    }
 
     public void ClickBtnAceptar() {
         wait.until(ExpectedConditions.elementToBeClickable(btn_Aceptar));
         btn_Aceptar.click();
-        //Esperar(1);
-    }
 
-    private void Esperar(Integer Segundos) {
-        Integer Milisegundos = Segundos * 1000;
-
-        try {
-            Thread.sleep(Milisegundos);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
     }
 
 }

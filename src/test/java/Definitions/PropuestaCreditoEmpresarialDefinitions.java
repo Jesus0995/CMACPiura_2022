@@ -3,14 +3,10 @@ package Definitions;
 import PageObjects.*;
 import io.cucumber.datatable.DataTable;
 import io.cucumber.java.en.*;
-import org.bouncycastle.tsp.TSPUtil;
 
 import java.io.IOException;
 import java.util.List;
 import java.util.Map;
-import java.util.Set;
-
-import static Support.screenshot.pantallazo;
 
 public class PropuestaCreditoEmpresarialDefinitions {
     //crear variables de los pages
@@ -38,7 +34,7 @@ public class PropuestaCreditoEmpresarialDefinitions {
     EnlazarInformeVisitaPage enlazarInformeVisita;
     EnlazarInformeComercialNuevoPage enlazarInformeComercialNuevo;
     AprobarDictamenPropuestaPage aprobarDictamenPropuesta;
-    EnlazarEEFFGrupoVinculadoPage enlazarEEFFGrupoVinculado;
+    InformeEEFFConsolidadoGrupoVinculadoPage informeEEFFConsolidadoGrupoVinculado;
 
     //Constructor
     public PropuestaCreditoEmpresarialDefinitions() {
@@ -67,7 +63,7 @@ public class PropuestaCreditoEmpresarialDefinitions {
         enlazarInformeVisita = new EnlazarInformeVisitaPage(Hooks.driver);
         enlazarInformeComercialNuevo = new EnlazarInformeComercialNuevoPage(Hooks.driver);
         aprobarDictamenPropuesta = new AprobarDictamenPropuestaPage(Hooks.driver);
-        enlazarEEFFGrupoVinculado = new EnlazarEEFFGrupoVinculadoPage(Hooks.driver);
+        informeEEFFConsolidadoGrupoVinculado = new InformeEEFFConsolidadoGrupoVinculadoPage(Hooks.driver);
 
     }
 
@@ -173,22 +169,11 @@ public class PropuestaCreditoEmpresarialDefinitions {
     public void validarElMensajeDelPopupComunicado() {
         // PopUpComunicado.UbicarVentanaComunicado();
         PopUpComunicado.ValidarComunicado();
-
-    }
-
-    @And("en la ventana propuesta ingresar comentarios en clasificacion, objetivo y justificacion")
-    public void enLaVentanaPropuestaIngresarComentariosEnClasificacionObjetivoYJustificacion(DataTable comentarios) {
-        List<Map<String, String>> lista = comentarios.asMaps(String.class, String.class);
-        for (Integer i = 0; i < lista.size(); i++) {
-            propuesta.IngresarClasificacionCrediticia(lista.get(i).get("clasificacion"));
-            propuesta.IngresarObjetivoCredito(lista.get(i).get("objetivo"));
-            propuesta.IngresarJustificacionCredito(lista.get(i).get("justificacion"));
-        }
     }
 
     @And("en la ventana propuesta doy click en el boton nueva operacion")
     public void enLaVentanaPropuestaDoyClickEnElBotonNuevaOperacion() {
-        propuesta.ClickBotonOperacion();
+        propuesta.ClickBtnOperacion();
     }
 
 
@@ -309,7 +294,7 @@ public class PropuestaCreditoEmpresarialDefinitions {
 
     @Then("el sistema direcciona a la ventana propuesta y doy click al boton Registro de seguros")
     public void elSistemaDireccionaALaVentanaPropuestaYDoyClickAlBotonRegistroDeSeguros() {
-        propuesta.ClickBotonRegistrarSeguro();
+        propuesta.ClickBtnRegistrarSeguro();
 
     }
 
@@ -348,7 +333,7 @@ public class PropuestaCreditoEmpresarialDefinitions {
 
     @And("en la ventana Registro Seguros doy click en Confirmar")
     public void enLaVentanaRegistroSegurosDoyClickEnConfirmar() {
-        registrarSeguros.ClickConfirmar();
+        registrarSeguros.ClickBtnConfirmar();
         registrarSeguros.CerrarVentanaRegistrarSeguros();
 
     }
@@ -500,8 +485,6 @@ public class PropuestaCreditoEmpresarialDefinitions {
             propuesta.IngresarAnalisisUnidadEconomicaFinanciera(listaComentarios.get(i).get("AnalisisUnidadEconomicaFinanciera"));
 
         }
-
-
         List<Map<String,String>> listaComentarios = ComentariosJustificados.asMaps(String.class,String.class);
         for (Integer i = 0; i < listaComentarios.size() ;i++){
             propuesta.IngresarCaracteristicaNegocio(listaComentarios.get(i).get("CaracteristicaNegocio"));
@@ -512,7 +495,6 @@ public class PropuestaCreditoEmpresarialDefinitions {
             propuesta.IngresarProyeccionesCrecimiento(listaComentarios.get(i).get("ProyeccionesCrecimiento"));
         }
         */
-
 
     }
 
@@ -665,28 +647,24 @@ public class PropuestaCreditoEmpresarialDefinitions {
         login.ClickCerrarSesion();
     }
 
-    @And("en la ventana propuesta doy click en el boton estados financieros consolidados del grupo vinculado")
-    public void enLaVentanaPropuestaDoyClickEnElBotonEstadosFinancierosConsolidadosDelGrupoVinculado() {
+    @And("en la ventana Propuesta doy click en el boton Enlazar Informe de Estados Financieros Grupo Vinculado")
+    public void enLaVentanaPropuestaDoyClickEnElBotonEnlazarInformeDeEstadosFinancierosGrupoVinculado() {
         propuesta.ClickBtnEnlazarEEFFGrupoVinculadO();
-
     }
 
-    @And("en la ventana Enlazar EEFFGrupoVinculado ingresar los comentarios correspondientes")
-    public void enLaVentanaEnlazarEEFFGrupoVinculadoIngresarLosComentariosCorrespondientes(DataTable datosEEFFGrupo) {
-        enlazarEEFFGrupoVinculado.AbrirVentanaEnlazarEEFFGrupoVinculado();
-
-        List<Map<String, String>> lista = datosEEFFGrupo.asMaps(String.class, String.class);
-        for (int i = 0; i < lista.size(); i++) {
-            enlazarEEFFGrupoVinculado.IngresarAnalisisEEFF(lista.get(i).get("AnalisisEEFF"));
-            enlazarEEFFGrupoVinculado.IngresarComentarioComportamientoPago(lista.get(i).get("ComportamientoPago"));
-
-        }
-
-
+    @And("en la ventana Informe de Estados Financieros Grupo Vinculado ingresar comentarios y doy click en el boton Grabar")
+    public void enLaVentanaInformeDeEstadosFinancierosGrupoVinculadoIngresarComentariosYDoyClickEnElBotonGrabar() {
+        informeEEFFConsolidadoGrupoVinculado.AbrirVentanaInformeEstadoFinancieroConsolidadoGrupo();
+        informeEEFFConsolidadoGrupoVinculado.IngresarComentarios();
+        informeEEFFConsolidadoGrupoVinculado.ClickBtnGrabar();
     }
 
-
-
+    @And("en la ventana Informe Estados Financieros Grupo Vinculado doy click en el boton Finalizar y finalmente Cerrar la ventana")
+    public void enLaVentanaInformeEstadosFinancierosGrupoVinculadoDoyClickEnElBotonFinalizarYFinalmenteCerrarLaVentana() {
+        informeEEFFConsolidadoGrupoVinculado.ClickBtnFinalizar();
+        informeEEFFConsolidadoGrupoVinculado.ClickBtnCerrar();
+        informeEEFFConsolidadoGrupoVinculado.CerrarVentanaInformeEstadoFinancieroConsolidadoGrupo();
+    }
 }
 
 

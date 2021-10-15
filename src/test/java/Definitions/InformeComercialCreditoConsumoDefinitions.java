@@ -123,5 +123,9 @@ public class InformeComercialCreditoConsumoDefinitions {
         loginInforme.ClickCerrarSesion();
     }
 
+    @And("se cierra el navegador")
+    public void seCierraElNavegador() {
 
+        Hooks.driver.close();
+    }
 }

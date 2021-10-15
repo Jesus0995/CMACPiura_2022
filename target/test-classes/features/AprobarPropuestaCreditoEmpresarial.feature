@@ -13,10 +13,14 @@ Feature: Registrar Aprobacion de Propuestas con el perfil Jefe de Credito
     Then el sistema muestra el menu principal de SGCRED
     And en el menu doy click en la opcion propuesta de financiamiento
     And en la ventana Listado de Propuestas seleccionar el tipo de busqueda por numero de propuesta
-    And en la ventana Listado de Propuestas ingresar el numero de propuesta "4787706"
+    And en la ventana Listado de Propuestas ingresar el numero de propuesta "4787780"
     And en la ventana Listado de Propuestas doy click en el boton Buscar
     And en la ventana Listado de Propuestas doy click en el boton Editar
     And el sistema muestra Comunicado y doy en cerrar
+    And en la ventana principal de Propuesta doy click en el boton verificar checklist credito
+    And en la ventana Anexar CheckList Credito seleccionar Aprobar e ingresar un comentario
+    And en la ventana Anexar CheckList Credito doy click en el boton Guardar
+    And en la ventana Anexar CheckList Credito doy click en el boton Cerrar
     And en la ventana principal de Propuesta doy click en el Menu Emitir Dictamen
     And en las opciones del Menu Emitir Dictamen seleccionar el boton Aprobar
     And en la ventana ventana Emitir Dictamen ingresar Observaciones y Clave
@@ -27,5 +31,6 @@ Feature: Registrar Aprobacion de Propuestas con el perfil Jefe de Credito
     And el sistema direcciona al listado de propuestas y doy click en el boton Regresar
     And el sistema direcciona al menu principal y le doy click en Cerrar Sesion
     And el sistema direcciona al login y le doy click en el boton Cerrar Sesion
+
 
 

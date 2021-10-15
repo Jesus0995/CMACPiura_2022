@@ -1,5 +1,7 @@
 package PageObjects;
 
+import Functions.funcionEsperar;
+import Functions.funcionFecha;
 import org.openqa.selenium.*;
 import org.openqa.selenium.interactions.Action;
 import org.openqa.selenium.interactions.Actions;
@@ -19,6 +21,8 @@ public class OperacionCreditoPage {
     private WebDriverWait wait;
     private Set<String> identificadoresOperacionCredito;
     private Alert MensajeAlerta;
+    private funcionFecha objFuncionFecha;
+    private funcionEsperar objFuncionEsperar;
 
     //Mapear objetos
     @FindBy(xpath = "//select[@name='moneda']") private WebElement cbx_Moneda;
@@ -38,7 +42,7 @@ public class OperacionCreditoPage {
     @FindBy(xpath = "//input[@name='tasaPropuesta']") private WebElement txt_TasaPreferencial;
     @FindBy(xpath = "//select[@name='flgCuenta']") private WebElement cbx_Desembolso; //GIRO BANCO DE LA NACION
 
-    @FindBy(xpath = "//select[@name='codigocuenta']") private WebElement cbx_CodigoCuenta;
+    @FindBy(xpath = "//select[@name='codigocuenta']//option[2]") private WebElement cbx_CodigoCuenta;
 
     @FindBy(xpath = "//select[@name='idDepartamento']") private WebElement cbx_Departamento;
     @FindBy(xpath = "//select[@name='idProvincia']") private WebElement cbx_Provincia;
@@ -98,10 +102,10 @@ public class OperacionCreditoPage {
 
     }
 
-    public void ClickCalcular () {
+    public void ClickBtnCalcular () {
         wait.until(ExpectedConditions.elementToBeClickable(btn_Calcular));
         btn_Calcular.click();
-        Esperar(60);
+        objFuncionEsperar.EsperarTiempo(60);
     }
 
     public void SeleccionarPlanPagos (String PlanPagos) {
@@ -109,7 +113,7 @@ public class OperacionCreditoPage {
         WebElement Opcion = driver.findElement(By.xpath("//*[text() = '" + PlanPagos + "']"));
         String JScript = Opcion.getAttribute("onclick");
         ((JavascriptExecutor) driver).executeScript(JScript);
-        Esperar(2);
+        objFuncionEsperar.EsperarTiempo(2);
     }
 
     public void SeleccionarModalidad (String Modalidad) {
@@ -126,7 +130,7 @@ public class OperacionCreditoPage {
         ((JavascriptExecutor) driver).executeScript(JScript);
 
         // Esperamos unos segundos para que aparezca el proximo combobox.
-        Esperar(2);
+        objFuncionEsperar.EsperarTiempo(2);
 
     }
 
@@ -140,13 +144,13 @@ public class OperacionCreditoPage {
         WebElement Opcion = driver.findElement(By.xpath("//*[text() = '" + OpcionPagos + "']"));
         String JScript = Opcion.getAttribute("onclick");
         ((JavascriptExecutor) driver).executeScript(JScript);
-        Esperar(3);
+        objFuncionEsperar.EsperarTiempo(3);
     }
 
     public void SeleccionarDiaPagos(String DiaPagos) {
         Select Opcion = new Select(driver.findElement(By.xpath("//select[@name='pago']")));
         Opcion.selectByVisibleText(DiaPagos);
-        Esperar(3);
+        objFuncionEsperar.EsperarTiempo(3);
     }
 
     public void IngresarNumeroCuotas(String NumeroCuotas) {
@@ -165,13 +169,12 @@ public class OperacionCreditoPage {
         WebElement desembolso = driver.findElement(By.xpath("//*[text()='" + FormaDesembolso + "']"));
         String JScript = desembolso.getAttribute("onclick");
         ((JavascriptExecutor) driver).executeScript(JScript);
-        Esperar (3);
+        objFuncionEsperar.EsperarTiempo(3);
     }
 
-    public void SeleccionarCodigoCuenta(String CodigoCuenta){
-        Select Cuenta = new Select(driver.findElement(By.xpath("//select[@name='codigocuenta']")));
-        Cuenta.selectByVisibleText(CodigoCuenta);
-        Esperar (3);
+    public void SeleccionarCodigoCuenta(){
+        cbx_CodigoCuenta.click();
+        objFuncionEsperar.EsperarTiempo(3);
     }
 
     public void SeleccionarDepartamento (String Departamento) {
@@ -196,13 +199,13 @@ public class OperacionCreditoPage {
         SimpleDateFormat fecha = new SimpleDateFormat("dd/MM/yyyy");
         txt_FechaDesembolso.clear();
         txt_FechaDesembolso.sendKeys(fecha.format(Date));
-        Esperar(1);
+        objFuncionEsperar.EsperarTiempo(1);
 
     }
 
-    public void IngresarFechaDesembolso (String FechaDesembolso) {
+    public void IngresarFechaDesembolso () {
         txt_FechaDesembolso.clear();
-        txt_FechaDesembolso.sendKeys(FechaDesembolso);
+        txt_FechaDesembolso.sendKeys(objFuncionFecha.devolverFechaActual());
     }
 
     public void IngresarNotas (String Notas) {
@@ -210,7 +213,7 @@ public class OperacionCreditoPage {
         txt_Notas.sendKeys(Notas);
     }
 
-    public void ClickGrabar () {
+    public void ClickBtnGrabar () {
         wait.until(ExpectedConditions.elementToBeClickable(btn_Grabar));
         btn_Grabar.click();
     }
@@ -219,17 +222,6 @@ public class OperacionCreditoPage {
         MensajeAlerta = driver.switchTo().alert();
         System.out.println("El mensaje de alerta es:" + MensajeAlerta.getText());
         MensajeAlerta.accept();
-        Esperar(2);
+        objFuncionEsperar.EsperarTiempo(2);
     }
-
-    private void Esperar(Integer Segundos){
-        Integer Milisegundos = Segundos * 1000;
-        try{
-            Thread.sleep(Milisegundos);
-        }
-        catch (InterruptedException e){
-            e.printStackTrace();
-        }
-    }
-
 }

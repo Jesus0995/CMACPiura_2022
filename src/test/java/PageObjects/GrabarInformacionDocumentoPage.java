@@ -1,5 +1,8 @@
 package PageObjects;
 
+
+import Functions.funcionEsperar;
+import Functions.funcionVentana;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
@@ -14,60 +17,26 @@ import java.util.Set;
 public class GrabarInformacionDocumentoPage {
     private WebDriver driver;
     private WebDriverWait wait;
-    private Set<String> identificadoresGrabarPropuesta;
+    private String VentanaUltima;
+    private funcionEsperar objFuncionEsperar;
+    private funcionVentana objFuncionVentana;
 
     @FindBy(xpath = "//button[@type='button']") private WebElement btn_Cerrar;
 
     public void AbrirVentanaGrabarPropuesta(){
 
-        Esperar(5);
+        objFuncionEsperar.EsperarTiempo(5);
         System.out.println(driver.getWindowHandles());
-        identificadoresGrabarPropuesta = driver.getWindowHandles();
-        System.out.println(identificadoresGrabarPropuesta);
-        String LastHandle ="";
-
-        for (String identificadorGrabarPropuesta :identificadoresGrabarPropuesta ){
-            LastHandle = identificadorGrabarPropuesta;
-        }
-        driver.switchTo().window(LastHandle);
-        System.out.println("Título última ventana: "+ driver.getWindowHandle() +" - "+driver.getTitle());
-
+        objFuncionVentana.cambiarVentanaNueva();
+        VentanaUltima = driver.getWindowHandle();
     }
 
     public void CerrarVentanaGrabarPropuesta(){
 
-        System.out.println("Inicio cerrar ventana");
-        for (int i = 0; i <=240; i+=1)
-        {
-            if(driver.getWindowHandles().size()>1){
-                Esperar (1);
-                System.out.println("Esperando el cierre de ventana" +i);
-            }
-            else{
-                i = 241;
-            }
-        }
-
-        Integer SetSize = driver.getWindowHandles().size();
-        Integer Index=0;
-
-        /*[0-2]
-        0 propuesta
-        1 seguro
-        2 grabarinformacion*/
-
-        String[] Handles = new String[SetSize] ;
-        for (String identificadorGrabarPropuesta : driver.getWindowHandles()) {
-            Handles[Index] = identificadorGrabarPropuesta;
-            Index++;
-        }
-
-        System.out.println("Ventana principal: "+Handles[0]);
-        driver.switchTo().window(Handles[0]);
-        System.out.println(driver.getWindowHandle()+" - "+driver.getTitle());
-
-        Esperar(5);
-
+        System.out.println(driver.getWindowHandles());
+        objFuncionEsperar.EsperarCierreVentana(VentanaUltima);
+        objFuncionVentana.cambiarVentanaInicial();
+        objFuncionEsperar.EsperarTiempo(5);
         System.out.println("Fin cerrar ventana");
     }
 
@@ -75,30 +44,31 @@ public class GrabarInformacionDocumentoPage {
         driver = d;
         wait = new WebDriverWait(driver,30);
         PageFactory.initElements(driver,this);
+
     }
 
-    public void ClickbtnCerrar(){
+    public void ClickBtnCerrar(){
 
         String JScript = btn_Cerrar.getAttribute("onclick");
         ((JavascriptExecutor)driver).executeScript(JScript);
-        Esperar(5);
+        objFuncionEsperar.EsperarTiempo(5);
 
     }
 
-    public void ClickbtnCerrarInformacion(){
+    public void ClickBtnCerrarInformacion(){
 
         System.out.println("Click en boton cerrar");
         System.out.println("Ventanas actuales: " +driver.getWindowHandles());
 
         Integer numeroHandles = driver.getWindowHandles().size();
 
-        Esperar(5);
+        objFuncionEsperar.EsperarTiempo(5);
         btn_Cerrar.click();
 
         for(int i=0; i<=240;i+=1)
         {
             if (driver.getWindowHandles().size() == numeroHandles){
-                Esperar(1);
+                objFuncionEsperar.EsperarTiempo(1);
                 System.out.println("Esperando la ejecución del boton cerrar "+i);
             }
             else {
@@ -109,12 +79,5 @@ public class GrabarInformacionDocumentoPage {
         System.out.println("Fin click en boton cerrar");
     }
 
-    private void Esperar(Integer Segundos) {
-        Integer Milisegundos = Segundos * 1000;
-        try {
-            Thread.sleep(Milisegundos);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
-    }
+
 }

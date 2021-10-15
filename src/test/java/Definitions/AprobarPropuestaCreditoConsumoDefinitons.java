@@ -127,7 +127,7 @@ public class AprobarPropuestaCreditoConsumoDefinitons {
     @And("en la ventana emitir dictamen doy click en el boton procesar")
     public void enLaVentanaEmitirDictamenDoyClickEnElBotonProcesar() {
 
-        aprobarDictamenPropuesta.ClickbtnProcesar();
+        aprobarDictamenPropuesta.ClickBtnProcesar();
         aprobarDictamenPropuesta.CerrarVentanaAprobarDictamenPropuesta();
     }
 
@@ -135,7 +135,7 @@ public class AprobarPropuestaCreditoConsumoDefinitons {
     public void muestraLaVentanaDeGrabarInformacionYDoyClickEnCerrar() {
 
         grabarDocumentoPropuesta.AbrirVentanaGrabarPropuesta();
-        grabarDocumentoPropuesta.ClickbtnCerrar();
+        grabarDocumentoPropuesta.ClickBtnCerrar();
         grabarDocumentoPropuesta.CerrarVentanaGrabarPropuesta();
     }
 

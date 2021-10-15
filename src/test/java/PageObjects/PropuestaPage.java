@@ -15,6 +15,7 @@ public class PropuestaPage {
     private WebDriver driver;
     private WebDriverWait wait;
 
+
     //mapeo de locator
 
     @FindBy(xpath = "//textarea[@name='comentCalifCred']")
@@ -67,8 +68,7 @@ public class PropuestaPage {
     private WebElement btn_VerificarCheckListCredito;
 
 
-    @FindBy(xpath = "/html/body/form/table[2]/tbody/tr[6]/td[3]/button")
-    private WebElement btn_EnlazarEEFFGrupoVinculado;
+    @FindBy(xpath = "/html/body/form/table[2]/tbody/tr[6]/td[3]/button") private WebElement btn_EnlazarEEFFGrupoVinculado;
 
 
     public PropuestaPage(WebDriver d) {
@@ -78,23 +78,7 @@ public class PropuestaPage {
 
     }
 
-    public void IngresarClasificacionCrediticia(String clasificacion) {
-        wait.until(ExpectedConditions.elementToBeClickable(txt_ClasificacionCrediticia));
-        txt_ClasificacionCrediticia.clear();
-        txt_ClasificacionCrediticia.sendKeys(clasificacion);
-    }
-
-    public void IngresarObjetivoCredito(String Objetivo) {
-        txt_ObjetivoCredito.clear();
-        txt_ObjetivoCredito.sendKeys(Objetivo);
-    }
-
-    public void IngresarJustificacionCredito(String Justificacion) {
-        txt_JustificacionCredito.clear();
-        txt_JustificacionCredito.sendKeys(Justificacion);
-    }
-
-    public void ClickBotonOperacion() {
+    public void ClickBtnOperacion() {
         wait.until(ExpectedConditions.elementToBeClickable(btn_NuevaOperacion));
         btn_NuevaOperacion.click();
     }
@@ -104,7 +88,7 @@ public class PropuestaPage {
         icn_CambioTasa.click();
     }
 
-    public void ClickBotonRegistrarSeguro() {
+    public void ClickBtnRegistrarSeguro() {
 
         wait.until(ExpectedConditions.elementToBeClickable(btn_AgregarSeguro));
         btn_AgregarSeguro.click();
@@ -124,26 +108,23 @@ public class PropuestaPage {
 
     }
 
-    public void IngresarCaracteristicaNegocio(String CaracteristicaNegocio) {
-        txt_CaracteristicaNegocio.clear();
-        txt_CaracteristicaNegocio.sendKeys(CaracteristicaNegocio);
+    public void IngresarClasificacionCrediticia(String clasificacion){
+        txt_ClasificacionCrediticia.clear();
+        txt_ClasificacionCrediticia.sendKeys(clasificacion);
     }
 
-    public void IngresarClasificacionRiesgoCliente(String ClasificacionRiesgoNegocio) {
-        txt_ClasificacionRiesgoCliente.clear();
-        txt_ClasificacionRiesgoCliente.sendKeys(ClasificacionRiesgoNegocio);
+
+    public void IngresarObjetivoCredito(String Objetivo){
+        txt_ObjetivoCredito.clear();
+        txt_ObjetivoCredito.sendKeys(Objetivo);
 
     }
 
-    public void IngresarClasificacionRiesgoAvales(String ClasificacionRiesgoAvales) {
-        txt_ClasificacionRiesgoAval.clear();
-        txt_ClasificacionRiesgoAval.sendKeys(ClasificacionRiesgoAvales);
+    public void IngresarJustificacionCredito(String Justificacion){
+        txt_JustificacionCredito.clear();
+        txt_JustificacionCredito.sendKeys(Justificacion);
     }
 
-    public void IngresarAnalisisUnidadEconomicaFinanciera(String AnalisisUnidadEconomicaFinanciera) {
-        txt_AnalisisUnidadFinanciera.clear();
-        txt_AnalisisUnidadFinanciera.sendKeys(AnalisisUnidadEconomicaFinanciera);
-    }
 
 
     public void ClickAnexarGarantias() {
@@ -160,7 +141,6 @@ public class PropuestaPage {
         Esperar(2);
 
     }
-
 
     public void IngresarComentariosRatios(String ComentariosRatios) {
         txt_ComentariosRatios.clear();
@@ -226,9 +206,9 @@ public class PropuestaPage {
     }
 
     public void AbrirOpcionesDictamen() {
-
+        //Esperar(1);
         btn_Dictamen.click();
-        Esperar(1);
+        //Esperar(1);
     }
 
 

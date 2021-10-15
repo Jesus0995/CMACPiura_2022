@@ -1,5 +1,6 @@
 package PageObjects;
 
+import Functions.funcionEsperar;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -15,6 +16,7 @@ public class AprobarDictamenPropuestaPage {
     private WebDriver driver;
     private WebDriverWait wait;
     private Set<String> identificadoresAprobarDictamenPropuesta;
+    private funcionEsperar objFuncionEsperar;
 
     @FindBy(xpath = "//textarea[@name='observaciones']") private WebElement txt_Observaciones;
     @FindBy(xpath = "//input[@name='clave']") private WebElement txt_Password;
@@ -23,7 +25,7 @@ public class AprobarDictamenPropuestaPage {
 
 
     public void AbrirVentanaAprobarDictamenPropuesta(){
-        Esperar(2);
+        objFuncionEsperar.EsperarTiempo(2);
         identificadoresAprobarDictamenPropuesta = driver.getWindowHandles();
         System.out.println(identificadoresAprobarDictamenPropuesta);
         String LastHandle ="";
@@ -59,9 +61,9 @@ public class AprobarDictamenPropuestaPage {
 
         try{
             txt_Observaciones.clear();
-            Esperar(1);
+            objFuncionEsperar.EsperarTiempo(1);
             txt_Observaciones.sendKeys(Observaciones);
-            Esperar(2);
+            objFuncionEsperar.EsperarTiempo(2);
 
         } catch (Exception error){
             error.printStackTrace();
@@ -72,22 +74,22 @@ public class AprobarDictamenPropuestaPage {
 
     public void IngresarContrasena(String Contrasena){
         txt_Password.clear();
-        Esperar(1);
+        objFuncionEsperar.EsperarTiempo(1);
         txt_Password.sendKeys(Contrasena);
-        Esperar(2);
+        objFuncionEsperar.EsperarTiempo(2);
     }
 
-    public void ClickbtnProcesar(){
+    public void ClickBtnProcesar(){
         //wait.until(ExpectedConditions.elementToBeClickable(btn_procesar));
         System.out.println("Inicio click boton procesar dictamen");
-        Esperar(2);
+        objFuncionEsperar.EsperarTiempo(2);
         WebElement Procesar = driver.findElement(By.xpath("//button[@type='submit']"));
         Procesar.click();
         System.out.println("Esperar el fin de procesar");
 
         for (int i = 0; i <= 60; i += 1) {
             if (driver.getWindowHandles().size() > 1) {
-                Esperar(1);
+                objFuncionEsperar.EsperarTiempo(1);
                 System.out.println("Esperando cierre de la ventana "+driver.getTitle()+" - "+i);
                 System.out.println(driver.getWindowHandles());
             } else {
@@ -96,15 +98,5 @@ public class AprobarDictamenPropuestaPage {
         }
         System.out.println("Fin click boton procesar dictamen");
     }
-
-    private void Esperar(Integer Segundos){
-        Integer Milisegundos = Segundos*1000;
-        try {
-            Thread.sleep(Milisegundos);
-        }catch (InterruptedException e){
-            e.printStackTrace();
-        }
-    }
-
 
 }

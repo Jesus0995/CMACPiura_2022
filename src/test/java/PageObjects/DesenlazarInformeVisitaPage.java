@@ -1,5 +1,6 @@
 package PageObjects;
 
+import Functions.funcionEsperar;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -14,15 +15,17 @@ public class DesenlazarInformeVisitaPage {
     private WebDriver driver;
     private WebDriverWait wait;
     private Set<String> identificadoresDesenlazarInformeVisita;
+    private funcionEsperar objFuncionEsperar;
 
-    @FindBy(xpath = "//button[@type='submit']") private WebElement btn_Realizar;
+    @FindBy(xpath = "//button[@type='submit']")
+    private WebElement btn_Realizar;
 
-    public void AbrirVentanaDesenlazarInformeVisita(){
-        Esperar(2);
+    public void AbrirVentanaDesenlazarInformeVisita() {
+        objFuncionEsperar.EsperarTiempo(2);
         identificadoresDesenlazarInformeVisita = driver.getWindowHandles();
         String LastHandle = "";
 
-        for (String identificadorDesenlazarInformeVisita:identificadoresDesenlazarInformeVisita ){
+        for (String identificadorDesenlazarInformeVisita : identificadoresDesenlazarInformeVisita) {
             LastHandle = identificadorDesenlazarInformeVisita;
 
         }
@@ -31,13 +34,13 @@ public class DesenlazarInformeVisitaPage {
     }
 
 
-    public void CerrarVentanaDesenlazarInformeVisita (){
+    public void CerrarVentanaDesenlazarInformeVisita() {
         Integer SetSize = identificadoresDesenlazarInformeVisita.size();
         Integer Index = 0;
 
-        String[]Handles = new String[SetSize];
+        String[] Handles = new String[SetSize];
 
-        for (String identificadorDesenlazarInformeVisita: identificadoresDesenlazarInformeVisita){
+        for (String identificadorDesenlazarInformeVisita : identificadoresDesenlazarInformeVisita) {
             Handles[Index] = identificadorDesenlazarInformeVisita;
             Index++;
         }
@@ -48,24 +51,13 @@ public class DesenlazarInformeVisitaPage {
 
     public DesenlazarInformeVisitaPage(WebDriver d) {
         driver = d;
-        wait = new WebDriverWait(driver,30);
-        PageFactory.initElements(driver,this);
+        wait = new WebDriverWait(driver, 30);
+        PageFactory.initElements(driver, this);
     }
 
-    public void ClickBtnRealizar(){
+    public void ClickBtnRealizar() {
         wait.until(ExpectedConditions.elementToBeClickable(btn_Realizar));
         btn_Realizar.click();
-        Esperar(2);
+        objFuncionEsperar.EsperarTiempo(2);
     }
-
-    private void Esperar(Integer Segundos){
-        Integer Milisegundos = Segundos*1000;
-
-        try {
-            Thread.sleep(Milisegundos);
-        }catch (InterruptedException e){
-            e.printStackTrace();
-        }
-    }
-
 }

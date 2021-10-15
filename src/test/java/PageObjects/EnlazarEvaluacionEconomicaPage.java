@@ -1,5 +1,6 @@
 package PageObjects;
 
+import Functions.funcionEsperar;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -14,11 +15,12 @@ public class EnlazarEvaluacionEconomicaPage {
     private WebDriver driver;
     private WebDriverWait wait;
     private Set<String> identificadoresEnlazarEvaluacionEconomica;
+    private funcionEsperar objFuncionEsperar;
 
     @FindBy(xpath = "//button[@type='submit']") private WebElement btn_Realizar;
 
     public void AbrirVentanaEvaluacionEconomica(){
-        Esperar(5);
+        objFuncionEsperar.EsperarTiempo(5);
         identificadoresEnlazarEvaluacionEconomica = driver.getWindowHandles();
         System.out.println(identificadoresEnlazarEvaluacionEconomica);
         String LastHandle = "";
@@ -28,7 +30,7 @@ public class EnlazarEvaluacionEconomicaPage {
         }
         driver.switchTo().window(LastHandle);
         System.out.println("Titulo:" + driver.getTitle());
-        Esperar(1);
+        objFuncionEsperar.EsperarTiempo(1);
     }
 
     public void CerrarVentanaEvaluacionEconomica(){
@@ -39,7 +41,7 @@ public class EnlazarEvaluacionEconomicaPage {
         for(int i=0; i<=30;i+=1)
         {
             if (driver.getWindowHandles().size() > 1){
-                Esperar(1);
+                objFuncionEsperar.EsperarTiempo(1);
                 System.out.println("Esperando cierre de handle");
             }
             else {
@@ -54,7 +56,7 @@ public class EnlazarEvaluacionEconomicaPage {
         }
         System.out.println(Handles[0]);
         driver.switchTo().window(Handles[0]);
-        Esperar(2);
+        objFuncionEsperar.EsperarTiempo(2);
     }
 
     public EnlazarEvaluacionEconomicaPage(WebDriver d){
@@ -66,17 +68,6 @@ public class EnlazarEvaluacionEconomicaPage {
     public void ClickBtnRealizar(){
         wait.until(ExpectedConditions.elementToBeClickable(btn_Realizar));
         btn_Realizar.click();
-        Esperar(2);
+        objFuncionEsperar.EsperarTiempo(2);
     }
-
-    private void Esperar (Integer Segundos){
-        Integer Milisegundos = Segundos*1000;
-
-        try {
-            Thread.sleep(Milisegundos);
-        }catch (InterruptedException e){
-            e.printStackTrace();
-        }
-    }
-
 }

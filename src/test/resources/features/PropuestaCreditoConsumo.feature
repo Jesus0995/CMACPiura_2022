@@ -4,7 +4,7 @@ Feature: Crear una propuesta de Creditos de Consumo de tipo Normal en el sistema
   Para su aprobacion
 
   @Prueba
-  Scenario: Crear una propuesta de Creditos de Consumo de tipo Normal
+  Scenario Outline: Crear una propuesta de Creditos de Consumo de tipo Normal
     Given la pagina web SGCRED esta disponible
     When se completa el usuario y password
       | nombre | password |
@@ -14,12 +14,12 @@ Feature: Crear una propuesta de Creditos de Consumo de tipo Normal en el sistema
     And doy click en el link propuesta financiamiento
     And doy click en el boton Crear_Propuesta de la ventana Listado Propuesta
     And muestra la ventana cliente para realizar la busqueda en el tab codigo
-    And en la ventana cliente digitar el codigo a buscar "24130177"
+    And en la ventana cliente digitar el codigo a buscar "<cliente>"
     And en la ventana cliente se da click en el boton buscar
     And en la ventana cliente se da click en el icono propuesta
     And el sistema muestra la ventana de requisitos de propuesta e ingresamos la informacion
       | TipoServicio        | ServicioCredito | TipoPropuesta | SubTipoPropuesta | Promocion     | Negocio                                  | TipoOperacion |
-      | CREDITOS DE CONSUMO | CREDIPERSONAS   | NORMAL        | NORMAL           | SIN PROMOCION | SERVICIO DE ENSEÑANZA A NIVEL PRIMARIO   | SIMPLE        |
+      | CREDITOS DE CONSUMO | CREDIPERSONAS   | NORMAL        | NORMAL           | SIN PROMOCION | SERVICIO DE ENSENANZA A NIVEL PRIMARIO   | SIMPLE        |
     And en la ventana requisitos de propuesta se da click en el boton cargar
     And validar el popup Comunicado
     And en la ventana propuesta de financiamiento doy clik al boton nueva operacion
@@ -34,17 +34,17 @@ Feature: Crear una propuesta de Creditos de Consumo de tipo Normal en el sistema
     And en la ventana operacion credito seleccionar el numero de cuotas "18"
     And en la ventana operacion credito ingresar la tasa preferencial "30"
     And en la ventana operacion credito seleccionar la forma desembolso "ABONO EN CUENTA"
-    And en la ventana operacion credito seleccionar el codigo de cuenta "210-01-0037566"
-    And en la ventana operacion credito seleccionar la fecha desembolso "06/10/2021"
+    And en la ventana operacion credito seleccionar el codigo de cuenta
+    And en la ventana operacion credito seleccionar la fecha desembolso
     And en la ventana operacion credito ingresar una nota "prueba de nueva propuesta"
     And en la ventana operacion credito doy click en el boton grabar
     And en la ventana operacion credito aceptar la alerta
     And el sistema direcciona a la ventana propuesta y doy clik en el boton registro de seguro
     And muestra la ventana seleccionar seguros y doy click en el boton confirmar
     And muestra la ventana registrar seguros y doy check en el seguro desgravamen al saldo capital
-    And en la ventana registrar seguros ingresar el numero DPS "1223" del seguro desgravamen
+    And en la ventana registrar seguros ingresar el numero DPS del seguro desgravamen
     And en la ventana registrar seguros doy check en el seguro vida plan1
-    And en la ventana registrar seguros ingresar el numero DPS "2231" del seguro vida plan1
+    And en la ventana registrar seguros ingresar el numero DPS del seguro vida plan1
     And en la ventana registrar seguros doy click en el boton confirmar
     And muestra la ventana seguros seleccionados y doy click en el boton cerrar
     And el sistema direcciona a la ventana propuesta y doy click en el boton anexar garantias
@@ -74,3 +74,17 @@ Feature: Crear una propuesta de Creditos de Consumo de tipo Normal en el sistema
     And direcciona a la ventana listado propuesta y doy click en el boton regresar
     And direcciona al menu principal y doy click en la opcion cerrar sesion
     And direcciona al login y doy click en el boton cerrar sesion
+    And cierro sesion de navegador
+
+    Examples:
+      |cliente|
+      |22466895|
+      |24361969|
+      |2536846|
+      |17854720|
+      |17075292|
+      |16711829|
+      |9161627|
+      |20347368|
+      |17138243|
+      |15793|

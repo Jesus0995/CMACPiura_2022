@@ -1,5 +1,6 @@
 package PageObjects;
 
+import Functions.funcionEsperar;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -14,6 +15,7 @@ public class CerrarAnexarCheckListCreditoAprobarPage {
     private WebDriver driver;
     private WebDriverWait wait;
     private Set<String> identfCerrarAnexarCheckListAprobar;
+    private funcionEsperar objFuncionEsperar;
 
     @FindBy(xpath = "/html/body/fieldset/form/table/tbody/tr[2]/td/button") private WebElement btn_Cerrar;
 
@@ -57,11 +59,11 @@ public class CerrarAnexarCheckListCreditoAprobarPage {
         System.out.println("Click en el boton cerrar");
         System.out.println("Handles iniciales"+driver.getWindowHandles());
         Integer numeroHandles = driver.getWindowHandles().size();
-        Esperar(3);
+        objFuncionEsperar.EsperarTiempo(3);
         btn_Cerrar.click();
         for (int i=0; i<=240;i+=1 ){
             if (driver.getWindowHandles().size()==numeroHandles){
-                Esperar(1);
+                objFuncionEsperar.EsperarTiempo(1);
                 System.out.println("Esperando cierre de handle:" +i);
 
             } else
@@ -75,14 +77,4 @@ public class CerrarAnexarCheckListCreditoAprobarPage {
 
     }
 
-    private void Esperar(Integer Segundos){
-        Integer Milisegundos = Segundos*1000;
-
-        try {
-            Thread.sleep(Milisegundos);
-        }catch (InterruptedException error){
-            error.printStackTrace();
-        }
-
-    }
 }

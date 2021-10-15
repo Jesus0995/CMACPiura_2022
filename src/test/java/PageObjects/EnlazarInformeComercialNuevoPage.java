@@ -1,5 +1,6 @@
 package PageObjects;
 
+import Functions.funcionEsperar;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -14,8 +15,8 @@ import java.util.Set;
 public class EnlazarInformeComercialNuevoPage {
     private WebDriver driver;
     private WebDriverWait wait;
-
     private Set<String> identificadoresEnlazarInformeComercialNuevo;
+    private  funcionEsperar objFuncionEsperar;
 
     @FindBy(xpath = "//button[@type='submit']") private WebElement btn_Realizar;
 
@@ -57,17 +58,6 @@ public class EnlazarInformeComercialNuevoPage {
 
         wait.until(ExpectedConditions.elementToBeClickable(btn_Realizar));
         btn_Realizar.click();
-        Esperar(2);
+        objFuncionEsperar.EsperarTiempo(2);
     }
-
-    private void Esperar(Integer Segundos) {
-        Integer Milisegundos = Segundos * 1000;
-
-        try {
-            Thread.sleep(Milisegundos);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
-    }
-
 }

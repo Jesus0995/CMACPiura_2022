@@ -4,7 +4,7 @@ Feature: Registrar informe de visita con el perfil Asesor de Negocios
   Para enlazar a la creacion de propuestas
 
   @Prueba
-  Scenario: Registrar informe de visita del cliente en el sistema SGCRED
+  Scenario Outline: Registrar informe de visita del cliente en el sistema SGCRED
     Given la pagina web SGCRED se encuentra disponible
     When ingreso usuario y password del perfil Asesor de Negocios
       | nombre | password |
@@ -13,14 +13,15 @@ Feature: Registrar informe de visita con el perfil Asesor de Negocios
     And muestra home principal de SGCRED
     And doy click en la opcion informe visita
     And muestra la ventana busqueda de clientes y realizar la busqueda en el tab codigo
-    And en la ventana busqueda de clientes digitar el codigo a buscar "24011739"
+    And en la ventana busqueda de clientes digitar el codigo a buscar "<cliente>"
     And en la ventana busqueda de clientes y doy click en el boton buscar
     And en la ventana busqueda de clientes y doy click en el icono informe visita
     And muestra ventana seleccionar rubro y doy click en el boton cargar
     And muestra la ventana lista de informes y doy click en el boton crear informe
-    And muestra la ventana informe de visita e ingresar datos de visita
-      | FechaVisita | HoraVisita | MinutoVisita | FranjaHora |
-      | 15/09/2021  | 09         | 30           | A.M        |
+    And muestra la ventana informe e ingreso la fecha de visita
+    And en la ventana informe de visita e ingresar datos de visita
+      | HoraVisita | MinutoVisita | FranjaHora |
+      | 09         | 30           | A.M        |
     And en la ventana informe de visita ingresar datos de verificacion domiciliaria
       | NumeroIntegrantes | Relacion | Habitos             | OtrosIngresos |
       | 3                 | Estable  | Dentro de lo Normal | NO            |
@@ -36,3 +37,17 @@ Feature: Registrar informe de visita con el perfil Asesor de Negocios
     And muestra la ventana lista de informes y doy click en el boton regresar
     And el sistema direcciona a menu principal y doy click en la opcion cerrar sesion
     And direcciona en login y doy click en el boton cerrar sesion
+    And cierro navegador
+
+    Examples:
+      |cliente|
+      |22466895|
+      |24361969|
+      |2536846|
+      |17854720|
+      |17075292|
+      |16711829|
+      |9161627|
+      |20347368|
+      |17138243|
+      |15793|

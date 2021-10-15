@@ -1,5 +1,6 @@
 package PageObjects;
 
+import Functions.funcionEsperar;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -15,12 +16,13 @@ public class EnlazarInformeVisitaPage {
     private WebDriver driver;
     private WebDriverWait wait;
     private Set<String> identificadoresEnlazarInformeVisita;
+    private funcionEsperar objFuncionEsperar;
 
     //mapeop elementos
     @FindBy(xpath = "//button[@type='submit']") private WebElement btn_Realizar;
 
     public void AbrirVentanaEnlazarInformeVisita(){
-        Esperar(2);
+        objFuncionEsperar.EsperarTiempo(2);
         identificadoresEnlazarInformeVisita = driver.getWindowHandles();
         System.out.println(identificadoresEnlazarInformeVisita);
         String LastHandle="";
@@ -57,17 +59,6 @@ public class EnlazarInformeVisitaPage {
     public void ClickBtnRealizar(){
         wait.until(ExpectedConditions.elementToBeClickable(btn_Realizar));
         btn_Realizar.click();
-        Esperar (2);
+        objFuncionEsperar.EsperarTiempo(2);
     }
-
-    private void Esperar (Integer Segundos){
-        Integer Milisegundos = Segundos*1000;
-
-        try {
-            Thread.sleep(Milisegundos);
-        }catch (InterruptedException e){
-            e.printStackTrace();
-        }
-    }
-
 }

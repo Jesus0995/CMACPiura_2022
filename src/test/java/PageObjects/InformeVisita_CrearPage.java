@@ -1,5 +1,7 @@
 package PageObjects;
 
+import Functions.funcionEsperar;
+import Functions.funcionFecha;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
@@ -19,32 +21,24 @@ public class InformeVisita_CrearPage {
 
     private WebDriver driver;
     private WebDriverWait wait;
+    private funcionFecha objFuncionFecha;
+    private funcionEsperar objFuncionEsperar;
 
 
-    @FindBy(xpath = "//input[@name=\"fechaINI\"]")
-    private WebElement txt_fechaVisita;
-    @FindBy(xpath = "//input[@name=\"horaINI\"]")
-    private WebElement txt_hora;
-    @FindBy(xpath = "//input[@name=\"minINI\"]")
-    private WebElement txt_minutos;
-    @FindBy(xpath = "//select[@name=\"meridianoINI\"]")
-    private WebElement cbx_franjaHoraria;
+    @FindBy(xpath = "//input[@name=\"fechaINI\"]") private WebElement txt_fechaVisita;
+    @FindBy(xpath = "//input[@name=\"horaINI\"]")  private WebElement txt_hora;
+    @FindBy(xpath = "//input[@name=\"minINI\"]")   private WebElement txt_minutos;
+    @FindBy(xpath = "//select[@name=\"meridianoINI\"]") private WebElement cbx_franjaHoraria;
 
     //@FindBy(xpath = "") private WebElement cbo_direccionDomicilio;
-    @FindBy(name = "numeroIntegrantes")
-    private WebElement txt_nroIntegrantes;
-    @FindBy(xpath = "//select[@name=\"relacionMiembros\"]")
-    private WebElement cbx_relacionIntegrantes;
-    @FindBy(xpath = "//select[@name=\"habitosMiembros\"]")
-    private WebElement cbx_habitos;
-    @FindBy(xpath = "//select[@name=\"hayGeneracionIngresos\"]")
-    private WebElement cbx_otrosIngresos;
+    @FindBy(name = "numeroIntegrantes") private WebElement txt_nroIntegrantes;
+    @FindBy(xpath = "//select[@name=\"relacionMiembros\"]") private WebElement cbx_relacionIntegrantes;
+    @FindBy(xpath = "//select[@name=\"habitosMiembros\"]") private WebElement cbx_habitos;
+    @FindBy(xpath = "//select[@name=\"hayGeneracionIngresos\"]") private WebElement cbx_otrosIngresos;
 
     //@FindBy(xpath = "") private WebElement cbx_direccionTrabajo;
-    @FindBy(xpath = "//select[@name=\"estadoGarantia\"]")
-    private WebElement cbx_relacionLaboral;
-    @FindBy(xpath = "//select[@name=\"documentacionGarantia\"]")
-    private WebElement cbx_documentoSustento;
+    @FindBy(xpath = "//select[@name=\"estadoGarantia\"]") private WebElement cbx_relacionLaboral;
+    @FindBy(xpath = "//select[@name=\"documentacionGarantia\"]") private WebElement cbx_documentoSustento;
 
 
     //verificacion del negocio;
@@ -64,14 +58,10 @@ public class InformeVisita_CrearPage {
     private WebElement opt_senalesAlerta;
     @FindBy(name = "lavact3")
     private WebElement opt_legal;
-    @FindBy(name = "observaciones")
-    private WebElement txt_observacion;
-    @FindBy(xpath = "/html/body/table/tbody/tr[2]/td/table/tbody/tr[2]/td[1]/table/tbody/tr/td[3]/a/img")
-    private WebElement btn_grabar;
-    @FindBy(css = "td.P:nth-child(10) > a:nth-child(1)")
-    private WebElement btn_regresar;
-    @FindBy(xpath = "//img[@alt='Regresar']")
-    private WebElement btn_RegresarCE;
+    @FindBy(name = "observaciones") private WebElement txt_observacion;
+    @FindBy(xpath = "/html/body/table/tbody/tr[2]/td/table/tbody/tr[2]/td[1]/table/tbody/tr/td[3]/a/img") private WebElement btn_grabar;
+    @FindBy(css = "td.P:nth-child(10) > a:nth-child(1)") private WebElement btn_regresar;
+    @FindBy(xpath = "//img[@alt='Regresar']") private WebElement btn_RegresarCE;
 
     public InformeVisita_CrearPage(WebDriver d) {
         driver = d;
@@ -85,7 +75,7 @@ public class InformeVisita_CrearPage {
         SimpleDateFormat fecha = new SimpleDateFormat("dd/MM/yyyy");
         txt_fechaVisita.clear();
         txt_fechaVisita.sendKeys(fecha.format(Date));
-        Esperar(1);
+        objFuncionEsperar.EsperarTiempo(1);
         /*
         Date date = Calendar.getInstance().getTime();
         DateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");
@@ -97,9 +87,9 @@ public class InformeVisita_CrearPage {
 
     }
 
-    public void IngresarFechaVisita (String FechaVisita){
+    public void IngresarFechaVisita (){
         txt_fechaVisita.clear();
-        txt_fechaVisita.sendKeys(FechaVisita);
+        txt_fechaVisita.sendKeys(objFuncionFecha.devolverFechaActual());
     }
 
     public void IngresarHoraVisita(String HoraVisita) {
@@ -114,7 +104,7 @@ public class InformeVisita_CrearPage {
 
     public void IngresarFranjaHoraria(String FranjaHora) {
         cbx_franjaHoraria.sendKeys(FranjaHora);
-        Esperar(3);
+        objFuncionEsperar.EsperarTiempo(3);
         try {
             WebElement franjaHora = driver.findElement(By.xpath("//select[@name='meridianoINI']//option[text()='" + FranjaHora + "']"));
             String JScript = franjaHora.getAttribute("onclick");
@@ -131,7 +121,7 @@ public class InformeVisita_CrearPage {
 
     public void SeleccionarRelacion(String Relacion) {
         cbx_relacionIntegrantes.sendKeys(Relacion);
-        Esperar(3);
+        objFuncionEsperar.EsperarTiempo(3);
         try {
             WebElement relacion = driver.findElement(By.xpath("//select[@name='relacionMiembros']//option[text()='" + Relacion + "']"));
             String JScript = relacion.getAttribute("onclick");
@@ -143,7 +133,7 @@ public class InformeVisita_CrearPage {
 
     public void SeleccionarHabitos(String Habitos) {
         cbx_habitos.sendKeys(Habitos);
-        Esperar(3);
+        objFuncionEsperar.EsperarTiempo(3);
         try {
             WebElement habitos = driver.findElement(By.xpath("//select[@name='habitosMiembros']//option[text()='" + Habitos + "']"));
             String JScript = habitos.getAttribute("onclick");
@@ -155,7 +145,7 @@ public class InformeVisita_CrearPage {
 
     public void SeleccionarOtrosIngresos(String OtrosIngresos) {
         cbx_habitos.sendKeys(OtrosIngresos);
-        Esperar(3);
+        objFuncionEsperar.EsperarTiempo(3);
         try {
             WebElement otrosIngresos = driver.findElement(By.xpath("//select[@name='hayGeneracionIngresos']//option[text()='" + OtrosIngresos + "']"));
             String JScript = otrosIngresos.getAttribute("onclick");
@@ -167,7 +157,7 @@ public class InformeVisita_CrearPage {
 
     public void SeleccionarRelacionLaboral(String RelacionLaboral) {
         cbx_relacionLaboral.sendKeys(RelacionLaboral);
-        Esperar(3);
+        objFuncionEsperar.EsperarTiempo(3);
         try {
             WebElement relacionLaboral = driver.findElement(By.xpath("//select[@name='estadoGarantia']//option[text()='" + RelacionLaboral + "']"));
             String JScript = relacionLaboral.getAttribute("onclick");
@@ -179,7 +169,7 @@ public class InformeVisita_CrearPage {
 
     public void SeleccionarDocumentoSustento(String DocumentoSustento) {
         cbx_documentoSustento.sendKeys(DocumentoSustento);
-        Esperar(3);
+        objFuncionEsperar.EsperarTiempo(3);
         try {
             WebElement documentoSustento = driver.findElement(By.xpath("//select[@name='documentacionGarantia']//option[text()='" + DocumentoSustento + "']"));
             String JScript = documentoSustento.getAttribute("onclick");
@@ -191,7 +181,7 @@ public class InformeVisita_CrearPage {
 
     public void SeleccionarDireccionCorrecta(String DireccionNegocio) {
         cbx_DireccionNegocio.sendKeys(DireccionNegocio);
-        Esperar(3);
+        objFuncionEsperar.EsperarTiempo(3);
         try {
             WebElement direccionNegocio = driver.findElement(By.xpath("//select[@name='esDireccionCorrecta1']//option[text()='" + DireccionNegocio + "']"));
             String JScript = direccionNegocio.getAttribute("onclick");
@@ -207,7 +197,7 @@ public class InformeVisita_CrearPage {
 
     public void SeleccionarEstadoGarantia(String EstadoGarantia) {
         cbx_EstadoGarantia.sendKeys(EstadoGarantia);
-        Esperar(3);
+        objFuncionEsperar.EsperarTiempo(3);
         try {
             WebElement estadoGarantia = driver.findElement(By.xpath("//select[@name='estadoGarantia']//option[text()='" + EstadoGarantia + "']"));
             String JScript = estadoGarantia.getAttribute("onclick");
@@ -222,7 +212,7 @@ public class InformeVisita_CrearPage {
 
     public void SeleccionarDocumentoGarantia(String DocumentoGarantia) {
         cbx_DocumentoGarantia.sendKeys(DocumentoGarantia);
-        Esperar(2);
+        objFuncionEsperar.EsperarTiempo(2);
         try {
             WebElement documentoGarantia = driver.findElement(By.xpath("//select[@name='documentacionGarantia']//option[text()='" + DocumentoGarantia + "']"));
             String JScript = documentoGarantia.getAttribute("onclick");
@@ -260,31 +250,20 @@ public class InformeVisita_CrearPage {
         txt_observacion.sendKeys(Observacion);
     }
 
-    public void ClickGrabar() {
+    public void ClickBtnGrabar() {
         wait.until(ExpectedConditions.elementToBeClickable(btn_grabar));
         btn_grabar.click();
     }
 
-    public void ClickRegresar() {
+    public void ClickBtnRegresar() {
         wait.until(ExpectedConditions.elementToBeClickable(btn_regresar));
         btn_regresar.click();
-        //Esperar(1);
+
     }
 
     public void ClickBtnRegresarCE() {
         wait.until(ExpectedConditions.elementToBeClickable(btn_RegresarCE));
         btn_RegresarCE.click();
-    }
-
-
-    private void Esperar(Integer Segundos) {
-        Integer Milisegundos = Segundos * 1000;
-        try {
-            Thread.sleep(Milisegundos);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-
-        }
     }
 
 }

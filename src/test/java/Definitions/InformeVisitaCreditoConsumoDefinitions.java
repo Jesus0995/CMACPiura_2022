@@ -93,12 +93,17 @@ public class InformeVisitaCreditoConsumoDefinitions {
         listaInformes.ClickBtnCrear();
     }
 
-    @And("muestra la ventana informe de visita e ingresar datos de visita")
-    public void muestraLaVentanaInformeDeVisitaEIngresarDatosDeVisita(DataTable DatosVisita) {
+    @And("muestra la ventana informe e ingreso la fecha de visita")
+    public void muestraLaVentanaInformeEIngresoLaFechaDeVisita() {
+
+        crearInformeVisita.IngresarFechaVisita();
+    }
+
+    @And("en la ventana informe de visita e ingresar datos de visita")
+    public void enLaVentanaInformeDeVisitaEIngresarDatosDeVisita(DataTable DatosVisita) {
 
         List<Map<String, String>> lista = DatosVisita.asMaps(String.class, String.class);
         for (int i = 0; i < lista.size(); i++) {
-            crearInformeVisita.IngresarFechaVisita(lista.get(i).get("FechaVisita"));
             crearInformeVisita.IngresarHoraVisita(lista.get(i).get("HoraVisita"));
             crearInformeVisita.IngresarMinutoVisita(lista.get(i).get("MinutoVisita"));
             crearInformeVisita.IngresarFranjaHoraria(lista.get(i).get("FranjaHora"));
@@ -146,20 +151,20 @@ public class InformeVisitaCreditoConsumoDefinitions {
     @And("en la ventana informe de visita doy clik en el boton grabar")
     public void enLaVentanaInformeDeVisitaDoyClikEnElBotonGrabar() {
 
-        crearInformeVisita.ClickGrabar();
+        crearInformeVisita.ClickBtnGrabar();
     }
 
     @And("muestra la ventana grabar informacion y doy click en el boton cerrar")
     public void muestraLaVentanaGrabarInformacionYDoyClickEnElBotonCerrar() throws InterruptedException {
         grabarDocumentoInformeVisita.AbrirVentanaGrabarPropuesta();
-        grabarDocumentoInformeVisita.ClickbtnCerrarInformacion();
+        grabarDocumentoInformeVisita.ClickBtnCerrarInformacion();
         grabarDocumentoInformeVisita.CerrarVentanaGrabarPropuesta();
     }
 
     @And("el sistema direcciona a informe de visita y doy click en el boton regresar")
     public void elSistemaDireccionaAInformeDeVisitaYDoyClickEnElBotonRegresar() {
 
-        crearInformeVisita.ClickRegresar();
+        crearInformeVisita.ClickBtnRegresar();
     }
 
     @And("muestra la ventana lista de informes y doy click en el boton regresar")
@@ -180,4 +185,9 @@ public class InformeVisitaCreditoConsumoDefinitions {
         loginInforme.ClickCerrarSesion();
     }
 
+    @And("cierro navegador")
+    public void cierroNavegador() {
+
+        Hooks.driver.close();
+    }
 }

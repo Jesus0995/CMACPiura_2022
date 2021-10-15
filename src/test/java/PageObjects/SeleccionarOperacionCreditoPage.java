@@ -1,5 +1,6 @@
 package PageObjects;
 
+import Functions.funcionEsperar;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -14,6 +15,7 @@ public class SeleccionarOperacionCreditoPage {
     private WebDriver driver;
     private WebDriverWait wait;
     private Set<String> identificadoresSeleccionarOP;
+    private funcionEsperar objFuncionEsperar;
 
     //mapear elementos
     //@FindBy(xpath = "//button[@type='submit']") private WebElement btn_aceptar;
@@ -27,7 +29,8 @@ public class SeleccionarOperacionCreditoPage {
             LastHandle = identificadorSeleccionarOP;
         }
         driver.switchTo().window(LastHandle);
-        Esperar(3);
+        objFuncionEsperar.EsperarTiempo(3);
+
     }
 
     public void CerrarVentanaSeleccionarOP(){
@@ -58,20 +61,6 @@ public class SeleccionarOperacionCreditoPage {
 
         btn_Aceptar.click();
 
-        Esperar(11);
-
+        objFuncionEsperar.EsperarTiempo(11);
     }
-
-    private void Esperar (Integer Segundos){
-
-        Integer Milisegundos = Segundos*1000;
-
-        try{
-            Thread.sleep(Milisegundos);
-        }catch (InterruptedException e){
-            e.printStackTrace();
-        }
-    }
-
-
 }

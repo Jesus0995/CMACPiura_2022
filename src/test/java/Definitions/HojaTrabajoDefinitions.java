@@ -118,8 +118,8 @@ public class HojaTrabajoDefinitions {
 
     }
 
-    @And("en la ventana Hoja de Trabajo doy click en el botón grabar")
-    public void enLaVentanaHojaDeTrabajoDoyClickEnElBotónGrabar() {
+    @And("en la ventana Hoja de Trabajo doy click en el boton grabar")
+    public void enLaVentanaHojaDeTrabajoDoyClickEnElBotonGrabar() {
 
         registrarHojaTrabajo.GrabarHojaTrabajo();
     }
@@ -137,10 +137,10 @@ public class HojaTrabajoDefinitions {
     }
 
     @And("en la ventana grabar documento hoja de trabajo doy click en el botón cerrar")
-    public void enLaVentanaGrabarDocumentoHojaDeTrabajoDoyClickEnElBotónCerrar() throws IOException {
+    public void enLaVentanaGrabarDocumentoHojaDeTrabajoDoyClickEnElBotonCerrar() throws IOException {
         grabarDocumentoHojaTrabajoPage.AbrirVentanaGrabarPropuesta();
         try {
-            grabarDocumentoHojaTrabajoPage.ClickbtnCerrarInformacion();
+            grabarDocumentoHojaTrabajoPage.ClickBtnCerrarInformacion();
         } catch (Exception Error) {
             System.out.println(Error.getMessage());
         }
@@ -165,4 +165,10 @@ public class HojaTrabajoDefinitions {
         login.ClickCerrarSesion();
     }
 
+    @And("cierro sesion del navegador")
+    public void cierroSesionDelNavegador() {
+
+        Hooks.driver.close();
+
+    }
 }
