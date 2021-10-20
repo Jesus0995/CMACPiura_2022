@@ -15,7 +15,7 @@ public class CerrarAnexarCheckListCreditoAprobarPage {
     private WebDriver driver;
     private WebDriverWait wait;
     private Set<String> identfCerrarAnexarCheckListAprobar;
-    private funcionEsperar objFuncionEsperar;
+    private funcionEsperar objFuncionEsperar = new funcionEsperar();
 
     @FindBy(xpath = "/html/body/fieldset/form/table/tbody/tr[2]/td/button") private WebElement btn_Cerrar;
 

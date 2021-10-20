@@ -16,7 +16,7 @@ public class AprobarDictamenPropuestaPage {
     private WebDriver driver;
     private WebDriverWait wait;
     private Set<String> identificadoresAprobarDictamenPropuesta;
-    private funcionEsperar objFuncionEsperar;
+    private funcionEsperar objFuncionEsperar = new funcionEsperar();
 
     @FindBy(xpath = "//textarea[@name='observaciones']") private WebElement txt_Observaciones;
     @FindBy(xpath = "//input[@name='clave']") private WebElement txt_Password;

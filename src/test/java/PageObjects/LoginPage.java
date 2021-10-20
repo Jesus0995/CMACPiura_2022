@@ -44,10 +44,10 @@ public class LoginPage {
     }
 
 
-    public void CerrarNavegador(){
-        Esperar(2);
-        driver.close();
-    }
+    //public void CerrarNavegador(){
+       // Esperar(2);
+        //driver.close();
+   // }
 
     private void Esperar(Integer Segundos){
         Integer Milisegundos = Segundos * 1000;

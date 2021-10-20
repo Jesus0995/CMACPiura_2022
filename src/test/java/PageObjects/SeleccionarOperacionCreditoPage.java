@@ -15,7 +15,7 @@ public class SeleccionarOperacionCreditoPage {
     private WebDriver driver;
     private WebDriverWait wait;
     private Set<String> identificadoresSeleccionarOP;
-    private funcionEsperar objFuncionEsperar;
+    private funcionEsperar objFuncionEsperar = new funcionEsperar();
 
     //mapear elementos
     //@FindBy(xpath = "//button[@type='submit']") private WebElement btn_aceptar;

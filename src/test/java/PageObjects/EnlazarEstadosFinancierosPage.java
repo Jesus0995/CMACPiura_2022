@@ -15,7 +15,7 @@ public class EnlazarEstadosFinancierosPage {
     private WebDriver driver;
     private WebDriverWait wait;
     private Set<String> identificadoresEnlazarEstadosFinancieros;
-    private funcionEsperar objFuncionEsperar;
+    private funcionEsperar objFuncionEsperar = new funcionEsperar();
 
     //mapeo elementos
     @FindBy(xpath = "//button[@type=\"submit\"]")

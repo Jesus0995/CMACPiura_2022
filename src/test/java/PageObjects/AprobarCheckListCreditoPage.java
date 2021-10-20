@@ -15,7 +15,7 @@ public class AprobarCheckListCreditoPage {
     private WebDriver driver;
     private WebDriverWait wait;
     private Set<String> identfAnexarCheckListAprobar;
-    private funcionEsperar objFuncionEsperar;
+    private funcionEsperar objFuncionEsperar =  new funcionEsperar();
 
     @FindBy(xpath = "//*[@value=\"2\"]")
     private WebElement opt_Aprobar;

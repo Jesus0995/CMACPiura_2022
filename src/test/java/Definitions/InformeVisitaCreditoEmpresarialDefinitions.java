@@ -5,8 +5,13 @@ import io.cucumber.datatable.DataTable;
 import io.cucumber.java.en.*;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
+
+import java.io.IOException;
 import java.util.List;
 import java.util.Map;
+import Support.screenshot;
+
+import static Support.screenshot.pantallazo;
 
 public class InformeVisitaCreditoEmpresarialDefinitions {
 
@@ -129,16 +134,18 @@ public class InformeVisitaCreditoEmpresarialDefinitions {
     }
     @And("en la ventana principal informe de visita doy click en el boton grabar")
     public void enLaVentanaPrincipalInformeDeVisitaDoyClickEnElBotonGrabar() {
-        crearInformeVisita.ClickGrabar();
+        crearInformeVisita.ClickBtnGrabar();
+
     }
     @And("en la ventana Grabar Documento doy click en el boton Cerrar")
     public void enLaVentanaGrabarDocumentoDoyClickEnElBotonCerrar() {
         grabarInformeVisita.AbrirVentanaGrabarPropuesta();
-        grabarInformeVisita.ClickbtnCerrarInformacion();
+        grabarInformeVisita.ClickBtnCerrarInformacion();
         grabarInformeVisita.CerrarVentanaGrabarPropuesta();
     }
     @And("en la ventana principal informe de visita doy click en el boton regresar")
-    public void enLaVentanaPrincipalInformeDeVisitaDoyClickEnElBotonRegresar() {
+    public void enLaVentanaPrincipalInformeDeVisitaDoyClickEnElBotonRegresar() throws IOException {
+        pantallazo();
         crearInformeVisita.ClickBtnRegresarCE();
     }
     @And("el sistema direcciona a ventana listado informe de visita y doy click en el boton regresar")
@@ -160,6 +167,6 @@ public class InformeVisitaCreditoEmpresarialDefinitions {
 
     @And("finalmente cerramos el navegador")
     public void finalmenteCerramosElNavegador() {
-        loginInforme.CerrarNavegador();
+        Hooks.driver.close();
     }
 }

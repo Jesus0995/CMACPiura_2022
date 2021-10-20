@@ -16,7 +16,7 @@ public class EnlazarInformeComercialNuevoPage {
     private WebDriver driver;
     private WebDriverWait wait;
     private Set<String> identificadoresEnlazarInformeComercialNuevo;
-    private  funcionEsperar objFuncionEsperar;
+    private  funcionEsperar objFuncionEsperar = new funcionEsperar();
 
     @FindBy(xpath = "//button[@type='submit']") private WebElement btn_Realizar;
 

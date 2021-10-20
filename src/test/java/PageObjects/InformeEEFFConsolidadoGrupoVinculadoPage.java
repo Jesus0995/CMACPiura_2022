@@ -19,7 +19,7 @@ public class InformeEEFFConsolidadoGrupoVinculadoPage {
     private WebDriver driver;
     private WebDriverWait wait;
     private Set<String> identificadoresInformeEEFFConsolidadoGrupoVinculado;
-    funcionEsperar objFuncionEsperar;
+    funcionEsperar objFuncionEsperar = new funcionEsperar();
 
     @FindBy(xpath = "//a[@id='btn_graba']") private WebElement btn_Grabar;
     @FindBy(xpath = "//a[@id='btn_final']") private WebElement btn_Finalizar;
@@ -75,13 +75,13 @@ public class InformeEEFFConsolidadoGrupoVinculadoPage {
     public void ClickBtnFinalizar(){
         wait.until(ExpectedConditions.elementToBeClickable(btn_Finalizar));
         btn_Finalizar.click();
-        //objFuncionEsperar.EsperarTiempo(3);
+        objFuncionEsperar.EsperarTiempo(3);
     }
 
     public void ClickBtnCerrar(){
         wait.until(ExpectedConditions.elementToBeClickable(btn_Cerrar));
         btn_Cerrar.click();
-        //objFuncionEsperar.EsperarTiempo(3);
+        objFuncionEsperar.EsperarTiempo(3);
 
     }
 

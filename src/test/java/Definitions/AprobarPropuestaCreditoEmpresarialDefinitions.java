@@ -110,14 +110,14 @@ public class AprobarPropuestaCreditoEmpresarialDefinitions {
 
     @And("en la misma ventana doy click en el boton Procesar")
     public void enLaMismaVentanaDoyClickEnElBotonProcesar() {
-        aprobarDictamenPropuesta.ClickbtnProcesar();
+        aprobarDictamenPropuesta.ClickBtnProcesar();
         aprobarDictamenPropuesta.CerrarVentanaAprobarDictamenPropuesta();
     }
 
     @Then("el sistema muestra la ventana Grabar Informacion y doy click en el boton Cerrar")
     public void elSistemaMuestraLaVentanaGrabarInformacionYDoyClickEnElBotonCerrar() throws IOException {
         grabarDocumentoPropuesta.AbrirVentanaGrabarPropuesta();
-        grabarDocumentoPropuesta.ClickbtnCerrar();
+        grabarDocumentoPropuesta.ClickBtnCerrar();
         grabarDocumentoPropuesta.CerrarVentanaGrabarPropuesta();
         pantallazo();
     }
@@ -156,5 +156,10 @@ public class AprobarPropuestaCreditoEmpresarialDefinitions {
     public void enLaVentanaAnexarCheckListCreditoDoyClickEnElBotonCerrar() {
         aprobarcheckListCredito.ClickBtnCerrar();
         aprobarcheckListCredito.CerrarVentanaAprobarCheckListCredito();
+    }
+
+    @And("cerrar el navegador")
+    public void cerrarElNavegador() {
+        Hooks.driver.close();
     }
 }

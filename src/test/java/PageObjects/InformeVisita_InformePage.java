@@ -11,7 +11,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 public class InformeVisita_InformePage {
     private WebDriver driver;
     private WebDriverWait wait;
-    private funcionEsperar objFuncionEsperar;
+    private funcionEsperar objFuncionEsperar = new funcionEsperar();
 
 
     @FindBy(xpath = "//td[@class='Invisible']//button[1]") private WebElement btn_crearVisita;
@@ -26,6 +26,7 @@ public class InformeVisita_InformePage {
         driver = d;
         wait = new WebDriverWait(driver, 30);
         PageFactory.initElements(driver, this);
+
     }
 
     public void ClickBtnCrear() {

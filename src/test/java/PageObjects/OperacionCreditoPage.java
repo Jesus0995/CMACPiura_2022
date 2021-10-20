@@ -21,8 +21,8 @@ public class OperacionCreditoPage {
     private WebDriverWait wait;
     private Set<String> identificadoresOperacionCredito;
     private Alert MensajeAlerta;
-    private funcionFecha objFuncionFecha;
-    private funcionEsperar objFuncionEsperar;
+    private funcionFecha objFuncionFecha = new funcionFecha();
+    private funcionEsperar objFuncionEsperar = new funcionEsperar();
 
     //Mapear objetos
     @FindBy(xpath = "//select[@name='moneda']") private WebElement cbx_Moneda;

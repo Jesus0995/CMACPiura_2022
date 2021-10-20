@@ -80,10 +80,21 @@ Feature: Crear una propuesta de Credito Empresarial de tipo NORMAL en el Sistema
     And el sistema direcciona a la ventana listado propuesta y doy click en boton Regresar
     And el sistema direcciona al Menu Principal y seleccionar opcion Cerrar Sesion
     And el sistema direcciona al login y doy click en boton Cerrar Sesion
+    And finalmente cerrar el navegador para iniciar nuevamente
 
     Examples:
       | cliente |
-      | 967     |
+      | 1487    |
+      | 1692    |
+      | 2028    |
+      | 2172    |
+      | 2240    |
+      | 2266    |
+      | 2363    |
+      | 2379    |
+      | 2517    |
+      | 2601    |
+
 
 
 

@@ -16,7 +16,7 @@ public class EnlazarInformeVisitaPage {
     private WebDriver driver;
     private WebDriverWait wait;
     private Set<String> identificadoresEnlazarInformeVisita;
-    private funcionEsperar objFuncionEsperar;
+    private funcionEsperar objFuncionEsperar = new funcionEsperar();
 
     //mapeop elementos
     @FindBy(xpath = "//button[@type='submit']") private WebElement btn_Realizar;

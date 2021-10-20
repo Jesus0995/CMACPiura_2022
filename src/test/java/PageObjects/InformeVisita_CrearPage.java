@@ -22,7 +22,7 @@ public class InformeVisita_CrearPage {
     private WebDriver driver;
     private WebDriverWait wait;
     private funcionFecha objFuncionFecha;
-    private funcionEsperar objFuncionEsperar;
+    private funcionEsperar objFuncionEsperar = new funcionEsperar();
 
 
     @FindBy(xpath = "//input[@name=\"fechaINI\"]") private WebElement txt_fechaVisita;
@@ -253,6 +253,7 @@ public class InformeVisita_CrearPage {
     public void ClickBtnGrabar() {
         wait.until(ExpectedConditions.elementToBeClickable(btn_grabar));
         btn_grabar.click();
+
     }
 
     public void ClickBtnRegresar() {

@@ -18,8 +18,8 @@ public class GrabarInformacionDocumentoPage {
     private WebDriver driver;
     private WebDriverWait wait;
     private String VentanaUltima;
-    private funcionEsperar objFuncionEsperar;
-    private funcionVentana objFuncionVentana;
+    private funcionEsperar objFuncionEsperar = new funcionEsperar();
+    private funcionVentana objFuncionVentana = new funcionVentana();
 
     @FindBy(xpath = "//button[@type='button']") private WebElement btn_Cerrar;
 

@@ -3,8 +3,12 @@ package Definitions;
 import PageObjects.*;
 import io.cucumber.datatable.DataTable;
 import io.cucumber.java.en.*;
+
+import java.io.IOException;
 import java.util.List;
 import java.util.Map;
+
+import static Support.screenshot.pantallazo;
 
 public class InformeComercialCreditoEmpresarialDefinitions {
     LoginPage loginSGCRED;
@@ -82,7 +86,8 @@ public class InformeComercialCreditoEmpresarialDefinitions {
         informeComercial.ClickGrabar();
     }
     @And("en la ventana principal Informe Comercial doy click en el boton Regresar")
-    public void enLaVentanaPrincipalInformeComercialDoyClickEnElBotonRegresar() {
+    public void enLaVentanaPrincipalInformeComercialDoyClickEnElBotonRegresar() throws IOException {
+        pantallazo();
         informeComercial.ClickRegresar();
     }
     @And("el sistema direcciona a la ventana listado de informes comerciales y doy click en Regresar")
@@ -101,7 +106,7 @@ public class InformeComercialCreditoEmpresarialDefinitions {
 
     @And("finalmente cerrar el navegador")
     public void finalmenteCerrarElNavegador() {
-        loginSGCRED.CerrarNavegador();
+        Hooks.driver.close();
 
     }
 }

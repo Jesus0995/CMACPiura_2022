@@ -15,7 +15,7 @@ public class DesenlazarInformeVisitaPage {
     private WebDriver driver;
     private WebDriverWait wait;
     private Set<String> identificadoresDesenlazarInformeVisita;
-    private funcionEsperar objFuncionEsperar;
+    private funcionEsperar objFuncionEsperar = new funcionEsperar();
 
     @FindBy(xpath = "//button[@type='submit']")
     private WebElement btn_Realizar;

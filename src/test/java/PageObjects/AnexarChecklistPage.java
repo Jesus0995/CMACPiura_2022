@@ -17,7 +17,7 @@ public class AnexarChecklistPage {
     private WebDriverWait wait;
     private Set<String> identificadoresAnexarCheckList;
     private Alert MensajeAlerta;
-    private funcionEsperar objFuncionEsperar;
+    private funcionEsperar objFuncionEsperar = new funcionEsperar();
 
     //Informacion basica cliente
     @FindBy(xpath = "//input[@id='item_1' and @value='2']")

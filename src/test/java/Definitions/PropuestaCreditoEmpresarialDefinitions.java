@@ -7,6 +7,7 @@ import io.cucumber.java.en.*;
 import java.io.IOException;
 import java.util.List;
 import java.util.Map;
+import Support.screenshot;
 
 public class PropuestaCreditoEmpresarialDefinitions {
     //crear variables de los pages
@@ -149,7 +150,7 @@ public class PropuestaCreditoEmpresarialDefinitions {
         }
 
         try {
-            Servicio.ClickCargar();
+            Servicio.ClickBtnCargar();
         } catch (Exception error) {
             error.printStackTrace();
             System.out.println("Error al hacer click en el boton cargar" + error.getMessage());
@@ -162,7 +163,7 @@ public class PropuestaCreditoEmpresarialDefinitions {
 
     public void enLaVentanaServicioDoyClickEnElBotonCargar() throws InterruptedException {
 
-        Servicio.ClickCargar();
+        Servicio.ClickBtnCargar();
     }
 
     @And("validar el mensaje del popup Comunicado")
@@ -202,7 +203,7 @@ public class PropuestaCreditoEmpresarialDefinitions {
             operacioncredito.IngresarTasaInicial(lista.get(i).get("TasaInicial"));
         }
 
-        operacioncredito.ClickCalcular();
+        operacioncredito.ClickBtnCalcular();
     }
 
     @And("en la ventana Operacion Credito seleccionar plan de pagos {string}")
@@ -261,7 +262,7 @@ public class PropuestaCreditoEmpresarialDefinitions {
 
     @And("en la ventana Operacion Credito doy click en grabar")
     public void enLaVentanaOperacionCreditoDoyClickEnGrabar() {
-        operacioncredito.ClickGrabar();
+        operacioncredito.ClickBtnGrabar();
 
     }
 
@@ -460,7 +461,7 @@ public class PropuestaCreditoEmpresarialDefinitions {
 
     @And("en la ventana CheckList doy clic en Guardar y Terminar finalmente acepto la alerta")
     public void enLaVentanaCheckListDoyClicEnGuardarYTerminarFinalmenteAceptoLaAlerta() {
-        anexarCheckListCreditos.ClickGuardarTerminar();
+        anexarCheckListCreditos.ClickBtnGuardarTerminar();
         anexarCheckListCreditos.AceptarAlerta();
         anexarCheckListCreditos.CerrarVentanaAnexarCheckList();
     }
@@ -594,7 +595,7 @@ public class PropuestaCreditoEmpresarialDefinitions {
     @And("en la ventana Grabar Informacion doy click en el boton Cerrar")
     public void enLaVentanaGrabarInformacionDoyClickEnElBotonCerrar() {
         grabarPropuesta.AbrirVentanaGrabarPropuesta();
-        grabarPropuesta.ClickbtnCerrarInformacion();
+        grabarPropuesta.ClickBtnCerrarInformacion();
         grabarPropuesta.CerrarVentanaGrabarPropuesta();
     }
 
@@ -621,14 +622,14 @@ public class PropuestaCreditoEmpresarialDefinitions {
 
     @And("en la ventana Emitir Dictamen Propuesta doy click en el boton Procesar")
     public void enLaVentanaEmitirDictamenPropuestaDoyClickEnElBotonProcesar() {
-        aprobarDictamenPropuesta.ClickbtnProcesar();
+        aprobarDictamenPropuesta.ClickBtnProcesar();
         aprobarDictamenPropuesta.CerrarVentanaAprobarDictamenPropuesta();
     }
 
     @And("el sistema muestra la ventana Grabar Informacion y le doy click en el boton Cerrar")
     public void elSistemaMuestraLaVentanaGrabarInformacionYLeDoyClickEnElBotonCerrar() {
         grabarPropuesta.AbrirVentanaGrabarPropuesta();
-        grabarPropuesta.ClickbtnCerrarInformacion();
+        grabarPropuesta.ClickBtnCerrarInformacion();
         grabarPropuesta.CerrarVentanaGrabarPropuesta();
     }
 
@@ -664,6 +665,12 @@ public class PropuestaCreditoEmpresarialDefinitions {
         informeEEFFConsolidadoGrupoVinculado.ClickBtnFinalizar();
         informeEEFFConsolidadoGrupoVinculado.ClickBtnCerrar();
         informeEEFFConsolidadoGrupoVinculado.CerrarVentanaInformeEstadoFinancieroConsolidadoGrupo();
+    }
+
+    @And("finalmente cerrar el navegador para iniciar nuevamente")
+    public void finalmenteCerrarElNavegadorParaIniciarNuevamente() {
+        Hooks.driver.close();
+
     }
 }
 

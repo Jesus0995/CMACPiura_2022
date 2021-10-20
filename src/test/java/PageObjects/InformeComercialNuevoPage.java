@@ -11,7 +11,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 public class InformeComercialNuevoPage {
     private WebDriver driver;
     private WebDriverWait wait;
-    private funcionEsperar objFuncionEsperar;
+    private funcionEsperar objFuncionEsperar = new funcionEsperar();
 
     @FindBy(xpath = "//input[@id='patrimoniopersonal']") private WebElement txt_patrimonio;
     @FindBy(xpath = "//input[@name='patrimoniopersonal']") private WebElement txt_PatrimonioComercial;

@@ -17,7 +17,7 @@ public class RegistrarSegurosPage {
     private WebDriver driver;
     private WebDriverWait wait;
     private Set<String> identificadoresRegistrarSeguros;
-    private funcionEsperar objFuncionEsperar;
+    private funcionEsperar objFuncionEsperar = new funcionEsperar();
 
     //Mapear los locator de la pagina
     @FindBy(xpath = "//input[@name=\"seguro\" and @value=\"4_02201\"]") private WebElement chk_SeguroDesgravamenFlatMN;
