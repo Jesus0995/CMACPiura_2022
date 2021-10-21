@@ -451,7 +451,6 @@ public class AnexarChecklistPage {
     }
 
     public void AceptarAlerta() {
-
         MensajeAlerta = driver.switchTo().alert();
         System.out.println("El mensaje alerta: " + MensajeAlerta.getText());
         MensajeAlerta.accept();
