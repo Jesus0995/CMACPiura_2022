@@ -65,9 +65,6 @@ Feature: Crear una propuesta de Credito Empresarial de tipo NORMAL en el Sistema
     And el sistema realiza la accion y direcciona a la ventana Propuesta y doy click en Enlazar el nuevo Informe Visita
     Then el sistema muestra la ventana Enlazar Informe de Visita y le doy click en el boton Realizar
     And el sistema muestra la ventana Propuesta y debe ingresar comentarios de los principales ratios "Comentarios positivos"
-    And en la ventana Propuesta doy click en el boton Enlazar Informe de Estados Financieros Grupo Vinculado
-    And en la ventana Informe de Estados Financieros Grupo Vinculado ingresar comentarios y doy click en el boton Grabar
-    And en la ventana Informe Estados Financieros Grupo Vinculado doy click en el boton Finalizar y finalmente Cerrar la ventana
     And el sistema direcciona a la ventana Propuesta y doy click en la opcion grabar
     And en la ventana Grabar Informacion doy click en el boton Cerrar
     Then en la ventana Propuesta doy click en el Menu Emitir Dictamen

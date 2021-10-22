@@ -7,6 +7,7 @@ import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import Functions.funcionExcepciones;
 
 import java.util.Set;
 
@@ -15,6 +16,8 @@ public class SeleccionarServicioPage {
     private WebDriver driver;
     private WebDriverWait wait;
     private Set<String> identificadoresServicio;
+    private funcionExcepciones objLogErrores = new funcionExcepciones();
+    private String detalleError = new String();
 
     //mapeo de objetos
     @FindBy(xpath = "//select[@name='servicio']")
@@ -44,9 +47,9 @@ public class SeleccionarServicioPage {
                 LastHandle = identificadorservicio;
             }
             driver.switchTo().window(LastHandle);
-        } catch (Exception error) {
-            error.printStackTrace();
-            System.out.println("La ventana servicio tiene los siguientes errores" + error.getMessage());
+        } catch (Exception Error) {
+            detalleError = "La ventana servicio tiene los siguientes errores";
+            objLogErrores.logError(detalleError,Error);
         }
     }
 
@@ -64,9 +67,9 @@ public class SeleccionarServicioPage {
             }
             System.out.println(Handles[0]);
             driver.switchTo().window(Handles[0]);
-        } catch (Exception error) {
-            error.printStackTrace();
-            System.out.println("Al cerrar la ventana tiene el siguiente error" + error.getMessage());
+        } catch (Exception Error) {
+            Error.printStackTrace();
+            System.out.println("Al cerrar la ventana tiene el siguiente error" + Error.getMessage());
         }
     }
 
@@ -83,9 +86,9 @@ public class SeleccionarServicioPage {
             new Select(cbx_Servicio).selectByVisibleText(TipoServicio);
             //System.out.println(cbx_servicio);
             //"CREDITO EMPRESARIAL"
-        } catch (Exception error) {
-            error.printStackTrace();
-            System.out.println("Error al seleccionar el tipo servicio" + error.getMessage());
+        } catch (Exception Error) {
+            Error.printStackTrace();
+            System.out.println("Error al seleccionar el tipo servicio" + Error.getMessage());
         }
     }
 
@@ -96,9 +99,9 @@ public class SeleccionarServicioPage {
             //System.out.println(cbx_servicioCredito);
             //"CREDITOS PYMES"
 
-        } catch (Exception error) {
-            error.printStackTrace();
-            System.out.println("Error al seleccionar servicio de credito" + error.getMessage());
+        } catch (Exception Error) {
+            Error.printStackTrace();
+            System.out.println("Error al seleccionar servicio de credito" + Error.getMessage());
         }
     }
 
@@ -108,9 +111,9 @@ public class SeleccionarServicioPage {
             new Select(cbx_TipoPropuesta).selectByVisibleText(TipoPropuesta);
             //System.out.println(cbx_tipoPropuesta);
             //"NORMAL"
-        } catch (Exception error) {
-            error.printStackTrace();
-            System.out.println("Error al seleccionar tipo propuesta" + error.getMessage());
+        } catch (Exception Error) {
+            Error.printStackTrace();
+            System.out.println("Error al seleccionar tipo propuesta" + Error.getMessage());
         }
     }
 

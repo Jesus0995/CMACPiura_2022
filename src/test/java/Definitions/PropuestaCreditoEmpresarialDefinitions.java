@@ -10,16 +10,16 @@ import java.util.Map;
 import Support.screenshot;
 
 public class PropuestaCreditoEmpresarialDefinitions {
-    //crear variables de los pages
+
     LoginPage login;
     MenuPrincipalPage menuPrincipal;
     ListadoPropuestaPage listadoPropuesta;
     ListadoClientesPage listadoClientes;
-    SeleccionarServicioPage Servicio;
-    PopUpComunicadoPage PopUpComunicado;
+    SeleccionarServicioPage seleccionarServicio;
+    PopUpComunicadoPage popUpComunicado;
     PropuestaPage propuesta;
-    SeleccionarOperacionCreditoPage seleccionarOpeCred;
-    OperacionCreditoPage operacioncredito;
+    SeleccionarOperacionCreditoPage seleccionarOperacionCredito;
+    OperacionCreditoPage operacionCredito;
     SeleccionarSegurosPage seleccionarSeguros;
     CambioTasaCreditoPage cambioTasaCredito;
     RegistrarSegurosPage registrarSeguros;
@@ -31,24 +31,23 @@ public class PropuestaCreditoEmpresarialDefinitions {
     CancelandoPagaresPage cancelandoPagares;
     GrabarInformacionDocumentoPage grabarPropuesta;
     EnlazarEstadosFinancierosPage enlazarEstadosFinancieros;
-    DesenlazarInformeVisitaPage desenlazarinformevisita;
+    DesenlazarInformeVisitaPage desenlazarInformeVisita;
     EnlazarInformeVisitaPage enlazarInformeVisita;
     EnlazarInformeComercialNuevoPage enlazarInformeComercialNuevo;
-    AprobarDictamenPropuestaPage aprobarDictamenPropuesta;
     InformeEEFFConsolidadoGrupoVinculadoPage informeEEFFConsolidadoGrupoVinculado;
+    AprobarDictamenPropuestaPage aprobarDictamenPropuesta;
 
-    //Constructor
     public PropuestaCreditoEmpresarialDefinitions() {
-        //Inicializar las paginas
+
         login = new LoginPage(Hooks.driver);
         menuPrincipal = new MenuPrincipalPage(Hooks.driver);
         listadoPropuesta = new ListadoPropuestaPage(Hooks.driver);
         listadoClientes = new ListadoClientesPage(Hooks.driver);
-        Servicio = new SeleccionarServicioPage(Hooks.driver);
-        PopUpComunicado = new PopUpComunicadoPage(Hooks.driver);
+        seleccionarServicio = new SeleccionarServicioPage(Hooks.driver);
+        popUpComunicado = new PopUpComunicadoPage(Hooks.driver);
         propuesta = new PropuestaPage(Hooks.driver);
-        seleccionarOpeCred = new SeleccionarOperacionCreditoPage(Hooks.driver);
-        operacioncredito = new OperacionCreditoPage(Hooks.driver);
+        seleccionarOperacionCredito = new SeleccionarOperacionCreditoPage(Hooks.driver);
+        operacionCredito = new OperacionCreditoPage(Hooks.driver);
         cambioTasaCredito = new CambioTasaCreditoPage(Hooks.driver);
         seleccionarSeguros = new SeleccionarSegurosPage(Hooks.driver);
         registrarSeguros = new RegistrarSegurosPage(Hooks.driver);
@@ -60,12 +59,11 @@ public class PropuestaCreditoEmpresarialDefinitions {
         cancelandoPagares = new CancelandoPagaresPage(Hooks.driver);
         grabarPropuesta = new GrabarInformacionDocumentoPage(Hooks.driver);
         enlazarEstadosFinancieros = new EnlazarEstadosFinancierosPage(Hooks.driver);
-        desenlazarinformevisita = new DesenlazarInformeVisitaPage(Hooks.driver);
+        desenlazarInformeVisita = new DesenlazarInformeVisitaPage(Hooks.driver);
         enlazarInformeVisita = new EnlazarInformeVisitaPage(Hooks.driver);
         enlazarInformeComercialNuevo = new EnlazarInformeComercialNuevoPage(Hooks.driver);
-        aprobarDictamenPropuesta = new AprobarDictamenPropuestaPage(Hooks.driver);
         informeEEFFConsolidadoGrupoVinculado = new InformeEEFFConsolidadoGrupoVinculadoPage(Hooks.driver);
-
+        aprobarDictamenPropuesta = new AprobarDictamenPropuestaPage(Hooks.driver);
     }
 
     @Given("la web SGCRED esta disponible")
@@ -73,165 +71,143 @@ public class PropuestaCreditoEmpresarialDefinitions {
         Hooks.driver.get("http://10.0.203.12:8081/propuesta/");
     }
 
-    @When("ingreso usuario y password")
-
-    public void ingreso_usuario_y_password(DataTable user) {
+    @When("ingresar usuario y password")
+    public void ingresar_usuario_y_password(DataTable user) {
         List<Map<String, String>> lista = user.asMaps(String.class, String.class);
         for (int i = 0; i < lista.size(); i++) {
-            login.IngresarUsuario(lista.get(i).get("nombre"));
+            login.IngresarUsuario(lista.get(i).get("usuario"));
             login.IngresarPassword(lista.get(i).get("password"));
         }
-
     }
 
-    @When("doy clic en boton ingresar")
-    public void doy_click_en_boton_ingresar() {
+    @Then("hacer click en el boton ingresar")
+    public void hacer_click_en_el_boton_ingresar() {
         login.ClickSubmit();
-
     }
 
-    @And("Mostrar home de SGCRED")
+    @And("mostrar home de SGCRED")
     public void mostrarHomeDeSGCRED() {
-
     }
 
-    @And("doy click en link propuesta financiamiento")
-    public void doyClickEnLinkPropuestaFinanciamiento() {
+    @And("en el menu principal hacer click en el link propuesta financiamiento")
+    public void en_el_menu_principal_hacer_click_en_el_link_propuesta_financiamiento() {
         menuPrincipal.ClickPropuestaFinanciamiento();
-        //pantallazo();
 
     }
 
-    @And("doy click en el boton crear_propuesta de la ventana Listado Propuesta")
-    public void doyClickEnElBotonCrear_propuestaDeLaVentanaListadoPropuesta() {
-        //listadoPropuesta.AbrirVentana();
+    @And("en la ventana Listado de Propuestas hacer click en el boton crear propuesta")
+    public void en_la_ventana_Listado_de_Propuestas_hacer_click_en_el_boton_crear_propuesta() {
         listadoPropuesta.ClickCrearPropuesta();
-        //pantallazo();
+       }
+
+    @And("en la ventana Cliente seleccionar el tab codigo para realizar la busqueda")
+    public void en_la_ventana_Cliente_seleccionar_el_tab_codigo_para_realizar_la_busqueda() {
+          listadoClientes.SeleccionarTabCodigo();
     }
 
-    @And("mostrar la ventana cliente para realizar la busqueda en el tab codigo")
-    public void mostrarLaVentanaClienteParaRealizarLaBusquedaEnElTabCodigo() {
-        //listadoClientes.AbrirVentana();
-        listadoClientes.SeleccionarTabCodigo();
-    }
-
-    @And("en la ventana cliente ingresar el codigo a buscar {string}")
-    public void enLaVentanaClienteIngresarElCodigoABuscar(String CodCliente) {
+    @And("en la ventana Cliente ingresar el codigo a buscar {string}")
+    public void en_la_ventana_Cliente_ingresar_el_codigo_a_buscar(String CodCliente) {
         listadoClientes.IngresarCodigoCliente(CodCliente);
     }
 
 
-    @And("en la ventana cliente doy click en el boton buscar")
-    public void enLaVentanaClienteDoyClickEnElBotonBuscar() {
+    @And("en la ventana Cliente hacer click en el boton buscar")
+    public void en_la_ventana_Cliente_hacer_click_en_el_boton_buscar() {
         listadoClientes.ClickBuscarCliente();
 
     }
 
-    @And("en la ventana cliente hacer click en el icono propuesta")
-    public void enLaVentanaClienteHacerClickEnElIconoPropuesta() {
-
+    @And("en la ventana Cliente hacer click en el icono propuesta")
+    public void en_la_ventana_Cliente_hacer_click_en_el_icono_propuesta() {
         listadoClientes.SeleccionarIconoPropuesta();
     }
 
-    @And("el sistema muestra la ventana de servicio e ingresamos la informacion y doy click en el boton cargar")
-    public void elSistemaMuestraLaVentanaDeServicioEIngresamosLaInformacionYDoyClickEnElBotonCargar(DataTable tipoServicio) throws IOException {
+    @And("en la ventana Servicio ingresar informacion luego hacer click en el boton cargar")
+    public void en_la_ventana_Servicio_ingresar_informacion_luego_hacer_click_en_el_boton_cargar(DataTable tipoServicio) throws IOException {
 
-        Servicio.AbrirVentanaServicio();
-
+        seleccionarServicio.AbrirVentanaServicio();
         List<Map<String, String>> lista = tipoServicio.asMaps(String.class, String.class);
         for (int i = 0; i < lista.size(); i++) {
-            Servicio.SeleccionarServicio(lista.get(i).get("TipoServicio"));
-            Servicio.SeleccionarServicioCredito(lista.get(i).get("ServicioCredito"));
-            Servicio.SeleccionarTipoPropuesta(lista.get(i).get("TipoPropuesta"));
-            Servicio.SeleccionarSubTipoPropuesta(lista.get(i).get("SubTipoPropuesta"));
-            Servicio.SeleccionarPromocion(lista.get(i).get("Promocion"));
+            seleccionarServicio.SeleccionarServicio(lista.get(i).get("TipoServicio"));
+            seleccionarServicio.SeleccionarServicioCredito(lista.get(i).get("ServicioCredito"));
+            seleccionarServicio.SeleccionarTipoPropuesta(lista.get(i).get("TipoPropuesta"));
+            seleccionarServicio.SeleccionarSubTipoPropuesta(lista.get(i).get("SubTipoPropuesta"));
+            seleccionarServicio.SeleccionarPromocion(lista.get(i).get("Promocion"));
             //Servicio.SeleccionarNegocio(lista.get(i).get("Negocio"));
             //Servicio.SeleccionarTipoOperacion(lista.get(i).get("TipoOperacion"));
         }
 
         try {
-            Servicio.ClickBtnCargar();
-        } catch (Exception error) {
-            error.printStackTrace();
-            System.out.println("Error al hacer click en el boton cargar" + error.getMessage());
+            seleccionarServicio.ClickBtnCargar();
+        } catch (Exception Error) {
+            Error.printStackTrace();
+            System.out.println("Error al hacer click en el boton cargar" + Error.getMessage());
         }
 
-        Servicio.CerrarVentanaServicio();
+        seleccionarServicio.CerrarVentanaServicio();
     }
 
-    @And("en la ventana servicio doy click en el boton cargar")
-
-    public void enLaVentanaServicioDoyClickEnElBotonCargar() throws InterruptedException {
-
-        Servicio.ClickBtnCargar();
+    @And("en la ventana Propuesta validar y cerrar el mensaje del popup Comunicado")
+    public void en_la_ventana_Propuesta_validar_y_cerrar_el_mensaje_del_popup_Comunicado() {
+        popUpComunicado.ValidarComunicado();
     }
 
-    @And("validar el mensaje del popup Comunicado")
-    public void validarElMensajeDelPopupComunicado() {
-        // PopUpComunicado.UbicarVentanaComunicado();
-        PopUpComunicado.ValidarComunicado();
-    }
-
-    @And("en la ventana propuesta doy click en el boton nueva operacion")
-    public void enLaVentanaPropuestaDoyClickEnElBotonNuevaOperacion() {
+    @And("en la ventana Propuesta hacer click en el boton nueva operacion")
+    public void en_la_ventana_Propuesta_hacer_click_en_el_boton_nueva_operacion() {
         propuesta.ClickBtnOperacion();
     }
 
-
-    @And("validar la ventana seleccionar operacion de credito luego doy click en boton aceptar")
-    public void validarLaVentanaSeleccionarOperacionDeCreditoLuegoDoyClickEnBotonAceptar() {
-        seleccionarOpeCred.AbrirVentanaSeleccionarOP();
+    @And("en la ventana Operacion Credito hacer click en boton aceptar")
+    public void en_la_ventana_Operacion_Credito_hacer_click_en_boton_aceptar() {
+        seleccionarOperacionCredito.AbrirVentanaSeleccionarOP();
         try {
-            seleccionarOpeCred.ValidarVentanaOP();
+            seleccionarOperacionCredito.ValidarVentanaOP();
         } catch (Exception Error) {
+            System.out.println("Error al hacer click en el boton aceptar"+Error.getMessage());
 
         }
-        seleccionarOpeCred.CerrarVentanaSeleccionarOP();
-
+        seleccionarOperacionCredito.CerrarVentanaSeleccionarOP();
     }
 
-    @And("posicionarse en la ventana Operacion Credito e ingresar la Operacion y doy click en Calcular")
-
-    public void posicionarseEnLaVentanaOperacionCreditoEIngresarlaOperacionYDoyClickEnCalcular(DataTable OperacionCredito) throws InterruptedException {
-
-        operacioncredito.AbrirVentanaOperacionCredito();
-
+    @And("en la ventana Operacion Credito ingresar datos de la operacion luego hacer click en el boton calcular")
+    public void en_la_ventana_Operacion_Credito_ingresar_datos_de_la_operacion_luego_hacer_click_en_el_boton_calcular(DataTable OperacionCredito) throws InterruptedException {
+        operacionCredito.AbrirVentanaOperacionCredito();
         List<Map<String, String>> lista = OperacionCredito.asMaps(String.class, String.class);
         for (int i = 0; i < lista.size(); i++) {
-            operacioncredito.SeleccionarMoneda(lista.get(i).get("Moneda"));
-            operacioncredito.IngresarMonto(lista.get(i).get("Monto"));
-            operacioncredito.IngresarTasaInicial(lista.get(i).get("TasaInicial"));
+            operacionCredito.SeleccionarMoneda(lista.get(i).get("Moneda"));
+            operacionCredito.IngresarMonto(lista.get(i).get("Monto"));
+            operacionCredito.IngresarTasaInicial(lista.get(i).get("TasaInicial"));
         }
-
-        operacioncredito.ClickBtnCalcular();
+        operacionCredito.ClickBtnCalcular();
     }
 
     @And("en la ventana Operacion Credito seleccionar plan de pagos {string}")
-    public void enLaVentanaOperacionCreditoSeleccionarPlanDePagos(String PlanPagos) {
-        operacioncredito.SeleccionarPlanPagos(PlanPagos);
+    public void en_la_ventana_Operacion_Credito_seleccionar_plan_de_pagos(String PlanPagos) {
+        operacionCredito.SeleccionarPlanPagos(PlanPagos);
 
     }
 
     @And("en la ventana Operacion Credito seleccionar modalidad {string}")
-    public void enLaVentanaOperacionCreditoSeleccionarModalidad(String Modalidad) {
-        operacioncredito.SeleccionarModalidad(Modalidad);
+    public void en_la_ventana_Operacion_Credito_seleccionar_modalidad(String Modalidad) {
+        operacionCredito.SeleccionarModalidad(Modalidad);
 
     }
 
     @And("en la ventana Operacion Credito Ingresar los dias {string}")
-    public void enLaVentanaOperacionCreditoIngresarLosDias(String Dias) {
-        operacioncredito.IngresarDias(Dias);
+    public void en_la_ventana_Operacion_Credito_Ingresar_los_dias(String Dias) {
+
+        operacionCredito.IngresarDias(Dias);
     }
 
     @And("en la ventana Operacion Credito ingresar porcentaje de Tasa Preferencial {string}")
-    public void enLaVentanaOperacionCreditoIngresarPorcentajeDeTasaPreferencial(String TasaPreferencial) {
-        operacioncredito.IngresarTasaPreferencial(TasaPreferencial);
+    public void en_la_ventana_Operacion_Credito_ingresar_porcentaje_de_Tasa_Preferencial(String TasaPreferencial) {
+        operacionCredito.IngresarTasaPreferencial(TasaPreferencial);
 
     }
 
     @And("en la ventana Operacion Credito seleccionar forma de desembolso {string}")
     public void enLaVentanaOperacionCreditoSeleccionarFormaDeDesembolso(String FormaDesembolso) {
-        operacioncredito.SeleccionarFormaDesembolso(FormaDesembolso);
+        operacionCredito.SeleccionarFormaDesembolso(FormaDesembolso);
 
     }
 
@@ -240,40 +216,37 @@ public class PropuestaCreditoEmpresarialDefinitions {
 
         List<Map<String, String>> lista = PlazaDesembolso.asMaps(String.class, String.class);
         for (int i = 0; i < lista.size(); i++) {
-            operacioncredito.SeleccionarDepartamento(lista.get(i).get("Departamento"));
-            operacioncredito.SeleccionarProvincia(lista.get(i).get("Provincia"));
-            operacioncredito.SeleccionarDistrito(lista.get(i).get("Distrito"));
-
+            operacionCredito.SeleccionarDepartamento(lista.get(i).get("Departamento"));
+            operacionCredito.SeleccionarProvincia(lista.get(i).get("Provincia"));
+            operacionCredito.SeleccionarDistrito(lista.get(i).get("Distrito"));
         }
-
     }
 
     @And("en la ventana Operacion Credito ingresar fecha probable del desembolso")
     public void enLaVentanaOperacionCreditoIngresarFechaProbableDelDesembolso() {
-        operacioncredito.ObtenerFechaDesembolso();
+        operacionCredito.ObtenerFechaDesembolso();
 
     }
 
     @And("en la ventana Operacion Credito Ingresar notas {string}")
     public void enLaVentanaOperacionCreditoIngresarNotas(String Notas) {
-        operacioncredito.IngresarNotas(Notas);
+        operacionCredito.IngresarNotas(Notas);
 
     }
 
-    @And("en la ventana Operacion Credito doy click en grabar")
-    public void enLaVentanaOperacionCreditoDoyClickEnGrabar() {
-        operacioncredito.ClickBtnGrabar();
+    @And("en la ventana Operacion Credito hacer click en el boton grabar")
+    public void en_la_ventana_Operacion_Credito_hacer_click_en_el_boton_grabar() {
+        operacionCredito.ClickBtnGrabar();
 
     }
 
-    @And("en la ventana Operacion Credito aceptar la alerta")
-    public void enLaVentanaOperacionCreditoAceptarLaAlerta() {
-        operacioncredito.ObtenerAlerta();
-
-        operacioncredito.CerrarVentanaOperacionCredito();
+    @And("en la ventana Operacion Credito hacer click en aceptar la alerta")
+    public void en_la_ventana_Operacion_Credito_hacer_click_en_aceptar_la_alerta() {
+        operacionCredito.ObtenerAlerta();
+        operacionCredito.CerrarVentanaOperacionCredito();
     }
 
-    @Then("el sistema direcciona a ventana Propuesta y doy click icono cambio de tasa")
+    @And("el sistema direcciona a ventana Propuesta y doy click icono cambio de tasa")
     public void elSistemaDireccionaAVentanaPropuestaYDoyClickIconoCambioDeTasa() {
         propuesta.ClickIcnCambioTasa();
 
@@ -293,30 +266,28 @@ public class PropuestaCreditoEmpresarialDefinitions {
 
     }
 
-    @Then("el sistema direcciona a la ventana propuesta y doy click al boton Registro de seguros")
-    public void elSistemaDireccionaALaVentanaPropuestaYDoyClickAlBotonRegistroDeSeguros() {
+    @And("en la ventana Propuesta hacer click en el boton registro de seguros")
+    public void en_la_ventana_Propuesta_hacer_click_en_el_boton_registro_de_seguros() {
         propuesta.ClickBtnRegistrarSeguro();
 
     }
 
-    @And("en la ventana Seleccion de seguros doy click en boton Confirmar")
-    public void enLaVentanaSeleccionDeSegurosDoyClickEnBotonConfirmar() {
+    @And("en la ventana Seleccion de seguros hacer click en el boton confirmar")
+    public void en_la_ventana_Seleccion_de_seguros_hacer_click_en_el_boton_confirmar() {
         seleccionarSeguros.AbrirVentanaSeleccionarSeguros();
         seleccionarSeguros.ClickbtnConfirmar();
         seleccionarSeguros.CerrarVentanaSeleccionarSeguros();
 
     }
 
-    @And("el sistema direcciona a la ventana Registro Seguros y check en seguro desgravamen flat MN")
-    public void elSistemaDireccionaALaVentanaRegistroSegurosYCheckEnSeguroDesgravamenFlatMN() {
+    @And("en la ventana Registro Seguros hacer check en seguro desgravamen flat MN")
+    public void en_la_ventana_Registro_Seguros_hacer_check_en_seguro_desgravamen_flat_MN() {
         registrarSeguros.AbrirVentanaRegistrarSeguros();
         registrarSeguros.ClickCheckSeguroDesgravamenMN();
     }
 
-    @And("en la ventana Registro Seguros ingresar el numero DPS Seguro Desgravamen")
-    public void enLaVentanaRegistroSegurosIngresarElNumeroDPSSeguroDesgravamen() {
-        //String seguroDesgravameMN
-        //registrarSeguros.IngresarSeguroDesgravamenMN(seguroDesgravameMN);
+    @And("en la ventana Registro Seguros ingresar el numero DPS del seguro desgravamen")
+    public void en_la_ventana_Registro_Seguros_ingresar_el_numero_DPS_del_seguro_desgravamen() {
         registrarSeguros.ObtenerNumeroAleatorioDPSSeguroDesgravamen();
     }
 
@@ -325,188 +296,65 @@ public class PropuestaCreditoEmpresarialDefinitions {
         registrarSeguros.ClickCheckSeguroRiesgoPlanPymes();
     }
 
-    @And("en la ventana Registro Seguros ingresar el numero DPS Seguro Plan Pymes")
-    public void enLaVentanaRegistroSegurosIngresarElNumeroDPSDelSeguroPlanPymes() {
-        //String seguroRiesgoPlanPymes
-        //registrarSeguros.IngresarSeguroRiesgoPlanPymes(seguroRiesgoPlanPymes);
+    @And("en la ventana Registro Seguros ingresar el numero DPS del Seguro Plan Pymes")
+    public void en_la_ventana_Registro_Seguros_ingresar_el_numero_DPS_del_Seguro_Plan_Pymes() {
         registrarSeguros.ObtenerNumeroAleatorioDPSeguroRiesgoPlanPymes();
     }
 
-    @And("en la ventana Registro Seguros doy click en Confirmar")
-    public void enLaVentanaRegistroSegurosDoyClickEnConfirmar() {
+    @And("en la ventana Registro Seguros hacer click en el boton confirmar")
+    public void en_la_ventana_Registro_Seguros_hacer_click_en_el_boton_confirmar() {
         registrarSeguros.ClickBtnConfirmar();
         registrarSeguros.CerrarVentanaRegistrarSeguros();
 
     }
 
-    @And("en la ventana seguros seleccionados visualizar información y doy click en cerrar")
-    public void enLaVentanaSegurosSeleccionadosVisualizarInformaciónYDoyClickEnCerrar() {
+    @And("en la ventana Seguros seleccionados visualizar informacion y hacer click en el boton cerrar")
+    public void en_la_ventana_Seguros_seleccionados_visualizar_informacion_y_hacer_click_en_el_boton_cerrar() {
         confirmarSeguros.AbrirVentanaConfirmacionSeguros();
         confirmarSeguros.ClickCerrar();
         confirmarSeguros.CerrarVentanaConfirmacionSeguros();
 
     }
 
-    @Then("el sistema direcciona a la ventana propuesta y doy click en Anexar CheckList creditos")
-    public void elSistemaDireccionaALaVentanaPropuestaYDoyClickEnAnexarCheckListCreditos() {
+    @And("en la ventana Propuesta hacer click en el boton anexar checkList creditos")
+    public void en_la_ventana_Propuesta_hacer_click_en_el_boton_anexar_checkList_creditos() {
         propuesta.ClickAnexarCheckListCreditos();
     }
 
-    @And("en la ventana CheckList Credito seleccionar todas las opciones de Expedientes")
-    public void enLaVentanaCheckListCreditoSeleccionarTodasLasOpcionesDeExpedientes() {
+    @And("en la ventana CheckList Credito seleccionar todas las opciones de la columna Expedientes")
+    public void en_la_ventana_CheckList_Credito_seleccionar_todas_las_opciones_de_la_columna_Expedientes() {
         anexarCheckListCreditos.AbrirVentanaAnexarCheckList();
         anexarCheckListCreditos.SeleccionarOpcionesCheckListCredito();
         anexarCheckListCreditos.Seleccionar_37opinionLegal();
     }
 
-    @And("en la ventana CheckList Seccion Informacion Basica Cliente seleccionar las opciones correspondientes")
-    public void enLaVentanaCheckListSeccionInformacionBasicaDelClienteSeleccionarLasOpcionesCorrespondientes() {
-        anexarCheckListCreditos.AbrirVentanaAnexarCheckList();
-        anexarCheckListCreditos.Seleccionar_1TarjetaInformacion();
-        anexarCheckListCreditos.Seleccionar_2CopiaFedatariaDOI();
-        anexarCheckListCreditos.Seleccionar_3VigenciaPoderActualizada();
-        anexarCheckListCreditos.Seleccionar_4ReciboLuz();
-        anexarCheckListCreditos.Seleccionar_5CroquisDomicilio();
-        anexarCheckListCreditos.Seleccionar_6GPSAgricolas();
-        anexarCheckListCreditos.Seleccionar_7FotoDomicilio();
-
-    }
-
-    @And("en la ventana CheckList Seccion Informacion del Negocio seleccionar las opciones correspondientes")
-    public void enLaVentanaCheckListSeccionInformacionDelNegocioSeleccionarLasOpcionesCorrespondientes() {
-        anexarCheckListCreditos.Seleccionar_8ReciboSSBB();
-        anexarCheckListCreditos.Seleccionar_9FotoNegocio();
-        anexarCheckListCreditos.Seleccionar_10SustentoVigencia();
-        anexarCheckListCreditos.Seleccionar_11InformeComercial();
-
-    }
-
-    @And("en la ventana CheckList Seccion Operaciones Propuestas seleccionar las opciones correspondientes")
-    public void enLaVentanaCheckListSeccionOperacionesPropuestasSeleccionarLasOpcionesCorrespondientes() {
-        anexarCheckListCreditos.Seleccionar_12SolicitudCredito();
-
-    }
-
-    @And("en la ventana CheckList Seccion Seguro del Cliente seleccionar las opciones correspondientes")
-    public void enLaVentanaCheckListSeccionSeguroDelClienteSeleccionarLasOpcionesCorrespondientes() {
-        anexarCheckListCreditos.Seleccionar_13CopiaDPS();
-    }
-
-    @And("en la ventana CheckList Seccion Seguro de Garantia seleccionar las opciones correspondientes")
-    public void enLaVentanaCheckListSeccionSeguroDeGarantiaSeleccionarLasOpcionesCorrespondientes() {
-        anexarCheckListCreditos.Seleccionar_14CopiaPolizaSeguro();
-    }
-
-    @And("en la ventana CheckList Seccion Informacion Economica Financiera seleccionar las opciones correspondientes")
-    public void enLaVentanaCheckListSeccionInformacionEconomicaFinancieraSeleccionarLasOpcionesCorrespondientes() {
-        anexarCheckListCreditos.Seleccionar_15EstadosFinancieros();
-        anexarCheckListCreditos.Seleccionar_16FlujodeCaja();
-        anexarCheckListCreditos.Seleccionar_17EstadosFinancieros();
-        anexarCheckListCreditos.Seleccionar_18FlujoCajaProyectado();
-        anexarCheckListCreditos.Seleccionar_19BalanceGeneralProyectado();
-        anexarCheckListCreditos.Seleccionar_20EEGGYPPAnual();
-        anexarCheckListCreditos.Seleccionar_21FlujoCajaHistoricoAnual();
-        anexarCheckListCreditos.Seleccionar_22EstadosFinancierosSemestral();
-        anexarCheckListCreditos.Seleccionar_23FlujoCajaHistoricoProyectado();
-
-    }
-
-    @And("en la ventana CheckList Seccion Declaracion Patrimonial seleccionar las opciones correspondientes")
-    public void enLaVentanaCheckListSeccionDeclaracionPatrimonialSeleccionarLasOpcionesCorrespondientes() {
-        anexarCheckListCreditos.Seleccionar_24PersonasNaturalesDeudores();
-    }
-
-    @And("en la ventana CheckList Seccion Informe Verificacion Previa seleccionar las opciones correspondientes")
-    public void enLaVentanaCheckListSeccionInformeVerificacionPreviaSeleccionarLasOpcionesCorrespondientes() {
-        anexarCheckListCreditos.Seleccionar_25InformeVisitaSectoristaLider();
-    }
-
-    @And("en la ventana CheckList Seccion Reporte Unidad de Riesgo seleccionar las opciones correspondientes")
-    public void enLaVentanaCheckListSeccionReporteUnidadDeRiesgoSeleccionarLasOpcionesCorrespondientes() {
-        anexarCheckListCreditos.Seleccionar_26OpinionRiesgosPropuestaIguales();
-    }
-
-    @And("en la ventana CheckList Seccion Garantias No Inscribibles seleccionar las opciones correspondientes")
-    public void enLaVentanaCheckListSeccionGarantiasNoInscribiblesSeleccionarLasOpcionesCorrespondientes() {
-        anexarCheckListCreditos.Seleccionar_27VaBusquedaBienes();
-        anexarCheckListCreditos.Seleccionar_28DocumentoPropiedad();
-        anexarCheckListCreditos.Seleccionar_29BoletaInformativa();
-        anexarCheckListCreditos.Seleccionar_30ContratoPrestamo();
-        anexarCheckListCreditos.Seleccionar_31DeclaracionJuradaBienes();
-    }
-
-    @And("en la ventana CheckList Seccion Garantias Con Deposicion seleccionar las opciones correspondientes")
-    public void enLaVentanaCheckListSeccionGarantiasConDeposicionSeleccionarLasOpcionesCorrespondientes() {
-        anexarCheckListCreditos.Seleccionar_32CopiaCertificadoTasacion();
-        anexarCheckListCreditos.Seleccionar_33CopiasPlazoFijo();
-
-    }
-
-    @And("en la ventana CheckList Seccion Garantias Inscribibles seleccionar las opciones correspondientes")
-    public void enLaVentanaCheckListSeccionGarantiasInscribiblesSeleccionarLasOpcionesCorrespondientes() {
-        anexarCheckListCreditos.Seleccionar_34CertificadoLiteralDomicilio();
-        anexarCheckListCreditos.Seleccionar_35GarantiaInscribible();
-        anexarCheckListCreditos.Seleccionar_36TasacionBien();
-        anexarCheckListCreditos.Seleccionar_37opinionLegal();
-        anexarCheckListCreditos.Seleccionar_38ContratoGarantiaMobiliaria();
-        anexarCheckListCreditos.Seleccionar_39ContratoPrestamoMobiliariaPreConst();
-        anexarCheckListCreditos.Seleccionar_40CopiaTestimonio();
-    }
-
-    @And("en la ventana CheckList Seccion Desembolso de credito con Inscripcion seleccionar las opciones correspondientes")
-    public void enLaVentanaCheckListSeccionDesembolsoDeCreditoConInscripcionSeleccionarLasOpcionesCorrespondientes() {
-        anexarCheckListCreditos.Seleccionar_41FichaIngresoRRPP();
-        anexarCheckListCreditos.Seleccionar_42CopiaLiteralPartida();
-    }
-
-    @And("en la ventana CheckList doy clic en Guardar y Terminar finalmente acepto la alerta")
-    public void enLaVentanaCheckListDoyClicEnGuardarYTerminarFinalmenteAceptoLaAlerta() {
+    @And("en la ventana CheckList Credito hacer click en el boton guardar y terminar finalmente aceptar la alerta")
+    public void en_la_ventana_CheckList_Credito_hacer_click_en_el_boton_guardar_y_terminar_finalmente_aceptar_la_alerta() {
         anexarCheckListCreditos.ClickBtnGuardarTerminar();
         anexarCheckListCreditos.AceptarAlerta();
         anexarCheckListCreditos.CerrarVentanaAnexarCheckList();
     }
 
-    @And("el sistema direcciona a la ventana Confirmar Checklist de Credito y doy click en cerrar")
-    public void elSistemaDireccionaALaVentanaConfirmarChecklistDeCreditoYDoyClickEnCerrar() {
+    @And("en la ventana Confirmar Checklist Credito hacer click en el boton cerrar")
+    public void en_la_ventana_Confirmar_Checklist_Credito_hacer_click_en_el_boton_cerrar() {
         confirmarCheckList.AbrirVentanaConfirmacionCheckList();
         confirmarCheckList.ClickCerrar();
         confirmarCheckList.CerrarVentanaConfirmacionCheckList();
     }
 
-    @Then("el sistema direcciona a la ventana propuesta y se procede a ingresar comentarios en la propuesta")
-    public void elSistemaDireccionaALaVentanaPropuestaYSeProcedeAIngresarComentariosEnLaPropuesta() {
-
+    @And("en la ventana Propuesta ingresar todos los comentarios de la propuesta")
+    public void en_la_ventana_Propuesta_ingresar_todos_los_comentarios_de_la_propuesta() {
         propuesta.IngresarComentariosPropuesta();
-        /*
-        List<Map<String, String>> listaComentarios = FundamentacionCredito.asMaps(String.class, String.class);
-        for (Integer i = 0; i < listaComentarios.size(); i++) {
-            propuesta.IngresarCaracteristicaNegocio(listaComentarios.get(i).get("CaracteristicaNegocio"));
-            propuesta.IngresarClasificacionRiesgoCliente(listaComentarios.get(i).get("ClasificacionRiesgoNegocio"));
-            propuesta.IngresarClasificacionRiesgoAvales(listaComentarios.get(i).get("ClasificacionRiesgoAvales"));
-            propuesta.IngresarAnalisisUnidadEconomicaFinanciera(listaComentarios.get(i).get("AnalisisUnidadEconomicaFinanciera"));
-
-        }
-        List<Map<String,String>> listaComentarios = ComentariosJustificados.asMaps(String.class,String.class);
-        for (Integer i = 0; i < listaComentarios.size() ;i++){
-            propuesta.IngresarCaracteristicaNegocio(listaComentarios.get(i).get("CaracteristicaNegocio"));
-            propuesta.IngresarProductosNegocio(listaComentarios.get(i).get("ProductosNegocio"));
-            propuesta.IngresarPrincipalesClientes(listaComentarios.get(i).get("PrincipalesClientes"));
-            propuesta.IngresarPersonalNegocio(listaComentarios.get(i).get("PersonalNegocio"));
-            propuesta.IngresarAnalisisSector(listaComentarios.get(i).get("AnalisisSector"));
-            propuesta.IngresarProyeccionesCrecimiento(listaComentarios.get(i).get("ProyeccionesCrecimiento"));
-        }
-        */
-
     }
 
-    @And("en la ventana Propuesta doy click en Anexar Garantias Existentes")
-    public void enLaVentanaPropuestaDoyClickEnAnexarGarantiasExistentes() {
+    @And("en la ventana Propuesta hacer click en el boton anexar garantias existentes")
+    public void en_la_ventana_Propuesta_hacer_click_en_el_boton_anexar_garantias_existentes() {
         propuesta.ClickAnexarGarantias();
 
     }
 
-    @And("en la ventana Seleccionar Garantias doy click en Registrar Garantias")
-    public void enLaVentanaSeleccionarGarantiasDoyClickEnRegistrarGarantias() {
+    @And("en la ventana Seleccionar Garantias hacer click en el boton registrar garantias")
+    public void en_la_ventana_Seleccionar_Garantias_hacer_click_en_el_boton_registrar_garantias() {
         seleccionarGarantia.AbrirVentanaGarantia();
         seleccionarGarantia.ClickRegistrarGarantia();
         seleccionarGarantia.CerrarVentanaGarantia();
@@ -519,99 +367,99 @@ public class PropuestaCreditoEmpresarialDefinitions {
     }
 
 
-    @And("en la ventana Garantias Existentes doy click en el boton Aceptar")
-    public void enLaVentanaGarantiasExistentesDoyClickEnElBotonAceptar() {
+    @And("en la ventana Garantias Existentes hacer click en el boton aceptar")
+    public void en_la_ventana_Garantias_Existentes_hacer_click_en_el_boton_aceptar() {
         seleccionarGarantiasExistentes.ClickBtnAceptar();
         seleccionarGarantiasExistentes.CerrarVentanaGarantiasExistentes();
     }
 
-    @And("el sistema muestra una ventana de cancelacion de pagares y se cierra automaticamente")
-    public void elSistemaMuestraUnaVentanaDeCancelacionDePagaresYSeCierraAutomaticamente() {
+    @And("en la ventana Cancelacion de pagares se cierra automaticamente")
+    public void en_la_ventana_Cancelacion_de_pagares_se_cierra_automaticamente() {
         cancelandoPagares.AbrirVentanaCancelandoPagares();
         cancelandoPagares.CerrarVentanaCancelandoPagares();
 
     }
 
-    @And("en la ventana Propuesta doy click en Enlazar Estados Financieros")
-    public void enLaVentanaPropuestaDoyClickEnEnlazarEstadosFinancieros() {
+    @And("en la ventana Propuesta hacer click en el boton enlazar estados financieros")
+    public void en_la_ventana_Propuesta_hacer_click_en_el_boton_enlazar_estados_financieros() {
         propuesta.ClickEnlazarEEFF();
     }
 
-    @Then("el sistema direcciona a la ventana Estados Financieros y doy click en Enlazar")
-    public void elSistemaDireccionaALaVentanaEstadosFinancierosYDoyClickEnEnlazar() {
+    @And("en la ventana Estados Financieros hacer click en el boton enlazar")
+    public void en_la_ventana_Estados_Financieros_hacer_click_en_el_boton_enlazar() {
         enlazarEstadosFinancieros.AbrirVentanaEnlazarEstadosFinancieros();
         enlazarEstadosFinancieros.ClickbtnEnlazar();
         enlazarEstadosFinancieros.CerrarVentanaEnlazarEstadosFinancieros();
 
     }
 
-    @And("en la ventana Propuesta doy click en Desenlazar el Informe de Visita precargado por defecto")
-    public void enLaVentanaPropuestaDoyClickEnDesenlazarElInformeDeVisitaPrecargadoPorDefecto() {
+    @And("en la ventana Propuesta hacer click en el boton desenlazar el informe de visita")
+    public void en_la_ventana_Propuesta_hacer_click_en_el_boton_desenlazar_el_informe_de_visita() {
         propuesta.ClickDesenlazarInformeVisita();
     }
 
 
-    @Then("el sistema muestra la ventana Desenlazar Informe de Visita y doy click en el boton Realizar")
-    public void elSistemaMuestraLaVentanaDesenlazarInformeDeVisitaYDoyClickEnElBotonRealizar() {
-        desenlazarinformevisita.AbrirVentanaDesenlazarInformeVisita();
-        desenlazarinformevisita.ClickBtnRealizar();
-        desenlazarinformevisita.CerrarVentanaDesenlazarInformeVisita();
+    @And("en la ventana Desenlazar Informe de Visita hacer click en el boton realizar")
+    public void en_la_ventana_Desenlazar_Informe_de_Visita_hacer_click_en_el_boton_realizar() {
+        desenlazarInformeVisita.AbrirVentanaDesenlazarInformeVisita();
+        desenlazarInformeVisita.ClickBtnRealizar();
+        desenlazarInformeVisita.CerrarVentanaDesenlazarInformeVisita();
     }
 
-    @And("el sistema realiza la accion y direcciona a la ventana Propuesta y doy click en Enlazar el nuevo Informe Visita")
-    public void elSistemaRealizaLaAccionYDireccionaALaVentanaPropuestaYDoyClickEnEnlazarElNuevoInformeVisita() {
-        propuesta.ClickEnlazarInformeVisita();
-    }
-
-    @Then("el sistema muestra la ventana Enlazar Informe de Visita y le doy click en el boton Realizar")
-    public void elSistemaMuestraLaVentanaEnlazarInformeDeVisitaYLeDoyClickEnElBotonRealizar() {
-        enlazarInformeVisita.AbrirVentanaEnlazarInformeVisita();
-        enlazarInformeVisita.ClickBtnRealizar();
-        enlazarInformeVisita.CerrarVentanaEnlazarInformeVisita();
-    }
-
-    @And("el sistema realiza la accion y direcciona a la ventana Propuesta y doy click en Enlazar Informe Comercial Nuevo")
-    public void elSistemaRealizaLaAccionYDireccionaALaVentanaPropuestaYDoyClickEnEnlazarInformeComercialNuevo() {
+    @And("en la ventana Propuesta hacer click en el boton enlazar informe comercial nuevo")
+    public void en_la_ventana_Propuesta_hacer_click_en_el_boton_enlazar_informe_comercial_nuevo() {
         propuesta.ClickEnlazarInformeComercialNuevo();
     }
 
-    @Then("el sistema muestra la ventana Enlazar Informe Comercial y le doy click en el boton Realizar")
-    public void elSistemaMuestraLaVentanaEnlazarInformeComercialYLeDoyClickEnElBotonRealizar() {
+    @And("en la ventana Enlazar Informe Comercial Nuevo hacer click en el boton realizar")
+    public void en_la_ventana_Enlazar_Informe_Comercial_Nuevo_hacer_click_en_el_boton_realizar() {
         enlazarInformeComercialNuevo.AbrirVentanaEnlazarInformeComercialNuevo();
         enlazarInformeComercialNuevo.ClickBtnRealizar();
         enlazarInformeComercialNuevo.CerrarVentanaEnlazarInformeComercialNuevo();
     }
 
-    @And("el sistema muestra la ventana Propuesta y debe ingresar comentarios de los principales ratios {string}")
-    public void elSistemaMuestraLaVentanaPropuestaYDebeIngresarComentariosDeLosPrincipalesRatios(String ComentariosRatios) {
+    @And("en la ventana Propuesta hacer click en el boton enlazar informe visita")
+    public void en_la_ventana_Propuesta_hacer_click_en_el_boton_enlazar_informe_visita() {
+        propuesta.ClickEnlazarInformeVisita();
+    }
+
+    @And("en la ventana Enlazar Informe de Visita hacer click en el boton realizar")
+    public void en_la_ventana_Enlazar_Informe_de_Visita_hacer_click_en_el_boton_realizar() {
+        enlazarInformeVisita.AbrirVentanaEnlazarInformeVisita();
+        enlazarInformeVisita.ClickBtnRealizar();
+        enlazarInformeVisita.CerrarVentanaEnlazarInformeVisita();
+    }
+
+    @And("en la ventana Propuesta ingresar comentarios de los principales ratios {string}")
+    public void en_la_ventana_Propuesta_ingresar_comentarios_de_los_principales_ratios(String ComentariosRatios) {
         propuesta.IngresarComentariosRatios(ComentariosRatios);
     }
 
-    @And("el sistema direcciona a la ventana Propuesta y doy click en la opcion grabar")
-    public void elSistemaDireccionaALaVentanaPropuestaYDoyClickEnLaOpcionGrabar() {
+    @And("en la ventana Propuesta hacer click en el menu grabar propuesta")
+    public void en_la_ventana_Propuesta_hacer_click_en_el_menu_grabar_propuesta() {
         propuesta.ClickMenuGrabarPropuesta();
     }
 
-    @And("en la ventana Grabar Informacion doy click en el boton Cerrar")
-    public void enLaVentanaGrabarInformacionDoyClickEnElBotonCerrar() {
+    @And("en la ventana Grabar Informacion hacer click en el boton cerrar")
+    public void en_la_ventana_Grabar_Informacion_hacer_click_en_el_boton_cerrar() {
         grabarPropuesta.AbrirVentanaGrabarPropuesta();
         grabarPropuesta.ClickBtnCerrarInformacion();
         grabarPropuesta.CerrarVentanaGrabarPropuesta();
     }
 
-    @Then("en la ventana Propuesta doy click en el Menu Emitir Dictamen")
-    public void enLaVentanaPropuestaDoyClickEnElMenuEmitirDictamen() {
+    @And("en la ventana Propuesta hacer click en el menu emitir dictamen")
+    public void en_la_ventana_Propuesta_hacer_click_en_el_menu_emitir_dictamen() {
+
         propuesta.AbrirOpcionesDictamen();
     }
 
-    @And("en las opciones del menu Emitir Dictamen seleccionar el boton Aprobar")
-    public void enLasOpcionesDelMenuEmitirDictamenSeleccionarElBotonAprobar() {
+    @And("en la opcion del Menu Emitir Dictamen seleccionar el boton aprobar")
+    public void en_la_opcion_del_Menu_Emitir_Dictamen_seleccionar_el_boton_aprobar() {
         propuesta.ClickBtnAprobarPropuesta();
     }
 
-
-    @And("en la ventana Emitir Dictamen Propuesta ingresar observaciones y password del usuario asesor")
-    public void enLaVentanaEmitirDictamenPropuestaIngresarObservacionesYPasswordDelUsuarioAsesor(DataTable DatosAprobacion) {
+    @And("en la ventana Emitir Dictamen Propuesta ingresar observaciones e ingresar password del usuario asesor de negocio")
+    public void en_la_ventana_Emitir_Dictamen_Propuesta_ingresar_observaciones_e_ingresar_password_del_usuario_asesor_de_negocio(DataTable DatosAprobacion) {
         aprobarDictamenPropuesta.AbrirVentanaAprobarDictamenPropuesta();
         List<Map<String, String>> lista = DatosAprobacion.asMaps(String.class, String.class);
         for (Integer i = 0; i < lista.size(); i++) {
@@ -620,51 +468,32 @@ public class PropuestaCreditoEmpresarialDefinitions {
         }
     }
 
-    @And("en la ventana Emitir Dictamen Propuesta doy click en el boton Procesar")
-    public void enLaVentanaEmitirDictamenPropuestaDoyClickEnElBotonProcesar() {
+    @And("en la ventana Emitir Dictamen Propuesta hacer click en el boton procesar")
+    public void en_la_ventana_Emitir_Dictamen_Propuesta_hacer_click_en_el_boton_procesar() {
         aprobarDictamenPropuesta.ClickBtnProcesar();
         aprobarDictamenPropuesta.CerrarVentanaAprobarDictamenPropuesta();
     }
 
-    @And("el sistema muestra la ventana Grabar Informacion y le doy click en el boton Cerrar")
-    public void elSistemaMuestraLaVentanaGrabarInformacionYLeDoyClickEnElBotonCerrar() {
+    @And("en la ventana Grabar Informacion hacer click en el boton cerrar ventana")
+    public void en_la_ventana_Grabar_Informacion_hacer_click_en_el_boton_cerrar_ventana() {
         grabarPropuesta.AbrirVentanaGrabarPropuesta();
         grabarPropuesta.ClickBtnCerrarInformacion();
         grabarPropuesta.CerrarVentanaGrabarPropuesta();
     }
 
-    @And("el sistema direcciona a la ventana listado propuesta y doy click en boton Regresar")
-    public void elSistemaDireccionaALaVentanaListadoPropuestaYDoyClickEnBotonRegresar() {
+    @And("en la ventana Listado propuesta hacer click en boton regresar")
+    public void en_la_ventana_Listado_propuesta_hacer_click_en_boton_regresar() {
         listadoPropuesta.ClickRegresar();
     }
 
-    @And("el sistema direcciona al Menu Principal y seleccionar opcion Cerrar Sesion")
-    public void elSistemaDireccionaAlMenuPrincipalYSeleccionarOpcionCerrarSesion() {
+    @And("en la ventana Menu Principal hacer click en la opcion cerrar sesion")
+    public void en_la_ventana_Menu_Principal_hacer_click_en_la_opcion_cerrar_sesion() {
         menuPrincipal.ClickCerrarSesion();
     }
 
-    @And("el sistema direcciona al login y doy click en boton Cerrar Sesion")
-    public void elSistemaDireccionaAlLoginYDoyClickEnBotonCerrarSesion() {
+    @And("en la ventana Login hacer click en boton cerrar sesion")
+    public void en_la_ventana_Login_hacer_click_en_boton_cerrar_sesion() {
         login.ClickCerrarSesion();
-    }
-
-    @And("en la ventana Propuesta doy click en el boton Enlazar Informe de Estados Financieros Grupo Vinculado")
-    public void enLaVentanaPropuestaDoyClickEnElBotonEnlazarInformeDeEstadosFinancierosGrupoVinculado() {
-        propuesta.ClickBtnEnlazarEEFFGrupoVinculadO();
-    }
-
-    @And("en la ventana Informe de Estados Financieros Grupo Vinculado ingresar comentarios y doy click en el boton Grabar")
-    public void enLaVentanaInformeDeEstadosFinancierosGrupoVinculadoIngresarComentariosYDoyClickEnElBotonGrabar() {
-        informeEEFFConsolidadoGrupoVinculado.AbrirVentanaInformeEstadoFinancieroConsolidadoGrupo();
-        informeEEFFConsolidadoGrupoVinculado.IngresarComentarios();
-        informeEEFFConsolidadoGrupoVinculado.ClickBtnGrabar();
-    }
-
-    @And("en la ventana Informe Estados Financieros Grupo Vinculado doy click en el boton Finalizar y finalmente Cerrar la ventana")
-    public void enLaVentanaInformeEstadosFinancierosGrupoVinculadoDoyClickEnElBotonFinalizarYFinalmenteCerrarLaVentana() {
-        informeEEFFConsolidadoGrupoVinculado.ClickBtnFinalizar();
-        informeEEFFConsolidadoGrupoVinculado.ClickBtnCerrar();
-        informeEEFFConsolidadoGrupoVinculado.CerrarVentanaInformeEstadoFinancieroConsolidadoGrupo();
     }
 
     @And("finalmente cerrar el navegador para iniciar nuevamente")
