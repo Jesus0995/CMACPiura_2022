@@ -7,9 +7,9 @@ Feature: Crear una propuesta de Credito Empresarial de tipo NORMAL con informe E
   Scenario Outline:Crear una propuesta de Credito Empresarial de tipo propuesta Normal con informe EEFF grupo vinculado Perfil "Asesor de Negocio"
     Given web SGCRED esta disponible
     When ingresar el usuario y password
-      | nombre | password |
-      | ALPAMA | prueba   |
-    And hacer click en boton ingresar
+      | usuario | password |
+      | ALPAMA  | prueba   |
+    Then hacer click en boton ingresar
     And mostrar pagina principal de SGCRED
     And en el menu principal doy click en link propuesta financiamiento
     And en la ventana listado de propuestas hacer click en el boton crear propuesta
@@ -38,39 +38,39 @@ Feature: Crear una propuesta de Credito Empresarial de tipo NORMAL con informe E
     And en la ventana operacion credito Ingresar notas "Prueba"
     And en la ventana operacion credito hacer click en el boton grabar
     And en la ventana operacion credito hacer click en la alerta
-    Then en la ventana propuesta hacer click al boton registro de seguros
+    And en la ventana propuesta hacer click al boton registro de seguros
     And en la ventana seleccion de seguros hacer click en boton confirmar
     And en la ventana registro seguros hacer check en seguro desgravamen flat MN
     And en la ventana registro seguros ingresar el numero DPS seguro desgravamen
     And en la ventana registro seguros hacer check en seguro todo riesgo Plan Pymes
     And en la ventana registro seguros ingresar el numero DPS Seguro Plan Pymes
     And en la ventana registro seguros hacer click en el boton confirmar
-    And en la ventana seguros seleccionados validar la información y hacer click en el boton cerrar
-    Then en la ventana propuesta hacer click en el boton anexar CheckList creditos
+    And en la ventana seguros seleccionados validar la informacion y hacer click en el boton cerrar
+    And en la ventana propuesta hacer click en el boton anexar CheckList creditos
     And en la ventana checkList credito seleccionar todas las opciones de los expedientes
     And en la ventana checkList hacer click en el boton guardar y terminar finalmente aceptar la alerta
     And en la ventana confirmar checklist de Credito hacer click en el boton cerrar
-    Then en la ventana propuesta ingresar todos los comentarios de la propuesta
+    And en la ventana propuesta ingresar todos los comentarios de la propuesta
     And en la ventana propuesta hacer click en el boton anexar garantias existentes
     And en la ventana seleccionar garantias hacer click en el boton registrar garantias
     And en la ventana garantias existentes seleccionar todas las garantias existentes
     And en la ventana garantias existentes hacer click en el boton aceptar
     And en la ventana cancelacion de pagares se cierra automaticamente
     And en la ventana propuesta hacer click en el boton enlazar estados financieros
-    Then en la ventana estados financieros hacer click en el boton enlazar
+    And en la ventana estados financieros hacer click en el boton enlazar
     And en la ventana propuesta hacer click en el boton desenlazar el informe de visita precargado por defecto
-    Then en la ventana desenlazar informe de Visita y hacer click en el boton realizar
+    And en la ventana desenlazar informe de Visita y hacer click en el boton realizar
     And en la ventana propuesta y hacer click en el boton enlazar informe comercial nuevo
-    Then en la ventana enlazar informe comercial hacer click en el boton realizar
+    And en la ventana enlazar informe comercial hacer click en el boton realizar
     And en la ventana propuesta hacer click en el boton enlazar informe visita
-    Then en la ventana enlazar informe de visita hacer click en el boton realizar
+    And en la ventana enlazar informe de visita hacer click en el boton realizar
     And en la ventana propuesta ingresar comentarios de los principales ratios "Comentarios positivos"
     And en la ventana propuesta doy click en el boton enlazar informe de estados financieros grupo vinculado
     And en la ventana informe de estados financieros grupo vinculado ingresar comentarios y hacer click en el boton grabar
     And en la ventana informe de estados financieros grupo vinculado hacer click en el boton finalizar y finalmente cerrar la ventana
     And en la ventana propuesta hacer click en el menu grabar
     And en la ventana grabar informacion hacer click en el menu cerrar
-    Then en la ventana propuesta hacer click en el menu emitir dictamen
+    And en la ventana propuesta hacer click en el menu emitir dictamen
     And en la opcion del menu emitir dictamen seleccionar el boton aprobar
     And en la ventana emitir dictamen propuesta ingresar observaciones y password del usuario asesor
       | Observaciones     | Contrasena |

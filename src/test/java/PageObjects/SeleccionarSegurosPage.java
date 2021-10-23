@@ -1,5 +1,8 @@
 package PageObjects;
 
+import Functions.funcionVentana;
+import Functions.funcionEsperar;
+import Functions.funcionExcepciones;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -14,6 +17,10 @@ public class SeleccionarSegurosPage {
     private WebDriver driver;
     private WebDriverWait wait;
     private Set<String> identificadoresSeleccionarSeguros;
+    private funcionVentana objFuncionVentana = new funcionVentana();
+    private funcionEsperar objFuncionEsperar = new funcionEsperar();
+    private funcionExcepciones objLogErrores = new funcionExcepciones();
+    private String detalleError = new String();
 
     @FindBy (xpath = "//button[@type=\"submit\"]") private WebElement btn_Confirmar;
 

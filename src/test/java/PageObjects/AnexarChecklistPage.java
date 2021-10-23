@@ -108,7 +108,6 @@ public class AnexarChecklistPage {
     @FindBy(xpath = "//input[@id='item_67' and @value='2']")
     private WebElement opt_33CopiasPlazoFijo;
 
-
     //garantias inscribibles
     @FindBy(xpath = "//input[@id='item_68' and @value='2']")
     private WebElement opt_34CertificadoLiteralDomicilio;
@@ -116,6 +115,7 @@ public class AnexarChecklistPage {
     private WebElement opt_35GarantiaInscribible;
     @FindBy(xpath = "//input[@id='item_76' and @value='2']")
     private WebElement opt_36TasacionBien;
+
     //@FindBy(xpath = "//input[@name='item_71' and @value='2']") private WebElement opt_37opinionLegal;
     @FindBy(xpath = "//input[@name='item_72' and @value='2']")
     private WebElement opt_38ContratoGarantiaMobiliaria;
@@ -129,7 +129,6 @@ public class AnexarChecklistPage {
     private WebElement opt_41FichaIngresoRRPP;
     @FindBy(xpath = "//input[@id='item_81' and @value='2']")
     private WebElement opt_42CopiaLiteralPartida;
-
 
     @FindBy(id = "idSaveSend")
     private WebElement btn_guardarTerminar;
@@ -169,7 +168,7 @@ public class AnexarChecklistPage {
 
 
     public void SeleccionarOpcionesCheckListCredito() {
-        objFuncionEsperar.EsperarTiempo(7);
+        objFuncionEsperar.EsperarTiempo(5);
         try {
            List<WebElement> checks = driver.findElements(By.xpath("//input[@Title='Expediente']"));
            for (WebElement check : checks) {

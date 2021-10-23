@@ -45,7 +45,7 @@ public class AprobarPropuestaCreditoEmpresarialDefinitions {
     public void ingresoUsuarioYPasswordDelPerfilJefeDeCreditoAgencia(DataTable datauser) {
         List<Map<String, String>> listas = datauser.asMaps(String.class, String.class);
         for (int i = 0; i < listas.size(); i++) {
-            loginAprobar.IngresarUsuario(listas.get(i).get("nombre"));
+            loginAprobar.IngresarUsuario(listas.get(i).get("usuario"));
             loginAprobar.IngresarPassword(listas.get(i).get("password"));
         }
     }

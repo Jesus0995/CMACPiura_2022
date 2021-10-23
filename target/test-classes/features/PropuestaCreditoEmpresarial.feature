@@ -6,24 +6,24 @@ Feature: Crear una propuesta de Credito Empresarial de tipo NORMAL en el Sistema
   @Prueba
   Scenario Outline:Crear una propuesta de Credito Empresarial de tipo propuesta Normal con el Perfil "Asesor de Negocio"
     Given la web SGCRED esta disponible
-    When ingreso usuario y password
-      | nombre | password |
+    When ingresar usuario y password
+      | usuario | password |
       | ALPAMA | prueba   |
-    And doy click en boton ingresar
-    And Mostrar home de SGCRED
-    And doy click en link propuesta financiamiento
-    And doy click en el boton crear_propuesta de la ventana Listado Propuesta
-    And mostrar la ventana cliente para realizar la busqueda en el tab codigo
-    And en la ventana cliente ingresar el codigo a buscar "<cliente>"
-    And en la ventana cliente doy click en el boton buscar
-    And en la ventana cliente hacer click en el icono propuesta
-    And el sistema muestra la ventana de servicio e ingresamos la informacion y doy click en el boton cargar
+    Then hacer click en el boton ingresar
+    And mostrar home de SGCRED
+    And en el menu principal hacer click en el link propuesta financiamiento
+    And en la ventana Listado de Propuestas hacer click en el boton crear propuesta
+    And en la ventana Cliente seleccionar el tab codigo para realizar la busqueda
+    And en la ventana Cliente ingresar el codigo a buscar "<cliente>"
+    And en la ventana Cliente hacer click en el boton buscar
+    And en la ventana Cliente hacer click en el icono propuesta
+    And en la ventana Servicio ingresar informacion luego hacer click en el boton cargar
       | TipoServicio        | ServicioCredito | TipoPropuesta | SubTipoPropuesta | Promocion     |
       | CREDITO EMPRESARIAL | CREDITOS PYMES  | NORMAL        | NORMAL           | SIN PROMOCION |
-    And validar el mensaje del popup Comunicado
-    And en la ventana propuesta doy click en el boton nueva operacion
-    And validar la ventana seleccionar operacion de credito luego doy click en boton aceptar
-    And posicionarse en la ventana Operacion Credito e ingresar la Operacion y doy click en Calcular
+    And en la ventana Propuesta validar y cerrar el mensaje del popup Comunicado
+    And en la ventana Propuesta hacer click en el boton nueva operacion
+    And en la ventana Operacion Credito hacer click en boton aceptar
+    And en la ventana Operacion Credito ingresar datos de la operacion luego hacer click en el boton calcular
       | Moneda | Monto | TasaInicial |
       | S/     | 3000  | 1           |
     And en la ventana Operacion Credito seleccionar plan de pagos "Fija Vencida"
@@ -36,61 +36,53 @@ Feature: Crear una propuesta de Credito Empresarial de tipo NORMAL en el Sistema
       | LIMA         | LIMA      | LIMA     |
     And en la ventana Operacion Credito ingresar fecha probable del desembolso
     And en la ventana Operacion Credito Ingresar notas "Prueba"
-    And en la ventana Operacion Credito doy click en grabar
-    And en la ventana Operacion Credito aceptar la alerta
-    Then el sistema direcciona a la ventana propuesta y doy click al boton Registro de seguros
-    And en la ventana Seleccion de seguros doy click en boton Confirmar
-    And el sistema direcciona a la ventana Registro Seguros y check en seguro desgravamen flat MN
-    And en la ventana Registro Seguros ingresar el numero DPS Seguro Desgravamen
+    And en la ventana Operacion Credito hacer click en el boton grabar
+    And en la ventana Operacion Credito hacer click en aceptar la alerta
+    And en la ventana Propuesta hacer click en el boton registro de seguros
+    And en la ventana Seleccion de seguros hacer click en el boton confirmar
+    And en la ventana Registro Seguros hacer check en seguro desgravamen flat MN
+    And en la ventana Registro Seguros ingresar el numero DPS del seguro desgravamen
     And en la ventana Registro Seguros hacer check en seguro todo riesgo Plan Pymes
-    And en la ventana Registro Seguros ingresar el numero DPS Seguro Plan Pymes
-    And en la ventana Registro Seguros doy click en Confirmar
-    And en la ventana seguros seleccionados visualizar información y doy click en cerrar
-    Then el sistema direcciona a la ventana propuesta y doy click en Anexar CheckList creditos
-    And en la ventana CheckList Credito seleccionar todas las opciones de Expedientes
-    And en la ventana CheckList doy clic en Guardar y Terminar finalmente acepto la alerta
-    And el sistema direcciona a la ventana Confirmar Checklist de Credito y doy click en cerrar
-    Then el sistema direcciona a la ventana propuesta y se procede a ingresar comentarios en la propuesta
-    And en la ventana Propuesta doy click en Anexar Garantias Existentes
-    And en la ventana Seleccionar Garantias doy click en Registrar Garantias
+    And en la ventana Registro Seguros ingresar el numero DPS del Seguro Plan Pymes
+    And en la ventana Registro Seguros hacer click en el boton confirmar
+    And en la ventana Seguros seleccionados visualizar informacion y hacer click en el boton cerrar
+    And en la ventana Propuesta hacer click en el boton anexar checkList creditos
+    And en la ventana CheckList Credito seleccionar todas las opciones de la columna Expedientes
+    And en la ventana CheckList Credito hacer click en el boton guardar y terminar finalmente aceptar la alerta
+    And en la ventana Confirmar Checklist Credito hacer click en el boton cerrar
+    And en la ventana Propuesta ingresar todos los comentarios de la propuesta
+    And en la ventana Propuesta hacer click en el boton anexar garantias existentes
+    And en la ventana Seleccionar Garantias hacer click en el boton registrar garantias
     And en la ventana Garantias Existentes seleccionar todas las garantias existentes
-    And en la ventana Garantias Existentes doy click en el boton Aceptar
-    And el sistema muestra una ventana de cancelacion de pagares y se cierra automaticamente
-    And en la ventana Propuesta doy click en Enlazar Estados Financieros
-    Then el sistema direcciona a la ventana Estados Financieros y doy click en Enlazar
-    And en la ventana Propuesta doy click en Desenlazar el Informe de Visita precargado por defecto
-    Then el sistema muestra la ventana Desenlazar Informe de Visita y doy click en el boton Realizar
-    And el sistema realiza la accion y direcciona a la ventana Propuesta y doy click en Enlazar Informe Comercial Nuevo
-    Then el sistema muestra la ventana Enlazar Informe Comercial y le doy click en el boton Realizar
-    And el sistema realiza la accion y direcciona a la ventana Propuesta y doy click en Enlazar el nuevo Informe Visita
-    Then el sistema muestra la ventana Enlazar Informe de Visita y le doy click en el boton Realizar
-    And el sistema muestra la ventana Propuesta y debe ingresar comentarios de los principales ratios "Comentarios positivos"
-    And el sistema direcciona a la ventana Propuesta y doy click en la opcion grabar
-    And en la ventana Grabar Informacion doy click en el boton Cerrar
-    Then en la ventana Propuesta doy click en el Menu Emitir Dictamen
-    And en las opciones del menu Emitir Dictamen seleccionar el boton Aprobar
-    And en la ventana Emitir Dictamen Propuesta ingresar observaciones y password del usuario asesor
+    And en la ventana Garantias Existentes hacer click en el boton aceptar
+    And en la ventana Cancelacion de pagares se cierra automaticamente
+    And en la ventana Propuesta hacer click en el boton enlazar estados financieros
+    And en la ventana Estados Financieros hacer click en el boton enlazar
+    And en la ventana Propuesta hacer click en el boton desenlazar el informe de visita
+    And en la ventana Desenlazar Informe de Visita hacer click en el boton realizar
+    And en la ventana Propuesta hacer click en el boton enlazar informe comercial nuevo
+    And en la ventana Enlazar Informe Comercial Nuevo hacer click en el boton realizar
+    And en la ventana Propuesta hacer click en el boton enlazar informe visita
+    And en la ventana Enlazar Informe de Visita hacer click en el boton realizar
+    And en la ventana Propuesta ingresar comentarios de los principales ratios "Comentarios positivos"
+    And en la ventana Propuesta hacer click en el menu grabar propuesta
+    And en la ventana Grabar Informacion hacer click en el boton cerrar
+    And en la ventana Propuesta hacer click en el menu emitir dictamen
+    And en la opcion del Menu Emitir Dictamen seleccionar el boton aprobar
+    And en la ventana Emitir Dictamen Propuesta ingresar observaciones e ingresar password del usuario asesor de negocio
       | Observaciones     | Contrasena |
       | Aprobar propuesta | prueba     |
-    And en la ventana Emitir Dictamen Propuesta doy click en el boton Procesar
-    And el sistema muestra la ventana Grabar Informacion y le doy click en el boton Cerrar
-    And el sistema direcciona a la ventana listado propuesta y doy click en boton Regresar
-    And el sistema direcciona al Menu Principal y seleccionar opcion Cerrar Sesion
-    And el sistema direcciona al login y doy click en boton Cerrar Sesion
+    And en la ventana Emitir Dictamen Propuesta hacer click en el boton procesar
+    And en la ventana Grabar Informacion hacer click en el boton cerrar ventana
+    And en la ventana Listado propuesta hacer click en boton regresar
+    And en la ventana Menu Principal hacer click en la opcion cerrar sesion
+    And en la ventana Login hacer click en boton cerrar sesion
     And finalmente cerrar el navegador para iniciar nuevamente
 
     Examples:
       | cliente |
       | 1487    |
-      | 1692    |
-      | 2028    |
-      | 2172    |
-      | 2240    |
-      | 2266    |
-      | 2363    |
-      | 2379    |
-      | 2517    |
-      | 2601    |
+
 
 
 

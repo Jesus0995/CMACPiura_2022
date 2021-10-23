@@ -1,5 +1,8 @@
 package PageObjects;
 
+import Functions.funcionExcepciones;
+import Functions.funcionEsperar;
+import Functions.funcionVentana;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -7,7 +10,8 @@ import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import Functions.funcionExcepciones;
+
+
 
 import java.util.Set;
 
@@ -17,25 +21,26 @@ public class SeleccionarServicioPage {
     private WebDriverWait wait;
     private Set<String> identificadoresServicio;
     private funcionExcepciones objLogErrores = new funcionExcepciones();
+    private funcionEsperar objFuncionEsperar = new funcionEsperar();
+    private funcionVentana objFuncionVentana = new funcionVentana();
     private String detalleError = new String();
 
     //mapeo de objetos
-    @FindBy(xpath = "//select[@name='servicio']")
+    @FindBy(xpath ="//select[@name='servicio']")
     private WebElement cbx_Servicio;
-    @FindBy(xpath = "//select[@name='idServicioSofia']")
+    @FindBy(xpath ="//select[@name='idServicioSofia']")
     private WebElement cbx_ServicioCredito;
-    @FindBy(xpath = "//select[@name='idTipoPropuesta']")
+    @FindBy(xpath ="//select[@name='idTipoPropuesta']")
     private WebElement cbx_TipoPropuesta;
-    @FindBy(xpath = "//select[@name='idSubTipoPropuesta']")
+    @FindBy(xpath ="//select[@name='idSubTipoPropuesta']")
     private WebElement cbx_SubTipoPropuesta;
-    @FindBy(xpath = "//select[@name='idPromocion']")
+    @FindBy(xpath ="//select[@name='idPromocion']")
     private WebElement cbx_Promocion;
     //@FindBy(xpath = "//select[@name='idnegocio']") private WebElement cbx_Negocio;
     //@FindBy(xpath = "//select[@name='idTipoOperacion']") private  WebElement cbx_TipoOperacion;
-    @FindBy(xpath = "//*[@id=\"bCargar\"]")
+    @FindBy(xpath ="//*[@id=\"bCargar\"]")
     private WebElement btn_Cargar;
 
-    //crear metodo para abrir ventana
     public void AbrirVentanaServicio() {
 
         try {
@@ -49,11 +54,10 @@ public class SeleccionarServicioPage {
             driver.switchTo().window(LastHandle);
         } catch (Exception Error) {
             detalleError = "La ventana servicio tiene los siguientes errores";
-            objLogErrores.logError(detalleError,Error);
+            objLogErrores.logError(detalleError, Error);
         }
     }
 
-    //crear metodo para salir de ventana
     public void CerrarVentanaServicio() {
         //Actions Acciones = new Actions(driver);
         try {
@@ -84,11 +88,9 @@ public class SeleccionarServicioPage {
         try {
             wait.until(ExpectedConditions.elementToBeClickable(cbx_Servicio));
             new Select(cbx_Servicio).selectByVisibleText(TipoServicio);
-            //System.out.println(cbx_servicio);
-            //"CREDITO EMPRESARIAL"
         } catch (Exception Error) {
-            Error.printStackTrace();
-            System.out.println("Error al seleccionar el tipo servicio" + Error.getMessage());
+            detalleError = "Error al seleccionar el tipo servicio";
+            objLogErrores.logError(detalleError, Error);
         }
     }
 
@@ -96,12 +98,10 @@ public class SeleccionarServicioPage {
         try {
             wait.until(ExpectedConditions.elementToBeClickable(cbx_ServicioCredito));
             new Select(cbx_ServicioCredito).selectByVisibleText(ServicioCredito);
-            //System.out.println(cbx_servicioCredito);
-            //"CREDITOS PYMES"
 
         } catch (Exception Error) {
-            Error.printStackTrace();
-            System.out.println("Error al seleccionar servicio de credito" + Error.getMessage());
+            detalleError = "Error al seleccionar servicio de credito";
+            objLogErrores.logError(detalleError, Error);
         }
     }
 
@@ -109,11 +109,9 @@ public class SeleccionarServicioPage {
         try {
             wait.until(ExpectedConditions.elementToBeClickable(cbx_TipoPropuesta));
             new Select(cbx_TipoPropuesta).selectByVisibleText(TipoPropuesta);
-            //System.out.println(cbx_tipoPropuesta);
-            //"NORMAL"
         } catch (Exception Error) {
-            Error.printStackTrace();
-            System.out.println("Error al seleccionar tipo propuesta" + Error.getMessage());
+            detalleError = "Error al seleccionar tipo propuesta del servicio";
+            objLogErrores.logError(detalleError, Error);
         }
     }
 
@@ -122,11 +120,9 @@ public class SeleccionarServicioPage {
         try {
             wait.until(ExpectedConditions.elementToBeClickable(cbx_SubTipoPropuesta));
             new Select(cbx_SubTipoPropuesta).selectByVisibleText(SubTipoPropuesta);
-            //System.out.println(cbx_subTipoPropuesta);
-            //"NORMAL"
-        } catch (Exception error) {
-            error.printStackTrace();
-            System.out.println("Error al seleccionar subtipopropuesta" + error.getMessage());
+        } catch (Exception Error) {
+            detalleError = "Error al seleccionar subtipopropuesta del servicio";
+            objLogErrores.logError(detalleError, Error);
         }
     }
 
@@ -134,38 +130,20 @@ public class SeleccionarServicioPage {
         try {
             wait.until(ExpectedConditions.elementToBeClickable(cbx_Promocion));
             new Select(cbx_Promocion).selectByVisibleText(Promocion);
-            //System.out.println(cbx_promocion);
-            //"SIN PROMOCION"
-        } catch (Exception error) {
-            error.printStackTrace();
-            System.out.println("Error al seleccionar promocion" + error.getMessage());
+        } catch (Exception Error) {
+            detalleError = "Error al seleccionar promocion del servicio";
+            objLogErrores.logError(detalleError, Error);
         }
     }
-
-    /*
-    public void SeleccionarNegocio (String Negocio){
-        wait.until(ExpectedConditions.elementToBeClickable(cbx_negocio));
-        new Select (cbx_negocio).selectByVisibleText(Negocio);
-        System.out.println(cbx_negocio);
-        //"VENTA AL POR MENOR DE PRENDAS DE VESTIR,"
-    }
-
-    public void SeleccionarTipoOperacion(String TipoOperacion) {
-        wait.until(ExpectedConditions.elementToBeClickable(cbx_tipoOperacion));
-        new Select (cbx_tipoOperacion).selectByVisibleText(TipoOperacion);
-        System.out.println(cbx_tipoOperacion);
-        //"SIMPLE"
-    }
-    */
 
     public void ClickBtnCargar() throws InterruptedException {
         try {
             wait.until(ExpectedConditions.elementToBeClickable(btn_Cargar));
             btn_Cargar.click();
             Thread.sleep(10000);
-        } catch (Exception error) {
-            error.printStackTrace();
-            System.out.println("Error al hacer click en el boton cargar" + error.getMessage());
+        } catch (Exception Error) {
+            detalleError = "Error al hacer click en el boton cargar";
+            objLogErrores.logError(detalleError, Error);
         }
     }
 
