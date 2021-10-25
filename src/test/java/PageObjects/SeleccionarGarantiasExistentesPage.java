@@ -1,6 +1,8 @@
 package PageObjects;
 
 import Functions.funcionEsperar;
+import Functions.funcionExcepciones;
+import Functions.funcionVentana;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -17,37 +19,51 @@ public class SeleccionarGarantiasExistentesPage {
     private WebDriver driver;
     private WebDriverWait wait;
     private Set<String> identificadoresGarantiasExistentes;
-    private funcionEsperar objFuncionEsperar;
+    private funcionVentana objFuncionVentana = new funcionVentana();
+    private funcionEsperar objFuncionEsperar = new funcionEsperar();
+    private funcionExcepciones objLogErrores = new funcionExcepciones();
+    private String detalleError = new String();
 
     @FindBy(xpath = "//button[@type=\"submit\"]")
     private WebElement btn_Aceptar;
 
     public void AbrirVentanaGarantiasExistentes() {
-        identificadoresGarantiasExistentes = driver.getWindowHandles();
-        System.out.println(identificadoresGarantiasExistentes);
-        String LastHandle = "";
+        try {
+            identificadoresGarantiasExistentes = driver.getWindowHandles();
+            System.out.println(identificadoresGarantiasExistentes);
+            String LastHandle = "";
 
-        for (String identificadorOperacionCredito : identificadoresGarantiasExistentes) {
-            LastHandle = identificadorOperacionCredito;
+            for (String identificadorOperacionCredito : identificadoresGarantiasExistentes) {
+                LastHandle = identificadorOperacionCredito;
+            }
+            driver.switchTo().window(LastHandle);
+
+            System.out.println("Titulo:" + driver.getTitle());
+
+        } catch (Exception Error) {
+            detalleError = "Error al posicionarse en la ventana garantias existentes";
+            objLogErrores.logError(detalleError, Error);
         }
-        driver.switchTo().window(LastHandle);
-
-        System.out.println("Titulo:" + driver.getTitle());
-
     }
+
 
     public void CerrarVentanaGarantiasExistentes() {
-        Integer SetSize = identificadoresGarantiasExistentes.size();
-        Integer Index = 0;
-        String[] Handles = new String[SetSize];
-        for (String identificadorGarantiasExistentes : identificadoresGarantiasExistentes) {
-            Handles[Index] = identificadorGarantiasExistentes;
-            Index++;
+        try {
+            Integer SetSize = identificadoresGarantiasExistentes.size();
+            Integer Index = 0;
+            String[] Handles = new String[SetSize];
+            for (String identificadorGarantiasExistentes : identificadoresGarantiasExistentes) {
+                Handles[Index] = identificadorGarantiasExistentes;
+                Index++;
+            }
+            System.out.println("Ventana principal: " + Handles[0]);
+            driver.switchTo().window(Handles[0]);
+        } catch (Exception Error) {
+            detalleError = "Error al posicionarse en la ventana propuesta";
+            objLogErrores.logError(detalleError, Error);
         }
-        System.out.println("Ventana principal: " + Handles[0]);
-        driver.switchTo().window(Handles[0]);
-
     }
+
 
     public SeleccionarGarantiasExistentesPage(WebDriver d) {
 
@@ -83,9 +99,9 @@ public class SeleccionarGarantiasExistentesPage {
                 checkBox.click();
             }
 
-        } catch (Exception error) {
-            error.printStackTrace();
-            System.out.println("Error al seleccionar las garantias" + error.getMessage());
+        } catch (Exception Error) {
+            detalleError = "Error al seleccionar las garantias maquinaria y equipo";
+            objLogErrores.logError(detalleError, Error);
         }
     }
 
@@ -96,16 +112,21 @@ public class SeleccionarGarantiasExistentesPage {
                 checkBox.click();
             }
 
-        } catch (Exception error) {
-            error.printStackTrace();
-            System.out.println("Error al seleccionar las garantias" + error.getMessage());
+        } catch (Exception Error) {
+            detalleError = "Error al seleccionar las garantias personal";
+            objLogErrores.logError(detalleError, Error);
         }
     }
 
     public void ClickBtnAceptar() {
-        wait.until(ExpectedConditions.elementToBeClickable(btn_Aceptar));
-        btn_Aceptar.click();
+        try {
+            wait.until(ExpectedConditions.elementToBeClickable(btn_Aceptar));
+            btn_Aceptar.click();
 
+        } catch (Exception Error) {
+            detalleError = "Error al seleccionar el boton aceptar";
+            objLogErrores.logError(detalleError, Error);
+        }
     }
 
 }

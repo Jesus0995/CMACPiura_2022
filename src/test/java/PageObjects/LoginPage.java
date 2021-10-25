@@ -1,5 +1,7 @@
 package PageObjects;
 
+import Functions.funcionEsperar;
+import Functions.funcionVentana;
 import net.bytebuddy.pool.TypePool;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -12,6 +14,8 @@ import Functions.funcionExcepciones;
 public class LoginPage {
     private WebDriver driver;
     private WebDriverWait wait;
+    private funcionVentana objFuncionVentana = new funcionVentana();
+    private funcionEsperar objFuncionEsperar = new funcionEsperar();
     private funcionExcepciones objLogErrores = new funcionExcepciones();
     private String detalleError = new String();
 
@@ -68,9 +72,9 @@ public class LoginPage {
     }
 
 
-    public void ClickCerrarSesion() {
+    public void ClickBtnCerrarSesion() {
         try {
-            Esperar(32);
+            objFuncionEsperar.EsperarTiempo(32);
             wait.until(ExpectedConditions.elementToBeClickable(btn_Cerrar));
             btn_Cerrar.click();
         } catch (Exception Error) {
@@ -80,20 +84,5 @@ public class LoginPage {
         }
     }
 
-
-    //public void CerrarNavegador(){
-    // Esperar(2);
-    //driver.close();
-    // }
-
-    private void Esperar(Integer Segundos) {
-        Integer Milisegundos = Segundos * 1000;
-        try {
-            Thread.sleep(Milisegundos);
-        } catch (InterruptedException error) {
-            error.printStackTrace();
-        }
-
-    }
 
 }

@@ -1,5 +1,8 @@
 package PageObjects;
 
+import Functions.funcionEsperar;
+import Functions.funcionExcepciones;
+import Functions.funcionVentana;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -11,19 +14,30 @@ public class MensajeActualizacionEEFFPage {
 
     private WebDriver driver;
     private WebDriverWait wait;
+    private funcionVentana objFuncionVentana = new funcionVentana();
+    private funcionEsperar objFuncionEsperar = new funcionEsperar();
+    private funcionExcepciones objLogErrores = new funcionExcepciones();
+    private String detalleError = new String();
 
-    @FindBy(xpath = "//button[@type=\"button\"]") private WebElement btn_cerrar;
+    @FindBy(xpath = "//button[@type=\"button\"]")
+    private WebElement btn_cerrar;
 
     public MensajeActualizacionEEFFPage(WebDriver d) {
         driver = d;
-        wait = new WebDriverWait(driver,30);
-        PageFactory.initElements(driver,this);
+        wait = new WebDriverWait(driver, 30);
+        PageFactory.initElements(driver, this);
 
     }
 
-    public void ClickCerrar () {
-        wait.until(ExpectedConditions.elementToBeClickable(btn_cerrar));
-        btn_cerrar.click();
+    public void ClickBtnCerrar() {
+        try {
+            wait.until(ExpectedConditions.elementToBeClickable(btn_cerrar));
+            btn_cerrar.click();
+        } catch (Exception Error) {
+            detalleError = "Error al seleccionar el boton cerrar";
+            objLogErrores.logError(detalleError, Error);
+        }
     }
+
 
 }

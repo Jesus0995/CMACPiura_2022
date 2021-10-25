@@ -18,6 +18,7 @@ public class MenuPrincipalPage {
     private WebDriverWait wait;
     private funcionEsperar objFuncionEsperar = new funcionEsperar();
 
+
     //mapear los locator
     @FindBy(partialLinkText = "PROPUESTA")
     private WebElement lnk_PropuestaFinanciamiento;

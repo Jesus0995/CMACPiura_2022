@@ -97,7 +97,7 @@ public class PropuestaCreditoEmpresarialDefinitions {
 
     @And("en la ventana Listado de Propuestas hacer click en el boton crear propuesta")
     public void en_la_ventana_Listado_de_Propuestas_hacer_click_en_el_boton_crear_propuesta() {
-        listadoPropuesta.ClickCrearPropuesta();
+        listadoPropuesta.ClickBtnCrearPropuesta();
        }
 
     @And("en la ventana Cliente seleccionar el tab codigo para realizar la busqueda")
@@ -483,7 +483,7 @@ public class PropuestaCreditoEmpresarialDefinitions {
 
     @And("en la ventana Listado propuesta hacer click en boton regresar")
     public void en_la_ventana_Listado_propuesta_hacer_click_en_boton_regresar() {
-        listadoPropuesta.ClickRegresar();
+        listadoPropuesta.ClickBtnRegresar();
     }
 
     @And("en la ventana Menu Principal hacer click en la opcion cerrar sesion")
@@ -493,7 +493,7 @@ public class PropuestaCreditoEmpresarialDefinitions {
 
     @And("en la ventana Login hacer click en boton cerrar sesion")
     public void en_la_ventana_Login_hacer_click_en_boton_cerrar_sesion() {
-        login.ClickCerrarSesion();
+        login.ClickBtnCerrarSesion();
     }
 
     @And("finalmente cerrar el navegador para iniciar nuevamente")

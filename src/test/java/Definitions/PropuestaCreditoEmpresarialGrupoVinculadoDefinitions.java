@@ -94,7 +94,7 @@ public class PropuestaCreditoEmpresarialGrupoVinculadoDefinitions {
     }
     @And("en la ventana listado de propuestas hacer click en el boton crear propuesta")
     public void en_la_ventana_listado_de_propuestas_hacer_click_en_el_boton_crear_propuesta() {
-        listadoPropuesta.ClickCrearPropuesta();
+        listadoPropuesta.ClickBtnCrearPropuesta();
     }
     @And("en la ventana cliente seleccionar el tab codigo para realizar la busqueda")
     public void en_la_ventana_cliente_seleccionar_el_tab_codigo_para_realizar_la_busqueda() {
@@ -410,7 +410,7 @@ public class PropuestaCreditoEmpresarialGrupoVinculadoDefinitions {
     }
     @And("en la ventana listado propuesta hacer click en boton regresar")
     public void en_la_ventana_listado_propuesta_hacer_click_en_boton_regresar() {
-        listadoPropuesta.ClickRegresar();
+        listadoPropuesta.ClickBtnRegresar();
     }
     @And("en la ventana menu principal seleccionar la opcion cerrar sesion")
     public void en_la_ventana_menu_principal_seleccionar_la_opcion_cerrar_sesion() {
@@ -418,7 +418,7 @@ public class PropuestaCreditoEmpresarialGrupoVinculadoDefinitions {
     }
     @And("en la ventana login hacer click en boton cerrar sesion")
     public void en_la_ventana_login_hacer_click_en_boton_cerrar_sesion() {
-        login.ClickCerrarSesion();
+        login.ClickBtnCerrarSesion();
     }
     @And("en la ventana final cerrar el navegador")
     public void en_la_ventana_final_cerrar_el_navegador() {

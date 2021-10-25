@@ -12,7 +12,6 @@ import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 
-
 import java.util.Set;
 
 public class SeleccionarServicioPage {
@@ -26,19 +25,19 @@ public class SeleccionarServicioPage {
     private String detalleError = new String();
 
     //mapeo de objetos
-    @FindBy(xpath ="//select[@name='servicio']")
+    @FindBy(xpath = "//select[@name='servicio']")
     private WebElement cbx_Servicio;
-    @FindBy(xpath ="//select[@name='idServicioSofia']")
+    @FindBy(xpath = "//select[@name='idServicioSofia']")
     private WebElement cbx_ServicioCredito;
-    @FindBy(xpath ="//select[@name='idTipoPropuesta']")
+    @FindBy(xpath = "//select[@name='idTipoPropuesta']")
     private WebElement cbx_TipoPropuesta;
-    @FindBy(xpath ="//select[@name='idSubTipoPropuesta']")
+    @FindBy(xpath = "//select[@name='idSubTipoPropuesta']")
     private WebElement cbx_SubTipoPropuesta;
-    @FindBy(xpath ="//select[@name='idPromocion']")
+    @FindBy(xpath = "//select[@name='idPromocion']")
     private WebElement cbx_Promocion;
     //@FindBy(xpath = "//select[@name='idnegocio']") private WebElement cbx_Negocio;
     //@FindBy(xpath = "//select[@name='idTipoOperacion']") private  WebElement cbx_TipoOperacion;
-    @FindBy(xpath ="//*[@id=\"bCargar\"]")
+    @FindBy(xpath = "//*[@id=\"bCargar\"]")
     private WebElement btn_Cargar;
 
     public void AbrirVentanaServicio() {
@@ -53,7 +52,7 @@ public class SeleccionarServicioPage {
             }
             driver.switchTo().window(LastHandle);
         } catch (Exception Error) {
-            detalleError = "La ventana servicio tiene los siguientes errores";
+            detalleError = "Error al posicionarse en la ventana servicio";
             objLogErrores.logError(detalleError, Error);
         }
     }
@@ -72,8 +71,8 @@ public class SeleccionarServicioPage {
             System.out.println(Handles[0]);
             driver.switchTo().window(Handles[0]);
         } catch (Exception Error) {
-            Error.printStackTrace();
-            System.out.println("Al cerrar la ventana tiene el siguiente error" + Error.getMessage());
+            detalleError = "Error al posicionarse en la ventana principal";
+            objLogErrores.logError(detalleError, Error);
         }
     }
 

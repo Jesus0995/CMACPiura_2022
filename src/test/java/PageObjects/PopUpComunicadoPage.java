@@ -1,5 +1,9 @@
 package PageObjects;
 
+
+import Functions.funcionEsperar;
+import Functions.funcionExcepciones;
+import Functions.funcionVentana;
 import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -18,18 +22,22 @@ public class PopUpComunicadoPage {
 
     private WebDriver driver;
     private WebDriverWait wait;
+    private funcionVentana objFuncionVentana = new funcionVentana();
+    private funcionEsperar objFuncionEsperar = new funcionEsperar();
+    private funcionExcepciones objLogErrores = new funcionExcepciones();
+    private String detalleError = new String();
 
     public PopUpComunicadoPage(WebDriver d) {
         driver = d;
-        wait = new WebDriverWait(driver,30);
-        PageFactory.initElements(driver,this);
+        wait = new WebDriverWait(driver, 30);
+        PageFactory.initElements(driver, this);
 
-        }
+    }
 
-        public void ValidarComunicado() {
-            //wait.until(ExpectedConditions.elementToBeClickable(vtn_comunicado));
-            // @FindBy(xpath = "//span[test() = 'close' or.= 'close')]") private WebElement vtn_comunicado;
-
+    public void ValidarComunicado() {
+        //wait.until(ExpectedConditions.elementToBeClickable(vtn_comunicado));
+        // @FindBy(xpath = "//span[test() = 'close' or.= 'close')]") private WebElement vtn_comunicado;
+        try {
             System.out.println("Handle: " + driver.getWindowHandle());
             System.out.println("Titulo: " + driver.getTitle());
 
@@ -37,8 +45,7 @@ public class PopUpComunicadoPage {
             System.out.println(linkComunicadoClose);
 
             linkComunicadoClose.click();
-
-            Esperar(3);
+            objFuncionEsperar.EsperarTiempo(3);
 
             //vtn_comunicado.click();
 
@@ -49,16 +56,10 @@ public class PopUpComunicadoPage {
             // Robot r = new Robot();
             // r.keyPress(KeyEvent.VK_ESCAPE);
 
+        } catch (Exception Error) {
+            detalleError = "Error al cerrar e popup comunicado";
+            objLogErrores.logError(detalleError, Error);
         }
-
-        private void Esperar(Integer Segundos) {
-            Integer Milisegundos = Segundos * 1000;
-
-            try {
-                Thread.sleep(Milisegundos);
-            } catch (InterruptedException e) {
-                e.printStackTrace();
-            }
-        }
+    }
 
 }

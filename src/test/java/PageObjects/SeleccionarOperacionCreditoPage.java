@@ -1,6 +1,8 @@
 package PageObjects;
 
 import Functions.funcionEsperar;
+import Functions.funcionExcepciones;
+import Functions.funcionVentana;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -16,51 +18,67 @@ public class SeleccionarOperacionCreditoPage {
     private WebDriverWait wait;
     private Set<String> identificadoresSeleccionarOP;
     private funcionEsperar objFuncionEsperar = new funcionEsperar();
+    private funcionVentana objFuncionVentana = new funcionVentana();
+    private funcionExcepciones objLogErrores = new funcionExcepciones();
+    private String detalleError = new String();
 
     //mapear elementos
     //@FindBy(xpath = "//button[@type='submit']") private WebElement btn_aceptar;
 
-    public void AbrirVentanaSeleccionarOP(){
-        identificadoresSeleccionarOP = driver.getWindowHandles();
-        System.out.println(identificadoresSeleccionarOP);
-        String LastHandle ="";
+    public void AbrirVentanaSeleccionarOP() {
+        try {
+            identificadoresSeleccionarOP = driver.getWindowHandles();
+            System.out.println(identificadoresSeleccionarOP);
+            String LastHandle = "";
 
-        for (String identificadorSeleccionarOP :identificadoresSeleccionarOP ){
-            LastHandle = identificadorSeleccionarOP;
+            for (String identificadorSeleccionarOP : identificadoresSeleccionarOP) {
+                LastHandle = identificadorSeleccionarOP;
+            }
+            driver.switchTo().window(LastHandle);
+            objFuncionEsperar.EsperarTiempo(3);
+
+        } catch (Exception Error) {
+            detalleError = "Error al posicionarse en la ventana seleccionar operacion credito";
+            objLogErrores.logError(detalleError, Error);
         }
-        driver.switchTo().window(LastHandle);
-        objFuncionEsperar.EsperarTiempo(3);
-
     }
 
-    public void CerrarVentanaSeleccionarOP(){
-        Integer SetSize = identificadoresSeleccionarOP.size();
-        Integer Index=0;
-        String[] Handles = new String[SetSize] ;
-        for (String identificadorSeleccionarOP : identificadoresSeleccionarOP) {
-            Handles[Index] = identificadorSeleccionarOP;
-            Index++;
+    public void CerrarVentanaSeleccionarOP() {
+        try {
+            Integer SetSize = identificadoresSeleccionarOP.size();
+            Integer Index = 0;
+            String[] Handles = new String[SetSize];
+            for (String identificadorSeleccionarOP : identificadoresSeleccionarOP) {
+                Handles[Index] = identificadorSeleccionarOP;
+                Index++;
+            }
+            System.out.println(Handles[0]);
+            driver.switchTo().window(Handles[0]);
+        } catch (Exception Error) {
+            detalleError = "Error al posicionarse en la ventana principal";
+            objLogErrores.logError(detalleError, Error);
         }
-        System.out.println(Handles[0]);
-        driver.switchTo().window(Handles[0]);
     }
+
 
     //constructor
     public SeleccionarOperacionCreditoPage(WebDriver d) {
         driver = d;
-        wait = new WebDriverWait(driver,50);
-        PageFactory.initElements(driver,this);
+        wait = new WebDriverWait(driver, 50);
+        PageFactory.initElements(driver, this);
 
     }
-    public void ValidarVentanaOP(){
 
-        System.out.println("Handles :" + driver.getWindowHandle());
-        System.out.println("Title :" + driver.getTitle());
-
-        WebElement btn_Aceptar = driver.findElement(By.xpath("//button[@type='submit']"));
-
-        btn_Aceptar.click();
-
-        objFuncionEsperar.EsperarTiempo(11);
+    public void ValidarVentanaOP() {
+        try {
+            System.out.println("Handles :" + driver.getWindowHandle());
+            System.out.println("Title :" + driver.getTitle());
+            WebElement btn_Aceptar = driver.findElement(By.xpath("//button[@type='submit']"));
+            btn_Aceptar.click();
+            objFuncionEsperar.EsperarTiempo(11);
+        } catch (Exception Error) {
+            detalleError = "Error al validar la ventana operacion de credito";
+            objLogErrores.logError(detalleError, Error);
+        }
     }
 }

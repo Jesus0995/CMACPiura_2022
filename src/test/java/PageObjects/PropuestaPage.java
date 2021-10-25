@@ -1,5 +1,8 @@
 package PageObjects;
 
+import Functions.funcionEsperar;
+import Functions.funcionExcepciones;
+import Functions.funcionVentana;
 import org.openqa.selenium.*;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
@@ -14,9 +17,10 @@ import java.util.Set;
 public class PropuestaPage {
     private WebDriver driver;
     private WebDriverWait wait;
-
-
-    //mapeo de locator
+    private funcionVentana objFuncionVentana = new funcionVentana();
+    private funcionEsperar objFuncionEsperar = new funcionEsperar();
+    private funcionExcepciones objLogErrores = new funcionExcepciones();
+    private String detalleError = new String();
 
     @FindBy(xpath = "//textarea[@name='comentCalifCred']")
     private WebElement txt_ClasificacionCrediticia;
@@ -68,7 +72,8 @@ public class PropuestaPage {
     private WebElement btn_VerificarCheckListCredito;
 
 
-    @FindBy(xpath = "/html/body/form/table[2]/tbody/tr[6]/td[3]/button") private WebElement btn_EnlazarEEFFGrupoVinculado;
+    @FindBy(xpath = "/html/body/form/table[2]/tbody/tr[6]/td[3]/button")
+    private WebElement btn_EnlazarEEFFGrupoVinculado;
 
 
     public PropuestaPage(WebDriver d) {
@@ -79,189 +84,325 @@ public class PropuestaPage {
     }
 
     public void ClickBtnOperacion() {
-        wait.until(ExpectedConditions.elementToBeClickable(btn_NuevaOperacion));
-        btn_NuevaOperacion.click();
+        try {
+            wait.until(ExpectedConditions.elementToBeClickable(btn_NuevaOperacion));
+            btn_NuevaOperacion.click();
+        } catch (Exception Error) {
+            detalleError = "Error al seleccionar el boton nueva operacion";
+            objLogErrores.logError(detalleError, Error);
+        }
     }
 
     public void ClickIcnCambioTasa() {
-        wait.until(ExpectedConditions.elementToBeClickable(icn_CambioTasa));
-        icn_CambioTasa.click();
+        try {
+            wait.until(ExpectedConditions.elementToBeClickable(icn_CambioTasa));
+            icn_CambioTasa.click();
+        } catch (Exception Error) {
+            detalleError = "Error al seleccionar el icono cambio de tasa";
+            objLogErrores.logError(detalleError, Error);
+        }
     }
 
     public void ClickBtnRegistrarSeguro() {
-
-        wait.until(ExpectedConditions.elementToBeClickable(btn_AgregarSeguro));
-        btn_AgregarSeguro.click();
-    }
-
-    public void ClickAnexarCheckListCreditos() {
-
-        wait.until(ExpectedConditions.elementToBeClickable(btn_AnexarChecklist));
-        btn_AnexarChecklist.click();
-    }
-
-    public void IngresarComentariosPropuesta() {
-        List<WebElement> elementList = driver.findElements(By.tagName("textarea"));
-        for (WebElement textarea : elementList) {
-            textarea.sendKeys("descripcion general de la propuesta");
+        try {
+            wait.until(ExpectedConditions.elementToBeClickable(btn_AgregarSeguro));
+            btn_AgregarSeguro.click();
+        } catch (Exception Error) {
+            detalleError = "Error al seleccionar el boton registrar seguro";
+            objLogErrores.logError(detalleError, Error);
         }
 
     }
 
-    public void IngresarClasificacionCrediticia(String clasificacion){
-        txt_ClasificacionCrediticia.clear();
-        txt_ClasificacionCrediticia.sendKeys(clasificacion);
+    public void ClickAnexarCheckListCreditos() {
+        try {
+            wait.until(ExpectedConditions.elementToBeClickable(btn_AnexarChecklist));
+            btn_AnexarChecklist.click();
+        } catch (Exception Error) {
+            detalleError = "Error al seleccionar el boton anexar check ist creditos";
+            objLogErrores.logError(detalleError, Error);
+        }
+    }
+
+    public void IngresarComentariosPropuesta() {
+        try {
+            List<WebElement> elementList = driver.findElements(By.tagName("textarea"));
+            for (WebElement textarea : elementList) {
+                textarea.sendKeys("descripcion general de la propuesta");
+            }
+        } catch (Exception Error) {
+            detalleError = "Error al ingresar comentarios en la propuesta";
+            objLogErrores.logError(detalleError, Error);
+        }
+
     }
 
 
-    public void IngresarObjetivoCredito(String Objetivo){
-        txt_ObjetivoCredito.clear();
-        txt_ObjetivoCredito.sendKeys(Objetivo);
-
+    public void IngresarClasificacionCrediticia(String clasificacion) {
+        try {
+            txt_ClasificacionCrediticia.clear();
+            txt_ClasificacionCrediticia.sendKeys(clasificacion);
+        } catch (Exception Error) {
+            detalleError = "Error al ingresar decripcion en clasificacion crediticia";
+            objLogErrores.logError(detalleError, Error);
+        }
     }
 
-    public void IngresarJustificacionCredito(String Justificacion){
-        txt_JustificacionCredito.clear();
-        txt_JustificacionCredito.sendKeys(Justificacion);
+    public void IngresarObjetivoCredito(String Objetivo) {
+        try {
+            txt_ObjetivoCredito.clear();
+            txt_ObjetivoCredito.sendKeys(Objetivo);
+
+        } catch (Exception Error) {
+            detalleError = "Error al ingresar descripcion en objetivo del credito";
+            objLogErrores.logError(detalleError, Error);
+        }
     }
 
+    public void IngresarJustificacionCredito(String Justificacion) {
+        try {
+            txt_JustificacionCredito.clear();
+            txt_JustificacionCredito.sendKeys(Justificacion);
+        } catch (Exception Error) {
+            detalleError = "Error al ingresar descripcion en justificacion del credito";
+            objLogErrores.logError(detalleError, Error);
+        }
+    }
 
 
     public void ClickAnexarGarantias() {
-        Esperar(2);
-        wait.until(ExpectedConditions.elementToBeClickable(btn_AnexarGarantias));
-        btn_AnexarGarantias.click();
+        try {
+            objFuncionEsperar.EsperarTiempo(2);
+            wait.until(ExpectedConditions.elementToBeClickable(btn_AnexarGarantias));
+            btn_AnexarGarantias.click();
+        } catch (Exception Error) {
+            detalleError = "Error al seleccionar el boton anexar garantias";
+            objLogErrores.logError(detalleError, Error);
+        }
     }
 
     public void ClickEnlazarEEFF() {
-        WebElement btn_EnlazarEEFF = driver.findElement(By.xpath("/html/body/form/table[1]/tbody/tr[3]/td/div/button"));
+        try {
+            WebElement btn_EnlazarEEFF = driver.findElement(By.xpath("/html/body/form/table[1]/tbody/tr[3]/td/div/button"));
 
-        String JScript = btn_EnlazarEEFF.getAttribute("onclick");
-        ((JavascriptExecutor) driver).executeScript(JScript);
-        Esperar(2);
+            String JScript = btn_EnlazarEEFF.getAttribute("onclick");
+            ((JavascriptExecutor) driver).executeScript(JScript);
+            objFuncionEsperar.EsperarTiempo(2);
 
+        } catch (Exception Error) {
+            detalleError = "Error al seleccionar el boton enlazar estados financieros";
+            objLogErrores.logError(detalleError, Error);
+        }
     }
 
     public void IngresarComentariosRatios(String ComentariosRatios) {
-        txt_ComentariosRatios.clear();
-        txt_ComentariosRatios.sendKeys(ComentariosRatios);
+        try {
+            txt_ComentariosRatios.clear();
+            txt_ComentariosRatios.sendKeys(ComentariosRatios);
+        } catch (Exception Error) {
+            detalleError = "Error al ingresar comentarios de la seccion ratios";
+            objLogErrores.logError(detalleError, Error);
+        }
     }
 
     public void ClickDesenlazarInformeVisita() {
-        WebElement btn_desenlazarInformeVisita = driver.findElement(By.xpath("/html/body/form/table[2]/tbody/tr[1]/td[3]/button"));
-        String JScript = btn_desenlazarInformeVisita.getAttribute("onclick");
-        ((JavascriptExecutor) driver).executeScript(JScript);
-        Esperar(2);
+
+        try {
+            WebElement btn_desenlazarInformeVisita = driver.findElement(By.xpath("/html/body/form/table[2]/tbody/tr[1]/td[3]/button"));
+            String JScript = btn_desenlazarInformeVisita.getAttribute("onclick");
+            ((JavascriptExecutor) driver).executeScript(JScript);
+            objFuncionEsperar.EsperarTiempo(2);
+        } catch (Exception Error) {
+            detalleError = "Error al seleccionar el boton desenlazar informe visita";
+            objLogErrores.logError(detalleError, Error);
+        }
     }
 
     public void ClickDesenlazarInformeVisitaConsumo() {
-        WebElement btn_desenlazarInformeVisitaConsumo = driver.findElement(By.xpath("/html/body/form/table/tbody/tr[3]/td/div/table[18]/tbody/tr[1]/td[3]/button"));
-        String JScript = btn_desenlazarInformeVisitaConsumo.getAttribute("onclick");
-        ((JavascriptExecutor) driver).executeScript(JScript);
-        Esperar(2);
+        try {
+            WebElement btn_desenlazarInformeVisitaConsumo = driver.findElement(By.xpath("/html/body/form/table/tbody/tr[3]/td/div/table[18]/tbody/tr[1]/td[3]/button"));
+            String JScript = btn_desenlazarInformeVisitaConsumo.getAttribute("onclick");
+            ((JavascriptExecutor) driver).executeScript(JScript);
+            objFuncionEsperar.EsperarTiempo(2);
+        } catch (Exception Error) {
+            detalleError = "Error al seleccionar el boton desenlazar informe visita consumo";
+            objLogErrores.logError(detalleError, Error);
+        }
     }
 
     public void ClickEnlazarInformeVisita() {
+        try {
+            WebElement btn_enlazarInformeVisita = driver.findElement(By.xpath("/html/body/form/table[2]/tbody/tr[1]/td[3]/button"));
+            String JScript = btn_enlazarInformeVisita.getAttribute("onclick");
+            ((JavascriptExecutor) driver).executeScript(JScript);
+            objFuncionEsperar.EsperarTiempo(2);
 
-        WebElement btn_enlazarInformeVisita = driver.findElement(By.xpath("/html/body/form/table[2]/tbody/tr[1]/td[3]/button"));
-        String JScript = btn_enlazarInformeVisita.getAttribute("onclick");
-        ((JavascriptExecutor) driver).executeScript(JScript);
-        Esperar(2);
-
+        } catch (Exception Error) {
+            detalleError = "Error al seleccionar el boton enlazar informe visita";
+            objLogErrores.logError(detalleError, Error);
+        }
     }
 
     public void ClickEnlazarInformeVisitaConsumo() {
-        WebElement btn_enlazarInformeVisitaConsumo = driver.findElement(By.xpath("/html/body/form/table/tbody/tr[3]/td/div/table[18]/tbody/tr[1]/td[3]/button"));
-        String JScript = btn_enlazarInformeVisitaConsumo.getAttribute("onclick");
-        ((JavascriptExecutor) driver).executeScript(JScript);
-        Esperar(2);
+        try {
+            WebElement btn_enlazarInformeVisitaConsumo = driver.findElement(By.xpath("/html/body/form/table/tbody/tr[3]/td/div/table[18]/tbody/tr[1]/td[3]/button"));
+            String JScript = btn_enlazarInformeVisitaConsumo.getAttribute("onclick");
+            ((JavascriptExecutor) driver).executeScript(JScript);
+            objFuncionEsperar.EsperarTiempo(2);
+        } catch (Exception Error) {
+            detalleError = "Error al seleccionar el boton enlazar informe visita consumo";
+            objLogErrores.logError(detalleError, Error);
+        }
     }
 
     public void ClickEnlazarInformeComercialNuevo() {
-        WebElement btn_enlazarInformeComercial = driver.findElement(By.xpath("/html/body/form/table[2]/tbody/tr[3]/td[3]/button"));
-        String JScript = btn_enlazarInformeComercial.getAttribute("onclick");
-        ((JavascriptExecutor) driver).executeScript(JScript);
-        Esperar(2);
+        try {
+            WebElement btn_enlazarInformeComercial = driver.findElement(By.xpath("/html/body/form/table[2]/tbody/tr[3]/td[3]/button"));
+            String JScript = btn_enlazarInformeComercial.getAttribute("onclick");
+            ((JavascriptExecutor) driver).executeScript(JScript);
+            objFuncionEsperar.EsperarTiempo(2);
 
+        } catch (Exception Error) {
+            detalleError = "Error al seleccionar el boton enlazar informe comercial nuevo";
+            objLogErrores.logError(detalleError, Error);
+        }
     }
 
     public void ClickEnlazarInformeComercialConsumo() {
-        WebElement btn_enlazarInformeComercialConsumo = driver.findElement(By.xpath("/html/body/form/table/tbody/tr[3]/td/div/table[18]/tbody/tr[2]/td[3]/button"));
-        String JScript = btn_enlazarInformeComercialConsumo.getAttribute("onclick");
-        ((JavascriptExecutor) driver).executeScript(JScript);
-        Esperar(2);
+        try {
+            WebElement btn_enlazarInformeComercialConsumo = driver.findElement(By.xpath("/html/body/form/table/tbody/tr[3]/td/div/table[18]/tbody/tr[2]/td[3]/button"));
+            String JScript = btn_enlazarInformeComercialConsumo.getAttribute("onclick");
+            ((JavascriptExecutor) driver).executeScript(JScript);
+            objFuncionEsperar.EsperarTiempo(2);
+        } catch (Exception Error) {
+            detalleError = "Error al seleccionar el boton enlazar informe comercial consumo";
+            objLogErrores.logError(detalleError, Error);
+        }
     }
 
     public void ClickEnlazarHojaTrabajo() {
-        WebElement btn_enlazarInformeComercial = driver.findElement(By.xpath(" /html/body/form/table/tbody/tr[3]/td/div/table[16]/tbody/tr/td[3]/button"));
-        String JScript = btn_enlazarInformeComercial.getAttribute("onclick");
-        ((JavascriptExecutor) driver).executeScript(JScript);
-        Esperar(2);
+        try {
+            WebElement btn_enlazarInformeComercial = driver.findElement(By.xpath(" /html/body/form/table/tbody/tr[3]/td/div/table[16]/tbody/tr/td[3]/button"));
+            String JScript = btn_enlazarInformeComercial.getAttribute("onclick");
+            ((JavascriptExecutor) driver).executeScript(JScript);
+            objFuncionEsperar.EsperarTiempo(2);
+        } catch (Exception Error) {
+            detalleError = "Error al seleccionar el boton enlazar hoja de trabajo";
+            objLogErrores.logError(detalleError, Error);
+        }
     }
 
     public void ClickMenuGrabarPropuesta() {
-        wait.until(ExpectedConditions.elementToBeClickable(btn_Grabar));
-        btn_Grabar.click();
-        Esperar(30);
+        try {
+            wait.until(ExpectedConditions.elementToBeClickable(btn_Grabar));
+            btn_Grabar.click();
+            objFuncionEsperar.EsperarTiempo(30);
+
+        } catch (Exception Error) {
+            detalleError = "Error al seleccionar el boton grabar propuesta";
+            objLogErrores.logError(detalleError, Error);
+        }
     }
 
     public void AbrirOpcionesDictamen() {
-        //Esperar(1);
-        btn_Dictamen.click();
-        //Esperar(1);
+        try {
+            btn_Dictamen.click();
+
+        } catch (Exception Error) {
+            detalleError = "Error al seleccionar el boton opciones dictamen";
+            objLogErrores.logError(detalleError, Error);
+        }
     }
 
 
     public void ClickBtnAprobarPropuesta() {
-        btn_AprobarPropuesta.click();
-        Esperar(1);
+        try {
+            btn_AprobarPropuesta.click();
+            objFuncionEsperar.EsperarTiempo(1);
+        } catch (Exception Error) {
+            detalleError = "Error al seleccionar el boton aprobar propuesta";
+            objLogErrores.logError(detalleError, Error);
+        }
     }
 
     public void ClickBtnVerificarCheckListCredito() {
-        wait.until(ExpectedConditions.elementToBeClickable(btn_VerificarCheckListCredito));
-        btn_VerificarCheckListCredito.click();
+        try {
+            wait.until(ExpectedConditions.elementToBeClickable(btn_VerificarCheckListCredito));
+            btn_VerificarCheckListCredito.click();
+        } catch (Exception Error) {
+            detalleError = "Error al seleccionar el boton verificar checklist credito";
+            objLogErrores.logError(detalleError, Error);
+        }
     }
+
 
     //Fundamentacion credito adicionado el 29/09/2020---- inicio-----------
     public void IngresarProductosNegocio(String ProductosNegocio) {
-        txt_Productos.clear();
-        txt_Productos.sendKeys(ProductosNegocio);
+        try {
+            txt_Productos.clear();
+            txt_Productos.sendKeys(ProductosNegocio);
+        } catch (Exception Error) {
+            detalleError = "Error al ingresar comentario en productos negocio";
+            objLogErrores.logError(detalleError, Error);
+        }
     }
+
 
     public void IngresarPrincipalesClientes(String PrincipalesClientes) {
-        txt_PrincipalesClientes.clear();
-        txt_PrincipalesClientes.sendKeys(PrincipalesClientes);
+        try {
+            txt_PrincipalesClientes.clear();
+            txt_PrincipalesClientes.sendKeys(PrincipalesClientes);
+        } catch (Exception Error) {
+            detalleError = "Error al ingresar comentario en principales clientes";
+            objLogErrores.logError(detalleError, Error);
+        }
     }
+
 
     public void IngresarPersonalNegocio(String PersonalNegocio) {
-        txt_PersonalLaboral.clear();
-        txt_PersonalLaboral.sendKeys(PersonalNegocio);
+        try {
+            txt_PersonalLaboral.clear();
+            txt_PersonalLaboral.sendKeys(PersonalNegocio);
+        } catch (Exception Error) {
+            detalleError = "Error al ingresar comentario en personal negocio";
+            objLogErrores.logError(detalleError, Error);
+        }
     }
+
 
     public void IngresarAnalisisSector(String AnalisisSector) {
-        txt_AnalisisSector.clear();
-        txt_AnalisisSector.sendKeys(AnalisisSector);
+
+        try {
+            txt_AnalisisSector.clear();
+            txt_AnalisisSector.sendKeys(AnalisisSector);
+        } catch (Exception Error) {
+            detalleError = "Error al ingresar comentario en analisis sector financiero";
+            objLogErrores.logError(detalleError, Error);
+        }
     }
 
+
     public void IngresarProyeccionesCrecimiento(String ProyeccionesCrecimiento) {
-        txt_ProyeccionesCrecimiento.clear();
-        txt_ProyeccionesCrecimiento.sendKeys(ProyeccionesCrecimiento);
+        try {
+            txt_ProyeccionesCrecimiento.clear();
+            txt_ProyeccionesCrecimiento.sendKeys(ProyeccionesCrecimiento);
+        } catch (Exception Error) {
+            detalleError = "Error al ingresar comentario en proyeccines de crecimiento";
+            objLogErrores.logError(detalleError, Error);
+        }
     }
+
+
     //----------- fin de cambio 29/09/2021-----------------------
 
 
     public void ClickBtnEnlazarEEFFGrupoVinculadO() {
-        wait.until(ExpectedConditions.elementToBeClickable(btn_EnlazarEEFFGrupoVinculado));
-        btn_EnlazarEEFFGrupoVinculado.click();
-    }
-
-
-    private void Esperar(Integer Segundos) {
-        Integer Milisegundos = Segundos * 1000;
         try {
-            Thread.sleep(Milisegundos);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
+            wait.until(ExpectedConditions.elementToBeClickable(btn_EnlazarEEFFGrupoVinculado));
+            btn_EnlazarEEFFGrupoVinculado.click();
+        } catch (Exception Error) {
+            detalleError = "Error al seleccionar el boton enlaar estados financieros grupo vinculado";
+            objLogErrores.logError(detalleError, Error);
         }
     }
 

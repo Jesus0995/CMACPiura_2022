@@ -22,48 +22,61 @@ public class SeleccionarSegurosPage {
     private funcionExcepciones objLogErrores = new funcionExcepciones();
     private String detalleError = new String();
 
-    @FindBy (xpath = "//button[@type=\"submit\"]") private WebElement btn_Confirmar;
+    @FindBy(xpath = "//button[@type=\"submit\"]")
+    private WebElement btn_Confirmar;
 
-    public void AbrirVentanaSeleccionarSeguros(){
-        identificadoresSeleccionarSeguros = driver.getWindowHandles();
-        System.out.println(identificadoresSeleccionarSeguros);
-        String LastHandle ="";
+    public void AbrirVentanaSeleccionarSeguros() {
+        try {
+            identificadoresSeleccionarSeguros = driver.getWindowHandles();
+            System.out.println(identificadoresSeleccionarSeguros);
+            String LastHandle = "";
 
-        for (String identificadorSeleccionarOP :identificadoresSeleccionarSeguros ){
-            LastHandle = identificadorSeleccionarOP;
+            for (String identificadorSeleccionarOP : identificadoresSeleccionarSeguros) {
+                LastHandle = identificadorSeleccionarOP;
+            }
+            driver.switchTo().window(LastHandle);
+            System.out.println("Titulo:" + driver.getWindowHandle() + "-" + driver.getTitle());
+
+        } catch (Exception Error) {
+            detalleError = "Error al posicionarse en la ventana seleccionar seguros";
+            objLogErrores.logError(detalleError, Error);
         }
-        driver.switchTo().window(LastHandle);
-        System.out.println("Titulo:" + driver.getWindowHandle()+"-"+ driver.getTitle());
-
     }
 
-    public void CerrarVentanaSeleccionarSeguros(){
-        Integer SetSize = identificadoresSeleccionarSeguros.size();
-        Integer Index=0;
-        String[] Handles = new String[SetSize] ;
-        for (String identificadorSeleccionarSeguros : identificadoresSeleccionarSeguros) {
-            Handles[Index] = identificadorSeleccionarSeguros;
-            Index++;
-        }
-        System.out.println("Ventana Principal:" +Handles[0]);
-        driver.switchTo().window(Handles[0]);
+    public void CerrarVentanaSeleccionarSeguros() {
+        try {
+            Integer SetSize = identificadoresSeleccionarSeguros.size();
+            Integer Index = 0;
+            String[] Handles = new String[SetSize];
+            for (String identificadorSeleccionarSeguros : identificadoresSeleccionarSeguros) {
+                Handles[Index] = identificadorSeleccionarSeguros;
+                Index++;
+            }
+            System.out.println("Ventana Principal:" + Handles[0]);
+            driver.switchTo().window(Handles[0]);
 
+        } catch (Exception Error) {
+            detalleError = "Error al posicionarse en la ventana principal";
+            objLogErrores.logError(detalleError, Error);
+        }
     }
 
 
     public SeleccionarSegurosPage(WebDriver d) {
         driver = d;
-        wait = new WebDriverWait(driver,30);
-        PageFactory.initElements(driver,this);
+        wait = new WebDriverWait(driver, 30);
+        PageFactory.initElements(driver, this);
 
     }
-    public void ClickbtnConfirmar(){
-        try{
-        wait.until(ExpectedConditions.elementToBeClickable(btn_Confirmar));
-        btn_Confirmar.click();}
-        catch (Exception error) {
-        error.printStackTrace();
-            System.out.println("Error al hacer click en boton confirmar:"+error.getMessage());
+
+    public void ClickbtnConfirmar() {
+        try {
+            wait.until(ExpectedConditions.elementToBeClickable(btn_Confirmar));
+            btn_Confirmar.click();
+        } catch (Exception Error) {
+            detalleError = "Error al hacer click en boton confirmar";
+            objLogErrores.logError(detalleError, Error);
+
         }
     }
 

@@ -1,6 +1,8 @@
 package PageObjects;
 
 import Functions.funcionEsperar;
+import Functions.funcionExcepciones;
+import Functions.funcionVentana;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -12,14 +14,21 @@ public class InformeVisita_InformePage {
     private WebDriver driver;
     private WebDriverWait wait;
     private funcionEsperar objFuncionEsperar = new funcionEsperar();
+    private funcionVentana objFuncionVentana = new funcionVentana();
+    private funcionExcepciones objLogErrores = new funcionExcepciones();
+    private String detalleError = new String();
 
 
-    @FindBy(xpath = "//td[@class='Invisible']//button[1]") private WebElement btn_crearVisita;
-    @FindBy(xpath = "//td[@class='Invisible']//button[2]") private WebElement btn_regresar;
-    @FindBy(xpath = "//td[@class='Invisible']//button[1]") private WebElement btn_regresarInformeComercial;
+    @FindBy(xpath = "//td[@class='Invisible']//button[1]")
+    private WebElement btn_crearVisita;
+    @FindBy(xpath = "//td[@class='Invisible']//button[2]")
+    private WebElement btn_regresar;
+    @FindBy(xpath = "//td[@class='Invisible']//button[1]")
+    private WebElement btn_regresarInformeComercial;
 
 
-    @FindBy(xpath = "/html/body/table/tbody/tr[2]/td/div/table[2]/tbody/tr[8]/td/button") private WebElement btn_RegresarCE;
+    @FindBy(xpath = "/html/body/table/tbody/tr[2]/td/div/table[2]/tbody/tr[8]/td/button")
+    private WebElement btn_RegresarCE;
 
     public InformeVisita_InformePage(WebDriver d) {
 
@@ -31,33 +40,53 @@ public class InformeVisita_InformePage {
 
     public void ClickBtnCrear() {
         try {
-            Thread.sleep(3000);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
-        btn_crearVisita.click();
-        objFuncionEsperar.EsperarTiempo(2);
+            try {
+                Thread.sleep(3000);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+            btn_crearVisita.click();
+            objFuncionEsperar.EsperarTiempo(2);
 
+        } catch (Exception Error) {
+            detalleError = "Error al seleccionar el boton crear";
+            objLogErrores.logError(detalleError, Error);
+        }
     }
 
     public void ClickBtnRegresar() {
-        objFuncionEsperar.EsperarTiempo(40);
-        wait.until(ExpectedConditions.elementToBeClickable(btn_regresar));
-        btn_regresar.click();
-        objFuncionEsperar.EsperarTiempo(5);
+        try {
+            objFuncionEsperar.EsperarTiempo(40);
+            wait.until(ExpectedConditions.elementToBeClickable(btn_regresar));
+            btn_regresar.click();
+            objFuncionEsperar.EsperarTiempo(5);
 
+        } catch (Exception Error) {
+            detalleError = "Error al seleccionar el boton regresar";
+            objLogErrores.logError(detalleError, Error);
+        }
     }
 
     public void ClickBtnRegresarInformeComercial() {
-        wait.until(ExpectedConditions.elementToBeClickable(btn_regresarInformeComercial));
-        btn_regresarInformeComercial.click();
+        try {
+            wait.until(ExpectedConditions.elementToBeClickable(btn_regresarInformeComercial));
+            btn_regresarInformeComercial.click();
+        } catch (Exception Error) {
+            detalleError = "Error al seleccionar el boton regresar informe comercial";
+            objLogErrores.logError(detalleError, Error);
+        }
     }
 
     public void ClickBtnRegresarCE() {
-        objFuncionEsperar.EsperarTiempo(60);
-        wait.until(ExpectedConditions.elementToBeClickable(btn_RegresarCE));
-        btn_RegresarCE.click();
+        try {
+            objFuncionEsperar.EsperarTiempo(60);
+            wait.until(ExpectedConditions.elementToBeClickable(btn_RegresarCE));
+            btn_RegresarCE.click();
 
+        } catch (Exception Error) {
+            detalleError = "";
+            objLogErrores.logError(detalleError, Error);
+        }
     }
 
 
