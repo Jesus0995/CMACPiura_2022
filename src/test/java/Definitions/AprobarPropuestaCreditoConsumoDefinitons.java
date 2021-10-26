@@ -98,12 +98,9 @@ public class AprobarPropuestaCreditoConsumoDefinitons {
 
     }
 
-
     @And("muestra la propuesta de financiamiento y doy click en el menu emitir dictamen")
     public void muestraLaPropuestaDeFinanciamientoYDoyClickEnElMenuEmitirDictamen() {
-
         propuesta.AbrirOpcionesDictamen();
-
     }
 
     @And("de la tabla de emitir dictamen selecciono la opcion aprobar")
@@ -148,7 +145,7 @@ public class AprobarPropuestaCreditoConsumoDefinitons {
     @And("direcciona a menu principal y doy click en la opcion cerrar sesion")
     public void direccionaAMenuPrincipalYDoyClickEnLaOpcionCerrarSesion() {
 
-        menuPrincipal.ClickCerrarSesion();
+        menuPrincipal.ClickBtnCerrarSesion();
 
     }
 

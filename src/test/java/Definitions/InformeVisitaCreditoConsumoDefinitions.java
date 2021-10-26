@@ -96,7 +96,7 @@ public class InformeVisitaCreditoConsumoDefinitions {
     @And("muestra la ventana informe e ingreso la fecha de visita")
     public void muestraLaVentanaInformeEIngresoLaFechaDeVisita() {
 
-        crearInformeVisita.IngresarFechaVisita();
+        crearInformeVisita.ObtenerFechaVisita();
     }
 
     @And("en la ventana informe de visita e ingresar datos de visita")
@@ -176,7 +176,7 @@ public class InformeVisitaCreditoConsumoDefinitions {
     @And("el sistema direcciona a menu principal y doy click en la opcion cerrar sesion")
     public void elSistemaDireccionaAMenuPrincipalYDoyClickEnLaOpcionCerrarSesion() {
 
-        menuPrincipal.ClickCerrarSesion();
+        menuPrincipal.ClickBtnCerrarSesion();
     }
 
     @And("direcciona en login y doy click en el boton cerrar sesion")

@@ -1,5 +1,6 @@
 package PageObjects;
 
+import Functions.funcionExcepciones;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -14,53 +15,67 @@ public class ConfirmacionChecklistPage {
     private WebDriver driver;
     private WebDriverWait wait;
     private Set<String> idenficadoresCheckList;
+    private funcionExcepciones objFuncionExcepciones = new funcionExcepciones();
+    private String detalleError;
 
     @FindBy(xpath = "//button[@type=\"button\"]") private WebElement btn_cerrar;
 
     public void AbrirVentanaConfirmacionCheckList(){
-        idenficadoresCheckList = driver.getWindowHandles();
-        System.out.println(idenficadoresCheckList);
-        String LastHandle = "";
+        try {
+            idenficadoresCheckList = driver.getWindowHandles();
+            System.out.println(idenficadoresCheckList);
+            String LastHandle = "";
 
-        for (String identificadorCheckList :idenficadoresCheckList ){
-            LastHandle =  identificadorCheckList;
+            for (String identificadorCheckList :idenficadoresCheckList ){
+                LastHandle =  identificadorCheckList;
+            }
+
+            driver.switchTo().window(LastHandle);
+            System.out.println("Titulo: " + driver.getTitle());
+
+        } catch (Exception Error) {
+            detalleError = "Error en abrir ventana Checklist";
+            objFuncionExcepciones.logError(detalleError,Error);
         }
-
-        driver.switchTo().window(LastHandle);
-        System.out.println("Titulo: " + driver.getTitle());
-
     }
 
     public void CerrarVentanaConfirmacionCheckList(){
-        Integer SetSize = idenficadoresCheckList.size();
-        Integer Index=0;
+        try {
+            Integer SetSize = idenficadoresCheckList.size();
+            Integer Index=0;
 
-        String[]Handles = new String[SetSize];
+            String[]Handles = new String[SetSize];
 
-        for (String identificadorCheckList : idenficadoresCheckList){
-            Handles[Index] = identificadorCheckList;
-            Index++;
+            for (String identificadorCheckList : idenficadoresCheckList){
+                Handles[Index] = identificadorCheckList;
+                Index++;
+            }
+            System.out.println(Handles[0]);
+            driver.switchTo().window(Handles[0]);
+
+        } catch (Exception Error) {
+            detalleError = "Error en cerrar ventana Checklist";
+            objFuncionExcepciones.logError(detalleError,Error);
         }
-        System.out.println(Handles[0]);
-        driver.switchTo().window(Handles[0]);
     }
-
-
-
 
 
     public ConfirmacionChecklistPage(WebDriver d) {
         driver = d;
         wait =  new WebDriverWait(driver,30);
         PageFactory.initElements(driver,this);
-
-
     }
 
 
-    public void ClickCerrar(){
-        wait.until(ExpectedConditions.elementToBeClickable(btn_cerrar));
-        btn_cerrar.click();
+    public void ClickBtnCerrar(){
+        try {
+            wait.until(ExpectedConditions.elementToBeClickable(btn_cerrar));
+            btn_cerrar.click();
+
+        } catch (Exception Error) {
+            detalleError = "Error en boton cerrar";
+            objFuncionExcepciones.logError(detalleError,Error);
+        }
     }
 
 }

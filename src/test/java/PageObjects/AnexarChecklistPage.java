@@ -181,7 +181,7 @@ public class AnexarChecklistPage {
 
     }
 
-
+/*
     public void Seleccionar_1TarjetaInformacion() {
         wait.until(ExpectedConditions.elementToBeClickable(opt_1TarjetaBasica));
         opt_1TarjetaBasica.click();
@@ -400,17 +400,6 @@ public class AnexarChecklistPage {
         opt_36TasacionBien.click();
           }
 
-    public void Seleccionar_37opinionLegal() {
-    WebElement opcion37 = driver.findElement(By.xpath("//input[@id='item_71' and @value='2']"));
-        try {
-            objFuncionEsperar.EsperarTiempo(9);
-            opcion37.click();
-
-        } catch (Exception error) {
-            error.printStackTrace();
-            System.out.println("Error al seleccionar la opcion"+error.getMessage());
-        }
-    }
 
     public void Seleccionar_38ContratoGarantiaMobiliaria() {
         wait.until(ExpectedConditions.elementToBeClickable(opt_38ContratoGarantiaMobiliaria));
@@ -442,6 +431,20 @@ public class AnexarChecklistPage {
         wait.until(ExpectedConditions.elementToBeClickable(opt_42CopiaLiteralPartida));
         opt_42CopiaLiteralPartida.click();
     }
+
+*/
+    public void Seleccionar_37opinionLegal() {
+    WebElement opcion37 = driver.findElement(By.xpath("//input[@id='item_71' and @value='2']"));
+        try {
+            objFuncionEsperar.EsperarTiempo(9);
+            opcion37.click();
+
+        } catch (Exception error) {
+            error.printStackTrace();
+            System.out.println("Error al seleccionar la opcion"+error.getMessage());
+        }
+    }
+
 
     public void ClickBtnGuardarTerminar() {
         wait.until(ExpectedConditions.elementToBeClickable(btn_guardarTerminar));

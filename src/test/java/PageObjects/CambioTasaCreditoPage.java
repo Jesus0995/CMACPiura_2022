@@ -1,11 +1,11 @@
 package PageObjects;
 
+import Functions.funcionExcepciones;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.Wait;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.util.Set;
@@ -15,35 +15,47 @@ public class CambioTasaCreditoPage {
     private WebDriver driver;
     private WebDriverWait wait;
     private Set<String> identificadoresCambioTasaCredito;
+    private funcionExcepciones objFuncionExcepciones = new funcionExcepciones();
+    private String detalleError;
 
     @FindBy(xpath = "//textarea[@name='txtTasaComentarioPropo']") private WebElement txt_Comentario;
     @FindBy(xpath = "//button[@name='btnCambio']") private WebElement btn_Grabar;
 
 
     public void AbrirVentanaCambioTasaCredito(){
-        identificadoresCambioTasaCredito = driver.getWindowHandles();
-        System.out.println(identificadoresCambioTasaCredito);
-        String LastHandle ="";
+        try {
+            identificadoresCambioTasaCredito = driver.getWindowHandles();
+            System.out.println(identificadoresCambioTasaCredito);
+            String LastHandle ="";
 
-        for (String identificadorCambioTasaCredito :identificadoresCambioTasaCredito ){
-            LastHandle = identificadorCambioTasaCredito;
+            for (String identificadorCambioTasaCredito :identificadoresCambioTasaCredito ){
+                LastHandle = identificadorCambioTasaCredito;
+            }
+            driver.switchTo().window(LastHandle);
+            System.out.println("Titulo:" + driver.getTitle());
+
+        } catch (Exception Error) {
+            detalleError = "Error en abrir ventana Cambio de tasa";
+            objFuncionExcepciones.logError(detalleError,Error);
         }
-        driver.switchTo().window(LastHandle);
-        System.out.println("Titulo:" + driver.getTitle());
-
     }
 
     public void CerrarVentanaCambioTasaCredito() {
-        Integer SetSize = identificadoresCambioTasaCredito.size();
-        Integer Index = 0;
-        String[] Handles = new String[SetSize];
-        for (String identificadorCambioTasaCredito : identificadoresCambioTasaCredito) {
-            Handles[Index] = identificadorCambioTasaCredito;
-            Index++;
-        }
-        System.out.println(Handles[0]);
-        driver.switchTo().window(Handles[0]);
+        try {
+            Integer SetSize = identificadoresCambioTasaCredito.size();
+            Integer Index = 0;
+            String[] Handles = new String[SetSize];
+            for (String identificadorCambioTasaCredito : identificadoresCambioTasaCredito) {
+                Handles[Index] = identificadorCambioTasaCredito;
+                Index++;
+            }
+            System.out.println(Handles[0]);
+            driver.switchTo().window(Handles[0]);
 
+        } catch (Exception Error) {
+            detalleError = "Error en cerrar ventana cambio de tasa";
+            objFuncionExcepciones.logError(detalleError,Error);
+        }
     }
 
 
@@ -55,14 +67,25 @@ public class CambioTasaCreditoPage {
     }
 
     public void IngresarComentarioCambio(String ComentarioCambioTasa){
-        txt_Comentario.clear();
-        txt_Comentario.sendKeys(ComentarioCambioTasa);
+        try {
+            txt_Comentario.clear();
+            txt_Comentario.sendKeys(ComentarioCambioTasa);
 
+        } catch (Exception Error) {
+            detalleError = "Error en ingresar comentario";
+            objFuncionExcepciones.logError(detalleError,Error);
+        }
     }
 
     public void ClickGrabar(){
-        wait.until(ExpectedConditions.elementToBeClickable(btn_Grabar));
-        btn_Grabar.click();
+        try {
+            wait.until(ExpectedConditions.elementToBeClickable(btn_Grabar));
+            btn_Grabar.click();
+
+        } catch (Exception Error) {
+            detalleError = "Error en grabar cambio de tasa";
+            objFuncionExcepciones.logError(detalleError,Error);
+        }
     }
 
 }

@@ -61,7 +61,7 @@ public class LoginDefinitions {
     @And("confirmo el cierre de sesion")
     public void confirmoElCierreDeSesion() {
 
-        CierreSesion.ClickConfirmarCierre();
+        CierreSesion.ClickBtnConfirmarCierre();
     }
 
 

@@ -311,7 +311,7 @@ public class PropuestaCreditoEmpresarialDefinitions {
     @And("en la ventana Seguros seleccionados visualizar informacion y hacer click en el boton cerrar")
     public void en_la_ventana_Seguros_seleccionados_visualizar_informacion_y_hacer_click_en_el_boton_cerrar() {
         confirmarSeguros.AbrirVentanaConfirmacionSeguros();
-        confirmarSeguros.ClickCerrar();
+        confirmarSeguros.ClickBtnCerrar();
         confirmarSeguros.CerrarVentanaConfirmacionSeguros();
 
     }
@@ -338,7 +338,7 @@ public class PropuestaCreditoEmpresarialDefinitions {
     @And("en la ventana Confirmar Checklist Credito hacer click en el boton cerrar")
     public void en_la_ventana_Confirmar_Checklist_Credito_hacer_click_en_el_boton_cerrar() {
         confirmarCheckList.AbrirVentanaConfirmacionCheckList();
-        confirmarCheckList.ClickCerrar();
+        confirmarCheckList.ClickBtnCerrar();
         confirmarCheckList.CerrarVentanaConfirmacionCheckList();
     }
 
@@ -490,7 +490,7 @@ public class PropuestaCreditoEmpresarialDefinitions {
 
     @And("en la ventana Menu Principal hacer click en la opcion cerrar sesion")
     public void en_la_ventana_Menu_Principal_hacer_click_en_la_opcion_cerrar_sesion() {
-        menuPrincipal.ClickCerrarSesion();
+        menuPrincipal.ClickBtnCerrarSesion();
     }
 
     @And("en la ventana Login hacer click en boton cerrar sesion")

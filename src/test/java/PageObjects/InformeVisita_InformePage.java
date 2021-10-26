@@ -40,11 +40,7 @@ public class InformeVisita_InformePage {
 
     public void ClickBtnCrear() {
         try {
-            try {
-                Thread.sleep(3000);
-            } catch (InterruptedException e) {
-                e.printStackTrace();
-            }
+            objFuncionEsperar.EsperarTiempo(3);
             btn_crearVisita.click();
             objFuncionEsperar.EsperarTiempo(2);
 

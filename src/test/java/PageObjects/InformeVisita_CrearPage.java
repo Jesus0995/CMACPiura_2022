@@ -1,6 +1,7 @@
 package PageObjects;
 
 import Functions.funcionEsperar;
+import Functions.funcionExcepciones;
 import Functions.funcionFecha;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
@@ -10,20 +11,17 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-
-import javax.xml.xpath.XPath;
-import java.text.DateFormat;
 import java.text.SimpleDateFormat;
-import java.util.Calendar;
 import java.util.Date;
 
 public class InformeVisita_CrearPage {
 
     private WebDriver driver;
     private WebDriverWait wait;
-    private funcionFecha objFuncionFecha;
+    private funcionFecha objFuncionFecha = new funcionFecha();
     private funcionEsperar objFuncionEsperar = new funcionEsperar();
-
+    private funcionExcepciones objLogErrores = new funcionExcepciones();
+    private String detalleError;
 
     @FindBy(xpath = "//input[@name=\"fechaINI\"]") private WebElement txt_fechaVisita;
     @FindBy(xpath = "//input[@name=\"horaINI\"]")  private WebElement txt_hora;
@@ -69,37 +67,35 @@ public class InformeVisita_CrearPage {
         PageFactory.initElements(driver, this);
     }
 
-    public void ObtenerFechaVisita() {
+    public void ObtenerFechaVisita (){
+        try {
+            txt_fechaVisita.clear();
+            txt_fechaVisita.sendKeys(objFuncionFecha.devolverFechaActual());
 
-        Date Date = new Date();
-        SimpleDateFormat fecha = new SimpleDateFormat("dd/MM/yyyy");
-        txt_fechaVisita.clear();
-        txt_fechaVisita.sendKeys(fecha.format(Date));
-        objFuncionEsperar.EsperarTiempo(1);
-        /*
-        Date date = Calendar.getInstance().getTime();
-        DateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");
-        String Fecha = formatter.format(date);
-        txt_fechaVisita.clear();
-        txt_fechaVisita.sendKeys(Fecha);
-        Esperar(1);
-        */
-
-    }
-
-    public void IngresarFechaVisita (){
-        txt_fechaVisita.clear();
-        txt_fechaVisita.sendKeys(objFuncionFecha.devolverFechaActual());
+        } catch (Exception Error) {
+            detalleError = "Error al ingresar Fecha";
+            objLogErrores.logError(detalleError,Error);
+        }
     }
 
     public void IngresarHoraVisita(String HoraVisita) {
-        txt_hora.clear();
-        txt_hora.sendKeys(HoraVisita);
+        try {
+            txt_hora.clear();
+            txt_hora.sendKeys(HoraVisita);
+        } catch (Exception Error) {
+            detalleError = "Error al ingresar Hora";
+            objLogErrores.logError(detalleError,Error);
+        }
     }
 
     public void IngresarMinutoVisita(String MinutoVisita) {
-        txt_minutos.clear();
-        txt_minutos.sendKeys(MinutoVisita);
+        try {
+            txt_minutos.clear();
+            txt_minutos.sendKeys(MinutoVisita);
+        } catch (Exception Error) {
+            detalleError = "Error al ingresar Minutos";
+            objLogErrores.logError(detalleError,Error);
+        }
     }
 
     public void IngresarFranjaHoraria(String FranjaHora) {
@@ -109,14 +105,20 @@ public class InformeVisita_CrearPage {
             WebElement franjaHora = driver.findElement(By.xpath("//select[@name='meridianoINI']//option[text()='" + FranjaHora + "']"));
             String JScript = franjaHora.getAttribute("onclick");
             ((JavascriptExecutor) driver).executeScript(JScript);
-        } catch (Exception error) {
-            System.out.println(error.getMessage());
+        } catch (Exception Error) {
+            detalleError = "Error al ingresar Franja Horaria";
+            objLogErrores.logError(detalleError,Error);
         }
     }
 
     public void IngresarNroInteg(String NumeroIntegrantes) {
-        txt_nroIntegrantes.clear();
-        txt_nroIntegrantes.sendKeys(NumeroIntegrantes);
+        try {
+            txt_nroIntegrantes.clear();
+            txt_nroIntegrantes.sendKeys(NumeroIntegrantes);
+        } catch (Exception Error) {
+            detalleError = "Error al ingresar Número de Integrantes";
+            objLogErrores.logError(detalleError,Error);
+        }
     }
 
     public void SeleccionarRelacion(String Relacion) {
@@ -126,8 +128,9 @@ public class InformeVisita_CrearPage {
             WebElement relacion = driver.findElement(By.xpath("//select[@name='relacionMiembros']//option[text()='" + Relacion + "']"));
             String JScript = relacion.getAttribute("onclick");
             ((JavascriptExecutor) driver).executeScript(JScript);
-        } catch (Exception error) {
-            System.out.println(error.getMessage());
+        } catch (Exception Error) {
+            detalleError = "Error al seleccionar Relación";
+            objLogErrores.logError(detalleError,Error);
         }
     }
 
@@ -138,8 +141,9 @@ public class InformeVisita_CrearPage {
             WebElement habitos = driver.findElement(By.xpath("//select[@name='habitosMiembros']//option[text()='" + Habitos + "']"));
             String JScript = habitos.getAttribute("onclick");
             ((JavascriptExecutor) driver).executeScript(JScript);
-        } catch (Exception error) {
-            System.out.println(error.getMessage());
+        } catch (Exception Error) {
+            detalleError = "Error al seleccionar Hábitos";
+            objLogErrores.logError(detalleError,Error);
         }
     }
 
@@ -150,8 +154,9 @@ public class InformeVisita_CrearPage {
             WebElement otrosIngresos = driver.findElement(By.xpath("//select[@name='hayGeneracionIngresos']//option[text()='" + OtrosIngresos + "']"));
             String JScript = otrosIngresos.getAttribute("onclick");
             ((JavascriptExecutor) driver).executeScript(JScript);
-        } catch (Exception error) {
-            System.out.println(error.getMessage());
+        } catch (Exception Error) {
+            detalleError = "Error al seleccionar Otros Ingresos";
+            objLogErrores.logError(detalleError,Error);
         }
     }
 
@@ -162,8 +167,9 @@ public class InformeVisita_CrearPage {
             WebElement relacionLaboral = driver.findElement(By.xpath("//select[@name='estadoGarantia']//option[text()='" + RelacionLaboral + "']"));
             String JScript = relacionLaboral.getAttribute("onclick");
             ((JavascriptExecutor) driver).executeScript(JScript);
-        } catch (Exception error) {
-            System.out.println(error.getMessage());
+        } catch (Exception Error) {
+            detalleError = "Error al seleccionar Relación Laboral";
+            objLogErrores.logError(detalleError,Error);
         }
     }
 
@@ -174,8 +180,9 @@ public class InformeVisita_CrearPage {
             WebElement documentoSustento = driver.findElement(By.xpath("//select[@name='documentacionGarantia']//option[text()='" + DocumentoSustento + "']"));
             String JScript = documentoSustento.getAttribute("onclick");
             ((JavascriptExecutor) driver).executeScript(JScript);
-        } catch (Exception error) {
-            System.out.println(error.getMessage());
+        } catch (Exception Error) {
+            detalleError = "Error al seleccionar Documento de Sustento";
+            objLogErrores.logError(detalleError,Error);
         }
     }
 
@@ -187,11 +194,10 @@ public class InformeVisita_CrearPage {
             String JScript = direccionNegocio.getAttribute("onclick");
             ((JavascriptExecutor) driver).executeScript(JScript);
 
-        } catch (Exception error) {
-            System.out.println(error.getMessage());
-
+        } catch (Exception Error) {
+            detalleError = "Error al seleccionar Direccion Correcta";
+            objLogErrores.logError(detalleError,Error);
         }
-
     }
 
 
@@ -203,9 +209,9 @@ public class InformeVisita_CrearPage {
             String JScript = estadoGarantia.getAttribute("onclick");
             ((JavascriptExecutor) driver).executeScript(JScript);
 
-        } catch (Exception error) {
-            System.out.println(error.getMessage());
-
+        } catch (Exception Error) {
+            detalleError = "Error al seleccionar Estado de Garantía";
+            objLogErrores.logError(detalleError,Error);
         }
 
     }
@@ -218,53 +224,92 @@ public class InformeVisita_CrearPage {
             String JScript = documentoGarantia.getAttribute("onclick");
             ((JavascriptExecutor) driver).executeScript(JScript);
 
-        } catch (Exception error) {
-            System.out.println(error.getMessage());
-
+        } catch (Exception Error) {
+            detalleError = "Error al seleccionar Documento de Garantía";
+            objLogErrores.logError(detalleError,Error);
         }
 
     }
 
     public void SeleccionarConforme() {
-        wait.until(ExpectedConditions.elementToBeClickable(opt_conforme));
-        opt_conforme.click();
+        try {
+            wait.until(ExpectedConditions.elementToBeClickable(opt_conforme));
+            opt_conforme.click();
+        } catch (Exception Error) {
+            detalleError = "Error al seleccionar evaluación Conforme";
+            objLogErrores.logError(detalleError,Error);
+        }
+
     }
 
     public void SeleccionarNoLavado() {
-        wait.until(ExpectedConditions.elementToBeClickable(opt_lavadoActivo));
-        opt_lavadoActivo.click();
+        try {
+            wait.until(ExpectedConditions.elementToBeClickable(opt_lavadoActivo));
+            opt_lavadoActivo.click();
+        } catch (Exception Error) {
+            detalleError = "Error al seleccionar declaración No Lavado";
+            objLogErrores.logError(detalleError,Error);
+        }
     }
 
     public void SeleccionarAlerta() {
-        wait.until(ExpectedConditions.elementToBeClickable(opt_senalesAlerta));
-        opt_senalesAlerta.click();
+        try {
+            wait.until(ExpectedConditions.elementToBeClickable(opt_senalesAlerta));
+            opt_senalesAlerta.click();
+        } catch (Exception Error) {
+            detalleError = "Error al seleccionar declaración Señales de Alerta";
+            objLogErrores.logError(detalleError,Error);
+        }
     }
 
     public void SeleccionarLegal() {
-        wait.until(ExpectedConditions.elementToBeClickable(opt_legal));
-        opt_legal.click();
+        try {
+            wait.until(ExpectedConditions.elementToBeClickable(opt_legal));
+            opt_legal.click();
+        } catch (Exception Error) {
+            detalleError = "Error al seleccionar declaración Actividad Económica Legal";
+            objLogErrores.logError(detalleError,Error);
+        }
     }
 
     public void IngresarObservacion(String Observacion) {
-        txt_observacion.clear();
-        txt_observacion.sendKeys(Observacion);
+        try {
+            txt_observacion.clear();
+            txt_observacion.sendKeys(Observacion);
+        } catch (Exception Error) {
+            detalleError = "Error al ingresar Observación";
+            objLogErrores.logError(detalleError,Error);
+        }
     }
 
     public void ClickBtnGrabar() {
-        wait.until(ExpectedConditions.elementToBeClickable(btn_grabar));
-        btn_grabar.click();
-
+        try {
+            wait.until(ExpectedConditions.elementToBeClickable(btn_grabar));
+            btn_grabar.click();
+        } catch (Exception Error) {
+            detalleError = "Error al hacer click en el botón Grabar";
+            objLogErrores.logError(detalleError,Error);
+        }
     }
 
     public void ClickBtnRegresar() {
-        wait.until(ExpectedConditions.elementToBeClickable(btn_regresar));
-        btn_regresar.click();
-
+        try {
+            wait.until(ExpectedConditions.elementToBeClickable(btn_regresar));
+            btn_regresar.click();
+        } catch (Exception Error) {
+            detalleError = "Error al hacer click en el botón Regresar";
+            objLogErrores.logError(detalleError,Error);
+        }
     }
 
     public void ClickBtnRegresarCE() {
-        wait.until(ExpectedConditions.elementToBeClickable(btn_RegresarCE));
-        btn_RegresarCE.click();
+        try {
+            wait.until(ExpectedConditions.elementToBeClickable(btn_RegresarCE));
+            btn_RegresarCE.click();
+        } catch (Exception Error) {
+            detalleError = "Error al hacer click en el botón Regresar";
+            objLogErrores.logError(detalleError,Error);
+        }
     }
 
 }

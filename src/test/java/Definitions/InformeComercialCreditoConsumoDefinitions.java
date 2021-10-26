@@ -96,13 +96,13 @@ public class InformeComercialCreditoConsumoDefinitions {
     @And("en la ventana nuevo informe comercial doy clik en el boton grabar")
     public void enLaVentanaNuevoInformeComercialDoyClikEnElBotonGrabar() {
 
-        informeComercialNuevo.ClickGrabar();
+        informeComercialNuevo.ClickBtnGrabar();
     }
 
     @And("en la ventana nuevo informe comercial doy clik en el boton regresar")
     public void enLaVentanaNuevoInformeComercialDoyClikEnElBotonRegresar() {
 
-        informeComercialNuevo.ClickRegresar();
+        informeComercialNuevo.ClickBtnRegresar();
     }
 
     @And("muestra la ventana informes comerciales y doy click en el boton regresar")
@@ -114,7 +114,7 @@ public class InformeComercialCreditoConsumoDefinitions {
     @And("posiciona en menu principal y doy click en la opcion cerrar sesion")
     public void posicionaEnMenuPrincipalYDoyClickEnLaOpcionCerrarSesion() {
 
-        menuPrincipal.ClickCerrarSesion();
+        menuPrincipal.ClickBtnCerrarSesion();
     }
 
     @And("posiciona en login y doy click en el boton cerrar sesion")

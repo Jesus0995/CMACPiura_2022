@@ -157,7 +157,7 @@ public class InformeVisitaCreditoEmpresarialDefinitions {
     @And("el sistema direcciona a menu principal y doy click al menu cerrar sesion")
     public void elSistemaDireccionaAMenuPrincipalYDoyClickAlMenuCerrarSesion()
     {
-        menuPrincipal.ClickCerrarSesion();
+        menuPrincipal.ClickBtnCerrarSesion();
     }
 
     @And("direcciona a la ventana login y doy click en el boton cerrar sesion")

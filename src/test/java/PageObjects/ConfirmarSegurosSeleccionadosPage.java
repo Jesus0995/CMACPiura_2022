@@ -1,5 +1,6 @@
 package PageObjects;
 
+import Functions.funcionExcepciones;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -14,35 +15,48 @@ public class ConfirmarSegurosSeleccionadosPage {
     private WebDriver driver;
     private WebDriverWait wait;
     private Set<String> identificadoresConfirmacionSeguros;
+    private funcionExcepciones objFuncionExcepciones = new funcionExcepciones();
+    private String detalleError;
 
     @FindBy(xpath = "//button[@type=\"button\"]") private WebElement btn_Cerrar;
 
 
     public void AbrirVentanaConfirmacionSeguros(){
+        try {
+            identificadoresConfirmacionSeguros = driver.getWindowHandles();
+            System.out.println(identificadoresConfirmacionSeguros);
+            String LastHandle = "";
 
-        identificadoresConfirmacionSeguros = driver.getWindowHandles();
-        System.out.println(identificadoresConfirmacionSeguros);
-        String LastHandle = "";
+            for (String identificadorConfirmacionSeguros : identificadoresConfirmacionSeguros){
+                LastHandle = identificadorConfirmacionSeguros;
+            }
+            driver.switchTo().window(LastHandle);
+            System.out.println("Titulo:"+ driver.getTitle());
 
-        for (String identificadorConfirmacionSeguros : identificadoresConfirmacionSeguros){
-            LastHandle = identificadorConfirmacionSeguros;
+        } catch (Exception Error) {
+            detalleError = "Error en abrir ventana Confirmar Seguros";
+            objFuncionExcepciones.logError(detalleError,Error);
         }
-        driver.switchTo().window(LastHandle);
-        System.out.println("Titulo:"+ driver.getTitle());
     }
 
 
     public void CerrarVentanaConfirmacionSeguros()  {
+        try {
+            Integer SetSize = identificadoresConfirmacionSeguros.size();
+            Integer Index = 0;
+            String[] Handles = new String[SetSize];
+            for (String identificadorConfirmacionSeguros : identificadoresConfirmacionSeguros) {
+                Handles[Index] = identificadorConfirmacionSeguros;
+                Index++;
+            }
+            System.out.println(Handles[0]);
+            driver.switchTo().window(Handles[0]);
 
-        Integer SetSize = identificadoresConfirmacionSeguros.size();
-        Integer Index = 0;
-        String[] Handles = new String[SetSize];
-        for (String identificadorConfirmacionSeguros : identificadoresConfirmacionSeguros) {
-            Handles[Index] = identificadorConfirmacionSeguros;
-            Index++;
+        } catch (Exception Error) {
+            detalleError = "Error en cerrar ventana Confirmar Seguros";
+            objFuncionExcepciones.logError(detalleError,Error);
         }
-        System.out.println(Handles[0]);
-        driver.switchTo().window(Handles[0]);
+
     }
 
     public ConfirmarSegurosSeleccionadosPage(WebDriver d) {
@@ -52,8 +66,15 @@ public class ConfirmarSegurosSeleccionadosPage {
 
     }
 
-    public void ClickCerrar() {
-        wait.until(ExpectedConditions.elementToBeClickable(btn_Cerrar));
-        btn_Cerrar.click();
+    public void ClickBtnCerrar() {
+        try {
+            wait.until(ExpectedConditions.elementToBeClickable(btn_Cerrar));
+            btn_Cerrar.click();
+
+        } catch (Exception Error) {
+            detalleError = "Error en botón cerrar";
+            objFuncionExcepciones.logError(detalleError,Error);
+        }
     }
+
 }

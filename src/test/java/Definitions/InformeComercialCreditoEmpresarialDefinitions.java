@@ -83,12 +83,12 @@ public class InformeComercialCreditoEmpresarialDefinitions {
     }
     @And("en la ventana principal Informe Comercial doy click en el boton grabar")
     public void enLaVentanaPrincipalInformeComercialDoyClickEnElBotonGrabar() {
-        informeComercial.ClickGrabar();
+        informeComercial.ClickBtnGrabar();
     }
     @And("en la ventana principal Informe Comercial doy click en el boton Regresar")
     public void enLaVentanaPrincipalInformeComercialDoyClickEnElBotonRegresar() throws IOException {
         pantallazo();
-        informeComercial.ClickRegresar();
+        informeComercial.ClickBtnRegresar();
     }
     @And("el sistema direcciona a la ventana listado de informes comerciales y doy click en Regresar")
     public void elSistemaDireccionaALaVentanaListadoDeInformesComercialesYDoyClickEnRegresar() {
@@ -96,7 +96,7 @@ public class InformeComercialCreditoEmpresarialDefinitions {
     }
     @And("el sistema direcciona al Menu Principal SGCRED y doy click en la opcion Cerrar Sesion")
     public void elSistemaDireccionaAlMenuPrincipalSGCREDYDoyClickEnLaOpcionCerrarSesion() {
-        menuPrincipal.ClickCerrarSesion();
+        menuPrincipal.ClickBtnCerrarSesion();
     }
     @And("el sistema direcciona al Login y doy click en el boton Cerrar Sesion")
     public void elSistemaDireccionaAlLoginYDoyClickEnElBotonCerrarSesion() {

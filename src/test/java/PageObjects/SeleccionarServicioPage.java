@@ -10,8 +10,6 @@ import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
-
-
 import java.util.Set;
 
 public class SeleccionarServicioPage {
@@ -22,37 +20,33 @@ public class SeleccionarServicioPage {
     private funcionExcepciones objLogErrores = new funcionExcepciones();
     private funcionEsperar objFuncionEsperar = new funcionEsperar();
     private funcionVentana objFuncionVentana = new funcionVentana();
-    private String detalleError = new String();
+    private String ventanaUltima;
+    private String detalleError;
 
     //mapeo de objetos
-    @FindBy(xpath = "//select[@name='servicio']")
+    @FindBy(xpath ="//select[@name='servicio']")
     private WebElement cbx_Servicio;
-    @FindBy(xpath = "//select[@name='idServicioSofia']")
+    @FindBy(xpath ="//select[@name='idServicioSofia']")
     private WebElement cbx_ServicioCredito;
-    @FindBy(xpath = "//select[@name='idTipoPropuesta']")
+    @FindBy(xpath ="//select[@name='idTipoPropuesta']")
     private WebElement cbx_TipoPropuesta;
-    @FindBy(xpath = "//select[@name='idSubTipoPropuesta']")
+    @FindBy(xpath ="//select[@name='idSubTipoPropuesta']")
     private WebElement cbx_SubTipoPropuesta;
-    @FindBy(xpath = "//select[@name='idPromocion']")
+    @FindBy(xpath ="//select[@name='idPromocion']")
     private WebElement cbx_Promocion;
     //@FindBy(xpath = "//select[@name='idnegocio']") private WebElement cbx_Negocio;
     //@FindBy(xpath = "//select[@name='idTipoOperacion']") private  WebElement cbx_TipoOperacion;
-    @FindBy(xpath = "//*[@id=\"bCargar\"]")
+    @FindBy(xpath ="//*[@id=\"bCargar\"]")
     private WebElement btn_Cargar;
 
     public void AbrirVentanaServicio() {
 
         try {
-            identificadoresServicio = driver.getWindowHandles();
-            System.out.println(identificadoresServicio);
-            String LastHandle = "";
-
-            for (String identificadorservicio : identificadoresServicio) {
-                LastHandle = identificadorservicio;
-            }
-            driver.switchTo().window(LastHandle);
+            System.out.println(driver.getWindowHandles());
+            objFuncionVentana.cambiarVentanaNueva();
+            ventanaUltima = driver.getWindowHandle();
         } catch (Exception Error) {
-            detalleError = "Error al posicionarse en la ventana servicio";
+            detalleError = "Al abrir ventana servicio se presenta los siguientes errores";
             objLogErrores.logError(detalleError, Error);
         }
     }
@@ -60,18 +54,13 @@ public class SeleccionarServicioPage {
     public void CerrarVentanaServicio() {
         //Actions Acciones = new Actions(driver);
         try {
-            Integer SetSize = identificadoresServicio.size();
-            Integer Index = 0;
-            String[] Handles = new String[SetSize];
-
-            for (String identificadorservicio : identificadoresServicio) {
-                Handles[Index] = identificadorservicio;
-                Index++;
-            }
-            System.out.println(Handles[0]);
-            driver.switchTo().window(Handles[0]);
+            System.out.println(driver.getWindowHandles());
+            objFuncionEsperar.EsperarCierreVentana(ventanaUltima);
+            objFuncionVentana.cambiarVentanaInicial();
+            System.out.println("Fin cerrar ventana");
         } catch (Exception Error) {
-            detalleError = "Error al posicionarse en la ventana principal";
+            Error.printStackTrace();
+            detalleError = "Al cerrar ventana servicio se presenta los siguientes errores";
             objLogErrores.logError(detalleError, Error);
         }
     }
@@ -97,7 +86,6 @@ public class SeleccionarServicioPage {
         try {
             wait.until(ExpectedConditions.elementToBeClickable(cbx_ServicioCredito));
             new Select(cbx_ServicioCredito).selectByVisibleText(ServicioCredito);
-
         } catch (Exception Error) {
             detalleError = "Error al seleccionar servicio de credito";
             objLogErrores.logError(detalleError, Error);
@@ -115,7 +103,6 @@ public class SeleccionarServicioPage {
     }
 
     public void SeleccionarSubTipoPropuesta(String SubTipoPropuesta) {
-
         try {
             wait.until(ExpectedConditions.elementToBeClickable(cbx_SubTipoPropuesta));
             new Select(cbx_SubTipoPropuesta).selectByVisibleText(SubTipoPropuesta);
@@ -139,7 +126,7 @@ public class SeleccionarServicioPage {
         try {
             wait.until(ExpectedConditions.elementToBeClickable(btn_Cargar));
             btn_Cargar.click();
-            Thread.sleep(10000);
+            objFuncionEsperar.EsperarTiempo(10);
         } catch (Exception Error) {
             detalleError = "Error al hacer click en el boton cargar";
             objLogErrores.logError(detalleError, Error);

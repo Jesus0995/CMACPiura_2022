@@ -1,6 +1,7 @@
 package PageObjects;
 
 import Functions.funcionEsperar;
+import Functions.funcionExcepciones;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -12,6 +13,8 @@ public class InformeComercialNuevoPage {
     private WebDriver driver;
     private WebDriverWait wait;
     private funcionEsperar objFuncionEsperar = new funcionEsperar();
+    private funcionExcepciones objLogErrores = new funcionExcepciones();
+    private String detalleError;
 
     @FindBy(xpath = "//input[@id='patrimoniopersonal']") private WebElement txt_patrimonio;
     @FindBy(xpath = "//input[@name='patrimoniopersonal']") private WebElement txt_PatrimonioComercial;
@@ -27,25 +30,44 @@ public class InformeComercialNuevoPage {
     }
 
     public void IngresarPatrimonio(String Patrimonio){
-        txt_patrimonio.clear();
-        txt_patrimonio.sendKeys(Patrimonio);
+        try {
+            txt_patrimonio.clear();
+            txt_patrimonio.sendKeys(Patrimonio);
+        } catch (Exception Error) {
+            detalleError = "Error al ingresar monto del Patrimonio";
+            objLogErrores.logError(detalleError,Error);
+        }
     }
 
     public  void IngresarPatrimonioComercial(String PatrimonioComercial){
-        objFuncionEsperar.EsperarTiempo (6);
-        txt_PatrimonioComercial.clear();
-        txt_PatrimonioComercial.sendKeys(PatrimonioComercial);
+        try {
+            objFuncionEsperar.EsperarTiempo (6);
+            txt_PatrimonioComercial.clear();
+            txt_PatrimonioComercial.sendKeys(PatrimonioComercial);
+        } catch (Exception Error) {
+            detalleError = "Error al ingresar monto del Patrimonio";
+            objLogErrores.logError(detalleError,Error);
+        }
     }
 
-
-    public void ClickGrabar(){
-        wait.until(ExpectedConditions.elementToBeClickable(btn_grabar));
-        btn_grabar.click();
+    public void ClickBtnGrabar(){
+        try {
+            wait.until(ExpectedConditions.elementToBeClickable(btn_grabar));
+            btn_grabar.click();
+        } catch (Exception Error) {
+            detalleError = "Error al hacer click en el botón Grabar";
+            objLogErrores.logError(detalleError,Error);
+        }
     }
 
-    public void ClickRegresar(){
-        wait.until(ExpectedConditions.elementToBeClickable(btn_regresar));
-        btn_regresar.click();
+    public void ClickBtnRegresar(){
+        try {
+            wait.until(ExpectedConditions.elementToBeClickable(btn_regresar));
+            btn_regresar.click();
+        } catch (Exception Error) {
+            detalleError = "Error al hacer click en el botón Regresar";
+            objLogErrores.logError(detalleError,Error);
+        }
     }
 
 }

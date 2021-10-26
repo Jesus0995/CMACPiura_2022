@@ -1,5 +1,6 @@
 package PageObjects;
 
+import Functions.funcionExcepciones;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -7,12 +8,11 @@ import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-import java.io.IOException;
-import java.util.Set;
-
 public class CrearHojaTrabajoPage {
     private WebDriver driver;
     private WebDriverWait wait;
+    private funcionExcepciones objLogErrores = new funcionExcepciones();
+    private String detalleError;
 
 
     //mapear locator
@@ -26,13 +26,25 @@ public class CrearHojaTrabajoPage {
     }
 
     public void CrearHojaTrabajo() {
-        wait.until(ExpectedConditions.elementToBeClickable(btn_crearHojaTrabajo));
-        btn_crearHojaTrabajo.click();
+        try {
+            wait.until(ExpectedConditions.elementToBeClickable(btn_crearHojaTrabajo));
+            btn_crearHojaTrabajo.click();
+
+        } catch (Exception Error) {
+            detalleError = "Error en el botón para crear Hoja de Trabajo";
+            objLogErrores.logError(detalleError,Error);
+        }
     }
 
     public void RegresarListado(){
-        wait.until(ExpectedConditions.elementToBeClickable(btn_regresarListado));
-        btn_regresarListado.click();
+        try {
+            wait.until(ExpectedConditions.elementToBeClickable(btn_regresarListado));
+            btn_regresarListado.click();
+
+        } catch (Exception Error) {
+            detalleError = "Error en el botón Regresar a Listado";
+            objLogErrores.logError(detalleError,Error);
+        }
     }
 
 }

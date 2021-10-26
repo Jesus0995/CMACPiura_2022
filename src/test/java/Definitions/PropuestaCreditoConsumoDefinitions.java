@@ -301,7 +301,7 @@ public class PropuestaCreditoConsumoDefinitions {
     @And("muestra la ventana seguros seleccionados y doy click en el boton cerrar")
     public void muestraLaVentanaSegurosSeleccionadosYDoyClickEnElBotonCerrar() {
         confirmarSeguros.AbrirVentanaConfirmacionSeguros();
-        confirmarSeguros.ClickCerrar();
+        confirmarSeguros.ClickBtnCerrar();
         confirmarSeguros.CerrarVentanaConfirmacionSeguros();
     }
 
@@ -452,7 +452,7 @@ public class PropuestaCreditoConsumoDefinitions {
 
     @And("direcciona al menu principal y doy click en la opcion cerrar sesion")
     public void direccionaAlMenuPrincipalYDoyClickEnLaOpcionCerrarSesion() {
-        menuPrincipal.ClickCerrarSesion();
+        menuPrincipal.ClickBtnCerrarSesion();
     }
 
     @And("direcciona al login y doy click en el boton cerrar sesion")
