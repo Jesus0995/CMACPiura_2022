@@ -162,7 +162,7 @@ public class InformeVisitaCreditoEmpresarialDefinitions {
 
     @And("direcciona a la ventana login y doy click en el boton cerrar sesion")
     public void direccionaALaVentanaLoginYDoyClickEnElBotonCerrarSesion() {
-        loginInforme.ClickCerrarSesion();
+        loginInforme.ClickBtnCerrarSesion();
     }
 
     @And("finalmente cerramos el navegador")

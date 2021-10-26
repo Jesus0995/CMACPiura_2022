@@ -162,7 +162,7 @@ public class HojaTrabajoDefinitions {
     @And("se posiciona en login y doy click en el boton cerrar sesion")
     public void sePosicionaEnLoginYDoyClickEnElBotonCerrarSesion() {
 
-        login.ClickCerrarSesion();
+        login.ClickBtnCerrarSesion();
     }
 
     @And("cierro sesion del navegador")

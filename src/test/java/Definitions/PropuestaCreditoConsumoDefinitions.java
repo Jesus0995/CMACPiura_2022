@@ -94,7 +94,7 @@ public class PropuestaCreditoConsumoDefinitions {
 
     @And("doy click en el boton Crear_Propuesta de la ventana Listado Propuesta")
     public void doyClickEnElBotonCrear_PropuestaDeLaVentanaListadoPropuesta() {
-        listadoPropuesta.ClickCrearPropuesta();
+        listadoPropuesta.ClickBtnCrearPropuesta();
         //pantallazo();
     }
 
@@ -447,7 +447,7 @@ public class PropuestaCreditoConsumoDefinitions {
     @And("direcciona a la ventana listado propuesta y doy click en el boton regresar")
     public void direccionaALaVentanaListadoPropuestaYDoyClickEnElBotonRegresar() {
 
-        listadoPropuesta.ClickRegresar();
+        listadoPropuesta.ClickBtnRegresar();
     }
 
     @And("direcciona al menu principal y doy click en la opcion cerrar sesion")
@@ -458,7 +458,7 @@ public class PropuestaCreditoConsumoDefinitions {
     @And("direcciona al login y doy click en el boton cerrar sesion")
     public void direccionaAlLoginYDoyClickEnElBotonCerrarSesion() {
 
-        login.ClickCerrarSesion();
+        login.ClickBtnCerrarSesion();
     }
 
     @And("cierro sesion de navegador")

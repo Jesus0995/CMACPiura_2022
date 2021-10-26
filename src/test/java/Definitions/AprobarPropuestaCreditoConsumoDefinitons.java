@@ -142,7 +142,7 @@ public class AprobarPropuestaCreditoConsumoDefinitons {
     @And("direcciona a la ventana listado de propuestas y doy click en el boton regresar")
     public void direccionaALaVentanaListadoDePropuestasYDoyClickEnElBotonRegresar() {
 
-        listadoPropuesta.ClickRegresar();
+        listadoPropuesta.ClickBtnRegresar();
     }
 
     @And("direcciona a menu principal y doy click en la opcion cerrar sesion")
@@ -155,7 +155,7 @@ public class AprobarPropuestaCreditoConsumoDefinitons {
     @And("direcciona a login y doy click en el boton cerrar sesion")
     public void direccionaALoginYDoyClickEnElBotonCerrarSesion() {
 
-        login.ClickCerrarSesion();
+        login.ClickBtnCerrarSesion();
 
     }
 

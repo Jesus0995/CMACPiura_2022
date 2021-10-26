@@ -70,7 +70,7 @@ public class InformeComercialCreditoEmpresarialDefinitions {
     @And("el sistema direcciona a la ventana Defina el negocio y doy click en el boton Cargar")
     public void elSistemaDireccionaALaVentanaDefinaElNegocioYDoyClickEnElBotonCargar() {
         seleccionarRubroNegocio.AbrirVentanaRubroNegocio();
-        seleccionarRubroNegocio.ClickCargar();
+        seleccionarRubroNegocio.ClickBtnCargar();
         seleccionarRubroNegocio.CerrarVentanaRubroNegocio();
     }
     @And("en la ventana Informes Comerciales doy click en el boton Crear Informe Comercial")
@@ -100,7 +100,7 @@ public class InformeComercialCreditoEmpresarialDefinitions {
     }
     @And("el sistema direcciona al Login y doy click en el boton Cerrar Sesion")
     public void elSistemaDireccionaAlLoginYDoyClickEnElBotonCerrarSesion() {
-        loginSGCRED.ClickCerrarSesion();
+        loginSGCRED.ClickBtnCerrarSesion();
 
     }
 

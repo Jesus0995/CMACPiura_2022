@@ -283,6 +283,7 @@ public class PropuestaCreditoEmpresarialGrupoVinculadoDefinitions {
     @And("en la ventana propuesta ingresar todos los comentarios de la propuesta")
     public void en_la_ventana_propuesta_ingresar_todos_los_comentarios_de_la_propuesta() {
         propuesta.IngresarComentariosPropuesta();
+        propuesta.IngresarCaracteristicaNegocio();
     }
     @And("en la ventana propuesta hacer click en el boton anexar garantias existentes")
     public void en_la_ventana_propuesta_hacer_click_en_el_boton_anexar_garantias_existentes() {

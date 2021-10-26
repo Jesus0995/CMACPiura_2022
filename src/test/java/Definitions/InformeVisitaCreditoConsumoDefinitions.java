@@ -83,7 +83,7 @@ public class InformeVisitaCreditoConsumoDefinitions {
     @And("muestra ventana seleccionar rubro y doy click en el boton cargar")
     public void muestraVentanaSeleccionarRubroYDoyClickEnElBotonCargar() {
         seleccionarRubroNegocio.AbrirVentanaRubroNegocio();
-        seleccionarRubroNegocio.ClickCargar();
+        seleccionarRubroNegocio.ClickBtnCargar();
         seleccionarRubroNegocio.CerrarVentanaRubroNegocio();
     }
 
@@ -182,7 +182,7 @@ public class InformeVisitaCreditoConsumoDefinitions {
     @And("direcciona en login y doy click en el boton cerrar sesion")
     public void direccionaEnLoginYDoyClickEnElBotonCerrarSesion() {
 
-        loginInforme.ClickCerrarSesion();
+        loginInforme.ClickBtnCerrarSesion();
     }
 
     @And("cierro navegador")

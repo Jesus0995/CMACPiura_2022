@@ -136,6 +136,16 @@ public class PropuestaPage {
         }
 
     }
+    public void IngresarCaracteristicaNegocio(){
+        try {
+            txt_CaracteristicaNegocio.clear();
+            txt_CaracteristicaNegocio.sendKeys("descripcion general de la propuesta");
+
+        } catch (Exception Error) {
+            detalleError = "Error al ingresar caracteristica del negocio";
+            objLogErrores.logError(detalleError, Error);
+        }
+    }
 
 
     public void IngresarClasificacionCrediticia(String clasificacion) {

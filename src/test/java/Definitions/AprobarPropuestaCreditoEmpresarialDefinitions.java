@@ -123,7 +123,7 @@ public class AprobarPropuestaCreditoEmpresarialDefinitions {
     }
     @And("el sistema direcciona al listado de propuestas y doy click en el boton Regresar")
     public void elSistemaDireccionaAlListadoDePropuestasYDoyClickEnElBotonRegresar() {
-        listadoPropuesta.ClickRegresar();
+        listadoPropuesta.ClickBtnRegresar();
     }
     @And("el sistema direcciona al menu principal y le doy click en Cerrar Sesion")
     public void elSistemaDireccionaAlMenuPrincipalYLeDoyClickEnCerrarSesion() {
@@ -131,7 +131,7 @@ public class AprobarPropuestaCreditoEmpresarialDefinitions {
     }
     @And("el sistema direcciona al login y le doy click en el boton Cerrar Sesion")
     public void elSistemaDireccionaAlLoginYLeDoyClickEnElBotonCerrarSesion() {
-        loginAprobar.ClickCerrarSesion();
+        loginAprobar.ClickBtnCerrarSesion();
     }
 
     @And("en la ventana principal de Propuesta doy click en el boton verificar checklist credito")

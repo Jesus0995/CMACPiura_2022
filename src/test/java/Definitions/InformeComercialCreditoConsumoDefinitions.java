@@ -78,7 +78,7 @@ public class InformeComercialCreditoConsumoDefinitions {
     @And("muestra ventana definir negocio y doy click en el boton cargar")
     public void muestraVentanaDefinirNegocioYDoyClickEnElBotonCargar() {
         seleccionarNegocio.AbrirVentanaRubroNegocio();
-        seleccionarNegocio.ClickCargar();
+        seleccionarNegocio.ClickBtnCargar();
         seleccionarNegocio.CerrarVentanaRubroNegocio();
     }
 
@@ -120,7 +120,7 @@ public class InformeComercialCreditoConsumoDefinitions {
     @And("posiciona en login y doy click en el boton cerrar sesion")
     public void posicionaEnLoginYDoyClickEnElBotonCerrarSesion() {
 
-        loginInforme.ClickCerrarSesion();
+        loginInforme.ClickBtnCerrarSesion();
     }
 
     @And("se cierra el navegador")

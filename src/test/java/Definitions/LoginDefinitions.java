@@ -53,7 +53,7 @@ public class LoginDefinitions {
 
     @Then("doy click en cerrar sesion")
     public void doyClickEnCerrarSesion() {
-        formulario.ClickCerrarSesion();
+        formulario.ClickBtnCerrarSesion();
 
     }
 

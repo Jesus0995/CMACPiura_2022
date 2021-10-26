@@ -345,6 +345,8 @@ public class PropuestaCreditoEmpresarialDefinitions {
     @And("en la ventana Propuesta ingresar todos los comentarios de la propuesta")
     public void en_la_ventana_Propuesta_ingresar_todos_los_comentarios_de_la_propuesta() {
         propuesta.IngresarComentariosPropuesta();
+        propuesta.IngresarCaracteristicaNegocio();
+
     }
 
     @And("en la ventana Propuesta hacer click en el boton anexar garantias existentes")
