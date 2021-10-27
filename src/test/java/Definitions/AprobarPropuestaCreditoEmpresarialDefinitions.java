@@ -127,7 +127,7 @@ public class AprobarPropuestaCreditoEmpresarialDefinitions {
     }
     @And("el sistema direcciona al menu principal y le doy click en Cerrar Sesion")
     public void elSistemaDireccionaAlMenuPrincipalYLeDoyClickEnCerrarSesion() {
-        menuPrincipal.ClickCerrarSesion();
+        menuPrincipal.ClickBtnCerrarSesion();
     }
     @And("el sistema direcciona al login y le doy click en el boton Cerrar Sesion")
     public void elSistemaDireccionaAlLoginYLeDoyClickEnElBotonCerrarSesion() {

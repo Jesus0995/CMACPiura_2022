@@ -8,7 +8,7 @@ Feature: Crear una propuesta de Credito Empresarial de tipo NORMAL en el Sistema
     Given la web SGCRED esta disponible
     When ingresar usuario y password
       | usuario | password |
-      | ALPAMA | prueba   |
+      | ALPAMA  | prueba   |
     Then hacer click en el boton ingresar
     And mostrar home de SGCRED
     And en el menu principal hacer click en el link propuesta financiamiento
@@ -82,11 +82,6 @@ Feature: Crear una propuesta de Credito Empresarial de tipo NORMAL en el Sistema
     Examples:
       | cliente |
       | 2028    |
-      | 2240    |
-      | 2266    |
-      | 2363    |
-      | 2379    |
-      | 2517    |
 
 
 

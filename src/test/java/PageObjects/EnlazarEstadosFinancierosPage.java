@@ -1,6 +1,7 @@
 package PageObjects;
 
 import Functions.funcionEsperar;
+import Functions.funcionVentana;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -16,6 +17,8 @@ public class EnlazarEstadosFinancierosPage {
     private WebDriverWait wait;
     private Set<String> identificadoresEnlazarEstadosFinancieros;
     private funcionEsperar objFuncionEsperar = new funcionEsperar();
+    private funcionVentana objFuncionVentana = new funcionVentana();
+    private String ventanaUltima;
 
     //mapeo elementos
     @FindBy(xpath = "//button[@type=\"submit\"]")
@@ -31,9 +34,11 @@ public class EnlazarEstadosFinancierosPage {
         }
         driver.switchTo().window(LastHandle);
         System.out.println("Titulo:" + driver.getTitle());
+        ventanaUltima = driver.getWindowHandle();
     }
 
     public void CerrarVentanaEnlazarEstadosFinancieros() {
+       /*
         Integer SetSize = identificadoresEnlazarEstadosFinancieros.size();
         Integer Index = 0;
 
@@ -45,6 +50,11 @@ public class EnlazarEstadosFinancierosPage {
         }
         System.out.println(Handles[0]);
         driver.switchTo().window(Handles[0]);
+*/
+        System.out.println(driver.getWindowHandles());
+        objFuncionEsperar.EsperarCierreVentana(ventanaUltima);
+        objFuncionVentana.cambiarVentanaInicial();
+        System.out.println("Fin cerrar ventana");
 
     }
 

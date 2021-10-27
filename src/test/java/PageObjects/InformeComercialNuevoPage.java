@@ -41,7 +41,7 @@ public class InformeComercialNuevoPage {
 
     public  void IngresarPatrimonioComercial(String PatrimonioComercial){
         try {
-            objFuncionEsperar.EsperarTiempo (6);
+            objFuncionEsperar.EsperarTiempo (3);
             txt_PatrimonioComercial.clear();
             txt_PatrimonioComercial.sendKeys(PatrimonioComercial);
         } catch (Exception Error) {

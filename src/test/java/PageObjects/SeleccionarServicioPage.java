@@ -55,7 +55,7 @@ public class SeleccionarServicioPage {
         //Actions Acciones = new Actions(driver);
         try {
             System.out.println(driver.getWindowHandles());
-            objFuncionEsperar.EsperarCierreVentana(ventanaUltima);
+           // objFuncionEsperar.EsperarCierreVentana(ventanaUltima);
             objFuncionVentana.cambiarVentanaInicial();
             System.out.println("Fin cerrar ventana");
         } catch (Exception Error) {

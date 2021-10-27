@@ -28,6 +28,7 @@ public class SeleccionarOperacionCreditoPage {
             System.out.println(driver.getWindowHandles());
             objFuncionVentana.cambiarVentanaNueva();
             ventanaUltima = driver.getWindowHandle();
+            objFuncionEsperar.EsperarTiempo(3);
             /*identificadoresSeleccionarOP = driver.getWindowHandles();
             System.out.println(identificadoresSeleccionarOP);
             String LastHandle ="";
@@ -46,7 +47,7 @@ public class SeleccionarOperacionCreditoPage {
     public void CerrarVentanaSeleccionarOP(){
         try {
             System.out.println(driver.getWindowHandles());
-            objFuncionEsperar.EsperarCierreVentana(ventanaUltima);
+            //objFuncionEsperar.EsperarCierreVentana(ventanaUltima);
             objFuncionVentana.cambiarVentanaInicial();
             System.out.println("Fin cerrar ventana");
             /*Integer SetSize = identificadoresSeleccionarOP.size();

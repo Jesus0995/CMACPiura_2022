@@ -168,7 +168,7 @@ public class AnexarChecklistPage {
 
 
     public void SeleccionarOpcionesCheckListCredito() {
-        objFuncionEsperar.EsperarTiempo(5);
+        objFuncionEsperar.EsperarTiempo(3);
         try {
            List<WebElement> checks = driver.findElements(By.xpath("//input[@Title='Expediente']"));
            for (WebElement check : checks) {

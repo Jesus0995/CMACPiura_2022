@@ -99,12 +99,16 @@ public class InformeVisita_CrearPage {
     }
 
     public void IngresarFranjaHoraria(String FranjaHora) {
+        try {
         cbx_franjaHoraria.sendKeys(FranjaHora);
         objFuncionEsperar.EsperarTiempo(3);
-        try {
+
+            /*
             WebElement franjaHora = driver.findElement(By.xpath("//select[@name='meridianoINI']//option[text()='" + FranjaHora + "']"));
             String JScript = franjaHora.getAttribute("onclick");
             ((JavascriptExecutor) driver).executeScript(JScript);
+            */
+
         } catch (Exception Error) {
             detalleError = "Error al ingresar Franja Horaria";
             objLogErrores.logError(detalleError,Error);
@@ -122,25 +126,29 @@ public class InformeVisita_CrearPage {
     }
 
     public void SeleccionarRelacion(String Relacion) {
+        try {
         cbx_relacionIntegrantes.sendKeys(Relacion);
         objFuncionEsperar.EsperarTiempo(3);
-        try {
+      /*
             WebElement relacion = driver.findElement(By.xpath("//select[@name='relacionMiembros']//option[text()='" + Relacion + "']"));
             String JScript = relacion.getAttribute("onclick");
             ((JavascriptExecutor) driver).executeScript(JScript);
+       */
         } catch (Exception Error) {
             detalleError = "Error al seleccionar Relación";
             objLogErrores.logError(detalleError,Error);
         }
+
     }
 
     public void SeleccionarHabitos(String Habitos) {
+        try {
         cbx_habitos.sendKeys(Habitos);
         objFuncionEsperar.EsperarTiempo(3);
-        try {
+        /*
             WebElement habitos = driver.findElement(By.xpath("//select[@name='habitosMiembros']//option[text()='" + Habitos + "']"));
             String JScript = habitos.getAttribute("onclick");
-            ((JavascriptExecutor) driver).executeScript(JScript);
+            ((JavascriptExecutor) driver).executeScript(JScript); */
         } catch (Exception Error) {
             detalleError = "Error al seleccionar Hábitos";
             objLogErrores.logError(detalleError,Error);
@@ -148,12 +156,13 @@ public class InformeVisita_CrearPage {
     }
 
     public void SeleccionarOtrosIngresos(String OtrosIngresos) {
+        try {
         cbx_habitos.sendKeys(OtrosIngresos);
         objFuncionEsperar.EsperarTiempo(3);
-        try {
+     /*
             WebElement otrosIngresos = driver.findElement(By.xpath("//select[@name='hayGeneracionIngresos']//option[text()='" + OtrosIngresos + "']"));
             String JScript = otrosIngresos.getAttribute("onclick");
-            ((JavascriptExecutor) driver).executeScript(JScript);
+            ((JavascriptExecutor) driver).executeScript(JScript); */
         } catch (Exception Error) {
             detalleError = "Error al seleccionar Otros Ingresos";
             objLogErrores.logError(detalleError,Error);
@@ -161,12 +170,13 @@ public class InformeVisita_CrearPage {
     }
 
     public void SeleccionarRelacionLaboral(String RelacionLaboral) {
+        try {
         cbx_relacionLaboral.sendKeys(RelacionLaboral);
         objFuncionEsperar.EsperarTiempo(3);
-        try {
+        /*
             WebElement relacionLaboral = driver.findElement(By.xpath("//select[@name='estadoGarantia']//option[text()='" + RelacionLaboral + "']"));
             String JScript = relacionLaboral.getAttribute("onclick");
-            ((JavascriptExecutor) driver).executeScript(JScript);
+            ((JavascriptExecutor) driver).executeScript(JScript); */
         } catch (Exception Error) {
             detalleError = "Error al seleccionar Relación Laboral";
             objLogErrores.logError(detalleError,Error);
@@ -174,12 +184,13 @@ public class InformeVisita_CrearPage {
     }
 
     public void SeleccionarDocumentoSustento(String DocumentoSustento) {
+        try {
         cbx_documentoSustento.sendKeys(DocumentoSustento);
         objFuncionEsperar.EsperarTiempo(3);
-        try {
+     /*
             WebElement documentoSustento = driver.findElement(By.xpath("//select[@name='documentacionGarantia']//option[text()='" + DocumentoSustento + "']"));
             String JScript = documentoSustento.getAttribute("onclick");
-            ((JavascriptExecutor) driver).executeScript(JScript);
+            ((JavascriptExecutor) driver).executeScript(JScript); */
         } catch (Exception Error) {
             detalleError = "Error al seleccionar Documento de Sustento";
             objLogErrores.logError(detalleError,Error);
@@ -187,12 +198,13 @@ public class InformeVisita_CrearPage {
     }
 
     public void SeleccionarDireccionCorrecta(String DireccionNegocio) {
+        try {
         cbx_DireccionNegocio.sendKeys(DireccionNegocio);
         objFuncionEsperar.EsperarTiempo(3);
-        try {
+     /*
             WebElement direccionNegocio = driver.findElement(By.xpath("//select[@name='esDireccionCorrecta1']//option[text()='" + DireccionNegocio + "']"));
             String JScript = direccionNegocio.getAttribute("onclick");
-            ((JavascriptExecutor) driver).executeScript(JScript);
+            ((JavascriptExecutor) driver).executeScript(JScript); */
 
         } catch (Exception Error) {
             detalleError = "Error al seleccionar Direccion Correcta";
@@ -202,12 +214,13 @@ public class InformeVisita_CrearPage {
 
 
     public void SeleccionarEstadoGarantia(String EstadoGarantia) {
+        try {
         cbx_EstadoGarantia.sendKeys(EstadoGarantia);
         objFuncionEsperar.EsperarTiempo(3);
-        try {
+        /*
             WebElement estadoGarantia = driver.findElement(By.xpath("//select[@name='estadoGarantia']//option[text()='" + EstadoGarantia + "']"));
             String JScript = estadoGarantia.getAttribute("onclick");
-            ((JavascriptExecutor) driver).executeScript(JScript);
+            ((JavascriptExecutor) driver).executeScript(JScript); */
 
         } catch (Exception Error) {
             detalleError = "Error al seleccionar Estado de Garantía";
@@ -217,12 +230,13 @@ public class InformeVisita_CrearPage {
     }
 
     public void SeleccionarDocumentoGarantia(String DocumentoGarantia) {
+        try {
         cbx_DocumentoGarantia.sendKeys(DocumentoGarantia);
         objFuncionEsperar.EsperarTiempo(2);
-        try {
+      /*
             WebElement documentoGarantia = driver.findElement(By.xpath("//select[@name='documentacionGarantia']//option[text()='" + DocumentoGarantia + "']"));
             String JScript = documentoGarantia.getAttribute("onclick");
-            ((JavascriptExecutor) driver).executeScript(JScript);
+            ((JavascriptExecutor) driver).executeScript(JScript); */
 
         } catch (Exception Error) {
             detalleError = "Error al seleccionar Documento de Garantía";

@@ -1,8 +1,6 @@
 package Definitions;
 
-import PageObjects.InformeVisita_CrearPage;
-import PageObjects.RegistrarSegurosPage;
-import PageObjects.SeleccionarGarantiasExistentesPage;
+import PageObjects.*;
 import io.cucumber.datatable.DataTable;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.When;
@@ -12,25 +10,39 @@ import java.util.Map;
 
 public class ProbarDefinitions {
 
-    InformeVisita_CrearPage informevisita;
+    PropuestaPage propuesta;
+    SeleccionarSegurosPage selecseguros;
+    RegistrarSegurosPage registroseg;
 
     public ProbarDefinitions() {
-        informevisita = new InformeVisita_CrearPage(Hooks.driver);
-
+        propuesta = new PropuestaPage(Hooks.driver);
+        selecseguros = new SeleccionarSegurosPage(Hooks.driver);
+        registroseg = new RegistrarSegurosPage(Hooks.driver);
     }
 
     @Given("la pagina esta disponible")
     public void la_pagina_esta_disponible() {
-        Hooks.driver.get("file:///C:/Users/Usuario/Documents/InformeVisita.html");
+        Hooks.driver.get("file:///C:/Users/Usuario/Documents/Propuesta.html");
 
     }
     @When("pruebaa")
-    public void pruebaa(DataTable DatosDomicilio) {
+    public void pruebaa() {
+ propuesta.ClickBtnRegistrarSeguro();
+ selecseguros.AbrirVentanaSeleccionarSeguros();
+ selecseguros.ClickbtnConfirmar();
+ selecseguros.CerrarVentanaSeleccionarSeguros();
+ registroseg.AbrirVentanaRegistrarSeguros();
+ registroseg.ClickCheckSeguroDesgravamenMN();
+ registroseg.ObtenerNumeroAleatorioDPSSeguroDesgravamen();
+ registroseg.ClickCheckSeguroRiesgoPlanPymes();
+ registroseg.ObtenerNumeroAleatorioDPSeguroRiesgoPlanPymes();
+ registroseg.CerrarVentanaRegistrarSeguros();
+ propuesta.ClickAnexarCheckListCreditos();
 
-        List<Map<String, String>> lista = DatosDomicilio.asMaps(String.class, String.class);
-        for (int i = 0; i < lista.size(); i++) {
-            informevisita.SeleccionarRelacion(lista.get(i).get("Relacion"));
-            informevisita.SeleccionarHabitos(lista.get(i).get("Habitos"));
+
+
+
+
 
 
         }
@@ -41,4 +53,4 @@ public class ProbarDefinitions {
 
 
 
-}
+

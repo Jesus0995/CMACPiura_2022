@@ -81,7 +81,7 @@ public class OperacionCreditoPage {
     public void CerrarVentanaOperacionCredito(){
         try {
             System.out.println(driver.getWindowHandles());
-            objFuncionEsperar.EsperarCierreVentana(ventanaUltima);
+            //objFuncionEsperar.EsperarCierreVentana(ventanaUltima);
             objFuncionVentana.cambiarVentanaInicial();
             System.out.println("Fin cerrar ventana");
             /*Integer SetSize = identificadoresOperacionCredito.size();
