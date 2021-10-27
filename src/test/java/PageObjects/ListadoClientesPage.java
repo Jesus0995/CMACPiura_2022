@@ -3,10 +3,8 @@ package PageObjects;
 import Functions.funcionEsperar;
 import Functions.funcionExcepciones;
 import Functions.funcionVentana;
-import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
+import io.cucumber.java.tr.Ve;
+import org.openqa.selenium.*;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -78,4 +76,20 @@ public class ListadoClientesPage {
             objLogErrores.logError(detalleError, Error);
         }
     }
-}
+
+
+    public static void cambiarventana(WebDriver driver) {
+        for (String handle : driver.getWindowHandles()) {
+            driver.switchTo().window(handle);
+                    }
+    }
+    public void CerrarVentanaEmergente(WebDriver driver) {
+        cambiarventana(driver);
+        driver.get("10.0.13.245:58081/SCORING-war/login/login_1.xhtml?user=ALPAMA&pass=xvPoDst4tzBM44p6ZCYa4w==4Bg7kOdwu0bwmVRDOz1/EA==f1db3cf7e21e3105cdeef852");
+        driver.close();
+        }
+
+    }
+
+
+

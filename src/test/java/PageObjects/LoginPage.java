@@ -1,7 +1,6 @@
 package PageObjects;
 
-import Functions.funcionEsperar;
-import Functions.funcionVentana;
+import Functions.*;
 import net.bytebuddy.pool.TypePool;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -9,7 +8,8 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import Functions.funcionExcepciones;
+
+import java.io.IOException;
 
 public class LoginPage {
     private WebDriver driver;
@@ -19,14 +19,14 @@ public class LoginPage {
     private funcionExcepciones objLogErrores = new funcionExcepciones();
     private String detalleError = new String();
 
-    @FindBy(name = "txtUsuario")
-    private WebElement txt_Usuario;
-    @FindBy(name = "txtPassword")
-    private WebElement txt_Password;
-    @FindBy(xpath = "//button[@type='submit']")
-    private WebElement btn_Ingresar;
-    @FindBy(xpath = "/html/body/table[2]/tbody/tr[3]/td/form/table/tbody/tr[2]/td/button[1]")
-    private WebElement btn_Cerrar;
+
+    private WriteExcelFile writeFile;
+    private ReadExcelFile readFile;
+
+    @FindBy(name = "txtUsuario") private WebElement txt_Usuario;
+    @FindBy(name = "txtPassword") private WebElement txt_Password;
+    @FindBy(xpath = "//button[@type='submit']") private WebElement btn_Ingresar;
+    @FindBy(xpath = "/html/body/table[2]/tbody/tr[3]/td/form/table/tbody/tr[2]/td/button[1]") private WebElement btn_Cerrar;
 
     public LoginPage(WebDriver d) {
         driver = d;
@@ -82,6 +82,36 @@ public class LoginPage {
             objLogErrores.logError(detalleError,Error);
 
         }
+    }
+
+
+    public void lecturaLogin() throws IOException {
+        String filepath = "C:\\Matriz.xlsx";
+
+        String searchLogin = readFile.getCellValue(filepath, "Sheet1", 0, 0);
+
+        String searchPassword = readFile.getCellValue(filepath, "Sheet1", 0, 1);
+
+        String resultTest = "ok";
+
+        txt_Usuario.clear();
+        txt_Usuario.sendKeys(searchLogin);
+        System.out.println("VALOR EXCEL usuario"+searchLogin);
+        txt_Password.clear();
+        txt_Password.sendKeys(searchPassword);
+        System.out.println("VALOR EXCEL password"+searchPassword);
+        btn_Ingresar.click();
+
+
+        System.out.println("resultado"+resultTest);
+
+        readFile.readExcel(filepath,"Hoja1");
+
+        writeFile.writeCellValue(filepath,"Hoja1",0,2,resultTest);
+
+        readFile.readExcel(filepath,"Hoja1");
+
+
     }
 
 

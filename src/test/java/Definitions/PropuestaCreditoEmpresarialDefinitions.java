@@ -120,6 +120,7 @@ public class PropuestaCreditoEmpresarialDefinitions {
     @And("en la ventana Cliente hacer click en el icono propuesta")
     public void en_la_ventana_Cliente_hacer_click_en_el_icono_propuesta() {
         listadoClientes.SeleccionarIconoPropuesta();
+
     }
 
     @And("en la ventana Servicio ingresar informacion luego hacer click en el boton cargar")
