@@ -211,7 +211,7 @@ public class ExcelCreditoEmpresarialDefinitions {
             grabarDocumentoPropuesta.CerrarVentanaGrabarPropuesta();
             propuesta.AbrirOpcionesDictamen();
             propuesta.ClickBtnAprobarPropuesta();
-
+            aprobarDictamenPropuesta.AbrirVentanaAprobarDictamenPropuesta();
             aprobarDictamenPropuesta.IngresarObservaciones(datosExcel[i][19]);
             System.out.println("leer la observacion del ditamen" +datosExcel[i][19]);
 

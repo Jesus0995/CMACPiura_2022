@@ -34,6 +34,6 @@ Feature: Registrar Aprobacion de Propuestas con el perfil Jefe de Credito
     And cerrar el navegador
     Examples:
       | cliente |
-      | 4787864 |
+      | 4787893 |
 
 
