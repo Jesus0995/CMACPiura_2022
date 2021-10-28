@@ -1,6 +1,8 @@
 package PageObjects;
 
+import Functions.funcionEsperar;
 import Functions.funcionExcepciones;
+import Functions.funcionVentana;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -14,20 +16,15 @@ public class CancelandoPagaresPage {
     private Set<String> identificadoresCancelandoPagares;
     private funcionExcepciones objFuncionExcepciones = new funcionExcepciones();
     private String detalleError;
+    private funcionEsperar objFuncionEsperar = new funcionEsperar();
+    private funcionVentana objFuncionVentana = new funcionVentana();
+    private String ventanaUltima;
 
     public void AbrirVentanaCancelandoPagares(){
         try {
-            identificadoresCancelandoPagares = driver.getWindowHandles();
-            System.out.println(identificadoresCancelandoPagares);
-            String LastHandle ="";
-
-            for (String identificadorCancelandoPagares :identificadoresCancelandoPagares ){
-                LastHandle = identificadorCancelandoPagares;
-            }
-            driver.switchTo().window(LastHandle);
-
-            System.out.println("Titulo : " +driver.getTitle() );
-
+            System.out.println(driver.getWindowHandles());
+            objFuncionVentana.cambiarVentanaNueva();
+            ventanaUltima = driver.getWindowHandle();
         } catch (Exception Error) {
             detalleError = "Error en abrir ventana de pagares";
             objFuncionExcepciones.logError(detalleError,Error);
@@ -36,16 +33,9 @@ public class CancelandoPagaresPage {
 
     public void CerrarVentanaCancelandoPagares(){
         try {
-            Integer SetSize = identificadoresCancelandoPagares.size();
-            Integer Index=0;
-            String[] Handles = new String[SetSize] ;
-            for (String identificadorCancelandoPagares : identificadoresCancelandoPagares) {
-                Handles[Index] = identificadorCancelandoPagares;
-                Index++;
-            }
-            System.out.println(Handles[0]);
-            driver.switchTo().window(Handles[0]);
-
+            System.out.println(driver.getWindowHandles());
+            objFuncionVentana.cambiarVentanaInicial();
+            System.out.println("Fin cerrar ventana");
         } catch (Exception Error) {
             detalleError = "Error en cerrar ventana de pagares";
             objFuncionExcepciones.logError(detalleError,Error);

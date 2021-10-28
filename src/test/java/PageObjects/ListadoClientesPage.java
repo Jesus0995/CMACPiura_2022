@@ -29,6 +29,7 @@ public class ListadoClientesPage {
     private WebElement txt_Codigo;
     @FindBy(css = "#form2 > table:nth-child(2) > tbody:nth-child(1) > tr:nth-child(2) > td:nth-child(1) > button:nth-child(1)")
     private WebElement btn_Buscar;
+    @FindBy(xpath = "//table[3]/tbody/tr/td/div/button[1]") private WebElement btn_Regresar;
 
 
     public ListadoClientesPage(WebDriver d) {
@@ -77,7 +78,16 @@ public class ListadoClientesPage {
         }
     }
 
+    public void ClickBtnRegresar() {
+        try {
+            wait.until(ExpectedConditions.elementToBeClickable(btn_Regresar));
+            btn_Regresar.click();
+        } catch (Exception Error) {
+            detalleError = "Error al hacer click en el botón Regresar";
+            objLogErrores.logError(detalleError, Error);
+        }
 
+    }
     public static void cambiarventana(WebDriver driver) {
         for (String handle : driver.getWindowHandles()) {
             driver.switchTo().window(handle);

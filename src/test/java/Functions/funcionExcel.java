@@ -14,7 +14,7 @@ import java.util.Iterator;
 public class funcionExcel {
 
     // Ruta del archivo
-    public static String rutaArchivos = "C:\\Proyectos\\Archivos";
+    public static String rutaArchivos = "C:\\CajaPiuraCMAC2021\\target\\DatosExcel";
 
     public String[][] LeerExcel(String Archivo, Integer Hoja) {
         try {

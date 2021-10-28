@@ -1,15 +1,14 @@
 package PageObjects;
 
 import Functions.funcionEsperar;
-import org.openqa.selenium.JavascriptExecutor;
+import Functions.funcionExcepciones;
+import Functions.funcionVentana;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-
-import javax.xml.xpath.XPath;
 import java.util.Set;
 
 public class EnlazarInformeComercialNuevoPage {
@@ -17,35 +16,34 @@ public class EnlazarInformeComercialNuevoPage {
     private WebDriverWait wait;
     private Set<String> identificadoresEnlazarInformeComercialNuevo;
     private  funcionEsperar objFuncionEsperar = new funcionEsperar();
+    private funcionVentana objFuncionVentana = new funcionVentana();
+    private String ventanaUltima;
+    private funcionExcepciones objLogErrores = new funcionExcepciones();
+    private String detalleError;
 
     @FindBy(xpath = "//button[@type='submit']") private WebElement btn_Realizar;
 
 
     public void AbrirVentanaEnlazarInformeComercialNuevo() {
-        identificadoresEnlazarInformeComercialNuevo = driver.getWindowHandles();
-        System.out.println(identificadoresEnlazarInformeComercialNuevo);
-        String LastHandle = "";
-
-        for (String identificadorEnlazarInformeComercialNuevo : identificadoresEnlazarInformeComercialNuevo) {
-            LastHandle = identificadorEnlazarInformeComercialNuevo;
+        try {
+            System.out.println(driver.getWindowHandles());
+            objFuncionVentana.cambiarVentanaNueva();
+            ventanaUltima = driver.getWindowHandle();
+        } catch (Exception Error) {
+            detalleError = "Error abrir ventana Enlazar Informe Comercial";
+            objLogErrores.logError(detalleError,Error);
         }
-        driver.switchTo().window(LastHandle);
-        System.out.println("Titulo:" + driver.getTitle());
     }
 
     public void CerrarVentanaEnlazarInformeComercialNuevo() {
-        Integer SetSize = identificadoresEnlazarInformeComercialNuevo.size();
-        Integer Index = 0;
-
-        String[] Handles = new String[SetSize];
-
-        for (String identificadorEnlazarInformeComercialNuevo : identificadoresEnlazarInformeComercialNuevo) {
-            Handles[Index] = identificadorEnlazarInformeComercialNuevo;
-            Index++;
+        try {
+            System.out.println(driver.getWindowHandles());
+            objFuncionVentana.cambiarVentanaInicial();
+            System.out.println("Fin cerrar ventana");
+        } catch (Exception Error) {
+            detalleError = "Error cerrar ventana Enlazar Informe Comercial";
+            objLogErrores.logError(detalleError,Error);
         }
-        System.out.println(Handles[0]);
-        driver.switchTo().window(Handles[0]);
-
     }
 
     public EnlazarInformeComercialNuevoPage(WebDriver d) {
@@ -55,9 +53,14 @@ public class EnlazarInformeComercialNuevoPage {
     }
 
     public void ClickBtnRealizar() {
-
-        wait.until(ExpectedConditions.elementToBeClickable(btn_Realizar));
-        btn_Realizar.click();
-        objFuncionEsperar.EsperarTiempo(2);
+        try {
+            wait.until(ExpectedConditions.elementToBeClickable(btn_Realizar));
+            btn_Realizar.click();
+            objFuncionEsperar.EsperarTiempo(2);
+        } catch (Exception Error) {
+            detalleError = "Error al hacer click en el botón Realizar";
+            objLogErrores.logError(detalleError,Error);
+        }
     }
+
 }

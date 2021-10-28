@@ -27,7 +27,8 @@ public class ReadExcelDefinitions {
 
     @Given("la pagina disponible")
     public void la_pagina_disponible() {
-      Hooks.driver.get("http://10.0.203.12:8081/propuesta/");
+
+        Hooks.driver.get("http://10.0.203.12:8081/propuesta/");
     }
     @When("login en la pagina")
     public void login_en_la_pagina() throws IOException {

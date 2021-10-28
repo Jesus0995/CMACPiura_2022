@@ -1,5 +1,7 @@
 package PageObjects;
 
+import Functions.funcionExcepciones;
+import Functions.funcionVentana;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -16,6 +18,10 @@ public class AprobarCheckListCreditoPage {
     private WebDriverWait wait;
     private Set<String> identfAnexarCheckListAprobar;
     private funcionEsperar objFuncionEsperar =  new funcionEsperar();
+    private funcionVentana objFuncionVentana = new funcionVentana();
+    private String ventanaUltima;
+    private funcionExcepciones objLogErrores = new funcionExcepciones();
+    private String detalleError;
 
     @FindBy(xpath = "//*[@value=\"2\"]")
     private WebElement opt_Aprobar;
@@ -28,37 +34,23 @@ public class AprobarCheckListCreditoPage {
 
     public void AbrirVentanaAprobarCheckListCredito() {
         try {
-            identfAnexarCheckListAprobar = driver.getWindowHandles();
-            System.out.println(identfAnexarCheckListAprobar);
-            String LastHandle = "";
-
-            for (String idAnexarCheckListAprobar : identfAnexarCheckListAprobar) {
-                LastHandle = idAnexarCheckListAprobar;
-            }
-            driver.switchTo().window(LastHandle);
-            System.out.println("Titulo:" + driver.getWindowHandle() + '-' + driver.getTitle());
-
-        } catch (Exception error) {
-            System.out.println("Error al abrir ventana Aprobar CheckList Credito: " + error.getMessage());
-
+            System.out.println(driver.getWindowHandles());
+            objFuncionVentana.cambiarVentanaNueva();
+            ventanaUltima = driver.getWindowHandle();
+        } catch (Exception Error) {
+            detalleError = "Error al abrir ventana Aprobar CheckList Crédito";
+            objLogErrores.logError(detalleError,Error);
         }
     }
 
     public void CerrarVentanaAprobarCheckListCredito() {
         try {
-            Integer SetSize = identfAnexarCheckListAprobar.size();
-            Integer Index = 0;
-            String[] Handles = new String[SetSize];
-            for (String idAnexarCheckListAprobar : identfAnexarCheckListAprobar) {
-                Handles[Index] = idAnexarCheckListAprobar;
-                Index++;
-            }
-            System.out.println("Ventana Principal: " + Handles[0]);
-            driver.switchTo().window(Handles[0]);
-
-        } catch (Exception error) {
-            System.out.println("Error al cerrar ventana Aprobar CheckList Credito:" + error.getMessage());
-
+            System.out.println(driver.getWindowHandles());
+            objFuncionVentana.cambiarVentanaInicial();
+            System.out.println("Fin cerrar ventana");
+        } catch (Exception Error) {
+            detalleError = "Error al cerrar ventana Aprobar CheckList Crédito";
+            objLogErrores.logError(detalleError,Error);
         }
     }
 
@@ -74,27 +66,40 @@ public class AprobarCheckListCreditoPage {
         try {
             wait.until(ExpectedConditions.elementToBeClickable(opt_Aprobar));
             opt_Aprobar.click();
-        } catch (Exception error) {
-            System.out.println("Error al seleccionar la Opcion Aprobar:" + error.getMessage());
+        } catch (Exception Error) {
+            detalleError = "Error al seleccionar la Opcion Aprobar";
+            objLogErrores.logError(detalleError,Error);
         }
     }
 
     public void IngresarComentarios() {
-        txt_Comentarios.clear();
-        txt_Comentarios.sendKeys("Se aprueba el checklist");
+        try {
+            txt_Comentarios.clear();
+            txt_Comentarios.sendKeys("Se aprueba el checklist");
+        } catch (Exception Error) {
+            detalleError = "Error al ingresar Comentarios";
+            objLogErrores.logError(detalleError,Error);
+        }
     }
 
-
     public void ClickBtnGuardar() {
-        wait.until(ExpectedConditions.elementToBeClickable(btn_Guardar));
-        btn_Guardar.click();
-
+        try {
+            wait.until(ExpectedConditions.elementToBeClickable(btn_Guardar));
+            btn_Guardar.click();
+        } catch (Exception Error) {
+            detalleError = "Error al hacer click en el botón Guardar";
+            objLogErrores.logError(detalleError,Error);
+        }
     }
 
     public void ClickBtnCerrar() {
-        wait.until(ExpectedConditions.elementToBeClickable(btn_Cerrar));
-        btn_Cerrar.click();
-
+        try {
+            wait.until(ExpectedConditions.elementToBeClickable(btn_Cerrar));
+            btn_Cerrar.click();
+        } catch (Exception Error) {
+            detalleError = "Error al hacer click en el botón Cerrar";
+            objLogErrores.logError(detalleError,Error);
+        }
     }
 
 }

@@ -1,13 +1,14 @@
 package PageObjects;
 
+import Functions.funcionEsperar;
 import Functions.funcionExcepciones;
+import Functions.funcionVentana;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-
 import java.util.Set;
 
 public class CambioTasaCreditoPage {
@@ -17,6 +18,9 @@ public class CambioTasaCreditoPage {
     private Set<String> identificadoresCambioTasaCredito;
     private funcionExcepciones objFuncionExcepciones = new funcionExcepciones();
     private String detalleError;
+    private funcionEsperar objFuncionEsperar = new funcionEsperar();
+    private funcionVentana objFuncionVentana = new funcionVentana();
+    private String ventanaUltima;
 
     @FindBy(xpath = "//textarea[@name='txtTasaComentarioPropo']") private WebElement txt_Comentario;
     @FindBy(xpath = "//button[@name='btnCambio']") private WebElement btn_Grabar;
@@ -24,16 +28,9 @@ public class CambioTasaCreditoPage {
 
     public void AbrirVentanaCambioTasaCredito(){
         try {
-            identificadoresCambioTasaCredito = driver.getWindowHandles();
-            System.out.println(identificadoresCambioTasaCredito);
-            String LastHandle ="";
-
-            for (String identificadorCambioTasaCredito :identificadoresCambioTasaCredito ){
-                LastHandle = identificadorCambioTasaCredito;
-            }
-            driver.switchTo().window(LastHandle);
-            System.out.println("Titulo:" + driver.getTitle());
-
+            System.out.println(driver.getWindowHandles());
+            objFuncionVentana.cambiarVentanaNueva();
+            ventanaUltima = driver.getWindowHandle();
         } catch (Exception Error) {
             detalleError = "Error en abrir ventana Cambio de tasa";
             objFuncionExcepciones.logError(detalleError,Error);
@@ -42,22 +39,14 @@ public class CambioTasaCreditoPage {
 
     public void CerrarVentanaCambioTasaCredito() {
         try {
-            Integer SetSize = identificadoresCambioTasaCredito.size();
-            Integer Index = 0;
-            String[] Handles = new String[SetSize];
-            for (String identificadorCambioTasaCredito : identificadoresCambioTasaCredito) {
-                Handles[Index] = identificadorCambioTasaCredito;
-                Index++;
-            }
-            System.out.println(Handles[0]);
-            driver.switchTo().window(Handles[0]);
-
+            System.out.println(driver.getWindowHandles());
+            objFuncionVentana.cambiarVentanaInicial();
+            System.out.println("Fin cerrar ventana");
         } catch (Exception Error) {
             detalleError = "Error en cerrar ventana cambio de tasa";
             objFuncionExcepciones.logError(detalleError,Error);
         }
     }
-
 
     public CambioTasaCreditoPage(WebDriver d) {
         driver = d;
@@ -89,5 +78,3 @@ public class CambioTasaCreditoPage {
     }
 
 }
-
-

@@ -1,13 +1,14 @@
 package PageObjects;
 
+import Functions.funcionEsperar;
 import Functions.funcionExcepciones;
+import Functions.funcionVentana;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-
 import java.util.Set;
 
 public class ConfirmacionChecklistPage {
@@ -15,6 +16,9 @@ public class ConfirmacionChecklistPage {
     private WebDriver driver;
     private WebDriverWait wait;
     private Set<String> idenficadoresCheckList;
+    private funcionEsperar objFuncionEsperar = new funcionEsperar();
+    private funcionVentana objFuncionVentana = new funcionVentana();
+    private String ventanaUltima;
     private funcionExcepciones objFuncionExcepciones = new funcionExcepciones();
     private String detalleError;
 
@@ -22,17 +26,9 @@ public class ConfirmacionChecklistPage {
 
     public void AbrirVentanaConfirmacionCheckList(){
         try {
-            idenficadoresCheckList = driver.getWindowHandles();
-            System.out.println(idenficadoresCheckList);
-            String LastHandle = "";
-
-            for (String identificadorCheckList :idenficadoresCheckList ){
-                LastHandle =  identificadorCheckList;
-            }
-
-            driver.switchTo().window(LastHandle);
-            System.out.println("Titulo: " + driver.getTitle());
-
+            System.out.println(driver.getWindowHandles());
+            objFuncionVentana.cambiarVentanaNueva();
+            ventanaUltima = driver.getWindowHandle();
         } catch (Exception Error) {
             detalleError = "Error en abrir ventana Checklist";
             objFuncionExcepciones.logError(detalleError,Error);
@@ -41,18 +37,9 @@ public class ConfirmacionChecklistPage {
 
     public void CerrarVentanaConfirmacionCheckList(){
         try {
-            Integer SetSize = idenficadoresCheckList.size();
-            Integer Index=0;
-
-            String[]Handles = new String[SetSize];
-
-            for (String identificadorCheckList : idenficadoresCheckList){
-                Handles[Index] = identificadorCheckList;
-                Index++;
-            }
-            System.out.println(Handles[0]);
-            driver.switchTo().window(Handles[0]);
-
+            System.out.println(driver.getWindowHandles());
+            objFuncionVentana.cambiarVentanaInicial();
+            System.out.println("Fin cerrar ventana");
         } catch (Exception Error) {
             detalleError = "Error en cerrar ventana Checklist";
             objFuncionExcepciones.logError(detalleError,Error);
