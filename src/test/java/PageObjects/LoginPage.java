@@ -86,15 +86,15 @@ public class LoginPage {
 
 
     public void lecturaLogin() throws IOException {
-        String filepath = "C:\\Matriz.xlsx";
+       // String filepath = "C:\\Matriz.xlsx";
 
-        String searchLogin = readFile.getCellValue(filepath, "Sheet1", 0, 0);
+       // String searchLogin = readFile.getCellValue(filepath, "Sheet1", 0, 0);
 
-        String searchPassword = readFile.getCellValue(filepath, "Sheet1", 0, 1);
+        //String searchPassword = readFile.getCellValue(filepath, "Sheet1", 0, 1);
 
-        String resultTest = "ok";
+        //String resultTest = "ok";
 
-        txt_Usuario.clear();
+       /* txt_Usuario.clear();
         txt_Usuario.sendKeys(searchLogin);
         System.out.println("VALOR EXCEL usuario"+searchLogin);
         txt_Password.clear();
@@ -110,7 +110,7 @@ public class LoginPage {
         writeFile.writeCellValue(filepath,"Hoja1",0,2,resultTest);
 
         readFile.readExcel(filepath,"Hoja1");
-
+*/
 
     }
 
