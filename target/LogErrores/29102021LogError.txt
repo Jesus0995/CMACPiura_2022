@@ -1,17 +1,0 @@
-2021-10-29T11:19:11.262 - Error al ingresar caracteristica del negocio - Unable to locate element: //textarea[@id='txtcaracter']
-For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
-Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
-System info: host: 'DESKTOP-SDTRTPQ', ip: '10.0.245.32', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_241'
-Driver info: org.openqa.selenium.firefox.FirefoxDriver
-Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 93.0, javascriptEnabled: true, moz:accessibilityChecks: false, moz:buildID: 20210927210923, moz:geckodriverVersion: 0.29.1, moz:headless: false, moz:processID: 19436, moz:profile: C:\Users\Usuario\AppData\Lo..., moz:shutdownTimeout: 60000, moz:useNonSpecCompliantPointerOrigin: false, moz:webdriverClick: true, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, platformVersion: 10.0, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
-Session ID: e3eae6bb-46f6-430e-9851-7130860e7aee
-*** Element info: {Using=xpath, value=//textarea[@id='txtcaracter']} 
-2021-10-29T11:22:00.901 - Error en el botón Cerrar Información - Browsing context has been discarded
-Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
-System info: host: 'DESKTOP-SDTRTPQ', ip: '10.0.245.32', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_241'
-Driver info: org.openqa.selenium.firefox.FirefoxDriver
-Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 93.0, javascriptEnabled: true, moz:accessibilityChecks: false, moz:buildID: 20210927210923, moz:geckodriverVersion: 0.29.1, moz:headless: false, moz:processID: 19436, moz:profile: C:\Users\Usuario\AppData\Lo..., moz:shutdownTimeout: 60000, moz:useNonSpecCompliantPointerOrigin: false, moz:webdriverClick: true, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, platformVersion: 10.0, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
-Session ID: e3eae6bb-46f6-430e-9851-7130860e7aee
-*** Element info: {Using=xpath, value=//button[@type='button']} 
-2021-10-29T11:22:56.469 - Error al seleccionar el boton regresar - Expected condition failed: waiting for element to be clickable: Proxy element for: DefaultElementLocator 'By.xpath: /html/body/table/tbody/tr[2]/td/table[1]/tbody/tr/td[2]/div/button[2]' (tried for 50 second(s) with 500 milliseconds interval) 
-2021-10-29T11:24:29.278 - Error al hacer click cerrar sesion - Expected condition failed: waiting for element to be clickable: Proxy element for: DefaultElementLocator 'By.xpath: /html/body/table[2]/tbody/tr[3]/td/form/table/tbody/tr[2]/td/button[1]' (tried for 30 second(s) with 500 milliseconds interval) 
