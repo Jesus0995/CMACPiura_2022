@@ -13,23 +13,6 @@ public class ReadExcelFile {
 
     }
 
-    public static void main(String[] args) throws Exception {
-        File src = new File("C:\\CajaPiuraCMAC2021\\target\\DatosExcel\\DatosCreditoEmpresarial.xlsx");
-
-        FileInputStream fis = new FileInputStream(src);
-        XSSFWorkbook wb = new XSSFWorkbook(fis);
-        XSSFSheet sheet1 = wb.getSheetAt(0);
-        String data0 = sheet1.getRow(0).getCell(0).getStringCellValue();
-        System.out.println("Data from Excel is" + data0);
-        String data1 = sheet1.getRow(0).getCell(1).getStringCellValue();
-        System.out.println("Data from excel is" + data1);
-        wb.close();
-
-    }
-
-}
-
-   /*
     public void readExcel(String filepath, String sheetName) throws IOException {
 
         File file = new File(filepath);
@@ -74,9 +57,7 @@ public class ReadExcelFile {
     }
 
 
-
-    */
-
+}
 
 
 
