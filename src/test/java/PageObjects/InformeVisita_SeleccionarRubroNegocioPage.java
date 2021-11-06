@@ -40,7 +40,6 @@ public class InformeVisita_SeleccionarRubroNegocioPage {
             objLogErrores.logError(detalleError,Error);
         }
     }
-
     public void CerrarVentanaRubroNegocio(){
         try {
             System.out.println(driver.getWindowHandles());
@@ -52,7 +51,6 @@ public class InformeVisita_SeleccionarRubroNegocioPage {
             objLogErrores.logError(detalleError,Error);
         }
     }
-
     public void ClickBtnCargar(){
         try {
             wait.until(ExpectedConditions.elementToBeClickable(btn_cargar));

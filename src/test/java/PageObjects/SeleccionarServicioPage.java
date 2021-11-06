@@ -24,16 +24,11 @@ public class SeleccionarServicioPage {
     private String detalleError;
 
     //mapeo de objetos
-    @FindBy(xpath ="//select[@name='servicio']")
-    private WebElement cbx_Servicio;
-    @FindBy(xpath ="//select[@name='idServicioSofia']")
-    private WebElement cbx_ServicioCredito;
-    @FindBy(xpath ="//select[@name='idTipoPropuesta']")
-    private WebElement cbx_TipoPropuesta;
-    @FindBy(xpath ="//select[@name='idSubTipoPropuesta']")
-    private WebElement cbx_SubTipoPropuesta;
-    @FindBy(xpath ="//select[@name='idPromocion']")
-    private WebElement cbx_Promocion;
+    @FindBy(xpath ="//select[@name='servicio']") private WebElement cbx_Servicio;
+    @FindBy(xpath ="//select[@name='idServicioSofia']") private WebElement cbx_ServicioCredito;
+    @FindBy(xpath ="//select[@name='idTipoPropuesta']") private WebElement cbx_TipoPropuesta;
+    @FindBy(xpath ="//select[@name='idSubTipoPropuesta']") private WebElement cbx_SubTipoPropuesta;
+    @FindBy(xpath ="//select[@name='idPromocion']") private WebElement cbx_Promocion;
     //@FindBy(xpath = "//select[@name='idnegocio']") private WebElement cbx_Negocio;
     //@FindBy(xpath = "//select[@name='idTipoOperacion']") private  WebElement cbx_TipoOperacion;
     @FindBy(xpath ="//*[@id=\"bCargar\"]")

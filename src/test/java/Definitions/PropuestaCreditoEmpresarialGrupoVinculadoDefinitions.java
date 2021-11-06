@@ -423,6 +423,7 @@ public class PropuestaCreditoEmpresarialGrupoVinculadoDefinitions {
     }
     @And("en la ventana final cerrar el navegador")
     public void en_la_ventana_final_cerrar_el_navegador() {
-        Hooks.driver.close();
+
+        //Hooks.driver.close();
     }
 }

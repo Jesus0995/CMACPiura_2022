@@ -85,6 +85,4 @@ public class ListadoInformeVisitaPage {
             objLogErrores.logError(detalleError, Error);
         }
     }
-
-
 }

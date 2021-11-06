@@ -84,7 +84,7 @@ Feature: Crear una propuesta de Credito Empresarial de tipo NORMAL con informe E
 
     Examples:
       | cliente |
-      | 2517    |
+      | 3300    |
 
 
 

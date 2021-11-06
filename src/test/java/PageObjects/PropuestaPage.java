@@ -64,7 +64,6 @@ public class PropuestaPage {
             objLogErrores.logError(detalleError, Error);
         }
     }
-
     public void ClickIcnCambioTasa() {
         try {
             wait.until(ExpectedConditions.elementToBeClickable(icn_CambioTasa));
@@ -74,7 +73,6 @@ public class PropuestaPage {
             objLogErrores.logError(detalleError, Error);
         }
     }
-
     public void ClickBtnRegistrarSeguro() {
         try {
             wait.until(ExpectedConditions.elementToBeClickable(btn_AgregarSeguro));

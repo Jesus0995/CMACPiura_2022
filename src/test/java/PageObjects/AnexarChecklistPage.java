@@ -136,7 +136,7 @@ public class AnexarChecklistPage {
     @FindBy(xpath = "//input[@id='item_81' and @value='2']")
     private WebElement opt_42CopiaLiteralPartida;
 
-    @FindBy(id = "idSaveSend") private WebElement btn_guardarTerminar;
+    @FindBy(xpath = "//button[@id='idSaveSend']") private WebElement btn_guardarTerminar;
 
     public void AbrirVentanaAnexarCheckList() {
         try {
@@ -434,6 +434,7 @@ public class AnexarChecklistPage {
         try {
             objFuncionEsperar.EsperarTiempo(9);
             opcion37.click();
+            objFuncionEsperar.EsperarTiempo(3);
 
         } catch (Exception Error) {
             detalleError = "Error al seleccionar la opcion 37";

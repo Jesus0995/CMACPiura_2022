@@ -38,7 +38,7 @@ public class AprobarPropuestaCreditoEmpresarialDefinitions {
 
     @Given("el sistema SGCRED se encuentra disponible")
     public void ElSistemaSGCREDSeEncuentraDisponible() {
-        Hooks.driver.get("http://10.0.203.12:8081/propuesta/");
+        Hooks.driver.get("http://10.0.203.16:8082/propuesta/index.jsp");
     }
 
     @When("ingreso usuario y password del Perfil Jefe de Credito Agencia")
@@ -160,6 +160,7 @@ public class AprobarPropuestaCreditoEmpresarialDefinitions {
 
     @And("cerrar el navegador")
     public void cerrarElNavegador() {
+
         Hooks.driver.close();
     }
 }

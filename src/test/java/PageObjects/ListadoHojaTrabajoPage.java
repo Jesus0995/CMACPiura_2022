@@ -40,7 +40,6 @@ public class ListadoHojaTrabajoPage {
         PageFactory.initElements(driver, this);
     }
 
-
     public void SeleccionarTabCodigo() {
         try {
             wait.until(ExpectedConditions.elementToBeClickable(tab_codigo));
@@ -52,7 +51,6 @@ public class ListadoHojaTrabajoPage {
         }
     }
 
-
     public void IngresarCodigoCliente(String CodCliente) {
         try {
             txt_codigo.clear();
@@ -63,7 +61,6 @@ public class ListadoHojaTrabajoPage {
         }
     }
 
-
     public void ClickBuscarCliente() {
         try {
             btn_buscar.click();
@@ -72,7 +69,6 @@ public class ListadoHojaTrabajoPage {
             objLogErrores.logError(detalleError, Error);
         }
     }
-
 
     public void SeleccionarIconoHojaTrabajo() {
         try {

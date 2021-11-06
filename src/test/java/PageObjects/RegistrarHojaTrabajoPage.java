@@ -68,7 +68,6 @@ public class RegistrarHojaTrabajoPage {
         } catch (Exception Error) {
             detalleError = "Error al ingresar el tiempo laboral";
             objLogErrores.logError(detalleError, Error);
-
         }
     }
 

@@ -34,22 +34,16 @@ public class OperacionCreditoPage {
     @FindBy(xpath = "//select[@name='moneda']") private WebElement cbx_Moneda;
     @FindBy(xpath = "//input[@name='montoOperacion']") private WebElement txt_Monto;
     @FindBy(xpath = "//input[@name='TasaInicial']") private WebElement lista_TasaInicial;
-
     @FindBy(xpath = "//button[@type=\"submit\"]") private WebElement btn_Calcular;
-
     @FindBy(xpath = "//select[@name='planPagos']") private WebElement cbx_PlanPagos; //Fija Vencida
     @FindBy(xpath = "//select[@name='modalidad']") private WebElement cbx_Modalidad; //Libre Amortizacion
     @FindBy(xpath = "//input[@name='diasPlazo']") private WebElement txt_DiasPlazo;
-
     @FindBy(xpath = "//select[@name='opcion']") private WebElement cbx_OpcionPagos;
     @FindBy(xpath = "//select[@name='pago']") private WebElement cbx_DiaPagos;
     @FindBy(xpath = "//input[@name='numeroCuotas']") private WebElement txt_NumeroCuotas;
-
     @FindBy(xpath = "//input[@name='tasaPropuesta']") private WebElement txt_TasaPreferencial;
     @FindBy(xpath = "//select[@name='flgCuenta']") private WebElement cbx_Desembolso; //GIRO BANCO DE LA NACION
-
     @FindBy(xpath = "//select[@name='codigocuenta']//option[2]") private WebElement cbx_CodigoCuenta;
-
     @FindBy(xpath = "//select[@name='idDepartamento']") private WebElement cbx_Departamento;
     @FindBy(xpath = "//select[@name='idProvincia']") private WebElement cbx_Provincia;
     @FindBy(xpath = "//select[@name='idDistrito']") private WebElement cbx_Distrito;
@@ -63,15 +57,6 @@ public class OperacionCreditoPage {
             System.out.println(driver.getWindowHandles());
             objFuncionVentana.cambiarVentanaNueva();
             ventanaUltima = driver.getWindowHandle();
-             /*identificadoresOperacionCredito = driver.getWindowHandles();
-             System.out.println(identificadoresOperacionCredito);
-             String LastHandle ="";
-             for (String identificadorOperacionCredito :identificadoresOperacionCredito ){
-                 LastHandle = identificadorOperacionCredito;
-             }
-             System.out.println(driver.getWindowHandles());
-             driver.switchTo().window(LastHandle);
-             System.out.println("Ultimo handle: "+driver.getWindowHandle()+"-"+driver.getTitle());*/
         } catch (Exception Error) {
             detalleError = "Error al abrir ventana Operación Crédito";
             objLogErrores.logError(detalleError,Error);
@@ -84,15 +69,6 @@ public class OperacionCreditoPage {
             //objFuncionEsperar.EsperarCierreVentana(ventanaUltima);
             objFuncionVentana.cambiarVentanaInicial();
             System.out.println("Fin cerrar ventana");
-            /*Integer SetSize = identificadoresOperacionCredito.size();
-            Integer Index=0;
-            String[] Handles = new String[SetSize] ;
-            for (String identificadorOperacionCredito : identificadoresOperacionCredito) {
-                Handles[Index] = identificadorOperacionCredito;
-                Index++;
-            }
-            driver.switchTo().window(Handles[0]);
-            System.out.println("Handle inicial: "+Handles[0]+"-"+driver.getTitle());*/
         } catch (Exception Error) {
             detalleError = "Error al cerrar ventana Operación Crédito";
             objLogErrores.logError(detalleError,Error);
@@ -164,19 +140,14 @@ public class OperacionCreditoPage {
         try {
             // Seleccionamos el valor textual de la opcion 'PlanPagos' en el combobox.
             cbx_Modalidad.sendKeys(Modalidad);
-
             // Buscamos el webelement de la opcion indicada en el xpath.
             WebElement Opcion = driver.findElement(By.xpath("//*[text() = '" + Modalidad + "']"));
-
             // Obtenemos el valor del atributo 'onclick' de la opcion indicada
             String JScript = Opcion.getAttribute("onclick");
-
             // Ejecutamos el script del contenido 'onclick' para simular el arraque del mismo como un click humano.
             ((JavascriptExecutor) driver).executeScript(JScript);
-
             // Esperamos unos segundos para que aparezca el proximo combobox.
             objFuncionEsperar.EsperarTiempo(2);
-
         } catch (Exception Error) {
             detalleError = "Error al seleccionar la Modalidad de pago";
             objLogErrores.logError(detalleError,Error);
@@ -346,3 +317,27 @@ public class OperacionCreditoPage {
         }
     }
 }
+
+
+           /*ABRIR VENTANA
+           identificadoresOperacionCredito = driver.getWindowHandles();
+             System.out.println(identificadoresOperacionCredito);
+             String LastHandle ="";
+             for (String identificadorOperacionCredito :identificadoresOperacionCredito ){
+                 LastHandle = identificadorOperacionCredito;
+             }
+             System.out.println(driver.getWindowHandles());
+             driver.switchTo().window(LastHandle);
+             System.out.println("Ultimo handle: "+driver.getWindowHandle()+"-"+driver.getTitle());*/
+
+
+            /* CERRAR VENTANA
+            Integer SetSize = identificadoresOperacionCredito.size();
+            Integer Index=0;
+            String[] Handles = new String[SetSize] ;
+            for (String identificadorOperacionCredito : identificadoresOperacionCredito) {
+                Handles[Index] = identificadorOperacionCredito;
+                Index++;
+            }
+            driver.switchTo().window(Handles[0]);
+            System.out.println("Handle inicial: "+Handles[0]+"-"+driver.getTitle());*/

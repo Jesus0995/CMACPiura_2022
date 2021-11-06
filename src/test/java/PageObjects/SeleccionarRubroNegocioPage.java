@@ -21,8 +21,7 @@ public class SeleccionarRubroNegocioPage {
     private funcionExcepciones objLogErrores = new funcionExcepciones();
     private String detalleError = new String();
 
-    @FindBy(xpath = "//button[@type='submit']")
-    private WebElement btn_Cargar;
+    @FindBy(xpath = "//button[@type='submit']") private WebElement btn_Cargar;
 
     public void AbrirVentanaRubroNegocio() {
         try {
@@ -77,6 +76,5 @@ public class SeleccionarRubroNegocioPage {
             objLogErrores.logError(detalleError, Error);
         }
     }
-
 
 }

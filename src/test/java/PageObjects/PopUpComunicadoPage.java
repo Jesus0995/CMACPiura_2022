@@ -40,21 +40,10 @@ public class PopUpComunicadoPage {
         try {
             System.out.println("Handle: " + driver.getWindowHandle());
             System.out.println("Titulo: " + driver.getTitle());
-
             WebElement linkComunicadoClose = driver.findElement(By.xpath("/html/body/div[1]/div[1]/a/span"));
             System.out.println(linkComunicadoClose);
-
             linkComunicadoClose.click();
             objFuncionEsperar.EsperarTiempo(3);
-
-            //vtn_comunicado.click();
-
-            // Assert.assertEquals(Comunicado,lbl_Comunicado.getText());
-            // System.out.println("los textos son iguales");
-            // wait = new WebDriverWait(driver,120);
-
-            // Robot r = new Robot();
-            // r.keyPress(KeyEvent.VK_ESCAPE);
 
         } catch (Exception Error) {
             detalleError = "Error al cerrar e popup comunicado";
@@ -63,3 +52,13 @@ public class PopUpComunicadoPage {
     }
 
 }
+
+
+//vtn_comunicado.click();
+
+// Assert.assertEquals(Comunicado,lbl_Comunicado.getText());
+// System.out.println("los textos son iguales");
+// wait = new WebDriverWait(driver,120);
+
+// Robot r = new Robot();
+// r.keyPress(KeyEvent.VK_ESCAPE);

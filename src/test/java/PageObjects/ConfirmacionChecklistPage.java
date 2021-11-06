@@ -58,6 +58,7 @@ public class ConfirmacionChecklistPage {
         try {
             wait.until(ExpectedConditions.elementToBeClickable(btn_cerrar));
             btn_cerrar.click();
+            objFuncionEsperar.EsperarTiempo(3);
 
         } catch (Exception Error) {
             detalleError = "Error en boton cerrar";

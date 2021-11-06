@@ -1,5 +1,6 @@
 package PageObjects;
 
+import Functions.funcionExcepciones;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -17,6 +18,8 @@ public class MenuPrincipalPage {
     private WebDriver driver;
     private WebDriverWait wait;
     private funcionEsperar objFuncionEsperar = new funcionEsperar();
+    private funcionExcepciones objLogErrores = new funcionExcepciones();
+    private String detalleError;
 
 
     //mapear los locator
@@ -45,9 +48,9 @@ public class MenuPrincipalPage {
         try {
             wait.until(ExpectedConditions.elementToBeClickable(lnk_PropuestaFinanciamiento));
             lnk_PropuestaFinanciamiento.click();
-        } catch (Exception error) {
-            error.printStackTrace();
-            System.out.println("Error al seleccionar el link Propuesta Financiamiento:" + error.getMessage());
+        } catch (Exception Error) {
+            detalleError = "Error al seleccionar el link Propuesta Financiamiento";
+            objLogErrores.logError(detalleError, Error);
         }
     }
 
@@ -55,9 +58,9 @@ public class MenuPrincipalPage {
         try {
             wait.until(ExpectedConditions.elementToBeClickable(lnk_InformeVisita));
             lnk_InformeVisita.click();
-        } catch (Exception error) {
-            error.printStackTrace();
-            System.out.println("Error al seleccionar el link informe visita" + error.getMessage());
+        } catch (Exception Error) {
+            detalleError = "Error al seleccionar el link informe visita";
+            objLogErrores.logError(detalleError, Error);
         }
     }
 
@@ -65,9 +68,10 @@ public class MenuPrincipalPage {
         try {
             wait.until(ExpectedConditions.elementToBeClickable(lnk_HojaTrabajo));
             lnk_HojaTrabajo.click();
-        } catch (Exception error) {
-            error.printStackTrace();
-            System.out.println("Error al seleccionar link Hoja de Trabajo" + error.getMessage());
+        } catch (Exception Error) {
+            detalleError = "Error al seleccionar link Hoja de Trabajo";
+            objLogErrores.logError(detalleError, Error);
+
         }
     }
 
@@ -75,9 +79,10 @@ public class MenuPrincipalPage {
         try {
             wait.until(ExpectedConditions.elementToBeClickable(lnk_InformeComercial));
             lnk_InformeComercial.click();
-        } catch (Exception error) {
-            error.printStackTrace();
-            System.out.println("Error al seleccionar el link Informe Comercial" + error.getMessage());
+        } catch (Exception Error) {
+            detalleError = "Error al seleccionar el link Informe Comercial";
+            objLogErrores.logError(detalleError, Error);
+
         }
     }
 
@@ -86,9 +91,9 @@ public class MenuPrincipalPage {
             wait.until(ExpectedConditions.elementToBeClickable(lnk_CerrarSesion));
             lnk_CerrarSesion.click();
             objFuncionEsperar.EsperarTiempo(30);
-        } catch (Exception error) {
-            error.printStackTrace();
-            System.out.println("Error al seleccionar el link Cerrar Sesion:" + error.getMessage());
+        } catch (Exception Error) {
+            detalleError = "Error al seleccionar el link Cerrar Sesion";
+            objLogErrores.logError(detalleError, Error);
         }
     }
 }

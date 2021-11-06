@@ -9,9 +9,24 @@ import java.io.*;
 
 public class WriteExcelFile {
 
-    public WriteExcelFile() {
+    public static void main(String[] args) throws Exception{
+
+        File src = new File ("C:\\CajaPiuraCMAC2021\\target\\DatosExcel\\DatosCreditoEmpresarial.xlsx");
+        FileInputStream fis = new FileInputStream(src);
+        XSSFWorkbook wb = new XSSFWorkbook(fis);
+
+        XSSFSheet sheet1 = wb.getSheetAt(0);
+        sheet1.getRow(0).createCell(21).setCellValue("Pass");
+        sheet1.getRow(1).createCell(21).setCellValue("Fail");
+        FileOutputStream fout = new FileOutputStream(src);
+        wb.write(fout);
+        wb.close();
     }
 
+    public WriteExcelFile() {
+    }
+}
+    /*
     public void writeExcel(String filepath, String sheetName, String[] dataToWrite) throws IOException {
         File file = new File(filepath);
 
@@ -78,3 +93,5 @@ public class WriteExcelFile {
 
 
 }
+
+     */

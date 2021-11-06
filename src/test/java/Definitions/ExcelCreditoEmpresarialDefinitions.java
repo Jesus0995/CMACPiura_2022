@@ -57,7 +57,6 @@ public class ExcelCreditoEmpresarialDefinitions {
         seleccionarGarantiasExistentes = new SeleccionarGarantiasExistentesPage(Hooks.driver);
         cancelandoPagares = new CancelandoPagaresPage(Hooks.driver);
         enlazarEstadosFinancieros = new EnlazarEstadosFinancierosPage(Hooks.driver);
-
         desenlazarInformeVisita = new DesenlazarInformeVisitaPage(Hooks.driver);
         enlazarInformeVisita = new EnlazarInformeVisitaPage(Hooks.driver);
         enlazarInformeComercialNuevo = new EnlazarInformeComercialNuevoPage(Hooks.driver);
@@ -68,7 +67,7 @@ public class ExcelCreditoEmpresarialDefinitions {
 
     @Given("la pagina web SGCRED lista para utilizar")
     public void laPaginaWebSGCREDListaParaUtilizar() {
-        Hooks.driver.get("http://10.0.203.12:8081/propuesta/");
+        Hooks.driver.get("http://10.0.203.16:8082/propuesta/index.jsp");
     }
 
 
@@ -140,6 +139,7 @@ public class ExcelCreditoEmpresarialDefinitions {
             seleccionarSeguros.AbrirVentanaSeleccionarSeguros();
             seleccionarSeguros.ClickbtnConfirmar();
             seleccionarSeguros.CerrarVentanaSeleccionarSeguros();
+
             registrarSeguros.AbrirVentanaRegistrarSeguros();
             registrarSeguros.ClickCheckSeguroDesgravamenMN();
             registrarSeguros.ObtenerNumeroAleatorioDPSSeguroDesgravamen();
@@ -152,14 +152,23 @@ public class ExcelCreditoEmpresarialDefinitions {
             confirmarSeguros.AbrirVentanaConfirmacionSeguros();
             confirmarSeguros.ClickBtnCerrar();
             confirmarSeguros.CerrarVentanaConfirmacionSeguros();
+
             propuesta.ClickAnexarCheckListCreditos();
 
             anexarCheckListCreditos.AbrirVentanaAnexarCheckList();
+
             anexarCheckListCreditos.SeleccionarOpcionesCheckListCredito();
+
             anexarCheckListCreditos.Seleccionar_37opinionLegal();
 
+            anexarCheckListCreditos.ClickBtnGuardarTerminar();
+
+            anexarCheckListCreditos.CerrarVentanaAnexarCheckList();
+
             confirmarCheckList.AbrirVentanaConfirmacionCheckList();
+
             confirmarCheckList.ClickBtnCerrar();
+
             confirmarCheckList.CerrarVentanaConfirmacionCheckList();
 
             propuesta.IngresarComentariosPropuesta();

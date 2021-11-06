@@ -78,7 +78,6 @@ public class ListadoPropuestaPage {
         }
     }
 
-
     public void ClickTipoBusquedaAprobacion() {
         try {
             Select TipoBusquedaAprobacion = new Select(cbx_BusquedaAprobacion);

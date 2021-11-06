@@ -24,8 +24,7 @@ public class SeleccionarGarantiaPage {
 
     //mapeo objetos
 
-    @FindBy(xpath = "//button[@type=\"submit\"]")
-    private WebElement btn_RegistrarGarantia;
+    @FindBy(xpath = "//button[@type=\"submit\"]") private WebElement btn_RegistrarGarantia;
 
     public SeleccionarGarantiaPage(WebDriver d) {
         driver = d;

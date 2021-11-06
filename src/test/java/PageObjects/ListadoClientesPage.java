@@ -31,7 +31,6 @@ public class ListadoClientesPage {
     private WebElement btn_Buscar;
     @FindBy(xpath = "//table[3]/tbody/tr/td/div/button[1]") private WebElement btn_Regresar;
 
-
     public ListadoClientesPage(WebDriver d) {
         driver = d;
         wait = new WebDriverWait(driver, 50);

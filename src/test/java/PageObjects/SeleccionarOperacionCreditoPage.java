@@ -29,15 +29,6 @@ public class SeleccionarOperacionCreditoPage {
             objFuncionVentana.cambiarVentanaNueva();
             ventanaUltima = driver.getWindowHandle();
             objFuncionEsperar.EsperarTiempo(3);
-            /*identificadoresSeleccionarOP = driver.getWindowHandles();
-            System.out.println(identificadoresSeleccionarOP);
-            String LastHandle ="";
-
-            for (String identificadorSeleccionarOP :identificadoresSeleccionarOP ){
-                LastHandle = identificadorSeleccionarOP;
-            }
-            driver.switchTo().window(LastHandle);
-            objFuncionEsperar.EsperarTiempo(3);*/
         } catch (Exception Error) {
             detalleError = "Error abrir ventana Seleccionar Operación Crédito";
             objLogErrores.logError(detalleError,Error);
@@ -86,3 +77,13 @@ public class SeleccionarOperacionCreditoPage {
     }
 
 }
+
+            /*identificadoresSeleccionarOP = driver.getWindowHandles();
+            System.out.println(identificadoresSeleccionarOP);
+            String LastHandle ="";
+
+            for (String identificadorSeleccionarOP :identificadoresSeleccionarOP ){
+                LastHandle = identificadorSeleccionarOP;
+            }
+            driver.switchTo().window(LastHandle);
+            objFuncionEsperar.EsperarTiempo(3);*/

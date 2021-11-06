@@ -18,15 +18,12 @@ public class InformeVisita_InformePage {
     private funcionExcepciones objLogErrores = new funcionExcepciones();
     private String detalleError = new String();
 
-
     @FindBy(xpath = "//td[@class='Invisible']//button[1]")
     private WebElement btn_crearVisita;
     @FindBy(xpath = "//td[@class='Invisible']//button[2]")
     private WebElement btn_regresar;
     @FindBy(xpath = "//td[@class='Invisible']//button[1]")
     private WebElement btn_regresarInformeComercial;
-
-
     @FindBy(xpath = "/html/body/table/tbody/tr[2]/td/div/table[2]/tbody/tr[8]/td/button")
     private WebElement btn_RegresarCE;
 
@@ -84,6 +81,4 @@ public class InformeVisita_InformePage {
             objLogErrores.logError(detalleError, Error);
         }
     }
-
-
 }
