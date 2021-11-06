@@ -1,0 +1,26 @@
+{
+  "name": "cajapiuracmac2021",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "multiple-cucumber-html-reporter": "^1.18.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "report": "node index.js",
+    "pageTitle": "Reporte CMAC SAC",
+    "reportName": "Reporte de Feature",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mchuratac/CajaPiuraCMAC2021.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mchuratac/CajaPiuraCMAC2021/issues"
+  },
+  "homepage": "https://github.com/mchuratac/CajaPiuraCMAC2021#readme"
+}
