@@ -9,6 +9,8 @@ import java.util.List;
 import java.util.Map;
 import Support.screenshot;
 
+import static Support.screenshot.pantallazo;
+
 public class PropuestaCreditoEmpresarialDefinitions {
 
     LoginPage login;
@@ -36,6 +38,7 @@ public class PropuestaCreditoEmpresarialDefinitions {
     EnlazarInformeComercialNuevoPage enlazarInformeComercialNuevo;
     InformeEEFFConsolidadoGrupoVinculadoPage informeEEFFConsolidadoGrupoVinculado;
     AprobarDictamenPropuestaPage aprobarDictamenPropuesta;
+
 
     public PropuestaCreditoEmpresarialDefinitions() {
 
@@ -472,7 +475,8 @@ public class PropuestaCreditoEmpresarialDefinitions {
     }
 
     @And("en la ventana Emitir Dictamen Propuesta hacer click en el boton procesar")
-    public void en_la_ventana_Emitir_Dictamen_Propuesta_hacer_click_en_el_boton_procesar() {
+    public void en_la_ventana_Emitir_Dictamen_Propuesta_hacer_click_en_el_boton_procesar() throws IOException {
+        pantallazo();
         aprobarDictamenPropuesta.ClickBtnProcesar();
         aprobarDictamenPropuesta.CerrarVentanaAprobarDictamenPropuesta();
     }

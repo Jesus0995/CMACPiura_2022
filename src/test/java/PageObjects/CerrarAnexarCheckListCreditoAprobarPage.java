@@ -3,6 +3,7 @@ package PageObjects;
 import Functions.funcionEsperar;
 import Functions.funcionExcepciones;
 import Functions.funcionVentana;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -74,6 +75,7 @@ public class CerrarAnexarCheckListCreditoAprobarPage {
         } catch (Exception Error) {
             detalleError = "Error al hacer click en el botón Cerrar";
             objLogErrores.logError(detalleError,Error);
+
         }
     }
 

@@ -3,7 +3,7 @@ Feature: Crear una propuesta de Creditos de Consumo de tipo Normal en el sistema
   Quiero registrar una propuesta de Creditos de Consumo de tipo Normal mediante archivo Excel
   Para su aprobacion
 
-  @Prueba
+
   Scenario: Crear una propuesta de Creditos de Consumo de tipo Normal desde el Excel
     Given la pagina web SGCRED esta habilitado
     When completa el usuario y password

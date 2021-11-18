@@ -12,13 +12,13 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class screenshot {
+
     public static void pantallazo() throws IOException {
     Date Date = new Date();
     SimpleDateFormat fecha = new SimpleDateFormat("ddMMyyyy_HHmmss");
     String ruta = "target/pantallazo/"+fecha.format(Date)+"_pantalla.jpg";
     File file = ((TakesScreenshot) Hooks.driver).getScreenshotAs(OutputType.FILE);
     FileUtils.copyFile(file,new File(ruta));
-
 
     }
 

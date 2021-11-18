@@ -3,7 +3,7 @@ Feature: Registrar informe de visita con el perfil Administrador
   Quiero aprobar una propuesta de credito
   Para que el cliente pueda desembolsar
 
-  @Prueba
+
   Scenario: Aprobar una propuesta de credito del cliente en el sistema SGCRED
     Given la web SGCRED se encuentra disponible
     When ingreso usuario y password del perfil Administrador

@@ -3,7 +3,7 @@ Feature: Crear una propuesta de Creditos de Consumo de tipo Normal en el sistema
   Quiero registrar una propuesta de Creditos de Consumo de tipo Normal
   Para su aprobacion
 
-  @Prueba
+
   Scenario Outline: Crear una propuesta de Creditos de Consumo de tipo Normal
     Given la pagina web SGCRED esta disponible
     When se completa el usuario y password

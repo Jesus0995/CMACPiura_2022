@@ -23,8 +23,6 @@ public class Hooks {
 
     @After
 
-
-
     public static void tearDown(Scenario scenario){
         if (scenario.isFailed()){
             byte[] screenshot = ((TakesScreenshot)driver).getScreenshotAs(OutputType.BYTES);
@@ -35,6 +33,7 @@ public class Hooks {
 
     }
 
-    public static WebDriver gerDriver() {return driver;}
+    public static WebDriver gerDriver()
+    {return driver;}
 
 }

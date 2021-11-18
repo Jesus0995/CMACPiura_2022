@@ -22,8 +22,7 @@ public class SeleccionarSegurosPage {
     private funcionExcepciones objLogErrores = new funcionExcepciones();
     private String detalleError = new String();
 
-    @FindBy(xpath = "//button[@type=\"submit\"]")
-    private WebElement btn_Confirmar;
+    @FindBy(xpath = "//button[@type=\"submit\"]") private WebElement btn_Confirmar;
 
     public void AbrirVentanaSeleccionarSeguros() {
         try {

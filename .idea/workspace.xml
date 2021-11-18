@@ -1,0 +1,283 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="3f7f10af-cc77-450a-8460-1211f16a85dc" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/Definitions/Hooks.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Definitions/Hooks.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/Definitions/InformeVisitaCreditoEmpresarialDefinitions.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Definitions/InformeVisitaCreditoEmpresarialDefinitions.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/Definitions/LoginDefinitions.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Definitions/LoginDefinitions.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/Definitions/PropuestaCreditoEmpresarialDefinitions.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Definitions/PropuestaCreditoEmpresarialDefinitions.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/Definitions/ReadExcelDefinitions.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/PageObjects/CerrarAnexarCheckListCreditoAprobarPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/PageObjects/CerrarAnexarCheckListCreditoAprobarPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/PageObjects/LoginPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/PageObjects/LoginPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/PageObjects/MenuPrincipalPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/PageObjects/MenuPrincipalPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/PageObjects/SeleccionarSegurosPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/PageObjects/SeleccionarSegurosPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/PageObjects/SeleccionarServicioPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/PageObjects/SeleccionarServicioPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/Support/screenshot.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Support/screenshot.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/features/AprobarPropuestaCreditoConsumo.feature" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/features/AprobarPropuestaCreditoConsumo.feature" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/features/AprobarPropuestaCreditoEmpresarial.feature" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/features/AprobarPropuestaCreditoEmpresarial.feature" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/features/ExcelCreditoConsumo.feature" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/features/ExcelCreditoConsumo.feature" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/features/ExcelCreditoEmpresarial.feature" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/features/ExcelCreditoEmpresarial.feature" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/features/HojaTrabajo.feature" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/features/HojaTrabajo.feature" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/features/InformeComercialCreditoConsumo.feature" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/features/InformeComercialCreditoConsumo.feature" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/features/InformeComercialCreditoEmpresarial.feature" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/features/InformeComercialCreditoEmpresarial.feature" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/features/InformeVisitaCreditoConsumo.feature" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/features/InformeVisitaCreditoConsumo.feature" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/features/InformeVisitaCreditoEmpresarial.feature" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/features/InformeVisitaCreditoEmpresarial.feature" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/features/LoginSGCRED.feature" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/features/LoginSGCRED.feature" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/features/PropuestaCreditoConsumo.feature" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/features/PropuestaCreditoConsumo.feature" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/features/PropuestaCreditoEmpresarial.feature" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/features/PropuestaCreditoEmpresarial.feature" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/features/PropuestaCreditoEmpresarialGrupoVinculado.feature" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/features/PropuestaCreditoEmpresarialGrupoVinculado.feature" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/features/ReadExcel.feature" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/report/cucumber_report.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/report/cucumber_report.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/report/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/report/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/pantallazo/18102021_180841_pantalla.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/pantallazo/18102021_181134_pantalla.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/pantallazo/18102021_181427_pantalla.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/pantallazo/18102021_181718_pantalla.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/pantallazo/18102021_182008_pantalla.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/pantallazo/18102021_182302_pantalla.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/pantallazo/18102021_182553_pantalla.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/pantallazo/18102021_182843_pantalla.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/pantallazo/18102021_183137_pantalla.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/pantallazo/18102021_183431_pantalla.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/pantallazo/18102021_213421_pantalla.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/pantallazo/18102021_213622_pantalla.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/pantallazo/18102021_213855_pantalla.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/pantallazo/18102021_214057_pantalla.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/pantallazo/18102021_214256_pantalla.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/pantallazo/18102021_214457_pantalla.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/pantallazo/18102021_214700_pantalla.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/pantallazo/18102021_214903_pantalla.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/pantallazo/18102021_215107_pantalla.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/pantallazo/19102021_204931_pantalla.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/pantallazo/19102021_205216_pantalla.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/pantallazo/19102021_205501_pantalla.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/pantallazo/19102021_205748_pantalla.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/pantallazo/19102021_210036_pantalla.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/pantallazo/19102021_210322_pantalla.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/pantallazo/19102021_210608_pantalla.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/pantallazo/19102021_210854_pantalla.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/pantallazo/19102021_211139_pantalla.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/pantallazo/19102021_211425_pantalla.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/pantallazo/19102021_211714_pantalla.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/pantallazo/19102021_212003_pantalla.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/pantallazo/19102021_212249_pantalla.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/pantallazo/19102021_212535_pantalla.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/pantallazo/19102021_212820_pantalla.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/pantallazo/19102021_213109_pantalla.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/pantallazo/19102021_213355_pantalla.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/pantallazo/19102021_213640_pantalla.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/pantallazo/19102021_213926_pantalla.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/pantallazo/19102021_214214_pantalla.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/pantallazo/19102021_214503_pantalla.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/pantallazo/19102021_214749_pantalla.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/pantallazo/19102021_215036_pantalla.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/pantallazo/19102021_215322_pantalla.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/pantallazo/19102021_215608_pantalla.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/pantallazo/19102021_215856_pantalla.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/pantallazo/19102021_220141_pantalla.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/pantallazo/19102021_220426_pantalla.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/pantallazo/19102021_231756_pantalla.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/pantallazo/22102021_131838_pantalla.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/pantallazo/26102021_104318_pantalla.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/pantallazo/26102021_104559_pantalla.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/pantallazo/26102021_104846_pantalla.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/pantallazo/26102021_105131_pantalla.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/pantallazo/26102021_105417_pantalla.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/pantallazo/26102021_105704_pantalla.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/pantallazo/26102021_153814_pantalla.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/pantallazo/26102021_192626_pantalla.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/pantallazo/28102021_115524_pantalla.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/pantallazo/28102021_115816_pantalla.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/pantallazo/28102021_120110_pantalla.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/pantallazo/28102021_120404_pantalla.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/pantallazo/28102021_120656_pantalla.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/pantallazo/28102021_124025_pantalla.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/pantallazo/28102021_152056_pantalla.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/Definitions/Hooks.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/Definitions/Hooks.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/Definitions/InformeVisitaCreditoEmpresarialDefinitions.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/Definitions/InformeVisitaCreditoEmpresarialDefinitions.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/Definitions/LoginDefinitions.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/Definitions/LoginDefinitions.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/Definitions/PropuestaCreditoEmpresarialDefinitions.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/Definitions/PropuestaCreditoEmpresarialDefinitions.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/PageObjects/CerrarAnexarCheckListCreditoAprobarPage.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/PageObjects/CerrarAnexarCheckListCreditoAprobarPage.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/PageObjects/LoginPage.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/PageObjects/LoginPage.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/PageObjects/SeleccionarSegurosPage.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/PageObjects/SeleccionarSegurosPage.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/Support/screenshot.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/Support/screenshot.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/features/AprobarPropuestaCreditoConsumo.feature" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/features/AprobarPropuestaCreditoConsumo.feature" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/features/AprobarPropuestaCreditoEmpresarial.feature" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/features/AprobarPropuestaCreditoEmpresarial.feature" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/features/ExcelCreditoConsumo.feature" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/features/ExcelCreditoConsumo.feature" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/features/ExcelCreditoEmpresarial.feature" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/features/ExcelCreditoEmpresarial.feature" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/features/HojaTrabajo.feature" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/features/HojaTrabajo.feature" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/features/InformeComercialCreditoConsumo.feature" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/features/InformeComercialCreditoConsumo.feature" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/features/InformeComercialCreditoEmpresarial.feature" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/features/InformeComercialCreditoEmpresarial.feature" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/features/InformeVisitaCreditoConsumo.feature" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/features/InformeVisitaCreditoConsumo.feature" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/features/InformeVisitaCreditoEmpresarial.feature" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/features/InformeVisitaCreditoEmpresarial.feature" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/features/LoginSGCRED.feature" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/features/LoginSGCRED.feature" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/features/PropuestaCreditoConsumo.feature" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/features/PropuestaCreditoConsumo.feature" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/features/PropuestaCreditoEmpresarial.feature" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/features/PropuestaCreditoEmpresarial.feature" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/features/PropuestaCreditoEmpresarialGrupoVinculado.feature" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/features/PropuestaCreditoEmpresarialGrupoVinculado.feature" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/report/cucumber_report.json" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/report/cucumber_report.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/report/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/report/index.html" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="20W7CyZkJBCVXV1sNQAvHx7beJF" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="TODO_SCOPE" value="All Places" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="project.structure.last.edited" value="Project" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.0" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+  </component>
+  <component name="RunManager" selected="Cucumber Java.Scenario: Registrar propuesta credito empresarial de tipo Refinanciacion Especial con el perfil Asesor de Negocio (1)">
+    <configuration name="Scenario: Registrar Informe Comercial Nuevo Formato de los clientes en el sistema SGCRED" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
+      <option name="CUCUMBER_CORE_VERSION" value="5" />
+      <option name="FILE_PATH" value="$PROJECT_DIR$/src/test/resources/features/InformeComercialCreditoEmpresarial.feature" />
+      <option name="GLUE" value="Definitions" />
+      <option name="MAIN_CLASS_NAME" value="io.cucumber.core.cli.Main" />
+      <module name="CajaPiuraCMAC2021" />
+      <option name="NAME_FILTER" value="^Registrar Informe Comercial Nuevo Formato de los clientes en el sistema SGCRED$" />
+      <option name="PROGRAM_PARAMETERS" value=" --plugin org.jetbrains.plugins.cucumber.java.run.CucumberJvm5SMFormatter --name &quot;^Registrar Informe Comercial Nuevo Formato de los clientes en el sistema SGCRED$&quot;" />
+      <option name="SUGGESTED_NAME" value="Scenario: Registrar Informe Comercial Nuevo Formato de los clientes en el sistema SGCRED" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_WORKING_DIR$" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="io.cucumber.core.cli.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Scenario: Registrar informe de visitas de los clientes en el sistema SGCRED" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
+      <option name="CUCUMBER_CORE_VERSION" value="5" />
+      <option name="FILE_PATH" value="$PROJECT_DIR$/src/test/resources/features/InformeVisitaCreditoEmpresarial.feature" />
+      <option name="GLUE" value="Definitions" />
+      <option name="MAIN_CLASS_NAME" value="io.cucumber.core.cli.Main" />
+      <module name="CajaPiuraCMAC2021" />
+      <option name="NAME_FILTER" value="^Registrar informe de visitas de los clientes en el sistema SGCRED$" />
+      <option name="PROGRAM_PARAMETERS" value=" --plugin org.jetbrains.plugins.cucumber.java.run.CucumberJvm5SMFormatter --name &quot;^Registrar informe de visitas de los clientes en el sistema SGCRED$&quot;" />
+      <option name="SUGGESTED_NAME" value="Scenario: Registrar informe de visitas de los clientes en el sistema SGCRED" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_WORKING_DIR$" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="io.cucumber.core.cli.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Scenario: Registrar propuesta credito empresarial de tipo Refinanciacion Especial con el perfil Asesor de Negocio (1)" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
+      <option name="CUCUMBER_CORE_VERSION" value="5" />
+      <option name="FILE_PATH" value="$PROJECT_DIR$/src/test/resources/features/PropuestaCreditoEmpresarialRefinanciacionEspecial.feature" />
+      <option name="GLUE" value="Definitions" />
+      <option name="MAIN_CLASS_NAME" value="io.cucumber.core.cli.Main" />
+      <module name="CajaPiuraCMAC2021" />
+      <option name="NAME_FILTER" value="^Registrar propuesta credito empresarial de tipo Refinanciacion Especial con el perfil Asesor de Negocio$" />
+      <option name="PROGRAM_PARAMETERS" value=" --plugin org.jetbrains.plugins.cucumber.java.run.CucumberJvm5SMFormatter --name &quot;^Registrar propuesta credito empresarial de tipo Refinanciacion Especial con el perfil Asesor de Negocio$&quot;" />
+      <option name="SUGGESTED_NAME" value="Scenario: Registrar propuesta credito empresarial de tipo Refinanciacion Especial con el perfil Asesor de Negocio" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_WORKING_DIR$" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="io.cucumber.core.cli.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Scenario: Registrar propuesta credito empresarial de tipo Refinanciacion Especial con el perfil Asesor de Negocio" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
+      <option name="CUCUMBER_CORE_VERSION" value="5" />
+      <option name="FILE_PATH" value="$PROJECT_DIR$/src/test/resources/features/PropuestaCreditoRefinanciacionEspecial.feature" />
+      <option name="GLUE" value="Definitions" />
+      <option name="MAIN_CLASS_NAME" value="io.cucumber.core.cli.Main" />
+      <module name="CajaPiuraCMAC2021" />
+      <option name="NAME_FILTER" value="^Registrar propuesta credito empresarial de tipo Refinanciacion Especial con el perfil Asesor de Negocio$" />
+      <option name="PROGRAM_PARAMETERS" value=" --plugin org.jetbrains.plugins.cucumber.java.run.CucumberJvm5SMFormatter --name &quot;^Registrar propuesta credito empresarial de tipo Refinanciacion Especial con el perfil Asesor de Negocio$&quot;" />
+      <option name="SUGGESTED_NAME" value="Scenario: Registrar propuesta credito empresarial de tipo Refinanciacion Especial con el perfil Asesor de Negocio" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_WORKING_DIR$" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="io.cucumber.core.cli.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="runTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="CajaPiuraCMAC2021" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Support.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="Support" />
+      <option name="MAIN_CLASS_NAME" value="Support.runTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Cucumber Java.Scenario: Registrar propuesta credito empresarial de tipo Refinanciacion Especial con el perfil Asesor de Negocio (1)" />
+        <item itemvalue="Cucumber Java.Scenario: Registrar propuesta credito empresarial de tipo Refinanciacion Especial con el perfil Asesor de Negocio" />
+        <item itemvalue="Cucumber Java.Scenario: Registrar Informe Comercial Nuevo Formato de los clientes en el sistema SGCRED" />
+        <item itemvalue="Cucumber Java.Scenario: Registrar informe de visitas de los clientes en el sistema SGCRED" />
+        <item itemvalue="JUnit.runTest" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="3f7f10af-cc77-450a-8460-1211f16a85dc" name="Default Changelist" comment="" />
+      <created>1636148365698</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1636148365698</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+</project>
