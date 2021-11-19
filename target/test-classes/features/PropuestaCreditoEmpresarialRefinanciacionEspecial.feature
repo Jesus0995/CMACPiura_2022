@@ -10,6 +10,7 @@ Feature: Registrar Propuesta de Credito empresarial por tipo Refinanciacion Espe
       | ALPAMA  | prueba   |
     And seleccionar el boton ingresar
     Then el sistema SGCRED muestra el menu principal
+
     And en el menu principal seleccionar PROPUESTA DE FINANCIAMIENTO
     And en Listado de propuestas seleccionar el boton crear nueva propuesta
     And en Busqueda de clientes seleccionar el tab CODIGO
@@ -21,6 +22,13 @@ Feature: Registrar Propuesta de Credito empresarial por tipo Refinanciacion Espe
       | CREDITO EMPRESARIAL | CREDITOS PYMES  | REFINANCIACION ESPECIAL | NORMAL           | SIN PROMOCION | SIMPLE        |
     And en la ventana Requisitos hacer click en el boton seleccionar pagare
     And en la ventana Requisitos hacer click en el boton cargar
+    Then el sistema muestra ventana propuesta y doy cierro el comunicado
+    And en la ventana propuesta seccion cancelar pagare seleccionar condiciones a refinanciar
+    And en la ventana condiciones a refinanciar ingresar el siguiente dato
+      | MontoAmortizar | SaldoInteres |
+      | 100            | 100          |
+
+
 
     Examples:
       | cliente |

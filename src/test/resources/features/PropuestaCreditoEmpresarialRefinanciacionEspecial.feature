@@ -32,4 +32,4 @@ Feature: Registrar Propuesta de Credito empresarial por tipo Refinanciacion Espe
 
     Examples:
       | cliente |
-      | 5802202 |
+      | 3534375 |

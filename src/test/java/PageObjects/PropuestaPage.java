@@ -13,6 +13,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.util.List;
 import java.util.Set;
+import java.util.concurrent.ExecutionException;
 
 public class PropuestaPage {
     private WebDriver driver;
@@ -21,7 +22,7 @@ public class PropuestaPage {
     private funcionEsperar objFuncionEsperar = new funcionEsperar();
     private funcionExcepciones objLogErrores = new funcionExcepciones();
     private String detalleError = new String();
-    protected static String propuesta;
+    protected static String numeroPropuesta;
 
     @FindBy(xpath = "//textarea[@name='comentCalifCred']")
     private WebElement txt_ClasificacionCrediticia;
@@ -71,13 +72,13 @@ public class PropuestaPage {
     @FindBy(xpath = "/html/body/form/table[2]/tbody/tr[6]/td[3]/button")
     private WebElement btn_EnlazarEEFFGrupoVinculado;
 
-    @FindBy(xpath = "/html/body/div/table/tbody/tr/td[2]/h3")
-    private WebElement lblNumeroPropuesta;
-
+    //  @FindBy(xpath = "/html/body/div/table/tbody/tr/td[2]/h3") private WebElement lblNumeroPropuesta;
+    @FindBy (xpath = "/html/body/form/table[1]/tbody/tr[3]/td/div/table[9]/tbody/tr/td[2]/button")private WebElement btn_CancelarPagares;
+    @FindBy(xpath = "/html/body/form/table[1]/tbody/tr[3]/td/div/table[10]/tbody/tr[2]/td[9]/span/img")private WebElement icn_CondicionRefinanciar;
 
     public PropuestaPage(WebDriver d) {
         driver = d;
-        wait = new WebDriverWait(driver, 140);
+        wait = new WebDriverWait(driver, 30);
         PageFactory.initElements(driver, this);
 
     }
@@ -418,12 +419,26 @@ public class PropuestaPage {
     }
 
     public void CapturarNumeroPropuesta() {
-        try {
+        //objFuncionEsperar.EsperarTiempo(35);
 
-
-        } catch (Exception Error) {
-        }
-
-
+        WebElement lblNumeroPropuesta = driver.findElement(By.xpath("/html/body/form/table[1]/tbody/tr[1]/td/table[1]/tbody/tr/td[2]/h2/strong/font"));
+        //WebElement lblNumeroPropuesta = driver.findElement(By.cssSelector("td.Invisible:nth-child(2) > h3:nth-child(1)"));
+        wait.until(ExpectedConditions.visibilityOf(lblNumeroPropuesta));
+        numeroPropuesta = lblNumeroPropuesta.getText().replace("SISTEMA DE GESTION DE CREDITOS","");
+        System.out.println(numeroPropuesta);
+        //numeroPropuesta = lblNumeroPropuesta.getText();
     }
+
+    public void ClickBtnCancelarPagares(){
+        try {
+        wait.until(ExpectedConditions.elementToBeClickable(btn_CancelarPagares));
+        btn_CancelarPagares.click();
+
+
+    }catch (Exception Error){
+        detalleError = "Error al seleccionar boton cancelar pagares";
+        objLogErrores.logError(detalleError,Error);
+        }
+    }
+
 }

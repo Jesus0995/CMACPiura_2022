@@ -14,7 +14,5 @@ public class DefinaPropuestaPage {
         wait = new WebDriverWait(driver, 50);
         PageFactory.initElements(driver, this);
 
-
-
     }
 }

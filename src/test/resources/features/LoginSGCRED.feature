@@ -15,7 +15,7 @@ Feature: Ingresar a la pagina principal del sistema SGCRED de Caja Piura SAC
 
     Examples:
       | usuario | password |
-      |         | prueba   |
+      | lari    | prueba   |
 
 
 

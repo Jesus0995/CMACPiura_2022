@@ -14,6 +14,8 @@ public class PropuestaCreditoEmpresarialRefinanciacionEspecialDefinitions {
     ListadoPropuestaPage listadoPropuestaRefinanciacion;
     ListadoClientesPage listadoClientesRefinanciacion;
     SeleccionarServicioPage seleccionarServicio;
+    PopUpComunicadoPage popUpComunicado;
+    PropuestaPage propuesta;
 
 
     public PropuestaCreditoEmpresarialRefinanciacionEspecialDefinitions() {
@@ -22,6 +24,8 @@ public class PropuestaCreditoEmpresarialRefinanciacionEspecialDefinitions {
         listadoPropuestaRefinanciacion = new ListadoPropuestaPage(Hooks.driver);
         listadoClientesRefinanciacion = new ListadoClientesPage(Hooks.driver);
         seleccionarServicio = new SeleccionarServicioPage(Hooks.driver);
+        popUpComunicado = new PopUpComunicadoPage(Hooks.driver);
+        propuesta = new PropuestaPage(Hooks.driver);
 
     }
 
@@ -115,6 +119,23 @@ public class PropuestaCreditoEmpresarialRefinanciacionEspecialDefinitions {
 
     @And("en la ventana Requisitos hacer click en el boton cargar")
     public void enLaVentanaRequisitosHacerClickEnElBotonCargar() {
+
         seleccionarServicio.ClickBtnCargar();
+        seleccionarServicio.CerrarVentanaServicio();
+    }
+
+    @Then("el sistema muestra ventana propuesta y doy cierro el comunicado")
+    public void elSistemaMuestraVentanaPropuestaYDoyCierroElComunicado() {
+        popUpComunicado.ValidarComunicado();
+    }
+
+    @And("en la ventana propuesta seccion cancelar pagare seleccionar condiciones a refinanciar")
+    public void enLaVentanaPropuestaSeccionCancelarPagareSeleccionarCondicionesARefinanciar() {
+
+
+    }
+
+    @And("en la ventana condiciones a refinanciar ingresar el siguiente dato")
+    public void enLaVentanaCondicionesARefinanciarIngresarElSiguienteDato() {
     }
 }
