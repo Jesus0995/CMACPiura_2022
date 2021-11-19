@@ -37,6 +37,22 @@ public class MenuPrincipalPage {
     @FindBy(xpath = "/html/body/table/tbody/tr[1]/td/table[1]/tbody/tr/td[2]/h2/strong/font")
     private WebElement lbl_Titulo;
 
+    @FindBy(linkText = "") private WebElement lnk_InformeVisitaVerificacion;
+
+    @FindBy(xpath = "/html/body/table[3]/tbody/tr/td/div[2]/form/table/tbody/tr[2]/td/button[1]")private  WebElement btn_Buscar;
+    @FindBy(xpath = "/html/body/table[3]/tbody/tr/td/div[2]/form/table/tbody/tr[2]/td/button[2]")private  WebElement btn_Cancelar;
+    @FindBy(xpath = "/html/body/form/p/b/button[1]") private WebElement btn_IngresarNuevoFormato;
+
+    /*
+    btn_Buscar;
+    lbl_Titulo;
+    opt_Nuevo;
+    rdn_Nuevo;
+    chk_Nuevo;
+    txt_Usuario;
+*/
+
+
     //constructor
     public MenuPrincipalPage(WebDriver d) {
         //iniciar variables
@@ -106,6 +122,7 @@ public class MenuPrincipalPage {
       driver.switchTo().window(w).getWindowHandles(0);
 
     }
+
 
 
 }
