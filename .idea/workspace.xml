@@ -5,11 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3f7f10af-cc77-450a-8460-1211f16a85dc" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/test/java/PageObjects/DefinalaPropuestaPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/PageObjects/MenuPrincipalPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/PageObjects/MenuPrincipalPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/PageObjects/PropuestaPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/PageObjects/PropuestaPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/resources/features/PropuestaCreditoEmpresarialRefinanciacionEspecial.feature" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/features/PropuestaCreditoEmpresarialRefinanciacionEspecial.feature" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/PageObjects/DefinalaPropuestaPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/PageObjects/DefinaPropuestaPage.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -35,7 +31,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="TODO_SCOPE" value="All Places" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../ProyectoSelenium" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />

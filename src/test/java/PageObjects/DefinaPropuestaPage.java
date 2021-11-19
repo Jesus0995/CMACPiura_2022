@@ -5,11 +5,11 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-public class DefinalaPropuestaPage {
+public class DefinaPropuestaPage {
     private WebDriver driver;
     private WebDriverWait wait;
 
-    public DefinalaPropuestaPage(WebDriver d) {
+    public DefinaPropuestaPage(WebDriver d) {
         driver = d;
         wait = new WebDriverWait(driver, 50);
         PageFactory.initElements(driver, this);
