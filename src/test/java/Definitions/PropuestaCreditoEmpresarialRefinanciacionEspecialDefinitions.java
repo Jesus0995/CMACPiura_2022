@@ -16,7 +16,7 @@ public class PropuestaCreditoEmpresarialRefinanciacionEspecialDefinitions {
     SeleccionarServicioPage seleccionarServicio;
     PopUpComunicadoPage popUpComunicado;
     PropuestaPage propuesta;
-
+    CondicionesRefinanciarPage condicionesRefinanciar;
 
     public PropuestaCreditoEmpresarialRefinanciacionEspecialDefinitions() {
         loginRefinanciacion = new LoginPage(Hooks.driver);
@@ -26,6 +26,7 @@ public class PropuestaCreditoEmpresarialRefinanciacionEspecialDefinitions {
         seleccionarServicio = new SeleccionarServicioPage(Hooks.driver);
         popUpComunicado = new PopUpComunicadoPage(Hooks.driver);
         propuesta = new PropuestaPage(Hooks.driver);
+        condicionesRefinanciar = new CondicionesRefinanciarPage(Hooks.driver);
 
     }
 
@@ -95,8 +96,9 @@ public class PropuestaCreditoEmpresarialRefinanciacionEspecialDefinitions {
     @Then("en la ventana Requisitos propuesta seleccionar los siguientes campos:")
     public void en_la_ventana_requisitos_propuesta_seleccionar_los_siguientes_campos(DataTable Servicio) {
         seleccionarServicio.AbrirVentanaServicio();
-        List<Map<String,String>> listadoServicio = Servicio.asMaps(String.class,String.class);{
-            for(int i=0 ;i < listadoServicio.size();i++){
+        List<Map<String, String>> listadoServicio = Servicio.asMaps(String.class, String.class);
+        {
+            for (int i = 0; i < listadoServicio.size(); i++) {
                 seleccionarServicio.SeleccionarServicio(listadoServicio.get(i).get("TipoServicio"));
                 seleccionarServicio.SeleccionarServicioCredito(listadoServicio.get(i).get("ServicioCredito"));
                 seleccionarServicio.SeleccionarTipoPropuesta(listadoServicio.get(i).get("TipoPropuesta"));
@@ -131,11 +133,36 @@ public class PropuestaCreditoEmpresarialRefinanciacionEspecialDefinitions {
 
     @And("en la ventana propuesta seccion cancelar pagare seleccionar condiciones a refinanciar")
     public void enLaVentanaPropuestaSeccionCancelarPagareSeleccionarCondicionesARefinanciar() {
-
+        propuesta.CapturarNumeroPropuesta();
+        propuesta.ClickIconoCondicionRefinanciar();
 
     }
 
+
     @And("en la ventana condiciones a refinanciar ingresar el siguiente dato")
-    public void enLaVentanaCondicionesARefinanciarIngresarElSiguienteDato() {
+    public void enLaVentanaCondicionesARefinanciarIngresarElSiguienteDato(DataTable listadoCondicion) {
+        condicionesRefinanciar.AbrirVentanaCondicionRefinanciar();
+
+        List<Map<String, String>> lista = listadoCondicion.asMaps(String.class, String.class);
+        {
+            for (int i = 0; i < lista.size(); i++) {
+                condicionesRefinanciar.IngresarMontoAmortizar(lista.get(i).get("MontoAmortizar"));
+                condicionesRefinanciar.IngresarInteresRefinanciar(lista.get(i).get("InteresRefinanciar"));
+
+            }
+
+
+        }
+    }
+
+    @And("en la ventana condiciones a refinanciar hacer click en grabar")
+    public void enLaVentanaCondicionesARefinanciarHacerClickEnGrabar() {
+        condicionesRefinanciar.ClickBtnGrabar();
+        condicionesRefinanciar.CerrarVentanaCondicionRefinanciar();
+    }
+
+    @And("en la ventana Propuesta doy click en el boton nueva operacion")
+    public void enLaVentanaPropuestaDoyClickEnElBotonNuevaOperacion() {
+        propuesta.ClickBtnOperacion();
     }
 }

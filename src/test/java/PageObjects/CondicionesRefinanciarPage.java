@@ -10,50 +10,68 @@ import Functions.funcionVentana;
 import Functions.funcionExcepciones;
 import Functions.funcionEsperar;
 
+import java.util.Set;
+
 public class CondicionesRefinanciarPage {
 
     private WebDriver driver;
     private WebDriverWait wait;
+    private Set<String> identificadoresCondicionRefinanciar;
     private funcionExcepciones objLogErrores;
     private funcionVentana objFuncionVentana;
     private funcionEsperar objFuncionEsperar;
-    private String detalleError;
     private String ventanaUltima;
+    private String detalleError;
 
 
-    @FindBy(name = "montoAmortizar") private WebElement txt_MontoAmortizar;
-    @FindBy(name="interesRefinanciar")private WebElement txt_InteresRefinanciar;
+    @FindBy(xpath = "//*[@id=\"monto_amortizar\"]") private WebElement txt_MontoAmortizar;
+    @FindBy(xpath="//*[@id=\"interes_refinanciar\"]")private WebElement txt_InteresRefinanciar;
     @FindBy(id="grabar")private WebElement btn_Grabar;
 
     public void AbrirVentanaCondicionRefinanciar() {
         try {
-            System.out.println(driver.getWindowHandles());
-            objFuncionVentana.cambiarVentanaNueva();
-            ventanaUltima = driver.getWindowHandle();
+            identificadoresCondicionRefinanciar = driver.getWindowHandles();
+            System.out.println(identificadoresCondicionRefinanciar);
+            String LastHandle = "";
 
-        }catch (Exception Error){
-            detalleError = "Error al abrir ventana condicion refinanciar";
-            objLogErrores.logError(detalleError,Error);
+            for (String identificadorCondicionRefinanciar : identificadoresCondicionRefinanciar) {
+                LastHandle = identificadorCondicionRefinanciar;
+
+            }
+            driver.switchTo().window(LastHandle);
+            System.out.println("Titulo : " + driver.getTitle());
+        } catch (Exception Error) {
+            detalleError = "Error al posicionarse en la ventana garantia";
+            objLogErrores.logError(detalleError, Error);
+
+        }
+    }
+        public void CerrarVentanaCondicionRefinanciar () {
+            try {
+                Integer SetSize = identificadoresCondicionRefinanciar.size();
+                Integer Index = 0;
+                String[] Handles = new String[SetSize];
+
+                for (String identificadorCondicionRefinanciar : identificadoresCondicionRefinanciar) {
+                    Handles[Index] = identificadorCondicionRefinanciar;
+                    Index++;
+
+                }
+                System.out.println(Handles[0]);
+                driver.switchTo().window(Handles[0]);
+
+            } catch (Exception Error) {
+                detalleError = "Error al posicionarse en la ventana propuesta";
+                objLogErrores.logError(detalleError, Error);
+            }
         }
 
-    }
 
-    public void CerrarVentanaCondicionRefinanciar() {
-        try{
-            System.out.println(driver.getWindowHandles());
-            objFuncionVentana.cambiarVentanaInicial();
-            System.out.println("Fin Cerrar Ventana");
-        }catch (Exception Error){
-            detalleError = "Error al cerrar ventana condicion refinanciar";
-            objLogErrores.logError(detalleError,Error);
-        }
-
-    }
 
 
     public CondicionesRefinanciarPage(WebDriver d) {
         driver = d;
-        wait = new WebDriverWait(driver, 30);
+        wait = new WebDriverWait(driver, 100);
         PageFactory.initElements(driver, this);
 
 
@@ -89,6 +107,7 @@ public class CondicionesRefinanciarPage {
         try {
             wait.until(ExpectedConditions.elementToBeClickable(btn_Grabar));
             btn_Grabar.click();
+            objFuncionEsperar.EsperarTiempo(2);
 
         }catch (Exception Error){
             detalleError = "Error al seleccionar el boton grabar";

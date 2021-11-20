@@ -78,7 +78,7 @@ public class PropuestaPage {
 
     public PropuestaPage(WebDriver d) {
         driver = d;
-        wait = new WebDriverWait(driver, 30);
+        wait = new WebDriverWait(driver, 60);
         PageFactory.initElements(driver, this);
 
     }
@@ -421,18 +421,18 @@ public class PropuestaPage {
     public void CapturarNumeroPropuesta() {
         //objFuncionEsperar.EsperarTiempo(35);
 
-        WebElement lblNumeroPropuesta = driver.findElement(By.xpath("/html/body/form/table[1]/tbody/tr[1]/td/table[1]/tbody/tr/td[2]/h2/strong/font"));
-        //WebElement lblNumeroPropuesta = driver.findElement(By.cssSelector("td.Invisible:nth-child(2) > h3:nth-child(1)"));
-        wait.until(ExpectedConditions.visibilityOf(lblNumeroPropuesta));
-        numeroPropuesta = lblNumeroPropuesta.getText().replace("SISTEMA DE GESTION DE CREDITOS","");
+        //WebElement lblNumeroPropuesta = driver.findElement(By.xpath("/html/body/form/table[1]/tbody/tr[1]/td/table[1]/tbody/tr/td[2]/h2/strong/font"));
+        WebElement lblNumeroPropuesta = driver.findElement(By.xpath("/html/body/form/table[1]/tbody/tr[3]/td/input[3]"));
+        //wait.until(ExpectedConditions.visibilityOf(lblNumeroPropuesta));
+        numeroPropuesta = lblNumeroPropuesta.getAttribute("value");//.replace("PROPUESTA DE FINANCIAMIENTO N º","");
         System.out.println(numeroPropuesta);
         //numeroPropuesta = lblNumeroPropuesta.getText();
     }
 
-    public void ClickBtnCancelarPagares(){
+    public void ClickIconoCondicionRefinanciar(){
         try {
-        wait.until(ExpectedConditions.elementToBeClickable(btn_CancelarPagares));
-        btn_CancelarPagares.click();
+        wait.until(ExpectedConditions.elementToBeClickable(icn_CondicionRefinanciar));
+            icn_CondicionRefinanciar.click();
 
 
     }catch (Exception Error){

@@ -25,11 +25,13 @@ Feature: Registrar Propuesta de Credito empresarial por tipo Refinanciacion Espe
     Then el sistema muestra ventana propuesta y doy cierro el comunicado
     And en la ventana propuesta seccion cancelar pagare seleccionar condiciones a refinanciar
     And en la ventana condiciones a refinanciar ingresar el siguiente dato
-      | MontoAmortizar | SaldoInteres |
-      | 100            | 100          |
+      | MontoAmortizar | InteresRefinanciar |
+      | 100            | 100                |
+    And en la ventana condiciones a refinanciar hacer click en grabar
+    And en la ventana Propuesta doy click en el boton nueva operacion
 
 
 
     Examples:
       | cliente |
-      | 5802202 |
+      | 3534375 |

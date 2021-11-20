@@ -149,7 +149,7 @@ public class SeleccionarServicioPage {
         try {
             wait.until(ExpectedConditions.elementToBeClickable(btn_Cargar));
             btn_Cargar.click();
-            objFuncionEsperar.EsperarTiempo(10);
+            objFuncionEsperar.EsperarTiempo(5);
         } catch (Exception Error) {
             detalleError = "Error al hacer click en el boton cargar";
             objLogErrores.logError(detalleError, Error);

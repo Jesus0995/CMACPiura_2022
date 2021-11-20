@@ -4,23 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3f7f10af-cc77-450a-8460-1211f16a85dc" name="Default Changelist" comment="">
+    <list default="true" id="3f7f10af-cc77-450a-8460-1211f16a85dc" name="Default Changelist" comment="Adicion de pages objects flujo Refinanciacion Especial">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/Definitions/ProbarDefinitions.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Definitions/ProbarDefinitions.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/Definitions/PropuestaCreditoEmpresarialRefinanciacionEspecialDefinitions.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Definitions/PropuestaCreditoEmpresarialRefinanciacionEspecialDefinitions.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/PageObjects/CondicionesARefinanciarPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/PageObjects/CondicionesRefinanciarPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/PageObjects/DefinaPropuestaPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/PageObjects/DefinaPropuestaPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/PageObjects/MenuPrincipalPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/PageObjects/MenuPrincipalPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/PageObjects/CondicionesRefinanciarPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/PageObjects/CondicionesRefinanciarPage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/PageObjects/PropuestaPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/PageObjects/PropuestaPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/resources/features/LoginSGCRED.feature" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/features/LoginSGCRED.feature" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/PageObjects/SeleccionarServicioPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/PageObjects/SeleccionarServicioPage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/resources/features/PropuestaCreditoEmpresarialRefinanciacionEspecial.feature" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/features/PropuestaCreditoEmpresarialRefinanciacionEspecial.feature" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/resources/features/prueba.feature" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/features/prueba.feature" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/Definitions/ProbarDefinitions.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/Definitions/ProbarDefinitions.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/PageObjects/MenuPrincipalPage.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/PageObjects/MenuPrincipalPage.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/test-classes/PageObjects/PropuestaPage.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/PageObjects/PropuestaPage.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/features/LoginSGCRED.feature" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/features/LoginSGCRED.feature" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/test-classes/features/PropuestaCreditoEmpresarialRefinanciacionEspecial.feature" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/features/PropuestaCreditoEmpresarialRefinanciacionEspecial.feature" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/features/prueba.feature" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/features/prueba.feature" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -52,7 +44,7 @@
     <property name="project.structure.side.proportion" value="0.0" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
-  <component name="RunManager" selected="Cucumber Java.Scenario: probar el check de las garantias">
+  <component name="RunManager" selected="Cucumber Java.Scenario: Registrar propuesta credito empresarial de tipo Refinanciacion Especial con el perfil Asesor de Negocio (1)">
     <configuration name="Feature: prueba" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
       <option name="CUCUMBER_CORE_VERSION" value="5" />
       <option name="FILE_PATH" value="$PROJECT_DIR$/src/test/resources/features/prueba.feature" />
@@ -154,10 +146,10 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Cucumber Java.Scenario: Registrar propuesta credito empresarial de tipo Refinanciacion Especial con el perfil Asesor de Negocio (1)" />
         <item itemvalue="Cucumber Java.Scenario: probar el check de las garantias" />
         <item itemvalue="Cucumber Java.Feature: prueba" />
         <item itemvalue="Cucumber Java.Scenario: Login de la aplicación Sistema SGCRED" />
-        <item itemvalue="Cucumber Java.Scenario: Registrar propuesta credito empresarial de tipo Refinanciacion Especial con el perfil Asesor de Negocio (1)" />
         <item itemvalue="Cucumber Java.Scenario: Registrar propuesta credito empresarial de tipo Refinanciacion Especial con el perfil Asesor de Negocio" />
       </list>
     </recent_temporary>
@@ -171,6 +163,14 @@
       <option name="presentableId" value="Default" />
       <updated>1636148365698</updated>
     </task>
+    <task id="LOCAL-00001" summary="Adicion de pages objects flujo Refinanciacion Especial">
+      <created>1637363499709</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1637363499709</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -184,5 +184,9 @@
       </map>
     </option>
     <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Adicion de pages objects flujo Refinanciacion Especial" />
+    <option name="LAST_COMMIT_MESSAGE" value="Adicion de pages objects flujo Refinanciacion Especial" />
   </component>
 </project>

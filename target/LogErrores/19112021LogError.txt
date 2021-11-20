@@ -1,0 +1,33 @@
+2021-11-19T10:36:06.404 - Error al hacer click cerrar sesion - Expected condition failed: waiting for element to be clickable: Proxy element for: DefaultElementLocator 'By.xpath: /html/body/table[2]/tbody/tr[3]/td/form/table/tbody/tr[2]/td/button[1]' (tried for 30 second(s) with 500 milliseconds interval) 
+2021-11-19T10:36:36.932 - Error en confirmar cierre - Expected condition failed: waiting for element to be clickable: Proxy element for: DefaultElementLocator 'By.xpath: //button[@type='submit']' (tried for 30 second(s) with 500 milliseconds interval) 
+2021-11-19T10:36:46.337 - Error al seleccionar el boton iniciar nueva sesion - Failed to decode response from marionette
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'DESKTOP-SDTRTPQ', ip: '10.0.241.68', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_241'
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 94.0.1, javascriptEnabled: true, moz:accessibilityChecks: false, moz:buildID: 20211103134640, moz:geckodriverVersion: 0.29.1, moz:headless: false, moz:processID: 8244, moz:profile: C:\Users\Usuario\AppData\Lo..., moz:shutdownTimeout: 60000, moz:useNonSpecCompliantPointerOrigin: false, moz:webdriverClick: true, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, platformVersion: 10.0, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
+Session ID: cb22b07e-bd9f-4cff-ba32-01817fb77afd
+*** Element info: {Using=xpath, value=//button[@onclick="window.location='./index.jsp'"]} 
+2021-11-19T10:51:10.565 - Error al capturar el numero de propuesta - Expected condition failed: waiting for visibility of Proxy element for: DefaultElementLocator 'By.xpath: /html/body/div/table/tbody/tr/td[2]/h3' (tried for 140 second(s) with 500 milliseconds interval) 
+2021-11-19T11:02:01.928 - Error al capturar el numero de propuesta - Expected condition failed: waiting for visibility of Proxy element for: DefaultElementLocator 'By.xpath: /html/body/div/table/tbody/tr/td[2]/h3' (tried for 30 second(s) with 500 milliseconds interval) 
+2021-11-19T11:03:49.546 - Error al capturar el numero de propuesta - Expected condition failed: waiting for visibility of Proxy element for: DefaultElementLocator 'By.xpath: /html/body/div/table/tbody/tr/td[2]/h3' (tried for 5 second(s) with 500 milliseconds interval) 
+2021-11-19T11:09:35.105 - Error al capturar el numero de propuesta - Expected condition failed: waiting for visibility of Proxy element for: DefaultElementLocator 'By.xpath: /html/body/div/table/tbody/tr/td[2]/h3' (tried for 5 second(s) with 500 milliseconds interval) 
+2021-11-19T20:02:25.540 - Error al seleccionar tipo propuesta del servicio - Cannot locate element with text: REFINANCIACION ESPECIAL
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'DESKTOP-SDTRTPQ', ip: '10.0.241.68', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_241'
+Driver info: driver.version: unknown 
+2021-11-19T20:02:25.808 - Error al seleccionar subtipopropuesta del servicio - Cannot locate element with text: NORMAL
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'DESKTOP-SDTRTPQ', ip: '10.0.241.68', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_241'
+Driver info: driver.version: unknown 
+2021-11-19T20:02:25.980 - Error al seleccionar promocion del servicio - Cannot locate element with text: SIN PROMOCION
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'DESKTOP-SDTRTPQ', ip: '10.0.241.68', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_241'
+Driver info: driver.version: unknown 
+2021-11-19T20:02:26.138 - Error al seleccionar el tipo de operacion - Cannot locate element with text: SIMPLE
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'DESKTOP-SDTRTPQ', ip: '10.0.241.68', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_241'
+Driver info: driver.version: unknown 
