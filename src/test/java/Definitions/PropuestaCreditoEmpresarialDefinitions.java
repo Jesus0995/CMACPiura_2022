@@ -228,7 +228,7 @@ public class PropuestaCreditoEmpresarialDefinitions {
 
     @And("en la ventana Operacion Credito ingresar fecha probable del desembolso")
     public void enLaVentanaOperacionCreditoIngresarFechaProbableDelDesembolso() {
-        operacionCredito.ObtenerFechaDesembolso();
+        operacionCredito.IngresarFechaDesembolso();
 
     }
 

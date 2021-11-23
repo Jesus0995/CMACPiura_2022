@@ -17,6 +17,11 @@ public class PropuestaCreditoEmpresarialRefinanciacionEspecialDefinitions {
     PopUpComunicadoPage popUpComunicado;
     PropuestaPage propuesta;
     CondicionesRefinanciarPage condicionesRefinanciar;
+    SeleccionarOperacionCreditoPage seleccionarOperacionCredito;
+    OperacionCreditoPage operacionCredito;
+    SeleccionarSegurosPage seleccionarSeguros;
+    RegistrarSegurosPage registrarSeguros;
+    ConfirmarSegurosSeleccionadosPage confirmarSeguros;
 
     public PropuestaCreditoEmpresarialRefinanciacionEspecialDefinitions() {
         loginRefinanciacion = new LoginPage(Hooks.driver);
@@ -27,6 +32,12 @@ public class PropuestaCreditoEmpresarialRefinanciacionEspecialDefinitions {
         popUpComunicado = new PopUpComunicadoPage(Hooks.driver);
         propuesta = new PropuestaPage(Hooks.driver);
         condicionesRefinanciar = new CondicionesRefinanciarPage(Hooks.driver);
+        seleccionarOperacionCredito = new SeleccionarOperacionCreditoPage(Hooks.driver);
+        operacionCredito = new OperacionCreditoPage(Hooks.driver);
+        seleccionarSeguros = new SeleccionarSegurosPage(Hooks.driver);
+        registrarSeguros = new RegistrarSegurosPage(Hooks.driver);
+        confirmarSeguros = new ConfirmarSegurosSeleccionadosPage(Hooks.driver);
+
 
     }
 
@@ -73,6 +84,7 @@ public class PropuestaCreditoEmpresarialRefinanciacionEspecialDefinitions {
 
     @And("en Busqueda de clientes seleccionar el tab CODIGO")
     public void enBusquedaDeClientesSeleccionarElTabCODIGO() {
+
         listadoClientesRefinanciacion.SeleccionarTabCodigo();
     }
 
@@ -163,6 +175,127 @@ public class PropuestaCreditoEmpresarialRefinanciacionEspecialDefinitions {
 
     @And("en la ventana Propuesta doy click en el boton nueva operacion")
     public void enLaVentanaPropuestaDoyClickEnElBotonNuevaOperacion() {
+
         propuesta.ClickBtnOperacion();
+    }
+
+    @And("en la ventana Seleccionar Operacion Credito doy click en aceptar")
+    public void enLaVentanaSeleccionarOperacionCreditoDoyClickEnAceptar() {
+        seleccionarOperacionCredito.AbrirVentanaSeleccionarOP();
+        try {
+            seleccionarOperacionCredito.ValidarVentanaOP();
+        }catch (Exception Error){
+            System.out.println("Error al hacer click en el boton aceptar" +Error.getMessage());
+        }
+        seleccionarOperacionCredito.CerrarVentanaSeleccionarOP();
+
+
+    }
+
+
+    @And("en la ventana Operacion Credito ingresar los campos correspondientes al credito")
+    public void enLaVentanaOperacionCreditoIngresarLosCamposCorrespondientesAlCredito() {
+        operacionCredito.AbrirVentanaOperacionCredito();
+    }
+
+    @And("en la ventana Operacion Credito seleccionar el boton calcular tasa")
+    public void enLaVentanaOperacionCreditoSeleccionarElBotonCalcularTasa() {
+        operacionCredito.ClickBtnCalcularRefinanciacion();
+    }
+
+    @And("en la ventana Operacion Credito ingresar el campo plan de pagos {string}")
+    public void enLaVentanaOperacionCreditoIngresarElCampoPlanDePagos(String PlanPagos) {
+        operacionCredito.SeleccionarPlanPagos(PlanPagos);
+    }
+
+    @And("en la ventana Operacion Credito seleccionar el campo modalidad {string}")
+    public void enLaVentanaOperacionCreditoSeleccionarElCampoModalidad(String Modalidad) {
+        operacionCredito.SeleccionarModalidad(Modalidad);
+    }
+
+    @And("en la ventana Operacion Credito seleccionar el campo opcion {string}")
+    public void enLaVentanaOperacionCreditoSeleccionarElCampoOpcion(String OpcionPagos) {
+        operacionCredito.SeleccionarOpcionPagos(OpcionPagos);
+
+    }
+
+    @And("en la ventana Operacion Credito seleccionar el campo dias de pago {string}")
+    public void enLaVentanaOperacionCreditoSeleccionarElCampoDiasDePago(String DiaPagos) {
+        operacionCredito.SeleccionarDiaPagos(DiaPagos);
+
+
+    }
+
+    @And("en la ventana Operacion Credito seleccionar el numero de cuotas {string}")
+    public void enLaVentanaOperacionCreditoSeleccionarElNumeroDeCuotas(String NumeroCuotas) {
+        operacionCredito.IngresarNumeroCuotas(NumeroCuotas);
+
+    }
+
+    @And("en la ventana Operacion Credito ingresar el campo tasa preferencial {string}")
+    public void enLaVentanaOperacionCreditoIngresarElCampoTasaPreferencial(String TasaPreferencial) {
+        operacionCredito.IngresarTasaPreferencial(TasaPreferencial);
+
+
+    }
+
+    @And("en la ventana Operacion Credito seleccionar el la forma de desembolso {string}")
+    public void enLaVentanaOperacionCreditoSeleccionarElLaFormaDeDesembolso(String FormaDesembolso) {
+        operacionCredito.SeleccionarFormaDesembolso(FormaDesembolso);
+
+
+    }
+
+    @And("en la ventana Operacion Credito ingresar el campo fecha de desembolso")
+    public void enLaVentanaOperacionCreditoIngresarElCampoFechaDeDesembolso() {
+        operacionCredito.IngresarFechaDesembolso();
+
+    }
+
+    @And("en la ventana Operacion Credito ingresar el campo Notas {string}")
+    public void enLaVentanaOperacionCreditoIngresarElCampoNotas(String Notas) {
+        operacionCredito.IngresarNotas(Notas);
+
+    }
+
+    @And("en la ventana Operacion Credito hacer click en boton grabar")
+    public void enLaVentanaOperacionCreditoHacerClickEnBotonGrabar() {
+        operacionCredito.ClickBtnGrabar();
+    }
+
+    @And("en la ventana Operacion Credito hacer click en alerta y cerrar ventana")
+    public void enLaVentanaOperacionCreditoHacerClickEnAlertaYCerrarVentana() {
+        operacionCredito.ObtenerAlerta();
+        operacionCredito.CerrarVentanaOperacionCredito();
+    }
+
+    @And("en la ventana principal propuesta seleccionar el boton seguros")
+    public void enLaVentanaPrincipalPropuestaSeleccionarElBotonSeguros() {
+        propuesta.ClickBtnRegistrarSeguro();
+
+    }
+
+    @And("en la ventana Selecionar seguros hacer click en confirmar")
+    public void enLaVentanaSelecionarSegurosHacerClickEnConfirmar() {
+        seleccionarSeguros.AbrirVentanaSeleccionarSeguros();
+        seleccionarSeguros.ClickbtnConfirmar();
+        seleccionarSeguros.CerrarVentanaSeleccionarSeguros();
+
+    }
+
+    @And("en la ventana Seguros ingresar informacion correspondiente y hacer click en confirmar")
+    public void enLaVentanaSegurosIngresarInformacionCorrespondienteYHacerClickEnConfirmar() {
+        registrarSeguros.AbrirVentanaRegistrarSeguros();
+        registrarSeguros.ClickCheckSeguroDesgravamenMN();
+        registrarSeguros.ObtenerNumeroAleatorioDPSSeguroDesgravamen();
+        registrarSeguros.ClickBtnConfirmar();
+        registrarSeguros.CerrarVentanaRegistrarSeguros();
+    }
+
+    @And("en la ventana confirmar seguros click en confirmar y cerrar ventana")
+    public void enLaVentanaConfirmarSegurosClickEnConfirmarYCerrarVentana() {
+        confirmarSeguros.AbrirVentanaConfirmacionSeguros();
+        confirmarSeguros.ClickBtnCerrar();
+        confirmarSeguros.CerrarVentanaConfirmacionSeguros();
     }
 }
