@@ -25,15 +25,15 @@ public class CondicionesRefinanciarPage {
     private String detalleError;
 
 
-    @FindBy(xpath = "//*[@id=\"monto_amortizar\"]")
-    private WebElement txt_MontoAmortizar;
-    @FindBy(xpath = "//*[@id=\"interes_refinanciar\"]")
-    private WebElement txt_InteresRefinanciar;
+    @FindBy(id = "monto_amortizar") private WebElement txt_MontoAmortizar;
+    @FindBy(id = "interes_refinanciar") private WebElement txt_InteresRefinanciar;
     @FindBy(id = "grabar")
     private WebElement btn_Grabar;
 
     public void AbrirVentanaCondicionRefinanciar() {
+
         try {
+            objFuncionEsperar.EsperarTiempo(3);
             identificadoresCondicionRefinanciar = driver.getWindowHandles();
             System.out.println(identificadoresCondicionRefinanciar);
             String LastHandle = "";
@@ -81,8 +81,10 @@ public class CondicionesRefinanciarPage {
 
     public void IngresarMontoAmortizar(String MontoAmortizar) {
         try {
+            objFuncionEsperar.EsperarTiempo(2);
             txt_MontoAmortizar.sendKeys(Keys.CONTROL,"A");
             txt_MontoAmortizar.sendKeys(MontoAmortizar);
+
 
         } catch (Exception Error) {
             detalleError = "Error al ingresar monto amortizar";
@@ -92,9 +94,10 @@ public class CondicionesRefinanciarPage {
 
     public void IngresarInteresRefinanciar(String InteresRefinanciar) {
         try {
-
-            txt_MontoAmortizar.sendKeys(Keys.CONTROL,"A");
+            objFuncionEsperar.EsperarTiempo(2);
+            txt_InteresRefinanciar.sendKeys(Keys.CONTROL,"A");
             txt_InteresRefinanciar.sendKeys(InteresRefinanciar);
+
             } catch (Exception Error) {
             detalleError = "Error al ingresar interes a refinanciar";
             objLogErrores.logError(detalleError, Error);
@@ -105,9 +108,10 @@ public class CondicionesRefinanciarPage {
 
     public void ClickBtnGrabar() {
         try {
+            objFuncionEsperar.EsperarTiempo(3);
             wait.until(ExpectedConditions.elementToBeClickable(btn_Grabar));
             btn_Grabar.click();
-            objFuncionEsperar.EsperarTiempo(2);
+
 
         } catch (Exception Error) {
             detalleError = "Error al seleccionar el boton grabar";

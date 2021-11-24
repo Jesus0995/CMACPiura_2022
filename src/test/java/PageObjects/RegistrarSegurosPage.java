@@ -47,6 +47,11 @@ public class RegistrarSegurosPage {
     @FindBy(xpath = "//button[@type=\"submit\"]")
     private WebElement btn_confirmar;
 
+
+    @FindBy(id = "4_01301")private WebElement chk_SeguroDesgravamenSaldoCapital;
+    @FindBy(id = "dps01301")private WebElement txt_SeguroDesgravamenSaldoCapital;
+
+
     public void AbrirVentanaRegistrarSeguros() {
         try{
         identificadoresRegistrarSeguros = driver.getWindowHandles();
@@ -101,7 +106,7 @@ public class RegistrarSegurosPage {
         }
     }
 
-    public void ObtenerNumeroAleatorioDPSSeguroDesgravamen() {
+    public void IngresarDPSSeguroDesgravamen() {
         //int  numero = Abs(-80000000);
         try {
             int min_val = 10000000;
@@ -131,7 +136,7 @@ public class RegistrarSegurosPage {
         }
     }
 
-    public void ObtenerNumeroAleatorioDPSeguroRiesgoPlanPymes() {
+    public void IngresarDPSeguroRiesgoPlanPymes() {
         try {
             int min_val = 10000000;
             int max_val = 99999999;
@@ -212,6 +217,40 @@ public class RegistrarSegurosPage {
             detalleError = "Error al hacer click en el boton confirmar";
             objLogErrores.logError(detalleError, Error);
         }
+    }
+
+
+    public void ClickCheckSeguroDesgravamenSaldoCapital() {
+        try {
+            wait.until(ExpectedConditions.elementToBeClickable(chk_SeguroDesgravamenSaldoCapital));
+            chk_SeguroDesgravamenSaldoCapital.click();
+
+        } catch (Exception Error) {
+            detalleError = "Error al seleccionar el check seguro desgravamen saldo capital";
+            objLogErrores.logError(detalleError, Error);
+
+        }
+    }
+
+    public void IngresarDPSSeguroDesgravamenSaldoCapital(){
+        try{
+        int min_val = 10000000;
+        int max_val = 99999999;
+        Random rand = new Random();
+
+        int rand_val1 = Math.abs(rand.nextInt((max_val - min_val + 2)) + min_val);
+        String DPSSaldoCapital = '9' + String.valueOf(rand_val1);
+        System.out.println("el numero aleatorio es:" + (rand_val1));
+        txt_SeguroDesgravamenSaldoCapital.clear();
+        txt_SeguroDesgravamenSaldoCapital.sendKeys(DPSSaldoCapital);
+    } catch (Exception Error) {
+        detalleError = "Error al ingresar dps de seguro vida plan 1";
+        objLogErrores.logError(detalleError, Error);
+
+
+        }
+
+
     }
 
 }

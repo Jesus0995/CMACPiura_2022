@@ -140,6 +140,7 @@ public class PropuestaCreditoEmpresarialRefinanciacionEspecialDefinitions {
 
     @Then("el sistema muestra ventana propuesta y doy cierro el comunicado")
     public void elSistemaMuestraVentanaPropuestaYDoyCierroElComunicado() {
+
         popUpComunicado.ValidarComunicado();
     }
 
@@ -260,6 +261,7 @@ public class PropuestaCreditoEmpresarialRefinanciacionEspecialDefinitions {
 
     @And("en la ventana Operacion Credito hacer click en boton grabar")
     public void enLaVentanaOperacionCreditoHacerClickEnBotonGrabar() {
+
         operacionCredito.ClickBtnGrabar();
     }
 
@@ -287,7 +289,7 @@ public class PropuestaCreditoEmpresarialRefinanciacionEspecialDefinitions {
     public void enLaVentanaSegurosIngresarInformacionCorrespondienteYHacerClickEnConfirmar() {
         registrarSeguros.AbrirVentanaRegistrarSeguros();
         registrarSeguros.ClickCheckSeguroDesgravamenMN();
-        registrarSeguros.ObtenerNumeroAleatorioDPSSeguroDesgravamen();
+        registrarSeguros.IngresarDPSSeguroDesgravamen();
         registrarSeguros.ClickBtnConfirmar();
         registrarSeguros.CerrarVentanaRegistrarSeguros();
     }

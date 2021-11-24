@@ -1,5 +1,5 @@
 Feature: Crear una propuesta de Credito Empresarial de tipo Refinanciacion Especial en el sistema SGCCRED de Caja Piura
-  Yo como usuario asesor de creditos de Caja Piura
+  Yo como usuario Asesor de Negocios de Caja Piura
   Quiero registrar una propuesta de Credito Empresarial de tipo Refinanciacion Especial mediante archivo Excel
   Para su aprobacion
 

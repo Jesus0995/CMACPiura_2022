@@ -292,7 +292,7 @@ public class PropuestaCreditoEmpresarialDefinitions {
 
     @And("en la ventana Registro Seguros ingresar el numero DPS del seguro desgravamen")
     public void en_la_ventana_Registro_Seguros_ingresar_el_numero_DPS_del_seguro_desgravamen() {
-        registrarSeguros.ObtenerNumeroAleatorioDPSSeguroDesgravamen();
+        registrarSeguros.IngresarDPSSeguroDesgravamen();
     }
 
     @And("en la ventana Registro Seguros hacer check en seguro todo riesgo Plan Pymes")
@@ -302,7 +302,7 @@ public class PropuestaCreditoEmpresarialDefinitions {
 
     @And("en la ventana Registro Seguros ingresar el numero DPS del Seguro Plan Pymes")
     public void en_la_ventana_Registro_Seguros_ingresar_el_numero_DPS_del_Seguro_Plan_Pymes() {
-        registrarSeguros.ObtenerNumeroAleatorioDPSeguroRiesgoPlanPymes();
+        registrarSeguros.IngresarDPSeguroRiesgoPlanPymes();
     }
 
     @And("en la ventana Registro Seguros hacer click en el boton confirmar")
@@ -490,6 +490,7 @@ public class PropuestaCreditoEmpresarialDefinitions {
 
     @And("en la ventana Listado propuesta hacer click en boton regresar")
     public void en_la_ventana_Listado_propuesta_hacer_click_en_boton_regresar() {
+
         listadoPropuesta.ClickBtnRegresar();
     }
 

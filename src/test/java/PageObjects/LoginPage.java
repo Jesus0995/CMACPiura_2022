@@ -73,7 +73,7 @@ public class LoginPage {
 
     public void ClickBtnCerrarSesion() {
         try {
-            objFuncionEsperar.EsperarTiempo(16);
+            objFuncionEsperar.EsperarTiempo(8);
             wait.until(ExpectedConditions.elementToBeClickable(btn_Cerrar));
             btn_Cerrar.click();
         } catch (Exception Error) {

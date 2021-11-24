@@ -425,7 +425,7 @@ public class PropuestaPage {
         WebElement lblNumeroPropuesta = driver.findElement(By.xpath("/html/body/form/table[1]/tbody/tr[3]/td/input[3]"));
         //wait.until(ExpectedConditions.visibilityOf(lblNumeroPropuesta));
         numeroPropuesta = lblNumeroPropuesta.getAttribute("value");//.replace("PROPUESTA DE FINANCIAMIENTO N º","");
-        System.out.println(numeroPropuesta);
+        System.out.println("El numero de propuesta es:"+numeroPropuesta);
         //numeroPropuesta = lblNumeroPropuesta.getText();
     }
 

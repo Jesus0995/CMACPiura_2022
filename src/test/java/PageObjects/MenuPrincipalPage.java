@@ -33,6 +33,10 @@ public class MenuPrincipalPage {
     @FindBy(xpath = "/html/body/table/tbody/tr[1]/td/table[1]/tbody/tr/td[2]/h2/strong/font")
     private WebElement lbl_Titulo;
 
+    @FindBy(linkText = "INFORME VISITA VERIFICACION") private WebElement lnk_InformeVisitaVerificacion;
+
+
+
     //constructor
     public MenuPrincipalPage(WebDriver d) {
         //iniciar variables
@@ -87,12 +91,27 @@ public class MenuPrincipalPage {
         try {
             wait.until(ExpectedConditions.elementToBeClickable(lnk_CerrarSesion));
             lnk_CerrarSesion.click();
-            objFuncionEsperar.EsperarTiempo(30);
+            objFuncionEsperar.EsperarTiempo(15);
         } catch (Exception Error) {
             detalleError = "Error al seleccionar el link Cerrar Sesion";
             objLogErrores.logError(detalleError, Error);
         }
     }
+
+    public void ClickInformeVisitaVerificacion(){
+        try {
+            wait.until(ExpectedConditions.elementToBeClickable(lnk_InformeVisitaVerificacion));
+            lnk_InformeVisitaVerificacion.click();
+
+        }catch (Exception Error){
+            detalleError = "Error al seleccionar el link Informe Visita Verificacion";
+            objLogErrores.logError(detalleError,Error);
+
+        }
+
+
+    }
+
 
     public void CerrarVentanaEmergente(){
 

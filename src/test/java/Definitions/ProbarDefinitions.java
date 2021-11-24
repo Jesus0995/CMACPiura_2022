@@ -34,19 +34,16 @@ public class ProbarDefinitions {
 
     }
 
-    @When("pruebaa")
-    public void pruebaa(DataTable listadoCondicion) {
-        List<Map<String, String>> lista = listadoCondicion.asMaps(String.class, String.class);
-        {
-            for (int i = 0; i < lista.size(); i++) {
-                condicionesRefinanciar.IngresarMontoAmortizar(lista.get(i).get("MontoAmortizar"));
-                condicionesRefinanciar.IngresarInteresRefinanciar(lista.get(i).get("InteresRefinanciar"));
 
-            }
-            condicionesRefinanciar.ClickBtnGrabar();
+    @When("pruebaa {string}")
+    public void pruebaa(String MontoAmortizar) {
+        condicionesRefinanciar.IngresarMontoAmortizar(MontoAmortizar);
 
-        }
+    }
 
+    @Then("pruebaaa {string}")
+    public void pruebaaa(String InteresRefinanciar) {
+        condicionesRefinanciar.IngresarInteresRefinanciar(InteresRefinanciar);
     }
 }
 
