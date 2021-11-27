@@ -130,7 +130,7 @@ public class ExcelCreditoEmpresarialDefinitions {
             operacioncredito.SeleccionarDepartamento(datosExcel[i][14]);
             operacioncredito.SeleccionarProvincia(datosExcel[i][15]);
             operacioncredito.SeleccionarDistrito(datosExcel[i][16]);
-            operacioncredito.ObtenerFechaDesembolso();
+            operacioncredito.IngresarFechaDesembolso();
             operacioncredito.IngresarNotas(datosExcel[i][17]);
             operacioncredito.ClickBtnGrabar();
             operacioncredito.ObtenerAlerta();

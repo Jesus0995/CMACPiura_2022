@@ -75,6 +75,8 @@ public class PropuestaPage {
     //  @FindBy(xpath = "/html/body/div/table/tbody/tr/td[2]/h3") private WebElement lblNumeroPropuesta;
     @FindBy (xpath = "/html/body/form/table[1]/tbody/tr[3]/td/div/table[9]/tbody/tr/td[2]/button")private WebElement btn_CancelarPagares;
     @FindBy(xpath = "/html/body/form/table[1]/tbody/tr[3]/td/div/table[10]/tbody/tr[2]/td[9]/span/img")private WebElement icn_CondicionRefinanciar;
+    @FindBy(xpath = "/html/body/form/table[1]/tbody/tr[2]/td/table[1]/tbody/tr[2]/td[1]/table/tbody/tr/td[17]/a") private WebElement btn_Regresar;
+
 
     public PropuestaPage(WebDriver d) {
         driver = d;
@@ -434,11 +436,25 @@ public class PropuestaPage {
         wait.until(ExpectedConditions.elementToBeClickable(icn_CondicionRefinanciar));
             icn_CondicionRefinanciar.click();
 
-
     }catch (Exception Error){
         detalleError = "Error al seleccionar boton cancelar pagares";
         objLogErrores.logError(detalleError,Error);
         }
+    }
+
+
+    public void ClickBtnRegresar(){
+        try {
+            wait.until(ExpectedConditions.elementToBeClickable(btn_Regresar));
+            btn_Regresar.click();
+            objFuncionEsperar.EsperarTiempo(2);
+
+        }catch (Exception Error){
+            detalleError = "Error al seleccionar el boton regresar";
+            objLogErrores.logError(detalleError,Error);
+
+        }
+
     }
 
 }

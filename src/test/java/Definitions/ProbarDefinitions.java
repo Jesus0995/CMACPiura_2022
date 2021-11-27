@@ -16,6 +16,7 @@ public class ProbarDefinitions {
     RegistrarSegurosPage registroseg;
     CondicionesRefinanciarPage condicionesRefinanciar;
     OperacionCreditoPage operacionCredito;
+    InformeEEFFConsolidadoGrupoVinculadoPage informe;
 
 
     private funcionExcel objExcel = new funcionExcel();
@@ -24,27 +25,30 @@ public class ProbarDefinitions {
         propuesta = new PropuestaPage(Hooks.driver);
         condicionesRefinanciar = new CondicionesRefinanciarPage(Hooks.driver);
         operacionCredito = new OperacionCreditoPage(Hooks.driver);
+        informe = new InformeEEFFConsolidadoGrupoVinculadoPage(Hooks.driver);
 
 
     }
 
     @Given("la pagina esta disponible")
     public void la_pagina_esta_disponible() {
-        Hooks.driver.get("file:///C:/Users/Usuario/Documents/Condiciones%20a%20refinanciar.html");
+        Hooks.driver.get("file:///C:/Users/Usuario/Documents/Sistema%20de%20Gestion%20de%20Creditos-consolidado.html");
 
     }
 
 
-    @When("pruebaa {string}")
-    public void pruebaa(String MontoAmortizar) {
-        condicionesRefinanciar.IngresarMontoAmortizar(MontoAmortizar);
+    @When("pruebaa")
+    public void pruebaa() {
+        informe.IngresarAnalisis();
 
     }
 
-    @Then("pruebaaa {string}")
-    public void pruebaaa(String InteresRefinanciar) {
-        condicionesRefinanciar.IngresarInteresRefinanciar(InteresRefinanciar);
+    @Then("pruebaaa")
+    public void pruebaaa() {
+        informe.IngresarConducta();
     }
+
+
 }
 
 

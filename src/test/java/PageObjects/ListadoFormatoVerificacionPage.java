@@ -45,10 +45,12 @@ public class ListadoFormatoVerificacionPage {
 
     public void ClickBtnIngresarNuevoFormato(){
         try {
-            wait.until(ExpectedConditions.elementToBeClickable(btn_Buscar));
-
-
+            wait.until(ExpectedConditions.elementToBeClickable(btn_IngresarNuevoFormato));
+            btn_IngresarNuevoFormato.click();
+            objFuncionEsperar.EsperarTiempo(1);
         }catch (Exception Error){
+            detalleError = "Error al seleccionar el boton ingresar nuevo formato";
+            objLogErrores.logError(detalleError,Error);
 
 
         }

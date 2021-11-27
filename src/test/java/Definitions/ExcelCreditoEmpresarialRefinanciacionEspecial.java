@@ -23,9 +23,9 @@ public class ExcelCreditoEmpresarialRefinanciacionEspecial {
     RegistrarSegurosPage registrarSeguros;
     ConfirmarSegurosSeleccionadosPage confirmarSeguros;
     AnexarChecklistPage anexarCheckListCreditos;
-    ConfirmacionChecklistPage   confirmarCheckList;
-    SeleccionarGarantiaPage   seleccionarGarantia;
-    SeleccionarGarantiasExistentesPage   seleccionarGarantiasExistentes;
+    ConfirmacionChecklistPage confirmarCheckList;
+    SeleccionarGarantiaPage seleccionarGarantia;
+    SeleccionarGarantiasExistentesPage seleccionarGarantiasExistentes;
     CancelandoPagaresPage cancelandoPagares;
 
     EnlazarEstadosFinancierosPage enlazarEstadosFinancieros;
@@ -62,7 +62,7 @@ public class ExcelCreditoEmpresarialRefinanciacionEspecial {
         enlazarEstadosFinancieros = new EnlazarEstadosFinancierosPage(Hooks.driver);
         desenlazarInformeVisita = new DesenlazarInformeVisitaPage(Hooks.driver);
         enlazarInformeVisita = new EnlazarInformeVisitaPage(Hooks.driver);
-        enlazarInformeComercialNuevo = new  EnlazarInformeComercialNuevoPage(Hooks.driver);
+        enlazarInformeComercialNuevo = new EnlazarInformeComercialNuevoPage(Hooks.driver);
         informeEEFFConsolidadoGrupoVinculado = new InformeEEFFConsolidadoGrupoVinculadoPage(Hooks.driver);
         grabarPropuesta = new GrabarInformacionDocumentoPage(Hooks.driver);
 
@@ -71,13 +71,12 @@ public class ExcelCreditoEmpresarialRefinanciacionEspecial {
     }
 
 
-
-
     @Given("la pagina web SGCRED esta disponible para su uso")
     public void la_pagina_web_sgcred_esta_disponible_para_su_uso() {
         Hooks.driver.get("http://10.0.203.16:8082/propuesta/");
 
     }
+
     @When("el usuario y password tengan lo siguiente")
     public void el_usuario_y_password_tengan_lo_siguiente(DataTable users) {
         List<Map<String, String>> lista = users.asMaps(String.class, String.class);
@@ -89,11 +88,13 @@ public class ExcelCreditoEmpresarialRefinanciacionEspecial {
         }
 
     }
+
     @When("hacer click en el boton ingresar y muestra el menu principal")
     public void hacer_click_en_el_boton_ingresar_y_muestra_el_menu_principal() {
         login.ClickSubmit();
 
     }
+
     @Then("ejecutar los registros de propuestas de Credito Empresarial Refinanciacion Especial desde Excel {string}")
     public void ejecutar_los_registros_de_propuestas_de_credito_empresarial_refinanciacion_especial_desde_excel(String arg0) {
 
@@ -106,7 +107,7 @@ public class ExcelCreditoEmpresarialRefinanciacionEspecial {
             listadoPropuesta.ClickBtnCrearPropuesta();
             listadoClientes.SeleccionarTabCodigo();
             listadoClientes.IngresarCodigoCliente(datosExcel[i][0]);
-            System.out.println("Mostrar codigo del cliente"+datosExcel[i][0]);
+            System.out.println("Mostrar codigo del cliente " + datosExcel[i][0]);
             listadoClientes.ClickBuscarCliente();
             listadoClientes.SeleccionarIconoPropuesta();
             seleccionarServicio.AbrirVentanaServicio();
@@ -120,7 +121,7 @@ public class ExcelCreditoEmpresarialRefinanciacionEspecial {
             seleccionarServicio.ClickBtnCargar();
             seleccionarServicio.CerrarVentanaServicio();
             popUpComunicado.ValidarComunicado();
-            propuesta.CapturarNumeroPropuesta();
+
 
             propuesta.ClickIconoCondicionRefinanciar();
             condicionesRefinanciar.AbrirVentanaCondicionRefinanciar();
@@ -212,17 +213,27 @@ public class ExcelCreditoEmpresarialRefinanciacionEspecial {
             enlazarInformeVisita.ClickBtnRealizar();
             enlazarInformeVisita.CerrarVentanaEnlazarInformeVisita();
 
+            /*
+            propuesta.ClickBtnEnlazarEEFFGrupoVinculadO();
+            informeEEFFConsolidadoGrupoVinculado.AbrirVentanaInformeEstadoFinancieroConsolidadoGrupo();
+            informeEEFFConsolidadoGrupoVinculado.ObtenerEtiqueta();
+            informeEEFFConsolidadoGrupoVinculado.IngresarAnalisis();
+            informeEEFFConsolidadoGrupoVinculado.IngresarConducta();
+            informeEEFFConsolidadoGrupoVinculado.ClickBtnGrabar();
+            informeEEFFConsolidadoGrupoVinculado.ClickBtnFinalizar();
+            informeEEFFConsolidadoGrupoVinculado.ClickBtnCerrar();
+            informeEEFFConsolidadoGrupoVinculado.CerrarVentanaInformeEstadoFinancieroConsolidadoGrupo();
+            */
             propuesta.IngresarComentariosRatios(datosExcel[i][17]);
-
+            propuesta.CapturarNumeroPropuesta();
 
             propuesta.ClickMenuGrabarPropuesta();
             grabarPropuesta.AbrirVentanaGrabarPropuesta();
             grabarPropuesta.ClickBtnCerrarInformacion();
             grabarPropuesta.CerrarVentanaGrabarPropuesta();
 
-
-
-
+            propuesta.ClickBtnRegresar();
+            listadoPropuesta.ClickBtnRegresar();
 
         }
     }

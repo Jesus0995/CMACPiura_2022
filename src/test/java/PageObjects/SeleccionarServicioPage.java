@@ -56,7 +56,6 @@ public class SeleccionarServicioPage {
             objFuncionVentana.cambiarVentanaInicial();
             System.out.println("Fin cerrar ventana");
         } catch (Exception Error) {
-            Error.printStackTrace();
             detalleError = "Al cerrar ventana servicio se presenta los siguientes errores";
             objLogErrores.logError(detalleError, Error);
         }

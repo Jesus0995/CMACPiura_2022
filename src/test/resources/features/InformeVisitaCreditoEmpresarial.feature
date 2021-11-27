@@ -3,7 +3,7 @@ Feature: Registrar informe de visita con el perfil Asesor de Negocio
   Quiero registrar informe de visitas
   Para enlazar a la creacion de Propuestas
 
-@Prueba
+  @Prueba
   Scenario Outline: Registrar informe de visitas de los clientes en el sistema SGCRED
     Given la web SGCRED esta disponible para usarla
     When ingreso usuario y password del perfil Asesor de Negocio
@@ -40,8 +40,8 @@ Feature: Registrar informe de visita con el perfil Asesor de Negocio
     And finalmente cerramos el navegador
 
     Examples:
-      | cliente |
-      | 2640546 |
+      | cliente  |
+      | 19499545 |
 
 
 

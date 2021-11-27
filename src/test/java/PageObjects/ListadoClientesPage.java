@@ -32,6 +32,9 @@ public class ListadoClientesPage {
     @FindBy(xpath = "//table[3]/tbody/tr/td/div/button[1]") private WebElement btn_Regresar;
 
     @FindBy(xpath = "//img[@alt='Ver Informes de Visitas']") private WebElement icn_VerInformeVisita;
+    @FindBy(xpath = "/html/body/table/tbody/tr[2]/td/table[1]/tbody/tr/td/div[2]/form/table/tbody/tr[1]/td[2]/input") private WebElement txt_CodigoClienteInformeVisita;
+    @FindBy(xpath = "/html/body/table/tbody/tr[2]/td/table[1]/tbody/tr/td/div[2]/form/table/tbody/tr[2]/td/button[1]")
+    private WebElement btn_BuscarCodigoClienteInforme;
 
 
     public ListadoClientesPage(WebDriver d) {
@@ -88,6 +91,31 @@ public class ListadoClientesPage {
             detalleError = "Error al hacer click en el botón Regresar";
             objLogErrores.logError(detalleError, Error);
         }
+
+    }
+
+    public void IngresarCodigoClienteInformeVisita(String CodigoClienteInformeVisita){
+        try {
+            txt_CodigoClienteInformeVisita.clear();
+            txt_CodigoClienteInformeVisita.sendKeys(CodigoClienteInformeVisita);
+
+        }catch (Exception Error){
+            detalleError= "Error al ingresar el codigo de cliente para crear informe de visita";
+            objLogErrores.logError(detalleError,Error);
+        }
+    }
+
+    public void ClickBtnBuscarCodigoClienteInformeVisita(){
+        try {
+            wait.until(ExpectedConditions.elementToBeClickable(btn_BuscarCodigoClienteInforme));
+            btn_BuscarCodigoClienteInforme.click();
+
+        }catch (Exception Error){
+            detalleError = "Error al seleccionar el boton buscar";
+            objLogErrores.logError(detalleError,Error);
+
+        }
+
 
     }
 

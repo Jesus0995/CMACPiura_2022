@@ -192,7 +192,7 @@ public class OperacionCreditoPage {
             WebElement Opcion = driver.findElement(By.xpath("//*[text() = '" + OpcionPagos + "']"));
             String JScript = Opcion.getAttribute("onclick");
             ((JavascriptExecutor) driver).executeScript(JScript);
-            objFuncionEsperar.EsperarTiempo(3);
+            objFuncionEsperar.EsperarTiempo(2);
         } catch (Exception Error) {
             detalleError = "Error al seleccionar Opción de Pagos";
             objLogErrores.logError(detalleError, Error);
@@ -203,7 +203,7 @@ public class OperacionCreditoPage {
         try {
             Select Opcion = new Select(driver.findElement(By.xpath("//select[@name='pago']")));
             Opcion.selectByVisibleText(DiaPagos);
-            objFuncionEsperar.EsperarTiempo(3);
+            objFuncionEsperar.EsperarTiempo(2);
         } catch (Exception Error) {
             detalleError = "Error al seleccionar Dias de pago";
             objLogErrores.logError(detalleError, Error);
@@ -284,17 +284,6 @@ public class OperacionCreditoPage {
         }
     }
 
-    public void ObtenerFechaDesembolso() {
-        try {
-            txt_FechaDesembolso.clear();
-            txt_FechaDesembolso.sendKeys(objFuncionFecha.devolverFechaActual());
-            objFuncionEsperar.EsperarTiempo(1);
-        } catch (Exception Error) {
-            detalleError = "Error al ingresar Fecha de Desembolso";
-            objLogErrores.logError(detalleError, Error);
-        }
-    }
-
     public void IngresarFechaDesembolso() {
         try {
             txt_FechaDesembolso.clear();
@@ -343,7 +332,7 @@ public class OperacionCreditoPage {
             WebElement btn_CalcularRefinanciacion = driver.findElement(By.xpath("/html/body/table[3]/tbody/tr[1]/td[4]/button"));
             wait.until(ExpectedConditions.elementToBeClickable(btn_CalcularRefinanciacion));
             btn_CalcularRefinanciacion.click();
-            objFuncionEsperar.EsperarTiempo(60);
+            objFuncionEsperar.EsperarTiempo(50);
         } catch (Exception Error) {
             detalleError = "Error al hacer click en el botón Calcular refinanciacion";
             objLogErrores.logError(detalleError, Error);

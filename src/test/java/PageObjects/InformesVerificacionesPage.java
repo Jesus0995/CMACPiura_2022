@@ -30,7 +30,6 @@ public class InformesVerificacionesPage {
         try {
         wait.until(ExpectedConditions.elementToBeClickable(btn_CrearInformeVerificacion));
         btn_CrearInformeVerificacion.click();
-
         }catch (Exception Error){
             detalleError= "Error al seleccionar el boton crear informe verificacion";
             objLogErrores.logError(detalleError,Error);
