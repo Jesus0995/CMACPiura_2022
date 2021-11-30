@@ -9,6 +9,9 @@ import java.io.*;
 
 public class WriteExcelFile {
 
+    public static String valorescrito = new String();
+
+
     public static void main(String[] args) throws Exception{
 
         File src = new File ("C:\\CajaPiuraCMAC2021\\target\\DatosExcel\\DatosCreditoEmpresarial.xlsx");
@@ -16,8 +19,8 @@ public class WriteExcelFile {
         XSSFWorkbook wb = new XSSFWorkbook(fis);
 
         XSSFSheet sheet1 = wb.getSheetAt(0);
-        sheet1.getRow(0).createCell(21).setCellValue("Pass");
-        sheet1.getRow(1).createCell(21).setCellValue("Fail");
+        sheet1.getRow(1).createCell(21).setCellValue(valorescrito);
+        sheet1.getRow(2).createCell(21).setCellValue(valorescrito);
         FileOutputStream fout = new FileOutputStream(src);
         wb.write(fout);
         wb.close();

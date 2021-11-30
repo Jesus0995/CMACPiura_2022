@@ -7,7 +7,7 @@ import io.cucumber.java.en.*;
 import java.util.List;
 import java.util.Map;
 
-public class RegistrarInformeVisitaVerificacion {
+public class RegistrarInformeVisitaVerificacionDefinitions {
     LoginPage login;
     MenuPrincipalPage menuPrincipal;
     ListadoFormatoVerificacionPage listadoFormatoVerificacion;
@@ -17,10 +17,11 @@ public class RegistrarInformeVisitaVerificacion {
     InformeVisitaVerificacionPage informeVisitaVerificacion;
     GrabarInformacionDocumentoPage grabarDocumento;
 
+
     ExcelPage excel;
 
 
-    public RegistrarInformeVisitaVerificacion() {
+    public RegistrarInformeVisitaVerificacionDefinitions() {
         login = new LoginPage(Hooks.driver);
         menuPrincipal = new MenuPrincipalPage(Hooks.driver);
         listadoFormatoVerificacion = new ListadoFormatoVerificacionPage(Hooks.driver);
@@ -92,12 +93,11 @@ grabarDocumento = new GrabarInformacionDocumentoPage(Hooks.driver);
             grabarDocumento.CerrarVentanaGrabarPropuesta();
             informeVisitaVerificacion.ClickBtnFinalizar();
 
+            grabarDocumento.AbrirVentanaGrabarPropuesta();
+            grabarDocumento.ClickBtnCerrarInformacion();
+            grabarDocumento.CerrarVentanaGrabarPropuesta();
 
-
-
-
-
-
+            listadoFormatoVerificacion.ClickBtnRegresar();
 
         }
 

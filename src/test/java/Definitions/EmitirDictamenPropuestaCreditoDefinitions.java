@@ -11,7 +11,7 @@ import java.util.Map;
 
 import static Support.screenshot.pantallazo;
 
-public class EmitirDictamenPropuestaCredito {
+public class EmitirDictamenPropuestaCreditoDefinitions {
 
     LoginPage login;
     MenuPrincipalPage menuPrincipal;
@@ -24,7 +24,7 @@ public class EmitirDictamenPropuestaCredito {
     ExcelPage excel;
 
 
-    public EmitirDictamenPropuestaCredito() {
+    public EmitirDictamenPropuestaCreditoDefinitions() {
 
         login = new LoginPage(Hooks.driver);
         menuPrincipal = new MenuPrincipalPage(Hooks.driver);
@@ -66,16 +66,16 @@ public class EmitirDictamenPropuestaCredito {
         for (int i = 1; i < datosExcel.length; i++) {
             menuPrincipal.ClickPropuestaFinanciamiento();
             listadoPropuesta.ClickTipoBusquedaAprobacion();
-            listadoPropuesta.IngresarNumeroPropuesta(datosExcel[i][0]);
-            System.out.println("El numero de propuesta es" + datosExcel[i][0]);
+            listadoPropuesta.IngresarNumeroPropuesta(datosExcel[i][19]);
+            System.out.println("El numero de propuesta es" + datosExcel[i][19]);
             listadoPropuesta.ClickBtnBuscar();
             listadoPropuesta.ClickEditarPropuesta();
             popUpComunicado.ValidarComunicado();
             propuesta.AbrirOpcionesDictamen();
             propuesta.ClickBtnAprobarPropuesta();
             aprobarDictamenPropuesta.AbrirVentanaAprobarDictamenPropuesta();
-            aprobarDictamenPropuesta.IngresarObservaciones(datosExcel[i][1]);
-            aprobarDictamenPropuesta.IngresarContrasena(datosExcel[i][2]);
+            aprobarDictamenPropuesta.IngresarObservaciones(datosExcel[i][20]);
+            aprobarDictamenPropuesta.IngresarContrasena(datosExcel[i][21]);
             aprobarDictamenPropuesta.ClickBtnProcesar();
             aprobarDictamenPropuesta.CerrarVentanaAprobarDictamenPropuesta();
             grabarPropuesta.AbrirVentanaGrabarPropuesta();

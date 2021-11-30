@@ -17,7 +17,7 @@ public class InformesVerificacionesPage {
     private funcionEsperar objFuncionEsperar = new funcionEsperar();
     private String detalleError = new String();
 
-    @FindBy(xpath = "/html/body/table/tbody/tr[2]/td/div/table[2]/tbody/tr[3]/td/button[1]") private WebElement btn_CrearInformeVerificacion;
+    @FindBy(xpath = "//*[text()=\"Crear Informe Verificación\"]") private WebElement btn_CrearInformeVerificacion;
 
     public InformesVerificacionesPage(WebDriver d) {
         driver = d;
@@ -28,8 +28,10 @@ public class InformesVerificacionesPage {
 
     public void ClickBtnCrearInformeVerificacion(){
         try {
+        objFuncionEsperar.EsperarTiempo(1);
         wait.until(ExpectedConditions.elementToBeClickable(btn_CrearInformeVerificacion));
         btn_CrearInformeVerificacion.click();
+        objFuncionEsperar.EsperarTiempo(2);
         }catch (Exception Error){
             detalleError= "Error al seleccionar el boton crear informe verificacion";
             objLogErrores.logError(detalleError,Error);

@@ -54,7 +54,7 @@ public class InformeVisitaVerificacionPage {
 
     public InformeVisitaVerificacionPage(WebDriver d) {
         driver = d;
-        wait = new WebDriverWait(driver, 30);
+        wait = new WebDriverWait(driver, 60);
         PageFactory.initElements(driver, this);
 
 

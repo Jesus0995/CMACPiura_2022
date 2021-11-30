@@ -7,7 +7,7 @@ import io.cucumber.java.en.*;
 import java.util.List;
 import java.util.Map;
 
-public class ExcelCreditoEmpresarialRefinanciacionEspecial {
+public class ExcelCreditoEmpresarialRefinanciacionEspecialDefinitions {
 
     LoginPage login;
     MenuPrincipalPage menuPrincipal;
@@ -38,7 +38,7 @@ public class ExcelCreditoEmpresarialRefinanciacionEspecial {
     ExcelPage excel;
 
 
-    public ExcelCreditoEmpresarialRefinanciacionEspecial() {
+    public ExcelCreditoEmpresarialRefinanciacionEspecialDefinitions() {
 
         login = new LoginPage(Hooks.driver);
         menuPrincipal = new MenuPrincipalPage(Hooks.driver);
@@ -227,6 +227,7 @@ public class ExcelCreditoEmpresarialRefinanciacionEspecial {
             propuesta.IngresarComentariosRatios(datosExcel[i][17]);
             propuesta.CapturarNumeroPropuesta();
 
+
             propuesta.ClickMenuGrabarPropuesta();
             grabarPropuesta.AbrirVentanaGrabarPropuesta();
             grabarPropuesta.ClickBtnCerrarInformacion();
@@ -234,6 +235,9 @@ public class ExcelCreditoEmpresarialRefinanciacionEspecial {
 
             propuesta.ClickBtnRegresar();
             listadoPropuesta.ClickBtnRegresar();
+
+
+
 
         }
     }
