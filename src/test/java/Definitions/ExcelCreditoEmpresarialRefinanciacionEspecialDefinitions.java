@@ -34,6 +34,7 @@ public class ExcelCreditoEmpresarialRefinanciacionEspecialDefinitions {
     EnlazarInformeComercialNuevoPage enlazarInformeComercialNuevo;
     InformeEEFFConsolidadoGrupoVinculadoPage informeEEFFConsolidadoGrupoVinculado;
     GrabarInformacionDocumentoPage grabarPropuesta;
+    String Valor;
 
     ExcelPage excel;
 
@@ -65,6 +66,7 @@ public class ExcelCreditoEmpresarialRefinanciacionEspecialDefinitions {
         enlazarInformeComercialNuevo = new EnlazarInformeComercialNuevoPage(Hooks.driver);
         informeEEFFConsolidadoGrupoVinculado = new InformeEEFFConsolidadoGrupoVinculadoPage(Hooks.driver);
         grabarPropuesta = new GrabarInformacionDocumentoPage(Hooks.driver);
+
 
         excel = new ExcelPage();
 
@@ -100,6 +102,7 @@ public class ExcelCreditoEmpresarialRefinanciacionEspecialDefinitions {
 
         String[][] datosExcel;
         datosExcel = excel.LeerArchivoExcel(arg0, 0);
+
 
         for (int i = 1; i < datosExcel.length; i++) {
 
@@ -225,21 +228,24 @@ public class ExcelCreditoEmpresarialRefinanciacionEspecialDefinitions {
             informeEEFFConsolidadoGrupoVinculado.CerrarVentanaInformeEstadoFinancieroConsolidadoGrupo();
             */
             propuesta.IngresarComentariosRatios(datosExcel[i][17]);
-            propuesta.CapturarNumeroPropuesta();
-
 
             propuesta.ClickMenuGrabarPropuesta();
             grabarPropuesta.AbrirVentanaGrabarPropuesta();
             grabarPropuesta.ClickBtnCerrarInformacion();
             grabarPropuesta.CerrarVentanaGrabarPropuesta();
 
+            Valor = propuesta.CapturarNumeroPropuesta();
+            excel.EscribirExcel(arg0, 0, i, 20, Valor);
+
             propuesta.ClickBtnRegresar();
             listadoPropuesta.ClickBtnRegresar();
 
 
-
-
         }
+
+        menuPrincipal.ClickBtnCerrarSesion();
+        login.ClickBtnCerrarSesion();
+        Hooks.driver.close();
     }
 
 }

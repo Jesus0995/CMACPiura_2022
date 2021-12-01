@@ -64,18 +64,19 @@ public class EmitirDictamenPropuestaCreditoDefinitions {
         String[][] datosExcel;
         datosExcel = excel.LeerArchivoExcel(arg0, 0);
         for (int i = 1; i < datosExcel.length; i++) {
+
             menuPrincipal.ClickPropuestaFinanciamiento();
             listadoPropuesta.ClickTipoBusquedaAprobacion();
-            listadoPropuesta.IngresarNumeroPropuesta(datosExcel[i][19]);
-            System.out.println("El numero de propuesta es" + datosExcel[i][19]);
+            listadoPropuesta.IngresarNumeroPropuesta(datosExcel[i][20]);
+            System.out.println("El numero de propuesta es" + datosExcel[i][20]);
             listadoPropuesta.ClickBtnBuscar();
             listadoPropuesta.ClickEditarPropuesta();
             popUpComunicado.ValidarComunicado();
             propuesta.AbrirOpcionesDictamen();
             propuesta.ClickBtnAprobarPropuesta();
             aprobarDictamenPropuesta.AbrirVentanaAprobarDictamenPropuesta();
-            aprobarDictamenPropuesta.IngresarObservaciones(datosExcel[i][20]);
-            aprobarDictamenPropuesta.IngresarContrasena(datosExcel[i][21]);
+            aprobarDictamenPropuesta.IngresarObservaciones(datosExcel[i][18]);
+            aprobarDictamenPropuesta.IngresarContrasena(datosExcel[i][19]);
             aprobarDictamenPropuesta.ClickBtnProcesar();
             aprobarDictamenPropuesta.CerrarVentanaAprobarDictamenPropuesta();
             grabarPropuesta.AbrirVentanaGrabarPropuesta();
@@ -84,9 +85,11 @@ public class EmitirDictamenPropuestaCreditoDefinitions {
             grabarPropuesta.CerrarVentanaGrabarPropuesta();
             listadoPropuesta.ClickBtnRegresar();
 
-
         }
 
+        menuPrincipal.ClickBtnCerrarSesion();
+        login.ClickBtnCerrarSesion();
+        Hooks.driver.close();
 
     }
 
