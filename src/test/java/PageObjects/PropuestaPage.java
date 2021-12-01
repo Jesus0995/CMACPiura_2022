@@ -73,9 +73,21 @@ public class PropuestaPage {
     private WebElement btn_EnlazarEEFFGrupoVinculado;
 
     //  @FindBy(xpath = "/html/body/div/table/tbody/tr/td[2]/h3") private WebElement lblNumeroPropuesta;
-    @FindBy (xpath = "/html/body/form/table[1]/tbody/tr[3]/td/div/table[9]/tbody/tr/td[2]/button")private WebElement btn_CancelarPagares;
-    @FindBy(xpath = "/html/body/form/table[1]/tbody/tr[3]/td/div/table[10]/tbody/tr[2]/td[9]/span/img")private WebElement icn_CondicionRefinanciar;
-    @FindBy(xpath = "/html/body/form/table[1]/tbody/tr[2]/td/table[1]/tbody/tr[2]/td[1]/table/tbody/tr/td[17]/a") private WebElement btn_Regresar;
+    @FindBy(xpath = "/html/body/form/table[1]/tbody/tr[3]/td/div/table[9]/tbody/tr/td[2]/button")
+    private WebElement btn_CancelarPagares;
+    @FindBy(xpath = "/html/body/form/table[1]/tbody/tr[3]/td/div/table[10]/tbody/tr[2]/td[9]/span/img")
+    private WebElement icn_CondicionRefinanciar;
+
+    @FindBy(name = "btnEnviar")
+    private WebElement btn_SolicitarReprogramacion;
+    @FindBy(xpath = "//button[text()='Desenlazar']")
+    private WebElement btn_DesenlazarInformeVisitaReprogramacion;
+    @FindBy(xpath = "/html/body/form/table/tbody/tr[3]/td/div/table[22]/tbody/tr[1]/td[3]/button")
+    private WebElement btn_EnlazarInformeVisitaReprogramacion;
+    @FindBy(xpath = "/html/body/form/table/tbody/tr[3]/td/div/table[22]/tbody/tr[2]/td[3]/button")
+    private WebElement btn_EnlazarInformeComercialReprogramacion;
+    @FindBy(xpath = "//img[@alt='Regresar']")
+    private WebElement btn_Regresar;
 
 
     public PropuestaPage(WebDriver d) {
@@ -420,41 +432,96 @@ public class PropuestaPage {
         }
     }
 
-    public void CapturarNumeroPropuesta() {
-        //objFuncionEsperar.EsperarTiempo(35);
+    public String CapturarNumeroPropuesta() {
 
-        //WebElement lblNumeroPropuesta = driver.findElement(By.xpath("/html/body/form/table[1]/tbody/tr[1]/td/table[1]/tbody/tr/td[2]/h2/strong/font"));
         WebElement lblNumeroPropuesta = driver.findElement(By.xpath("/html/body/form/table[1]/tbody/tr[3]/td/input[3]"));
-        //wait.until(ExpectedConditions.visibilityOf(lblNumeroPropuesta));
         numeroPropuesta = lblNumeroPropuesta.getAttribute("value");//.replace("PROPUESTA DE FINANCIAMIENTO N º","");
-        System.out.println("El numero de propuesta es: "+numeroPropuesta);
-        //numeroPropuesta = lblNumeroPropuesta.getText();
+        System.out.println("El numero de propuesta es: " + numeroPropuesta);
+        return numeroPropuesta;
     }
 
-    public void ClickIconoCondicionRefinanciar(){
+    public void ClickIconoCondicionRefinanciar() {
         try {
-        wait.until(ExpectedConditions.elementToBeClickable(icn_CondicionRefinanciar));
+            wait.until(ExpectedConditions.elementToBeClickable(icn_CondicionRefinanciar));
             icn_CondicionRefinanciar.click();
 
-    }catch (Exception Error){
-        detalleError = "Error al seleccionar boton cancelar pagares";
-        objLogErrores.logError(detalleError,Error);
+        } catch (Exception Error) {
+            detalleError = "Error al seleccionar boton cancelar pagares";
+            objLogErrores.logError(detalleError, Error);
         }
     }
 
 
-    public void ClickBtnRegresar(){
+    public void ClickBtnRegresar() {
         try {
             wait.until(ExpectedConditions.elementToBeClickable(btn_Regresar));
             btn_Regresar.click();
             objFuncionEsperar.EsperarTiempo(2);
 
-        }catch (Exception Error){
+        } catch (Exception Error) {
             detalleError = "Error al seleccionar el boton regresar";
-            objLogErrores.logError(detalleError,Error);
+            objLogErrores.logError(detalleError, Error);
 
         }
 
     }
 
+
+    //----------- Flujo de Reprogramación -----------------------
+
+    public void ClickBtnSolicitarReprogramacion() {
+        try {
+            objFuncionEsperar.EsperarTiempo(1);
+            wait.until(ExpectedConditions.elementToBeClickable(btn_SolicitarReprogramacion));
+            btn_SolicitarReprogramacion.click();
+        } catch (Exception Error) {
+            detalleError = "Error al hacer click en el botón Solicitar Reprogramación";
+            objLogErrores.logError(detalleError, Error);
+        }
+    }
+
+    public void ClickDesenlazarInformeVisitaReprogramacion() {
+        try {
+            wait.until(ExpectedConditions.elementToBeClickable(btn_DesenlazarInformeVisitaReprogramacion));
+            btn_DesenlazarInformeVisitaReprogramacion.click();
+
+        } catch (Exception Error) {
+            detalleError = "Error al seleccionar el boton desenlazar informe visita reprogramacion";
+            objLogErrores.logError(detalleError, Error);
+        }
+    }
+
+    public void ClickEnlazarInformeVisitaReprogramacion() {
+        try {
+            wait.until(ExpectedConditions.elementToBeClickable(btn_EnlazarInformeVisitaReprogramacion));
+            btn_EnlazarInformeVisitaReprogramacion.click();
+
+        } catch (Exception Error) {
+            detalleError = "Error al seleccionar el boton enlazar informe visita reprogramación";
+            objLogErrores.logError(detalleError, Error);
+        }
+    }
+
+    public void ClickEnlazarInformeComercialReprogramacion() {
+        try {
+            wait.until(ExpectedConditions.elementToBeClickable(btn_EnlazarInformeComercialReprogramacion));
+            btn_EnlazarInformeComercialReprogramacion.click();
+
+        } catch (Exception Error) {
+            detalleError = "Error al seleccionar el botón enlazar informe comercial reprogramacion";
+            objLogErrores.logError(detalleError, Error);
+        }
+    }
+
+
+
 }
+
+
+
+
+
+
+
+
+

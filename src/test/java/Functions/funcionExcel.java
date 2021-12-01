@@ -93,41 +93,31 @@ public class funcionExcel {
         }
     }
 
-    public String[][] EscribirExcel(String Archivo, Integer Hoja) {
-
-        String[] dataToWrite = {"Hola","hola"};
+    public void EscribirExcel(String Archivo, Integer Hoja, Integer Fila, Integer Columna, String Valor) {
 
         try {
             File archivoExcel = new File(rutaArchivos + "\\" + Archivo);
             FileInputStream streamExcel = new FileInputStream(archivoExcel);
             // Obtenemos Libro
             XSSFWorkbook libroExcel = new XSSFWorkbook(streamExcel);
-            // Obtenemos numero de Hoja
+            // Obtenemos Numero de Hoja
             XSSFSheet hojaExcel = libroExcel.getSheetAt(Hoja);
+            // Obtenemos Celda
+            XSSFCell celdaExcel = hojaExcel.getRow(Fila).createCell(Columna);
 
-            //obtener la cantidad actual de filas en el archivo excel
-            int numeroFila = hojaExcel.getLastRowNum()- hojaExcel.getFirstRowNum();
-            //obtener la primera fila de la hoja
-            Row fila = hojaExcel.getRow(1);
-            //crear una nueva fila para abrir la ultima hoja
-            Row nuevafila = hojaExcel.createRow(numeroFila+1);
+            System.out.print(celdaExcel);
+            celdaExcel.setCellValue(Valor);
+            System.out.print(celdaExcel);
 
-            for (int j = 0;j < fila.getLastCellNum();j++){
-                Cell celda = nuevafila.createCell(j); // 20
-                celda.setCellValue(dataToWrite[j]);
-
-            }
-
+            FileOutputStream cargarValor = new FileOutputStream(archivoExcel);
+            libroExcel.write(cargarValor);
+            libroExcel.close();
             streamExcel.close();
-            FileOutputStream outputStream = new FileOutputStream(rutaArchivos);
-            libroExcel.write(outputStream);
-            outputStream.close();
-
 
         }catch (Exception Error){
             System.out.println(Error.getMessage());
         }
-        return null;
+
     }
 
 }

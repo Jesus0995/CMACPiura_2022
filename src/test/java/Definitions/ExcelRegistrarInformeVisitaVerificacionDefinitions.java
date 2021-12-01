@@ -7,7 +7,7 @@ import io.cucumber.java.en.*;
 import java.util.List;
 import java.util.Map;
 
-public class RegistrarInformeVisitaVerificacionDefinitions {
+public class ExcelRegistrarInformeVisitaVerificacionDefinitions {
     LoginPage login;
     MenuPrincipalPage menuPrincipal;
     ListadoFormatoVerificacionPage listadoFormatoVerificacion;
@@ -17,11 +17,10 @@ public class RegistrarInformeVisitaVerificacionDefinitions {
     InformeVisitaVerificacionPage informeVisitaVerificacion;
     GrabarInformacionDocumentoPage grabarDocumento;
 
-
     ExcelPage excel;
 
 
-    public RegistrarInformeVisitaVerificacionDefinitions() {
+    public ExcelRegistrarInformeVisitaVerificacionDefinitions() {
         login = new LoginPage(Hooks.driver);
         menuPrincipal = new MenuPrincipalPage(Hooks.driver);
         listadoFormatoVerificacion = new ListadoFormatoVerificacionPage(Hooks.driver);
@@ -29,7 +28,7 @@ public class RegistrarInformeVisitaVerificacionDefinitions {
         definaPropuesta = new DefinaPropuestaPage(Hooks.driver);
         informesVerificaciones = new InformesVerificacionesPage(Hooks.driver);
         informeVisitaVerificacion = new InformeVisitaVerificacionPage(Hooks.driver);
-grabarDocumento = new GrabarInformacionDocumentoPage(Hooks.driver);
+        grabarDocumento = new GrabarInformacionDocumentoPage(Hooks.driver);
 
 
         excel = new ExcelPage();
@@ -93,13 +92,10 @@ grabarDocumento = new GrabarInformacionDocumentoPage(Hooks.driver);
             grabarDocumento.CerrarVentanaGrabarPropuesta();
             informeVisitaVerificacion.ClickBtnFinalizar();
 
-            grabarDocumento.AbrirVentanaGrabarPropuesta();
-            grabarDocumento.ClickBtnCerrarInformacion();
-            grabarDocumento.CerrarVentanaGrabarPropuesta();
-
-            listadoFormatoVerificacion.ClickBtnRegresar();
-
         }
+        menuPrincipal.ClickBtnCerrarSesion();
+        login.ClickBtnCerrarSesion();
+        Hooks.driver.close();
 
 
     }
