@@ -27,4 +27,4 @@ Feature: Registrar Informe Comercial con el perfil Asesor de Negocio
 
     Examples:
       | cliente |
-      | 40289 |
+      | 24681769 |

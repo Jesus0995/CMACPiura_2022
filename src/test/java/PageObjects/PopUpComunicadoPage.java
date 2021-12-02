@@ -41,10 +41,10 @@ public class PopUpComunicadoPage {
             System.out.println("Handle: " + driver.getWindowHandle());
             System.out.println("Titulo: " + driver.getTitle());
             WebElement linkComunicadoClose = driver.findElement(By.xpath("/html/body/div[1]/div[1]/a/span"));
-            objFuncionEsperar.EsperarTiempo(3);
+            objFuncionEsperar.EsperarTiempo(2);
             System.out.println(linkComunicadoClose);
             linkComunicadoClose.click();
-            objFuncionEsperar.EsperarTiempo(1);
+            //objFuncionEsperar.EsperarTiempo(1);
 
         } catch (Exception Error) {
             detalleError = "Error al cerrar e popup comunicado";
