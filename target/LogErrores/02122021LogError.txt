@@ -1,0 +1,145 @@
+2021-12-02T10:38:05.143 - Error al seleccionar el tipo de operacion - Cannot locate element with text: TipoOperacion
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'DESKTOP-SDTRTPQ', ip: '10.0.248.36', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_241'
+Driver info: driver.version: unknown 
+2021-12-02T10:39:09.399 - Error al seleccionar forma de Desembolso - TypeError: document.frmOperacion.codigocuenta is undefined
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'DESKTOP-SDTRTPQ', ip: '10.0.248.36', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_241'
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 94.0.2, javascriptEnabled: true, moz:accessibilityChecks: false, moz:buildID: 20211119140621, moz:geckodriverVersion: 0.29.1, moz:headless: false, moz:processID: 13020, moz:profile: C:\Users\Usuario\AppData\Lo..., moz:shutdownTimeout: 60000, moz:useNonSpecCompliantPointerOrigin: false, moz:webdriverClick: true, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, platformVersion: 10.0, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
+Session ID: c79324b2-4281-43cc-a190-953bf0a8c52b 
+2021-12-02T10:41:12.718 - Error al seleccionar el tipo de operacion - Cannot locate element with text: TipoOperacion
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'DESKTOP-SDTRTPQ', ip: '10.0.248.36', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_241'
+Driver info: driver.version: unknown 
+2021-12-02T10:42:10.242 - Error al seleccionar forma de Desembolso - TypeError: document.frmOperacion.codigocuenta is undefined
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'DESKTOP-SDTRTPQ', ip: '10.0.248.36', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_241'
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 94.0.2, javascriptEnabled: true, moz:accessibilityChecks: false, moz:buildID: 20211119140621, moz:geckodriverVersion: 0.29.1, moz:headless: false, moz:processID: 13020, moz:profile: C:\Users\Usuario\AppData\Lo..., moz:shutdownTimeout: 60000, moz:useNonSpecCompliantPointerOrigin: false, moz:webdriverClick: true, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, platformVersion: 10.0, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
+Session ID: c79324b2-4281-43cc-a190-953bf0a8c52b 
+2021-12-02T10:44:01.470 - Error al seleccionar icono propuesta - Unable to locate element: //img[@alt='Nueva Propuesta']
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'DESKTOP-SDTRTPQ', ip: '10.0.248.36', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_241'
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 94.0.2, javascriptEnabled: true, moz:accessibilityChecks: false, moz:buildID: 20211119140621, moz:geckodriverVersion: 0.29.1, moz:headless: false, moz:processID: 13020, moz:profile: C:\Users\Usuario\AppData\Lo..., moz:shutdownTimeout: 60000, moz:useNonSpecCompliantPointerOrigin: false, moz:webdriverClick: true, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, platformVersion: 10.0, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
+Session ID: c79324b2-4281-43cc-a190-953bf0a8c52b
+*** Element info: {Using=xpath, value=//img[@alt='Nueva Propuesta']} 
+2021-12-02T10:50:15.283 - Error al seleccionar el link Informe Visita Verificacion - Expected condition failed: waiting for element to be clickable: Proxy element for: DefaultElementLocator 'By.linkText: INFORME VISITA VERIFICACION' (tried for 30 second(s) with 500 milliseconds interval) 
+2021-12-02T10:51:19.401 - Error al seleccionar el link Cerrar Sesion - Expected condition failed: waiting for element to be clickable: Proxy element for: DefaultElementLocator 'By.partialLinkText: CERRAR' (tried for 30 second(s) with 500 milliseconds interval) 
+2021-12-02T10:51:57.758 - Error al hacer click cerrar sesion - Expected condition failed: waiting for element to be clickable: Proxy element for: DefaultElementLocator 'By.xpath: /html/body/table[2]/tbody/tr[3]/td/form/table/tbody/tr[2]/td/button[1]' (tried for 30 second(s) with 500 milliseconds interval) 
+2021-12-02T12:15:57.910 - Error al seleccionar el boton enlazar informe visita reprogramación - Expected condition failed: waiting for element to be clickable: Proxy element for: DefaultElementLocator 'By.xpath: /html/body/form/table/tbody/tr[3]/td/div/table[22]/tbody/tr[1]/td[3]/button' (tried for 60 second(s) with 500 milliseconds interval) 
+2021-12-02T12:16:30.156 - Error al hacer click en el botón Realizar - Expected condition failed: waiting for element to be clickable: Proxy element for: DefaultElementLocator 'By.xpath: //button[@type='submit']' (tried for 30 second(s) with 500 milliseconds interval) 
+2021-12-02T12:17:30.496 - Error al seleccionar el botón enlazar informe comercial reprogramacion - Expected condition failed: waiting for element to be clickable: Proxy element for: DefaultElementLocator 'By.xpath: /html/body/form/table/tbody/tr[3]/td/div/table[22]/tbody/tr[2]/td[3]/button' (tried for 60 second(s) with 500 milliseconds interval) 
+2021-12-02T12:18:00.663 - Error al hacer click en el botón Realizar - Expected condition failed: waiting for element to be clickable: Proxy element for: DefaultElementLocator 'By.xpath: //button[@type='submit']' (tried for 30 second(s) with 500 milliseconds interval) 
+2021-12-02T13:07:58.457 - Error al seleccionar tipo propuesta del servicio - Cannot locate element with text: REPROGRAMACION EN MISMO PAGARE
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'DESKTOP-SDTRTPQ', ip: '10.0.248.36', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_241'
+Driver info: driver.version: unknown 
+2021-12-02T13:07:58.612 - Error al seleccionar subtipopropuesta del servicio - Cannot locate element with text: OFICIO MULTIPLE N° 5345
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'DESKTOP-SDTRTPQ', ip: '10.0.248.36', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_241'
+Driver info: driver.version: unknown 
+2021-12-02T13:07:58.755 - Error al seleccionar el tipo de operacion - Cannot locate element with text: SIMPLE
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'DESKTOP-SDTRTPQ', ip: '10.0.248.36', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_241'
+Driver info: driver.version: unknown 
+2021-12-02T13:07:58.770 - Error al seleccionar el pagare - Unable to locate element: //select[@id='idPagare']//option[text()='080-01-9973061']
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'DESKTOP-SDTRTPQ', ip: '10.0.248.36', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_241'
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 94.0.2, javascriptEnabled: true, moz:accessibilityChecks: false, moz:buildID: 20211119140621, moz:geckodriverVersion: 0.29.1, moz:headless: false, moz:processID: 3904, moz:profile: C:\Users\Usuario\AppData\Lo..., moz:shutdownTimeout: 60000, moz:useNonSpecCompliantPointerOrigin: false, moz:webdriverClick: true, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, platformVersion: 10.0, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
+Session ID: 399bece5-23aa-47d8-b18e-3780beea970e
+*** Element info: {Using=xpath, value=//select[@id='idPagare']//option[text()='080-01-9973061']} 
+2021-12-02T13:08:20.644 - Error al cerrar e popup comunicado - Unable to locate element: /html/body/div[1]/div[1]/a/span
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'DESKTOP-SDTRTPQ', ip: '10.0.248.36', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_241'
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 94.0.2, javascriptEnabled: true, moz:accessibilityChecks: false, moz:buildID: 20211119140621, moz:geckodriverVersion: 0.29.1, moz:headless: false, moz:processID: 3904, moz:profile: C:\Users\Usuario\AppData\Lo..., moz:shutdownTimeout: 60000, moz:useNonSpecCompliantPointerOrigin: false, moz:webdriverClick: true, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, platformVersion: 10.0, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
+Session ID: 399bece5-23aa-47d8-b18e-3780beea970e
+*** Element info: {Using=xpath, value=/html/body/div[1]/div[1]/a/span} 
+2021-12-02T13:08:22.264 - Error al hacer click en el botón Solicitar Reprogramación - Element <button name="btnEnviar" type="button"> is not clickable at point (751,632) because another element <div class="ui-widget-overlay"> obscures it
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'DESKTOP-SDTRTPQ', ip: '10.0.248.36', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_241'
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 94.0.2, javascriptEnabled: true, moz:accessibilityChecks: false, moz:buildID: 20211119140621, moz:geckodriverVersion: 0.29.1, moz:headless: false, moz:processID: 3904, moz:profile: C:\Users\Usuario\AppData\Lo..., moz:shutdownTimeout: 60000, moz:useNonSpecCompliantPointerOrigin: false, moz:webdriverClick: true, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, platformVersion: 10.0, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
+Session ID: 399bece5-23aa-47d8-b18e-3780beea970e 
+2021-12-02T13:08:27.341 - Error al ingresar monto de Amortización - Unable to locate element: *[name='amortz']
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'DESKTOP-SDTRTPQ', ip: '10.0.248.36', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_241'
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 94.0.2, javascriptEnabled: true, moz:accessibilityChecks: false, moz:buildID: 20211119140621, moz:geckodriverVersion: 0.29.1, moz:headless: false, moz:processID: 3904, moz:profile: C:\Users\Usuario\AppData\Lo..., moz:shutdownTimeout: 60000, moz:useNonSpecCompliantPointerOrigin: false, moz:webdriverClick: true, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, platformVersion: 10.0, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
+Session ID: 399bece5-23aa-47d8-b18e-3780beea970e
+*** Element info: {Using=name, value=amortz} 
+2021-12-02T13:08:27.355 - Error al seleccionar opción de Cambio de Tasa - Unable to locate element: //td[@Class="Invisible"]//b[contains(text(),'NO')]/following::td[1]//input[@type='radio']
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'DESKTOP-SDTRTPQ', ip: '10.0.248.36', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_241'
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 94.0.2, javascriptEnabled: true, moz:accessibilityChecks: false, moz:buildID: 20211119140621, moz:geckodriverVersion: 0.29.1, moz:headless: false, moz:processID: 3904, moz:profile: C:\Users\Usuario\AppData\Lo..., moz:shutdownTimeout: 60000, moz:useNonSpecCompliantPointerOrigin: false, moz:webdriverClick: true, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, platformVersion: 10.0, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
+Session ID: 399bece5-23aa-47d8-b18e-3780beea970e
+*** Element info: {Using=xpath, value=//td[@Class="Invisible"]//b[contains(text(),'NO')]/following::td[1]//input[@type='radio']} 
+2021-12-02T13:12:46.500 - Error al cerrar e popup comunicado - Unable to locate element: /html/body/div[1]/div[1]/a/span
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'DESKTOP-SDTRTPQ', ip: '10.0.248.36', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_241'
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 94.0.2, javascriptEnabled: true, moz:accessibilityChecks: false, moz:buildID: 20211119140621, moz:geckodriverVersion: 0.29.1, moz:headless: false, moz:processID: 17576, moz:profile: C:\Users\Usuario\AppData\Lo..., moz:shutdownTimeout: 60000, moz:useNonSpecCompliantPointerOrigin: false, moz:webdriverClick: true, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, platformVersion: 10.0, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
+Session ID: e1b16baa-e750-4741-9e0a-705e479c1d60
+*** Element info: {Using=xpath, value=/html/body/div[1]/div[1]/a/span} 
+2021-12-02T13:12:47.625 - Error al hacer click en el botón Solicitar Reprogramación - Element <button name="btnEnviar" type="button"> is not clickable at point (751,632) because another element <div class="ui-widget-overlay"> obscures it
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'DESKTOP-SDTRTPQ', ip: '10.0.248.36', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_241'
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 94.0.2, javascriptEnabled: true, moz:accessibilityChecks: false, moz:buildID: 20211119140621, moz:geckodriverVersion: 0.29.1, moz:headless: false, moz:processID: 17576, moz:profile: C:\Users\Usuario\AppData\Lo..., moz:shutdownTimeout: 60000, moz:useNonSpecCompliantPointerOrigin: false, moz:webdriverClick: true, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, platformVersion: 10.0, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
+Session ID: e1b16baa-e750-4741-9e0a-705e479c1d60 
+2021-12-02T13:12:52.700 - Error al ingresar monto de Amortización - Unable to locate element: *[name='amortz']
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'DESKTOP-SDTRTPQ', ip: '10.0.248.36', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_241'
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 94.0.2, javascriptEnabled: true, moz:accessibilityChecks: false, moz:buildID: 20211119140621, moz:geckodriverVersion: 0.29.1, moz:headless: false, moz:processID: 17576, moz:profile: C:\Users\Usuario\AppData\Lo..., moz:shutdownTimeout: 60000, moz:useNonSpecCompliantPointerOrigin: false, moz:webdriverClick: true, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, platformVersion: 10.0, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
+Session ID: e1b16baa-e750-4741-9e0a-705e479c1d60
+*** Element info: {Using=name, value=amortz} 
+2021-12-02T13:12:52.734 - Error al seleccionar opción de Cambio de Tasa - Unable to locate element: //td[@Class="Invisible"]//b[contains(text(),'NO')]/following::td[1]//input[@type='radio']
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'DESKTOP-SDTRTPQ', ip: '10.0.248.36', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_241'
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 94.0.2, javascriptEnabled: true, moz:accessibilityChecks: false, moz:buildID: 20211119140621, moz:geckodriverVersion: 0.29.1, moz:headless: false, moz:processID: 17576, moz:profile: C:\Users\Usuario\AppData\Lo..., moz:shutdownTimeout: 60000, moz:useNonSpecCompliantPointerOrigin: false, moz:webdriverClick: true, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, platformVersion: 10.0, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
+Session ID: e1b16baa-e750-4741-9e0a-705e479c1d60
+*** Element info: {Using=xpath, value=//td[@Class="Invisible"]//b[contains(text(),'NO')]/following::td[1]//input[@type='radio']} 
+2021-12-02T13:13:22.964 - Error al hacer click en el botón Siguiente - Expected condition failed: waiting for element to be clickable: Proxy element for: DefaultElementLocator 'By.xpath: //button[@type='submit']' (tried for 30 second(s) with 500 milliseconds interval) 
+2021-12-02T13:13:22.979 - Error al hacer click en el botón Tipo Cronograma - Unable to locate element: //select[@name='tipoCronograma']
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'DESKTOP-SDTRTPQ', ip: '10.0.248.36', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_241'
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 94.0.2, javascriptEnabled: true, moz:accessibilityChecks: false, moz:buildID: 20211119140621, moz:geckodriverVersion: 0.29.1, moz:headless: false, moz:processID: 17576, moz:profile: C:\Users\Usuario\AppData\Lo..., moz:shutdownTimeout: 60000, moz:useNonSpecCompliantPointerOrigin: false, moz:webdriverClick: true, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, platformVersion: 10.0, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
+Session ID: e1b16baa-e750-4741-9e0a-705e479c1d60
+*** Element info: {Using=xpath, value=//select[@name='tipoCronograma']} 
+2021-12-02T13:13:22.994 - Error al hacer click en el botón Modalidad de Amortización - Unable to locate element: //select[@name='modalidad']
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'DESKTOP-SDTRTPQ', ip: '10.0.248.36', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_241'
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 94.0.2, javascriptEnabled: true, moz:accessibilityChecks: false, moz:buildID: 20211119140621, moz:geckodriverVersion: 0.29.1, moz:headless: false, moz:processID: 17576, moz:profile: C:\Users\Usuario\AppData\Lo..., moz:shutdownTimeout: 60000, moz:useNonSpecCompliantPointerOrigin: false, moz:webdriverClick: true, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, platformVersion: 10.0, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
+Session ID: e1b16baa-e750-4741-9e0a-705e479c1d60
+*** Element info: {Using=xpath, value=//select[@name='modalidad']} 
+2021-12-02T13:13:23.009 - Error al hacer click en el botón de Modalidad de Pago - Unable to locate element: *[name='opcion']
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'DESKTOP-SDTRTPQ', ip: '10.0.248.36', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_241'
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 94.0.2, javascriptEnabled: true, moz:accessibilityChecks: false, moz:buildID: 20211119140621, moz:geckodriverVersion: 0.29.1, moz:headless: false, moz:processID: 17576, moz:profile: C:\Users\Usuario\AppData\Lo..., moz:shutdownTimeout: 60000, moz:useNonSpecCompliantPointerOrigin: false, moz:webdriverClick: true, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, platformVersion: 10.0, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
+Session ID: e1b16baa-e750-4741-9e0a-705e479c1d60
+*** Element info: {Using=name, value=opcion} 

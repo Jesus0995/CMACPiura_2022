@@ -3,12 +3,16 @@ package PageObjects;
 import Functions.funcionEsperar;
 import Functions.funcionExcepciones;
 import Functions.funcionVentana;
+import org.apache.xpath.operations.Variable;
 import org.openqa.selenium.*;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.openqa.selenium.support.ui.Select;
+
 
 public class CondicionesReprogramacionPage {
 
@@ -20,9 +24,8 @@ public class CondicionesReprogramacionPage {
     private funcionVentana objFuncionVentana = new funcionVentana();
     private String ventanaUltima;
     private Alert MensajeAlerta;
-    
+
     @FindBy(name = "amortz") private WebElement txt_Amortizacion;
-    @FindBy(xpath = "//input[@id=\"opcionRepro\" and @value=2]") private WebElement opt_CambioTasa;
     @FindBy(xpath= "//button[@type='submit']") private WebElement btn_Siguiente;
     @FindBy(id = "nroinforme") private WebElement txt_Informe;
     @FindBy(xpath = "//select[@name='tipoCronograma']") private WebElement cbx_TipoCronograma;
@@ -69,7 +72,7 @@ public class CondicionesReprogramacionPage {
 
     public void IngresarAmortizacionReprogramacion(String Amortizacion){
         try {
-            objFuncionEsperar.EsperarTiempo(2);
+            objFuncionEsperar.EsperarTiempo(1);
             txt_Amortizacion.clear();
             txt_Amortizacion.sendKeys(Amortizacion);
         }
@@ -79,8 +82,9 @@ public class CondicionesReprogramacionPage {
         }
     }
 
-    public void SeleccionarCambioTasaReprogramacion(){
+    public void SeleccionarCambioTasaReprogramacion(String OpcionCambio){
         try {
+            WebElement opt_CambioTasa = driver.findElement(By.xpath("//td[@Class=\"Invisible\"]//b[contains(text(),'"+OpcionCambio+"')]/following::td[1]//input[@type='radio']"));
             wait.until(ExpectedConditions.elementToBeClickable(opt_CambioTasa));
             opt_CambioTasa.click();
             objFuncionEsperar.EsperarTiempo(1);
@@ -132,7 +136,7 @@ public class CondicionesReprogramacionPage {
     public void SeleccionarModalidadAmortizacion(String Modalidad){
         try {
             cbx_ModalidadAmortizacion.sendKeys(Modalidad);
-            objFuncionEsperar.EsperarTiempo(1);
+            objFuncionEsperar.EsperarTiempo(2);
             WebElement OpcionModalidad = driver.findElement(By.xpath("//select[@name='modalidad']//option[contains(text(),'"+Modalidad+"')]"));
             String JScript = OpcionModalidad.getAttribute("onclick");
             ((JavascriptExecutor) driver).executeScript(JScript);
@@ -198,6 +202,7 @@ public class CondicionesReprogramacionPage {
         try {
             wait.until(ExpectedConditions.elementToBeClickable(btn_Grabar));
             btn_Grabar.click();
+            //objFuncionEsperar.EsperarTiempo(2);
         }
         catch (Exception Error){
             detalleError = "Error al hacer click en el botón Cargar";

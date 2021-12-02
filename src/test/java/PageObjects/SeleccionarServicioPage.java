@@ -4,6 +4,7 @@ import Functions.funcionExcepciones;
 import Functions.funcionEsperar;
 import Functions.funcionVentana;
 import io.cucumber.java.eo.Se;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -34,6 +35,7 @@ public class SeleccionarServicioPage {
     @FindBy(xpath = "//select[@name='idTipoOperacion']") private  WebElement cbx_TipoOperacion;
     @FindBy(xpath ="//*[@id=\"bCargar\"]") private WebElement btn_Cargar;
     @FindBy(xpath = "/html/body/form/table/tbody/tr[9]/td[2]/button[1]") private WebElement btn_Seleccionar;
+    @FindBy(id = "idPagare") private WebElement cbx_Pagare;
 
 
     public void AbrirVentanaServicio() {
@@ -63,7 +65,7 @@ public class SeleccionarServicioPage {
 
     public SeleccionarServicioPage(WebDriver d) {
         driver = d;
-        wait = new WebDriverWait(driver, 120);
+        wait = new WebDriverWait(driver, 60);
         PageFactory.initElements(driver, this);
 
     }
@@ -91,6 +93,7 @@ public class SeleccionarServicioPage {
     public void SeleccionarTipoPropuesta(String TipoPropuesta) {
         try {
             wait.until(ExpectedConditions.elementToBeClickable(cbx_TipoPropuesta));
+            objFuncionEsperar.EsperarTiempo(1);
             new Select(cbx_TipoPropuesta).selectByVisibleText(TipoPropuesta);
         } catch (Exception Error) {
             detalleError = "Error al seleccionar tipo propuesta del servicio";
@@ -101,6 +104,7 @@ public class SeleccionarServicioPage {
     public void SeleccionarSubTipoPropuesta(String SubTipoPropuesta) {
         try {
             wait.until(ExpectedConditions.elementToBeClickable(cbx_SubTipoPropuesta));
+            objFuncionEsperar.EsperarTiempo(1);
             new Select(cbx_SubTipoPropuesta).selectByVisibleText(SubTipoPropuesta);
         } catch (Exception Error) {
             detalleError = "Error al seleccionar subtipopropuesta del servicio";
@@ -130,20 +134,35 @@ public class SeleccionarServicioPage {
         }
     }
 
-    public void SeleccionarPagare(){
+
+
+    public void SeleccionarPagare(String Pagare){
+        try {
+           // cbx_Pagare.sendKeys(Pagare);
+            WebElement opcionPagare = driver.findElement(By.xpath("//select[@id='idPagare']//option[text()='"+Pagare+"']"));
+            opcionPagare.click();
+            objFuncionEsperar.EsperarTiempo(1);
+            //wait.until(ExpectedConditions.elementToBeClickable(cbx_Pagare));
+            //new Select(cbx_TipoOperacion).selectByVisibleText(Pagare);
+            //objFuncionEsperar.EsperarTiempo(1);
+        }catch (Exception Error){
+            detalleError = "Error al seleccionar el pagare";
+            objLogErrores.logError(detalleError,Error);
+        }
+    }
+
+
+    public void ClickBtnSeleccionarPagare(){
         try {
             wait.until(ExpectedConditions.elementToBeClickable(btn_Seleccionar));
             objFuncionEsperar.EsperarTiempo(1);
             btn_Seleccionar.click();
             objFuncionEsperar.EsperarTiempo(1);
         }catch (Exception Error){
-            detalleError = "Error al hacer click en el boton pagare";
+            detalleError = "Error al hacer click en el botón seleccionar pagare";
             objLogErrores.logError(detalleError,Error);
-
         }
-
     }
-
 
     public void ClickBtnCargar()  {
         try {

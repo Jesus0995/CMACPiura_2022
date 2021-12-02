@@ -75,7 +75,7 @@ public class ExcelPropuestaReprogramacionEmpresarialDefinitions {
         String[][] datosExcel;
         datosExcel = excel.LeerArchivoExcel(arg0, 0);
 
-        for (int i = 1; i < datosExcel.length; i++){
+        for (int i = 1; i < datosExcel.length; i++) {
 
             menuPrincipal.ClickPropuestaFinanciamiento();
 
@@ -83,7 +83,7 @@ public class ExcelPropuestaReprogramacionEmpresarialDefinitions {
 
             listadoClientes.SeleccionarTabCodigo();
             listadoClientes.IngresarCodigoCliente(datosExcel[i][0]);
-            System.out.println("lectura cliente desde excel:"+datosExcel[i][0]);
+            System.out.println("lectura cliente desde excel:" + datosExcel[i][0]);
             listadoClientes.ClickBuscarCliente();
             listadoClientes.SeleccionarIconoPropuesta();
 
@@ -92,7 +92,9 @@ public class ExcelPropuestaReprogramacionEmpresarialDefinitions {
             servicio.SeleccionarServicioCredito(datosExcel[i][2]);
             servicio.SeleccionarTipoPropuesta(datosExcel[i][3]);
             servicio.SeleccionarSubTipoPropuesta(datosExcel[i][4]);
-            servicio.SeleccionarPagare();
+            servicio.SeleccionarTipoOperacion(datosExcel[i][5]);
+            servicio.SeleccionarPagare(datosExcel[i][6]);
+            servicio.ClickBtnSeleccionarPagare();
             servicio.ClickBtnCargar();
             servicio.CerrarVentanaServicio();
 
@@ -101,16 +103,16 @@ public class ExcelPropuestaReprogramacionEmpresarialDefinitions {
             propuesta.ClickBtnSolicitarReprogramacion();
 
             condicionesReprogramacion.AbrirVentanaCondicionesReprogramacion();
-            condicionesReprogramacion.IngresarAmortizacionReprogramacion(datosExcel[i][5]);
-            condicionesReprogramacion.SeleccionarCambioTasaReprogramacion();
+            condicionesReprogramacion.IngresarAmortizacionReprogramacion(datosExcel[i][7]);
+            condicionesReprogramacion.SeleccionarCambioTasaReprogramacion(datosExcel[i][8]);
             condicionesReprogramacion.ClickBtnSiguienteReprogramacion();
-            condicionesReprogramacion.SeleccionarTipoCronograma(datosExcel[i][7]);
-            condicionesReprogramacion.SeleccionarModalidadAmortizacion(datosExcel[i][8]);
-            condicionesReprogramacion.SeleccionarModalidadPago(datosExcel[i][9]);
-            condicionesReprogramacion.SeleccionarTipoCalculo(datosExcel[i][10]);
-            condicionesReprogramacion.IngresarNumeroCuotas(datosExcel[i][11]);
-            condicionesReprogramacion.IngresarFechaPago(datosExcel[i][12]);
-            condicionesReprogramacion.IngresarInforme(datosExcel[i][6]);
+            condicionesReprogramacion.SeleccionarTipoCronograma(datosExcel[i][10]);
+            condicionesReprogramacion.SeleccionarModalidadAmortizacion(datosExcel[i][11]);
+            condicionesReprogramacion.SeleccionarModalidadPago(datosExcel[i][12]);
+            condicionesReprogramacion.SeleccionarTipoCalculo(datosExcel[i][13]);
+            condicionesReprogramacion.IngresarNumeroCuotas(datosExcel[i][14]);
+            condicionesReprogramacion.IngresarFechaPago(datosExcel[i][15]);
+            condicionesReprogramacion.IngresarInforme(datosExcel[i][9]);
             condicionesReprogramacion.ClickBtnGrabar();
             condicionesReprogramacion.ObtenerAlerta();
             condicionesReprogramacion.CerrarVentanaCondicionesReprogramacion();
@@ -143,7 +145,7 @@ public class ExcelPropuestaReprogramacionEmpresarialDefinitions {
             grabarPropuesta.CerrarVentanaGrabarPropuesta();
 
             Valor = propuesta.CapturarNumeroPropuesta();
-            excel.EscribirExcel(arg0,0,i,20,Valor);
+            excel.EscribirExcel(arg0, 0, i, 18, Valor);
 
             propuesta.ClickBtnRegresar();
             listadoPropuesta.ClickBtnRegresar();

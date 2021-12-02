@@ -20,8 +20,7 @@ public class LoginPage {
     private funcionExcepciones objLogErrores = new funcionExcepciones();
     private String detalleError = new String();
 
-    private WriteExcelFile writeFile;
-    private ReadExcelFile readFile;
+
 
     @FindBy(name = "txtUsuario") private WebElement txt_Usuario;
     @FindBy(name = "txtPassword") private WebElement txt_Password;

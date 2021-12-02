@@ -120,7 +120,7 @@ public class ExcelCreditoEmpresarialRefinanciacionEspecialDefinitions {
             seleccionarServicio.SeleccionarSubTipoPropuesta(datosExcel[i][4]);
             seleccionarServicio.SeleccionarPromocion(datosExcel[i][5]);
             seleccionarServicio.SeleccionarTipoOperacion(datosExcel[i][6]);
-            seleccionarServicio.SeleccionarPagare();
+            seleccionarServicio.ClickBtnSeleccionarPagare();
             seleccionarServicio.ClickBtnCargar();
             seleccionarServicio.CerrarVentanaServicio();
             popUpComunicado.ValidarComunicado();
