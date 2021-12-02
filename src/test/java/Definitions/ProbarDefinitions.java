@@ -17,6 +17,8 @@ public class ProbarDefinitions {
     CondicionesRefinanciarPage condicionesRefinanciar;
     OperacionCreditoPage operacionCredito;
     InformeEEFFConsolidadoGrupoVinculadoPage informe;
+    GrabarInformacionDocumentoPage grabardocumento;
+    ExcelPage excel;
 
 
     private funcionExcel objExcel = new funcionExcel();
@@ -26,29 +28,37 @@ public class ProbarDefinitions {
         condicionesRefinanciar = new CondicionesRefinanciarPage(Hooks.driver);
         operacionCredito = new OperacionCreditoPage(Hooks.driver);
         informe = new InformeEEFFConsolidadoGrupoVinculadoPage(Hooks.driver);
+        grabardocumento = new GrabarInformacionDocumentoPage(Hooks.driver);
+        excel = new ExcelPage();
 
 
     }
 
     @Given("la pagina esta disponible")
     public void la_pagina_esta_disponible() {
-        Hooks.driver.get("file:///C:/Users/Usuario/Documents/Sistema%20de%20Gestion%20de%20Creditos-consolidado.html");
+        Hooks.driver.get("file:///C:/Users/Usuario/Downloads/Grabar%20Informacion.html");
 
     }
 
 
     @When("pruebaa")
     public void pruebaa() {
-        informe.IngresarAnalisis();
+        grabardocumento.CapturarMensajeDerivacion();
+
 
     }
 
-    @Then("pruebaaa")
-    public void pruebaaa() {
-        informe.IngresarConducta();
+
+    @Then("ejecuta excel {string}")
+    public void ejecutaExcel(String arg0) {
+        String[][] datosExcel;
+        datosExcel = excel.LeerArchivoExcel(arg0, 0);
+        for (int i = 1; i < datosExcel.length; i++) {
+
+            operacionCredito.SeleccionarPlanPagos(datosExcel[i][9]);
+
+        }
     }
-
-
 }
 
 

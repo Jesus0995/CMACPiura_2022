@@ -133,10 +133,11 @@ public class SeleccionarServicioPage {
     public void SeleccionarPagare(){
         try {
             wait.until(ExpectedConditions.elementToBeClickable(btn_Seleccionar));
+            objFuncionEsperar.EsperarTiempo(1);
             btn_Seleccionar.click();
-            objFuncionEsperar.EsperarTiempo(2);
+            objFuncionEsperar.EsperarTiempo(1);
         }catch (Exception Error){
-            detalleError = "Error al seleccionar el pagare";
+            detalleError = "Error al hacer click en el boton pagare";
             objLogErrores.logError(detalleError,Error);
 
         }

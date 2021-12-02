@@ -20,8 +20,9 @@ public class EmitirDictamenPropuestaCreditoDefinitions {
     PropuestaPage propuesta;
     AprobarDictamenPropuestaPage aprobarDictamenPropuesta;
     GrabarInformacionDocumentoPage grabarPropuesta;
-
+    String Valor;
     ExcelPage excel;
+
 
 
     public EmitirDictamenPropuestaCreditoDefinitions() {
@@ -65,6 +66,7 @@ public class EmitirDictamenPropuestaCreditoDefinitions {
         datosExcel = excel.LeerArchivoExcel(arg0, 0);
         for (int i = 1; i < datosExcel.length; i++) {
 
+
             menuPrincipal.ClickPropuestaFinanciamiento();
             listadoPropuesta.ClickTipoBusquedaAprobacion();
             listadoPropuesta.IngresarNumeroPropuesta(datosExcel[i][20]);
@@ -81,6 +83,13 @@ public class EmitirDictamenPropuestaCreditoDefinitions {
             aprobarDictamenPropuesta.CerrarVentanaAprobarDictamenPropuesta();
             grabarPropuesta.AbrirVentanaGrabarPropuesta();
             pantallazo();
+
+
+
+            Valor = grabarPropuesta.CapturarMensajeDerivacion();
+
+
+            excel.EscribirExcel(arg0,0,i,21,Valor);
             grabarPropuesta.ClickBtnCerrarInformacion();
             grabarPropuesta.CerrarVentanaGrabarPropuesta();
             listadoPropuesta.ClickBtnRegresar();

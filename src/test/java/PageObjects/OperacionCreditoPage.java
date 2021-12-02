@@ -31,47 +31,25 @@ public class OperacionCreditoPage {
     private String detalleError;
 
     //Mapear objetos
-    @FindBy(xpath = "//select[@name='moneda']")
-    private WebElement cbx_Moneda;
-    @FindBy(xpath = "//input[@name='montoOperacion']")
-    private WebElement txt_Monto;
-    @FindBy(xpath = "//input[@name='TasaInicial']")
-    private WebElement lista_TasaInicial;
-    @FindBy(xpath = "//button[@type=\"submit\"]")
-    private WebElement btn_Calcular;
-    @FindBy(xpath = "//select[@name='planPagos']")
-    private WebElement cbx_PlanPagos; //Fija Vencida
-    @FindBy(xpath = "//select[@name='modalidad']")
-    private WebElement cbx_Modalidad; //Libre Amortizacion
-    @FindBy(xpath = "//input[@name='diasPlazo']")
-    private WebElement txt_DiasPlazo;
-    @FindBy(xpath = "//select[@name='opcion']")
-    private WebElement cbx_OpcionPagos;
-    @FindBy(xpath = "//select[@name='pago']")
-    private WebElement cbx_DiaPagos;
-    @FindBy(xpath = "//input[@name='numeroCuotas']")
-    private WebElement txt_NumeroCuotas;
-    @FindBy(xpath = "//input[@name='tasaPropuesta']")
-    private WebElement txt_TasaPreferencial;
-    @FindBy(xpath = "//select[@name='flgCuenta']")
-    private WebElement cbx_Desembolso; //GIRO BANCO DE LA NACION
-    @FindBy(xpath = "//select[@name='codigocuenta']//option[2]")
-    private WebElement cbx_CodigoCuenta;
-    @FindBy(xpath = "//select[@name='idDepartamento']")
-    private WebElement cbx_Departamento;
-    @FindBy(xpath = "//select[@name='idProvincia']")
-    private WebElement cbx_Provincia;
-    @FindBy(xpath = "//select[@name='idDistrito']")
-    private WebElement cbx_Distrito;
-    @FindBy(xpath = "//input[@name='fechaProbableDesembolso']")
-    private WebElement txt_FechaDesembolso;
-    @FindBy(xpath = "//textarea[@name='notas']")
-    private WebElement txt_Notas;
-    @FindBy(xpath = "//button[@type=\"submit\"]")
-    private WebElement btn_Grabar; //windows onload
-
-
-
+    @FindBy(xpath = "//select[@name='moneda']") private WebElement cbx_Moneda;
+    @FindBy(xpath = "//input[@name='montoOperacion']") private WebElement txt_Monto;
+    @FindBy(xpath = "//input[@name='TasaInicial']") private WebElement lista_TasaInicial;
+    @FindBy(xpath = "//button[@type=\"submit\"]") private WebElement btn_Calcular;
+    @FindBy(xpath = "//select[@name='planPagos']") private WebElement cbx_PlanPagos; //Fija Vencida
+    @FindBy(xpath = "//select[@name='modalidad']") private WebElement cbx_Modalidad; //Libre Amortizacion
+    @FindBy(xpath = "//input[@name='diasPlazo']") private WebElement txt_DiasPlazo;
+    @FindBy(xpath = "//select[@name='opcion']") private WebElement cbx_OpcionPagos;
+    @FindBy(xpath = "//select[@name='pago']") private WebElement cbx_DiaPagos;
+    @FindBy(xpath = "//input[@name='numeroCuotas']") private WebElement txt_NumeroCuotas;
+    @FindBy(xpath = "//input[@name='tasaPropuesta']") private WebElement txt_TasaPreferencial;
+    @FindBy(xpath = "//select[@name='flgCuenta']") private WebElement cbx_Desembolso; //GIRO BANCO DE LA NACION
+    @FindBy(xpath = "//select[@name='codigocuenta']//option[2]") private WebElement cbx_CodigoCuenta;
+    @FindBy(xpath = "//select[@name='idDepartamento']") private WebElement cbx_Departamento;
+    @FindBy(xpath = "//select[@name='idProvincia']") private WebElement cbx_Provincia;
+    @FindBy(xpath = "//select[@name='idDistrito']") private WebElement cbx_Distrito;
+    @FindBy(xpath = "//input[@name='fechaProbableDesembolso']") private WebElement txt_FechaDesembolso;
+    @FindBy(xpath = "//textarea[@name='notas']") private WebElement txt_Notas;
+    @FindBy(xpath = "//button[@type=\"submit\"]") private WebElement btn_Grabar; //windows onload
 
 
     public void AbrirVentanaOperacionCredito() {
@@ -100,7 +78,7 @@ public class OperacionCreditoPage {
 
     public OperacionCreditoPage(WebDriver d) {
         driver = d;
-        wait = new WebDriverWait(driver, 60);
+        wait = new WebDriverWait(driver, 30);
         PageFactory.initElements(driver, this);
     }
 
@@ -147,7 +125,7 @@ public class OperacionCreditoPage {
 
     public void SeleccionarPlanPagos(String PlanPagos) {
         try {
-            cbx_PlanPagos.sendKeys(PlanPagos);
+            //cbx_PlanPagos.sendKeys(PlanPagos);
             WebElement Opcion = driver.findElement(By.xpath("//*[text() = '" + PlanPagos + "']"));
             String JScript = Opcion.getAttribute("onclick");
             ((JavascriptExecutor) driver).executeScript(JScript);
@@ -161,7 +139,7 @@ public class OperacionCreditoPage {
     public void SeleccionarModalidad(String Modalidad) {
         try {
             // Seleccionamos el valor textual de la opcion 'PlanPagos' en el combobox.
-            cbx_Modalidad.sendKeys(Modalidad);
+            //cbx_Modalidad.sendKeys(Modalidad);
             // Buscamos el webelement de la opcion indicada en el xpath.
             WebElement Opcion = driver.findElement(By.xpath("//*[text() = '" + Modalidad + "']"));
             // Obtenemos el valor del atributo 'onclick' de la opcion indicada
@@ -188,7 +166,7 @@ public class OperacionCreditoPage {
 
     public void SeleccionarOpcionPagos(String OpcionPagos) {
         try {
-            cbx_OpcionPagos.sendKeys(OpcionPagos);
+            //cbx_OpcionPagos.sendKeys(OpcionPagos);
             WebElement Opcion = driver.findElement(By.xpath("//*[text() = '" + OpcionPagos + "']"));
             String JScript = Opcion.getAttribute("onclick");
             ((JavascriptExecutor) driver).executeScript(JScript);
@@ -332,7 +310,7 @@ public class OperacionCreditoPage {
             WebElement btn_CalcularRefinanciacion = driver.findElement(By.xpath("/html/body/table[3]/tbody/tr[1]/td[4]/button"));
             wait.until(ExpectedConditions.elementToBeClickable(btn_CalcularRefinanciacion));
             btn_CalcularRefinanciacion.click();
-            objFuncionEsperar.EsperarTiempo(50);
+            objFuncionEsperar.EsperarTiempo(10);
         } catch (Exception Error) {
             detalleError = "Error al hacer click en el botón Calcular refinanciacion";
             objLogErrores.logError(detalleError, Error);

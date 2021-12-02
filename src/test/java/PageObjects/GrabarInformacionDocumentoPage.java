@@ -9,6 +9,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class GrabarInformacionDocumentoPage {
@@ -20,9 +21,18 @@ public class GrabarInformacionDocumentoPage {
     private funcionExcepciones objLogErrores = new funcionExcepciones();
     private String detalleError;
 
-    @FindBy(xpath = "//button[@type='button']") private WebElement btn_Cerrar;
+    protected String mensajeDerivacion;
 
-    public void AbrirVentanaGrabarPropuesta(){
+
+
+    @FindBy(xpath = "//button[@type='button']")
+    private WebElement btn_Cerrar;
+    @FindBy(xpath = "/html/body/p[1]")
+    private WebElement lbl_MensajeDerivacion;
+
+
+
+    public void AbrirVentanaGrabarPropuesta() {
         try {
             objFuncionEsperar.EsperarTiempo(5);
             System.out.println(driver.getWindowHandles());
@@ -30,11 +40,11 @@ public class GrabarInformacionDocumentoPage {
             ventanaUltima = driver.getWindowHandle();
         } catch (Exception Error) {
             detalleError = "Error al abrir ventana Grabar Documento";
-            objLogErrores.logError(detalleError,Error);
+            objLogErrores.logError(detalleError, Error);
         }
     }
 
-    public void CerrarVentanaGrabarPropuesta(){
+    public void CerrarVentanaGrabarPropuesta() {
         try {
             System.out.println(driver.getWindowHandles());
             objFuncionEsperar.EsperarCierreVentana(ventanaUltima);
@@ -43,55 +53,71 @@ public class GrabarInformacionDocumentoPage {
             System.out.println("Fin cerrar ventana");
         } catch (Exception Error) {
             detalleError = "Error al cerrar ventana Grabar Documento";
-            objLogErrores.logError(detalleError,Error);
+            objLogErrores.logError(detalleError, Error);
         }
     }
 
     public GrabarInformacionDocumentoPage(WebDriver d) {
         driver = d;
-        wait = new WebDriverWait(driver,30);
-        PageFactory.initElements(driver,this);
+        wait = new WebDriverWait(driver, 30);
+        PageFactory.initElements(driver, this);
 
     }
 
-    public void ClickBtnCerrar(){
+    public void ClickBtnCerrar() {
         try {
             String JScript = btn_Cerrar.getAttribute("onclick");
-            ((JavascriptExecutor)driver).executeScript(JScript);
+            ((JavascriptExecutor) driver).executeScript(JScript);
             objFuncionEsperar.EsperarTiempo(5);
         } catch (Exception Error) {
             detalleError = "Error en el botón cerrar";
-            objLogErrores.logError(detalleError,Error);
+            objLogErrores.logError(detalleError, Error);
         }
     }
 
-    public void ClickBtnCerrarInformacion(){
+    public void ClickBtnCerrarInformacion() {
         try {
             System.out.println("Click en boton cerrar");
-            System.out.println("Ventanas actuales: " +driver.getWindowHandles());
+            System.out.println("Ventanas actuales: " + driver.getWindowHandles());
 
             Integer numeroHandles = driver.getWindowHandles().size();
 
             objFuncionEsperar.EsperarTiempo(5);
             btn_Cerrar.click();
 
-            for(int i=0; i<=240;i+=1)
-            {
-                if (driver.getWindowHandles().size() == numeroHandles){
+            for (int i = 0; i <= 240; i += 1) {
+                if (driver.getWindowHandles().size() == numeroHandles) {
                     objFuncionEsperar.EsperarTiempo(1);
-                    System.out.println("Esperando la ejecución del boton cerrar "+i);
-                }
-                else {
-                    i=241;
+                    System.out.println("Esperando la ejecución del boton cerrar " + i);
+                } else {
+                    i = 241;
                 }
             }
-            System.out.println("Ventana vigente: " +driver.getWindowHandles());
+            System.out.println("Ventana vigente: " + driver.getWindowHandles());
             System.out.println("Fin click en boton cerrar");
 
         } catch (Exception Error) {
             detalleError = "Error en el botón Cerrar Información";
-            objLogErrores.logError(detalleError,Error);
+            objLogErrores.logError(detalleError, Error);
         }
     }
+
+
+    public String CapturarMensajeDerivacion() {
+        try {
+            wait.until(ExpectedConditions.visibilityOf(lbl_MensajeDerivacion));
+           // WebElement lbl_MensajeDerivacionDocumento = driver.findElement(By.xpath("/html/body/p[1]"));
+           // mensajeDerivacionDocumento = lbl_MensajeDerivacionDocumento.getText();
+            mensajeDerivacion=lbl_MensajeDerivacion.getText();
+            System.out.println("El mensaje es :" + mensajeDerivacion);
+
+        } catch (Exception Error) {
+            detalleError = "Error al capturar el mensaje de derivacion de documento";
+            objLogErrores.logError(detalleError, Error);
+        }
+
+        return mensajeDerivacion;
+    }
+
 
 }
