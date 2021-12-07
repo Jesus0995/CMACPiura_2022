@@ -15,20 +15,14 @@ public class ListadoFormatoVerificacionPage {
     private funcionEsperar objFuncionEsperar = new funcionEsperar();
     private funcionExcepciones objLogErrores = new funcionExcepciones();
     private String detalleError = new String();
-
-    @FindBy(xpath = "/html/body/table[3]/tbody/tr/td/div[1]/form/table/tbody/tr[2]/td/button[1]")
-    private WebElement btn_Buscar;
-    @FindBy(xpath = "/html/body/form/p/b/button[1]")
-    private WebElement btn_IngresarNuevoFormato;
-    @FindBy(xpath = "/html/body/form/table/tbody/tr[22]/td/button")
-    private WebElement btn_Regresar;
-
+    @FindBy(xpath = "/html/body/table[3]/tbody/tr/td/div[1]/form/table/tbody/tr[2]/td/button[1]") private WebElement btn_Buscar;
+    @FindBy(xpath = "/html/body/form/p/b/button[1]") private WebElement btn_IngresarNuevoFormato;
+    @FindBy(xpath = "/html/body/form/table/tbody/tr[22]/td/button") private WebElement btn_Regresar;
 
     public ListadoFormatoVerificacionPage(WebDriver d) {
         driver = d;
         wait = new WebDriverWait(driver, 30);
         PageFactory.initElements(driver, this);
-
     }
 
     public void ClickBtnBuscar() {
@@ -36,15 +30,12 @@ public class ListadoFormatoVerificacionPage {
             wait.until(ExpectedConditions.elementToBeClickable(btn_Buscar));
             btn_Buscar.click();
             objFuncionEsperar.EsperarTiempo(2);
-
         } catch (Exception Error) {
             detalleError = "Error al seleccionar el boton buscar";
             objLogErrores.logError(detalleError, Error);
-
         }
 
     }
-
 
     public void ClickBtnIngresarNuevoFormato() {
         try {
@@ -54,12 +45,9 @@ public class ListadoFormatoVerificacionPage {
         } catch (Exception Error) {
             detalleError = "Error al seleccionar el boton ingresar nuevo formato";
             objLogErrores.logError(detalleError, Error);
-
-
         }
 
     }
-
 
     public void ClickBtnRegresar() {
         try {

@@ -75,7 +75,6 @@ public class OperacionCreditoPage {
         }
     }
 
-
     public OperacionCreditoPage(WebDriver d) {
         driver = d;
         wait = new WebDriverWait(driver, 30);
@@ -197,7 +196,6 @@ public class OperacionCreditoPage {
             objLogErrores.logError(detalleError, Error);
         }
     }
-
 
     public void IngresarTasaPreferencial(String TasaPreferencial) {
         try {

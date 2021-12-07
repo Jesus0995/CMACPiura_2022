@@ -11,7 +11,7 @@ import java.util.Map;
 
 import static Support.screenshot.pantallazo;
 
-public class EmitirDictamenPropuestaCreditoDefinitions {
+public class ExcelEmitirDictamenPropuestaCreditoDefinitions {
 
     LoginPage login;
     MenuPrincipalPage menuPrincipal;
@@ -25,7 +25,7 @@ public class EmitirDictamenPropuestaCreditoDefinitions {
 
 
 
-    public EmitirDictamenPropuestaCreditoDefinitions() {
+    public ExcelEmitirDictamenPropuestaCreditoDefinitions() {
 
         login = new LoginPage(Hooks.driver);
         menuPrincipal = new MenuPrincipalPage(Hooks.driver);
@@ -65,8 +65,6 @@ public class EmitirDictamenPropuestaCreditoDefinitions {
         String[][] datosExcel;
         datosExcel = excel.LeerArchivoExcel(arg0, 0);
         for (int i = 1; i < datosExcel.length; i++) {
-
-
             menuPrincipal.ClickPropuestaFinanciamiento();
             listadoPropuesta.ClickTipoBusquedaAprobacion();
             listadoPropuesta.IngresarNumeroPropuesta(datosExcel[i][20]);
@@ -83,19 +81,12 @@ public class EmitirDictamenPropuestaCreditoDefinitions {
             aprobarDictamenPropuesta.CerrarVentanaAprobarDictamenPropuesta();
             grabarPropuesta.AbrirVentanaGrabarPropuesta();
             pantallazo();
-
-
-
             Valor = grabarPropuesta.CapturarMensajeDerivacion();
-
-
             excel.EscribirExcel(arg0,0,i,21,Valor);
             grabarPropuesta.ClickBtnCerrarInformacion();
             grabarPropuesta.CerrarVentanaGrabarPropuesta();
             listadoPropuesta.ClickBtnRegresar();
-
         }
-
         menuPrincipal.ClickBtnCerrarSesion();
         login.ClickBtnCerrarSesion();
         Hooks.driver.close();

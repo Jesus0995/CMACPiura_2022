@@ -22,7 +22,6 @@ public class DefinaPropuestaPage {
 
     @FindBy(xpath = "//button[@type=\"submit\"]") private WebElement btn_Cargar;
 
-
     public void AbrirVentanaDefinaPropuesta() {
         try {
             System.out.println(driver.getWindowHandles());
@@ -46,7 +45,6 @@ public class DefinaPropuestaPage {
         }
     }
 
-
     public DefinaPropuestaPage(WebDriver d) {
         driver = d;
         wait = new WebDriverWait(driver, 30);
@@ -60,16 +58,11 @@ public class DefinaPropuestaPage {
             btn_Cargar.click();
             objFuncionEsperar.EsperarTiempo(1);
         }catch (Exception Error){
-            detalleError= "Error la seleccionar el boton cargar";
+            detalleError= "Error la seleccionar el boton cargar propuesta";
 
         }
 
-
     }
-
-
-
-
     }
 
 

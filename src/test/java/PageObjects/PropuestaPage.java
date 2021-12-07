@@ -395,7 +395,6 @@ public class PropuestaPage {
         }
     }
 
-
     public void IngresarAnalisisSector(String AnalisisSector) {
 
         try {
@@ -418,10 +417,7 @@ public class PropuestaPage {
         }
     }
 
-
     //----------- fin de cambio 29/09/2021-----------------------
-
-
     public void ClickBtnEnlazarEEFFGrupoVinculadO() {
         try {
             wait.until(ExpectedConditions.elementToBeClickable(btn_EnlazarEEFFGrupoVinculado));
@@ -450,7 +446,6 @@ public class PropuestaPage {
             objLogErrores.logError(detalleError, Error);
         }
     }
-
 
     public void ClickBtnRegresar() {
         try {

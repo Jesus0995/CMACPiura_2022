@@ -59,10 +59,7 @@ public class ExcelInformeVisitaVerificacionDefinitions {
 
     @Then("ejecutamos los pasos definidos desde el archivo excel definido {string}")
     public void ejecutamosLosPasosDefinidosDesdeElArchivoExcelDefinido(String arg0) {
-
-
         String[][] datosExcel;
-
         datosExcel = excel.LeerArchivoExcel(arg0, 0);
         for (int i = 1; i < datosExcel.length; i++) {
 

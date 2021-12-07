@@ -65,7 +65,7 @@ public class SeleccionarServicioPage {
 
     public SeleccionarServicioPage(WebDriver d) {
         driver = d;
-        wait = new WebDriverWait(driver, 60);
+        wait = new WebDriverWait(driver, 30);
         PageFactory.initElements(driver, this);
 
     }
@@ -130,27 +130,20 @@ public class SeleccionarServicioPage {
         }catch (Exception Error){
             detalleError = "Error al seleccionar el tipo de operacion";
             objLogErrores.logError(detalleError,Error);
-
         }
     }
 
-
-
     public void SeleccionarPagare(String Pagare){
-        try {
-           // cbx_Pagare.sendKeys(Pagare);
+        try {// cbx_Pagare.sendKeys(Pagare);
             WebElement opcionPagare = driver.findElement(By.xpath("//select[@id='idPagare']//option[text()='"+Pagare+"']"));
             opcionPagare.click();
             objFuncionEsperar.EsperarTiempo(1);
-            //wait.until(ExpectedConditions.elementToBeClickable(cbx_Pagare));
-            //new Select(cbx_TipoOperacion).selectByVisibleText(Pagare);
-            //objFuncionEsperar.EsperarTiempo(1);
+
         }catch (Exception Error){
             detalleError = "Error al seleccionar el pagare";
             objLogErrores.logError(detalleError,Error);
         }
     }
-
 
     public void ClickBtnSeleccionarPagare(){
         try {

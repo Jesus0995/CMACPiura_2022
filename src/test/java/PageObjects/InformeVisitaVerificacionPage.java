@@ -20,46 +20,25 @@ public class InformeVisitaVerificacionPage {
     private funcionExcepciones objLogErrores = new funcionExcepciones();
     private funcionFecha objFuncionFecha = new funcionFecha();
     private String detalleError = new String();
-
-
-    @FindBy(name = "fechaINI")
-    private WebElement txt_FechaInicioVisita;
-    @FindBy(name = "fechaFIN")
-    private WebElement txt_FechaFinVisita;
-
-    @FindBy(name = "horaINI")
-    private WebElement txt_HoraInicioVisita;
-    @FindBy(name = "minINI")
-    private WebElement txt_MinInicioVisita;
-
-    @FindBy(name = "horaFIN")
-    private WebElement txt_HoraFinVisita;
-    @FindBy(name = "minFIN")
-    private WebElement txt_MinFinVisita;
-
-    @FindBy(name = "horaEMP")
-    private WebElement txt_HoraEmpVisita;
-    @FindBy(name = "minEMP")
-    private WebElement txt_MinEmpVisita;
-
-    @FindBy(name = "detalleresultado")
-    private WebElement txt_DetalleResultado;
-
-    @FindBy(xpath = "//img[@alt=\"Grabar\"]")
-    private WebElement btn_Grabar;
-
-    @FindBy(xpath = "/html/body/table/tbody/tr[2]/td/table/tbody/tr[2]/td[1]/table/tbody/tr/td[4]")
-    private WebElement btn_Finalizar;
-
+    
+    @FindBy(name = "fechaINI") private WebElement txt_FechaInicioVisita;
+    @FindBy(name = "fechaFIN") private WebElement txt_FechaFinVisita;
+    @FindBy(name = "horaINI") private WebElement txt_HoraInicioVisita;
+    @FindBy(name = "minINI") private WebElement txt_MinInicioVisita;
+    @FindBy(name = "horaFIN") private WebElement txt_HoraFinVisita;
+    @FindBy(name = "minFIN")  private WebElement txt_MinFinVisita;
+    @FindBy(name = "horaEMP") private WebElement txt_HoraEmpVisita;
+    @FindBy(name = "minEMP") private WebElement txt_MinEmpVisita;
+    @FindBy(name = "detalleresultado") private WebElement txt_DetalleResultado;
+    @FindBy(xpath = "//img[@alt=\"Grabar\"]") private WebElement btn_Grabar;
+    @FindBy(xpath = "/html/body/table/tbody/tr[2]/td/table/tbody/tr[2]/td[1]/table/tbody/tr/td[4]") private WebElement btn_Finalizar;
 
     public InformeVisitaVerificacionPage(WebDriver d) {
         driver = d;
         wait = new WebDriverWait(driver, 60);
         PageFactory.initElements(driver, this);
 
-
     }
-
 
     public void IngresarFechaInicioVisita() {
         try {
@@ -181,32 +160,29 @@ public class InformeVisitaVerificacionPage {
         }
     }
 
-        public void ClickBtnGrabar(){
+    public void ClickBtnGrabar() {
         try {
             wait.until(ExpectedConditions.elementToBeClickable(btn_Grabar));
             btn_Grabar.click();
             objFuncionEsperar.EsperarTiempo(1);
-        }
-        catch (Exception Error){
+        } catch (Exception Error) {
             detalleError = "Error al seleccionar el boton Grabar";
-            objLogErrores.logError(detalleError,Error);
+            objLogErrores.logError(detalleError, Error);
 
         }
-
-
 
 
     }
 
-    public void ClickBtnFinalizar(){
+    public void ClickBtnFinalizar() {
         try {
             wait.until(ExpectedConditions.elementToBeClickable(btn_Finalizar));
             btn_Finalizar.click();
             objFuncionEsperar.EsperarTiempo(1);
 
-        }catch (Exception Error) {
+        } catch (Exception Error) {
             detalleError = "Error al seleccionar el boton Finalizar";
-            objLogErrores.logError(detalleError,Error);
+            objLogErrores.logError(detalleError, Error);
 
         }
     }

@@ -27,11 +27,9 @@ public class CondicionesRefinanciarPage {
 
     @FindBy(id = "monto_amortizar") private WebElement txt_MontoAmortizar;
     @FindBy(id = "interes_refinanciar") private WebElement txt_InteresRefinanciar;
-    @FindBy(id = "grabar")
-    private WebElement btn_Grabar;
+    @FindBy(id = "grabar") private WebElement btn_Grabar;
 
     public void AbrirVentanaCondicionRefinanciar() {
-
         try {
             objFuncionEsperar.EsperarTiempo(3);
             identificadoresCondicionRefinanciar = driver.getWindowHandles();
@@ -78,14 +76,11 @@ public class CondicionesRefinanciarPage {
         PageFactory.initElements(driver, this);
     }
 
-
     public void IngresarMontoAmortizar(String MontoAmortizar) {
         try {
             objFuncionEsperar.EsperarTiempo(2);
             txt_MontoAmortizar.sendKeys(Keys.CONTROL,"A");
             txt_MontoAmortizar.sendKeys(MontoAmortizar);
-
-
         } catch (Exception Error) {
             detalleError = "Error al ingresar monto amortizar";
             objLogErrores.logError(detalleError, Error);
@@ -97,13 +92,10 @@ public class CondicionesRefinanciarPage {
             objFuncionEsperar.EsperarTiempo(2);
             txt_InteresRefinanciar.sendKeys(Keys.CONTROL,"A");
             txt_InteresRefinanciar.sendKeys(InteresRefinanciar);
-
             } catch (Exception Error) {
             detalleError = "Error al ingresar interes a refinanciar";
             objLogErrores.logError(detalleError, Error);
-
         }
-
     }
 
     public void ClickBtnGrabar() {

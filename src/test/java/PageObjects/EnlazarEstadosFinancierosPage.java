@@ -60,9 +60,9 @@ public class EnlazarEstadosFinancierosPage {
         try {
             wait.until(ExpectedConditions.elementToBeClickable(btn_Enlazar));
             btn_Enlazar.click();
-            objFuncionEsperar.EsperarTiempo(2);
+            objFuncionEsperar.EsperarTiempo(3);
         } catch (Exception Error) {
-            detalleError = "Error al hacer click en el botón Enlazar";
+            detalleError = "Error al hacer click en el botón Enlazar Estados Financieros";
             objLogErrores.logError(detalleError,Error);
         }
     }

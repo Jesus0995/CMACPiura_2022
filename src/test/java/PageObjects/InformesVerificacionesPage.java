@@ -23,9 +23,7 @@ public class InformesVerificacionesPage {
         driver = d;
         wait = new WebDriverWait(driver,30);
         PageFactory.initElements(driver,this);
-
     }
-
     public void ClickBtnCrearInformeVerificacion(){
         try {
         objFuncionEsperar.EsperarTiempo(1);

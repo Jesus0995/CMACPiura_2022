@@ -122,6 +122,7 @@ public class SeleccionarGarantiasExistentesPage {
         try {
             wait.until(ExpectedConditions.elementToBeClickable(btn_Aceptar));
             btn_Aceptar.click();
+            objFuncionEsperar.EsperarTiempo(1);
 
         } catch (Exception Error) {
             detalleError = "Error al seleccionar el boton aceptar";

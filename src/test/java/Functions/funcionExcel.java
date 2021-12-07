@@ -94,7 +94,6 @@ public class funcionExcel {
     }
 
     public void EscribirExcel(String Archivo, Integer Hoja, Integer Fila, Integer Columna, String Valor) {
-
         try {
             File archivoExcel = new File(rutaArchivos + "\\" + Archivo);
             FileInputStream streamExcel = new FileInputStream(archivoExcel);
@@ -104,11 +103,7 @@ public class funcionExcel {
             XSSFSheet hojaExcel = libroExcel.getSheetAt(Hoja);
             // Obtenemos Celda
             XSSFCell celdaExcel = hojaExcel.getRow(Fila).createCell(Columna);
-
-            System.out.print(celdaExcel);
             celdaExcel.setCellValue(Valor);
-            System.out.print(celdaExcel);
-
             FileOutputStream cargarValor = new FileOutputStream(archivoExcel);
             libroExcel.write(cargarValor);
             libroExcel.close();

@@ -58,7 +58,7 @@ public class DesenlazarInformeVisitaPage {
             btn_Realizar.click();
             objFuncionEsperar.EsperarTiempo(2);
         } catch (Exception Error) {
-            detalleError = "Error al hacer click en el botón Realizar";
+            detalleError = "Error al hacer click en el botón Realizar desenlazar informe visita";
             objLogErrores.logError(detalleError,Error);
         }
     }

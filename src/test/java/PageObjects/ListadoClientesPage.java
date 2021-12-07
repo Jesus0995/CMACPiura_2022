@@ -23,14 +23,11 @@ public class ListadoClientesPage {
     private String detalleError = new String();
 
     //mapear locator
-    @FindBy(css = "#tab-bg\\:1 > i:nth-child(1)")
-    private WebElement tab_Codigo;
-    @FindBy(xpath = "//*[@id=\"valorCodigo\"]")
-    private WebElement txt_Codigo;
+    @FindBy(css = "#tab-bg\\:1 > i:nth-child(1)") private WebElement tab_Codigo;
+    @FindBy(xpath = "//*[@id=\"valorCodigo\"]") private WebElement txt_Codigo;
     @FindBy(css = "#form2 > table:nth-child(2) > tbody:nth-child(1) > tr:nth-child(2) > td:nth-child(1) > button:nth-child(1)")
     private WebElement btn_Buscar;
     @FindBy(xpath = "//table[3]/tbody/tr/td/div/button[1]") private WebElement btn_Regresar;
-
     @FindBy(xpath = "//img[@alt='Ver Informes de Visitas']") private WebElement icn_VerInformeVisita;
     @FindBy(xpath = "/html/body/table/tbody/tr[2]/td/table[1]/tbody/tr/td/div[2]/form/table/tbody/tr[1]/td[2]/input") private WebElement txt_CodigoClienteInformeVisita;
     @FindBy(xpath = "/html/body/table/tbody/tr[2]/td/table[1]/tbody/tr/td/div[2]/form/table/tbody/tr[2]/td/button[1]")
@@ -98,7 +95,6 @@ public class ListadoClientesPage {
         try {
             txt_CodigoClienteInformeVisita.clear();
             txt_CodigoClienteInformeVisita.sendKeys(CodigoClienteInformeVisita);
-
         }catch (Exception Error){
             detalleError= "Error al ingresar el codigo de cliente para crear informe de visita";
             objLogErrores.logError(detalleError,Error);
@@ -109,28 +105,21 @@ public class ListadoClientesPage {
         try {
             wait.until(ExpectedConditions.elementToBeClickable(btn_BuscarCodigoClienteInforme));
             btn_BuscarCodigoClienteInforme.click();
-
         }catch (Exception Error){
             detalleError = "Error al seleccionar el boton buscar";
             objLogErrores.logError(detalleError,Error);
-
         }
-
-
     }
 
     public void SeleccionarVerInformeVisita(){
         try {
             wait.until(ExpectedConditions.elementToBeClickable(icn_VerInformeVisita));
             icn_VerInformeVisita.click();
-
         }catch (Exception Error){
             detalleError= "Error al seleccionar icono ver informe propuesta";
             objLogErrores.logError(detalleError,Error);
         }
-
     }
-
 
     public static void cambiarventana(WebDriver driver) {
         for (String handle : driver.getWindowHandles()) {

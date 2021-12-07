@@ -3,7 +3,7 @@ Feature: Registrar Informe Comercial con el perfil Asesor de Negocio
   Quiero registrar Informe Comercial Nuevo Formato
   Para enlazar a la creacion de Propuestas
 
-
+@prueba
   Scenario Outline: Registrar Informe Comercial Nuevo Formato de los clientes en el sistema SGCRED
     Given el sistema SGCRED esta disponible para usarla
     When en la ventana login ingreso usuario y password del perfil Asesor de negocio
@@ -27,4 +27,4 @@ Feature: Registrar Informe Comercial con el perfil Asesor de Negocio
 
     Examples:
       | cliente |
-      | 24681769 |
+      | 2460386 |
