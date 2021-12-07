@@ -24,70 +24,51 @@ public class PropuestaPage {
     private String detalleError = new String();
     protected static String numeroPropuesta;
 
-    @FindBy(xpath = "//textarea[@name='comentCalifCred']")
-    private WebElement txt_ClasificacionCrediticia;
-    @FindBy(id = "txtobjetivo")
-    private WebElement txt_ObjetivoCredito;
-    @FindBy(id = "justificacion")
-    private WebElement txt_JustificacionCredito;
-    @FindBy(name = "btnEnviar")
-    private WebElement btn_NuevaOperacion;
-    @FindBy(xpath = "//img[@src='./images/mail-send-receive.png']")
-    private WebElement icn_CambioTasa;
-    @FindBy(xpath = "/html/body/form/table[1]/tbody/tr[3]/td/div/table[7]/tbody/tr[1]/td[2]/button")
-    private WebElement btn_AgregarSeguro;
-    @FindBy(xpath = "/html/body/form/table[1]/tbody/tr[3]/td/div/table[8]/tbody/tr[1]/td[2]/button")
-    private WebElement btn_AnexarChecklist;
-    @FindBy(xpath = "//textarea[@id='txtcaracter']")
-    private WebElement txt_CaracteristicaNegocio; //se cambio el name del nuevo ambiente //textarea[@name='caractNegocio']
-    @FindBy(xpath = "//textarea[@id='txtclasificac']")
-    private WebElement txt_ClasificacionRiesgoCliente;
-    @FindBy(xpath = "//textarea[@id='txtclasificaAval']")
-    private WebElement txt_ClasificacionRiesgoAval;
-    @FindBy(xpath = "//textarea[@id='txtanalisisUEF']")
-    private WebElement txt_AnalisisUnidadFinanciera;
-    //nuevos cambios 29/09
-    @FindBy(xpath = "//textarea[@id='txtProducServic']")
-    private WebElement txt_Productos;
-    @FindBy(xpath = "//textarea[@id='txtPrincClienProv']")
-    private WebElement txt_PrincipalesClientes;
-    @FindBy(xpath = "//textarea[@id='txtPersonalLabora']")
-    private WebElement txt_PersonalLaboral;
-    @FindBy(xpath = "//textarea[@id='txtSectorEconomic']")
-    private WebElement txt_AnalisisSector;
-    @FindBy(xpath = "//textarea[@id='txtProyeccCreci']")
-    private WebElement txt_ProyeccionesCrecimiento;
-    @FindBy(xpath = "//button[@name=\"btnGaranExist\"]")
-    private WebElement btn_AnexarGarantias;
-    @FindBy(xpath = "//textarea[@id='txtPrincipalRatio']")
-    private WebElement txt_ComentariosRatios;
-    @FindBy(xpath = "/html/body/form/table[1]/tbody/tr[2]/td/table[1]/tbody/tr[2]/td[1]/table/tbody/tr/td[5]/a")
-    private WebElement btn_Grabar;
-    @FindBy(xpath = "//td[@id='NewDdTD']")
-    private WebElement btn_Dictamen;
-    @FindBy(xpath = "//img[@alt='Aprobar']")
-    private WebElement btn_AprobarPropuesta;
-    @FindBy(xpath = "//button[@name='btnEnviar2']")
-    private WebElement btn_VerificarCheckListCredito;
-    @FindBy(xpath = "/html/body/form/table[2]/tbody/tr[6]/td[3]/button")
-    private WebElement btn_EnlazarEEFFGrupoVinculado;
+    /*************
+
+     *************/
+
+
+    @FindBy(xpath = "//textarea[@name='comentCalifCred']") private WebElement txt_ClasificacionCrediticia;
+    @FindBy(id = "txtobjetivo") private WebElement txt_ObjetivoCredito;
+    @FindBy(id = "justificacion") private WebElement txt_JustificacionCredito;
+    @FindBy(name = "btnEnviar") private WebElement btn_NuevaOperacion;
+    @FindBy(xpath = "//img[@src='./images/mail-send-receive.png']") private WebElement icn_CambioTasa;
+    @FindBy(xpath = "/html/body/form/table[1]/tbody/tr[3]/td/div/table[7]/tbody/tr[1]/td[2]/button") private WebElement btn_AgregarSeguro;
+    @FindBy(xpath = "/html/body/form/table[1]/tbody/tr[3]/td/div/table[8]/tbody/tr[1]/td[2]/button") private WebElement btn_AnexarChecklist;
+    @FindBy(xpath = "//textarea[@id='txtcaracter']") private WebElement txt_CaracteristicaNegocio; //se cambio el name del nuevo ambiente //textarea[@name='caractNegocio']
+    @FindBy(xpath = "//textarea[@id='txtclasificac']") private WebElement txt_ClasificacionRiesgoCliente;
+    @FindBy(xpath = "//textarea[@id='txtclasificaAval']") private WebElement txt_ClasificacionRiesgoAval;
+    @FindBy(xpath = "//textarea[@id='txtanalisisUEF']") private WebElement txt_AnalisisUnidadFinanciera;
+    //nuevos cambios en locator de las cajas de texto de comentarios 29/09
+    @FindBy(xpath = "//textarea[@id='txtProducServic']") private WebElement txt_Productos;
+    @FindBy(xpath = "//textarea[@id='txtPrincClienProv']") private WebElement txt_PrincipalesClientes;
+    @FindBy(xpath = "//textarea[@id='txtPersonalLabora']") private WebElement txt_PersonalLaboral;
+    @FindBy(xpath = "//textarea[@id='txtSectorEconomic']") private WebElement txt_AnalisisSector;
+    @FindBy(xpath = "//textarea[@id='txtProyeccCreci']") private WebElement txt_ProyeccionesCrecimiento;
+    @FindBy(xpath = "//button[@name=\"btnGaranExist\"]") private WebElement btn_AnexarGarantias;
+    @FindBy(xpath = "//textarea[@id='txtPrincipalRatio']") private WebElement txt_ComentariosRatios;
+    @FindBy(xpath = "/html/body/form/table[1]/tbody/tr[2]/td/table[1]/tbody/tr[2]/td[1]/table/tbody/tr/td[5]/a") private WebElement btn_Grabar;
+    @FindBy(xpath = "//td[@id='NewDdTD']") private WebElement btn_Dictamen;
+    @FindBy(xpath = "//img[@alt='Aprobar']") private WebElement btn_AprobarPropuesta;
+    @FindBy(xpath = "//button[@name='btnEnviar2']") private WebElement btn_VerificarCheckListCredito;
+    @FindBy(xpath = "/html/body/form/table[2]/tbody/tr[6]/td[3]/button") private WebElement btn_EnlazarEEFFGrupoVinculado;
 
     //  @FindBy(xpath = "/html/body/div/table/tbody/tr/td[2]/h3") private WebElement lblNumeroPropuesta;
-    @FindBy(xpath = "/html/body/form/table[1]/tbody/tr[3]/td/div/table[9]/tbody/tr/td[2]/button")
-    private WebElement btn_CancelarPagares;
-    @FindBy(xpath = "/html/body/form/table[1]/tbody/tr[3]/td/div/table[10]/tbody/tr[2]/td[9]/span/img")
-    private WebElement icn_CondicionRefinanciar;
+    @FindBy(xpath = "/html/body/form/table[1]/tbody/tr[3]/td/div/table[9]/tbody/tr/td[2]/button") private WebElement btn_CancelarPagares;
+    @FindBy(xpath = "/html/body/form/table[1]/tbody/tr[3]/td/div/table[10]/tbody/tr[2]/td[9]/span/img") private WebElement icn_CondicionRefinanciar;
 
-    @FindBy(name = "btnEnviar")
-    private WebElement btn_SolicitarReprogramacion;
-    @FindBy(xpath = "//button[text()='Desenlazar']")
-    private WebElement btn_DesenlazarInformeVisitaReprogramacion;
-    @FindBy(xpath = "/html/body/form/table/tbody/tr[3]/td/div/table[22]/tbody/tr[1]/td[3]/button")
-    private WebElement btn_EnlazarInformeVisitaReprogramacion;
-    @FindBy(xpath = "/html/body/form/table/tbody/tr[3]/td/div/table[22]/tbody/tr[2]/td[3]/button")
-    private WebElement btn_EnlazarInformeComercialReprogramacion;
-    @FindBy(xpath = "//img[@alt='Regresar']")
-    private WebElement btn_Regresar;
+    @FindBy(name = "btnEnviar") private WebElement btn_SolicitarReprogramacion;
+    @FindBy(xpath = "//button[text()='Desenlazar']") private WebElement btn_DesenlazarInformeVisitaReprogramacion;
+
+    //---------------/html/body/form/table/tbody/tr[3]/td/div/table[22]/tbody/tr[1]/td[3]/button--------locator de Enlazar Inf.Visita antes del 06/12/2021
+    //---------------/html/body/form/table/tbody/tr[3]/td/div/table[22]/tbody/tr[2]/td[3]/button--------locator de Enlazar Inf.Comercial antes del 06/12/2021
+
+    @FindBy(xpath = "/html/body/form/table[2]/tbody/tr[1]/td[3]/button") private WebElement btn_EnlazarInformeVisitaReprogramacion; // locator fue cambiado el 06/12/2021
+    @FindBy(xpath = "/html/body/form/table[2]/tbody/tr[2]/td[3]/button") private WebElement btn_EnlazarInformeComercialReprogramacion; //locator fue cambiado el 06/12/2021
+
+    @FindBy(xpath = "//img[@alt='Regresar']") private WebElement btn_Regresar;
+
 
 
     public PropuestaPage(WebDriver d) {
@@ -282,7 +263,6 @@ public class PropuestaPage {
 
     public void ClickEnlazarInformeComercialNuevo() {
         try {
-
             WebElement btn_enlazarInformeComercial = driver.findElement(By.xpath("/html/body/form/table[2]/tbody/tr[3]/td[3]/button"));
             String JScript = btn_enlazarInformeComercial.getAttribute("onclick");
             ((JavascriptExecutor) driver).executeScript(JScript);
@@ -333,7 +313,6 @@ public class PropuestaPage {
     public void AbrirOpcionesDictamen() {
         try {
             btn_Dictamen.click();
-
         } catch (Exception Error) {
             detalleError = "Error al seleccionar el boton opciones dictamen";
             objLogErrores.logError(detalleError, Error);
@@ -373,7 +352,6 @@ public class PropuestaPage {
         }
     }
 
-
     public void IngresarPrincipalesClientes(String PrincipalesClientes) {
         try {
             txt_PrincipalesClientes.clear();
@@ -383,7 +361,6 @@ public class PropuestaPage {
             objLogErrores.logError(detalleError, Error);
         }
     }
-
 
     public void IngresarPersonalNegocio(String PersonalNegocio) {
         try {
@@ -405,7 +382,6 @@ public class PropuestaPage {
             objLogErrores.logError(detalleError, Error);
         }
     }
-
 
     public void IngresarProyeccionesCrecimiento(String ProyeccionesCrecimiento) {
         try {
@@ -456,11 +432,8 @@ public class PropuestaPage {
         } catch (Exception Error) {
             detalleError = "Error al seleccionar el boton regresar";
             objLogErrores.logError(detalleError, Error);
-
         }
-
     }
-
 
     //----------- Flujo de Reprogramación -----------------------
 
@@ -479,7 +452,7 @@ public class PropuestaPage {
         try {
             wait.until(ExpectedConditions.elementToBeClickable(btn_DesenlazarInformeVisitaReprogramacion));
             btn_DesenlazarInformeVisitaReprogramacion.click();
-
+            objFuncionEsperar.EsperarTiempo(1);
         } catch (Exception Error) {
             detalleError = "Error al seleccionar el boton desenlazar informe visita reprogramacion";
             objLogErrores.logError(detalleError, Error);
@@ -490,7 +463,7 @@ public class PropuestaPage {
         try {
             wait.until(ExpectedConditions.elementToBeClickable(btn_EnlazarInformeVisitaReprogramacion));
             btn_EnlazarInformeVisitaReprogramacion.click();
-
+            objFuncionEsperar.EsperarTiempo(1);
         } catch (Exception Error) {
             detalleError = "Error al seleccionar el boton enlazar informe visita reprogramación";
             objLogErrores.logError(detalleError, Error);
@@ -501,14 +474,12 @@ public class PropuestaPage {
         try {
             wait.until(ExpectedConditions.elementToBeClickable(btn_EnlazarInformeComercialReprogramacion));
             btn_EnlazarInformeComercialReprogramacion.click();
-
+            objFuncionEsperar.EsperarTiempo(1);
         } catch (Exception Error) {
             detalleError = "Error al seleccionar el botón enlazar informe comercial reprogramacion";
             objLogErrores.logError(detalleError, Error);
         }
     }
-
-
 
 }
 

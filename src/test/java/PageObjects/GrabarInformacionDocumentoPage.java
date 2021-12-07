@@ -25,10 +25,8 @@ public class GrabarInformacionDocumentoPage {
 
 
 
-    @FindBy(xpath = "//button[@type='button']")
-    private WebElement btn_Cerrar;
-    @FindBy(xpath = "/html/body/p[1]")
-    private WebElement lbl_MensajeDerivacion;
+    @FindBy(xpath = "//button[@type='button']") private WebElement btn_Cerrar;
+    @FindBy(xpath = "/html/body/p[1]") private WebElement lbl_MensajeDerivacion;
 
 
 
@@ -78,19 +76,19 @@ public class GrabarInformacionDocumentoPage {
     public void ClickBtnCerrarInformacion() {
         try {
             System.out.println("Click en boton cerrar");
-            System.out.println("Ventanas actuales: " + driver.getWindowHandles());
+            System.out.println("Ventanas actuales: " + driver.getWindowHandles()+driver.getTitle());
 
             Integer numeroHandles = driver.getWindowHandles().size();
 
-            objFuncionEsperar.EsperarTiempo(5);
+            objFuncionEsperar.EsperarTiempo(2);
             btn_Cerrar.click();
 
-            for (int i = 0; i <= 240; i += 1) {
+            for (int i = 0; i <= 120; i += 1) {
                 if (driver.getWindowHandles().size() == numeroHandles) {
                     objFuncionEsperar.EsperarTiempo(1);
                     System.out.println("Esperando la ejecución del boton cerrar " + i);
                 } else {
-                    i = 241;
+                    i = 121;
                 }
             }
             System.out.println("Ventana vigente: " + driver.getWindowHandles());
@@ -106,8 +104,6 @@ public class GrabarInformacionDocumentoPage {
     public String CapturarMensajeDerivacion() {
         try {
             wait.until(ExpectedConditions.visibilityOf(lbl_MensajeDerivacion));
-           // WebElement lbl_MensajeDerivacionDocumento = driver.findElement(By.xpath("/html/body/p[1]"));
-           // mensajeDerivacionDocumento = lbl_MensajeDerivacionDocumento.getText();
             mensajeDerivacion=lbl_MensajeDerivacion.getText();
             System.out.println("El mensaje es :" + mensajeDerivacion);
 

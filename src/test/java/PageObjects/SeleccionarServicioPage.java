@@ -133,8 +133,18 @@ public class SeleccionarServicioPage {
         }
     }
 
+    public void AbrirOpcionesPagare(){
+        try {
+            wait.until(ExpectedConditions.elementToBeClickable(cbx_Pagare));
+            cbx_Pagare.click();
+        }catch (Exception Error){
+            detalleError = "Error al desglosar las opciones del combo Pagaré";
+            objLogErrores.logError(detalleError,Error);
+        }
+    }
+
     public void SeleccionarPagare(String Pagare){
-        try {// cbx_Pagare.sendKeys(Pagare);
+        try {
             WebElement opcionPagare = driver.findElement(By.xpath("//select[@id='idPagare']//option[text()='"+Pagare+"']"));
             opcionPagare.click();
             objFuncionEsperar.EsperarTiempo(1);
@@ -161,7 +171,7 @@ public class SeleccionarServicioPage {
         try {
             wait.until(ExpectedConditions.elementToBeClickable(btn_Cargar));
             btn_Cargar.click();
-            objFuncionEsperar.EsperarTiempo(5);
+            objFuncionEsperar.EsperarTiempo(10); //Cambiar el tiempo de espera
         } catch (Exception Error) {
             detalleError = "Error al hacer click en el boton cargar";
             objLogErrores.logError(detalleError, Error);

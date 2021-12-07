@@ -10,7 +10,7 @@ import io.cucumber.java.en.When;
 import java.util.List;
 import java.util.Map;
 
-public class ExcelPropuestaReprogramacionEmpresarialDefinitions {
+public class ExcelCreditoEmpresarialReprogramacionMismoPagareDefinitions {
     LoginPage login;
     MenuPrincipalPage menuPrincipal;
     ListadoPropuestaPage listadoPropuesta;
@@ -28,7 +28,7 @@ public class ExcelPropuestaReprogramacionEmpresarialDefinitions {
     ExcelPage excel;
     String Valor;
 
-    public ExcelPropuestaReprogramacionEmpresarialDefinitions() {
+    public ExcelCreditoEmpresarialReprogramacionMismoPagareDefinitions() {
         login = new LoginPage(Hooks.driver);
         menuPrincipal = new MenuPrincipalPage(Hooks.driver);
         listadoPropuesta = new ListadoPropuestaPage(Hooks.driver);

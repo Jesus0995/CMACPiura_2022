@@ -115,5 +115,14 @@ public class funcionExcel {
 
     }
 
+    public String ExtraerCadenaDecimal(String Texto){
+        String nuevaCadena = Texto;
+        int posicion = Texto.indexOf(".");
+        if (posicion > 0) {
+            nuevaCadena = Texto.substring(0,posicion);//98.16
+        }
+        return  nuevaCadena;
+    }
+
 }
 

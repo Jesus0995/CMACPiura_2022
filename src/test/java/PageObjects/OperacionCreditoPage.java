@@ -177,7 +177,7 @@ public class OperacionCreditoPage {
     }
 
     public void SeleccionarDiaPagos(String DiaPagos) {
-        try {
+        try {//DiaPagos = objExcel.ExtraerCadenaDecimal(DiaPagos);
             Select Opcion = new Select(driver.findElement(By.xpath("//select[@name='pago']")));
             Opcion.selectByVisibleText(DiaPagos);
             objFuncionEsperar.EsperarTiempo(2);
@@ -188,7 +188,7 @@ public class OperacionCreditoPage {
     }
 
     public void IngresarNumeroCuotas(String NumeroCuotas) {
-        try {
+        try {//NumeroCuotas = objExcel.ExtraerCadenaDecimal(NumeroCuotas);
             txt_NumeroCuotas.clear();
             txt_NumeroCuotas.sendKeys(NumeroCuotas);
         } catch (Exception Error) {

@@ -1,11 +1,11 @@
 package Definitions;
+
 import PageObjects.*;
 import io.cucumber.datatable.DataTable;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-
 import java.util.List;
 import java.util.Map;
 
@@ -56,13 +56,14 @@ public class ExcelCreditoConsumoDefinitions {
         grabarDocumentoPropuesta = new GrabarInformacionDocumentoPage(Hooks.driver);
         aprobarDictamenPropuesta = new AprobarDictamenPropuestaPage(Hooks.driver);
         excel = new ExcelPage();
+
     }
 
 
     @Given("la pagina web SGCRED esta habilitado")
     public void laPaginaWebSGCREDEstaHabilitado() {
 
-        Hooks.driver.get("http://10.0.203.12:8081/propuesta/");
+        Hooks.driver.get("http://10.0.203.16:8082/propuesta/");
 
     }
 
@@ -77,6 +78,7 @@ public class ExcelCreditoConsumoDefinitions {
 
     @And("se presiona el boton ingresar y muestra el SGCRED")
     public void sePresionaElBotonIngresarYMuestraElSGCRED() {
+
         login.ClickSubmit();
     }
 
@@ -92,15 +94,24 @@ public class ExcelCreditoConsumoDefinitions {
             listadoPropuesta.ClickBtnCrearPropuesta();
             listadoClientes.SeleccionarTabCodigo();
             listadoClientes.IngresarCodigoCliente(datosExcel[i][0]);
-            System.out.println("lectura del dato:"+datosExcel[i][0]);
             listadoClientes.ClickBuscarCliente();
             listadoClientes.SeleccionarIconoPropuesta();
+
+            servicio.AbrirVentanaServicio();
             servicio.SeleccionarServicio(datosExcel[i][1]);
             servicio.SeleccionarServicioCredito(datosExcel[i][2]);
             servicio.SeleccionarTipoPropuesta(datosExcel[i][3]);
             servicio.SeleccionarSubTipoPropuesta(datosExcel[i][4]);
             servicio.SeleccionarPromocion(datosExcel[i][5]);
-            /*popUpComunicado.ValidarComunicado();
+            try {
+                servicio.ClickBtnCargar();
+            } catch (Exception Error){
+                System.out.println(Error.getMessage());
+            }
+            servicio.CerrarVentanaServicio();
+
+            popUpComunicado.ValidarComunicado();
+
             propuesta.ClickBtnOperacion();
             seleccionarOpeCred.AbrirVentanaSeleccionarOP();
             seleccionarOpeCred.ValidarVentanaOP();
@@ -122,6 +133,7 @@ public class ExcelCreditoConsumoDefinitions {
             operacioncredito.ClickBtnGrabar();
             operacioncredito.ObtenerAlerta();
             operacioncredito.CerrarVentanaOperacionCredito();
+
             propuesta.ClickBtnRegistrarSeguro();
             seleccionarSeguros.AbrirVentanaSeleccionarSeguros();
             seleccionarSeguros.ClickbtnConfirmar();
@@ -136,6 +148,7 @@ public class ExcelCreditoConsumoDefinitions {
             confirmarSeguros.AbrirVentanaConfirmacionSeguros();
             confirmarSeguros.ClickBtnCerrar();
             confirmarSeguros.CerrarVentanaConfirmacionSeguros();
+
             propuesta.ClickAnexarGarantias();
             seleccionarGarantia.AbrirVentanaGarantia();
             seleccionarGarantia.ClickRegistrarGarantia();
@@ -144,41 +157,56 @@ public class ExcelCreditoConsumoDefinitions {
             seleccionarGarantiasExistentes.SeleccionarCheckGarantiasExistentesCC();
             seleccionarGarantiasExistentes.ClickBtnAceptar();
             seleccionarGarantiasExistentes.CerrarVentanaGarantiasExistentes();
+
             propuesta.ClickEnlazarHojaTrabajo();
             enlazarEvaluacionEconomica.AbrirVentanaEvaluacionEconomica();
             enlazarEvaluacionEconomica.ClickBtnRealizar();
             enlazarEvaluacionEconomica.CerrarVentanaEvaluacionEconomica();
+
             propuesta.ClickDesenlazarInformeVisitaConsumo();
             desenlazarInformeVisita.AbrirVentanaDesenlazarInformeVisita();
             desenlazarInformeVisita.ClickBtnRealizar();
             desenlazarInformeVisita.CerrarVentanaDesenlazarInformeVisita();
+
             propuesta.ClickEnlazarInformeVisitaConsumo();
             enlazarInformeVisita.AbrirVentanaEnlazarInformeVisita();
             enlazarInformeVisita.ClickBtnRealizar();
             enlazarInformeVisita.CerrarVentanaEnlazarInformeVisita();
+
             propuesta.ClickEnlazarInformeComercialConsumo();
             enlazarInformeComercialNuevo.AbrirVentanaEnlazarInformeComercialNuevo();
             enlazarInformeComercialNuevo.ClickBtnRealizar();
             enlazarInformeComercialNuevo.CerrarVentanaEnlazarInformeComercialNuevo();
+
             propuesta.IngresarClasificacionCrediticia(datosExcel[i][16]);
             propuesta.IngresarObjetivoCredito(datosExcel[i][17]);
             propuesta.IngresarJustificacionCredito(datosExcel[i][18]);
+
             propuesta.ClickMenuGrabarPropuesta();
             grabarDocumentoPropuesta.AbrirVentanaGrabarPropuesta();
             grabarDocumentoPropuesta.ClickBtnCerrarInformacion();
             grabarDocumentoPropuesta.CerrarVentanaGrabarPropuesta();
+
             propuesta.AbrirOpcionesDictamen();
             propuesta.ClickBtnAprobarPropuesta();
+            aprobarDictamenPropuesta.AbrirVentanaAprobarDictamenPropuesta();
             aprobarDictamenPropuesta.IngresarObservaciones(datosExcel[i][19]);
             aprobarDictamenPropuesta.IngresarContrasena(datosExcel[i][20]);
             aprobarDictamenPropuesta.ClickBtnProcesar();
             aprobarDictamenPropuesta.CerrarVentanaAprobarDictamenPropuesta();
+
             grabarDocumentoPropuesta.AbrirVentanaGrabarPropuesta();
             grabarDocumentoPropuesta.ClickBtnCerrarInformacion();
-            grabarDocumentoPropuesta.CerrarVentanaGrabarPropuesta();*/
-            listadoClientes.ClickBtnRegresar();
+            grabarDocumentoPropuesta.CerrarVentanaGrabarPropuesta();
+
             listadoPropuesta.ClickBtnRegresar();
+
         }
+
+        menuPrincipal.ClickBtnCerrarSesion();
+        login.ClickBtnCerrarSesion();
+        Hooks.driver.close();
+
     }
 
 }

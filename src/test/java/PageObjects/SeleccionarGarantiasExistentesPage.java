@@ -20,6 +20,7 @@ public class SeleccionarGarantiasExistentesPage {
     private WebDriverWait wait;
     private Set<String> identificadoresGarantiasExistentes;
     private funcionVentana objFuncionVentana = new funcionVentana();
+    private String ventanaUltima;
     private funcionEsperar objFuncionEsperar = new funcionEsperar();
     private funcionExcepciones objLogErrores = new funcionExcepciones();
     private String detalleError = new String();
@@ -29,17 +30,9 @@ public class SeleccionarGarantiasExistentesPage {
 
     public void AbrirVentanaGarantiasExistentes() {
         try {
-            identificadoresGarantiasExistentes = driver.getWindowHandles();
-            System.out.println(identificadoresGarantiasExistentes);
-            String LastHandle = "";
-
-            for (String identificadorOperacionCredito : identificadoresGarantiasExistentes) {
-                LastHandle = identificadorOperacionCredito;
-            }
-            driver.switchTo().window(LastHandle);
-
-            System.out.println("Titulo:" + driver.getTitle());
-
+            System.out.println(driver.getWindowHandles());
+            objFuncionVentana.cambiarVentanaNueva();
+            ventanaUltima = driver.getWindowHandle();
         } catch (Exception Error) {
             detalleError = "Error al posicionarse en la ventana garantias existentes";
             objLogErrores.logError(detalleError, Error);
@@ -49,20 +42,15 @@ public class SeleccionarGarantiasExistentesPage {
 
     public void CerrarVentanaGarantiasExistentes() {
         try {
-            Integer SetSize = identificadoresGarantiasExistentes.size();
-            Integer Index = 0;
-            String[] Handles = new String[SetSize];
-            for (String identificadorGarantiasExistentes : identificadoresGarantiasExistentes) {
-                Handles[Index] = identificadorGarantiasExistentes;
-                Index++;
-            }
-            System.out.println("Ventana principal: " + Handles[0]);
-            driver.switchTo().window(Handles[0]);
+            System.out.println(driver.getWindowHandles());
+            objFuncionVentana.cambiarVentanaInicial();
+            System.out.println("Fin cerrar ventana");
         } catch (Exception Error) {
             detalleError = "Error al posicionarse en la ventana propuesta";
             objLogErrores.logError(detalleError, Error);
         }
     }
+
 
 
     public SeleccionarGarantiasExistentesPage(WebDriver d) {
@@ -123,7 +111,6 @@ public class SeleccionarGarantiasExistentesPage {
             wait.until(ExpectedConditions.elementToBeClickable(btn_Aceptar));
             btn_Aceptar.click();
             objFuncionEsperar.EsperarTiempo(1);
-
         } catch (Exception Error) {
             detalleError = "Error al seleccionar el boton aceptar";
             objLogErrores.logError(detalleError, Error);

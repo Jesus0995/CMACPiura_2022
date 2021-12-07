@@ -6,59 +6,21 @@
   <component name="ChangeListManager">
     <list default="true" id="3f7f10af-cc77-450a-8460-1211f16a85dc" name="Default Changelist" comment="Adicion de pages objects flujo Refinanciacion Especial">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/Definitions/EmitirDictamenPropuestaCreditoDefinitions.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Definitions/ExcelEmitirDictamenPropuestaCreditoDefinitions.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/Definitions/ExcelInformeVisitaVerificacionDefinitions.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Definitions/ExcelInformeVisitaVerificacionDefinitions.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/Definitions/InformeVisitaCreditoEmpresarialDefinitions.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Definitions/InformeVisitaCreditoEmpresarialDefinitions.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/Definitions/ExcelCreditoConsumoDefinitions.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Definitions/ExcelCreditoConsumoDefinitions.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/Definitions/ExcelPropuestaReprogramacionEmpresarialDefinitions.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Definitions/ExcelCreditoEmpresarialReprogramacionMismoPagareDefinitions.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/Functions/funcionExcel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Functions/funcionExcel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/PageObjects/BusquedaFormatoVerificacionPage.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/PageObjects/CondicionesRefinanciarPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/PageObjects/CondicionesRefinanciarPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/PageObjects/DefinaPropuestaPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/PageObjects/DefinaPropuestaPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/PageObjects/DesenlazarInformeVisitaPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/PageObjects/DesenlazarInformeVisitaPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/PageObjects/EnlazarEstadosFinancierosPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/PageObjects/EnlazarEstadosFinancierosPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/PageObjects/EnlazarInformeComercialNuevoPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/PageObjects/EnlazarInformeComercialNuevoPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/PageObjects/ExcelPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/PageObjects/ExcelPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/PageObjects/InformeVisitaVerificacionPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/PageObjects/InformeVisitaVerificacionPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/PageObjects/InformesVerificacionesPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/PageObjects/InformesVerificacionesPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/PageObjects/ListadoClientesPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/PageObjects/ListadoClientesPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/PageObjects/ListadoFormatoVerificacionPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/PageObjects/ListadoFormatoVerificacionPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/PageObjects/LoginPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/PageObjects/LoginPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/PageObjects/MenuPrincipalPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/PageObjects/MenuPrincipalPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/Functions/funcionFecha.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Functions/funcionFecha.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/PageObjects/CondicionesReprogramacionPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/PageObjects/CondicionesReprogramacionPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/PageObjects/GrabarInformacionDocumentoPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/PageObjects/GrabarInformacionDocumentoPage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/PageObjects/OperacionCreditoPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/PageObjects/OperacionCreditoPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/PageObjects/PopUpComunicadoPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/PageObjects/PopUpComunicadoPage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/PageObjects/PropuestaPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/PageObjects/PropuestaPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/PageObjects/SeleccionarGarantiaPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/PageObjects/SeleccionarGarantiaPage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/PageObjects/SeleccionarGarantiasExistentesPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/PageObjects/SeleccionarGarantiasExistentesPage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/PageObjects/SeleccionarServicioPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/PageObjects/SeleccionarServicioPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/resources/features/ExcelEmitirDictamenPropuestaCredito.feature" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/features/ExcelEmitirDictamenPropuestaCredito.feature" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/resources/features/ExcelInformeVisitaVerificacion.feature" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/features/ExcelInformeVisitaVerificacion.feature" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/resources/features/InformeComercialCreditoEmpresarial.feature" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/features/InformeComercialCreditoEmpresarial.feature" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/resources/features/InformeVisitaCreditoEmpresarial.feature" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/features/InformeVisitaCreditoEmpresarial.feature" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/DatosExcel/DatosCreditoEmpresarialRefinanciacionEspecial.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/target/DatosExcel/DatosCreditoEmpresarialRefinanciacionEspecial.xlsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/DatosExcel/DatosEmitirDictamenPropuestaCredito.xlsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/DatosExcel/DatosRegistrarInformeVisitaVerificacion.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/target/DatosExcel/DatosRegistrarInformeVisitaVerificacion.xlsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/DatosExcel/DatosReprogramacionCreditoEmpresarial.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/target/DatosExcel/DatosReprogramacionCreditoEmpresarial.xlsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/Definitions/EmitirDictamenPropuestaCreditoDefinitions.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/Definitions/ExcelInformeVisitaVerificacionDefinitions.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/Definitions/ExcelInformeVisitaVerificacionDefinitions.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/Definitions/InformeVisitaCreditoEmpresarialDefinitions.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/Definitions/InformeVisitaCreditoEmpresarialDefinitions.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/Functions/funcionExcel.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/Functions/funcionExcel.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/PageObjects/BusquedaFormatoVerificacionPage.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/PageObjects/CondicionesRefinanciarPage.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/PageObjects/CondicionesRefinanciarPage.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/PageObjects/DefinaPropuestaPage.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/PageObjects/DefinaPropuestaPage.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/PageObjects/DesenlazarInformeVisitaPage.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/PageObjects/DesenlazarInformeVisitaPage.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/PageObjects/EnlazarEstadosFinancierosPage.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/PageObjects/EnlazarEstadosFinancierosPage.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/PageObjects/EnlazarInformeComercialNuevoPage.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/PageObjects/EnlazarInformeComercialNuevoPage.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/PageObjects/InformeVisitaVerificacionPage.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/PageObjects/InformeVisitaVerificacionPage.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/PageObjects/InformesVerificacionesPage.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/PageObjects/InformesVerificacionesPage.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/PageObjects/ListadoClientesPage.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/PageObjects/ListadoClientesPage.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/PageObjects/ListadoFormatoVerificacionPage.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/PageObjects/ListadoFormatoVerificacionPage.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/PageObjects/LoginPage.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/PageObjects/LoginPage.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/PageObjects/MenuPrincipalPage.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/PageObjects/MenuPrincipalPage.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/PageObjects/OperacionCreditoPage.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/PageObjects/OperacionCreditoPage.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/PageObjects/PropuestaPage.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/PageObjects/PropuestaPage.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/PageObjects/SeleccionarGarantiasExistentesPage.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/PageObjects/SeleccionarGarantiasExistentesPage.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/PageObjects/SeleccionarServicioPage.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/PageObjects/SeleccionarServicioPage.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/features/ExcelEmitirDictamenPropuestaCredito.feature" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/features/ExcelEmitirDictamenPropuestaCredito.feature" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/features/ExcelInformeVisitaVerificacion.feature" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/features/ExcelInformeVisitaVerificacion.feature" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/features/InformeComercialCreditoEmpresarial.feature" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/features/InformeComercialCreditoEmpresarial.feature" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/features/InformeVisitaCreditoEmpresarial.feature" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/features/InformeVisitaCreditoEmpresarial.feature" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/features/ExcelPropuestaReprogramacionCredito.feature" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/features/ExcelCreditoEmpresarialReprogramacionMismoPagare.feature" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/DatosExcel/DatosCreditoConsumo.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/target/DatosExcel/DatosCreditoConsumo.xlsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/DatosExcel/DatosReprogramacionCreditoEmpresarial.xlsx" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -108,7 +70,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="TODO_SCOPE" value="All Places" />
-    <property name="last_opened_file_path" value="$USER_HOME$/Desktop/integracion/CajaPiuraCMAC2021-feature1" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/target/DatosExcel" />
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
@@ -116,6 +78,7 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\CajaPiuraCMAC2021\target\DatosExcel" />
       <recent name="C:\CajaPiuraCMAC2021\src\test\java\Definitions" />
     </key>
   </component>
@@ -268,16 +231,6 @@
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/test/java/PageObjects/SeleccionarGarantiasExistentesPage.java</url>
-          <line>95</line>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/test/java/PageObjects/SeleccionarGarantiasExistentesPage.java</url>
-          <line>123</line>
-          <option name="timeStamp" value="4" />
-        </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/test/java/Definitions/ExcelCreditoEmpresarialRefinanciacionEspecialDefinitions.java</url>
           <line>114</line>
