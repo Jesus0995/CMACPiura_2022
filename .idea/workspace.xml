@@ -5,22 +5,23 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3f7f10af-cc77-450a-8460-1211f16a85dc" name="Default Changelist" comment="Adicion de pages objects flujo Refinanciacion Especial">
+      <change afterPath="$PROJECT_DIR$/.idea/runConfigurations.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/Definitions/ExcelCreditoConsumoDefinitions.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Definitions/ExcelCreditoConsumoDefinitions.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/Definitions/ExcelPropuestaReprogramacionEmpresarialDefinitions.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Definitions/ExcelCreditoEmpresarialReprogramacionMismoPagareDefinitions.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/Functions/funcionExcel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Functions/funcionExcel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/Functions/funcionFecha.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Functions/funcionFecha.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/PageObjects/CondicionesReprogramacionPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/PageObjects/CondicionesReprogramacionPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/PageObjects/GrabarInformacionDocumentoPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/PageObjects/GrabarInformacionDocumentoPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/PageObjects/OperacionCreditoPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/PageObjects/OperacionCreditoPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/PageObjects/PopUpComunicadoPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/PageObjects/PopUpComunicadoPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/PageObjects/PropuestaPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/PageObjects/PropuestaPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/PageObjects/SeleccionarGarantiaPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/PageObjects/SeleccionarGarantiaPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/PageObjects/SeleccionarGarantiasExistentesPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/PageObjects/SeleccionarGarantiasExistentesPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/PageObjects/SeleccionarServicioPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/PageObjects/SeleccionarServicioPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/resources/features/ExcelPropuestaReprogramacionCredito.feature" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/features/ExcelCreditoEmpresarialReprogramacionMismoPagare.feature" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/DatosExcel/DatosCreditoConsumo.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/target/DatosExcel/DatosCreditoConsumo.xlsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/DatosExcel/DatosReprogramacionCreditoEmpresarial.xlsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/Definitions/ExcelCreditoConsumoDefinitions.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/Definitions/ExcelCreditoConsumoDefinitions.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/Definitions/ExcelPropuestaReprogramacionEmpresarialDefinitions.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/Functions/funcionExcel.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/Functions/funcionExcel.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/Functions/funcionFecha.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/Functions/funcionFecha.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/PageObjects/CondicionesReprogramacionPage.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/PageObjects/CondicionesReprogramacionPage.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/PageObjects/GrabarInformacionDocumentoPage.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/PageObjects/GrabarInformacionDocumentoPage.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/PageObjects/PopUpComunicadoPage.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/PageObjects/PopUpComunicadoPage.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/PageObjects/PropuestaPage.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/PageObjects/PropuestaPage.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/PageObjects/SeleccionarGarantiaPage.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/PageObjects/SeleccionarGarantiaPage.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/PageObjects/SeleccionarGarantiasExistentesPage.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/PageObjects/SeleccionarGarantiasExistentesPage.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/PageObjects/SeleccionarServicioPage.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/PageObjects/SeleccionarServicioPage.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/Support/runTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/Support/screenshot.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/features/ExcelPropuestaReprogramacionCredito.feature" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -38,7 +39,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="feature1" />
+        <entry key="$PROJECT_DIR$" value="main" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -53,12 +54,12 @@
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/src/test/resources/features/InformeVisitaCreditoConsumo.feature" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/src/test/java/PageObjects/SeleccionarOperacionCreditoPage.java" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/src/test/java/PageObjects/EnlazarInformeVisitaPage.java" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/src/test/java/PageObjects/PropuestaPage.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/test/java/PageObjects/OperacionCreditoPage.java" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/src/test/java/Definitions/PropuestaCreditoConsumoDefinitions.java" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/src/test/resources/features/PropuestaCreditoConsumo.feature" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/src/test/java/PageObjects/OperacionCreditoPage.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/test/java/PageObjects/EnlazarInformeVisitaPage.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/test/java/PageObjects/SeleccionarOperacionCreditoPage.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/test/java/PageObjects/PropuestaPage.java" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/src/test/java/PageObjects/GrabarInformacionDocumentoPage.java" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="ProjectId" id="20W7CyZkJBCVXV1sNQAvHx7beJF" />
@@ -69,8 +70,9 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="TODO_SCOPE" value="All Places" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/target/DatosExcel" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />

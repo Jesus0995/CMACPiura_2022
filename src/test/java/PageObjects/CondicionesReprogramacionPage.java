@@ -194,7 +194,7 @@ public class CondicionesReprogramacionPage {
             txt_FechaPago.sendKeys(FechaPago);
         }
         catch (Exception Error){
-            detalleError = "Error al ingresar Fecha de Pago";
+            detalleError = "Error al registar Fecha de Pago";
             objLogErrores.logError(detalleError, Error);
             txt_FechaPago.sendKeys(objFuncionFecha.FormatoFecha(FechaPago));
         }
