@@ -190,7 +190,7 @@ public class PropuestaPage {
     public void ClickEnlazarEEFF() {
         try {
             WebElement btn_EnlazarEEFF = driver.findElement(By.xpath("/html/body/form/table[1]/tbody/tr[3]/td/div/button"));
-
+            objFuncionEsperar.EsperarTiempo(1);
             String JScript = btn_EnlazarEEFF.getAttribute("onclick");
             ((JavascriptExecutor) driver).executeScript(JScript);
             objFuncionEsperar.EsperarTiempo(2);
@@ -313,6 +313,7 @@ public class PropuestaPage {
     public void AbrirOpcionesDictamen() {
         try {
             btn_Dictamen.click();
+            objFuncionEsperar.EsperarTiempo(2);
         } catch (Exception Error) {
             detalleError = "Error al seleccionar el boton opciones dictamen";
             objLogErrores.logError(detalleError, Error);
@@ -322,8 +323,9 @@ public class PropuestaPage {
 
     public void ClickBtnAprobarPropuesta() {
         try {
+            //objFuncionEsperar.EsperarTiempo(1);
             btn_AprobarPropuesta.click();
-            objFuncionEsperar.EsperarTiempo(1);
+            objFuncionEsperar.EsperarTiempo(2);
         } catch (Exception Error) {
             detalleError = "Error al seleccionar el boton aprobar propuesta";
             objLogErrores.logError(detalleError, Error);

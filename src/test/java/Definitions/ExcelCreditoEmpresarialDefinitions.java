@@ -36,6 +36,8 @@ public class ExcelCreditoEmpresarialDefinitions {
     GrabarInformacionDocumentoPage grabarPropuesta;
     AprobarDictamenPropuestaPage aprobarDictamenPropuesta;
     ExcelPage excel;
+    String ValorPropuesta;
+    String ValorResultado;
 
     public ExcelCreditoEmpresarialDefinitions() {
         login = new LoginPage(Hooks.driver);
@@ -67,9 +69,8 @@ public class ExcelCreditoEmpresarialDefinitions {
 
     @Given("la pagina web SGCRED lista para utilizar")
     public void laPaginaWebSGCREDListaParaUtilizar() {
-        Hooks.driver.get("http://10.0.203.16:8082/propuesta/index.jsp");
+        Hooks.driver.get("http://10.0.203.16:8083/propuesta/logout.jsp");
     }
-
 
     @When("se ingresa el usuario y password")
     public void seIngresaElUsuarioYPassword(DataTable usuario) {
@@ -79,7 +80,6 @@ public class ExcelCreditoEmpresarialDefinitions {
             login.IngresarPassword(lista.get(i).get("password"));
         }
     }
-
 
     @And("hacer click en el boton ingresar y muestra el Home SGCRED")
     public void hacerClickEnElBotonIngresarYMuestraElHomeSGCRED() {
@@ -102,39 +102,44 @@ public class ExcelCreditoEmpresarialDefinitions {
             System.out.println("lectura del codigo:" + datosExcel[i][0]);
             listadoClientes.ClickBuscarCliente();
             listadoClientes.SeleccionarIconoPropuesta();
+
             seleccionarServicio.AbrirVentanaServicio();
             seleccionarServicio.SeleccionarServicio(datosExcel[i][1]);
             System.out.println("lectura de servicio:" + datosExcel[i][1]);
             seleccionarServicio.SeleccionarServicioCredito(datosExcel[i][2]);
-            System.out.println("lectura servicio credito:" + datosExcel[i][2]);
             seleccionarServicio.SeleccionarTipoPropuesta(datosExcel[i][3]);
             seleccionarServicio.SeleccionarSubTipoPropuesta(datosExcel[i][4]);
             seleccionarServicio.SeleccionarPromocion(datosExcel[i][5]);
+            seleccionarServicio.SeleccionarTipoOperacion(datosExcel[i][6]);
             seleccionarServicio.ClickBtnCargar();
             seleccionarServicio.CerrarVentanaServicio();
+
             popUpComunicado.ValidarComunicado();
             propuesta.ClickBtnOperacion();
+
             seleccionarOperacionCredito.AbrirVentanaSeleccionarOP();
             seleccionarOperacionCredito.ValidarVentanaOP();
             seleccionarOperacionCredito.CerrarVentanaSeleccionarOP();
+
             operacioncredito.AbrirVentanaOperacionCredito();
-            operacioncredito.SeleccionarMoneda(datosExcel[i][6]);
-            operacioncredito.IngresarMonto(datosExcel[i][7]);
-            operacioncredito.IngresarTasaInicial(datosExcel[i][8]);
+            operacioncredito.SeleccionarMoneda(datosExcel[i][7]);
+            operacioncredito.IngresarMonto(datosExcel[i][8]);
+            operacioncredito.IngresarTasaInicial(datosExcel[i][9]);
             operacioncredito.ClickBtnCalcular();
-            operacioncredito.SeleccionarPlanPagos(datosExcel[i][9]);
-            operacioncredito.SeleccionarModalidad(datosExcel[i][10]);
-            operacioncredito.IngresarDias(datosExcel[i][11]);
-            operacioncredito.IngresarTasaPreferencial(datosExcel[i][12]);
-            operacioncredito.SeleccionarFormaDesembolso(datosExcel[i][13]);
-            operacioncredito.SeleccionarDepartamento(datosExcel[i][14]);
-            operacioncredito.SeleccionarProvincia(datosExcel[i][15]);
-            operacioncredito.SeleccionarDistrito(datosExcel[i][16]);
+            operacioncredito.SeleccionarPlanPagos(datosExcel[i][10]);
+            operacioncredito.SeleccionarModalidad(datosExcel[i][11]);
+            operacioncredito.IngresarDias(datosExcel[i][12]);
+            operacioncredito.IngresarTasaPreferencial(datosExcel[i][13]);
+            operacioncredito.SeleccionarFormaDesembolso(datosExcel[i][14]);
+            operacioncredito.SeleccionarDepartamento(datosExcel[i][15]);
+            operacioncredito.SeleccionarProvincia(datosExcel[i][16]);
+            operacioncredito.SeleccionarDistrito(datosExcel[i][17]);
             operacioncredito.IngresarFechaDesembolso();
-            operacioncredito.IngresarNotas(datosExcel[i][17]);
+            operacioncredito.IngresarNotas(datosExcel[i][18]);
             operacioncredito.ClickBtnGrabar();
             operacioncredito.ObtenerAlerta();
             operacioncredito.CerrarVentanaOperacionCredito();
+
             propuesta.ClickBtnRegistrarSeguro();
             seleccionarSeguros.AbrirVentanaSeleccionarSeguros();
             seleccionarSeguros.ClickbtnConfirmar();
@@ -145,7 +150,6 @@ public class ExcelCreditoEmpresarialDefinitions {
             registrarSeguros.IngresarDPSSeguroDesgravamen();
             registrarSeguros.ClickCheckSeguroRiesgoPlanPymes();
             registrarSeguros.IngresarDPSeguroRiesgoPlanPymes();
-
             registrarSeguros.ClickBtnConfirmar();
             registrarSeguros.CerrarVentanaRegistrarSeguros();
 
@@ -167,21 +171,19 @@ public class ExcelCreditoEmpresarialDefinitions {
 
             propuesta.IngresarComentariosPropuesta();
             propuesta.IngresarCaracteristicaNegocio();
-
             propuesta.ClickAnexarGarantias();
+
             seleccionarGarantia.AbrirVentanaGarantia();
             seleccionarGarantia.ClickRegistrarGarantia();
             seleccionarGarantia.CerrarVentanaGarantia();
 
             seleccionarGarantiasExistentes.AbrirVentanaGarantiasExistentes();
             seleccionarGarantiasExistentes.SeleccionarCheckGarantiasExistentesMaquinayEquipo();
-
             seleccionarGarantiasExistentes.ClickBtnAceptar();
             seleccionarGarantiasExistentes.CerrarVentanaGarantiasExistentes();
 
             cancelandoPagares.AbrirVentanaCancelandoPagares();
             cancelandoPagares.CerrarVentanaCancelandoPagares();
-
 
             propuesta.ClickEnlazarEEFF();
             enlazarEstadosFinancieros.AbrirVentanaEnlazarEstadosFinancieros();
@@ -194,45 +196,48 @@ public class ExcelCreditoEmpresarialDefinitions {
             desenlazarInformeVisita.CerrarVentanaDesenlazarInformeVisita();
 
             propuesta.ClickEnlazarInformeComercialNuevo();
-
             enlazarInformeComercialNuevo.AbrirVentanaEnlazarInformeComercialNuevo();
             enlazarInformeComercialNuevo.ClickBtnRealizar();
             enlazarInformeComercialNuevo.CerrarVentanaEnlazarInformeComercialNuevo();
 
             propuesta.ClickEnlazarInformeVisita();
-
             enlazarInformeVisita.AbrirVentanaEnlazarInformeVisita();
             enlazarInformeVisita.ClickBtnRealizar();
             enlazarInformeVisita.CerrarVentanaEnlazarInformeVisita();
 
-            propuesta.IngresarComentariosRatios(datosExcel[i][18]);
+            propuesta.IngresarComentariosRatios(datosExcel[i][19]);
 
+            ValorPropuesta = propuesta.CapturarNumeroPropuesta();
+            excel.EscribirExcel(arg0,0,i,22,ValorPropuesta);
 
             propuesta.ClickMenuGrabarPropuesta();
+
             grabarPropuesta.AbrirVentanaGrabarPropuesta();
             grabarPropuesta.ClickBtnCerrarInformacion();
             grabarPropuesta.CerrarVentanaGrabarPropuesta();
+
             propuesta.AbrirOpcionesDictamen();
             propuesta.ClickBtnAprobarPropuesta();
+
             aprobarDictamenPropuesta.AbrirVentanaAprobarDictamenPropuesta();
-            aprobarDictamenPropuesta.IngresarObservaciones(datosExcel[i][19]);
-            System.out.println("leer la observacion del ditamen" +datosExcel[i][19]);
-
-            aprobarDictamenPropuesta.IngresarContrasena(datosExcel[i][20]);
-            System.out.println("leer la contraseña ingresada"+datosExcel[i][20]);
-
+            aprobarDictamenPropuesta.IngresarObservaciones(datosExcel[i][20]);
+            aprobarDictamenPropuesta.IngresarContrasena(datosExcel[i][21]);
             aprobarDictamenPropuesta.ClickBtnProcesar();
             aprobarDictamenPropuesta.CerrarVentanaAprobarDictamenPropuesta();
 
             grabarPropuesta.AbrirVentanaGrabarPropuesta();
+            ValorResultado = grabarPropuesta.CapturarMensajeDerivacion();
+            excel.EscribirExcel(arg0,0,i,23,ValorResultado);
             grabarPropuesta.ClickBtnCerrarInformacion();
             grabarPropuesta.CerrarVentanaGrabarPropuesta();
 
             listadoClientes.ClickBtnRegresar();
             listadoPropuesta.ClickBtnRegresar();
 
-
         }
+        menuPrincipal.ClickBtnCerrarSesion();
+        login.ClickBtnCerrarSesion();
+        Hooks.driver.close();
     }
 
 }

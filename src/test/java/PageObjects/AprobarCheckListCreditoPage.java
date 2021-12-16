@@ -86,6 +86,7 @@ public class AprobarCheckListCreditoPage {
         try {
             wait.until(ExpectedConditions.elementToBeClickable(btn_Guardar));
             btn_Guardar.click();
+            objFuncionEsperar.EsperarTiempo(1);
         } catch (Exception Error) {
             detalleError = "Error al hacer click en el botón Guardar";
             objLogErrores.logError(detalleError,Error);

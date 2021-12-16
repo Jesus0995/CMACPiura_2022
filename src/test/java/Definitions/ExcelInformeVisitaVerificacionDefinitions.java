@@ -39,7 +39,7 @@ public class ExcelInformeVisitaVerificacionDefinitions {
 
     @Given("la URL del SGCRED este disponible para su uso")
     public void laURLDelSGCREDEsteDisponibleParaSuUso() {
-        Hooks.driver.get("http://10.0.203.16:8083/propuesta/");
+        Hooks.driver.get("http://10.0.203.16:8083/propuesta/logout.jsp");
     }
 
     @When("se ingresa las credenciales del jefe de credito para registrar")
@@ -70,9 +70,11 @@ public class ExcelInformeVisitaVerificacionDefinitions {
             listadoClientes.IngresarCodigoClienteInformeVisita(datosExcel[i][0]);
             listadoClientes.ClickBtnBuscarCodigoClienteInformeVisita();
             listadoClientes.SeleccionarVerInformeVisita();
+
             definaPropuesta.AbrirVentanaDefinaPropuesta();
             definaPropuesta.ClickBtnCargar();
             definaPropuesta.CerrarVentanaDefinaPropuesta();
+
             informesVerificaciones.ClickBtnCrearInformeVerificacion();
             informeVisitaVerificacion.IngresarFechaInicioVisita();
             informeVisitaVerificacion.IngresarFechaFinVisita();
@@ -85,10 +87,16 @@ public class ExcelInformeVisitaVerificacionDefinitions {
             informeVisitaVerificacion.IngresarComentarios();
             informeVisitaVerificacion.IngresarDetalleResultado(datosExcel[i][7]);
             informeVisitaVerificacion.ClickBtnGrabar();
+
             grabarDocumento.AbrirVentanaGrabarPropuesta();
-            grabarDocumento.ClickBtnCerrarInformacion();
+            grabarDocumento.ClickBtnCerrarInformes();
             grabarDocumento.CerrarVentanaGrabarPropuesta();
+
             informeVisitaVerificacion.ClickBtnFinalizar();
+
+            grabarDocumento.AbrirVentanaGrabarPropuesta();
+            grabarDocumento.ClickBtnCerrarInformes();
+            grabarDocumento.CerrarVentanaGrabarPropuesta();
 
         }
         menuPrincipal.ClickBtnCerrarSesion();

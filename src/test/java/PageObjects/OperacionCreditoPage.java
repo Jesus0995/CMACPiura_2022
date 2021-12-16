@@ -179,6 +179,7 @@ public class OperacionCreditoPage {
     public void SeleccionarDiaPagos(String DiaPagos) {
         try {//DiaPagos = objExcel.ExtraerCadenaDecimal(DiaPagos);
             Select Opcion = new Select(driver.findElement(By.xpath("//select[@name='pago']")));
+            objFuncionEsperar.EsperarTiempo(1);
             Opcion.selectByVisibleText(DiaPagos);
             objFuncionEsperar.EsperarTiempo(2);
         } catch (Exception Error) {

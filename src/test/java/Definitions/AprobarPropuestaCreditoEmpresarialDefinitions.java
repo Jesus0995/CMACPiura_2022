@@ -17,7 +17,6 @@ public class AprobarPropuestaCreditoEmpresarialDefinitions {
     PopUpComunicadoPage popUpComunicado;
     PropuestaPage propuesta;
     AprobarCheckListCreditoPage aprobarcheckListCredito;
-
     AprobarDictamenPropuestaPage aprobarDictamenPropuesta;
     GrabarInformacionDocumentoPage grabarDocumentoPropuesta;
 
@@ -29,8 +28,6 @@ public class AprobarPropuestaCreditoEmpresarialDefinitions {
         popUpComunicado = new PopUpComunicadoPage(Hooks.driver);
         propuesta = new PropuestaPage(Hooks.driver);
         aprobarcheckListCredito = new AprobarCheckListCreditoPage(Hooks.driver);
-
-
         aprobarDictamenPropuesta = new AprobarDictamenPropuestaPage(Hooks.driver);
         grabarDocumentoPropuesta = new GrabarInformacionDocumentoPage(Hooks.driver);
 
@@ -38,7 +35,7 @@ public class AprobarPropuestaCreditoEmpresarialDefinitions {
 
     @Given("el sistema SGCRED se encuentra disponible")
     public void ElSistemaSGCREDSeEncuentraDisponible() {
-        Hooks.driver.get("http://10.0.203.16:8082/propuesta/index.jsp");
+        Hooks.driver.get("http://10.0.203.16:8083/propuesta/logout.jsp");
     }
 
     @When("ingreso usuario y password del Perfil Jefe de Credito Agencia")
@@ -77,29 +74,55 @@ public class AprobarPropuestaCreditoEmpresarialDefinitions {
 
     @And("en la ventana Listado de Propuestas doy click en el boton Buscar")
     public void enLaVentanaListadoDePropuestasDoyClickEnElBotonBuscar() {
+
         listadoPropuesta.ClickBtnBuscar();
     }
 
     @And("en la ventana Listado de Propuestas doy click en el boton Editar")
     public void enLaVentanaListadoDePropuestasDoyClickEnElBotonEditar() {
+
         listadoPropuesta.ClickEditarPropuesta();
     }
 
     @And("el sistema muestra Comunicado y doy en cerrar")
     public void elSistemaMuestraComunicadoYDoyEnCerrar() {
-
         popUpComunicado.ValidarComunicado();
     }
 
-    @And("en la ventana principal de Propuesta doy click en el Menu Emitir Dictamen")
-    public void enLaVentanaPrincipalDePropuestaDoyClickEnElMenuEmitirDictamen() {
+    @And("en la ventana principal de Propuesta doy click en el boton verificar checklist credito")
+    public void enLaVentanaPrincipalDePropuestaDoyClickEnElBotonVerificarChecklistCredito() {
+        propuesta.ClickBtnVerificarCheckListCredito();
+    }
 
+    @And("en la ventana Anexar CheckList Credito seleccionar Aprobar e ingresar un comentario")
+    public void enLaVentanaAnexarCheckListCreditoSeleccionarAprobarEIngresarUnComentario() {
+        aprobarcheckListCredito.AbrirVentanaAprobarCheckListCredito();
+        aprobarcheckListCredito.SeleccionarOptAprobar();
+        aprobarcheckListCredito.IngresarComentarios();
+    }
+
+    @And("en la ventana Anexar CheckList Credito doy click en el boton Guardar")
+    public void enLaVentanaAnexarCheckListCreditoDoyClickEnElBotonGuardar() {
+        aprobarcheckListCredito.ClickBtnGuardar();
+
+    }
+
+    @And("en la ventana Anexar CheckList Credito doy click en el boton Cerrar")
+    public void enLaVentanaAnexarCheckListCreditoDoyClickEnElBotonCerrar() {
+        aprobarcheckListCredito.ClickBtnCerrar();
+        aprobarcheckListCredito.CerrarVentanaAprobarCheckListCredito();
+    }
+
+
+    @And("en la ventana principal de Propuesta doy click en el Menu Emitir Dictamen")
+    public void enLaVentanaPrincipalDePropuestaDoyClickEnElMenuEmitirDictamen() throws IOException {
         propuesta.AbrirOpcionesDictamen();
+        pantallazo();
     }
     @And("en las opciones del Menu Emitir Dictamen seleccionar el boton Aprobar")
-    public void enLasOpcionesDelMenuEmitirDictamenSeleccionarElBotonAprobar() {
-
+    public void enLasOpcionesDelMenuEmitirDictamenSeleccionarElBotonAprobar() throws IOException {
         propuesta.ClickBtnAprobarPropuesta();
+        pantallazo();
     }
 
     @And("en la ventana ventana Emitir Dictamen ingresar Observaciones y Clave")
@@ -138,30 +161,6 @@ public class AprobarPropuestaCreditoEmpresarialDefinitions {
     public void elSistemaDireccionaAlLoginYLeDoyClickEnElBotonCerrarSesion() {
 
         loginAprobar.ClickBtnCerrarSesion();
-    }
-
-    @And("en la ventana principal de Propuesta doy click en el boton verificar checklist credito")
-    public void enLaVentanaPrincipalDePropuestaDoyClickEnElBotonVerificarChecklistCredito() {
-        propuesta.ClickBtnVerificarCheckListCredito();
-    }
-
-    @And("en la ventana Anexar CheckList Credito seleccionar Aprobar e ingresar un comentario")
-    public void enLaVentanaAnexarCheckListCreditoSeleccionarAprobarEIngresarUnComentario() {
-        aprobarcheckListCredito.AbrirVentanaAprobarCheckListCredito();
-        aprobarcheckListCredito.SeleccionarOptAprobar();
-        aprobarcheckListCredito.IngresarComentarios();
-    }
-
-    @And("en la ventana Anexar CheckList Credito doy click en el boton Guardar")
-    public void enLaVentanaAnexarCheckListCreditoDoyClickEnElBotonGuardar() {
-        aprobarcheckListCredito.ClickBtnGuardar();
-        
-    }
-
-    @And("en la ventana Anexar CheckList Credito doy click en el boton Cerrar")
-    public void enLaVentanaAnexarCheckListCreditoDoyClickEnElBotonCerrar() {
-        aprobarcheckListCredito.ClickBtnCerrar();
-        aprobarcheckListCredito.CerrarVentanaAprobarCheckListCredito();
     }
 
     @And("cerrar el navegador")

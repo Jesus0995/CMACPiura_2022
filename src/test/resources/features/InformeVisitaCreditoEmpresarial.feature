@@ -8,7 +8,7 @@ Feature: Registrar informe de visita con el perfil Asesor de Negocio
     Given la web SGCRED esta disponible para usarla
     When ingreso usuario y password del perfil Asesor de Negocio
       | nombre | password |
-      | CIYAZU | prueba   |
+      | ALPAMA | prueba   |
     And doy click en boton ingresar al SGCRED
     And Mostrar home principal de SGCRED
     And doy click en el menu informe visita
@@ -40,9 +40,8 @@ Feature: Registrar informe de visita con el perfil Asesor de Negocio
     And finalmente cerramos el navegador
 
     Examples:
-      | cliente  |
-      |24681769|
-      |22114387|
+      | cliente |
+      | 1343556|
 
 
 

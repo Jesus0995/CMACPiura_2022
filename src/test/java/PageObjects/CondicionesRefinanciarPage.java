@@ -100,9 +100,10 @@ public class CondicionesRefinanciarPage {
 
     public void ClickBtnGrabar() {
         try {
-            objFuncionEsperar.EsperarTiempo(3);
+
             wait.until(ExpectedConditions.elementToBeClickable(btn_Grabar));
             btn_Grabar.click();
+            objFuncionEsperar.EsperarTiempo(3);
 
 
         } catch (Exception Error) {

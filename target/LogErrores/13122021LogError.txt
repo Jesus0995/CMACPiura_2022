@@ -1,43 +1,692 @@
-2021-12-13T09:12:03.803 - Error al seleccionar el pagare - Unable to locate element: //select[@id='idPagare']//option[text()='080-01-0840793']
+2021-12-13T10:34:04.789 - Error al ingresar monto amortizar - Unable to locate element: #monto_amortizar
 For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
 Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
-System info: host: 'ANGELA', ip: '10.0.240.60', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_301'
+System info: host: 'DESKTOP-SDTRTPQ', ip: '10.0.248.99', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_241'
 Driver info: org.openqa.selenium.firefox.FirefoxDriver
-Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 95.0, javascriptEnabled: true, moz:accessibilityChecks: false, moz:buildID: 20211129150630, moz:geckodriverVersion: 0.29.1, moz:headless: false, moz:processID: 9888, moz:profile: C:\Users\ANGELA\AppData\Loc..., moz:shutdownTimeout: 60000, moz:useNonSpecCompliantPointerOrigin: false, moz:webdriverClick: true, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, platformVersion: 10.0, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
-Session ID: a8a4cf7d-419a-460c-bff4-7ff66bc09b60
-*** Element info: {Using=xpath, value=//select[@id='idPagare']//option[text()='080-01-0840793']} 
-2021-12-13T09:14:04.539 - Error al seleccionar el botón enlazar informe comercial reprogramacion - Expected condition failed: waiting for element to be clickable: Proxy element for: DefaultElementLocator 'By.xpath: /html/body/form/table[2]/tbody/tr[2]/td[3]/button' (tried for 60 second(s) with 500 milliseconds interval) 
-2021-12-13T09:14:34.894 - Error al hacer click en el botón Realizar enlace del informe comercial nuevo - Expected condition failed: waiting for element to be clickable: Proxy element for: DefaultElementLocator 'By.xpath: //button[@type='submit']' (tried for 30 second(s) with 500 milliseconds interval) 
-2021-12-13T12:00:13.053 - Error al seleccionar el pagare - Unable to locate element: //select[@id='idPagare']//option[text()='080-01-0840793']
+Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 95.0, javascriptEnabled: true, moz:accessibilityChecks: false, moz:buildID: 20211129150630, moz:geckodriverVersion: 0.29.1, moz:headless: false, moz:processID: 13408, moz:profile: C:\Users\Usuario\AppData\Lo..., moz:shutdownTimeout: 60000, moz:useNonSpecCompliantPointerOrigin: false, moz:webdriverClick: true, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, platformVersion: 10.0, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
+Session ID: 4de14a68-9fcd-44e3-8456-27fbc811a6e4
+*** Element info: {Using=id, value=monto_amortizar} 
+2021-12-13T10:34:06.832 - Error al ingresar interes a refinanciar - Unable to locate element: #interes_refinanciar
 For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
 Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
-System info: host: 'ANGELA', ip: '10.0.240.60', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_301'
+System info: host: 'DESKTOP-SDTRTPQ', ip: '10.0.248.99', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_241'
 Driver info: org.openqa.selenium.firefox.FirefoxDriver
-Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 95.0, javascriptEnabled: true, moz:accessibilityChecks: false, moz:buildID: 20211129150630, moz:geckodriverVersion: 0.29.1, moz:headless: false, moz:processID: 5468, moz:profile: C:\Users\ANGELA\AppData\Loc..., moz:shutdownTimeout: 60000, moz:useNonSpecCompliantPointerOrigin: false, moz:webdriverClick: true, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, platformVersion: 10.0, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
-Session ID: aa7397d8-0feb-497f-876f-3c1656e0ac4b
-*** Element info: {Using=xpath, value=//select[@id='idPagare']//option[text()='080-01-0840793']} 
-2021-12-13T12:09:20.395 - Error al seleccionar el tipo de operacion - Cannot locate element with text: SIMPLE
+Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 95.0, javascriptEnabled: true, moz:accessibilityChecks: false, moz:buildID: 20211129150630, moz:geckodriverVersion: 0.29.1, moz:headless: false, moz:processID: 13408, moz:profile: C:\Users\Usuario\AppData\Lo..., moz:shutdownTimeout: 60000, moz:useNonSpecCompliantPointerOrigin: false, moz:webdriverClick: true, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, platformVersion: 10.0, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
+Session ID: 4de14a68-9fcd-44e3-8456-27fbc811a6e4
+*** Element info: {Using=id, value=interes_refinanciar} 
+2021-12-13T10:34:59.321 - Error al hacer click en el botón Calcular refinanciacion - Expected condition failed: waiting for element to be clickable: [[FirefoxDriver: firefox on WINDOWS (4de14a68-9fcd-44e3-8456-27fbc811a6e4)] -> xpath: /html/body/table[3]/tbody/tr[1]/td[4]/button] (tried for 30 second(s) with 500 milliseconds interval) 
+2021-12-13T10:34:59.334 - Error al seleccionar Plan Pagos - Browsing context has been discarded
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'DESKTOP-SDTRTPQ', ip: '10.0.248.99', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_241'
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 95.0, javascriptEnabled: true, moz:accessibilityChecks: false, moz:buildID: 20211129150630, moz:geckodriverVersion: 0.29.1, moz:headless: false, moz:processID: 13408, moz:profile: C:\Users\Usuario\AppData\Lo..., moz:shutdownTimeout: 60000, moz:useNonSpecCompliantPointerOrigin: false, moz:webdriverClick: true, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, platformVersion: 10.0, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
+Session ID: 4de14a68-9fcd-44e3-8456-27fbc811a6e4
+*** Element info: {Using=xpath, value=//*[text() = 'Fija Vencida']} 
+2021-12-13T10:34:59.348 - Error al seleccionar la Modalidad de pago - Browsing context has been discarded
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'DESKTOP-SDTRTPQ', ip: '10.0.248.99', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_241'
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 95.0, javascriptEnabled: true, moz:accessibilityChecks: false, moz:buildID: 20211129150630, moz:geckodriverVersion: 0.29.1, moz:headless: false, moz:processID: 13408, moz:profile: C:\Users\Usuario\AppData\Lo..., moz:shutdownTimeout: 60000, moz:useNonSpecCompliantPointerOrigin: false, moz:webdriverClick: true, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, platformVersion: 10.0, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
+Session ID: 4de14a68-9fcd-44e3-8456-27fbc811a6e4
+*** Element info: {Using=xpath, value=//*[text() = 'Cronograma Pagos']} 
+2021-12-13T10:34:59.367 - Error al seleccionar Opción de Pagos - Browsing context has been discarded
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'DESKTOP-SDTRTPQ', ip: '10.0.248.99', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_241'
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 95.0, javascriptEnabled: true, moz:accessibilityChecks: false, moz:buildID: 20211129150630, moz:geckodriverVersion: 0.29.1, moz:headless: false, moz:processID: 13408, moz:profile: C:\Users\Usuario\AppData\Lo..., moz:shutdownTimeout: 60000, moz:useNonSpecCompliantPointerOrigin: false, moz:webdriverClick: true, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, platformVersion: 10.0, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
+Session ID: 4de14a68-9fcd-44e3-8456-27fbc811a6e4
+*** Element info: {Using=xpath, value=//*[text() = 'Fecha Fija']} 
+2021-12-13T10:34:59.378 - Error al seleccionar Dias de pago - Browsing context has been discarded
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'DESKTOP-SDTRTPQ', ip: '10.0.248.99', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_241'
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 95.0, javascriptEnabled: true, moz:accessibilityChecks: false, moz:buildID: 20211129150630, moz:geckodriverVersion: 0.29.1, moz:headless: false, moz:processID: 13408, moz:profile: C:\Users\Usuario\AppData\Lo..., moz:shutdownTimeout: 60000, moz:useNonSpecCompliantPointerOrigin: false, moz:webdriverClick: true, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, platformVersion: 10.0, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
+Session ID: 4de14a68-9fcd-44e3-8456-27fbc811a6e4
+*** Element info: {Using=xpath, value=//select[@name='pago']} 
+2021-12-13T10:34:59.395 - Error al ingresar Número de Cuotas - Browsing context has been discarded
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'DESKTOP-SDTRTPQ', ip: '10.0.248.99', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_241'
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 95.0, javascriptEnabled: true, moz:accessibilityChecks: false, moz:buildID: 20211129150630, moz:geckodriverVersion: 0.29.1, moz:headless: false, moz:processID: 13408, moz:profile: C:\Users\Usuario\AppData\Lo..., moz:shutdownTimeout: 60000, moz:useNonSpecCompliantPointerOrigin: false, moz:webdriverClick: true, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, platformVersion: 10.0, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
+Session ID: 4de14a68-9fcd-44e3-8456-27fbc811a6e4
+*** Element info: {Using=xpath, value=//input[@name='numeroCuotas']} 
+2021-12-13T10:34:59.410 - Error al ingresar Tasa Preferencial - Browsing context has been discarded
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'DESKTOP-SDTRTPQ', ip: '10.0.248.99', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_241'
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 95.0, javascriptEnabled: true, moz:accessibilityChecks: false, moz:buildID: 20211129150630, moz:geckodriverVersion: 0.29.1, moz:headless: false, moz:processID: 13408, moz:profile: C:\Users\Usuario\AppData\Lo..., moz:shutdownTimeout: 60000, moz:useNonSpecCompliantPointerOrigin: false, moz:webdriverClick: true, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, platformVersion: 10.0, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
+Session ID: 4de14a68-9fcd-44e3-8456-27fbc811a6e4
+*** Element info: {Using=xpath, value=//input[@name='tasaPropuesta']} 
+2021-12-13T10:34:59.427 - Error al seleccionar forma de Desembolso - Browsing context has been discarded
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'DESKTOP-SDTRTPQ', ip: '10.0.248.99', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_241'
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 95.0, javascriptEnabled: true, moz:accessibilityChecks: false, moz:buildID: 20211129150630, moz:geckodriverVersion: 0.29.1, moz:headless: false, moz:processID: 13408, moz:profile: C:\Users\Usuario\AppData\Lo..., moz:shutdownTimeout: 60000, moz:useNonSpecCompliantPointerOrigin: false, moz:webdriverClick: true, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, platformVersion: 10.0, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
+Session ID: 4de14a68-9fcd-44e3-8456-27fbc811a6e4
+*** Element info: {Using=xpath, value=//select[@name='flgCuenta']} 
+2021-12-13T10:34:59.443 - Error al ingresar Fecha de Desembolso - Browsing context has been discarded
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'DESKTOP-SDTRTPQ', ip: '10.0.248.99', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_241'
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 95.0, javascriptEnabled: true, moz:accessibilityChecks: false, moz:buildID: 20211129150630, moz:geckodriverVersion: 0.29.1, moz:headless: false, moz:processID: 13408, moz:profile: C:\Users\Usuario\AppData\Lo..., moz:shutdownTimeout: 60000, moz:useNonSpecCompliantPointerOrigin: false, moz:webdriverClick: true, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, platformVersion: 10.0, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
+Session ID: 4de14a68-9fcd-44e3-8456-27fbc811a6e4
+*** Element info: {Using=xpath, value=//input[@name='fechaProbableDesembolso']} 
+2021-12-13T10:34:59.458 - Error al ingresar notas - Browsing context has been discarded
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'DESKTOP-SDTRTPQ', ip: '10.0.248.99', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_241'
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 95.0, javascriptEnabled: true, moz:accessibilityChecks: false, moz:buildID: 20211129150630, moz:geckodriverVersion: 0.29.1, moz:headless: false, moz:processID: 13408, moz:profile: C:\Users\Usuario\AppData\Lo..., moz:shutdownTimeout: 60000, moz:useNonSpecCompliantPointerOrigin: false, moz:webdriverClick: true, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, platformVersion: 10.0, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
+Session ID: 4de14a68-9fcd-44e3-8456-27fbc811a6e4
+*** Element info: {Using=xpath, value=//textarea[@name='notas']} 
+2021-12-13T10:37:40.367 - Error al seleccionar Dias de pago - Unable to locate element: //select[@name='pago']
 For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
 Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
-System info: host: 'ANGELA', ip: '10.0.240.60', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_301'
+System info: host: 'DESKTOP-SDTRTPQ', ip: '10.0.248.99', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_241'
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 95.0, javascriptEnabled: true, moz:accessibilityChecks: false, moz:buildID: 20211129150630, moz:geckodriverVersion: 0.29.1, moz:headless: false, moz:processID: 17376, moz:profile: C:\Users\Usuario\AppData\Lo..., moz:shutdownTimeout: 60000, moz:useNonSpecCompliantPointerOrigin: false, moz:webdriverClick: true, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, platformVersion: 10.0, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
+Session ID: 42fdab07-60c7-4ef2-8dca-8bc62beb2853
+*** Element info: {Using=xpath, value=//select[@name='pago']} 
+2021-12-13T10:37:40.382 - Error al ingresar Número de Cuotas - Unable to locate element: //input[@name='numeroCuotas']
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'DESKTOP-SDTRTPQ', ip: '10.0.248.99', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_241'
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 95.0, javascriptEnabled: true, moz:accessibilityChecks: false, moz:buildID: 20211129150630, moz:geckodriverVersion: 0.29.1, moz:headless: false, moz:processID: 17376, moz:profile: C:\Users\Usuario\AppData\Lo..., moz:shutdownTimeout: 60000, moz:useNonSpecCompliantPointerOrigin: false, moz:webdriverClick: true, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, platformVersion: 10.0, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
+Session ID: 42fdab07-60c7-4ef2-8dca-8bc62beb2853
+*** Element info: {Using=xpath, value=//input[@name='numeroCuotas']} 
+2021-12-13T10:37:40.397 - Error al ingresar Tasa Preferencial - Unable to locate element: //input[@name='tasaPropuesta']
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'DESKTOP-SDTRTPQ', ip: '10.0.248.99', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_241'
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 95.0, javascriptEnabled: true, moz:accessibilityChecks: false, moz:buildID: 20211129150630, moz:geckodriverVersion: 0.29.1, moz:headless: false, moz:processID: 17376, moz:profile: C:\Users\Usuario\AppData\Lo..., moz:shutdownTimeout: 60000, moz:useNonSpecCompliantPointerOrigin: false, moz:webdriverClick: true, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, platformVersion: 10.0, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
+Session ID: 42fdab07-60c7-4ef2-8dca-8bc62beb2853
+*** Element info: {Using=xpath, value=//input[@name='tasaPropuesta']} 
+2021-12-13T10:37:40.408 - Error al seleccionar forma de Desembolso - Unable to locate element: //select[@name='flgCuenta']
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'DESKTOP-SDTRTPQ', ip: '10.0.248.99', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_241'
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 95.0, javascriptEnabled: true, moz:accessibilityChecks: false, moz:buildID: 20211129150630, moz:geckodriverVersion: 0.29.1, moz:headless: false, moz:processID: 17376, moz:profile: C:\Users\Usuario\AppData\Lo..., moz:shutdownTimeout: 60000, moz:useNonSpecCompliantPointerOrigin: false, moz:webdriverClick: true, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, platformVersion: 10.0, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
+Session ID: 42fdab07-60c7-4ef2-8dca-8bc62beb2853
+*** Element info: {Using=xpath, value=//select[@name='flgCuenta']} 
+2021-12-13T10:37:40.429 - Error al ingresar Fecha de Desembolso - Unable to locate element: //input[@name='fechaProbableDesembolso']
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'DESKTOP-SDTRTPQ', ip: '10.0.248.99', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_241'
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 95.0, javascriptEnabled: true, moz:accessibilityChecks: false, moz:buildID: 20211129150630, moz:geckodriverVersion: 0.29.1, moz:headless: false, moz:processID: 17376, moz:profile: C:\Users\Usuario\AppData\Lo..., moz:shutdownTimeout: 60000, moz:useNonSpecCompliantPointerOrigin: false, moz:webdriverClick: true, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, platformVersion: 10.0, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
+Session ID: 42fdab07-60c7-4ef2-8dca-8bc62beb2853
+*** Element info: {Using=xpath, value=//input[@name='fechaProbableDesembolso']} 
+2021-12-13T10:37:40.442 - Error al ingresar notas - Unable to locate element: //textarea[@name='notas']
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'DESKTOP-SDTRTPQ', ip: '10.0.248.99', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_241'
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 95.0, javascriptEnabled: true, moz:accessibilityChecks: false, moz:buildID: 20211129150630, moz:geckodriverVersion: 0.29.1, moz:headless: false, moz:processID: 17376, moz:profile: C:\Users\Usuario\AppData\Lo..., moz:shutdownTimeout: 60000, moz:useNonSpecCompliantPointerOrigin: false, moz:webdriverClick: true, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, platformVersion: 10.0, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
+Session ID: 42fdab07-60c7-4ef2-8dca-8bc62beb2853
+*** Element info: {Using=xpath, value=//textarea[@name='notas']} 
+2021-12-13T10:38:43.941 - Error al seleccionar el boton registrar seguro - Expected condition failed: waiting for element to be clickable: Proxy element for: DefaultElementLocator 'By.xpath: /html/body/form/table[1]/tbody/tr[3]/td/div/table[7]/tbody/tr[1]/td[2]/button' (tried for 60 second(s) with 500 milliseconds interval) 
+2021-12-13T10:38:43.975 - Error al posicionarse en la ventana seleccionar seguros - Dismissed user prompt dialog: Registre el Dia de pago de la operacion.: 
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'DESKTOP-SDTRTPQ', ip: '10.0.248.99', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_241'
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 95.0, javascriptEnabled: true, moz:accessibilityChecks: false, moz:buildID: 20211129150630, moz:geckodriverVersion: 0.29.1, moz:headless: false, moz:processID: 17376, moz:profile: C:\Users\Usuario\AppData\Lo..., moz:shutdownTimeout: 60000, moz:useNonSpecCompliantPointerOrigin: false, moz:webdriverClick: true, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, platformVersion: 10.0, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
+Session ID: 42fdab07-60c7-4ef2-8dca-8bc62beb2853 
+2021-12-13T10:38:44.251 - Error al posicionarse en la ventana seguros - Dismissed user prompt dialog: ¿Desea Grabar la Operación?: 
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'DESKTOP-SDTRTPQ', ip: '10.0.248.99', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_241'
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 95.0, javascriptEnabled: true, moz:accessibilityChecks: false, moz:buildID: 20211129150630, moz:geckodriverVersion: 0.29.1, moz:headless: false, moz:processID: 17376, moz:profile: C:\Users\Usuario\AppData\Lo..., moz:shutdownTimeout: 60000, moz:useNonSpecCompliantPointerOrigin: false, moz:webdriverClick: true, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, platformVersion: 10.0, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
+Session ID: 42fdab07-60c7-4ef2-8dca-8bc62beb2853 
+2021-12-13T10:41:41.078 - Error al seleccionar forma de Desembolso - TypeError: document.frmOperacion.codigocuenta is undefined
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'DESKTOP-SDTRTPQ', ip: '10.0.248.99', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_241'
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 95.0, javascriptEnabled: true, moz:accessibilityChecks: false, moz:buildID: 20211129150630, moz:geckodriverVersion: 0.29.1, moz:headless: false, moz:processID: 14356, moz:profile: C:\Users\Usuario\AppData\Lo..., moz:shutdownTimeout: 60000, moz:useNonSpecCompliantPointerOrigin: false, moz:webdriverClick: true, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, platformVersion: 10.0, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
+Session ID: 5cf207aa-36dc-4c14-8a5d-967f7d3ddb33 
+2021-12-13T10:42:18.608 - Error al seleccionar el boton enlazar estados financieros - Unable to locate element: /html/body/form/table[1]/tbody/tr[3]/td/div/button
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'DESKTOP-SDTRTPQ', ip: '10.0.248.99', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_241'
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 95.0, javascriptEnabled: true, moz:accessibilityChecks: false, moz:buildID: 20211129150630, moz:geckodriverVersion: 0.29.1, moz:headless: false, moz:processID: 14356, moz:profile: C:\Users\Usuario\AppData\Lo..., moz:shutdownTimeout: 60000, moz:useNonSpecCompliantPointerOrigin: false, moz:webdriverClick: true, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, platformVersion: 10.0, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
+Session ID: 5cf207aa-36dc-4c14-8a5d-967f7d3ddb33
+*** Element info: {Using=xpath, value=/html/body/form/table[1]/tbody/tr[3]/td/div/button} 
+2021-12-13T10:42:48.728 - Error al hacer click en el botón Enlazar Estados Financieros - Expected condition failed: waiting for element to be clickable: Proxy element for: DefaultElementLocator 'By.xpath: //button[@type="submit"]' (tried for 30 second(s) with 500 milliseconds interval) 
+2021-12-13T10:56:51.349 - Error al seleccionar forma de Desembolso - TypeError: document.frmOperacion.codigocuenta is undefined
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'DESKTOP-SDTRTPQ', ip: '10.0.248.99', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_241'
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 95.0, javascriptEnabled: true, moz:accessibilityChecks: false, moz:buildID: 20211129150630, moz:geckodriverVersion: 0.29.1, moz:headless: false, moz:processID: 12916, moz:profile: C:\Users\Usuario\AppData\Lo..., moz:shutdownTimeout: 60000, moz:useNonSpecCompliantPointerOrigin: false, moz:webdriverClick: true, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, platformVersion: 10.0, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
+Session ID: 00d8574f-f540-47f2-bab0-63842c0b31b8 
+2021-12-13T11:00:04.708 - Error al seleccionar forma de Desembolso - TypeError: document.frmOperacion.codigocuenta is undefined
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'DESKTOP-SDTRTPQ', ip: '10.0.248.99', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_241'
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 95.0, javascriptEnabled: true, moz:accessibilityChecks: false, moz:buildID: 20211129150630, moz:geckodriverVersion: 0.29.1, moz:headless: false, moz:processID: 12916, moz:profile: C:\Users\Usuario\AppData\Lo..., moz:shutdownTimeout: 60000, moz:useNonSpecCompliantPointerOrigin: false, moz:webdriverClick: true, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, platformVersion: 10.0, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
+Session ID: 00d8574f-f540-47f2-bab0-63842c0b31b8 
+2021-12-13T11:01:19.517 - Error al ingresar comentarios de la seccion ratios - Unable to locate element: //textarea[@id='txtPrincipalRatio']
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'DESKTOP-SDTRTPQ', ip: '10.0.248.99', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_241'
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 95.0, javascriptEnabled: true, moz:accessibilityChecks: false, moz:buildID: 20211129150630, moz:geckodriverVersion: 0.29.1, moz:headless: false, moz:processID: 12916, moz:profile: C:\Users\Usuario\AppData\Lo..., moz:shutdownTimeout: 60000, moz:useNonSpecCompliantPointerOrigin: false, moz:webdriverClick: true, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, platformVersion: 10.0, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
+Session ID: 00d8574f-f540-47f2-bab0-63842c0b31b8
+*** Element info: {Using=xpath, value=//textarea[@id='txtPrincipalRatio']} 
+2021-12-13T11:30:46.705 - Error al seleccionar promocion del servicio - Cannot locate element with text: SIN PROMOCION
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'DESKTOP-SDTRTPQ', ip: '10.0.248.99', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_241'
 Driver info: driver.version: unknown 
-2021-12-13T12:11:55.153 - Error al seleccionar el botón enlazar informe comercial reprogramacion - Expected condition failed: waiting for element to be clickable: Proxy element for: DefaultElementLocator 'By.xpath: /html/body/form/table[2]/tbody/tr[2]/td[3]/button' (tried for 60 second(s) with 500 milliseconds interval) 
-2021-12-13T12:12:25.432 - Error al hacer click en el botón Realizar enlace del informe comercial nuevo - Expected condition failed: waiting for element to be clickable: Proxy element for: DefaultElementLocator 'By.xpath: //button[@type='submit']' (tried for 30 second(s) with 500 milliseconds interval) 
-2021-12-13T12:40:38.335 - Error al seleccionar el tipo de operacion - Cannot locate element with text: SIMPLE
+2021-12-13T11:30:46.886 - Error al seleccionar el tipo de operacion - Cannot locate element with text: SIMPLE
 For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
 Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
-System info: host: 'ANGELA', ip: '10.0.240.60', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_301'
+System info: host: 'DESKTOP-SDTRTPQ', ip: '10.0.248.99', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_241'
 Driver info: driver.version: unknown 
-2021-12-13T12:40:38.351 - Error al seleccionar el pagare - Unable to locate element: //select[@id='idPagare']//option[text()='080-01-0840793']
+2021-12-13T11:32:02.689 - Error al seleccionar forma de Desembolso - TypeError: document.frmOperacion.codigocuenta is undefined
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'DESKTOP-SDTRTPQ', ip: '10.0.248.99', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_241'
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 95.0, javascriptEnabled: true, moz:accessibilityChecks: false, moz:buildID: 20211129150630, moz:geckodriverVersion: 0.29.1, moz:headless: false, moz:processID: 9288, moz:profile: C:\Users\Usuario\AppData\Lo..., moz:shutdownTimeout: 60000, moz:useNonSpecCompliantPointerOrigin: false, moz:webdriverClick: true, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, platformVersion: 10.0, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
+Session ID: 06a1a9c5-85f7-4bec-b106-8800476dacee 
+2021-12-13T11:35:14.687 - Error al seleccionar forma de Desembolso - TypeError: document.frmOperacion.codigocuenta is undefined
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'DESKTOP-SDTRTPQ', ip: '10.0.248.99', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_241'
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 95.0, javascriptEnabled: true, moz:accessibilityChecks: false, moz:buildID: 20211129150630, moz:geckodriverVersion: 0.29.1, moz:headless: false, moz:processID: 9288, moz:profile: C:\Users\Usuario\AppData\Lo..., moz:shutdownTimeout: 60000, moz:useNonSpecCompliantPointerOrigin: false, moz:webdriverClick: true, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, platformVersion: 10.0, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
+Session ID: 06a1a9c5-85f7-4bec-b106-8800476dacee 
+2021-12-13T11:37:11.381 - Error al seleccionar icono propuesta - Unable to locate element: //img[@alt='Nueva Propuesta']
 For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
 Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
-System info: host: 'ANGELA', ip: '10.0.240.60', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_301'
+System info: host: 'DESKTOP-SDTRTPQ', ip: '10.0.248.99', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_241'
 Driver info: org.openqa.selenium.firefox.FirefoxDriver
-Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 95.0, javascriptEnabled: true, moz:accessibilityChecks: false, moz:buildID: 20211129150630, moz:geckodriverVersion: 0.29.1, moz:headless: false, moz:processID: 10912, moz:profile: C:\Users\ANGELA\AppData\Loc..., moz:shutdownTimeout: 60000, moz:useNonSpecCompliantPointerOrigin: false, moz:webdriverClick: true, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, platformVersion: 10.0, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
-Session ID: 6b252e72-e0f7-4ce4-a314-bc8ddd564852
-*** Element info: {Using=xpath, value=//select[@id='idPagare']//option[text()='080-01-0840793']} 
-2021-12-13T13:19:42.971 - Error al seleccionar el link Informe Visita Verificacion - Expected condition failed: waiting for element to be clickable: Proxy element for: DefaultElementLocator 'By.linkText: INFORME VISITA VERIFICACION' (tried for 30 second(s) with 500 milliseconds interval) 
-2021-12-13T13:20:58.076 - Error al seleccionar el link Cerrar Sesion - Expected condition failed: waiting for element to be clickable: Proxy element for: DefaultElementLocator 'By.partialLinkText: CERRAR' (tried for 30 second(s) with 500 milliseconds interval) 
-2021-12-13T13:21:33.384 - Error al hacer click cerrar sesion - Expected condition failed: waiting for element to be clickable: Proxy element for: DefaultElementLocator 'By.xpath: /html/body/table[2]/tbody/tr[3]/td/form/table/tbody/tr[2]/td/button[1]' (tried for 30 second(s) with 500 milliseconds interval) 
-2021-12-13T13:30:27.772 - Error al seleccionar el boton regresar - Expected condition failed: waiting for element to be clickable: Proxy element for: DefaultElementLocator 'By.xpath: /html/body/table/tbody/tr[2]/td/table[1]/tbody/tr/td[2]/div/button[2]' (tried for 50 second(s) with 500 milliseconds interval) 
-2021-12-13T13:30:57.902 - Error al seleccionar el link Propuesta Financiamiento - Expected condition failed: waiting for element to be clickable: Proxy element for: DefaultElementLocator 'By.partialLinkText: PROPUESTA' (tried for 30 second(s) with 500 milliseconds interval) 
+Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 95.0, javascriptEnabled: true, moz:accessibilityChecks: false, moz:buildID: 20211129150630, moz:geckodriverVersion: 0.29.1, moz:headless: false, moz:processID: 9288, moz:profile: C:\Users\Usuario\AppData\Lo..., moz:shutdownTimeout: 60000, moz:useNonSpecCompliantPointerOrigin: false, moz:webdriverClick: true, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, platformVersion: 10.0, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
+Session ID: 06a1a9c5-85f7-4bec-b106-8800476dacee
+*** Element info: {Using=xpath, value=//img[@alt='Nueva Propuesta']} 
+2021-12-13T15:01:01.116 - Error al seleccionar el link Informe Visita Verificacion - Expected condition failed: waiting for element to be clickable: Proxy element for: DefaultElementLocator 'By.linkText: INFORME VISITA VERIFICACION' (tried for 30 second(s) with 500 milliseconds interval) 
+2021-12-13T15:02:01.080 - Error al seleccionar el link Cerrar Sesion - Expected condition failed: waiting for element to be clickable: Proxy element for: DefaultElementLocator 'By.partialLinkText: CERRAR' (tried for 30 second(s) with 500 milliseconds interval) 
+2021-12-13T15:02:36.177 - Error al hacer click cerrar sesion - Expected condition failed: waiting for element to be clickable: Proxy element for: DefaultElementLocator 'By.xpath: /html/body/table[2]/tbody/tr[3]/td/form/table/tbody/tr[2]/td/button[1]' (tried for 30 second(s) with 500 milliseconds interval) 
+2021-12-13T16:05:11.712 - Error al seleccionar forma de Desembolso - TypeError: document.frmOperacion.codigocuenta is undefined
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'DESKTOP-SDTRTPQ', ip: '10.0.248.99', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_241'
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 95.0, javascriptEnabled: true, moz:accessibilityChecks: false, moz:buildID: 20211129150630, moz:geckodriverVersion: 0.29.1, moz:headless: false, moz:processID: 10960, moz:profile: C:\Users\Usuario\AppData\Lo..., moz:shutdownTimeout: 60000, moz:useNonSpecCompliantPointerOrigin: false, moz:webdriverClick: true, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, platformVersion: 10.0, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
+Session ID: 76b8d07d-71d3-4884-aad5-971fb29630f8 
+2021-12-13T16:08:25.629 - Error al seleccionar forma de Desembolso - TypeError: document.frmOperacion.codigocuenta is undefined
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'DESKTOP-SDTRTPQ', ip: '10.0.248.99', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_241'
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 95.0, javascriptEnabled: true, moz:accessibilityChecks: false, moz:buildID: 20211129150630, moz:geckodriverVersion: 0.29.1, moz:headless: false, moz:processID: 10960, moz:profile: C:\Users\Usuario\AppData\Lo..., moz:shutdownTimeout: 60000, moz:useNonSpecCompliantPointerOrigin: false, moz:webdriverClick: true, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, platformVersion: 10.0, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
+Session ID: 76b8d07d-71d3-4884-aad5-971fb29630f8 
+2021-12-13T16:10:30.608 - Error al seleccionar icono propuesta - Unable to locate element: //img[@alt='Nueva Propuesta']
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'DESKTOP-SDTRTPQ', ip: '10.0.248.99', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_241'
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 95.0, javascriptEnabled: true, moz:accessibilityChecks: false, moz:buildID: 20211129150630, moz:geckodriverVersion: 0.29.1, moz:headless: false, moz:processID: 10960, moz:profile: C:\Users\Usuario\AppData\Lo..., moz:shutdownTimeout: 60000, moz:useNonSpecCompliantPointerOrigin: false, moz:webdriverClick: true, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, platformVersion: 10.0, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
+Session ID: 76b8d07d-71d3-4884-aad5-971fb29630f8
+*** Element info: {Using=xpath, value=//img[@alt='Nueva Propuesta']} 
+2021-12-13T16:11:01.103 - Error al seleccionar el tipo servicio - Expected condition failed: waiting for element to be clickable: Proxy element for: DefaultElementLocator 'By.xpath: //select[@name='servicio']' (tried for 30 second(s) with 500 milliseconds interval) 
+2021-12-13T16:11:31.448 - Error al seleccionar servicio de credito - Expected condition failed: waiting for element to be clickable: Proxy element for: DefaultElementLocator 'By.xpath: //select[@name='idServicioSofia']' (tried for 30 second(s) with 500 milliseconds interval) 
+2021-12-13T16:12:01.845 - Error al seleccionar tipo propuesta del servicio - Expected condition failed: waiting for element to be clickable: Proxy element for: DefaultElementLocator 'By.xpath: //select[@name='idTipoPropuesta']' (tried for 30 second(s) with 500 milliseconds interval) 
+2021-12-13T16:12:32.180 - Error al seleccionar subtipopropuesta del servicio - Expected condition failed: waiting for element to be clickable: Proxy element for: DefaultElementLocator 'By.xpath: //select[@name='idSubTipoPropuesta']' (tried for 30 second(s) with 500 milliseconds interval) 
+2021-12-13T16:13:02.366 - Error al seleccionar promocion del servicio - Expected condition failed: waiting for element to be clickable: Proxy element for: DefaultElementLocator 'By.xpath: //select[@name='idPromocion']' (tried for 30 second(s) with 500 milliseconds interval) 
+2021-12-13T16:13:32.483 - Error al seleccionar el tipo de operacion - Expected condition failed: waiting for element to be clickable: Proxy element for: DefaultElementLocator 'By.xpath: //select[@name='idTipoOperacion']' (tried for 30 second(s) with 500 milliseconds interval) 
+2021-12-13T16:14:02.643 - Error al hacer click en el botón seleccionar pagare - Expected condition failed: waiting for element to be clickable: Proxy element for: DefaultElementLocator 'By.xpath: /html/body/form/table/tbody/tr[9]/td[2]/button[1]' (tried for 30 second(s) with 500 milliseconds interval) 
+2021-12-13T16:14:32.786 - Error al hacer click en el boton cargar - Expected condition failed: waiting for element to be clickable: Proxy element for: DefaultElementLocator 'By.xpath: //*[@id="bCargar"]' (tried for 30 second(s) with 500 milliseconds interval) 
+2021-12-13T16:14:32.852 - Error al cerrar e popup comunicado - Element <span class="ui-icon ui-icon-closethick"> could not be scrolled into view
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'DESKTOP-SDTRTPQ', ip: '10.0.248.99', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_241'
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 95.0, javascriptEnabled: true, moz:accessibilityChecks: false, moz:buildID: 20211129150630, moz:geckodriverVersion: 0.29.1, moz:headless: false, moz:processID: 10960, moz:profile: C:\Users\Usuario\AppData\Lo..., moz:shutdownTimeout: 60000, moz:useNonSpecCompliantPointerOrigin: false, moz:webdriverClick: true, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, platformVersion: 10.0, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
+Session ID: 76b8d07d-71d3-4884-aad5-971fb29630f8 
+2021-12-13T16:15:33.119 - Error al seleccionar boton cancelar pagares - Expected condition failed: waiting for element to be clickable: Proxy element for: DefaultElementLocator 'By.xpath: /html/body/form/table[1]/tbody/tr[3]/td/div/table[10]/tbody/tr[2]/td[9]/span/img' (tried for 60 second(s) with 500 milliseconds interval) 
+2021-12-13T16:15:38.188 - Error al ingresar monto amortizar - Unable to locate element: #monto_amortizar
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'DESKTOP-SDTRTPQ', ip: '10.0.248.99', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_241'
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 95.0, javascriptEnabled: true, moz:accessibilityChecks: false, moz:buildID: 20211129150630, moz:geckodriverVersion: 0.29.1, moz:headless: false, moz:processID: 10960, moz:profile: C:\Users\Usuario\AppData\Lo..., moz:shutdownTimeout: 60000, moz:useNonSpecCompliantPointerOrigin: false, moz:webdriverClick: true, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, platformVersion: 10.0, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
+Session ID: 76b8d07d-71d3-4884-aad5-971fb29630f8
+*** Element info: {Using=id, value=monto_amortizar} 
+2021-12-13T16:15:40.217 - Error al ingresar interes a refinanciar - Unable to locate element: #interes_refinanciar
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'DESKTOP-SDTRTPQ', ip: '10.0.248.99', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_241'
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 95.0, javascriptEnabled: true, moz:accessibilityChecks: false, moz:buildID: 20211129150630, moz:geckodriverVersion: 0.29.1, moz:headless: false, moz:processID: 10960, moz:profile: C:\Users\Usuario\AppData\Lo..., moz:shutdownTimeout: 60000, moz:useNonSpecCompliantPointerOrigin: false, moz:webdriverClick: true, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, platformVersion: 10.0, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
+Session ID: 76b8d07d-71d3-4884-aad5-971fb29630f8
+*** Element info: {Using=id, value=interes_refinanciar} 
+2021-12-13T16:20:24.691 - Error al seleccionar el link Informe Visita Verificacion - Expected condition failed: waiting for element to be clickable: Proxy element for: DefaultElementLocator 'By.linkText: INFORME VISITA VERIFICACION' (tried for 30 second(s) with 500 milliseconds interval) 
+2021-12-13T16:21:47.233 - Error al seleccionar el link Cerrar Sesion - Expected condition failed: waiting for element to be clickable: Proxy element for: DefaultElementLocator 'By.partialLinkText: CERRAR' (tried for 30 second(s) with 500 milliseconds interval) 
+2021-12-13T16:22:22.365 - Error al hacer click cerrar sesion - Expected condition failed: waiting for element to be clickable: Proxy element for: DefaultElementLocator 'By.xpath: /html/body/table[2]/tbody/tr[3]/td/form/table/tbody/tr[2]/td/button[1]' (tried for 30 second(s) with 500 milliseconds interval) 
+2021-12-13T16:36:40.489 - Error al ingresar el numero de propuesta - Keys to send should be a not null CharSequence 
+2021-12-13T16:36:46.347 - Error al cerrar e popup comunicado - Dismissed user prompt dialog: Credito paralelo con cuota con días de atraso: 
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'DESKTOP-SDTRTPQ', ip: '10.0.248.99', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_241'
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 95.0, javascriptEnabled: true, moz:accessibilityChecks: false, moz:buildID: 20211129150630, moz:geckodriverVersion: 0.29.1, moz:headless: false, moz:processID: 11656, moz:profile: C:\Users\Usuario\AppData\Lo..., moz:shutdownTimeout: 60000, moz:useNonSpecCompliantPointerOrigin: false, moz:webdriverClick: true, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, platformVersion: 10.0, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
+Session ID: a5d28a8b-0db4-46de-b5cf-7383b71158d2 
+2021-12-13T16:36:46.505 - Error al seleccionar el boton opciones dictamen - Element <td id="NewDdTD" class="P"> is not clickable at point (117,122) because another element <div class="ui-widget-overlay"> obscures it
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'DESKTOP-SDTRTPQ', ip: '10.0.248.99', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_241'
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 95.0, javascriptEnabled: true, moz:accessibilityChecks: false, moz:buildID: 20211129150630, moz:geckodriverVersion: 0.29.1, moz:headless: false, moz:processID: 11656, moz:profile: C:\Users\Usuario\AppData\Lo..., moz:shutdownTimeout: 60000, moz:useNonSpecCompliantPointerOrigin: false, moz:webdriverClick: true, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, platformVersion: 10.0, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
+Session ID: a5d28a8b-0db4-46de-b5cf-7383b71158d2 
+2021-12-13T16:36:46.546 - Error al seleccionar el boton aprobar propuesta - Element <img class="MM" src="images/i_017.gif"> could not be scrolled into view
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'DESKTOP-SDTRTPQ', ip: '10.0.248.99', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_241'
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 95.0, javascriptEnabled: true, moz:accessibilityChecks: false, moz:buildID: 20211129150630, moz:geckodriverVersion: 0.29.1, moz:headless: false, moz:processID: 11656, moz:profile: C:\Users\Usuario\AppData\Lo..., moz:shutdownTimeout: 60000, moz:useNonSpecCompliantPointerOrigin: false, moz:webdriverClick: true, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, platformVersion: 10.0, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
+Session ID: a5d28a8b-0db4-46de-b5cf-7383b71158d2 
+2021-12-13T16:36:48.632 - Error al ingresar observaciones en el dictamen - Unable to locate element: //textarea[@name='observaciones']
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'DESKTOP-SDTRTPQ', ip: '10.0.248.99', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_241'
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 95.0, javascriptEnabled: true, moz:accessibilityChecks: false, moz:buildID: 20211129150630, moz:geckodriverVersion: 0.29.1, moz:headless: false, moz:processID: 11656, moz:profile: C:\Users\Usuario\AppData\Lo..., moz:shutdownTimeout: 60000, moz:useNonSpecCompliantPointerOrigin: false, moz:webdriverClick: true, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, platformVersion: 10.0, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
+Session ID: a5d28a8b-0db4-46de-b5cf-7383b71158d2
+*** Element info: {Using=xpath, value=//textarea[@name='observaciones']} 
+2021-12-13T16:36:48.646 - Error al ingresar contraseña del asesor - Unable to locate element: //input[@name='clave']
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'DESKTOP-SDTRTPQ', ip: '10.0.248.99', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_241'
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 95.0, javascriptEnabled: true, moz:accessibilityChecks: false, moz:buildID: 20211129150630, moz:geckodriverVersion: 0.29.1, moz:headless: false, moz:processID: 11656, moz:profile: C:\Users\Usuario\AppData\Lo..., moz:shutdownTimeout: 60000, moz:useNonSpecCompliantPointerOrigin: false, moz:webdriverClick: true, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, platformVersion: 10.0, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
+Session ID: a5d28a8b-0db4-46de-b5cf-7383b71158d2
+*** Element info: {Using=xpath, value=//input[@name='clave']} 
+2021-12-13T16:36:50.683 - Error al hacer click en el botón Procesar - Unable to locate element: //button[@type='submit']
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'DESKTOP-SDTRTPQ', ip: '10.0.248.99', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_241'
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 95.0, javascriptEnabled: true, moz:accessibilityChecks: false, moz:buildID: 20211129150630, moz:geckodriverVersion: 0.29.1, moz:headless: false, moz:processID: 11656, moz:profile: C:\Users\Usuario\AppData\Lo..., moz:shutdownTimeout: 60000, moz:useNonSpecCompliantPointerOrigin: false, moz:webdriverClick: true, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, platformVersion: 10.0, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
+Session ID: a5d28a8b-0db4-46de-b5cf-7383b71158d2
+*** Element info: {Using=xpath, value=//button[@type='submit']} 
+2021-12-13T16:37:26.061 - Error al capturar el mensaje de derivacion de documento - Expected condition failed: waiting for visibility of Proxy element for: DefaultElementLocator 'By.xpath: /html/body/p[1]' (tried for 30 second(s) with 500 milliseconds interval) 
+2021-12-13T16:37:28.198 - Error en el botón Cerrar Información - Element <button name="btnEnviar2" type="button"> is not clickable at point (789,633) because another element <div class="ui-widget-overlay"> obscures it
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'DESKTOP-SDTRTPQ', ip: '10.0.248.99', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_241'
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 95.0, javascriptEnabled: true, moz:accessibilityChecks: false, moz:buildID: 20211129150630, moz:geckodriverVersion: 0.29.1, moz:headless: false, moz:processID: 11656, moz:profile: C:\Users\Usuario\AppData\Lo..., moz:shutdownTimeout: 60000, moz:useNonSpecCompliantPointerOrigin: false, moz:webdriverClick: true, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, platformVersion: 10.0, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
+Session ID: a5d28a8b-0db4-46de-b5cf-7383b71158d2 
+2021-12-13T18:37:38.421 - Error al seleccionar el boton aprobar propuesta - Element <img class="MM" src="images/i_017.gif"> could not be scrolled into view
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'DESKTOP-SDTRTPQ', ip: '10.0.248.99', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_241'
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 95.0, javascriptEnabled: true, moz:accessibilityChecks: false, moz:buildID: 20211129150630, moz:geckodriverVersion: 0.29.1, moz:headless: false, moz:processID: 16028, moz:profile: C:\Users\Usuario\AppData\Lo..., moz:shutdownTimeout: 60000, moz:useNonSpecCompliantPointerOrigin: false, moz:webdriverClick: true, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, platformVersion: 10.0, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
+Session ID: 0f326c71-e05c-46b8-a448-37ebae0c0658 
+2021-12-13T18:37:40.460 - Error al ingresar observaciones en el dictamen - Unable to locate element: //textarea[@name='observaciones']
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'DESKTOP-SDTRTPQ', ip: '10.0.248.99', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_241'
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 95.0, javascriptEnabled: true, moz:accessibilityChecks: false, moz:buildID: 20211129150630, moz:geckodriverVersion: 0.29.1, moz:headless: false, moz:processID: 16028, moz:profile: C:\Users\Usuario\AppData\Lo..., moz:shutdownTimeout: 60000, moz:useNonSpecCompliantPointerOrigin: false, moz:webdriverClick: true, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, platformVersion: 10.0, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
+Session ID: 0f326c71-e05c-46b8-a448-37ebae0c0658
+*** Element info: {Using=xpath, value=//textarea[@name='observaciones']} 
+2021-12-13T18:37:40.476 - Error al ingresar contraseña del asesor - Unable to locate element: //input[@name='clave']
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'DESKTOP-SDTRTPQ', ip: '10.0.248.99', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_241'
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 95.0, javascriptEnabled: true, moz:accessibilityChecks: false, moz:buildID: 20211129150630, moz:geckodriverVersion: 0.29.1, moz:headless: false, moz:processID: 16028, moz:profile: C:\Users\Usuario\AppData\Lo..., moz:shutdownTimeout: 60000, moz:useNonSpecCompliantPointerOrigin: false, moz:webdriverClick: true, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, platformVersion: 10.0, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
+Session ID: 0f326c71-e05c-46b8-a448-37ebae0c0658
+*** Element info: {Using=xpath, value=//input[@name='clave']} 
+2021-12-13T18:37:42.507 - Error al hacer click en el botón Procesar - Unable to locate element: //button[@type='submit']
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'DESKTOP-SDTRTPQ', ip: '10.0.248.99', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_241'
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 95.0, javascriptEnabled: true, moz:accessibilityChecks: false, moz:buildID: 20211129150630, moz:geckodriverVersion: 0.29.1, moz:headless: false, moz:processID: 16028, moz:profile: C:\Users\Usuario\AppData\Lo..., moz:shutdownTimeout: 60000, moz:useNonSpecCompliantPointerOrigin: false, moz:webdriverClick: true, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, platformVersion: 10.0, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
+Session ID: 0f326c71-e05c-46b8-a448-37ebae0c0658
+*** Element info: {Using=xpath, value=//button[@type='submit']} 
+2021-12-13T18:37:47.582 - Error en el botón cerrar - Unable to locate element: //button[@type='button']
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'DESKTOP-SDTRTPQ', ip: '10.0.248.99', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_241'
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 95.0, javascriptEnabled: true, moz:accessibilityChecks: false, moz:buildID: 20211129150630, moz:geckodriverVersion: 0.29.1, moz:headless: false, moz:processID: 16028, moz:profile: C:\Users\Usuario\AppData\Lo..., moz:shutdownTimeout: 60000, moz:useNonSpecCompliantPointerOrigin: false, moz:webdriverClick: true, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, platformVersion: 10.0, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
+Session ID: 0f326c71-e05c-46b8-a448-37ebae0c0658
+*** Element info: {Using=xpath, value=//button[@type='button']} 
+2021-12-13T18:42:46.956 - Error al seleccionar el boton regresar - Expected condition failed: waiting for element to be clickable: Proxy element for: DefaultElementLocator 'By.xpath: /html/body/table/tbody/tr[2]/td/table[1]/tbody/tr/td[2]/div/button[2]' (tried for 50 second(s) with 500 milliseconds interval) 
+2021-12-13T18:43:17.567 - Error al seleccionar el link Cerrar Sesion - Expected condition failed: waiting for element to be clickable: Proxy element for: DefaultElementLocator 'By.partialLinkText: CERRAR' (tried for 30 second(s) with 500 milliseconds interval) 
+2021-12-13T18:43:52.765 - Error al hacer click cerrar sesion - Expected condition failed: waiting for element to be clickable: Proxy element for: DefaultElementLocator 'By.xpath: /html/body/table[2]/tbody/tr[3]/td/form/table/tbody/tr[2]/td/button[1]' (tried for 30 second(s) with 500 milliseconds interval) 
+2021-12-13T18:44:13.082 - Error al seleccionar el boton aprobar propuesta - Element <img class="MM" src="images/i_017.gif"> could not be scrolled into view
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'DESKTOP-SDTRTPQ', ip: '10.0.248.99', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_241'
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 95.0, javascriptEnabled: true, moz:accessibilityChecks: false, moz:buildID: 20211129150630, moz:geckodriverVersion: 0.29.1, moz:headless: false, moz:processID: 10544, moz:profile: C:\Users\Usuario\AppData\Lo..., moz:shutdownTimeout: 60000, moz:useNonSpecCompliantPointerOrigin: false, moz:webdriverClick: true, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, platformVersion: 10.0, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
+Session ID: f709679d-38cb-4f0c-9fbe-cb460de6907b 
+2021-12-13T18:44:15.166 - Error al ingresar observaciones en el dictamen - Unable to locate element: //textarea[@name='observaciones']
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'DESKTOP-SDTRTPQ', ip: '10.0.248.99', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_241'
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 95.0, javascriptEnabled: true, moz:accessibilityChecks: false, moz:buildID: 20211129150630, moz:geckodriverVersion: 0.29.1, moz:headless: false, moz:processID: 10544, moz:profile: C:\Users\Usuario\AppData\Lo..., moz:shutdownTimeout: 60000, moz:useNonSpecCompliantPointerOrigin: false, moz:webdriverClick: true, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, platformVersion: 10.0, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
+Session ID: f709679d-38cb-4f0c-9fbe-cb460de6907b
+*** Element info: {Using=xpath, value=//textarea[@name='observaciones']} 
+2021-12-13T18:44:15.180 - Error al ingresar contraseña del asesor - Unable to locate element: //input[@name='clave']
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'DESKTOP-SDTRTPQ', ip: '10.0.248.99', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_241'
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 95.0, javascriptEnabled: true, moz:accessibilityChecks: false, moz:buildID: 20211129150630, moz:geckodriverVersion: 0.29.1, moz:headless: false, moz:processID: 10544, moz:profile: C:\Users\Usuario\AppData\Lo..., moz:shutdownTimeout: 60000, moz:useNonSpecCompliantPointerOrigin: false, moz:webdriverClick: true, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, platformVersion: 10.0, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
+Session ID: f709679d-38cb-4f0c-9fbe-cb460de6907b
+*** Element info: {Using=xpath, value=//input[@name='clave']} 
+2021-12-13T18:44:17.213 - Error al hacer click en el botón Procesar - Unable to locate element: //button[@type='submit']
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'DESKTOP-SDTRTPQ', ip: '10.0.248.99', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_241'
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 95.0, javascriptEnabled: true, moz:accessibilityChecks: false, moz:buildID: 20211129150630, moz:geckodriverVersion: 0.29.1, moz:headless: false, moz:processID: 10544, moz:profile: C:\Users\Usuario\AppData\Lo..., moz:shutdownTimeout: 60000, moz:useNonSpecCompliantPointerOrigin: false, moz:webdriverClick: true, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, platformVersion: 10.0, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
+Session ID: f709679d-38cb-4f0c-9fbe-cb460de6907b
+*** Element info: {Using=xpath, value=//button[@type='submit']} 
+2021-12-13T18:44:22.360 - Error en el botón cerrar - Unable to locate element: //button[@type='button']
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'DESKTOP-SDTRTPQ', ip: '10.0.248.99', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_241'
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 95.0, javascriptEnabled: true, moz:accessibilityChecks: false, moz:buildID: 20211129150630, moz:geckodriverVersion: 0.29.1, moz:headless: false, moz:processID: 10544, moz:profile: C:\Users\Usuario\AppData\Lo..., moz:shutdownTimeout: 60000, moz:useNonSpecCompliantPointerOrigin: false, moz:webdriverClick: true, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, platformVersion: 10.0, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
+Session ID: f709679d-38cb-4f0c-9fbe-cb460de6907b
+*** Element info: {Using=xpath, value=//button[@type='button']} 
+2021-12-13T18:54:53.439 - Error al seleccionar el link Cerrar Sesion - Expected condition failed: waiting for element to be clickable: Proxy element for: DefaultElementLocator 'By.partialLinkText: CERRAR' (tried for 30 second(s) with 500 milliseconds interval) 
+2021-12-13T19:02:44.048 - Error al seleccionar el icono crear propuesta - Expected condition failed: waiting for element to be clickable: Proxy element for: DefaultElementLocator 'By.xpath: //img[@alt='Editar']' (tried for 50 second(s) with 500 milliseconds interval) 
+2021-12-13T19:02:44.073 - Error al cerrar e popup comunicado - Unable to locate element: /html/body/div[1]/div[1]/a/span
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'DESKTOP-SDTRTPQ', ip: '10.0.248.99', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_241'
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 95.0, javascriptEnabled: true, moz:accessibilityChecks: false, moz:buildID: 20211129150630, moz:geckodriverVersion: 0.29.1, moz:headless: false, moz:processID: 19944, moz:profile: C:\Users\Usuario\AppData\Lo..., moz:shutdownTimeout: 60000, moz:useNonSpecCompliantPointerOrigin: false, moz:webdriverClick: true, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, platformVersion: 10.0, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
+Session ID: c3ed0085-63e0-4758-a428-66f8d42c73bb
+*** Element info: {Using=xpath, value=/html/body/div[1]/div[1]/a/span} 
+2021-12-13T19:03:29.580 - Error al seleccionar el boton verificar checklist credito - Failed to decode response from marionette
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'DESKTOP-SDTRTPQ', ip: '10.0.248.99', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_241'
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 95.0, javascriptEnabled: true, moz:accessibilityChecks: false, moz:buildID: 20211129150630, moz:geckodriverVersion: 0.29.1, moz:headless: false, moz:processID: 19944, moz:profile: C:\Users\Usuario\AppData\Lo..., moz:shutdownTimeout: 60000, moz:useNonSpecCompliantPointerOrigin: false, moz:webdriverClick: true, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, platformVersion: 10.0, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
+Session ID: c3ed0085-63e0-4758-a428-66f8d42c73bb
+*** Element info: {Using=xpath, value=//button[@name='btnEnviar2']} 
+2021-12-13T19:03:29.583 - Error al abrir ventana Aprobar CheckList Crédito - Tried to run command without establishing a connection
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'DESKTOP-SDTRTPQ', ip: '10.0.248.99', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_241'
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 95.0, javascriptEnabled: true, moz:accessibilityChecks: false, moz:buildID: 20211129150630, moz:geckodriverVersion: 0.29.1, moz:headless: false, moz:processID: 19944, moz:profile: C:\Users\Usuario\AppData\Lo..., moz:shutdownTimeout: 60000, moz:useNonSpecCompliantPointerOrigin: false, moz:webdriverClick: true, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, platformVersion: 10.0, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
+Session ID: c3ed0085-63e0-4758-a428-66f8d42c73bb 
+2021-12-13T19:03:29.597 - Error al seleccionar la Opcion Aprobar - Tried to run command without establishing a connection
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'DESKTOP-SDTRTPQ', ip: '10.0.248.99', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_241'
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 95.0, javascriptEnabled: true, moz:accessibilityChecks: false, moz:buildID: 20211129150630, moz:geckodriverVersion: 0.29.1, moz:headless: false, moz:processID: 19944, moz:profile: C:\Users\Usuario\AppData\Lo..., moz:shutdownTimeout: 60000, moz:useNonSpecCompliantPointerOrigin: false, moz:webdriverClick: true, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, platformVersion: 10.0, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
+Session ID: c3ed0085-63e0-4758-a428-66f8d42c73bb
+*** Element info: {Using=xpath, value=//*[@value="2"]} 
+2021-12-13T19:03:29.612 - Error al ingresar Comentarios - Tried to run command without establishing a connection
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'DESKTOP-SDTRTPQ', ip: '10.0.248.99', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_241'
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 95.0, javascriptEnabled: true, moz:accessibilityChecks: false, moz:buildID: 20211129150630, moz:geckodriverVersion: 0.29.1, moz:headless: false, moz:processID: 19944, moz:profile: C:\Users\Usuario\AppData\Lo..., moz:shutdownTimeout: 60000, moz:useNonSpecCompliantPointerOrigin: false, moz:webdriverClick: true, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, platformVersion: 10.0, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
+Session ID: c3ed0085-63e0-4758-a428-66f8d42c73bb
+*** Element info: {Using=xpath, value=//*[@name="comRevisionCheck"]} 
+2021-12-13T19:03:29.628 - Error al hacer click en el botón Guardar - Tried to run command without establishing a connection
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'DESKTOP-SDTRTPQ', ip: '10.0.248.99', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_241'
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 95.0, javascriptEnabled: true, moz:accessibilityChecks: false, moz:buildID: 20211129150630, moz:geckodriverVersion: 0.29.1, moz:headless: false, moz:processID: 19944, moz:profile: C:\Users\Usuario\AppData\Lo..., moz:shutdownTimeout: 60000, moz:useNonSpecCompliantPointerOrigin: false, moz:webdriverClick: true, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, platformVersion: 10.0, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
+Session ID: c3ed0085-63e0-4758-a428-66f8d42c73bb
+*** Element info: {Using=xpath, value=//*[@name="idSave"]} 
+2021-12-13T19:03:29.643 - Error al hacer click en el botón Cerrar - Tried to run command without establishing a connection
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'DESKTOP-SDTRTPQ', ip: '10.0.248.99', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_241'
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 95.0, javascriptEnabled: true, moz:accessibilityChecks: false, moz:buildID: 20211129150630, moz:geckodriverVersion: 0.29.1, moz:headless: false, moz:processID: 19944, moz:profile: C:\Users\Usuario\AppData\Lo..., moz:shutdownTimeout: 60000, moz:useNonSpecCompliantPointerOrigin: false, moz:webdriverClick: true, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, platformVersion: 10.0, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
+Session ID: c3ed0085-63e0-4758-a428-66f8d42c73bb
+*** Element info: {Using=xpath, value=/html/body/fieldset/form/table/tbody/tr[2]/td/button} 
+2021-12-13T19:03:29.645 - Error al cerrar ventana Aprobar CheckList Crédito - Tried to run command without establishing a connection
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'DESKTOP-SDTRTPQ', ip: '10.0.248.99', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_241'
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 95.0, javascriptEnabled: true, moz:accessibilityChecks: false, moz:buildID: 20211129150630, moz:geckodriverVersion: 0.29.1, moz:headless: false, moz:processID: 19944, moz:profile: C:\Users\Usuario\AppData\Lo..., moz:shutdownTimeout: 60000, moz:useNonSpecCompliantPointerOrigin: false, moz:webdriverClick: true, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, platformVersion: 10.0, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
+Session ID: c3ed0085-63e0-4758-a428-66f8d42c73bb 
+2021-12-13T19:03:29.662 - Error al seleccionar el boton opciones dictamen - Tried to run command without establishing a connection
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'DESKTOP-SDTRTPQ', ip: '10.0.248.99', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_241'
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 95.0, javascriptEnabled: true, moz:accessibilityChecks: false, moz:buildID: 20211129150630, moz:geckodriverVersion: 0.29.1, moz:headless: false, moz:processID: 19944, moz:profile: C:\Users\Usuario\AppData\Lo..., moz:shutdownTimeout: 60000, moz:useNonSpecCompliantPointerOrigin: false, moz:webdriverClick: true, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, platformVersion: 10.0, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
+Session ID: c3ed0085-63e0-4758-a428-66f8d42c73bb
+*** Element info: {Using=xpath, value=//td[@id='NewDdTD']} 
+2021-12-13T19:03:29.675 - Error al seleccionar el boton aprobar propuesta - Tried to run command without establishing a connection
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'DESKTOP-SDTRTPQ', ip: '10.0.248.99', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_241'
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 95.0, javascriptEnabled: true, moz:accessibilityChecks: false, moz:buildID: 20211129150630, moz:geckodriverVersion: 0.29.1, moz:headless: false, moz:processID: 19944, moz:profile: C:\Users\Usuario\AppData\Lo..., moz:shutdownTimeout: 60000, moz:useNonSpecCompliantPointerOrigin: false, moz:webdriverClick: true, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, platformVersion: 10.0, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
+Session ID: c3ed0085-63e0-4758-a428-66f8d42c73bb
+*** Element info: {Using=xpath, value=//img[@alt='Aprobar']} 
+2021-12-13T19:03:31.687 - Error al abrir ventana Aprobar Dictamen de Propuesta - Tried to run command without establishing a connection
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'DESKTOP-SDTRTPQ', ip: '10.0.248.99', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_241'
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 95.0, javascriptEnabled: true, moz:accessibilityChecks: false, moz:buildID: 20211129150630, moz:geckodriverVersion: 0.29.1, moz:headless: false, moz:processID: 19944, moz:profile: C:\Users\Usuario\AppData\Lo..., moz:shutdownTimeout: 60000, moz:useNonSpecCompliantPointerOrigin: false, moz:webdriverClick: true, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, platformVersion: 10.0, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
+Session ID: c3ed0085-63e0-4758-a428-66f8d42c73bb 
+2021-12-13T19:03:31.701 - Error al ingresar observaciones en el dictamen - Tried to run command without establishing a connection
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'DESKTOP-SDTRTPQ', ip: '10.0.248.99', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_241'
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 95.0, javascriptEnabled: true, moz:accessibilityChecks: false, moz:buildID: 20211129150630, moz:geckodriverVersion: 0.29.1, moz:headless: false, moz:processID: 19944, moz:profile: C:\Users\Usuario\AppData\Lo..., moz:shutdownTimeout: 60000, moz:useNonSpecCompliantPointerOrigin: false, moz:webdriverClick: true, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, platformVersion: 10.0, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
+Session ID: c3ed0085-63e0-4758-a428-66f8d42c73bb
+*** Element info: {Using=xpath, value=//textarea[@name='observaciones']} 
+2021-12-13T19:03:31.717 - Error al ingresar contraseña del asesor - Tried to run command without establishing a connection
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'DESKTOP-SDTRTPQ', ip: '10.0.248.99', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_241'
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 95.0, javascriptEnabled: true, moz:accessibilityChecks: false, moz:buildID: 20211129150630, moz:geckodriverVersion: 0.29.1, moz:headless: false, moz:processID: 19944, moz:profile: C:\Users\Usuario\AppData\Lo..., moz:shutdownTimeout: 60000, moz:useNonSpecCompliantPointerOrigin: false, moz:webdriverClick: true, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, platformVersion: 10.0, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
+Session ID: c3ed0085-63e0-4758-a428-66f8d42c73bb
+*** Element info: {Using=xpath, value=//input[@name='clave']} 
+2021-12-13T19:03:33.739 - Error al hacer click en el botón Procesar - Tried to run command without establishing a connection
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'DESKTOP-SDTRTPQ', ip: '10.0.248.99', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_241'
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 95.0, javascriptEnabled: true, moz:accessibilityChecks: false, moz:buildID: 20211129150630, moz:geckodriverVersion: 0.29.1, moz:headless: false, moz:processID: 19944, moz:profile: C:\Users\Usuario\AppData\Lo..., moz:shutdownTimeout: 60000, moz:useNonSpecCompliantPointerOrigin: false, moz:webdriverClick: true, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, platformVersion: 10.0, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
+Session ID: c3ed0085-63e0-4758-a428-66f8d42c73bb
+*** Element info: {Using=xpath, value=//button[@type='submit']} 
+2021-12-13T19:03:33.741 - Error al cerrar ventana Aprobar Dictamen de Propuesta - Tried to run command without establishing a connection
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'DESKTOP-SDTRTPQ', ip: '10.0.248.99', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_241'
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 95.0, javascriptEnabled: true, moz:accessibilityChecks: false, moz:buildID: 20211129150630, moz:geckodriverVersion: 0.29.1, moz:headless: false, moz:processID: 19944, moz:profile: C:\Users\Usuario\AppData\Lo..., moz:shutdownTimeout: 60000, moz:useNonSpecCompliantPointerOrigin: false, moz:webdriverClick: true, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, platformVersion: 10.0, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
+Session ID: c3ed0085-63e0-4758-a428-66f8d42c73bb 
+2021-12-13T19:13:17.069 - Error al seleccionar el icono crear propuesta - Expected condition failed: waiting for element to be clickable: Proxy element for: DefaultElementLocator 'By.xpath: //img[@alt='Editar']' (tried for 50 second(s) with 500 milliseconds interval) 
+2021-12-13T19:13:17.085 - Error al cerrar e popup comunicado - Unable to locate element: /html/body/div[1]/div[1]/a/span
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'DESKTOP-SDTRTPQ', ip: '10.0.248.99', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_241'
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 95.0, javascriptEnabled: true, moz:accessibilityChecks: false, moz:buildID: 20211129150630, moz:geckodriverVersion: 0.29.1, moz:headless: false, moz:processID: 14412, moz:profile: C:\Users\Usuario\AppData\Lo..., moz:shutdownTimeout: 60000, moz:useNonSpecCompliantPointerOrigin: false, moz:webdriverClick: true, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, platformVersion: 10.0, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
+Session ID: beecfbd8-b0e2-4413-83da-b4d6850a0134
+*** Element info: {Using=xpath, value=/html/body/div[1]/div[1]/a/span} 
+2021-12-13T19:14:17.437 - Error al seleccionar el boton verificar checklist credito - Expected condition failed: waiting for element to be clickable: Proxy element for: DefaultElementLocator 'By.xpath: //button[@name='btnEnviar2']' (tried for 60 second(s) with 500 milliseconds interval) 
+2021-12-13T19:14:17.780 - Error al ingresar Comentarios - Unable to locate element: //*[@name="comRevisionCheck"]
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'DESKTOP-SDTRTPQ', ip: '10.0.248.99', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_241'
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 95.0, javascriptEnabled: true, moz:accessibilityChecks: false, moz:buildID: 20211129150630, moz:geckodriverVersion: 0.29.1, moz:headless: false, moz:processID: 14412, moz:profile: C:\Users\Usuario\AppData\Lo..., moz:shutdownTimeout: 60000, moz:useNonSpecCompliantPointerOrigin: false, moz:webdriverClick: true, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, platformVersion: 10.0, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
+Session ID: beecfbd8-b0e2-4413-83da-b4d6850a0134
+*** Element info: {Using=xpath, value=//*[@name="comRevisionCheck"]} 
+2021-12-13T19:14:48.051 - Error al hacer click en el botón Guardar - Expected condition failed: waiting for element to be clickable: Proxy element for: DefaultElementLocator 'By.xpath: //*[@name="idSave"]' (tried for 30 second(s) with 500 milliseconds interval) 
+2021-12-13T19:15:18.462 - Error al hacer click en el botón Cerrar - Expected condition failed: waiting for element to be clickable: Proxy element for: DefaultElementLocator 'By.xpath: /html/body/fieldset/form/table/tbody/tr[2]/td/button' (tried for 30 second(s) with 500 milliseconds interval) 
+2021-12-13T19:15:18.596 - Error al seleccionar el boton opciones dictamen - Unable to locate element: //td[@id='NewDdTD']
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'DESKTOP-SDTRTPQ', ip: '10.0.248.99', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_241'
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 95.0, javascriptEnabled: true, moz:accessibilityChecks: false, moz:buildID: 20211129150630, moz:geckodriverVersion: 0.29.1, moz:headless: false, moz:processID: 14412, moz:profile: C:\Users\Usuario\AppData\Lo..., moz:shutdownTimeout: 60000, moz:useNonSpecCompliantPointerOrigin: false, moz:webdriverClick: true, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, platformVersion: 10.0, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
+Session ID: beecfbd8-b0e2-4413-83da-b4d6850a0134
+*** Element info: {Using=xpath, value=//td[@id='NewDdTD']} 
+2021-12-13T19:15:19.645 - Error al seleccionar el boton aprobar propuesta - Element <img class="MM" src="images/i_017.gif"> could not be scrolled into view
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'DESKTOP-SDTRTPQ', ip: '10.0.248.99', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_241'
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 95.0, javascriptEnabled: true, moz:accessibilityChecks: false, moz:buildID: 20211129150630, moz:geckodriverVersion: 0.29.1, moz:headless: false, moz:processID: 14412, moz:profile: C:\Users\Usuario\AppData\Lo..., moz:shutdownTimeout: 60000, moz:useNonSpecCompliantPointerOrigin: false, moz:webdriverClick: true, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, platformVersion: 10.0, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
+Session ID: beecfbd8-b0e2-4413-83da-b4d6850a0134 
+2021-12-13T19:15:21.742 - Error al ingresar observaciones en el dictamen - Unable to locate element: //textarea[@name='observaciones']
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'DESKTOP-SDTRTPQ', ip: '10.0.248.99', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_241'
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 95.0, javascriptEnabled: true, moz:accessibilityChecks: false, moz:buildID: 20211129150630, moz:geckodriverVersion: 0.29.1, moz:headless: false, moz:processID: 14412, moz:profile: C:\Users\Usuario\AppData\Lo..., moz:shutdownTimeout: 60000, moz:useNonSpecCompliantPointerOrigin: false, moz:webdriverClick: true, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, platformVersion: 10.0, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
+Session ID: beecfbd8-b0e2-4413-83da-b4d6850a0134
+*** Element info: {Using=xpath, value=//textarea[@name='observaciones']} 
+2021-12-13T19:15:21.759 - Error al ingresar contraseña del asesor - Unable to locate element: //input[@name='clave']
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'DESKTOP-SDTRTPQ', ip: '10.0.248.99', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_241'
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 95.0, javascriptEnabled: true, moz:accessibilityChecks: false, moz:buildID: 20211129150630, moz:geckodriverVersion: 0.29.1, moz:headless: false, moz:processID: 14412, moz:profile: C:\Users\Usuario\AppData\Lo..., moz:shutdownTimeout: 60000, moz:useNonSpecCompliantPointerOrigin: false, moz:webdriverClick: true, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, platformVersion: 10.0, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
+Session ID: beecfbd8-b0e2-4413-83da-b4d6850a0134
+*** Element info: {Using=xpath, value=//input[@name='clave']} 
+2021-12-13T19:15:23.796 - Error al hacer click en el botón Procesar - Browsing context has been discarded
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'DESKTOP-SDTRTPQ', ip: '10.0.248.99', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_241'
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 95.0, javascriptEnabled: true, moz:accessibilityChecks: false, moz:buildID: 20211129150630, moz:geckodriverVersion: 0.29.1, moz:headless: false, moz:processID: 14412, moz:profile: C:\Users\Usuario\AppData\Lo..., moz:shutdownTimeout: 60000, moz:useNonSpecCompliantPointerOrigin: false, moz:webdriverClick: true, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, platformVersion: 10.0, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
+Session ID: beecfbd8-b0e2-4413-83da-b4d6850a0134
+*** Element info: {Using=xpath, value=//button[@type='submit']} 
+2021-12-13T19:16:08.125 - Error al seleccionar el link Cerrar Sesion - Failed to decode response from marionette
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'DESKTOP-SDTRTPQ', ip: '10.0.248.99', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_241'
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 95.0, javascriptEnabled: true, moz:accessibilityChecks: false, moz:buildID: 20211129150630, moz:geckodriverVersion: 0.29.1, moz:headless: false, moz:processID: 14412, moz:profile: C:\Users\Usuario\AppData\Lo..., moz:shutdownTimeout: 60000, moz:useNonSpecCompliantPointerOrigin: false, moz:webdriverClick: true, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, platformVersion: 10.0, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
+Session ID: beecfbd8-b0e2-4413-83da-b4d6850a0134
+*** Element info: {Using=partial link text, value=CERRAR} 
+2021-12-13T19:16:13.158 - Error al hacer click cerrar sesion - Tried to run command without establishing a connection
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'DESKTOP-SDTRTPQ', ip: '10.0.248.99', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_241'
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 95.0, javascriptEnabled: true, moz:accessibilityChecks: false, moz:buildID: 20211129150630, moz:geckodriverVersion: 0.29.1, moz:headless: false, moz:processID: 14412, moz:profile: C:\Users\Usuario\AppData\Lo..., moz:shutdownTimeout: 60000, moz:useNonSpecCompliantPointerOrigin: false, moz:webdriverClick: true, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, platformVersion: 10.0, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
+Session ID: beecfbd8-b0e2-4413-83da-b4d6850a0134
+*** Element info: {Using=xpath, value=/html/body/table[2]/tbody/tr[3]/td/form/table/tbody/tr[2]/td/button[1]} 
+2021-12-13T19:17:14.567 - Error al seleccionar el boton aprobar propuesta - Element <img class="MM" src="images/i_017.gif"> could not be scrolled into view
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'DESKTOP-SDTRTPQ', ip: '10.0.248.99', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_241'
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 95.0, javascriptEnabled: true, moz:accessibilityChecks: false, moz:buildID: 20211129150630, moz:geckodriverVersion: 0.29.1, moz:headless: false, moz:processID: 11224, moz:profile: C:\Users\Usuario\AppData\Lo..., moz:shutdownTimeout: 60000, moz:useNonSpecCompliantPointerOrigin: false, moz:webdriverClick: true, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, platformVersion: 10.0, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
+Session ID: de7d1072-cfe4-4a22-9e0c-a5e66b073c2d 
+2021-12-13T19:17:16.613 - Error al ingresar observaciones en el dictamen - Unable to locate element: //textarea[@name='observaciones']
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'DESKTOP-SDTRTPQ', ip: '10.0.248.99', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_241'
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 95.0, javascriptEnabled: true, moz:accessibilityChecks: false, moz:buildID: 20211129150630, moz:geckodriverVersion: 0.29.1, moz:headless: false, moz:processID: 11224, moz:profile: C:\Users\Usuario\AppData\Lo..., moz:shutdownTimeout: 60000, moz:useNonSpecCompliantPointerOrigin: false, moz:webdriverClick: true, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, platformVersion: 10.0, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
+Session ID: de7d1072-cfe4-4a22-9e0c-a5e66b073c2d
+*** Element info: {Using=xpath, value=//textarea[@name='observaciones']} 
+2021-12-13T19:17:16.629 - Error al ingresar contraseña del asesor - Unable to locate element: //input[@name='clave']
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'DESKTOP-SDTRTPQ', ip: '10.0.248.99', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_241'
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 95.0, javascriptEnabled: true, moz:accessibilityChecks: false, moz:buildID: 20211129150630, moz:geckodriverVersion: 0.29.1, moz:headless: false, moz:processID: 11224, moz:profile: C:\Users\Usuario\AppData\Lo..., moz:shutdownTimeout: 60000, moz:useNonSpecCompliantPointerOrigin: false, moz:webdriverClick: true, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, platformVersion: 10.0, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
+Session ID: de7d1072-cfe4-4a22-9e0c-a5e66b073c2d
+*** Element info: {Using=xpath, value=//input[@name='clave']} 
+2021-12-13T19:17:18.662 - Error al hacer click en el botón Procesar - Unable to locate element: //button[@type='submit']
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'DESKTOP-SDTRTPQ', ip: '10.0.248.99', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_241'
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 95.0, javascriptEnabled: true, moz:accessibilityChecks: false, moz:buildID: 20211129150630, moz:geckodriverVersion: 0.29.1, moz:headless: false, moz:processID: 11224, moz:profile: C:\Users\Usuario\AppData\Lo..., moz:shutdownTimeout: 60000, moz:useNonSpecCompliantPointerOrigin: false, moz:webdriverClick: true, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, platformVersion: 10.0, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
+Session ID: de7d1072-cfe4-4a22-9e0c-a5e66b073c2d
+*** Element info: {Using=xpath, value=//button[@type='submit']} 
+2021-12-13T19:17:23.731 - Error en el botón cerrar - Unable to locate element: //button[@type='button']
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'DESKTOP-SDTRTPQ', ip: '10.0.248.99', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_241'
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 95.0, javascriptEnabled: true, moz:accessibilityChecks: false, moz:buildID: 20211129150630, moz:geckodriverVersion: 0.29.1, moz:headless: false, moz:processID: 11224, moz:profile: C:\Users\Usuario\AppData\Lo..., moz:shutdownTimeout: 60000, moz:useNonSpecCompliantPointerOrigin: false, moz:webdriverClick: true, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, platformVersion: 10.0, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
+Session ID: de7d1072-cfe4-4a22-9e0c-a5e66b073c2d
+*** Element info: {Using=xpath, value=//button[@type='button']} 
+2021-12-13T19:22:22.951 - Error al seleccionar el boton regresar - Expected condition failed: waiting for element to be clickable: Proxy element for: DefaultElementLocator 'By.xpath: /html/body/table/tbody/tr[2]/td/table[1]/tbody/tr/td[2]/div/button[2]' (tried for 50 second(s) with 500 milliseconds interval) 
+2021-12-13T19:22:53.342 - Error al seleccionar el link Cerrar Sesion - Expected condition failed: waiting for element to be clickable: Proxy element for: DefaultElementLocator 'By.partialLinkText: CERRAR' (tried for 30 second(s) with 500 milliseconds interval) 
+2021-12-13T19:23:28.791 - Error al hacer click cerrar sesion - Expected condition failed: waiting for element to be clickable: Proxy element for: DefaultElementLocator 'By.xpath: /html/body/table[2]/tbody/tr[3]/td/form/table/tbody/tr[2]/td/button[1]' (tried for 30 second(s) with 500 milliseconds interval) 
+2021-12-13T19:47:40.529 - Error al ingresar monto del Patrimonio - Unable to locate element: //input[@name='patrimoniopersonal']
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'DESKTOP-SDTRTPQ', ip: '10.0.248.99', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_241'
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 95.0, javascriptEnabled: true, moz:accessibilityChecks: false, moz:buildID: 20211129150630, moz:geckodriverVersion: 0.29.1, moz:headless: false, moz:processID: 11116, moz:profile: C:\Users\Usuario\AppData\Lo..., moz:shutdownTimeout: 60000, moz:useNonSpecCompliantPointerOrigin: false, moz:webdriverClick: true, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, platformVersion: 10.0, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
+Session ID: a52c2149-2590-43fb-9221-7adf88573ccd
+*** Element info: {Using=xpath, value=//input[@name='patrimoniopersonal']} 
+2021-12-13T19:47:46.625 - Error al hacer click en el botón Regresar - Dismissed user prompt dialog: UD DEBE AGREGAR UN MONTO DE OPERACION A SU PROPUESTA GENERADA PREVIAMENTE : 
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'DESKTOP-SDTRTPQ', ip: '10.0.248.99', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_241'
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 95.0, javascriptEnabled: true, moz:accessibilityChecks: false, moz:buildID: 20211129150630, moz:geckodriverVersion: 0.29.1, moz:headless: false, moz:processID: 11116, moz:profile: C:\Users\Usuario\AppData\Lo..., moz:shutdownTimeout: 60000, moz:useNonSpecCompliantPointerOrigin: false, moz:webdriverClick: true, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, platformVersion: 10.0, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
+Session ID: a52c2149-2590-43fb-9221-7adf88573ccd
+*** Element info: {Using=xpath, value=//img[@alt='Regresar']} 
+2021-12-13T19:48:17.143 - Error al seleccionar el boton regresar informe comercial - Expected condition failed: waiting for element to be clickable: Proxy element for: DefaultElementLocator 'By.xpath: //td[@class='Invisible']//button[1]' (tried for 30 second(s) with 500 milliseconds interval) 
+2021-12-13T19:49:39.709 - Error al ingresar monto del Patrimonio - Unable to locate element: //input[@name='patrimoniopersonal']
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'DESKTOP-SDTRTPQ', ip: '10.0.248.99', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_241'
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 95.0, javascriptEnabled: true, moz:accessibilityChecks: false, moz:buildID: 20211129150630, moz:geckodriverVersion: 0.29.1, moz:headless: false, moz:processID: 16948, moz:profile: C:\Users\Usuario\AppData\Lo..., moz:shutdownTimeout: 60000, moz:useNonSpecCompliantPointerOrigin: false, moz:webdriverClick: true, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, platformVersion: 10.0, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
+Session ID: 7d6aaaac-44d6-48f5-908f-6cd483e1f1bd
+*** Element info: {Using=xpath, value=//input[@name='patrimoniopersonal']} 
+2021-12-13T19:49:41.129 - Error al hacer click en el botón Regresar - Dismissed user prompt dialog: UD DEBE AGREGAR UN MONTO DE OPERACION A SU PROPUESTA GENERADA PREVIAMENTE : 
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'DESKTOP-SDTRTPQ', ip: '10.0.248.99', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_241'
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 95.0, javascriptEnabled: true, moz:accessibilityChecks: false, moz:buildID: 20211129150630, moz:geckodriverVersion: 0.29.1, moz:headless: false, moz:processID: 16948, moz:profile: C:\Users\Usuario\AppData\Lo..., moz:shutdownTimeout: 60000, moz:useNonSpecCompliantPointerOrigin: false, moz:webdriverClick: true, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, platformVersion: 10.0, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
+Session ID: 7d6aaaac-44d6-48f5-908f-6cd483e1f1bd
+*** Element info: {Using=xpath, value=//img[@alt='Regresar']} 
+2021-12-13T19:49:45.437 - Error al seleccionar el boton regresar informe comercial - Dismissed user prompt dialog: UD DEBE AGREGAR UN MONTO DE OPERACION A SU PROPUESTA GENERADA PREVIAMENTE : 
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'DESKTOP-SDTRTPQ', ip: '10.0.248.99', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_241'
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 95.0, javascriptEnabled: true, moz:accessibilityChecks: false, moz:buildID: 20211129150630, moz:geckodriverVersion: 0.29.1, moz:headless: false, moz:processID: 16948, moz:profile: C:\Users\Usuario\AppData\Lo..., moz:shutdownTimeout: 60000, moz:useNonSpecCompliantPointerOrigin: false, moz:webdriverClick: true, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, platformVersion: 10.0, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
+Session ID: 7d6aaaac-44d6-48f5-908f-6cd483e1f1bd
+*** Element info: {Using=xpath, value=//td[@class='Invisible']//button[1]} 
+2021-12-13T20:02:50.476 - Error en abrir ventana Checklist - Dismissed user prompt dialog: Felicitaciones!. Usted ha marcado todos los item.: 
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'DESKTOP-SDTRTPQ', ip: '10.0.248.99', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_241'
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 95.0, javascriptEnabled: true, moz:accessibilityChecks: false, moz:buildID: 20211129150630, moz:geckodriverVersion: 0.29.1, moz:headless: false, moz:processID: 5636, moz:profile: C:\Users\Usuario\AppData\Lo..., moz:shutdownTimeout: 60000, moz:useNonSpecCompliantPointerOrigin: false, moz:webdriverClick: true, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, platformVersion: 10.0, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
+Session ID: d9bbdc6d-41a0-4074-a2f2-5693a0f08775 
+2021-12-13T20:06:39.611 - Error al hacer click en el botón Regresar - Expected condition failed: waiting for element to be clickable: Proxy element for: DefaultElementLocator 'By.xpath: //table[3]/tbody/tr/td/div/button[1]' (tried for 50 second(s) with 500 milliseconds interval) 
+2021-12-13T20:06:46.393 - Error al ingresar codigo cliente - Keys to send should be a not null CharSequence 
+2021-12-13T20:06:47.055 - Error al seleccionar icono propuesta - Unable to locate element: //img[@alt='Nueva Propuesta']
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'DESKTOP-SDTRTPQ', ip: '10.0.248.99', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_241'
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 95.0, javascriptEnabled: true, moz:accessibilityChecks: false, moz:buildID: 20211129150630, moz:geckodriverVersion: 0.29.1, moz:headless: false, moz:processID: 5636, moz:profile: C:\Users\Usuario\AppData\Lo..., moz:shutdownTimeout: 60000, moz:useNonSpecCompliantPointerOrigin: false, moz:webdriverClick: true, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, platformVersion: 10.0, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
+Session ID: d9bbdc6d-41a0-4074-a2f2-5693a0f08775
+*** Element info: {Using=xpath, value=//img[@alt='Nueva Propuesta']} 
+2021-12-13T20:11:23.349 - Error al seleccionar el boton aprobar propuesta - Element <img class="MM" src="images/i_017.gif"> could not be scrolled into view
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'DESKTOP-SDTRTPQ', ip: '10.0.248.99', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_241'
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 95.0, javascriptEnabled: true, moz:accessibilityChecks: false, moz:buildID: 20211129150630, moz:geckodriverVersion: 0.29.1, moz:headless: false, moz:processID: 19148, moz:profile: C:\Users\Usuario\AppData\Lo..., moz:shutdownTimeout: 60000, moz:useNonSpecCompliantPointerOrigin: false, moz:webdriverClick: true, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, platformVersion: 10.0, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
+Session ID: 4cb51b29-ccc1-46be-b38d-2753368de262 
+2021-12-13T20:11:25.422 - Error al ingresar observaciones en el dictamen - Unable to locate element: //textarea[@name='observaciones']
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'DESKTOP-SDTRTPQ', ip: '10.0.248.99', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_241'
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 95.0, javascriptEnabled: true, moz:accessibilityChecks: false, moz:buildID: 20211129150630, moz:geckodriverVersion: 0.29.1, moz:headless: false, moz:processID: 19148, moz:profile: C:\Users\Usuario\AppData\Lo..., moz:shutdownTimeout: 60000, moz:useNonSpecCompliantPointerOrigin: false, moz:webdriverClick: true, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, platformVersion: 10.0, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
+Session ID: 4cb51b29-ccc1-46be-b38d-2753368de262
+*** Element info: {Using=xpath, value=//textarea[@name='observaciones']} 
+2021-12-13T20:11:25.438 - Error al ingresar contraseña del asesor - Unable to locate element: //input[@name='clave']
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'DESKTOP-SDTRTPQ', ip: '10.0.248.99', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_241'
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 95.0, javascriptEnabled: true, moz:accessibilityChecks: false, moz:buildID: 20211129150630, moz:geckodriverVersion: 0.29.1, moz:headless: false, moz:processID: 19148, moz:profile: C:\Users\Usuario\AppData\Lo..., moz:shutdownTimeout: 60000, moz:useNonSpecCompliantPointerOrigin: false, moz:webdriverClick: true, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, platformVersion: 10.0, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
+Session ID: 4cb51b29-ccc1-46be-b38d-2753368de262
+*** Element info: {Using=xpath, value=//input[@name='clave']} 
+2021-12-13T20:11:27.476 - Error al hacer click en el botón Procesar - Unable to locate element: //button[@type='submit']
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'DESKTOP-SDTRTPQ', ip: '10.0.248.99', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_241'
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 95.0, javascriptEnabled: true, moz:accessibilityChecks: false, moz:buildID: 20211129150630, moz:geckodriverVersion: 0.29.1, moz:headless: false, moz:processID: 19148, moz:profile: C:\Users\Usuario\AppData\Lo..., moz:shutdownTimeout: 60000, moz:useNonSpecCompliantPointerOrigin: false, moz:webdriverClick: true, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, platformVersion: 10.0, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
+Session ID: 4cb51b29-ccc1-46be-b38d-2753368de262
+*** Element info: {Using=xpath, value=//button[@type='submit']} 

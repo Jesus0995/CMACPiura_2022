@@ -85,6 +85,7 @@ public class SeleccionarGarantiasExistentesPage {
         try {
             for (WebElement checkBox : checkBoxGarantiaMaquinaria) {
                 checkBox.click();
+                objFuncionEsperar.EsperarTiempo(1);
             }
 
         } catch (Exception Error) {
@@ -123,7 +124,7 @@ public class SeleccionarGarantiasExistentesPage {
         try {
             wait.until(ExpectedConditions.elementToBeClickable(btn_Aceptar));
             btn_Aceptar.click();
-            objFuncionEsperar.EsperarTiempo(1);
+            objFuncionEsperar.EsperarTiempo(2);
         } catch (Exception Error) {
             detalleError = "Error al seleccionar el boton aceptar";
             objLogErrores.logError(detalleError, Error);

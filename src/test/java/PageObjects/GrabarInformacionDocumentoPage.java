@@ -83,6 +83,33 @@ public class GrabarInformacionDocumentoPage {
             objFuncionEsperar.EsperarTiempo(2);
             btn_Cerrar.click();
 
+            for (int i = 0; i <= 240; i += 1) {
+                if (driver.getWindowHandles().size() == numeroHandles) {
+                    objFuncionEsperar.EsperarTiempo(1);
+                    System.out.println("Esperando la ejecución del boton cerrar " + i);
+                } else {
+                    i = 241;
+                }
+            }
+            System.out.println("Ventana vigente: " + driver.getWindowHandles());
+            System.out.println("Fin click en boton cerrar");
+
+        } catch (Exception Error) {
+            detalleError = "Error en el botón Cerrar Información";
+            objLogErrores.logError(detalleError, Error);
+        }
+    }
+    public void ClickBtnCerrarInformes() {
+
+        try {
+            System.out.println("Click en boton cerrar");
+            System.out.println("Ventanas actuales: " + driver.getWindowHandles()+driver.getTitle());
+
+            Integer numeroHandles = driver.getWindowHandles().size();
+
+            objFuncionEsperar.EsperarTiempo(2);
+            btn_Cerrar.click();
+
             for (int i = 0; i <= 120; i += 1) {
                 if (driver.getWindowHandles().size() == numeroHandles) {
                     objFuncionEsperar.EsperarTiempo(1);
@@ -95,7 +122,7 @@ public class GrabarInformacionDocumentoPage {
             System.out.println("Fin click en boton cerrar");
 
         } catch (Exception Error) {
-            detalleError = "Error en el botón Cerrar Información";
+            detalleError = "Error en el botón Cerrar Información de informes";
             objLogErrores.logError(detalleError, Error);
         }
     }

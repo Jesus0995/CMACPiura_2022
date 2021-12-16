@@ -49,10 +49,10 @@ public class InformeVisita_InformePage {
 
     public void ClickBtnRegresar() {
         try {
-            objFuncionEsperar.EsperarTiempo(20);//40
+            objFuncionEsperar.EsperarTiempo(5);//40
             wait.until(ExpectedConditions.elementToBeClickable(btn_regresar));
             btn_regresar.click();
-            objFuncionEsperar.EsperarTiempo(5);
+            objFuncionEsperar.EsperarTiempo(4);
 
         } catch (Exception Error) {
             detalleError = "Error al seleccionar el boton regresar";
