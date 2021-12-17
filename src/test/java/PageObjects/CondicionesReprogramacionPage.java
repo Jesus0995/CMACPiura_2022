@@ -74,7 +74,7 @@ public class CondicionesReprogramacionPage {
 
     public void IngresarAmortizacionReprogramacion(String Amortizacion){
         try {
-            objFuncionEsperar.EsperarTiempo(1);
+            objFuncionEsperar.EsperarTiempo(2);
             txt_Amortizacion.clear();
             txt_Amortizacion.sendKeys(Amortizacion);
         }

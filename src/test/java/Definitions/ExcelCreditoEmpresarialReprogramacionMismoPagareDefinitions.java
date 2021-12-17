@@ -19,6 +19,8 @@ public class ExcelCreditoEmpresarialReprogramacionMismoPagareDefinitions {
     PopUpComunicadoPage popUpComunicado;
     PropuestaPage propuesta;
     CondicionesReprogramacionPage condicionesReprogramacion;
+    AnexarChecklistPage anexarCheckListCreditos;
+    ConfirmacionChecklistPage confirmarCheckList;
     EnlazarEstadosFinancierosPage enlazarEstadosFinancieros;
     DesenlazarInformeVisitaPage desenlazarInformeVisita;
     EnlazarInformeVisitaPage enlazarInformeVisita;
@@ -37,6 +39,8 @@ public class ExcelCreditoEmpresarialReprogramacionMismoPagareDefinitions {
         popUpComunicado = new PopUpComunicadoPage(Hooks.driver);
         propuesta = new PropuestaPage(Hooks.driver);
         condicionesReprogramacion = new CondicionesReprogramacionPage(Hooks.driver);
+        anexarCheckListCreditos = new AnexarChecklistPage(Hooks.driver);
+        confirmarCheckList = new ConfirmacionChecklistPage(Hooks.driver);
         enlazarEstadosFinancieros = new EnlazarEstadosFinancierosPage(Hooks.driver);
         desenlazarInformeVisita = new DesenlazarInformeVisitaPage(Hooks.driver);
         enlazarInformeVisita = new EnlazarInformeVisitaPage(Hooks.driver);
@@ -49,7 +53,7 @@ public class ExcelCreditoEmpresarialReprogramacionMismoPagareDefinitions {
     @Given("la pagina web SGCRED esta apto")
     public void laPaginaWebSGCREDEstaApto() {
 
-        Hooks.driver.get("http://10.0.203.16:8082/propuesta/index.jsp");
+        Hooks.driver.get("http://10.0.203.16:8083/propuesta/");
     }
 
     @When("digito el usuario y password")
@@ -116,6 +120,18 @@ public class ExcelCreditoEmpresarialReprogramacionMismoPagareDefinitions {
             condicionesReprogramacion.ClickBtnGrabar();
             condicionesReprogramacion.ObtenerAlerta();
             condicionesReprogramacion.CerrarVentanaCondicionesReprogramacion();
+
+            propuesta.ClickAnexarCheckListCreditos();
+            anexarCheckListCreditos.AbrirVentanaAnexarCheckList();
+            anexarCheckListCreditos.SeleccionarOpcionesCheckListCredito();
+            anexarCheckListCreditos.Seleccionar_37opinionLegal();
+            anexarCheckListCreditos.ClickBtnGuardarTerminar();
+            anexarCheckListCreditos.AceptarAlerta();
+            anexarCheckListCreditos.CerrarVentanaAnexarCheckList();
+
+            confirmarCheckList.AbrirVentanaConfirmacionCheckList();
+            confirmarCheckList.ClickBtnCerrar();
+            confirmarCheckList.CerrarVentanaConfirmacionCheckList();
 
             propuesta.ClickEnlazarEEFF();
             enlazarEstadosFinancieros.AbrirVentanaEnlazarEstadosFinancieros();

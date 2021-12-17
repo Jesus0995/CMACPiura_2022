@@ -29,7 +29,7 @@ public class InformeComercialCreditoConsumoDefinitions {
     @Given("la pagina web del SGCRED se encuentra disponible")
     public void laPaginaWebDelSGCREDSeEncuentraDisponible() {
 
-        Hooks.driver.get("http://10.0.203.12:8081/propuesta/");
+        Hooks.driver.get("http://10.0.203.16:8083/propuesta/");
     }
 
     @When("ingreso usuario y password del Asesor de Negocios")

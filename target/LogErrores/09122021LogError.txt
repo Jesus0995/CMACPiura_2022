@@ -1,0 +1,240 @@
+2021-12-09T10:09:20.261 - Error al seleccionar icono propuesta - Unable to locate element: //img[@alt='Nueva Propuesta']
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'ANGELA', ip: '10.0.240.60', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_301'
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 94.0.2, javascriptEnabled: true, moz:accessibilityChecks: false, moz:buildID: 20211119140621, moz:geckodriverVersion: 0.29.1, moz:headless: false, moz:processID: 4112, moz:profile: C:\Users\ANGELA\AppData\Loc..., moz:shutdownTimeout: 60000, moz:useNonSpecCompliantPointerOrigin: false, moz:webdriverClick: true, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, platformVersion: 10.0, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
+Session ID: 075db8cc-95ec-4448-81d7-83caad3ac573
+*** Element info: {Using=xpath, value=//img[@alt='Nueva Propuesta']} 
+2021-12-09T10:31:34.069 - Error al seleccionar icono propuesta - Unable to locate element: //img[@alt='Nueva Propuesta']
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'ANGELA', ip: '10.0.240.60', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_301'
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 94.0.2, javascriptEnabled: true, moz:accessibilityChecks: false, moz:buildID: 20211119140621, moz:geckodriverVersion: 0.29.1, moz:headless: false, moz:processID: 9112, moz:profile: C:\Users\ANGELA\AppData\Loc..., moz:shutdownTimeout: 60000, moz:useNonSpecCompliantPointerOrigin: false, moz:webdriverClick: true, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, platformVersion: 10.0, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
+Session ID: 13a11fe8-a931-4428-9941-061e3b385709
+*** Element info: {Using=xpath, value=//img[@alt='Nueva Propuesta']} 
+2021-12-09T10:32:04.370 - Error al seleccionar el tipo servicio - Expected condition failed: waiting for element to be clickable: Proxy element for: DefaultElementLocator 'By.xpath: //select[@name='servicio']' (tried for 30 second(s) with 500 milliseconds interval) 
+2021-12-09T10:33:01.150 - Error al seleccionar icono propuesta - Unable to locate element: //img[@alt='Nueva Propuesta']
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'ANGELA', ip: '10.0.240.60', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_301'
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 94.0.2, javascriptEnabled: true, moz:accessibilityChecks: false, moz:buildID: 20211119140621, moz:geckodriverVersion: 0.29.1, moz:headless: false, moz:processID: 5392, moz:profile: C:\Users\ANGELA\AppData\Loc..., moz:shutdownTimeout: 60000, moz:useNonSpecCompliantPointerOrigin: false, moz:webdriverClick: true, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, platformVersion: 10.0, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
+Session ID: 9299c986-1a5f-446a-bb7d-de58e95e7753
+*** Element info: {Using=xpath, value=//img[@alt='Nueva Propuesta']} 
+2021-12-09T10:41:30.157 - Error al cerrar ventana Operación Crédito - Dismissed user prompt dialog: Credito paralelo con cuota con días de atraso: 
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'ANGELA', ip: '10.0.240.60', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_301'
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 94.0.2, javascriptEnabled: true, moz:accessibilityChecks: false, moz:buildID: 20211119140621, moz:geckodriverVersion: 0.29.1, moz:headless: false, moz:processID: 3804, moz:profile: C:\Users\ANGELA\AppData\Loc..., moz:shutdownTimeout: 60000, moz:useNonSpecCompliantPointerOrigin: false, moz:webdriverClick: true, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, platformVersion: 10.0, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
+Session ID: 09572de5-710a-4710-b1fc-57a3574d9893 
+2021-12-09T10:42:03.268 - Error al hacer check en seguro desgrava,en saldo - Expected condition failed: waiting for element to be clickable: Proxy element for: DefaultElementLocator 'By.xpath: //input[@id='4_01201']' (tried for 30 second(s) with 500 milliseconds interval) 
+2021-12-09T10:42:03.283 - Error al generar numero de seguro desgravamen saldo - Unable to locate element: //input[@id='dps01201']
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'ANGELA', ip: '10.0.240.60', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_301'
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 94.0.2, javascriptEnabled: true, moz:accessibilityChecks: false, moz:buildID: 20211119140621, moz:geckodriverVersion: 0.29.1, moz:headless: false, moz:processID: 3804, moz:profile: C:\Users\ANGELA\AppData\Loc..., moz:shutdownTimeout: 60000, moz:useNonSpecCompliantPointerOrigin: false, moz:webdriverClick: true, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, platformVersion: 10.0, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
+Session ID: 09572de5-710a-4710-b1fc-57a3574d9893
+*** Element info: {Using=xpath, value=//input[@id='dps01201']} 
+2021-12-09T10:42:07.191 - Error al seleccionar el boton anexar garantias - Dismissed user prompt dialog: Credito paralelo con cuota con días de atraso: 
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'ANGELA', ip: '10.0.240.60', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_301'
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 94.0.2, javascriptEnabled: true, moz:accessibilityChecks: false, moz:buildID: 20211119140621, moz:geckodriverVersion: 0.29.1, moz:headless: false, moz:processID: 3804, moz:profile: C:\Users\ANGELA\AppData\Loc..., moz:shutdownTimeout: 60000, moz:useNonSpecCompliantPointerOrigin: false, moz:webdriverClick: true, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, platformVersion: 10.0, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
+Session ID: 09572de5-710a-4710-b1fc-57a3574d9893
+*** Element info: {Using=xpath, value=//button[@name="btnGaranExist"]} 
+2021-12-09T10:42:37.289 - Error al seleccionar el boton registrar garantia - Expected condition failed: waiting for element to be clickable: Proxy element for: DefaultElementLocator 'By.xpath: //button[@type="submit"]' (tried for 30 second(s) with 500 milliseconds interval) 
+2021-12-09T10:43:07.768 - Error al seleccionar el boton aceptar - Expected condition failed: waiting for element to be clickable: Proxy element for: DefaultElementLocator 'By.xpath: //button[@type="submit"]' (tried for 30 second(s) with 500 milliseconds interval) 
+2021-12-09T10:43:22.950 - Error cerrar ventana Evaluación Económica - Dismissed user prompt dialog: Credito paralelo con cuota con días de atraso: 
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'ANGELA', ip: '10.0.240.60', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_301'
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 94.0.2, javascriptEnabled: true, moz:accessibilityChecks: false, moz:buildID: 20211119140621, moz:geckodriverVersion: 0.29.1, moz:headless: false, moz:processID: 3804, moz:profile: C:\Users\ANGELA\AppData\Loc..., moz:shutdownTimeout: 60000, moz:useNonSpecCompliantPointerOrigin: false, moz:webdriverClick: true, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, platformVersion: 10.0, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
+Session ID: 09572de5-710a-4710-b1fc-57a3574d9893 
+2021-12-09T10:43:29.808 - Error al cerrar ventana Desenlazar Informe - Dismissed user prompt dialog: Credito paralelo con cuota con días de atraso: 
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'ANGELA', ip: '10.0.240.60', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_301'
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 94.0.2, javascriptEnabled: true, moz:accessibilityChecks: false, moz:buildID: 20211119140621, moz:geckodriverVersion: 0.29.1, moz:headless: false, moz:processID: 3804, moz:profile: C:\Users\ANGELA\AppData\Loc..., moz:shutdownTimeout: 60000, moz:useNonSpecCompliantPointerOrigin: false, moz:webdriverClick: true, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, platformVersion: 10.0, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
+Session ID: 09572de5-710a-4710-b1fc-57a3574d9893 
+2021-12-09T10:43:36.835 - Error al cerrar ventana Enlazar Informe de Visita - Dismissed user prompt dialog: Credito paralelo con cuota con días de atraso: 
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'ANGELA', ip: '10.0.240.60', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_301'
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 94.0.2, javascriptEnabled: true, moz:accessibilityChecks: false, moz:buildID: 20211119140621, moz:geckodriverVersion: 0.29.1, moz:headless: false, moz:processID: 3804, moz:profile: C:\Users\ANGELA\AppData\Loc..., moz:shutdownTimeout: 60000, moz:useNonSpecCompliantPointerOrigin: false, moz:webdriverClick: true, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, platformVersion: 10.0, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
+Session ID: 09572de5-710a-4710-b1fc-57a3574d9893 
+2021-12-09T10:43:41.718 - Error cerrar ventana Enlazar Informe Comercial - Dismissed user prompt dialog: Credito paralelo con cuota con días de atraso: 
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'ANGELA', ip: '10.0.240.60', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_301'
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 94.0.2, javascriptEnabled: true, moz:accessibilityChecks: false, moz:buildID: 20211119140621, moz:geckodriverVersion: 0.29.1, moz:headless: false, moz:processID: 3804, moz:profile: C:\Users\ANGELA\AppData\Loc..., moz:shutdownTimeout: 60000, moz:useNonSpecCompliantPointerOrigin: false, moz:webdriverClick: true, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, platformVersion: 10.0, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
+Session ID: 09572de5-710a-4710-b1fc-57a3574d9893 
+2021-12-09T10:44:21.594 - Error al cerrar ventana Grabar Documento - Dismissed user prompt dialog: Credito paralelo con cuota con días de atraso: 
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'ANGELA', ip: '10.0.240.60', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_301'
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 94.0.2, javascriptEnabled: true, moz:accessibilityChecks: false, moz:buildID: 20211119140621, moz:geckodriverVersion: 0.29.1, moz:headless: false, moz:processID: 3804, moz:profile: C:\Users\ANGELA\AppData\Loc..., moz:shutdownTimeout: 60000, moz:useNonSpecCompliantPointerOrigin: false, moz:webdriverClick: true, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, platformVersion: 10.0, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
+Session ID: 09572de5-710a-4710-b1fc-57a3574d9893 
+2021-12-09T18:56:59.990 - Error al hacer check en seguro desgrava,en saldo - Expected condition failed: waiting for element to be clickable: Proxy element for: DefaultElementLocator 'By.xpath: //input[@id='4_01201']' (tried for 30 second(s) with 500 milliseconds interval) 
+2021-12-09T18:57:00.476 - Error al generar numero de seguro desgravamen saldo - Unable to locate element: //input[@id='dps01201']
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'ANGELA', ip: '10.0.240.60', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_301'
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 94.0.2, javascriptEnabled: true, moz:accessibilityChecks: false, moz:buildID: 20211119140621, moz:geckodriverVersion: 0.29.1, moz:headless: false, moz:processID: 6228, moz:profile: C:\Users\ANGELA\AppData\Loc..., moz:shutdownTimeout: 60000, moz:useNonSpecCompliantPointerOrigin: false, moz:webdriverClick: true, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, platformVersion: 10.0, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
+Session ID: c5a43737-b565-4adf-85af-99fe2edcaf16
+*** Element info: {Using=xpath, value=//input[@id='dps01201']} 
+2021-12-09T19:00:48.887 - Error al seleccionar el boton regresar - Expected condition failed: waiting for element to be clickable: Proxy element for: DefaultElementLocator 'By.xpath: /html/body/table/tbody/tr[2]/td/table[1]/tbody/tr/td[2]/div/button[2]' (tried for 50 second(s) with 500 milliseconds interval) 
+2021-12-09T19:01:39.550 - Error al seleccionar el boton crear propuesta - Expected condition failed: waiting for element to be clickable: Proxy element for: DefaultElementLocator 'By.xpath: //button[@type='button' and contains(text(),'Crear nueva Propuesta')]' (tried for 50 second(s) with 500 milliseconds interval) 
+2021-12-09T19:02:29.633 - Error al seleccionar tab codigo - Expected condition failed: waiting for element to be clickable: Proxy element for: DefaultElementLocator 'By.cssSelector: #tab-bg\:1 > i:nth-child(1)' (tried for 50 second(s) with 500 milliseconds interval) 
+2021-12-09T19:02:29.649 - Error al ingresar codigo cliente - Unable to locate element: //*[@id="valorCodigo"]
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'ANGELA', ip: '10.0.240.60', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_301'
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 94.0.2, javascriptEnabled: true, moz:accessibilityChecks: false, moz:buildID: 20211119140621, moz:geckodriverVersion: 0.29.1, moz:headless: false, moz:processID: 6228, moz:profile: C:\Users\ANGELA\AppData\Loc..., moz:shutdownTimeout: 60000, moz:useNonSpecCompliantPointerOrigin: false, moz:webdriverClick: true, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, platformVersion: 10.0, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
+Session ID: c5a43737-b565-4adf-85af-99fe2edcaf16
+*** Element info: {Using=xpath, value=//*[@id="valorCodigo"]} 
+2021-12-09T19:03:20.128 - Error al seleccionar el boton buscar - Expected condition failed: waiting for element to be clickable: Proxy element for: DefaultElementLocator 'By.cssSelector: #form2 > table:nth-child(2) > tbody:nth-child(1) > tr:nth-child(2) > td:nth-child(1) > button:nth-child(1)' (tried for 50 second(s) with 500 milliseconds interval) 
+2021-12-09T19:03:20.150 - Error al seleccionar icono propuesta - Unable to locate element: //img[@alt='Nueva Propuesta']
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'ANGELA', ip: '10.0.240.60', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_301'
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 94.0.2, javascriptEnabled: true, moz:accessibilityChecks: false, moz:buildID: 20211119140621, moz:geckodriverVersion: 0.29.1, moz:headless: false, moz:processID: 6228, moz:profile: C:\Users\ANGELA\AppData\Loc..., moz:shutdownTimeout: 60000, moz:useNonSpecCompliantPointerOrigin: false, moz:webdriverClick: true, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, platformVersion: 10.0, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
+Session ID: c5a43737-b565-4adf-85af-99fe2edcaf16
+*** Element info: {Using=xpath, value=//img[@alt='Nueva Propuesta']} 
+2021-12-09T19:03:50.321 - Error al seleccionar el tipo servicio - Expected condition failed: waiting for element to be clickable: Proxy element for: DefaultElementLocator 'By.xpath: //select[@name='servicio']' (tried for 30 second(s) with 500 milliseconds interval) 
+2021-12-09T19:04:20.467 - Error al seleccionar servicio de credito - Expected condition failed: waiting for element to be clickable: Proxy element for: DefaultElementLocator 'By.xpath: //select[@name='idServicioSofia']' (tried for 30 second(s) with 500 milliseconds interval) 
+2021-12-09T19:04:50.645 - Error al seleccionar tipo propuesta del servicio - Expected condition failed: waiting for element to be clickable: Proxy element for: DefaultElementLocator 'By.xpath: //select[@name='idTipoPropuesta']' (tried for 30 second(s) with 500 milliseconds interval) 
+2021-12-09T19:05:21.817 - Error al seleccionar subtipopropuesta del servicio - Expected condition failed: waiting for element to be clickable: Proxy element for: DefaultElementLocator 'By.xpath: //select[@name='idSubTipoPropuesta']' (tried for 30 second(s) with 500 milliseconds interval) 
+2021-12-09T19:05:52.133 - Error al seleccionar promocion del servicio - Expected condition failed: waiting for element to be clickable: Proxy element for: DefaultElementLocator 'By.xpath: //select[@name='idPromocion']' (tried for 30 second(s) with 500 milliseconds interval) 
+2021-12-09T19:06:22.398 - Error al hacer click en el boton cargar - Expected condition failed: waiting for element to be clickable: Proxy element for: DefaultElementLocator 'By.xpath: //*[@id="bCargar"]' (tried for 30 second(s) with 500 milliseconds interval) 
+2021-12-09T19:06:22.460 - Error al cerrar e popup comunicado - Unable to locate element: /html/body/div[1]/div[1]/a/span
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'ANGELA', ip: '10.0.240.60', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_301'
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 94.0.2, javascriptEnabled: true, moz:accessibilityChecks: false, moz:buildID: 20211119140621, moz:geckodriverVersion: 0.29.1, moz:headless: false, moz:processID: 6228, moz:profile: C:\Users\ANGELA\AppData\Loc..., moz:shutdownTimeout: 60000, moz:useNonSpecCompliantPointerOrigin: false, moz:webdriverClick: true, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, platformVersion: 10.0, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
+Session ID: c5a43737-b565-4adf-85af-99fe2edcaf16
+*** Element info: {Using=xpath, value=/html/body/div[1]/div[1]/a/span} 
+2021-12-09T19:07:22.752 - Error al seleccionar el boton nueva operacion - Expected condition failed: waiting for element to be clickable: Proxy element for: DefaultElementLocator 'By.name: btnEnviar' (tried for 60 second(s) with 500 milliseconds interval) 
+2021-12-09T19:07:25.811 - Error al validar ventana Seleccionar Operación Crédito - Unable to locate element: //button[@type='submit']
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'ANGELA', ip: '10.0.240.60', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_301'
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 94.0.2, javascriptEnabled: true, moz:accessibilityChecks: false, moz:buildID: 20211119140621, moz:geckodriverVersion: 0.29.1, moz:headless: false, moz:processID: 6228, moz:profile: C:\Users\ANGELA\AppData\Loc..., moz:shutdownTimeout: 60000, moz:useNonSpecCompliantPointerOrigin: false, moz:webdriverClick: true, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, platformVersion: 10.0, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
+Session ID: c5a43737-b565-4adf-85af-99fe2edcaf16
+*** Element info: {Using=xpath, value=//button[@type='submit']} 
+2021-12-09T19:07:25.911 - Error ingresar Monto de crédito - Unable to locate element: //input[@name='montoOperacion']
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'ANGELA', ip: '10.0.240.60', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_301'
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 94.0.2, javascriptEnabled: true, moz:accessibilityChecks: false, moz:buildID: 20211119140621, moz:geckodriverVersion: 0.29.1, moz:headless: false, moz:processID: 6228, moz:profile: C:\Users\ANGELA\AppData\Loc..., moz:shutdownTimeout: 60000, moz:useNonSpecCompliantPointerOrigin: false, moz:webdriverClick: true, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, platformVersion: 10.0, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
+Session ID: c5a43737-b565-4adf-85af-99fe2edcaf16
+*** Element info: {Using=xpath, value=//input[@name='montoOperacion']} 
+2021-12-09T19:43:56.179 - Error al ingresar Fecha - Unable to locate element: //input[@name="fechaINI"]
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'ANGELA', ip: '10.0.240.60', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_301'
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 94.0.2, javascriptEnabled: true, moz:accessibilityChecks: false, moz:buildID: 20211119140621, moz:geckodriverVersion: 0.29.1, moz:headless: false, moz:processID: 2252, moz:profile: C:\Users\ANGELA\AppData\Loc..., moz:shutdownTimeout: 60000, moz:useNonSpecCompliantPointerOrigin: false, moz:webdriverClick: true, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, platformVersion: 10.0, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
+Session ID: b81b132d-7b14-4ac8-af03-f365e4064188
+*** Element info: {Using=xpath, value=//input[@name="fechaINI"]} 
+2021-12-09T19:43:56.194 - Error al ingresar Hora - Unable to locate element: //input[@name="horaINI"]
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'ANGELA', ip: '10.0.240.60', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_301'
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 94.0.2, javascriptEnabled: true, moz:accessibilityChecks: false, moz:buildID: 20211119140621, moz:geckodriverVersion: 0.29.1, moz:headless: false, moz:processID: 2252, moz:profile: C:\Users\ANGELA\AppData\Loc..., moz:shutdownTimeout: 60000, moz:useNonSpecCompliantPointerOrigin: false, moz:webdriverClick: true, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, platformVersion: 10.0, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
+Session ID: b81b132d-7b14-4ac8-af03-f365e4064188
+*** Element info: {Using=xpath, value=//input[@name="horaINI"]} 
+2021-12-09T19:43:56.210 - Error al ingresar Minutos - Unable to locate element: //input[@name="minINI"]
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'ANGELA', ip: '10.0.240.60', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_301'
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 94.0.2, javascriptEnabled: true, moz:accessibilityChecks: false, moz:buildID: 20211119140621, moz:geckodriverVersion: 0.29.1, moz:headless: false, moz:processID: 2252, moz:profile: C:\Users\ANGELA\AppData\Loc..., moz:shutdownTimeout: 60000, moz:useNonSpecCompliantPointerOrigin: false, moz:webdriverClick: true, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, platformVersion: 10.0, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
+Session ID: b81b132d-7b14-4ac8-af03-f365e4064188
+*** Element info: {Using=xpath, value=//input[@name="minINI"]} 
+2021-12-09T19:43:56.233 - Error al ingresar Franja Horaria - Unable to locate element: //select[@name="meridianoINI"]
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'ANGELA', ip: '10.0.240.60', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_301'
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 94.0.2, javascriptEnabled: true, moz:accessibilityChecks: false, moz:buildID: 20211119140621, moz:geckodriverVersion: 0.29.1, moz:headless: false, moz:processID: 2252, moz:profile: C:\Users\ANGELA\AppData\Loc..., moz:shutdownTimeout: 60000, moz:useNonSpecCompliantPointerOrigin: false, moz:webdriverClick: true, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, platformVersion: 10.0, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
+Session ID: b81b132d-7b14-4ac8-af03-f365e4064188
+*** Element info: {Using=xpath, value=//select[@name="meridianoINI"]} 
+2021-12-09T19:43:56.264 - Error al ingresar Número de Integrantes - Unable to locate element: *[name='numeroIntegrantes']
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'ANGELA', ip: '10.0.240.60', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_301'
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 94.0.2, javascriptEnabled: true, moz:accessibilityChecks: false, moz:buildID: 20211119140621, moz:geckodriverVersion: 0.29.1, moz:headless: false, moz:processID: 2252, moz:profile: C:\Users\ANGELA\AppData\Loc..., moz:shutdownTimeout: 60000, moz:useNonSpecCompliantPointerOrigin: false, moz:webdriverClick: true, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, platformVersion: 10.0, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
+Session ID: b81b132d-7b14-4ac8-af03-f365e4064188
+*** Element info: {Using=name, value=numeroIntegrantes} 
+2021-12-09T19:43:56.279 - Error al seleccionar Relación - Unable to locate element: //select[@name="relacionMiembros"]
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'ANGELA', ip: '10.0.240.60', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_301'
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 94.0.2, javascriptEnabled: true, moz:accessibilityChecks: false, moz:buildID: 20211119140621, moz:geckodriverVersion: 0.29.1, moz:headless: false, moz:processID: 2252, moz:profile: C:\Users\ANGELA\AppData\Loc..., moz:shutdownTimeout: 60000, moz:useNonSpecCompliantPointerOrigin: false, moz:webdriverClick: true, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, platformVersion: 10.0, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
+Session ID: b81b132d-7b14-4ac8-af03-f365e4064188
+*** Element info: {Using=xpath, value=//select[@name="relacionMiembros"]} 
+2021-12-09T19:43:56.295 - Error al seleccionar Hábitos - Unable to locate element: //select[@name="habitosMiembros"]
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'ANGELA', ip: '10.0.240.60', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_301'
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 94.0.2, javascriptEnabled: true, moz:accessibilityChecks: false, moz:buildID: 20211119140621, moz:geckodriverVersion: 0.29.1, moz:headless: false, moz:processID: 2252, moz:profile: C:\Users\ANGELA\AppData\Loc..., moz:shutdownTimeout: 60000, moz:useNonSpecCompliantPointerOrigin: false, moz:webdriverClick: true, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, platformVersion: 10.0, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
+Session ID: b81b132d-7b14-4ac8-af03-f365e4064188
+*** Element info: {Using=xpath, value=//select[@name="habitosMiembros"]} 
+2021-12-09T19:43:56.317 - Error al seleccionar Otros Ingresos - Unable to locate element: //select[@name="habitosMiembros"]
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'ANGELA', ip: '10.0.240.60', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_301'
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 94.0.2, javascriptEnabled: true, moz:accessibilityChecks: false, moz:buildID: 20211119140621, moz:geckodriverVersion: 0.29.1, moz:headless: false, moz:processID: 2252, moz:profile: C:\Users\ANGELA\AppData\Loc..., moz:shutdownTimeout: 60000, moz:useNonSpecCompliantPointerOrigin: false, moz:webdriverClick: true, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, platformVersion: 10.0, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
+Session ID: b81b132d-7b14-4ac8-af03-f365e4064188
+*** Element info: {Using=xpath, value=//select[@name="habitosMiembros"]} 
+2021-12-09T19:43:56.333 - Error al seleccionar Relación Laboral - Unable to locate element: //select[@name="estadoGarantia"]
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'ANGELA', ip: '10.0.240.60', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_301'
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 94.0.2, javascriptEnabled: true, moz:accessibilityChecks: false, moz:buildID: 20211119140621, moz:geckodriverVersion: 0.29.1, moz:headless: false, moz:processID: 2252, moz:profile: C:\Users\ANGELA\AppData\Loc..., moz:shutdownTimeout: 60000, moz:useNonSpecCompliantPointerOrigin: false, moz:webdriverClick: true, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, platformVersion: 10.0, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
+Session ID: b81b132d-7b14-4ac8-af03-f365e4064188
+*** Element info: {Using=xpath, value=//select[@name="estadoGarantia"]} 
+2021-12-09T19:43:56.348 - Error al seleccionar Documento de Sustento - Unable to locate element: //select[@name="documentacionGarantia"]
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'ANGELA', ip: '10.0.240.60', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_301'
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 94.0.2, javascriptEnabled: true, moz:accessibilityChecks: false, moz:buildID: 20211119140621, moz:geckodriverVersion: 0.29.1, moz:headless: false, moz:processID: 2252, moz:profile: C:\Users\ANGELA\AppData\Loc..., moz:shutdownTimeout: 60000, moz:useNonSpecCompliantPointerOrigin: false, moz:webdriverClick: true, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, platformVersion: 10.0, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
+Session ID: b81b132d-7b14-4ac8-af03-f365e4064188
+*** Element info: {Using=xpath, value=//select[@name="documentacionGarantia"]} 
+2021-12-09T19:44:16.005 - Error al abrir ventana Grabar Documento - Dismissed user prompt dialog: Registre el numero de integrantes: 
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'ANGELA', ip: '10.0.240.60', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_301'
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 94.0.2, javascriptEnabled: true, moz:accessibilityChecks: false, moz:buildID: 20211119140621, moz:geckodriverVersion: 0.29.1, moz:headless: false, moz:processID: 2252, moz:profile: C:\Users\ANGELA\AppData\Loc..., moz:shutdownTimeout: 60000, moz:useNonSpecCompliantPointerOrigin: false, moz:webdriverClick: true, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, platformVersion: 10.0, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
+Session ID: b81b132d-7b14-4ac8-af03-f365e4064188 
+2021-12-09T19:44:16.036 - Error en el botón Cerrar Información - Dismissed user prompt dialog: Registre el numero de integrantes: 
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'ANGELA', ip: '10.0.240.60', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_301'
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 94.0.2, javascriptEnabled: true, moz:accessibilityChecks: false, moz:buildID: 20211119140621, moz:geckodriverVersion: 0.29.1, moz:headless: false, moz:processID: 2252, moz:profile: C:\Users\ANGELA\AppData\Loc..., moz:shutdownTimeout: 60000, moz:useNonSpecCompliantPointerOrigin: false, moz:webdriverClick: true, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, platformVersion: 10.0, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
+Session ID: b81b132d-7b14-4ac8-af03-f365e4064188 
+2021-12-09T20:12:27.144 - Error al hacer check en seguro desgrava,en saldo - Expected condition failed: waiting for element to be clickable: Proxy element for: DefaultElementLocator 'By.xpath: //input[@id='4_01201']' (tried for 30 second(s) with 500 milliseconds interval) 
+2021-12-09T20:12:27.160 - Error al generar numero de seguro desgravamen saldo - Unable to locate element: //input[@id='dps01201']
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'ANGELA', ip: '10.0.240.60', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_301'
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 94.0.2, javascriptEnabled: true, moz:accessibilityChecks: false, moz:buildID: 20211119140621, moz:geckodriverVersion: 0.29.1, moz:headless: false, moz:processID: 5456, moz:profile: C:\Users\ANGELA\AppData\Loc..., moz:shutdownTimeout: 60000, moz:useNonSpecCompliantPointerOrigin: false, moz:webdriverClick: true, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, platformVersion: 10.0, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
+Session ID: b1b30897-2a32-4678-93ae-313d0450f1e5
+*** Element info: {Using=xpath, value=//input[@id='dps01201']} 

@@ -26,28 +26,17 @@ public class RegistrarSegurosPage {
     private String detalleError = new String();
 
     //Mapear los locator de la pagina
-    @FindBy(xpath = "//input[@name=\"seguro\" and @value=\"4_02201\"]")
-    private WebElement chk_SeguroDesgravamenFlatMN;
-    @FindBy(xpath = "//input[@id='dps02201']")
-    private WebElement txt_SeguroDesgravamenFlatMN;
-    @FindBy(xpath = "//input[@id='5_13501' and @value='5_13501']")
-    private WebElement chk_SeguroRiesgoPlanPymes;
-    @FindBy(xpath = "//input[@id='dps13501']")
-    private WebElement txt_SeguroRiesgoPlanPymes;
-
-    @FindBy(xpath = "//input[@id='4_01201']")
-    private WebElement chk_SeguroDesgravamenSaldo;
-    @FindBy(xpath = "//input[@id='dps01201']")
-    private WebElement txt_SeguroDesgravamenSaldo;
-    @FindBy(xpath = "//input[@id='6_91001']")
-    private WebElement chk_SeguroVidaPlan1;
-    @FindBy(xpath = "//input[@id='dps91001']")
-    private WebElement txt_SeguroVidaPlan1;
-
-    @FindBy(xpath = "//button[@type=\"submit\"]")
-    private WebElement btn_confirmar;
-
-
+    @FindBy(xpath = "//input[@name=\"seguro\" and @value=\"4_02201\"]") private WebElement chk_SeguroDesgravamenFlatMN;
+    @FindBy(xpath = "//input[@id='dps02201']") private WebElement txt_SeguroDesgravamenFlatMN;
+    @FindBy(xpath = "//input[@id='5_13501' and @value='5_13501']") private WebElement chk_SeguroRiesgoPlanPymes;
+    @FindBy(xpath = "//input[@id='dps13501']") private WebElement txt_SeguroRiesgoPlanPymes;
+    @FindBy(xpath = "//input[@id='4_01301']") private WebElement chk_SeguroDesgravamenSaldo;
+    //---     //input[@id='4_01201'] --- Locator del checkbox antes del 09/12/2021. Cambió id
+    @FindBy(xpath = "//input[@id='dps01301']") private WebElement txt_SeguroDesgravamenSaldo;
+    //---     //input[@id='dps01201'] --- Locator del cuadro de texto antes del 09/12/2021. Cambió id
+    @FindBy(xpath = "//input[@id='6_91001']") private WebElement chk_SeguroVidaPlan1;
+    @FindBy(xpath = "//input[@id='dps91001']") private WebElement txt_SeguroVidaPlan1;
+    @FindBy(xpath = "//button[@type=\"submit\"]") private WebElement btn_confirmar;
     @FindBy(id = "4_01301")private WebElement chk_SeguroDesgravamenSaldoCapital;
     @FindBy(id = "dps01301")private WebElement txt_SeguroDesgravamenSaldoCapital;
 

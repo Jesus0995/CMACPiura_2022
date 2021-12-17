@@ -32,6 +32,8 @@ public class ExcelCreditoConsumoDefinitions {
     GrabarInformacionDocumentoPage grabarDocumentoPropuesta;
     AprobarDictamenPropuestaPage aprobarDictamenPropuesta;
     ExcelPage excel;
+    String valorPropuesta;
+    String valorResultado;
 
     public ExcelCreditoConsumoDefinitions() {
         login = new LoginPage(Hooks.driver);
@@ -63,7 +65,7 @@ public class ExcelCreditoConsumoDefinitions {
     @Given("la pagina web SGCRED esta habilitado")
     public void laPaginaWebSGCREDEstaHabilitado() {
 
-        Hooks.driver.get("http://10.0.203.16:8082/propuesta/");
+        Hooks.driver.get("http://10.0.203.16:8083/propuesta/");
 
     }
 
@@ -182,6 +184,9 @@ public class ExcelCreditoConsumoDefinitions {
             propuesta.IngresarObjetivoCredito(datosExcel[i][17]);
             propuesta.IngresarJustificacionCredito(datosExcel[i][18]);
 
+            valorPropuesta = propuesta.CapturarNumeroPropuesta();
+            excel.EscribirExcel(arg0, 0, i, 21, valorPropuesta);
+
             propuesta.ClickMenuGrabarPropuesta();
             grabarDocumentoPropuesta.AbrirVentanaGrabarPropuesta();
             grabarDocumentoPropuesta.ClickBtnCerrarInformacion();
@@ -196,6 +201,8 @@ public class ExcelCreditoConsumoDefinitions {
             aprobarDictamenPropuesta.CerrarVentanaAprobarDictamenPropuesta();
 
             grabarDocumentoPropuesta.AbrirVentanaGrabarPropuesta();
+            valorResultado = grabarDocumentoPropuesta.CapturarMensajeDerivacion();
+            excel.EscribirExcel(arg0, 0, i, 22, valorResultado);
             grabarDocumentoPropuesta.ClickBtnCerrarInformacion();
             grabarDocumentoPropuesta.CerrarVentanaGrabarPropuesta();
 

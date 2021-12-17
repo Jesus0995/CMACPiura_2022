@@ -70,6 +70,7 @@ public class InformeVisita_CrearPage {
     public void ObtenerFechaVisita (){
         try {
             txt_fechaVisita.clear();
+            objFuncionEsperar.EsperarTiempo(1);
             txt_fechaVisita.sendKeys(objFuncionFecha.devolverFechaActual());
 
         } catch (Exception Error) {

@@ -61,15 +61,13 @@ public class PropuestaPage {
     @FindBy(name = "btnEnviar") private WebElement btn_SolicitarReprogramacion;
     @FindBy(xpath = "//button[text()='Desenlazar']") private WebElement btn_DesenlazarInformeVisitaReprogramacion;
 
-    //---------------/html/body/form/table/tbody/tr[3]/td/div/table[22]/tbody/tr[1]/td[3]/button--------locator de Enlazar Inf.Visita antes del 06/12/2021
-    //---------------/html/body/form/table/tbody/tr[3]/td/div/table[22]/tbody/tr[2]/td[3]/button--------locator de Enlazar Inf.Comercial antes del 06/12/2021
-
+    //---------------/html/body/form/table/tbody/tr[3]/td/div/table[22]/tbody/tr[1]/td[3]/button----locator de Enlazar Inf.Visita antes del 06/12/2021
+    //---------------/html/body/form/table/tbody/tr[3]/td/div/table[22]/tbody/tr[2]/td[3]/button----locator de Enlazar Inf.Comercial antes del 06/12/2021
+    //---------------/html/body/form/table[2]/tbody/tr[2]/td[3]/button--------locator de Enlazar Inf.Comercial antes del 13/12/2021
+    //---------------/html/body/form/table[2]/tbody/tr[3]/td[3]/button--------locator de Enlazar Inf. Comercial para determinado cliente.
     @FindBy(xpath = "/html/body/form/table[2]/tbody/tr[1]/td[3]/button") private WebElement btn_EnlazarInformeVisitaReprogramacion; // locator fue cambiado el 06/12/2021
-    @FindBy(xpath = "/html/body/form/table[2]/tbody/tr[2]/td[3]/button") private WebElement btn_EnlazarInformeComercialReprogramacion; //locator fue cambiado el 06/12/2021
-
+    @FindBy(xpath = "//td[text()='Informe Comercial Nuevo Formato']//following::td[2]//button[@type='button']") private WebElement btn_EnlazarInformeComercialReprogramacion; //locator fue cambiado el 13/12/2021
     @FindBy(xpath = "//img[@alt='Regresar']") private WebElement btn_Regresar;
-
-
 
     public PropuestaPage(WebDriver d) {
         driver = d;
@@ -406,8 +404,9 @@ public class PropuestaPage {
 
     public String CapturarNumeroPropuesta() {
 
-        WebElement lblNumeroPropuesta = driver.findElement(By.xpath("/html/body/form/table[1]/tbody/tr[3]/td/input[3]"));
-        numeroPropuesta = lblNumeroPropuesta.getAttribute("value");//.replace("PROPUESTA DE FINANCIAMIENTO N º","");
+        WebElement lblNumeroPropuesta = driver.findElement(By.xpath("//input[@name='nroPropuesta']"));
+        objFuncionEsperar.EsperarTiempo(1);
+        numeroPropuesta = lblNumeroPropuesta.getAttribute("value");
         System.out.println("El numero de propuesta es: " + numeroPropuesta);
         return numeroPropuesta;
     }

@@ -33,7 +33,7 @@ public class AprobarPropuestaCreditoConsumoDefinitons {
     @Given("la web SGCRED se encuentra disponible")
     public void laWebSGCREDSeEncuentraDisponible() {
 
-        Hooks.driver.get("http://10.0.203.12:8081/propuesta/");
+        Hooks.driver.get("http://10.0.203.16:8083/propuesta/");
     }
 
     @When("ingreso usuario y password del perfil Administrador")
@@ -153,6 +153,13 @@ public class AprobarPropuestaCreditoConsumoDefinitons {
     public void direccionaALoginYDoyClickEnElBotonCerrarSesion() {
 
         login.ClickBtnCerrarSesion();
+
+    }
+
+    @And("se cierra el navegador actual")
+    public void seCierraElNavegadorActual() {
+
+        Hooks.driver.close();
 
     }
 

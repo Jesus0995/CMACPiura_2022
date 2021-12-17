@@ -40,7 +40,7 @@ public class ExcelEmitirDictamenPropuestaCreditoDefinitions {
 
     @Given("el sistema SGCRED se encuentra disponible para su uso")
     public void el_sistema_sgcred_se_encuentra_disponible_para_su_uso() {
-        Hooks.driver.get("http://10.0.203.16:8082/propuesta/");
+        Hooks.driver.get("http://10.0.203.16:8083/propuesta/");
 
     }
 
@@ -67,22 +67,22 @@ public class ExcelEmitirDictamenPropuestaCreditoDefinitions {
         for (int i = 1; i < datosExcel.length; i++) {
             menuPrincipal.ClickPropuestaFinanciamiento();
             listadoPropuesta.ClickTipoBusquedaAprobacion();
-            listadoPropuesta.IngresarNumeroPropuesta(datosExcel[i][20]);
-            System.out.println("El numero de propuesta es" + datosExcel[i][20]);
+            listadoPropuesta.IngresarNumeroPropuesta(datosExcel[i][18]);
+            System.out.println("El numero de propuesta es" + datosExcel[i][18]);
             listadoPropuesta.ClickBtnBuscar();
             listadoPropuesta.ClickEditarPropuesta();
             popUpComunicado.ValidarComunicado();
             propuesta.AbrirOpcionesDictamen();
             propuesta.ClickBtnAprobarPropuesta();
             aprobarDictamenPropuesta.AbrirVentanaAprobarDictamenPropuesta();
-            aprobarDictamenPropuesta.IngresarObservaciones(datosExcel[i][18]);
-            aprobarDictamenPropuesta.IngresarContrasena(datosExcel[i][19]);
+            aprobarDictamenPropuesta.IngresarObservaciones(datosExcel[i][16]);
+            aprobarDictamenPropuesta.IngresarContrasena(datosExcel[i][17]);
             aprobarDictamenPropuesta.ClickBtnProcesar();
             aprobarDictamenPropuesta.CerrarVentanaAprobarDictamenPropuesta();
             grabarPropuesta.AbrirVentanaGrabarPropuesta();
             pantallazo();
             Valor = grabarPropuesta.CapturarMensajeDerivacion();
-            excel.EscribirExcel(arg0,0,i,21,Valor);
+            excel.EscribirExcel(arg0,0,i,19,Valor);
             grabarPropuesta.ClickBtnCerrarInformacion();
             grabarPropuesta.CerrarVentanaGrabarPropuesta();
             listadoPropuesta.ClickBtnRegresar();

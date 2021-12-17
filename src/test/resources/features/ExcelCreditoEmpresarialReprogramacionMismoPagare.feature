@@ -10,4 +10,5 @@ Feature: Crear una propuesta de Reprogramación de Creditos de Empresarial en el
       | nombre | password |
       | CIYAZU | prueba   |
     And se da click el boton ingresar y muestra el SGCRED
-    Then registrar propuestas de reprogramacion de creditos desde Excel "DatosReprogramacionCreditoEmpresarial.xlsx"
+    Then registrar propuestas de reprogramacion de creditos desde Excel "DatosCreditoEmpresarialReprogramacionMismoPagare.xlsx"
+

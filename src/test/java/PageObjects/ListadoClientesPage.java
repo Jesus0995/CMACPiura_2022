@@ -73,6 +73,7 @@ public class ListadoClientesPage {
     public void SeleccionarIconoPropuesta() {
         try {
             WebElement icn_nuevaPropuesta = driver.findElement(By.xpath("//img[@alt='Nueva Propuesta']"));
+            objFuncionEsperar.EsperarTiempo(1);
             icn_nuevaPropuesta.click();
         } catch (Exception Error) {
             detalleError = "Error al seleccionar icono propuesta";
