@@ -40,8 +40,16 @@ Feature: Registrar informe de visita con el perfil Asesor de Negocio
     And finalmente cerramos el navegador
 
     Examples:
-      | cliente |
-      | 1343556|
+      | cliente  |
+      | 23801604 |
+      | 16896616 |
+      | 26677386 |
+      | 2517400  |
+      | 26452996 |
+      | 1940821  |
+      | 22296442 |
+      | 7565151  |
+
 
 
 
