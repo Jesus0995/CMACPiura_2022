@@ -1,6 +1,8 @@
 package Definitions;
 
 import PageObjects.*;
+import io.cucumber.datatable.DataTable;
+import io.cucumber.java.en.*;
 
 public class ExcelCreditoEmpresarialRefinanciacion {
 
@@ -52,6 +54,24 @@ public class ExcelCreditoEmpresarialRefinanciacion {
 
     }
 
+    @Given("la web SGCRED esta disponible para su uso optimo")
+    public void la_web_sgcred_esta_disponible_para_su_uso_optimo() {
+
+        Hooks.driver.get("http://10.0.203.16:8083/propuesta/logout.jsp");
+
+    }
+    @When("se ingresa las credencial del usuario correspondiente")
+    public void se_ingresa_las_credencial_del_usuario_correspondiente(DataTable dataUser) {
+
+    }
+    @And("hacemos click en ingresar para mostrar el menu principal")
+    public void hacemos_click_en_ingresar_para_mostrar_el_menu_principal() {
+
+    }
+    @Then("se ejecuta todos los pasos corresondientes al flujo Refinanciacion desde excel {string};")
+    public void se_ejecuta_todos_los_pasos_corresondientes_al_flujo_refinanciacion_desde_excel(String string) {
+
+    }
 
 
 
