@@ -18,6 +18,11 @@ public class ExcelCreditoEmpresarialReprogramacionOtroPagareDefinitions {
     SeleccionarServicioPage servicio;
     PopUpComunicadoPage popUpComunicado;
     PropuestaPage propuesta;
+    SeleccionarOperacionCreditoPage seleccionarOperacionCreditoPage;
+    OperacionCreditoPage operacionCreditoPage;
+    SeleccionarSegurosPage seleccionarSegurosPage;
+    RegistrarSegurosPage registrarSegurosPage;
+    ConfirmarSegurosSeleccionadosPage confirmarSegurosSeleccionadosPage;
 
     /*AnexarChecklistPage anexarCheckListCreditos;
     ConfirmacionChecklistPage confirmarCheckList;
@@ -38,6 +43,11 @@ public class ExcelCreditoEmpresarialReprogramacionOtroPagareDefinitions {
         servicio = new SeleccionarServicioPage(Hooks.driver);
         popUpComunicado = new PopUpComunicadoPage(Hooks.driver);
         propuesta = new PropuestaPage(Hooks.driver);
+        seleccionarOperacionCreditoPage = new SeleccionarOperacionCreditoPage(Hooks.driver);
+        operacionCreditoPage = new OperacionCreditoPage(Hooks.driver);
+        seleccionarSegurosPage = new SeleccionarSegurosPage(Hooks.driver);
+        registrarSegurosPage = new RegistrarSegurosPage(Hooks.driver);
+        confirmarSegurosSeleccionadosPage = new ConfirmarSegurosSeleccionadosPage(Hooks.driver);
 
         /*anexarCheckListCreditos = new AnexarChecklistPage(Hooks.driver);
         confirmarCheckList = new ConfirmacionChecklistPage(Hooks.driver);
@@ -102,6 +112,30 @@ public class ExcelCreditoEmpresarialReprogramacionOtroPagareDefinitions {
             servicio.CerrarVentanaServicio();
 
             popUpComunicado.ValidarComunicado();
+
+            propuesta.ClickBtnOperacion();
+            seleccionarOperacionCreditoPage.AbrirVentanaSeleccionarOP();
+            seleccionarOperacionCreditoPage.ValidarVentanaOP();
+            seleccionarOperacionCreditoPage.CerrarVentanaSeleccionarOP();
+
+            operacionCreditoPage.AbrirVentanaOperacionCredito();
+            operacionCreditoPage.IngresarMonto(datosExcel[i][8]);
+            operacionCreditoPage.ClickBtnCalcular();
+            operacionCreditoPage.SeleccionarPlanPagos(datosExcel[i][9]);
+            operacionCreditoPage.SeleccionarModalidad(datosExcel[i][10]);
+            operacionCreditoPage.SeleccionarOpcionPagos(datosExcel[i][11]);
+            operacionCreditoPage.SeleccionarDiaPagos(datosExcel[i][12]);
+            operacionCreditoPage.IngresarNumeroCuotas(datosExcel[i][13]);
+            operacionCreditoPage.IngresarTasaPreferencial(datosExcel[i][14]);
+            operacionCreditoPage.SeleccionarFormaDesembolso(datosExcel[i][15]);
+            operacionCreditoPage.IngresarFechaDesembolso();
+            operacionCreditoPage.IngresarNotas(datosExcel[i][17]);
+            operacionCreditoPage.ClickBtnGrabar();
+            operacionCreditoPage.ObtenerAlerta();
+
+            propuesta.ClickBtnRegistrarSeguro();
+
+
         }
 
     }
