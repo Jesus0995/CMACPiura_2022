@@ -113,6 +113,7 @@ public class ExcelCreditoEmpresarialRefinanciacionEspecialDefinitions {
             System.out.println("Mostrar codigo del cliente " + datosExcel[i][0]);
             listadoClientes.ClickBuscarCliente();
             listadoClientes.SeleccionarIconoPropuesta();
+
             seleccionarServicio.AbrirVentanaServicio();
             seleccionarServicio.SeleccionarServicio(datosExcel[i][1]);
             seleccionarServicio.SeleccionarServicioCredito(datosExcel[i][2]);
@@ -131,7 +132,9 @@ public class ExcelCreditoEmpresarialRefinanciacionEspecialDefinitions {
             condicionesRefinanciar.IngresarInteresRefinanciar(datosExcel[i][8]);
             condicionesRefinanciar.ClickBtnGrabar();
             condicionesRefinanciar.CerrarVentanaCondicionRefinanciar();
+
             propuesta.ClickBtnOperacion();
+
             seleccionarOperacionCredito.AbrirVentanaSeleccionarOP();
             seleccionarOperacionCredito.ValidarVentanaOP();
             seleccionarOperacionCredito.CerrarVentanaSeleccionarOP();
@@ -149,6 +152,7 @@ public class ExcelCreditoEmpresarialRefinanciacionEspecialDefinitions {
             operacionCredito.ClickBtnGrabar();
             operacionCredito.ObtenerAlerta();
             operacionCredito.CerrarVentanaOperacionCredito();
+
             propuesta.ClickBtnRegistrarSeguro();
 
             seleccionarSeguros.AbrirVentanaSeleccionarSeguros();

@@ -24,7 +24,7 @@ public class ListadoClientesPage {
 
     //mapear locator
     @FindBy(css = "#tab-bg\\:1 > i:nth-child(1)") private WebElement tab_Codigo;
-    @FindBy(xpath = "//*[@id=\"valorCodigo\"]") private WebElement txt_Codigo;
+    @FindBy(id = "valorCodigo") private WebElement txt_Codigo;
     @FindBy(css = "#form2 > table:nth-child(2) > tbody:nth-child(1) > tr:nth-child(2) > td:nth-child(1) > button:nth-child(1)")
     private WebElement btn_Buscar;
     @FindBy(xpath = "//table[3]/tbody/tr/td/div/button[1]") private WebElement btn_Regresar;

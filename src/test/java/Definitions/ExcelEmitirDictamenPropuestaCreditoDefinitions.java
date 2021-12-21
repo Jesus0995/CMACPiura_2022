@@ -88,12 +88,6 @@ public class ExcelEmitirDictamenPropuestaCreditoDefinitions {
 
             grabarPropuesta.ClickBtnCerrarInformacion();
             grabarPropuesta.CerrarVentanaGrabarPropuesta();
-
-            if (Valor == "Se han encontrado errores en la Validacion de la Propuesta")
-            {
-                propuesta.ClickBtnRegresar();
-            }
-
             listadoPropuesta.ClickBtnRegresar();
         }
         menuPrincipal.ClickBtnCerrarSesion();

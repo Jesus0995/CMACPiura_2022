@@ -98,6 +98,8 @@ public class ExcelInformeVisitaVerificacionDefinitions {
             grabarDocumento.ClickBtnCerrarInformes();
             grabarDocumento.CerrarVentanaGrabarPropuesta();
 
+            listadoFormatoVerificacion.ClickBtnRegresar();
+
         }
         menuPrincipal.ClickBtnCerrarSesion();
         login.ClickBtnCerrarSesion();
