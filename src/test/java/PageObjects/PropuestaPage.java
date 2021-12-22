@@ -314,7 +314,7 @@ public class PropuestaPage {
     public void AbrirOpcionesDictamen() {
         try {
             btn_Dictamen.click();
-            objFuncionEsperar.EsperarTiempo(2);
+            objFuncionEsperar.EsperarTiempo(1);
         } catch (Exception Error) {
             detalleError = "Error al seleccionar el boton opciones dictamen";
             objLogErrores.logError(detalleError, Error);
