@@ -36,30 +36,17 @@ public class ProbarDefinitions {
 
     @Given("la pagina esta disponible")
     public void la_pagina_esta_disponible() {
-        Hooks.driver.get("file:///C:/PruebasPaginaWeb/Sistema%20de%20Gestion%20de%20Creditos.htm");
+        Hooks.driver.get("file:///C:/Users/Usuario/Documents/Sistema%20de%20Gestion%20de%20Creditos-Propuesta.html");
 
     }
 
 
     @When("pruebaa")
     public void pruebaa() {
-        //grabardocumento.CapturarMensajeDerivacion();
         propuesta.CapturarMontoLiquidacion();
 
 
     }
-
-
-    /*@Then("ejecuta excel {string}")
-    public void ejecutaExcel(String arg0) {
-        String[][] datosExcel;
-        datosExcel = excel.LeerArchivoExcel(arg0, 0);
-        for (int i = 1; i < datosExcel.length; i++) {
-
-            operacionCredito.SeleccionarPlanPagos(datosExcel[i][9]);
-
-        }
-    }*/
 
 }
 

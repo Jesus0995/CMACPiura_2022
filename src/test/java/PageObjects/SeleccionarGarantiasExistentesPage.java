@@ -85,7 +85,7 @@ public class SeleccionarGarantiasExistentesPage {
         try {
             for (WebElement checkBox : checkBoxGarantiaMaquinaria) {
                 checkBox.click();
-                objFuncionEsperar.EsperarTiempo(1);
+                objFuncionEsperar.EsperarTiempo(2);
             }
 
         } catch (Exception Error) {

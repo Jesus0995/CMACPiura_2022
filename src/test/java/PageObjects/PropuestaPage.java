@@ -23,6 +23,8 @@ public class PropuestaPage {
     private funcionExcepciones objLogErrores = new funcionExcepciones();
     private String detalleError = new String();
     protected static String numeroPropuesta;
+    protected static String montoLiquidacion;
+    protected static String monto;
 
     /*************
 
@@ -484,6 +486,37 @@ public class PropuestaPage {
         }
     }
 
+
+    public void CapturarMontoLiquidacion() {
+        ////*[text()='Monto Liquidacion:']/following::text()[1]
+        ///html/body/form/table[1]/tbody/tr[3]/td/div/table[9]/tbody/tr[2]/td[6]
+
+        WebElement lblMontoLiquidacion = driver.findElement(By.xpath("//*[text()='Monto Liquidacion:']/following::text()[1]"));
+        monto = lblMontoLiquidacion.getAttribute("text");
+        System.out.println(monto);
+        //String dato[] = lblMontoLiquidacion.getText().replace("Tipo: Normal    Servicio: CREDITOS PYMES ","").split("S/ ");
+        //monto = dato[0];
+        //System.out.println(monto);
+
+
+    }
+
+    ////*[contains(text(),'Monto Liquidacion:')]//following-sibling[]
+        /*
+        protected static String mes;
+        protected static String anio;
+
+        public void CapturarFecha (){
+            wait.until(ExpectedConditions.visibilityOf(lbl_fecha));
+            //Exp: 22/12/2021
+            //montoliquidacion : s/.550.00
+            String dato[]=lbl_fecha.getText().replace("Exp:- ","").split("/");
+            mes=dato[0];
+            anio=dato[1];
+            System.out.println(mes);
+            System.out.println(anio);
+        }
+*/
 }
 
 
