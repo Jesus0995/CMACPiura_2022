@@ -156,7 +156,7 @@ public class ExcelCreditoConsumoDefinitions {
             seleccionarGarantia.ClickRegistrarGarantia();
             seleccionarGarantia.CerrarVentanaGarantia();
             seleccionarGarantiasExistentes.AbrirVentanaGarantiasExistentes();
-            seleccionarGarantiasExistentes.SeleccionarCheckGarantiasExistentesCC();
+            seleccionarGarantiasExistentes.SeleccionarCheckGarantiasExistentesPersonal();
             seleccionarGarantiasExistentes.ClickBtnAceptar();
             seleccionarGarantiasExistentes.CerrarVentanaGarantiasExistentes();
 

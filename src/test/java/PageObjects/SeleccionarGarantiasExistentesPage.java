@@ -93,7 +93,7 @@ public class SeleccionarGarantiasExistentesPage {
         }
     }
 
-    public void SeleccionarCheckGarantiasExistentesCC() {
+    public void SeleccionarCheckGarantiasExistentesPersonal() {
         List<WebElement> checkBoxGarantiaPersonal = driver.findElements(By.xpath("//td[contains(text(),'GARANTIA PERSONAL                                 ')]/preceding-sibling::td/input[@type='checkbox']"));
         try {
             for (WebElement checkBox : checkBoxGarantiaPersonal) {
@@ -102,6 +102,19 @@ public class SeleccionarGarantiasExistentesPage {
 
         } catch (Exception Error) {
             detalleError = "Error al seleccionar las garantias personal";
+            objLogErrores.logError(detalleError, Error);
+        }
+    }
+
+    public void SeleccionarCheckGarantiasExistentesPromoMype() {
+        List<WebElement> checkBoxGarantiaPersonal = driver.findElements(By.xpath("//td[contains(text(),'PROMO MYPE                                        ')]/preceding-sibling::td/input[@type='checkbox']"));
+        try {
+            for (WebElement checkBox : checkBoxGarantiaPersonal) {
+                checkBox.click();
+            }
+
+        } catch (Exception Error) {
+            detalleError = "Error al seleccionar las garantias Promo MYPE";
             objLogErrores.logError(detalleError, Error);
         }
     }

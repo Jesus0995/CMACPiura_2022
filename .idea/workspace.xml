@@ -5,7 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3f7f10af-cc77-450a-8460-1211f16a85dc" name="Default Changelist" comment="Actualización de nuevo Branch">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/Definitions/ExcelCreditoConsumoDefinitions.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Definitions/ExcelCreditoConsumoDefinitions.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/Definitions/ExcelCreditoEmpresarialReprogramacionOtroPagareDefinitions.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Definitions/ExcelCreditoEmpresarialReprogramacionOtroPagareDefinitions.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/Definitions/ProbarDefinitions.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Definitions/ProbarDefinitions.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/Definitions/PropuestaCreditoConsumoDefinitions.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Definitions/PropuestaCreditoConsumoDefinitions.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/PageObjects/PropuestaPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/PageObjects/PropuestaPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/PageObjects/SeleccionarGarantiasExistentesPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/PageObjects/SeleccionarGarantiasExistentesPage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/DatosExcel/DatosCreditoEmpresarialReprogramacionOtroPagare.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/target/DatosExcel/DatosCreditoEmpresarialReprogramacionOtroPagare.xlsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -70,7 +76,7 @@
       <recent name="C:\CajaPiuraCMAC2021\src\test\java\Definitions" />
     </key>
   </component>
-  <component name="RunManager" selected="Cucumber Java.Scenario: Crear una propuesta de de Reprogramación de Creditos de Empresarial en Otro Pagare desde el Excel">
+  <component name="RunManager" selected="Cucumber Java.Scenario: probar el check de las garantias">
     <configuration name="Scenario: Crear una propuesta de de Reprogramación de Creditos de Empresarial en Mismo Pagare desde el Excel" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
       <option name="CUCUMBER_CORE_VERSION" value="5" />
       <option name="FILE_PATH" value="$PROJECT_DIR$/src/test/resources/features/ExcelCreditoEmpresarialReprogramacionMismoPagare.feature" />
@@ -151,15 +157,15 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Scenario: Registrar informe de visitas de los clientes en el sistema SGCRED" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
+    <configuration name="Scenario: probar el check de las garantias" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
       <option name="CUCUMBER_CORE_VERSION" value="5" />
-      <option name="FILE_PATH" value="$PROJECT_DIR$/src/test/resources/features/InformeVisitaCreditoEmpresarial.feature" />
+      <option name="FILE_PATH" value="$PROJECT_DIR$/src/test/resources/features/prueba.feature" />
       <option name="GLUE" value="Definitions" />
       <option name="MAIN_CLASS_NAME" value="io.cucumber.core.cli.Main" />
       <module name="CajaPiuraCMAC2021" />
-      <option name="NAME_FILTER" value="^Registrar informe de visitas de los clientes en el sistema SGCRED$" />
-      <option name="PROGRAM_PARAMETERS" value=" --plugin org.jetbrains.plugins.cucumber.java.run.CucumberJvm5SMFormatter --name &quot;^Registrar informe de visitas de los clientes en el sistema SGCRED$&quot;" />
-      <option name="SUGGESTED_NAME" value="Scenario: Registrar informe de visitas de los clientes en el sistema SGCRED" />
+      <option name="NAME_FILTER" value="^probar el check de las garantias$" />
+      <option name="PROGRAM_PARAMETERS" value=" --plugin org.jetbrains.plugins.cucumber.java.run.CucumberJvm5SMFormatter --name &quot;^probar el check de las garantias$&quot;" />
+      <option name="SUGGESTED_NAME" value="Scenario: probar el check de las garantias" />
       <option name="WORKING_DIRECTORY" value="$MODULE_WORKING_DIR$" />
       <extension name="coverage">
         <pattern>
@@ -173,11 +179,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Cucumber Java.Scenario: probar el check de las garantias" />
         <item itemvalue="Cucumber Java.Scenario: Crear una propuesta de de Reprogramación de Creditos de Empresarial en Otro Pagare desde el Excel" />
         <item itemvalue="Cucumber Java.Scenario: Emitir Dictamen de Propuesta" />
         <item itemvalue="Cucumber Java.Scenario: Registrar el informe visita verificacion con el perfil Jefe de credito" />
         <item itemvalue="Cucumber Java.Scenario: Crear una propuesta de de Reprogramación de Creditos de Empresarial en Mismo Pagare desde el Excel" />
-        <item itemvalue="Cucumber Java.Scenario: Registrar informe de visitas de los clientes en el sistema SGCRED" />
       </list>
     </recent_temporary>
   </component>
@@ -235,6 +241,17 @@
     <MESSAGE value="Adicion de pages objects flujo Refinanciacion Especial" />
     <MESSAGE value="Actualización de nuevo Branch" />
     <option name="LAST_COMMIT_MESSAGE" value="Actualización de nuevo Branch" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/test/java/PageObjects/OperacionCreditoPage.java</url>
+          <line>212</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

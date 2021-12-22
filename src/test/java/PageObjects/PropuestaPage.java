@@ -23,6 +23,7 @@ public class PropuestaPage {
     private funcionExcepciones objLogErrores = new funcionExcepciones();
     private String detalleError = new String();
     protected static String numeroPropuesta;
+    protected static String tasaUltimoCredito;
 
     /*************
 
@@ -99,9 +100,10 @@ public class PropuestaPage {
     public void ClickBtnRegistrarSeguro() {
         try {
             wait.until(ExpectedConditions.elementToBeClickable(btn_AgregarSeguro));
+            objFuncionEsperar.EsperarTiempo(2);
             btn_AgregarSeguro.click();
         } catch (Exception Error) {
-            detalleError = "Error al seleccionar el boton registrar seguro";
+            detalleError = "Error al seleccionar el botón registrar seguro";
             objLogErrores.logError(detalleError, Error);
         }
 
@@ -403,11 +405,15 @@ public class PropuestaPage {
     }
 
     public String CapturarNumeroPropuesta() {
-
-        WebElement lblNumeroPropuesta = driver.findElement(By.xpath("//input[@name='nroPropuesta']"));
-        objFuncionEsperar.EsperarTiempo(1);
-        numeroPropuesta = lblNumeroPropuesta.getAttribute("value");
-        System.out.println("El numero de propuesta es: " + numeroPropuesta);
+        try {
+            WebElement lblNumeroPropuesta = driver.findElement(By.xpath("//input[@name='nroPropuesta']"));
+            objFuncionEsperar.EsperarTiempo(1);
+            numeroPropuesta = lblNumeroPropuesta.getAttribute("value");
+            System.out.println("El numero de propuesta es: " + numeroPropuesta);
+        } catch (Exception Error) {
+            detalleError = "Error al capturar el número de propuesta";
+            objLogErrores.logError(detalleError, Error);
+        }
         return numeroPropuesta;
     }
 
@@ -478,6 +484,34 @@ public class PropuestaPage {
             detalleError = "Error al seleccionar el botón enlazar informe comercial reprogramacion";
             objLogErrores.logError(detalleError, Error);
         }
+    }
+
+    public String CapturarTasaPreferencial() {
+        try {
+            WebElement lblTasaCredito = driver.findElement(By.xpath("//input[@name='TasaUltimoCredito']"));
+            objFuncionEsperar.EsperarTiempo(1);
+            tasaUltimoCredito = lblTasaCredito.getAttribute("value");
+            System.out.println("El numero de propuesta es: " + tasaUltimoCredito);
+
+        } catch (Exception Error) {
+            detalleError = "Error al capturar la Tasa Preferencial";
+            objLogErrores.logError(detalleError, Error);
+        }
+        return tasaUltimoCredito;
+    }
+
+    public String CapturarMontoLiquidacion() {
+        try {
+            WebElement lblTasaCredito = driver.findElement(By.xpath("/html/body/form/table[1]/tbody/tr[3]/td/div/table[10]/tbody/tr[2]/td[6]/b[4]"));
+            objFuncionEsperar.EsperarTiempo(1);
+            tasaUltimoCredito = lblTasaCredito.getText();
+            System.out.println("El numero de tasa es: " + tasaUltimoCredito);
+
+        } catch (Exception Error) {
+            detalleError = "Error al capturar la Tasa Preferencial";
+            objLogErrores.logError(detalleError, Error);
+        }
+        return tasaUltimoCredito;
     }
 
 }

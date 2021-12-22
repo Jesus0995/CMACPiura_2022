@@ -18,22 +18,24 @@ public class ExcelCreditoEmpresarialReprogramacionOtroPagareDefinitions {
     SeleccionarServicioPage servicio;
     PopUpComunicadoPage popUpComunicado;
     PropuestaPage propuesta;
-    SeleccionarOperacionCreditoPage seleccionarOperacionCreditoPage;
-    OperacionCreditoPage operacionCreditoPage;
-    SeleccionarSegurosPage seleccionarSegurosPage;
-    RegistrarSegurosPage registrarSegurosPage;
-    ConfirmarSegurosSeleccionadosPage confirmarSegurosSeleccionadosPage;
-
-    /*AnexarChecklistPage anexarCheckListCreditos;
+    SeleccionarOperacionCreditoPage seleccionarOperacionCredito;
+    OperacionCreditoPage operacionCredito;
+    SeleccionarSegurosPage seleccionarSeguros;
+    RegistrarSegurosPage registrarSeguros;
+    ConfirmarSegurosSeleccionadosPage confirmarSegurosSeleccionados;
+    SeleccionarGarantiaPage seleccionarGarantia;
+    SeleccionarGarantiasExistentesPage seleccionarGarantiasExistentes;
+    AnexarChecklistPage anexarCheckListCreditos;
     ConfirmacionChecklistPage confirmarCheckList;
     EnlazarEstadosFinancierosPage enlazarEstadosFinancieros;
     DesenlazarInformeVisitaPage desenlazarInformeVisita;
     EnlazarInformeVisitaPage enlazarInformeVisita;
     EnlazarInformeComercialNuevoPage enlazarInformeComercialNuevo;
     GrabarInformacionDocumentoPage grabarPropuesta;
-    AprobarDictamenPropuestaPage aprobarDictamenPropuesta;*/
+    AprobarDictamenPropuestaPage aprobarDictamenPropuesta;
     ExcelPage excel;
-    String Valor;
+    String ValorPropuesta;
+    String ValorTasa;
 
     public ExcelCreditoEmpresarialReprogramacionOtroPagareDefinitions() {
         login = new LoginPage(Hooks.driver);
@@ -43,20 +45,21 @@ public class ExcelCreditoEmpresarialReprogramacionOtroPagareDefinitions {
         servicio = new SeleccionarServicioPage(Hooks.driver);
         popUpComunicado = new PopUpComunicadoPage(Hooks.driver);
         propuesta = new PropuestaPage(Hooks.driver);
-        seleccionarOperacionCreditoPage = new SeleccionarOperacionCreditoPage(Hooks.driver);
-        operacionCreditoPage = new OperacionCreditoPage(Hooks.driver);
-        seleccionarSegurosPage = new SeleccionarSegurosPage(Hooks.driver);
-        registrarSegurosPage = new RegistrarSegurosPage(Hooks.driver);
-        confirmarSegurosSeleccionadosPage = new ConfirmarSegurosSeleccionadosPage(Hooks.driver);
-
-        /*anexarCheckListCreditos = new AnexarChecklistPage(Hooks.driver);
+        seleccionarOperacionCredito = new SeleccionarOperacionCreditoPage(Hooks.driver);
+        operacionCredito = new OperacionCreditoPage(Hooks.driver);
+        seleccionarSeguros = new SeleccionarSegurosPage(Hooks.driver);
+        registrarSeguros = new RegistrarSegurosPage(Hooks.driver);
+        confirmarSegurosSeleccionados = new ConfirmarSegurosSeleccionadosPage(Hooks.driver);
+        seleccionarGarantia = new SeleccionarGarantiaPage(Hooks.driver);
+        seleccionarGarantiasExistentes = new SeleccionarGarantiasExistentesPage(Hooks.driver);
+        anexarCheckListCreditos = new AnexarChecklistPage(Hooks.driver);
         confirmarCheckList = new ConfirmacionChecklistPage(Hooks.driver);
         enlazarEstadosFinancieros = new EnlazarEstadosFinancierosPage(Hooks.driver);
         desenlazarInformeVisita = new DesenlazarInformeVisitaPage(Hooks.driver);
         enlazarInformeVisita = new EnlazarInformeVisitaPage(Hooks.driver);
         enlazarInformeComercialNuevo = new EnlazarInformeComercialNuevoPage(Hooks.driver);
         grabarPropuesta = new GrabarInformacionDocumentoPage(Hooks.driver);
-        aprobarDictamenPropuesta = new AprobarDictamenPropuestaPage(Hooks.driver);*/
+        aprobarDictamenPropuesta = new AprobarDictamenPropuestaPage(Hooks.driver);
         excel = new ExcelPage();
     }
 
@@ -114,29 +117,100 @@ public class ExcelCreditoEmpresarialReprogramacionOtroPagareDefinitions {
             popUpComunicado.ValidarComunicado();
 
             propuesta.ClickBtnOperacion();
-            seleccionarOperacionCreditoPage.AbrirVentanaSeleccionarOP();
-            seleccionarOperacionCreditoPage.ValidarVentanaOP();
-            seleccionarOperacionCreditoPage.CerrarVentanaSeleccionarOP();
+            seleccionarOperacionCredito.AbrirVentanaSeleccionarOP();
+            seleccionarOperacionCredito.ValidarVentanaOP();
+            seleccionarOperacionCredito.CerrarVentanaSeleccionarOP();
 
-            operacionCreditoPage.AbrirVentanaOperacionCredito();
-            operacionCreditoPage.IngresarMonto(datosExcel[i][8]);
-            operacionCreditoPage.ClickBtnCalcular();
-            operacionCreditoPage.SeleccionarPlanPagos(datosExcel[i][9]);
-            operacionCreditoPage.SeleccionarModalidad(datosExcel[i][10]);
-            operacionCreditoPage.SeleccionarOpcionPagos(datosExcel[i][11]);
-            operacionCreditoPage.SeleccionarDiaPagos(datosExcel[i][12]);
-            operacionCreditoPage.IngresarNumeroCuotas(datosExcel[i][13]);
-            operacionCreditoPage.IngresarTasaPreferencial(datosExcel[i][14]);
-            operacionCreditoPage.SeleccionarFormaDesembolso(datosExcel[i][15]);
-            operacionCreditoPage.IngresarFechaDesembolso();
-            operacionCreditoPage.IngresarNotas(datosExcel[i][17]);
-            operacionCreditoPage.ClickBtnGrabar();
-            operacionCreditoPage.ObtenerAlerta();
+            ValorTasa = propuesta.CapturarTasaPreferencial();
+
+            operacionCredito.AbrirVentanaOperacionCredito();
+            operacionCredito.IngresarMonto(datosExcel[i][8]);
+            operacionCredito.ClickBtnCalcular();
+            operacionCredito.SeleccionarPlanPagos(datosExcel[i][9]);
+            operacionCredito.SeleccionarModalidad(datosExcel[i][10]);
+            operacionCredito.SeleccionarOpcionPagos(datosExcel[i][11]);
+            operacionCredito.SeleccionarDiaPagos(datosExcel[i][12]);
+            operacionCredito.IngresarNumeroCuotas(datosExcel[i][13]);
+            operacionCredito.IngresarTasaPreferencial(ValorTasa);
+            operacionCredito.SeleccionarFormaDesembolso(datosExcel[i][15]);
+            operacionCredito.IngresarFechaDesembolso();
+            operacionCredito.IngresarNotas(datosExcel[i][17]);
+            operacionCredito.ClickBtnGrabar();
+            operacionCredito.ObtenerAlerta();
+            operacionCredito.CerrarVentanaOperacionCredito();
 
             propuesta.ClickBtnRegistrarSeguro();
+            seleccionarSeguros.AbrirVentanaSeleccionarSeguros();
+            seleccionarSeguros.ClickbtnConfirmar();
+            seleccionarSeguros.CerrarVentanaSeleccionarSeguros();
+            registrarSeguros.AbrirVentanaRegistrarSeguros();
+            registrarSeguros.ClickCheckSeguroDesgravamenSaldo();
+            registrarSeguros.IngresarSeguroDesgravamenSaldo();
+            registrarSeguros.ClickBtnConfirmar();
+            registrarSeguros.CerrarVentanaRegistrarSeguros();
+            confirmarSegurosSeleccionados.AbrirVentanaConfirmacionSeguros();
+            confirmarSegurosSeleccionados.ClickBtnCerrar();
+            confirmarSegurosSeleccionados.CerrarVentanaConfirmacionSeguros();
 
+            propuesta.ClickAnexarCheckListCreditos();
+            anexarCheckListCreditos.AbrirVentanaAnexarCheckList();
+            anexarCheckListCreditos.SeleccionarOpcionesCheckListCredito();
+            anexarCheckListCreditos.Seleccionar_37opinionLegal();
+            anexarCheckListCreditos.ClickBtnGuardarTerminar();
+            anexarCheckListCreditos.AceptarAlerta();
+            anexarCheckListCreditos.CerrarVentanaAnexarCheckList();
+
+            confirmarCheckList.AbrirVentanaConfirmacionCheckList();
+            confirmarCheckList.ClickBtnCerrar();
+            confirmarCheckList.CerrarVentanaConfirmacionCheckList();
+
+            propuesta.ClickAnexarGarantias();
+            seleccionarGarantia.AbrirVentanaGarantia();
+            seleccionarGarantia.ClickRegistrarGarantia();
+            seleccionarGarantia.CerrarVentanaGarantia();
+            seleccionarGarantiasExistentes.AbrirVentanaGarantiasExistentes();
+            seleccionarGarantiasExistentes.SeleccionarCheckGarantiasExistentesPromoMype();
+            seleccionarGarantiasExistentes.ClickBtnAceptar();
+            seleccionarGarantiasExistentes.CerrarVentanaGarantiasExistentes();
+
+            propuesta.ClickEnlazarEEFF();
+            enlazarEstadosFinancieros.AbrirVentanaEnlazarEstadosFinancieros();
+            enlazarEstadosFinancieros.ClickbtnEnlazar();
+            enlazarEstadosFinancieros.CerrarVentanaEnlazarEstadosFinancieros();
+
+            propuesta.ClickDesenlazarInformeVisitaReprogramacion();
+            desenlazarInformeVisita.AbrirVentanaDesenlazarInformeVisita();
+            desenlazarInformeVisita.ClickBtnRealizar();
+            desenlazarInformeVisita.CerrarVentanaDesenlazarInformeVisita();
+
+            propuesta.ClickEnlazarInformeVisitaReprogramacion();
+            enlazarInformeVisita.AbrirVentanaEnlazarInformeVisita();
+            enlazarInformeVisita.ClickBtnRealizar();
+            enlazarInformeVisita.CerrarVentanaEnlazarInformeVisita();
+
+            propuesta.ClickEnlazarInformeComercialReprogramacion();
+            enlazarInformeComercialNuevo.AbrirVentanaEnlazarInformeComercialNuevo();
+            enlazarInformeComercialNuevo.ClickBtnRealizar();
+            enlazarInformeComercialNuevo.CerrarVentanaEnlazarInformeComercialNuevo();
+
+            propuesta.IngresarComentariosPropuesta();
+
+            propuesta.ClickMenuGrabarPropuesta();
+            grabarPropuesta.AbrirVentanaGrabarPropuesta();
+            grabarPropuesta.ClickBtnCerrarInformacion();
+            grabarPropuesta.CerrarVentanaGrabarPropuesta();
+
+            ValorPropuesta = propuesta.CapturarNumeroPropuesta();
+            excel.EscribirExcel(arg0, 0, i, 20, ValorPropuesta);
+
+            propuesta.ClickBtnRegresar();
+            listadoPropuesta.ClickBtnRegresar();
 
         }
+
+        menuPrincipal.ClickBtnCerrarSesion();
+        login.ClickBtnCerrarSesion();
+        Hooks.driver.close();
 
     }
 }
