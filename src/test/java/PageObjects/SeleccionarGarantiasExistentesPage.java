@@ -25,8 +25,7 @@ public class SeleccionarGarantiasExistentesPage {
     private funcionExcepciones objLogErrores = new funcionExcepciones();
     private String detalleError = new String();
 
-    @FindBy(xpath = "//button[@type=\"submit\"]")
-    private WebElement btn_Aceptar;
+    @FindBy(xpath = "//button[@type=\"submit\"]") private WebElement btn_Aceptar;
 
     public void AbrirVentanaGarantiasExistentes() {
         try {
@@ -80,7 +79,7 @@ public class SeleccionarGarantiasExistentesPage {
                 System.out.println("Error al seleccionar las garantias" + error.getMessage());
             }
     */
-    public void SeleccionarCheckGarantiasExistentesMaquinayEquipo() {
+    public void SeleccionarCheckGarantiasExistentesMaquinariayEquipo() {
         List<WebElement> checkBoxGarantiaMaquinaria = driver.findElements(By.xpath("//td[contains(text(),'MAQUINARIA Y EQUIPO                               ')]/preceding-sibling::td/input[@type='checkbox']"));
         try {
             for (WebElement checkBox : checkBoxGarantiaMaquinaria) {

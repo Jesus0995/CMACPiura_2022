@@ -30,22 +30,13 @@ public class RegistrarSegurosPage {
     @FindBy(id = "dps02201") private WebElement txt_SeguroDesgravamenFlatMN;
     @FindBy(id = "5_13501") private WebElement chk_SeguroRiesgoPlanPymes;
     @FindBy(id = "dps13501") private WebElement txt_SeguroRiesgoPlanPymes;
-    @FindBy(xpath = "//input[@id='4_01201']")
-    private WebElement chk_SeguroDesgravamenSaldo;
-    @FindBy(xpath = "//input[@id='dps01201']")
-    private WebElement txt_SeguroDesgravamenSaldo;
-    @FindBy(xpath = "//input[@id='6_91001']")
-    private WebElement chk_SeguroVidaPlan1;
-    @FindBy(xpath = "//input[@id='dps91001']")
-    private WebElement txt_SeguroVidaPlan1;
-
-    @FindBy(xpath = "//button[@type=\"submit\"]")
-    private WebElement btn_confirmar;
-
-
-    @FindBy(id = "4_01301")private WebElement chk_SeguroDesgravamenSaldoCapital;
-    @FindBy(id = "dps01301")private WebElement txt_SeguroDesgravamenSaldoCapital;
-
+    @FindBy(id = "4_01301") private WebElement chk_SeguroDesgravamenSaldoCapital;
+   // @FindBy(xpath = "//input[@id='4_01201']") private WebElement chk_SeguroDesgravamenSaldoCapital; --- Locator del checkbox antes del 09/12/2021. Cambió id
+   @FindBy(id = "dps01301") private WebElement txt_SeguroDesgravamenSaldoCapital;
+    // @FindBy(xpath = "//input[@id='dps01201']") private WebElement txt_SeguroDesgravamenSaldoCapital; --- Locator del cuadro de texto antes del 09/12/2021. Cambió id
+    @FindBy(id = "6_91001") private WebElement chk_SeguroVidaPlan1;
+    @FindBy(id = "dps91001") private WebElement txt_SeguroVidaPlan1;
+    @FindBy(xpath = "//button[@type=\"submit\"]") private WebElement btn_confirmar;
 
     public void AbrirVentanaRegistrarSeguros() {
         try{
@@ -147,18 +138,8 @@ public class RegistrarSegurosPage {
         }
     }
 
-    public void ClickCheckSeguroDesgravamenSaldo() {
-        try {
-            wait.until(ExpectedConditions.elementToBeClickable(chk_SeguroDesgravamenSaldo));
-            chk_SeguroDesgravamenSaldo.click();
 
-        } catch (Exception Error) {
-            detalleError = "Error al hacer check en seguro desgrava,en saldo";
-            objLogErrores.logError(detalleError, Error);
-        }
-    }
-
-    public void IngresarSeguroDesgravamenSaldo() {
+    public void IngresarSeguroDesgravamenSaldoCapital() {
         try {
             int min_val = 10000000;
             int max_val = 99999999;
@@ -167,8 +148,8 @@ public class RegistrarSegurosPage {
             int rand_val = Math.abs(rand.nextInt((max_val - min_val + 1)) + min_val);
             String DPSDesgravamenSaldo = '9' + String.valueOf(rand_val);
             System.out.println("el numero aleatorio es:" + (rand_val));
-            txt_SeguroDesgravamenSaldo.clear();
-            txt_SeguroDesgravamenSaldo.sendKeys(DPSDesgravamenSaldo);
+            txt_SeguroDesgravamenSaldoCapital.clear();
+            txt_SeguroDesgravamenSaldoCapital.sendKeys(DPSDesgravamenSaldo);
         } catch (Exception Error) {
             detalleError = "Error al generar numero de seguro desgravamen saldo";
             objLogErrores.logError(detalleError, Error);

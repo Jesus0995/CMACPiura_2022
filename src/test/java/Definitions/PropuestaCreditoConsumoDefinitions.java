@@ -274,12 +274,12 @@ public class PropuestaCreditoConsumoDefinitions {
     @And("muestra la ventana registrar seguros y doy check en el seguro desgravamen al saldo capital")
     public void muestraLaVentanaRegistrarSegurosYDoyCheckEnElSeguroDesgravamenAlSaldoCapital() {
         registrarSeguros.AbrirVentanaRegistrarSeguros();
-        registrarSeguros.ClickCheckSeguroDesgravamenSaldo();
+        registrarSeguros.ClickCheckSeguroDesgravamenSaldoCapital();
     }
 
     @And("en la ventana registrar seguros ingresar el numero DPS del seguro desgravamen")
     public void enLaVentanaRegistrarSegurosIngresarElNumeroDPSDelSeguroDesgravamen() {
-        registrarSeguros.IngresarSeguroDesgravamenSaldo();
+        registrarSeguros.IngresarSeguroDesgravamenSaldoCapital();
     }
 
     @And("en la ventana registrar seguros doy check en el seguro vida plan1")

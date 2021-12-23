@@ -153,6 +153,7 @@ public class ExcelCreditoEmpresarialRefinanciacion {
             propuesta.ClickAnexarCheckListCreditos();
             anexarCheckListCreditos.AbrirVentanaAnexarCheckList();
             anexarCheckListCreditos.SeleccionarOpcionesCheckListCredito();
+            anexarCheckListCreditos.Seleccionar_37opinionLegal();
             anexarCheckListCreditos.ClickBtnGuardarTerminar();
             anexarCheckListCreditos.AceptarAlerta();
             anexarCheckListCreditos.CerrarVentanaAnexarCheckList();
@@ -170,7 +171,8 @@ public class ExcelCreditoEmpresarialRefinanciacion {
             seleccionarGarantia.CerrarVentanaGarantia();
 
             seleccionarGarantiasExistentes.AbrirVentanaGarantiasExistentes();
-            seleccionarGarantiasExistentes.SeleccionarCheckGarantiasExistentesMaquinayEquipo();
+            seleccionarGarantiasExistentes.SeleccionarCheckGarantiasExistentesMaquinariayEquipo();
+            seleccionarGarantiasExistentes.SeleccionarCheckGarantiasExistentesPromoMype();
             seleccionarGarantiasExistentes.ClickBtnAceptar();
             seleccionarGarantiasExistentes.CerrarVentanaGarantiasExistentes();
 
@@ -213,6 +215,9 @@ public class ExcelCreditoEmpresarialRefinanciacion {
             listadoPropuesta.ClickBtnRegresar();
 
         }
+        menuPrincipal.ClickBtnCerrarSesion();
+        login.ClickBtnCerrarSesion();
+        Hooks.driver.close();
 
 
     }

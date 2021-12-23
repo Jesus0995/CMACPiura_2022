@@ -141,8 +141,8 @@ public class ExcelCreditoConsumoDefinitions {
             seleccionarSeguros.ClickbtnConfirmar();
             seleccionarSeguros.CerrarVentanaSeleccionarSeguros();
             registrarSeguros.AbrirVentanaRegistrarSeguros();
-            registrarSeguros.ClickCheckSeguroDesgravamenSaldo();
-            registrarSeguros.IngresarSeguroDesgravamenSaldo();
+            registrarSeguros.ClickCheckSeguroDesgravamenSaldoCapital();
+            registrarSeguros.IngresarSeguroDesgravamenSaldoCapital();
             registrarSeguros.ClickCheckSeguroVidaPlan1();
             registrarSeguros.IngresarSeguroVidaPlan1();
             registrarSeguros.ClickBtnConfirmar();

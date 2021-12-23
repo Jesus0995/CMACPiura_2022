@@ -101,6 +101,7 @@ public class ExcelInformeVisitaVerificacionDefinitions {
             listadoFormatoVerificacion.ClickBtnRegresar();
 
         }
+
         menuPrincipal.ClickBtnCerrarSesion();
         login.ClickBtnCerrarSesion();
         Hooks.driver.close();

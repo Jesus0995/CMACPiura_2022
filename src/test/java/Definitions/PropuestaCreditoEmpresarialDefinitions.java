@@ -369,7 +369,7 @@ public class PropuestaCreditoEmpresarialDefinitions {
     @And("en la ventana Garantias Existentes seleccionar todas las garantias existentes")
     public void enLaVentanaGarantiasExistentesSeleccionarTodasLasGarantiasExistentes() {
         seleccionarGarantiasExistentes.AbrirVentanaGarantiasExistentes();
-        seleccionarGarantiasExistentes.SeleccionarCheckGarantiasExistentesMaquinayEquipo();
+        seleccionarGarantiasExistentes.SeleccionarCheckGarantiasExistentesMaquinariayEquipo();
     }
 
 

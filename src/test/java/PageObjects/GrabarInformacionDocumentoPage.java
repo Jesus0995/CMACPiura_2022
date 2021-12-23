@@ -57,7 +57,7 @@ public class GrabarInformacionDocumentoPage {
 
     public GrabarInformacionDocumentoPage(WebDriver d) {
         driver = d;
-        wait = new WebDriverWait(driver, 30);
+        wait = new WebDriverWait(driver, 60);
         PageFactory.initElements(driver, this);
 
     }
@@ -132,6 +132,7 @@ public class GrabarInformacionDocumentoPage {
         try {
             wait.until(ExpectedConditions.visibilityOf(lbl_MensajeDerivacion));
             mensajeDerivacion=lbl_MensajeDerivacion.getText();
+            objFuncionEsperar.EsperarTiempo(1);
             System.out.println("El mensaje es :" + mensajeDerivacion);
 
         } catch (Exception Error) {

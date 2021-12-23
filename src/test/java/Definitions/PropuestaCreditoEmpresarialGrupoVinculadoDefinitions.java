@@ -298,7 +298,7 @@ public class PropuestaCreditoEmpresarialGrupoVinculadoDefinitions {
     @And("en la ventana garantias existentes seleccionar todas las garantias existentes")
     public void en_la_ventana_garantias_existentes_seleccionar_todas_las_garantias_existentes() {
         seleccionarGarantiasExistentes.AbrirVentanaGarantiasExistentes();
-        seleccionarGarantiasExistentes.SeleccionarCheckGarantiasExistentesMaquinayEquipo();
+        seleccionarGarantiasExistentes.SeleccionarCheckGarantiasExistentesMaquinariayEquipo();
     }
     @And("en la ventana garantias existentes hacer click en el boton aceptar")
     public void en_la_ventana_garantias_existentes_hacer_click_en_el_boton_aceptar() {

@@ -61,7 +61,7 @@ public class ExcelEmitirDictamenPropuestaCreditoDefinitions {
     }
 
     @Then("ejecutar todos los pasos para la emision de dictamen desde excel {string};")
-    public void ejecutar_todos_los_pasos_para_la_emision_de_dictamen_desde_excel(String arg0) throws IOException {
+    public void ejecutar_todos_los_pasos_para_la_emision_de_dictamen_desde_excel(String arg0) {
         String[][] datosExcel;
         datosExcel = excel.LeerArchivoExcel(arg0, 0);
         for (int i = 1; i < datosExcel.length; i++) {
@@ -82,7 +82,6 @@ public class ExcelEmitirDictamenPropuestaCreditoDefinitions {
             aprobarDictamenPropuesta.CerrarVentanaAprobarDictamenPropuesta();
 
             grabarPropuesta.AbrirVentanaGrabarPropuesta();
-            pantallazo();
             Valor = grabarPropuesta.CapturarMensajeDerivacion();
             excel.EscribirExcel(arg0,0,i,21,Valor);
 

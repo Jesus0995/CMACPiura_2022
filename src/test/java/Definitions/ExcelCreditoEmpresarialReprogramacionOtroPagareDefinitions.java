@@ -92,6 +92,7 @@ public class ExcelCreditoEmpresarialReprogramacionOtroPagareDefinitions {
         datosExcel = excel.LeerArchivoExcel(arg0, 0);
 
         for (int i = 1; i < datosExcel.length; i++) {
+
             menuPrincipal.ClickPropuestaFinanciamiento();
 
             listadoPropuesta.ClickBtnCrearPropuesta();
@@ -144,8 +145,8 @@ public class ExcelCreditoEmpresarialReprogramacionOtroPagareDefinitions {
             seleccionarSeguros.ClickbtnConfirmar();
             seleccionarSeguros.CerrarVentanaSeleccionarSeguros();
             registrarSeguros.AbrirVentanaRegistrarSeguros();
-            registrarSeguros.ClickCheckSeguroDesgravamenSaldo();
-            registrarSeguros.IngresarSeguroDesgravamenSaldo();
+            registrarSeguros.ClickCheckSeguroDesgravamenSaldoCapital();
+            registrarSeguros.IngresarSeguroDesgravamenSaldoCapital();
             registrarSeguros.ClickBtnConfirmar();
             registrarSeguros.CerrarVentanaRegistrarSeguros();
             confirmarSegurosSeleccionados.AbrirVentanaConfirmacionSeguros();
