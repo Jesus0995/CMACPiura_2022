@@ -171,7 +171,7 @@ public class ExcelCreditoEmpresarialRefinanciacion {
             seleccionarGarantia.CerrarVentanaGarantia();
 
             seleccionarGarantiasExistentes.AbrirVentanaGarantiasExistentes();
-            seleccionarGarantiasExistentes.SeleccionarCheckGarantiasExistentesMaquinariayEquipo();
+            //seleccionarGarantiasExistentes.SeleccionarCheckGarantiasExistentesMaquinariayEquipo();
             seleccionarGarantiasExistentes.SeleccionarCheckGarantiasExistentesPromoMype();
             seleccionarGarantiasExistentes.ClickBtnAceptar();
             seleccionarGarantiasExistentes.CerrarVentanaGarantiasExistentes();
@@ -211,9 +211,7 @@ public class ExcelCreditoEmpresarialRefinanciacion {
             Valor = propuesta.CapturarNumeroPropuesta();
             excel.EscribirExcel(arg0, 0, i, 20, Valor);
 
-            propuesta.ClickBtnRegresar();
             listadoPropuesta.ClickBtnRegresar();
-
         }
         menuPrincipal.ClickBtnCerrarSesion();
         login.ClickBtnCerrarSesion();

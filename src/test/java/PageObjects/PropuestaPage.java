@@ -517,7 +517,7 @@ public class PropuestaPage {
         ///html/body/form/table[1]/tbody/tr[3]/td/div/table[9]/tbody/tr[2]/td[6]
 
         WebElement lblMontoLiquidacion = driver.findElement(By.xpath("//*[text()='Monto Liquidacion:']/following::text()[1]"));
-        monto = lblMontoLiquidacion.getAttribute("text");
+        monto = lblMontoLiquidacion.getText();
         System.out.println(monto);
         //String dato[] = lblMontoLiquidacion.getText().replace("Tipo: Normal    Servicio: CREDITOS PYMES ","").split("S/ ");
         //monto = dato[0];
