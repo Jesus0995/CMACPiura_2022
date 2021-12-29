@@ -17,8 +17,10 @@ public class Hooks {
     @Before
     public static void setUp(){
         System.setProperty("webdriver.gecko.driver","src/test/resources/drivers/geckodriver.exe");
+
         driver = new FirefoxDriver();
         driver.manage().window().maximize();
+
     }
 
     @After

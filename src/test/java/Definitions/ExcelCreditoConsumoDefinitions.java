@@ -82,6 +82,8 @@ public class ExcelCreditoConsumoDefinitions {
     public void sePresionaElBotonIngresarYMuestraElSGCRED() {
 
         login.ClickSubmit();
+        login.ValidarSesionesWeb();
+
     }
 
     @Then("ejecutar los registros de propuestas de credito desde Excel {string}")
@@ -206,7 +208,13 @@ public class ExcelCreditoConsumoDefinitions {
             grabarDocumentoPropuesta.ClickBtnCerrarInformacion();
             grabarDocumentoPropuesta.CerrarVentanaGrabarPropuesta();
 
-            listadoPropuesta.ClickBtnRegresar();
+            if (valorResultado.equals("El Documento ha sido derivado satisfactoriamente")){
+                listadoPropuesta.ClickBtnRegresar();
+            }
+            else {
+                propuesta.ClickBtnRegresar();
+                listadoPropuesta.ClickBtnRegresar();
+            }
 
         }
 

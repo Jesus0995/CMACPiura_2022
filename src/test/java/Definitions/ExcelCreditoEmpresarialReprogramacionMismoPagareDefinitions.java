@@ -70,6 +70,7 @@ public class ExcelCreditoEmpresarialReprogramacionMismoPagareDefinitions {
     public void seDaClickElBotonIngresarYMuestraElSGCRED() {
 
         login.ClickSubmit();
+        login.ValidarSesionesWeb();
 
     }
 

@@ -35,7 +35,7 @@ public class ListadoPropuestaPage {
     private WebElement btn_Buscar;
     @FindBy(xpath = "//button[@type='button' and contains(text(),'Crear nueva Propuesta')]")
     private WebElement btn_CrearPropuesta;
-    @FindBy(xpath = "/html/body/table/tbody/tr[2]/td/table[1]/tbody/tr/td[2]/div/button[2]") private WebElement btn_Regresar;
+    @FindBy(xpath = "//button[@type='button' and contains(text(),'Regresar')]") private WebElement btn_Regresar;
     @FindBy(xpath = "//select[@name='tipoBusqueda']")
     private WebElement cbx_BusquedaAprobacion;
     @FindBy(xpath = "//input[@name='valorBuscado']")

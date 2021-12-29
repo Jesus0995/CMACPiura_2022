@@ -34,6 +34,7 @@ public class PropuestaCreditoConsumoDefinitions {
     EnlazarInformeComercialNuevoPage enlazarInformeComercialNuevo;
     GrabarInformacionDocumentoPage grabarDocumentoPropuesta;
     AprobarDictamenPropuestaPage aprobarDictamenPropuesta;
+    String valorResultado;
 
     //Constructor
     public PropuestaCreditoConsumoDefinitions() {
@@ -440,6 +441,7 @@ public class PropuestaCreditoConsumoDefinitions {
     @And("muestra a la ventana grabar informacion y doy click en el boton cerrar")
     public void muestraALaVentanaGrabarInformacionYDoyClickEnElBotonCerrar() {
         grabarDocumentoPropuesta.AbrirVentanaGrabarPropuesta();
+        valorResultado = grabarDocumentoPropuesta.CapturarMensajeDerivacion();
         grabarDocumentoPropuesta.ClickBtnCerrarInformacion();
         grabarDocumentoPropuesta.CerrarVentanaGrabarPropuesta();
     }
@@ -447,7 +449,13 @@ public class PropuestaCreditoConsumoDefinitions {
     @And("direcciona a la ventana listado propuesta y doy click en el boton regresar")
     public void direccionaALaVentanaListadoPropuestaYDoyClickEnElBotonRegresar() {
 
-        listadoPropuesta.ClickBtnRegresar();
+        if (valorResultado.equals("El Documento ha sido derivado satisfactoriamente")){
+            listadoPropuesta.ClickBtnRegresar();
+        }
+        else {
+            propuesta.ClickBtnRegresar();
+            listadoPropuesta.ClickBtnRegresar();
+        }
     }
 
     @And("direcciona al menu principal y doy click en la opcion cerrar sesion")

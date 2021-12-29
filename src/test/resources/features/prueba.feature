@@ -1,9 +1,12 @@
-Feature: probar las garantias
+Feature: probar las sesiones activas
 
-  Scenario: probar el check de las garantias
+  Scenario: probar sesiones
     Given la pagina esta disponible
-    When pruebaa
-
+    When escribo usuario y password
+      | nombre | password |
+      | CIYAZU | prueba   |
+    And presionar boton ingresar
+    And situa en home de SGCRED
 
 
 
