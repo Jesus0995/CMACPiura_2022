@@ -27,56 +27,93 @@ public class PropuestaPage {
 
     protected static String montoLiquidacion;
     protected static String monto;
+    protected static String TextoPromocion;
 
     /*************
-
      *************/
 
 
-    @FindBy(xpath = "//textarea[@name='comentCalifCred']") private WebElement txt_ClasificacionCrediticia;
-    @FindBy(id = "txtobjetivo") private WebElement txt_ObjetivoCredito;
-    @FindBy(id = "justificacion") private WebElement txt_JustificacionCredito;
-    @FindBy(name = "btnEnviar") private WebElement btn_NuevaOperacion;
-    @FindBy(xpath = "//img[@src='./images/mail-send-receive.png']") private WebElement icn_CambioTasa;
-    @FindBy(xpath = "/html/body/form/table[1]/tbody/tr[3]/td/div/table[7]/tbody/tr[1]/td[2]/button") private WebElement btn_AgregarSeguro;
-    @FindBy(xpath = "/html/body/form/table[1]/tbody/tr[3]/td/div/table[8]/tbody/tr[1]/td[2]/button") private WebElement btn_AnexarChecklist;
-    @FindBy(xpath = "//textarea[@id='txtcaracter']") private WebElement txt_CaracteristicaNegocio; //se cambio el name del nuevo ambiente //textarea[@name='caractNegocio']
-    @FindBy(xpath = "//textarea[@id='txtclasificac']") private WebElement txt_ClasificacionRiesgoCliente;
-    @FindBy(xpath = "//textarea[@id='txtclasificaAval']") private WebElement txt_ClasificacionRiesgoAval;
-    @FindBy(xpath = "//textarea[@id='txtanalisisUEF']") private WebElement txt_AnalisisUnidadFinanciera;
+    @FindBy(xpath = "//textarea[@name='comentCalifCred']")
+    private WebElement txt_ClasificacionCrediticia;
+    @FindBy(id = "txtobjetivo")
+    private WebElement txt_ObjetivoCredito;
+    @FindBy(id = "justificacion")
+    private WebElement txt_JustificacionCredito;
+    @FindBy(name = "btnEnviar")
+    private WebElement btn_NuevaOperacion;
+    @FindBy(xpath = "//img[@src='./images/mail-send-receive.png']")
+    private WebElement icn_CambioTasa;
+    @FindBy(xpath = "/html/body/form/table[1]/tbody/tr[3]/td/div/table[7]/tbody/tr[1]/td[2]/button")
+    private WebElement btn_AgregarSeguro;
+    @FindBy(xpath = "/html/body/form/table[1]/tbody/tr[3]/td/div/table[8]/tbody/tr[1]/td[2]/button")
+    private WebElement btn_AnexarChecklist;
+    @FindBy(xpath = "//textarea[@id='txtcaracter']")
+    private WebElement txt_CaracteristicaNegocio; //se cambio el name del nuevo ambiente //textarea[@name='caractNegocio']
+    @FindBy(xpath = "//textarea[@id='txtclasificac']")
+    private WebElement txt_ClasificacionRiesgoCliente;
+    @FindBy(xpath = "//textarea[@id='txtclasificaAval']")
+    private WebElement txt_ClasificacionRiesgoAval;
+    @FindBy(xpath = "//textarea[@id='txtanalisisUEF']")
+    private WebElement txt_AnalisisUnidadFinanciera;
     //nuevos cambios en locator de las cajas de texto de comentarios 29/09
-    @FindBy(xpath = "//textarea[@id='txtProducServic']") private WebElement txt_Productos;
-    @FindBy(xpath = "//textarea[@id='txtPrincClienProv']") private WebElement txt_PrincipalesClientes;
-    @FindBy(xpath = "//textarea[@id='txtPersonalLabora']") private WebElement txt_PersonalLaboral;
-    @FindBy(xpath = "//textarea[@id='txtSectorEconomic']") private WebElement txt_AnalisisSector;
-    @FindBy(xpath = "//textarea[@id='txtProyeccCreci']") private WebElement txt_ProyeccionesCrecimiento;
-    @FindBy(xpath = "//button[@name=\"btnGaranExist\"]") private WebElement btn_AnexarGarantias;
-    @FindBy(xpath = "//textarea[@id='txtPrincipalRatio']") private WebElement txt_ComentariosRatios;
-    @FindBy(xpath = "/html/body/form/table[1]/tbody/tr[2]/td/table[1]/tbody/tr[2]/td[1]/table/tbody/tr/td[5]/a") private WebElement btn_Grabar;
-    @FindBy(xpath = "//td[@id='NewDdTD']") private WebElement btn_Dictamen;
-    @FindBy(xpath = "//img[@alt='Aprobar']") private WebElement btn_AprobarPropuesta;
-    @FindBy(xpath = "//button[@name='btnEnviar2']") private WebElement btn_VerificarCheckListCredito;
-    @FindBy(xpath = "/html/body/form/table[2]/tbody/tr[6]/td[3]/button") private WebElement btn_EnlazarEEFFGrupoVinculado;
+    @FindBy(xpath = "//textarea[@id='txtProducServic']")
+    private WebElement txt_Productos;
+    @FindBy(xpath = "//textarea[@id='txtPrincClienProv']")
+    private WebElement txt_PrincipalesClientes;
+    @FindBy(xpath = "//textarea[@id='txtPersonalLabora']")
+    private WebElement txt_PersonalLaboral;
+    @FindBy(xpath = "//textarea[@id='txtSectorEconomic']")
+    private WebElement txt_AnalisisSector;
+    @FindBy(xpath = "//textarea[@id='txtProyeccCreci']")
+    private WebElement txt_ProyeccionesCrecimiento;
+    @FindBy(xpath = "//button[@name=\"btnGaranExist\"]")
+    private WebElement btn_AnexarGarantias;
+    @FindBy(xpath = "//textarea[@id='txtPrincipalRatio']")
+    private WebElement txt_ComentariosRatios;
+    @FindBy(xpath = "/html/body/form/table[1]/tbody/tr[2]/td/table[1]/tbody/tr[2]/td[1]/table/tbody/tr/td[5]/a")
+    private WebElement btn_Grabar;
+    @FindBy(xpath = "//td[@id='NewDdTD']")
+    private WebElement btn_Dictamen;
+    @FindBy(xpath = "//img[@alt='Aprobar']")
+    private WebElement btn_AprobarPropuesta;
+    @FindBy(xpath = "//button[@name='btnEnviar2']")
+    private WebElement btn_VerificarCheckListCredito;
+    @FindBy(xpath = "/html/body/form/table[2]/tbody/tr[6]/td[3]/button")
+    private WebElement btn_EnlazarEEFFGrupoVinculado;
 
     //  @FindBy(xpath = "/html/body/div/table/tbody/tr/td[2]/h3") private WebElement lblNumeroPropuesta;
-    @FindBy(xpath = "/html/body/form/table[1]/tbody/tr[3]/td/div/table[9]/tbody/tr/td[2]/button") private WebElement btn_CancelarPagares;
-    @FindBy(xpath = "/html/body/form/table[1]/tbody/tr[3]/td/div/table[10]/tbody/tr[2]/td[9]/span/img") private WebElement icn_CondicionRefinanciar;
+    @FindBy(xpath = "/html/body/form/table[1]/tbody/tr[3]/td/div/table[9]/tbody/tr/td[2]/button")
+    private WebElement btn_CancelarPagares;
+    @FindBy(xpath = "/html/body/form/table[1]/tbody/tr[3]/td/div/table[10]/tbody/tr[2]/td[9]/span/img")
+    private WebElement icn_CondicionRefinanciar;
 
-    @FindBy(name = "btnEnviar") private WebElement btn_SolicitarReprogramacion;
-    @FindBy(xpath = "//button[text()='Desenlazar']") private WebElement btn_DesenlazarInformeVisitaReprogramacion;
-
-
+    @FindBy(name = "btnEnviar")
+    private WebElement btn_SolicitarReprogramacion;
+    @FindBy(xpath = "//button[text()='Desenlazar']")
+    private WebElement btn_DesenlazarInformeVisitaReprogramacion;
     //---------------/html/body/form/table/tbody/tr[3]/td/div/table[22]/tbody/tr[1]/td[3]/button----locator de Enlazar Inf.Visita antes del 06/12/2021
     //---------------/html/body/form/table/tbody/tr[3]/td/div/table[22]/tbody/tr[2]/td[3]/button----locator de Enlazar Inf.Comercial antes del 06/12/2021
     //---------------/html/body/form/table[2]/tbody/tr[2]/td[3]/button--------locator de Enlazar Inf.Comercial antes del 13/12/2021
     //---------------/html/body/form/table[2]/tbody/tr[3]/td[3]/button--------locator de Enlazar Inf. Comercial para determinado cliente.
 
-    @FindBy(xpath = "/html/body/form/table[2]/tbody/tr[1]/td[3]/button") private WebElement btn_EnlazarInformeVisitaReprogramacion; // locator fue cambiado el 06/12/2021
-    @FindBy(xpath = "//td[text()='Informe Comercial Nuevo Formato']//following::td[2]//button[@type='button']") private WebElement btn_EnlazarInformeComercialReprogramacion; //locator fue cambiado el 13/12/2021
-    @FindBy(xpath = "//img[@alt='Regresar']") private WebElement btn_Regresar;
-   /** revisar **/
-    @FindBy(name = "observCuota") private WebElement txt_ObservacionMontoPago;
-    @FindBy(name="observMejoraGar") private WebElement txt_ObservacionMejoraGarantia;
+    @FindBy(xpath = "/html/body/form/table[2]/tbody/tr[1]/td[3]/button")
+    private WebElement btn_EnlazarInformeVisitaReprogramacion; // locator fue cambiado el 06/12/2021
+    @FindBy(xpath = "//td[text()='Informe Comercial Nuevo Formato']//following::td[2]//button[@type='button']")
+    private WebElement btn_EnlazarInformeComercialReprogramacion; //locator fue cambiado el 13/12/2021
+    @FindBy(xpath = "//img[@alt='Regresar']")
+    private WebElement btn_Regresar;
+    /**
+     * revisar
+     **/
+    @FindBy(name = "observCuota")
+    private WebElement txt_ObservacionMontoPago;
+    @FindBy(name = "observMejoraGar")
+    private WebElement txt_ObservacionMejoraGarantia;
+
+    @FindBy(xpath = "//*[text()='Promoción/SubProducto']/following::text()[2]")
+    private WebElement lbl_Promocion;
+    @FindBy(xpath = "/html/body/form/table[1]/tbody/tr[3]/td/div/table[1]/tbody/tr/td[2]/table/tbody/tr[4]/td[2]")
+    private WebElement lbl_Promocion1;
 
 
     public PropuestaPage(WebDriver d) {
@@ -541,7 +578,19 @@ public class PropuestaPage {
 */
     }
 
+    public String TextoPromocion() {
+        try {
+            wait.until(ExpectedConditions.visibilityOf(lbl_Promocion1));
+            TextoPromocion = lbl_Promocion1.getText();
+            System.out.println("La promocion es:" + TextoPromocion);
+        } catch (Exception Error) {
+            detalleError = "Error al capturar el texto de la promocion en la propuesta";
+            objLogErrores.logError(detalleError, Error);
+        }
 
+        return TextoPromocion;
+
+    }
 }
 
 

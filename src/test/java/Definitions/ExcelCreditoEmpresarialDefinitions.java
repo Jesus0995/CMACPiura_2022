@@ -84,6 +84,7 @@ public class ExcelCreditoEmpresarialDefinitions {
     @And("hacer click en el boton ingresar y muestra el Home SGCRED")
     public void hacerClickEnElBotonIngresarYMuestraElHomeSGCRED() {
         login.ClickSubmit();
+        login.ValidarSesionesWeb();
 
     }
 
@@ -226,13 +227,27 @@ public class ExcelCreditoEmpresarialDefinitions {
             aprobarDictamenPropuesta.CerrarVentanaAprobarDictamenPropuesta();
 
             grabarPropuesta.AbrirVentanaGrabarPropuesta();
+
             ValorResultado = grabarPropuesta.CapturarMensajeDerivacion();
+
             excel.EscribirExcel(arg0,0,i,23,ValorResultado);
             grabarPropuesta.ClickBtnCerrarInformacion();
             grabarPropuesta.CerrarVentanaGrabarPropuesta();
 
-            listadoClientes.ClickBtnRegresar();
-            listadoPropuesta.ClickBtnRegresar();
+            if (ValorResultado.equals("El Documento ha sido derivado satisfactoriamente")){
+
+                listadoClientes.ClickBtnRegresar();
+                listadoPropuesta.ClickBtnRegresar();
+
+            }
+            else {
+                propuesta.ClickBtnRegresar();
+                listadoClientes.ClickBtnRegresar();
+                listadoPropuesta.ClickBtnRegresar();
+            }
+
+            //listadoClientes.ClickBtnRegresar();
+            //listadoPropuesta.ClickBtnRegresar();
 
         }
         menuPrincipal.ClickBtnCerrarSesion();

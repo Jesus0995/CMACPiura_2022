@@ -47,6 +47,7 @@ public class InformeComercialCreditoEmpresarialDefinitions {
     @When("en la ventana Login doy click en boton ingresar al SGCRED")
     public void en_la_ventana_login_doy_click_en_boton_ingresar_al_sgcred() {
         loginSGCRED.ClickSubmit();
+        loginSGCRED.ValidarSesionesWeb();
     }
     @When("el sistema muestra el home principal de SGCRED")
     public void el_sistema_muestra_el_home_principal_de_sgcred() {    }

@@ -44,6 +44,7 @@ public class InformeComercialCreditoConsumoDefinitions {
     @And("doy click en el boton ingresar del login")
     public void doyClickEnElBotonIngresarDelLogin() {
         loginInforme.ClickSubmit();
+        loginInforme.ValidarSesionesWeb();
     }
 
     @And("muestra el home principal de SGCRED")

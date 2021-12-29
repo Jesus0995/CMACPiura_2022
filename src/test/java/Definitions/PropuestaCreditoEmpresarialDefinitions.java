@@ -38,7 +38,7 @@ public class PropuestaCreditoEmpresarialDefinitions {
     EnlazarInformeComercialNuevoPage enlazarInformeComercialNuevo;
     InformeEEFFConsolidadoGrupoVinculadoPage informeEEFFConsolidadoGrupoVinculado;
     AprobarDictamenPropuestaPage aprobarDictamenPropuesta;
-
+    String Valor;
 
     public PropuestaCreditoEmpresarialDefinitions() {
 
@@ -86,6 +86,7 @@ public class PropuestaCreditoEmpresarialDefinitions {
     @Then("hacer click en el boton ingresar")
     public void hacer_click_en_el_boton_ingresar() {
         login.ClickSubmit();
+        login.ValidarSesionesWeb();
     }
 
     @And("mostrar home de SGCRED")
@@ -484,14 +485,18 @@ public class PropuestaCreditoEmpresarialDefinitions {
     @And("en la ventana Grabar Informacion hacer click en el boton cerrar ventana")
     public void en_la_ventana_Grabar_Informacion_hacer_click_en_el_boton_cerrar_ventana() {
         grabarPropuesta.AbrirVentanaGrabarPropuesta();
+        Valor = grabarPropuesta.CapturarMensajeDerivacion();
         grabarPropuesta.ClickBtnCerrarInformacion();
         grabarPropuesta.CerrarVentanaGrabarPropuesta();
-    }
 
-    @And("en la ventana Listado propuesta hacer click en boton regresar")
-    public void en_la_ventana_Listado_propuesta_hacer_click_en_boton_regresar() {
+        if (Valor.equals("El Documento ha sido derivado satisfactoriamente")){
+            listadoPropuesta.ClickBtnRegresar();
+        }
+        else {
+            propuesta.ClickBtnRegresar();
 
-        listadoPropuesta.ClickBtnRegresar();
+            listadoPropuesta.ClickBtnRegresar();
+        }
     }
 
     @And("en la ventana Menu Principal hacer click en la opcion cerrar sesion")

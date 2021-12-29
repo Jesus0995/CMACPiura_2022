@@ -50,6 +50,7 @@ public class HojaTrabajoDefinitions {
     public void doy_click_en_boton_ingresar() {
 
         login.ClickSubmit();
+        login.ValidarSesionesWeb();
     }
 
 

@@ -77,7 +77,6 @@ Feature: Crear una propuesta de Credito Empresarial de tipo NORMAL con informe E
       | Aprobar propuesta | prueba     |
     And en la ventana emitir dictamen propuesta hacer click en el boton procesar
     And en la ventana grabar informacion hacer click en el boton cerrar
-    And en la ventana listado propuesta hacer click en boton regresar
     And en la ventana menu principal seleccionar la opcion cerrar sesion
     And en la ventana login hacer click en boton cerrar sesion
     And en la ventana final cerrar el navegador

@@ -19,6 +19,7 @@ public class ExcelAprobarPropuestaCreditoEmpresarialDefinitions {
     GrabarInformacionDocumentoPage grabarDocumentoPropuesta;
     ExcelPage excel;
     String ValorResultado;
+    String Valor;
 
     public ExcelAprobarPropuestaCreditoEmpresarialDefinitions() {
         loginAprobar = new LoginPage(Hooks.driver);
@@ -52,11 +53,13 @@ public class ExcelAprobarPropuestaCreditoEmpresarialDefinitions {
     @When("hacer click en el boton ingresar para que nos muestre el menu principal")
     public void hacer_click_en_el_boton_ingresar_para_que_nos_muestre_el_menu_principal() {
         loginAprobar.ClickSubmit();
+        loginAprobar.ValidarSesionesWeb();
 
     }
 
     @Then("se ejecuta los siguientes pasos para aprobar desde archivo excel {string}")
     public void se_ejecuta_los_siguientes_pasos_para_aprobar_desde_archivo_excel(String arg0) {
+
         String[][] datosExcel;
         datosExcel = excel.LeerArchivoExcel(arg0, 0);
 
@@ -68,7 +71,7 @@ public class ExcelAprobarPropuestaCreditoEmpresarialDefinitions {
             listadoPropuesta.ClickBtnBuscar();
             listadoPropuesta.ClickEditarPropuesta();
             popUpComunicado.ValidarComunicado();
-            /*
+
             propuesta.ClickBtnVerificarCheckListCredito();
 
             aprobarcheckListCredito.AbrirVentanaAprobarCheckListCredito();
@@ -77,7 +80,7 @@ public class ExcelAprobarPropuestaCreditoEmpresarialDefinitions {
             aprobarcheckListCredito.ClickBtnGuardar();
             aprobarcheckListCredito.ClickBtnCerrar();
             aprobarcheckListCredito.CerrarVentanaAprobarCheckListCredito();
-            */
+
             propuesta.AbrirOpcionesDictamen();
 
             propuesta.ClickBtnAprobarPropuesta();
@@ -90,17 +93,20 @@ public class ExcelAprobarPropuestaCreditoEmpresarialDefinitions {
 
             grabarDocumentoPropuesta.AbrirVentanaGrabarPropuesta();
             ValorResultado = grabarDocumentoPropuesta.CapturarMensajeDerivacion();
-            excel.EscribirExcel(arg0,0,i,22,ValorResultado);
+            excel.EscribirExcel(arg0, 0, i, 22, ValorResultado);
             grabarDocumentoPropuesta.ClickBtnCerrar();
             grabarDocumentoPropuesta.CerrarVentanaGrabarPropuesta();
 
-            listadoPropuesta.ClickBtnRegresar();
-
+            if (ValorResultado.equals("El Documento ha sido derivado satisfactoriamente")){
+                listadoPropuesta.ClickBtnRegresar();
+            }
+            else {
+                propuesta.ClickBtnRegresar();
+                listadoPropuesta.ClickBtnRegresar();
+            }
         }
-
         menuPrincipal.ClickBtnCerrarSesion();
         loginAprobar.ClickBtnCerrarSesion();
-
         Hooks.driver.close();
     }
 }

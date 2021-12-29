@@ -71,7 +71,6 @@ Feature: Crear una propuesta de Creditos de Consumo de tipo Normal en el sistema
       |Aprobar propuesta|prueba    |
     And en la ventana emitir dictamen propuesta doy click en el boton procesar
     And muestra a la ventana grabar informacion y doy click en el boton cerrar
-    And direcciona a la ventana listado propuesta y doy click en el boton regresar
     And direcciona al menu principal y doy click en la opcion cerrar sesion
     And direcciona al login y doy click en el boton cerrar sesion
     And cierro sesion de navegador

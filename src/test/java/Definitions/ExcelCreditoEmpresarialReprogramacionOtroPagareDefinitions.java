@@ -83,6 +83,7 @@ public class ExcelCreditoEmpresarialReprogramacionOtroPagareDefinitions {
     public void seDaClickEnElBotonIngresarYMuestraElSGCRED() {
 
         login.ClickSubmit();
+        login.ValidarSesionesWeb();
 
     }
 

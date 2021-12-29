@@ -50,6 +50,7 @@ public class funcionVentana {
     }
 
     public void cerrarVentanaID(){
+
         String[] ventanas =new String[Hooks.driver.getWindowHandles().size()];
         Integer indice = 0;
 
@@ -71,3 +72,5 @@ public class funcionVentana {
     }
 
 }
+
+

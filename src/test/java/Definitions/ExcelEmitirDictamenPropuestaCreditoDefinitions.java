@@ -57,6 +57,7 @@ public class ExcelEmitirDictamenPropuestaCreditoDefinitions {
     @And("hacer click en el boton ingresar y el sistema muestra el menu principal")
     public void hacer_click_en_el_boton_ingresar_y_el_sistema_muestra_el_menu_principal() {
         login.ClickSubmit();
+        login.ValidarSesionesWeb();
 
     }
 
@@ -93,6 +94,7 @@ public class ExcelEmitirDictamenPropuestaCreditoDefinitions {
             }
             else {
                 propuesta.ClickBtnRegresar();
+
                 listadoPropuesta.ClickBtnRegresar();
             }
         }

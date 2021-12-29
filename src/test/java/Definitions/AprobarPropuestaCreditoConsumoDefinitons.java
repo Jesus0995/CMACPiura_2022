@@ -1,4 +1,5 @@
 package Definitions;
+
 import PageObjects.*;
 import io.cucumber.datatable.DataTable;
 import io.cucumber.java.en.And;
@@ -39,7 +40,7 @@ public class AprobarPropuestaCreditoConsumoDefinitons {
     @When("ingreso usuario y password del perfil Administrador")
     public void ingresoUsuarioYPasswordDelPerfilAdministrador(DataTable user) {
 
-        List<Map<String,String>> lista = user.asMaps(String.class, String.class);
+        List<Map<String, String>> lista = user.asMaps(String.class, String.class);
         for (Map<String, String> stringStringMap : lista) {
             login.IngresarUsuario(stringStringMap.get("nombre"));
             login.IngresarPassword(stringStringMap.get("password"));
@@ -50,6 +51,7 @@ public class AprobarPropuestaCreditoConsumoDefinitons {
     public void doyClickEnElBotonIngresarDeLaWebSGCRED() {
 
         login.ClickSubmit();
+        login.ValidarSesionesWeb();
 
     }
 
@@ -134,6 +136,7 @@ public class AprobarPropuestaCreditoConsumoDefinitons {
         grabarDocumentoPropuesta.AbrirVentanaGrabarPropuesta();
         grabarDocumentoPropuesta.ClickBtnCerrar();
         grabarDocumentoPropuesta.CerrarVentanaGrabarPropuesta();
+
     }
 
     @And("direcciona a la ventana listado de propuestas y doy click en el boton regresar")

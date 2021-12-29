@@ -20,7 +20,6 @@ public class AprobarPropuestaCreditoEmpresarialDefinitions {
     AprobarDictamenPropuestaPage aprobarDictamenPropuesta;
     GrabarInformacionDocumentoPage grabarDocumentoPropuesta;
 
-
     public AprobarPropuestaCreditoEmpresarialDefinitions() {
         loginAprobar = new LoginPage(Hooks.driver);
         menuPrincipal = new MenuPrincipalPage(Hooks.driver);
@@ -51,6 +50,7 @@ public class AprobarPropuestaCreditoEmpresarialDefinitions {
     public void enLaVentanaDoyClickEnElBotonIngresarDeLaWebSGCRED() {
 
         loginAprobar.ClickSubmit();
+        loginAprobar.ValidarSesionesWeb();
     }
 
     @Then("el sistema muestra el menu principal de SGCRED")
@@ -86,6 +86,7 @@ public class AprobarPropuestaCreditoEmpresarialDefinitions {
 
     @And("el sistema muestra Comunicado y doy en cerrar")
     public void elSistemaMuestraComunicadoYDoyEnCerrar() {
+
         popUpComunicado.ValidarComunicado();
     }
 
@@ -147,6 +148,9 @@ public class AprobarPropuestaCreditoEmpresarialDefinitions {
         grabarDocumentoPropuesta.ClickBtnCerrar();
         grabarDocumentoPropuesta.CerrarVentanaGrabarPropuesta();
         pantallazo();
+
+
+
     }
     @And("el sistema direcciona al listado de propuestas y doy click en el boton Regresar")
     public void elSistemaDireccionaAlListadoDePropuestasYDoyClickEnElBotonRegresar() {

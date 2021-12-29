@@ -130,4 +130,37 @@ public class SeleccionarGarantiasExistentesPage {
         }
     }
 
+
+    public void SeleccionarCheckGarantiasExistentesPromoCreditoAlToque() {
+        List<WebElement> checkBoxGarantiaCreditoAlToque = driver.findElements(By.xpath("//td[contains(text(),'CREDITO AL TOQUE                                  ')]//preceding-sibling::td/input[@type='checkbox']"));
+        try {
+
+            for (WebElement checkBox : checkBoxGarantiaCreditoAlToque) {
+                checkBox.click();
+            }
+
+        } catch (Exception Error) {
+            detalleError = "Error al seleccionar las garantias Promo Credito Al Toque";
+            objLogErrores.logError(detalleError, Error);
+        }
+    }
+
+    public void SeleccionarCheckGarantiasExistentePromoCampanaCrecerMujer(){
+        List<WebElement> checkBoxGarantiaCreceMujer = driver.findElements(By.xpath("//td[contains(text(),'CAMPAÑA CRECE MUJER                               ')]//preceding-sibling::td/input[@type='checkbox']"));
+        try {
+
+            for (WebElement checkBox : checkBoxGarantiaCreceMujer) {
+                checkBox.click();
+            }
+
+        } catch (Exception Error) {
+            detalleError = "Error al seleccionar las garantias Promo Crece Mujer";
+            objLogErrores.logError(detalleError, Error);
+        }
+    }
+
+
+
+
+
 }

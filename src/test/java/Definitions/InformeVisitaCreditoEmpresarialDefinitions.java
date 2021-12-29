@@ -48,6 +48,7 @@ public class InformeVisitaCreditoEmpresarialDefinitions {
     @And("doy click en boton ingresar al SGCRED")
     public void doyClickEnBotonIngresarAlSGCRED() {
         loginInforme.ClickSubmit();
+        loginInforme.ValidarSesionesWeb();
     }
     @And("Mostrar home principal de SGCRED")
     public void mostrarHomePrincipalDeSGCRED() {    }

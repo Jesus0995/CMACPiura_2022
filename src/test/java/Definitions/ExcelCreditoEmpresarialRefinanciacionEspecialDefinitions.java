@@ -94,6 +94,7 @@ public class ExcelCreditoEmpresarialRefinanciacionEspecialDefinitions {
     @When("hacer click en el boton ingresar y muestra el menu principal")
     public void hacer_click_en_el_boton_ingresar_y_muestra_el_menu_principal() {
         login.ClickSubmit();
+        login.ValidarSesionesWeb();
 
     }
 

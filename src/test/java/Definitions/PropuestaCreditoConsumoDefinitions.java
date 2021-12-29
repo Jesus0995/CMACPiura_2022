@@ -34,7 +34,7 @@ public class PropuestaCreditoConsumoDefinitions {
     EnlazarInformeComercialNuevoPage enlazarInformeComercialNuevo;
     GrabarInformacionDocumentoPage grabarDocumentoPropuesta;
     AprobarDictamenPropuestaPage aprobarDictamenPropuesta;
-    String valorResultado;
+    String Valor;
 
     //Constructor
     public PropuestaCreditoConsumoDefinitions() {
@@ -65,7 +65,7 @@ public class PropuestaCreditoConsumoDefinitions {
     @Given("la pagina web SGCRED esta disponible")
     public void laPaginaWebSGCREDEstaDisponible() {
 
-        Hooks.driver.get("http://10.0.203.16:8083/propuesta/");
+        Hooks.driver.get("http://10.0.203.12:8081/propuesta/");
     }
 
     @When("se completa el usuario y password")
@@ -80,6 +80,7 @@ public class PropuestaCreditoConsumoDefinitions {
     @And("doy click en el boton ingresar")
     public void doyClickEnElBotonIngresar() {
         login.ClickSubmit();
+        login.ValidarSesionesWeb();
         //pantallazo();
     }
 
@@ -441,25 +442,28 @@ public class PropuestaCreditoConsumoDefinitions {
     @And("muestra a la ventana grabar informacion y doy click en el boton cerrar")
     public void muestraALaVentanaGrabarInformacionYDoyClickEnElBotonCerrar() {
         grabarDocumentoPropuesta.AbrirVentanaGrabarPropuesta();
-        valorResultado = grabarDocumentoPropuesta.CapturarMensajeDerivacion();
+
+        Valor = grabarDocumentoPropuesta.CapturarMensajeDerivacion();
+
         grabarDocumentoPropuesta.ClickBtnCerrarInformacion();
         grabarDocumentoPropuesta.CerrarVentanaGrabarPropuesta();
-    }
 
-    @And("direcciona a la ventana listado propuesta y doy click en el boton regresar")
-    public void direccionaALaVentanaListadoPropuestaYDoyClickEnElBotonRegresar() {
 
-        if (valorResultado.equals("El Documento ha sido derivado satisfactoriamente")){
+        if (Valor.equals("El Documento ha sido derivado satisfactoriamente")){
             listadoPropuesta.ClickBtnRegresar();
         }
         else {
             propuesta.ClickBtnRegresar();
+
             listadoPropuesta.ClickBtnRegresar();
         }
+
     }
+
 
     @And("direcciona al menu principal y doy click en la opcion cerrar sesion")
     public void direccionaAlMenuPrincipalYDoyClickEnLaOpcionCerrarSesion() {
+
         menuPrincipal.ClickBtnCerrarSesion();
     }
 

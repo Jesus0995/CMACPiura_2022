@@ -72,7 +72,7 @@ public class LoginPage {
 
     public void ClickBtnCerrarSesion() {
         try {
-            objFuncionEsperar.EsperarTiempo(5);
+            objFuncionEsperar.EsperarTiempo(2);
             wait.until(ExpectedConditions.elementToBeClickable(btn_Cerrar));
             btn_Cerrar.click();
         } catch (Exception Error) {
@@ -94,34 +94,14 @@ public class LoginPage {
     }
 
 
-    public void lecturaLogin() throws IOException {
-        // String filepath = "C:\\Matriz.xlsx";
-
-        // String searchLogin = readFile.getCellValue(filepath, "Sheet1", 0, 0);
-
-        //String searchPassword = readFile.getCellValue(filepath, "Sheet1", 0, 1);
-
-        //String resultTest = "ok";
-
-       /* txt_Usuario.clear();
-        txt_Usuario.sendKeys(searchLogin);
-        System.out.println("VALOR EXCEL usuario"+searchLogin);
-        txt_Password.clear();
-        txt_Password.sendKeys(searchPassword);
-        System.out.println("VALOR EXCEL password"+searchPassword);
-        btn_Ingresar.click();
-
-
-        System.out.println("resultado"+resultTest);
-
-        readFile.readExcel(filepath,"Hoja1");
-
-        writeFile.writeCellValue(filepath,"Hoja1",0,2,resultTest);
-
-        readFile.readExcel(filepath,"Hoja1");
-*/
-
-
+    public void ValidarSesionesWeb(){
+        try {
+            objFuncionEsperar.EsperarTiempo(2);
+            objFuncionVentana.cerrarVentanaID();
+        } catch (Exception Error) {
+            detalleError = "Error al cerrar sesion de link emergente";
+            objLogErrores.logError(detalleError, Error);
+        }
 
     }
 

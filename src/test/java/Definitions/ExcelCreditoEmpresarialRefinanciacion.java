@@ -33,6 +33,7 @@ public class ExcelCreditoEmpresarialRefinanciacion {
     GrabarInformacionDocumentoPage grabarPropuesta;
     ExcelPage excel;
     String Valor;
+    String TextoPromocion;
 
     public ExcelCreditoEmpresarialRefinanciacion() {
         login = new LoginPage(Hooks.driver);
@@ -80,7 +81,9 @@ public class ExcelCreditoEmpresarialRefinanciacion {
 
     @And("hacemos click en ingresar para mostrar el menu principal")
     public void hacemos_click_en_ingresar_para_mostrar_el_menu_principal() {
+
         login.ClickSubmit();
+        login.ValidarSesionesWeb();
     }
 
     @Then("se ejecuta todos los pasos corresondientes al flujo Refinanciacion desde excel {string};")
@@ -112,6 +115,10 @@ public class ExcelCreditoEmpresarialRefinanciacion {
             seleccionarServicio.CerrarVentanaServicio();
 
             popUpComunicado.ValidarComunicado();
+
+            propuesta.TextoPromocion();
+            TextoPromocion = propuesta.TextoPromocion();
+
             propuesta.ClickBtnOperacion();
             seleccionarOperacionCredito.AbrirVentanaSeleccionarOP();
             seleccionarOperacionCredito.ValidarVentanaOP();
@@ -171,8 +178,17 @@ public class ExcelCreditoEmpresarialRefinanciacion {
             seleccionarGarantia.CerrarVentanaGarantia();
 
             seleccionarGarantiasExistentes.AbrirVentanaGarantiasExistentes();
+
+            switch (TextoPromocion)
+            {
+                case ("PROMO MYPE"):
+                    seleccionarGarantiasExistentes.SeleccionarCheckGarantiasExistentesPromoMype();
+
+                case ("CAMPAÑA CRECE MUJER"):
+                    seleccionarGarantiasExistentes.SeleccionarCheckGarantiasExistentePromoCampanaCrecerMujer();
+            }
             //seleccionarGarantiasExistentes.SeleccionarCheckGarantiasExistentesMaquinariayEquipo();
-            seleccionarGarantiasExistentes.SeleccionarCheckGarantiasExistentesPromoMype();
+            //seleccionarGarantiasExistentes.SeleccionarCheckGarantiasExistentesPromoMype();
             seleccionarGarantiasExistentes.ClickBtnAceptar();
             seleccionarGarantiasExistentes.CerrarVentanaGarantiasExistentes();
 
@@ -184,18 +200,20 @@ public class ExcelCreditoEmpresarialRefinanciacion {
             enlazarEstadosFinancieros.ClickbtnEnlazar();
             enlazarEstadosFinancieros.CerrarVentanaEnlazarEstadosFinancieros();
 
+            propuesta.IngresarComentariosPropuesta();
+
             propuesta.ClickDesenlazarInformeVisita();
             desenlazarInformeVisita.AbrirVentanaDesenlazarInformeVisita();
             desenlazarInformeVisita.ClickBtnRealizar();
             desenlazarInformeVisita.CerrarVentanaDesenlazarInformeVisita();
 
-            propuesta.ClickEnlazarInformeComercialNuevo();
+            propuesta.ClickEnlazarInformeComercialReprogramacion();
 
             enlazarInformeComercialNuevo.AbrirVentanaEnlazarInformeComercialNuevo();
             enlazarInformeComercialNuevo.ClickBtnRealizar();
             enlazarInformeComercialNuevo.CerrarVentanaEnlazarInformeComercialNuevo();
 
-            propuesta.ClickEnlazarInformeVisita();
+            propuesta.ClickEnlazarInformeVisitaReprogramacion();
 
             enlazarInformeVisita.AbrirVentanaEnlazarInformeVisita();
             enlazarInformeVisita.ClickBtnRealizar();
@@ -211,6 +229,7 @@ public class ExcelCreditoEmpresarialRefinanciacion {
             Valor = propuesta.CapturarNumeroPropuesta();
             excel.EscribirExcel(arg0, 0, i, 20, Valor);
 
+            propuesta.ClickBtnRegresar();
             listadoPropuesta.ClickBtnRegresar();
         }
         menuPrincipal.ClickBtnCerrarSesion();

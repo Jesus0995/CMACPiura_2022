@@ -47,6 +47,7 @@ public class InformeVisitaCreditoConsumoDefinitions {
     public void doyClickEnElBotonIngresarAlSGCRED() {
 
         loginInforme.ClickSubmit();
+        loginInforme.ValidarSesionesWeb();
     }
 
     @And("muestra home principal de SGCRED")

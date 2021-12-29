@@ -44,6 +44,7 @@ public class LoginDefinitions {
     public void doy_click_en_boton_ingresar() {
 
         formulario.ClickSubmit();
+        formulario.ValidarSesionesWeb();
     }
 
     @And("me muestra el home page")

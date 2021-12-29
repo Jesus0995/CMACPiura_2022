@@ -74,7 +74,6 @@ Feature: Crear una propuesta de Credito Empresarial de tipo NORMAL en el Sistema
       | Aprobar propuesta | prueba     |
     And en la ventana Emitir Dictamen Propuesta hacer click en el boton procesar
     And en la ventana Grabar Informacion hacer click en el boton cerrar ventana
-    And en la ventana Listado propuesta hacer click en boton regresar
     And en la ventana Menu Principal hacer click en la opcion cerrar sesion
     And en la ventana Login hacer click en boton cerrar sesion
     And finalmente cerrar el navegador para iniciar nuevamente

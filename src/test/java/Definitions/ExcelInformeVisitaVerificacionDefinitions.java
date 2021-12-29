@@ -54,7 +54,9 @@ public class ExcelInformeVisitaVerificacionDefinitions {
 
     @And("hacemos click en el boton ingresar para visualizar el menu principal para empezar")
     public void hacemosClickEnElBotonIngresarParaVisualizarElMenuPrincipalParaEmpezar() {
+
         login.ClickSubmit();
+        login.ValidarSesionesWeb();
     }
 
     @Then("ejecutamos los pasos definidos desde el archivo excel definido {string}")
