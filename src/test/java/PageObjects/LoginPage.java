@@ -94,16 +94,4 @@ public class LoginPage {
     }
 
 
-    public void ValidarSesionesWeb(){
-        try {
-            objFuncionEsperar.EsperarTiempo(2);
-            objFuncionVentana.cerrarVentanaID();
-        } catch (Exception Error) {
-            detalleError = "Error al cerrar sesion de link emergente";
-            objLogErrores.logError(detalleError, Error);
-        }
-
-    }
-
-
 }

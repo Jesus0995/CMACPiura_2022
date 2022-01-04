@@ -158,9 +158,4 @@ public class SeleccionarGarantiasExistentesPage {
             objLogErrores.logError(detalleError, Error);
         }
     }
-
-
-
-
-
 }

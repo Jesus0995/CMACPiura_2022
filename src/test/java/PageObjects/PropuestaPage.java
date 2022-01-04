@@ -105,15 +105,10 @@ public class PropuestaPage {
     /**
      * revisar
      **/
-    @FindBy(name = "observCuota")
-    private WebElement txt_ObservacionMontoPago;
-    @FindBy(name = "observMejoraGar")
-    private WebElement txt_ObservacionMejoraGarantia;
-
-    @FindBy(xpath = "//*[text()='Promoción/SubProducto']/following::text()[2]")
-    private WebElement lbl_Promocion;
+    @FindBy(name = "observCuota") private WebElement txt_ObservacionMontoPago;
+    @FindBy(name = "observMejoraGar") private WebElement txt_ObservacionMejoraGarantia;
     @FindBy(xpath = "/html/body/form/table[1]/tbody/tr[3]/td/div/table[1]/tbody/tr/td[2]/table/tbody/tr[4]/td[2]")
-    private WebElement lbl_Promocion1;
+    private WebElement lbl_Promocion;
 
 
     public PropuestaPage(WebDriver d) {
@@ -360,7 +355,7 @@ public class PropuestaPage {
     public void AbrirOpcionesDictamen() {
         try {
             btn_Dictamen.click();
-            objFuncionEsperar.EsperarTiempo(1);
+            objFuncionEsperar.EsperarTiempo(2);
         } catch (Exception Error) {
             detalleError = "Error al seleccionar el boton opciones dictamen";
             objLogErrores.logError(detalleError, Error);
@@ -372,7 +367,7 @@ public class PropuestaPage {
         try {
             //objFuncionEsperar.EsperarTiempo(1);
             btn_AprobarPropuesta.click();
-            objFuncionEsperar.EsperarTiempo(1);
+            objFuncionEsperar.EsperarTiempo(2);
         } catch (Exception Error) {
             detalleError = "Error al seleccionar el boton aprobar propuesta";
             objLogErrores.logError(detalleError, Error);
@@ -552,10 +547,15 @@ public class PropuestaPage {
     public void CapturarMontoLiquidacion() {
         ////*[text()='Monto Liquidacion:']/following::text()[1]
         ///html/body/form/table[1]/tbody/tr[3]/td/div/table[9]/tbody/tr[2]/td[6]
+        try {
+            WebElement lblMontoLiquidacion = driver.findElement(By.xpath("//*[text()='Monto Liquidacion:']/following::text()[1]"));
+            monto = lblMontoLiquidacion.getText();
+            System.out.println(monto);
+        } catch (Exception Error){
+            detalleError="Error al seleccionar el monto de liquidación de la propuesta";
+            objLogErrores.logError(detalleError,Error);
+        }
 
-        WebElement lblMontoLiquidacion = driver.findElement(By.xpath("//*[text()='Monto Liquidacion:']/following::text()[1]"));
-        monto = lblMontoLiquidacion.getText();
-        System.out.println(monto);
         //String dato[] = lblMontoLiquidacion.getText().replace("Tipo: Normal    Servicio: CREDITOS PYMES ","").split("S/ ");
         //monto = dato[0];
         //System.out.println(monto);
@@ -580,14 +580,13 @@ public class PropuestaPage {
 
     public String TextoPromocion() {
         try {
-            wait.until(ExpectedConditions.visibilityOf(lbl_Promocion1));
-            TextoPromocion = lbl_Promocion1.getText();
+            wait.until(ExpectedConditions.visibilityOf(lbl_Promocion));
+            TextoPromocion = lbl_Promocion.getText();
             System.out.println("La promocion es:" + TextoPromocion);
         } catch (Exception Error) {
             detalleError = "Error al capturar el texto de la promocion en la propuesta";
             objLogErrores.logError(detalleError, Error);
         }
-
         return TextoPromocion;
 
     }

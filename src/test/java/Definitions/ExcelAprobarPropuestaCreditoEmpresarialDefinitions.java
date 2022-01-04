@@ -73,7 +73,6 @@ public class ExcelAprobarPropuestaCreditoEmpresarialDefinitions {
             popUpComunicado.ValidarComunicado();
 
             propuesta.ClickBtnVerificarCheckListCredito();
-
             aprobarcheckListCredito.AbrirVentanaAprobarCheckListCredito();
             aprobarcheckListCredito.SeleccionarOptAprobar();
             aprobarcheckListCredito.IngresarComentarios();
@@ -82,12 +81,10 @@ public class ExcelAprobarPropuestaCreditoEmpresarialDefinitions {
             aprobarcheckListCredito.CerrarVentanaAprobarCheckListCredito();
 
             propuesta.AbrirOpcionesDictamen();
-
             propuesta.ClickBtnAprobarPropuesta();
             aprobarDictamenPropuesta.AbrirVentanaAprobarDictamenPropuesta();
             aprobarDictamenPropuesta.IngresarObservaciones(datosExcel[i][18]);
             aprobarDictamenPropuesta.IngresarContrasena(datosExcel[i][19]);
-
             aprobarDictamenPropuesta.ClickBtnProcesar();
             aprobarDictamenPropuesta.CerrarVentanaAprobarDictamenPropuesta();
 

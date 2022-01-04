@@ -158,7 +158,7 @@ public class AnexarChecklistPage {
 
     public AnexarChecklistPage(WebDriver d) {
         driver = d;
-        wait = new WebDriverWait(driver, 30);
+        wait = new WebDriverWait(driver, 70);
         PageFactory.initElements(driver, this);
     }
 

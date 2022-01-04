@@ -7,7 +7,7 @@ import io.cucumber.java.en.*;
 import java.util.List;
 import java.util.Map;
 
-public class ExcelCreditoEmpresarialRefinanciacion {
+public class ExcelCreditoEmpresarialRefinanciacionDefinitions {
 
     LoginPage login;
     MenuPrincipalPage menuPrincipal;
@@ -35,7 +35,7 @@ public class ExcelCreditoEmpresarialRefinanciacion {
     String Valor;
     String TextoPromocion;
 
-    public ExcelCreditoEmpresarialRefinanciacion() {
+    public ExcelCreditoEmpresarialRefinanciacionDefinitions() {
         login = new LoginPage(Hooks.driver);
         menuPrincipal = new MenuPrincipalPage(Hooks.driver);
         listadoPropuesta = new ListadoPropuestaPage(Hooks.driver);
@@ -140,9 +140,7 @@ public class ExcelCreditoEmpresarialRefinanciacion {
             operacionCredito.ObtenerAlerta();
             operacionCredito.CerrarVentanaOperacionCredito();
 
-
             propuesta.ClickBtnRegistrarSeguro();
-
             seleccionarSeguros.AbrirVentanaSeleccionarSeguros();
             seleccionarSeguros.ClickbtnConfirmar();
             seleccionarSeguros.CerrarVentanaSeleccionarSeguros();
@@ -171,14 +169,12 @@ public class ExcelCreditoEmpresarialRefinanciacion {
 
             propuesta.IngresarComentariosPropuesta();
             propuesta.IngresarCaracteristicaNegocio();
-
             propuesta.ClickAnexarGarantias();
             seleccionarGarantia.AbrirVentanaGarantia();
             seleccionarGarantia.ClickRegistrarGarantia();
             seleccionarGarantia.CerrarVentanaGarantia();
 
             seleccionarGarantiasExistentes.AbrirVentanaGarantiasExistentes();
-
             switch (TextoPromocion)
             {
                 case ("PROMO MYPE"):
@@ -187,8 +183,6 @@ public class ExcelCreditoEmpresarialRefinanciacion {
                 case ("CAMPAÑA CRECE MUJER"):
                     seleccionarGarantiasExistentes.SeleccionarCheckGarantiasExistentePromoCampanaCrecerMujer();
             }
-            //seleccionarGarantiasExistentes.SeleccionarCheckGarantiasExistentesMaquinariayEquipo();
-            //seleccionarGarantiasExistentes.SeleccionarCheckGarantiasExistentesPromoMype();
             seleccionarGarantiasExistentes.ClickBtnAceptar();
             seleccionarGarantiasExistentes.CerrarVentanaGarantiasExistentes();
 
@@ -201,26 +195,22 @@ public class ExcelCreditoEmpresarialRefinanciacion {
             enlazarEstadosFinancieros.CerrarVentanaEnlazarEstadosFinancieros();
 
             propuesta.IngresarComentariosPropuesta();
-
             propuesta.ClickDesenlazarInformeVisita();
             desenlazarInformeVisita.AbrirVentanaDesenlazarInformeVisita();
             desenlazarInformeVisita.ClickBtnRealizar();
             desenlazarInformeVisita.CerrarVentanaDesenlazarInformeVisita();
 
             propuesta.ClickEnlazarInformeComercialReprogramacion();
-
             enlazarInformeComercialNuevo.AbrirVentanaEnlazarInformeComercialNuevo();
             enlazarInformeComercialNuevo.ClickBtnRealizar();
             enlazarInformeComercialNuevo.CerrarVentanaEnlazarInformeComercialNuevo();
 
             propuesta.ClickEnlazarInformeVisitaReprogramacion();
-
             enlazarInformeVisita.AbrirVentanaEnlazarInformeVisita();
             enlazarInformeVisita.ClickBtnRealizar();
             enlazarInformeVisita.CerrarVentanaEnlazarInformeVisita();
 
             propuesta.IngresarComentariosRatios(datosExcel[i][17]);
-
             propuesta.ClickMenuGrabarPropuesta();
             grabarPropuesta.AbrirVentanaGrabarPropuesta();
             grabarPropuesta.ClickBtnCerrarInformacion();
@@ -235,9 +225,6 @@ public class ExcelCreditoEmpresarialRefinanciacion {
         menuPrincipal.ClickBtnCerrarSesion();
         login.ClickBtnCerrarSesion();
         Hooks.driver.close();
-
-
     }
-
 
 }
