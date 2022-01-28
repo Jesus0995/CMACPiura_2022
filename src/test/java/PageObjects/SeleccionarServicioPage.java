@@ -115,6 +115,7 @@ public class SeleccionarServicioPage {
     public void SeleccionarPromocion(String Promocion) {
         try {
             wait.until(ExpectedConditions.elementToBeClickable(cbx_Promocion));
+            objFuncionEsperar.EsperarTiempo(1);
             new Select(cbx_Promocion).selectByVisibleText(Promocion);
             objFuncionEsperar.EsperarTiempo(3);
         } catch (Exception Error) {
@@ -147,7 +148,7 @@ public class SeleccionarServicioPage {
         try {
             WebElement opcionPagare = driver.findElement(By.xpath("//select[@id='idPagare']//option[text()='"+Pagare+"']"));
             opcionPagare.click();
-            objFuncionEsperar.EsperarTiempo(1);
+            objFuncionEsperar.EsperarTiempo(2);
 
         }catch (Exception Error){
             detalleError = "Error al seleccionar el pagare";

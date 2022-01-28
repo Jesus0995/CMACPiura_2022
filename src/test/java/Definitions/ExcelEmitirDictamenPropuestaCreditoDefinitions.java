@@ -20,7 +20,7 @@ public class ExcelEmitirDictamenPropuestaCreditoDefinitions {
     PropuestaPage propuesta;
     AprobarDictamenPropuestaPage aprobarDictamenPropuesta;
     GrabarInformacionDocumentoPage grabarPropuesta;
-    String Valor;
+    String valorResultado;
     ExcelPage excel;
 
 
@@ -83,13 +83,13 @@ public class ExcelEmitirDictamenPropuestaCreditoDefinitions {
             aprobarDictamenPropuesta.CerrarVentanaAprobarDictamenPropuesta();
 
             grabarPropuesta.AbrirVentanaGrabarPropuesta();
-            Valor = grabarPropuesta.CapturarMensajeDerivacion();
-            excel.EscribirExcel(arg0,0,i,21,Valor);
+            valorResultado = grabarPropuesta.CapturarMensajeDerivacion();
+            excel.EscribirExcel(arg0,0,i,21,valorResultado);
 
             grabarPropuesta.ClickBtnCerrarInformacion();
             grabarPropuesta.CerrarVentanaGrabarPropuesta();
 
-            if (Valor.equals("El Documento ha sido derivado satisfactoriamente")){
+            if (valorResultado.equals("El Documento ha sido derivado satisfactoriamente")){
                 listadoPropuesta.ClickBtnRegresar();
             }
             else {

@@ -10,4 +10,4 @@ Feature: Emitir Dictamen de Propuesta con el perfil Asesor de Negocio
       | usuario | password |
       | ALPAMA | prueba   |
     And hacer click en el boton ingresar y el sistema muestra el menu principal
-    Then ejecutar todos los pasos para la emision de dictamen desde excel "DatosCreditoEmpresarialRefinanciacion.xlsx";
+    Then ejecutar todos los pasos para la emision de dictamen desde excel "DatosCreditoEmpresarialReprogramacionOtroPagare.xlsx";

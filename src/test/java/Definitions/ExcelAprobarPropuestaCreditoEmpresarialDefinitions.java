@@ -19,7 +19,6 @@ public class ExcelAprobarPropuestaCreditoEmpresarialDefinitions {
     GrabarInformacionDocumentoPage grabarDocumentoPropuesta;
     ExcelPage excel;
     String ValorResultado;
-    String Valor;
 
     public ExcelAprobarPropuestaCreditoEmpresarialDefinitions() {
         loginAprobar = new LoginPage(Hooks.driver);
@@ -90,7 +89,7 @@ public class ExcelAprobarPropuestaCreditoEmpresarialDefinitions {
 
             grabarDocumentoPropuesta.AbrirVentanaGrabarPropuesta();
             ValorResultado = grabarDocumentoPropuesta.CapturarMensajeDerivacion();
-            excel.EscribirExcel(arg0, 0, i, 22, ValorResultado);
+            excel.EscribirExcel(arg0,0,i,22,ValorResultado);
             grabarDocumentoPropuesta.ClickBtnCerrar();
             grabarDocumentoPropuesta.CerrarVentanaGrabarPropuesta();
 
