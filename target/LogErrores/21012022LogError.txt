@@ -1,0 +1,10 @@
+2022-01-21T11:14:12.415 - Error al seleccionar promocion del servicio - Cannot locate element with text: CREDITO AL TOQUE
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'ANGELA', ip: '10.0.248.150', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_301'
+Driver info: driver.version: unknown 
+2022-01-21T11:14:12.684 - Error al seleccionar el tipo de operacion - Cannot locate element with text: SIMPLE
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'ANGELA', ip: '10.0.248.150', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_301'
+Driver info: driver.version: unknown 

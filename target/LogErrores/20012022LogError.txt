@@ -1,0 +1,22 @@
+2022-01-20T18:21:06.460 - Error al seleccionar el link Propuesta Financiamiento - Expected condition failed: waiting for element to be clickable: Proxy element for: DefaultElementLocator 'By.partialLinkText: PROPUESTA' (tried for 30 second(s) with 500 milliseconds interval) 
+2022-01-20T18:21:56.652 - Error al seleccionar el boton crear propuesta - Expected condition failed: waiting for element to be clickable: Proxy element for: DefaultElementLocator 'By.xpath: //button[@type='button' and contains(text(),'Crear nueva Propuesta')]' (tried for 50 second(s) with 500 milliseconds interval) 
+2022-01-20T18:21:57.012 - Error al ingresar codigo cliente - Keys to send should be a not null CharSequence 
+2022-01-20T18:21:57.862 - Error al seleccionar icono propuesta - Unable to locate element: //img[@alt='Nueva Propuesta']
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'ANGELA', ip: '10.0.248.150', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_301'
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 96.0.1, javascriptEnabled: true, moz:accessibilityChecks: false, moz:buildID: 20220113185450, moz:geckodriverVersion: 0.29.1, moz:headless: false, moz:processID: 15300, moz:profile: C:\Users\ANGELA\AppData\Loc..., moz:shutdownTimeout: 60000, moz:useNonSpecCompliantPointerOrigin: false, moz:webdriverClick: true, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, platformVersion: 10.0, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
+Session ID: 9df64d6d-7a44-4405-b8f7-62d28f8555d1
+*** Element info: {Using=xpath, value=//img[@alt='Nueva Propuesta']} 
+2022-01-20T18:22:28.066 - Error al seleccionar el link Propuesta Financiamiento - Expected condition failed: waiting for element to be clickable: Proxy element for: DefaultElementLocator 'By.partialLinkText: PROPUESTA' (tried for 30 second(s) with 500 milliseconds interval) 
+2022-01-20T18:23:18.519 - Error al seleccionar el boton crear propuesta - Expected condition failed: waiting for element to be clickable: Proxy element for: DefaultElementLocator 'By.xpath: //button[@type='button' and contains(text(),'Crear nueva Propuesta')]' (tried for 50 second(s) with 500 milliseconds interval) 
+2022-01-20T18:23:18.874 - Error al ingresar codigo cliente - Keys to send should be a not null CharSequence 
+2022-01-20T18:23:20.091 - Error al seleccionar icono propuesta - Unable to locate element: //img[@alt='Nueva Propuesta']
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'ANGELA', ip: '10.0.248.150', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_301'
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 96.0.1, javascriptEnabled: true, moz:accessibilityChecks: false, moz:buildID: 20220113185450, moz:geckodriverVersion: 0.29.1, moz:headless: false, moz:processID: 15300, moz:profile: C:\Users\ANGELA\AppData\Loc..., moz:shutdownTimeout: 60000, moz:useNonSpecCompliantPointerOrigin: false, moz:webdriverClick: true, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, platformVersion: 10.0, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
+Session ID: 9df64d6d-7a44-4405-b8f7-62d28f8555d1
+*** Element info: {Using=xpath, value=//img[@alt='Nueva Propuesta']} 

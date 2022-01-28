@@ -1,0 +1,34 @@
+2022-01-25T10:30:35.499 - Error al seleccionar promocion del servicio - Cannot locate element with text: CREDITO AL TOQUE
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'ANGELA', ip: '10.0.248.150', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_301'
+Driver info: driver.version: unknown 
+2022-01-25T10:30:35.772 - Error al seleccionar el tipo de operacion - Cannot locate element with text: SIMPLE
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'ANGELA', ip: '10.0.248.150', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_301'
+Driver info: driver.version: unknown 
+2022-01-25T10:30:36.003 - Error al seleccionar el pagare - Unable to locate element: //select[@id='idPagare']//option[text()='080-01-9847672']
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'ANGELA', ip: '10.0.248.150', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_301'
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 96.0.2, javascriptEnabled: true, moz:accessibilityChecks: false, moz:buildID: 20220119190439, moz:geckodriverVersion: 0.29.1, moz:headless: false, moz:processID: 14152, moz:profile: C:\Users\ANGELA\AppData\Loc..., moz:shutdownTimeout: 60000, moz:useNonSpecCompliantPointerOrigin: false, moz:webdriverClick: true, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, platformVersion: 10.0, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
+Session ID: ad6bcd88-c991-459f-8b48-d0d4cafa9570
+*** Element info: {Using=xpath, value=//select[@id='idPagare']//option[text()='080-01-9847672']} 
+2022-01-25T10:39:48.337 - Error al ingresar Dias de crédito - Unable to locate element: //input[@name='diasPlazo']
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'ANGELA', ip: '10.0.248.150', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_301'
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 96.0.2, javascriptEnabled: true, moz:accessibilityChecks: false, moz:buildID: 20220119190439, moz:geckodriverVersion: 0.29.1, moz:headless: false, moz:processID: 14728, moz:profile: C:\Users\ANGELA\AppData\Loc..., moz:shutdownTimeout: 60000, moz:useNonSpecCompliantPointerOrigin: false, moz:webdriverClick: true, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, platformVersion: 10.0, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
+Session ID: 24dd9cc5-18fe-4c4d-ae71-db7bdb055377
+*** Element info: {Using=xpath, value=//input[@name='diasPlazo']} 
+2022-01-25T12:22:18.405 - Error al ingresar Dias de crédito - Unable to locate element: //input[@name='diasPlazo']
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'ANGELA', ip: '10.0.248.150', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_301'
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 96.0.2, javascriptEnabled: true, moz:accessibilityChecks: false, moz:buildID: 20220119190439, moz:geckodriverVersion: 0.29.1, moz:headless: false, moz:processID: 6056, moz:profile: C:\Users\ANGELA\AppData\Loc..., moz:shutdownTimeout: 60000, moz:useNonSpecCompliantPointerOrigin: false, moz:webdriverClick: true, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, platformVersion: 10.0, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
+Session ID: 6e51bed4-36d8-454e-a0ef-a673cb81735f
+*** Element info: {Using=xpath, value=//input[@name='diasPlazo']} 

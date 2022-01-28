@@ -1,0 +1,208 @@
+2022-01-24T18:58:04.720 - Error al seleccionar promocion del servicio - Cannot locate element with text: CREDITO AL TOQUE
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'ANGELA', ip: '10.0.248.150', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_301'
+Driver info: driver.version: unknown 
+2022-01-24T18:58:04.987 - Error al seleccionar el tipo de operacion - Cannot locate element with text: SIMPLE
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'ANGELA', ip: '10.0.248.150', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_301'
+Driver info: driver.version: unknown 
+2022-01-24T18:58:05.021 - Error al seleccionar el pagare - Unable to locate element: //select[@id='idPagare']//option[text()='080-01-9847672']
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'ANGELA', ip: '10.0.248.150', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_301'
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 96.0.2, javascriptEnabled: true, moz:accessibilityChecks: false, moz:buildID: 20220119190439, moz:geckodriverVersion: 0.29.1, moz:headless: false, moz:processID: 6648, moz:profile: C:\Users\ANGELA\AppData\Loc..., moz:shutdownTimeout: 60000, moz:useNonSpecCompliantPointerOrigin: false, moz:webdriverClick: true, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, platformVersion: 10.0, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
+Session ID: a563fe5a-4903-4d1f-b642-364ab3120e53
+*** Element info: {Using=xpath, value=//select[@id='idPagare']//option[text()='080-01-9847672']} 
+2022-01-24T18:58:15.982 - Error al cerrar e popup comunicado - Element <span class="ui-icon ui-icon-closethick"> could not be scrolled into view
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'ANGELA', ip: '10.0.248.150', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_301'
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 96.0.2, javascriptEnabled: true, moz:accessibilityChecks: false, moz:buildID: 20220119190439, moz:geckodriverVersion: 0.29.1, moz:headless: false, moz:processID: 6648, moz:profile: C:\Users\ANGELA\AppData\Loc..., moz:shutdownTimeout: 60000, moz:useNonSpecCompliantPointerOrigin: false, moz:webdriverClick: true, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, platformVersion: 10.0, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
+Session ID: a563fe5a-4903-4d1f-b642-364ab3120e53 
+2022-01-24T18:59:16.349 - Error al seleccionar el boton nueva operacion - Expected condition failed: waiting for element to be clickable: Proxy element for: DefaultElementLocator 'By.name: btnEnviar' (tried for 60 second(s) with 500 milliseconds interval) 
+2022-01-24T18:59:16.589 - Error abrir ventana Seleccionar Operación Crédito - Dismissed user prompt dialog: Se carece de información acerca de los giros de negocios. Actualice dicha información.: 
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'ANGELA', ip: '10.0.248.150', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_301'
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 96.0.2, javascriptEnabled: true, moz:accessibilityChecks: false, moz:buildID: 20220119190439, moz:geckodriverVersion: 0.29.1, moz:headless: false, moz:processID: 6648, moz:profile: C:\Users\ANGELA\AppData\Loc..., moz:shutdownTimeout: 60000, moz:useNonSpecCompliantPointerOrigin: false, moz:webdriverClick: true, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, platformVersion: 10.0, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
+Session ID: a563fe5a-4903-4d1f-b642-364ab3120e53 
+2022-01-24T18:59:27.979 - Error al abrir ventana Operación Crédito - Dismissed user prompt dialog: Se carece de información acerca de los giros de negocios. Actualice dicha información.: 
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'ANGELA', ip: '10.0.248.150', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_301'
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 96.0.2, javascriptEnabled: true, moz:accessibilityChecks: false, moz:buildID: 20220119190439, moz:geckodriverVersion: 0.29.1, moz:headless: false, moz:processID: 6648, moz:profile: C:\Users\ANGELA\AppData\Loc..., moz:shutdownTimeout: 60000, moz:useNonSpecCompliantPointerOrigin: false, moz:webdriverClick: true, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, platformVersion: 10.0, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
+Session ID: a563fe5a-4903-4d1f-b642-364ab3120e53 
+2022-01-24T18:59:28.014 - Error ingresar Monto de crédito - Unable to locate element: //input[@name='montoOperacion']
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'ANGELA', ip: '10.0.248.150', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_301'
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 96.0.2, javascriptEnabled: true, moz:accessibilityChecks: false, moz:buildID: 20220119190439, moz:geckodriverVersion: 0.29.1, moz:headless: false, moz:processID: 6648, moz:profile: C:\Users\ANGELA\AppData\Loc..., moz:shutdownTimeout: 60000, moz:useNonSpecCompliantPointerOrigin: false, moz:webdriverClick: true, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, platformVersion: 10.0, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
+Session ID: a563fe5a-4903-4d1f-b642-364ab3120e53
+*** Element info: {Using=xpath, value=//input[@name='montoOperacion']} 
+2022-01-24T19:00:28.329 - Error al ingresar Tasa Inicial - Expected condition failed: waiting for element to be clickable: Proxy element for: DefaultElementLocator 'By.xpath: //input[@name='TasaInicial']' (tried for 60 second(s) with 500 milliseconds interval) 
+2022-01-24T19:01:28.633 - Error al seleccionar Plan Pagos - Unable to locate element: //*[text() = 'Fija Vencida']
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'ANGELA', ip: '10.0.248.150', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_301'
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 96.0.2, javascriptEnabled: true, moz:accessibilityChecks: false, moz:buildID: 20220119190439, moz:geckodriverVersion: 0.29.1, moz:headless: false, moz:processID: 6648, moz:profile: C:\Users\ANGELA\AppData\Loc..., moz:shutdownTimeout: 60000, moz:useNonSpecCompliantPointerOrigin: false, moz:webdriverClick: true, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, platformVersion: 10.0, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
+Session ID: a563fe5a-4903-4d1f-b642-364ab3120e53
+*** Element info: {Using=xpath, value=//*[text() = 'Fija Vencida']} 
+2022-01-24T19:01:28.662 - Error al seleccionar la Modalidad de pago - Unable to locate element: //*[text() = 'Cronograma Pagos']
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'ANGELA', ip: '10.0.248.150', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_301'
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 96.0.2, javascriptEnabled: true, moz:accessibilityChecks: false, moz:buildID: 20220119190439, moz:geckodriverVersion: 0.29.1, moz:headless: false, moz:processID: 6648, moz:profile: C:\Users\ANGELA\AppData\Loc..., moz:shutdownTimeout: 60000, moz:useNonSpecCompliantPointerOrigin: false, moz:webdriverClick: true, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, platformVersion: 10.0, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
+Session ID: a563fe5a-4903-4d1f-b642-364ab3120e53
+*** Element info: {Using=xpath, value=//*[text() = 'Cronograma Pagos']} 
+2022-01-24T19:01:28.695 - Error al seleccionar Opción de Pagos - Unable to locate element: //*[text() = 'Fecha Fija']
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'ANGELA', ip: '10.0.248.150', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_301'
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 96.0.2, javascriptEnabled: true, moz:accessibilityChecks: false, moz:buildID: 20220119190439, moz:geckodriverVersion: 0.29.1, moz:headless: false, moz:processID: 6648, moz:profile: C:\Users\ANGELA\AppData\Loc..., moz:shutdownTimeout: 60000, moz:useNonSpecCompliantPointerOrigin: false, moz:webdriverClick: true, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, platformVersion: 10.0, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
+Session ID: a563fe5a-4903-4d1f-b642-364ab3120e53
+*** Element info: {Using=xpath, value=//*[text() = 'Fecha Fija']} 
+2022-01-24T19:01:28.727 - Error al ingresar Dias de crédito - Unable to locate element: //input[@name='diasPlazo']
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'ANGELA', ip: '10.0.248.150', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_301'
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 96.0.2, javascriptEnabled: true, moz:accessibilityChecks: false, moz:buildID: 20220119190439, moz:geckodriverVersion: 0.29.1, moz:headless: false, moz:processID: 6648, moz:profile: C:\Users\ANGELA\AppData\Loc..., moz:shutdownTimeout: 60000, moz:useNonSpecCompliantPointerOrigin: false, moz:webdriverClick: true, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, platformVersion: 10.0, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
+Session ID: a563fe5a-4903-4d1f-b642-364ab3120e53
+*** Element info: {Using=xpath, value=//input[@name='diasPlazo']} 
+2022-01-24T19:01:28.759 - Error al ingresar Número de Cuotas - Unable to locate element: //input[@name='numeroCuotas']
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'ANGELA', ip: '10.0.248.150', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_301'
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 96.0.2, javascriptEnabled: true, moz:accessibilityChecks: false, moz:buildID: 20220119190439, moz:geckodriverVersion: 0.29.1, moz:headless: false, moz:processID: 6648, moz:profile: C:\Users\ANGELA\AppData\Loc..., moz:shutdownTimeout: 60000, moz:useNonSpecCompliantPointerOrigin: false, moz:webdriverClick: true, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, platformVersion: 10.0, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
+Session ID: a563fe5a-4903-4d1f-b642-364ab3120e53
+*** Element info: {Using=xpath, value=//input[@name='numeroCuotas']} 
+2022-01-24T19:01:28.772 - Error al ingresar Tasa Preferencial - Unable to locate element: //input[@name='tasaPropuesta']
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'ANGELA', ip: '10.0.248.150', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_301'
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 96.0.2, javascriptEnabled: true, moz:accessibilityChecks: false, moz:buildID: 20220119190439, moz:geckodriverVersion: 0.29.1, moz:headless: false, moz:processID: 6648, moz:profile: C:\Users\ANGELA\AppData\Loc..., moz:shutdownTimeout: 60000, moz:useNonSpecCompliantPointerOrigin: false, moz:webdriverClick: true, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, platformVersion: 10.0, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
+Session ID: a563fe5a-4903-4d1f-b642-364ab3120e53
+*** Element info: {Using=xpath, value=//input[@name='tasaPropuesta']} 
+2022-01-24T19:01:28.789 - Error al seleccionar forma de Desembolso - Unable to locate element: //select[@name='flgCuenta']
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'ANGELA', ip: '10.0.248.150', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_301'
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 96.0.2, javascriptEnabled: true, moz:accessibilityChecks: false, moz:buildID: 20220119190439, moz:geckodriverVersion: 0.29.1, moz:headless: false, moz:processID: 6648, moz:profile: C:\Users\ANGELA\AppData\Loc..., moz:shutdownTimeout: 60000, moz:useNonSpecCompliantPointerOrigin: false, moz:webdriverClick: true, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, platformVersion: 10.0, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
+Session ID: a563fe5a-4903-4d1f-b642-364ab3120e53
+*** Element info: {Using=xpath, value=//select[@name='flgCuenta']} 
+2022-01-24T19:01:28.804 - Error al seleccionar Código de Cuenta - Unable to locate element: //select[@name='codigocuenta']//option[2]
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'ANGELA', ip: '10.0.248.150', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_301'
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 96.0.2, javascriptEnabled: true, moz:accessibilityChecks: false, moz:buildID: 20220119190439, moz:geckodriverVersion: 0.29.1, moz:headless: false, moz:processID: 6648, moz:profile: C:\Users\ANGELA\AppData\Loc..., moz:shutdownTimeout: 60000, moz:useNonSpecCompliantPointerOrigin: false, moz:webdriverClick: true, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, platformVersion: 10.0, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
+Session ID: a563fe5a-4903-4d1f-b642-364ab3120e53
+*** Element info: {Using=xpath, value=//select[@name='codigocuenta']//option[2]} 
+2022-01-24T19:01:28.821 - Error al ingresar Fecha de Desembolso - Unable to locate element: //input[@name='fechaProbableDesembolso']
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'ANGELA', ip: '10.0.248.150', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_301'
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 96.0.2, javascriptEnabled: true, moz:accessibilityChecks: false, moz:buildID: 20220119190439, moz:geckodriverVersion: 0.29.1, moz:headless: false, moz:processID: 6648, moz:profile: C:\Users\ANGELA\AppData\Loc..., moz:shutdownTimeout: 60000, moz:useNonSpecCompliantPointerOrigin: false, moz:webdriverClick: true, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, platformVersion: 10.0, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
+Session ID: a563fe5a-4903-4d1f-b642-364ab3120e53
+*** Element info: {Using=xpath, value=//input[@name='fechaProbableDesembolso']} 
+2022-01-24T19:01:28.838 - Error al ingresar notas - Unable to locate element: //textarea[@name='notas']
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'ANGELA', ip: '10.0.248.150', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_301'
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 96.0.2, javascriptEnabled: true, moz:accessibilityChecks: false, moz:buildID: 20220119190439, moz:geckodriverVersion: 0.29.1, moz:headless: false, moz:processID: 6648, moz:profile: C:\Users\ANGELA\AppData\Loc..., moz:shutdownTimeout: 60000, moz:useNonSpecCompliantPointerOrigin: false, moz:webdriverClick: true, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, platformVersion: 10.0, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
+Session ID: a563fe5a-4903-4d1f-b642-364ab3120e53
+*** Element info: {Using=xpath, value=//textarea[@name='notas']} 
+2022-01-24T19:02:31.592 - Error al seleccionar el botón registrar seguro - Expected condition failed: waiting for element to be clickable: Proxy element for: DefaultElementLocator 'By.xpath: /html/body/form/table[1]/tbody/tr[3]/td/div/table[7]/tbody/tr[1]/td[2]/button' (tried for 60 second(s) with 500 milliseconds interval) 
+2022-01-24T19:02:31.968 - Error al posicionarse en la ventana seguros - Dismissed user prompt dialog: Se carece de información acerca de los giros de negocios. Actualice dicha información.: 
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'ANGELA', ip: '10.0.248.150', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_301'
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 96.0.2, javascriptEnabled: true, moz:accessibilityChecks: false, moz:buildID: 20220119190439, moz:geckodriverVersion: 0.29.1, moz:headless: false, moz:processID: 6648, moz:profile: C:\Users\ANGELA\AppData\Loc..., moz:shutdownTimeout: 60000, moz:useNonSpecCompliantPointerOrigin: false, moz:webdriverClick: true, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, platformVersion: 10.0, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
+Session ID: a563fe5a-4903-4d1f-b642-364ab3120e53 
+2022-01-24T19:03:02.439 - Error al seleccionar el check seguro desgravamen saldo capital - Expected condition failed: waiting for element to be clickable: Proxy element for: DefaultElementLocator 'By.id: 4_01301' (tried for 30 second(s) with 500 milliseconds interval) 
+2022-01-24T19:03:02.471 - Error al generar numero de seguro desgravamen saldo - Unable to locate element: #dps01301
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'ANGELA', ip: '10.0.248.150', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_301'
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 96.0.2, javascriptEnabled: true, moz:accessibilityChecks: false, moz:buildID: 20220119190439, moz:geckodriverVersion: 0.29.1, moz:headless: false, moz:processID: 6648, moz:profile: C:\Users\ANGELA\AppData\Loc..., moz:shutdownTimeout: 60000, moz:useNonSpecCompliantPointerOrigin: false, moz:webdriverClick: true, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, platformVersion: 10.0, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
+Session ID: a563fe5a-4903-4d1f-b642-364ab3120e53
+*** Element info: {Using=id, value=dps01301} 
+2022-01-24T19:03:02.765 - Error en abrir ventana Confirmar Seguros - Dismissed user prompt dialog: Se carece de información acerca de los giros de negocios. Actualice dicha información.: 
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'ANGELA', ip: '10.0.248.150', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_301'
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 96.0.2, javascriptEnabled: true, moz:accessibilityChecks: false, moz:buildID: 20220119190439, moz:geckodriverVersion: 0.29.1, moz:headless: false, moz:processID: 6648, moz:profile: C:\Users\ANGELA\AppData\Loc..., moz:shutdownTimeout: 60000, moz:useNonSpecCompliantPointerOrigin: false, moz:webdriverClick: true, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, platformVersion: 10.0, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
+Session ID: a563fe5a-4903-4d1f-b642-364ab3120e53 
+2022-01-24T19:16:18.860 - Error al cerrar e popup comunicado - Element <span class="ui-icon ui-icon-closethick"> could not be scrolled into view
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'ANGELA', ip: '10.0.248.150', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_301'
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 96.0.2, javascriptEnabled: true, moz:accessibilityChecks: false, moz:buildID: 20220119190439, moz:geckodriverVersion: 0.29.1, moz:headless: false, moz:processID: 3780, moz:profile: C:\Users\ANGELA\AppData\Loc..., moz:shutdownTimeout: 60000, moz:useNonSpecCompliantPointerOrigin: false, moz:webdriverClick: true, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, platformVersion: 10.0, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
+Session ID: f85000ca-f99e-4686-8171-b6b65921cfa1 
+2022-01-24T19:35:33.003 - Error al seleccionar promocion del servicio - Cannot locate element with text: CREDITO AL TOQUE
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'ANGELA', ip: '10.0.248.150', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_301'
+Driver info: driver.version: unknown 
+2022-01-24T19:35:33.310 - Error al seleccionar el tipo de operacion - Cannot locate element with text: SIMPLE
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'ANGELA', ip: '10.0.248.150', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_301'
+Driver info: driver.version: unknown 
+2022-01-24T19:35:33.326 - Error al seleccionar el pagare - Unable to locate element: //select[@id='idPagare']//option[text()='080-01-9847672']
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'ANGELA', ip: '10.0.248.150', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_301'
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 96.0.2, javascriptEnabled: true, moz:accessibilityChecks: false, moz:buildID: 20220119190439, moz:geckodriverVersion: 0.29.1, moz:headless: false, moz:processID: 8724, moz:profile: C:\Users\ANGELA\AppData\Loc..., moz:shutdownTimeout: 60000, moz:useNonSpecCompliantPointerOrigin: false, moz:webdriverClick: true, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, platformVersion: 10.0, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
+Session ID: 691dc15b-b5c7-41ab-968d-e973e918e6a5
+*** Element info: {Using=xpath, value=//select[@id='idPagare']//option[text()='080-01-9847672']} 
+2022-01-24T19:39:30.354 - Error al ingresar Dias de crédito - Unable to locate element: //input[@name='diasPlazo']
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'ANGELA', ip: '10.0.248.150', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_301'
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 96.0.2, javascriptEnabled: true, moz:accessibilityChecks: false, moz:buildID: 20220119190439, moz:geckodriverVersion: 0.29.1, moz:headless: false, moz:processID: 7860, moz:profile: C:\Users\ANGELA\AppData\Loc..., moz:shutdownTimeout: 60000, moz:useNonSpecCompliantPointerOrigin: false, moz:webdriverClick: true, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, platformVersion: 10.0, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
+Session ID: b0e7a3d9-4139-4d7e-87db-ea6a3588f926
+*** Element info: {Using=xpath, value=//input[@name='diasPlazo']} 
+2022-01-24T19:40:40.584 - Error al seleccionar el botón registrar seguro - Expected condition failed: waiting for element to be clickable: Proxy element for: DefaultElementLocator 'By.xpath: /html/body/form/table[1]/tbody/tr[3]/td/div/table[7]/tbody/tr[1]/td[2]/button' (tried for 60 second(s) with 500 milliseconds interval) 
+2022-01-24T19:40:40.692 - Error al posicionarse en la ventana seleccionar seguros - Dismissed user prompt dialog: Registre el Dia de pago de la operacion.: 
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'ANGELA', ip: '10.0.248.150', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_301'
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 96.0.2, javascriptEnabled: true, moz:accessibilityChecks: false, moz:buildID: 20220119190439, moz:geckodriverVersion: 0.29.1, moz:headless: false, moz:processID: 7860, moz:profile: C:\Users\ANGELA\AppData\Loc..., moz:shutdownTimeout: 60000, moz:useNonSpecCompliantPointerOrigin: false, moz:webdriverClick: true, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, platformVersion: 10.0, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
+Session ID: b0e7a3d9-4139-4d7e-87db-ea6a3588f926 
+2022-01-24T19:40:40.993 - Error al posicionarse en la ventana seguros - Dismissed user prompt dialog: ¿Desea Grabar la Operación?: 
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'ANGELA', ip: '10.0.248.150', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_301'
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 96.0.2, javascriptEnabled: true, moz:accessibilityChecks: false, moz:buildID: 20220119190439, moz:geckodriverVersion: 0.29.1, moz:headless: false, moz:processID: 7860, moz:profile: C:\Users\ANGELA\AppData\Loc..., moz:shutdownTimeout: 60000, moz:useNonSpecCompliantPointerOrigin: false, moz:webdriverClick: true, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, platformVersion: 10.0, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
+Session ID: b0e7a3d9-4139-4d7e-87db-ea6a3588f926 
+2022-01-24T19:41:11.430 - Error al seleccionar el check seguro desgravamen saldo capital - Expected condition failed: waiting for element to be clickable: Proxy element for: DefaultElementLocator 'By.id: 4_01301' (tried for 30 second(s) with 500 milliseconds interval) 
+2022-01-24T19:41:11.448 - Error al generar numero de seguro desgravamen saldo - Unable to locate element: #dps01301
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'ANGELA', ip: '10.0.248.150', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_301'
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 96.0.2, javascriptEnabled: true, moz:accessibilityChecks: false, moz:buildID: 20220119190439, moz:geckodriverVersion: 0.29.1, moz:headless: false, moz:processID: 7860, moz:profile: C:\Users\ANGELA\AppData\Loc..., moz:shutdownTimeout: 60000, moz:useNonSpecCompliantPointerOrigin: false, moz:webdriverClick: true, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, platformVersion: 10.0, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
+Session ID: b0e7a3d9-4139-4d7e-87db-ea6a3588f926
+*** Element info: {Using=id, value=dps01301} 
+2022-01-24T19:41:11.792 - Error en abrir ventana Confirmar Seguros - Dismissed user prompt dialog: ¿Desea Grabar la Operación?: 
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'ANGELA', ip: '10.0.248.150', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_301'
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 96.0.2, javascriptEnabled: true, moz:accessibilityChecks: false, moz:buildID: 20220119190439, moz:geckodriverVersion: 0.29.1, moz:headless: false, moz:processID: 7860, moz:profile: C:\Users\ANGELA\AppData\Loc..., moz:shutdownTimeout: 60000, moz:useNonSpecCompliantPointerOrigin: false, moz:webdriverClick: true, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, platformVersion: 10.0, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
+Session ID: b0e7a3d9-4139-4d7e-87db-ea6a3588f926 
