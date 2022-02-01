@@ -5,50 +5,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3f7f10af-cc77-450a-8460-1211f16a85dc" name="Default Changelist" comment="Avance de Credito Empresarial tipo Ampliación">
-      <change afterPath="$PROJECT_DIR$/src/test/java/Definitions/ExcelCreditoEmpresarialRefinanciacionMismoPagareDefinitions.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/resources/features/ExcelCreditoEmpresarialRefinanciacionMismoPagare.feature" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/Definitions/ExcelAprobarPropuestaCreditoEmpresarialDefinitions.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Definitions/ExcelAprobarPropuestaCreditoEmpresarialDefinitions.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/Definitions/ExcelCreditoEmpresarialRefinanciacionDefinitions.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Definitions/ExcelCreditoEmpresarialRefinanciacionDefinitions.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/Definitions/InformeComercialCreditoEmpresarialDefinitions.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Definitions/InformeComercialCreditoEmpresarialDefinitions.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/Definitions/InformeVisitaCreditoConsumoDefinitions.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Definitions/InformeVisitaCreditoConsumoDefinitions.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/Definitions/InformeVisitaCreditoEmpresarialDefinitions.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Definitions/InformeVisitaCreditoEmpresarialDefinitions.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/PageObjects/CondicionesRefinanciarPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/PageObjects/CondicionesRefinanciarPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/PageObjects/PropuestaPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/PageObjects/PropuestaPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/PageObjects/SeleccionarServicioPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/PageObjects/SeleccionarServicioPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/resources/features/ExcelCreditoEmpresarialRefinanciacion.feature" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/features/ExcelCreditoEmpresarialRefinanciacion.feature" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/resources/features/InformeComercialCreditoEmpresarial.feature" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/features/InformeComercialCreditoEmpresarial.feature" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/resources/features/InformeVisitaCreditoConsumo.feature" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/features/InformeVisitaCreditoConsumo.feature" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/resources/features/InformeVisitaCreditoEmpresarial.feature" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/features/InformeVisitaCreditoEmpresarial.feature" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/DatosExcel/DatosCreditoEmpresarialAmpliacion.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/target/DatosExcel/DatosCreditoEmpresarialAmpliacion.xlsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/Definitions/ExcelAprobarPropuestaCreditoEmpresarialDefinitions.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/Definitions/ExcelAprobarPropuestaCreditoEmpresarialDefinitions.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/Definitions/ExcelCreditoEmpresarialRefinanciacionDefinitions.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/Definitions/ExcelCreditoEmpresarialRefinanciacionDefinitions.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/Definitions/InformeComercialCreditoEmpresarialDefinitions.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/Definitions/InformeComercialCreditoEmpresarialDefinitions.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/Definitions/InformeVisitaCreditoConsumoDefinitions.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/Definitions/InformeVisitaCreditoConsumoDefinitions.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/Definitions/InformeVisitaCreditoEmpresarialDefinitions.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/Definitions/InformeVisitaCreditoEmpresarialDefinitions.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/PageObjects/CondicionesRefinanciarPage.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/PageObjects/CondicionesRefinanciarPage.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/PageObjects/PropuestaPage.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/PageObjects/PropuestaPage.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/PageObjects/SeleccionarServicioPage.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/PageObjects/SeleccionarServicioPage.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/features/ExcelCreditoEmpresarialRefinanciacion.feature" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/features/ExcelCreditoEmpresarialRefinanciacion.feature" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/features/InformeComercialCreditoEmpresarial.feature" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/features/InformeComercialCreditoEmpresarial.feature" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/features/InformeVisitaCreditoConsumo.feature" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/features/InformeVisitaCreditoConsumo.feature" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/features/InformeVisitaCreditoEmpresarial.feature" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/features/InformeVisitaCreditoEmpresarial.feature" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ChangesViewManager">
-    <option name="groupingKeys">
-      <option value="module" />
-    </option>
-  </component>
-  <component name="ExportTestResults" outputFolder="$PROJECT_DIR$/.." userTempatePath="" />
+  <component name="ExportTestResults" outputFolder="$PROJECT_DIR$/../Backup Proyecto Magaly/Report" userTempatePath="" />
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Substep Feature" />
         <option value="Class" />
       </list>
     </option>
@@ -56,7 +23,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="main" />
+        <entry key="$PROJECT_DIR$" value="feature_Angela" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -79,6 +46,9 @@
     <setting file="file://$PROJECT_DIR$/src/test/java/PageObjects/GrabarInformacionDocumentoPage.java" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/src/test/resources/features/InformeVisitaCreditoConsumo.feature" root0="FORCE_HIGHLIGHTING" />
   </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
   <component name="ProjectId" id="20W7CyZkJBCVXV1sNQAvHx7beJF" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -87,9 +57,8 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="TODO_SCOPE" value="All Places" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/test/java/Definitions" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Serenity" />
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
@@ -98,19 +67,23 @@
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\CajaPiuraCMAC2021\target\DatosExcel" />
+      <recent name="C:\CajaPiuraCMAC2021\src\test\resources\features" />
       <recent name="C:\CajaPiuraCMAC2021\src\test\java\Definitions" />
     </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="Definitions" />
+    </key>
   </component>
-  <component name="RunManager" selected="Cucumber Java.Scenario: Crear una propuesta de Ampliación de Crédito Empresarial desde el Excel">
-    <configuration name="Scenario: Crear una propuesta de Ampliación de Crédito Empresarial desde el Excel" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="Cucumber Java.Scenario: Crear una propuesta de Creditos Empresarial de tipo Normal desde el Excel">
+    <configuration name="Scenario: Crear una propuesta de Creditos Empresarial de tipo Normal desde el Excel" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
       <option name="CUCUMBER_CORE_VERSION" value="5" />
-      <option name="FILE_PATH" value="$PROJECT_DIR$/src/test/resources/features/ExcelCreditoEmpresarialAmpliacion.feature" />
+      <option name="FILE_PATH" value="$PROJECT_DIR$/src/test/resources/features/ExcelCreditoEmpresarial.feature" />
       <option name="GLUE" value="Definitions" />
       <option name="MAIN_CLASS_NAME" value="io.cucumber.core.cli.Main" />
-      <module name="CMACPiura_2022" />
-      <option name="NAME_FILTER" value="^Crear una propuesta de Ampliación de Crédito Empresarial desde el Excel$" />
-      <option name="PROGRAM_PARAMETERS" value=" --plugin org.jetbrains.plugins.cucumber.java.run.CucumberJvm5SMFormatter --name &quot;^Crear una propuesta de Ampliación de Crédito Empresarial desde el Excel$&quot;" />
-      <option name="SUGGESTED_NAME" value="Scenario: Crear una propuesta de Ampliación de Crédito Empresarial desde el Excel" />
+      <module name="EjemploQA" />
+      <option name="NAME_FILTER" value="^Crear una propuesta de Creditos Empresarial de tipo Normal desde el Excel$" />
+      <option name="PROGRAM_PARAMETERS" value=" --plugin org.jetbrains.plugins.cucumber.java.run.CucumberJvm5SMFormatter --name &quot;^Crear una propuesta de Creditos Empresarial de tipo Normal desde el Excel$&quot;" />
+      <option name="SUGGESTED_NAME" value="Scenario: Crear una propuesta de Creditos Empresarial de tipo Normal desde el Excel" />
       <option name="WORKING_DIRECTORY" value="$MODULE_WORKING_DIR$" />
       <extension name="coverage">
         <pattern>
@@ -122,15 +95,15 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Scenario: Registrar Informe Comercial Nuevo Formato de los clientes en el sistema SGCRED" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
+    <configuration name="Scenario: Emitir Dictamen de Propuesta" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
       <option name="CUCUMBER_CORE_VERSION" value="5" />
-      <option name="FILE_PATH" value="$PROJECT_DIR$/src/test/resources/features/InformeComercialCreditoEmpresarial.feature" />
+      <option name="FILE_PATH" value="$PROJECT_DIR$/src/test/resources/features/ExcelEmitirDictamenPropuestaCredito.feature" />
       <option name="GLUE" value="Definitions" />
       <option name="MAIN_CLASS_NAME" value="io.cucumber.core.cli.Main" />
-      <module name="CMACPiura_2022" />
-      <option name="NAME_FILTER" value="^Registrar Informe Comercial Nuevo Formato de los clientes en el sistema SGCRED$" />
-      <option name="PROGRAM_PARAMETERS" value=" --plugin org.jetbrains.plugins.cucumber.java.run.CucumberJvm5SMFormatter --name &quot;^Registrar Informe Comercial Nuevo Formato de los clientes en el sistema SGCRED$&quot;" />
-      <option name="SUGGESTED_NAME" value="Scenario: Registrar Informe Comercial Nuevo Formato de los clientes en el sistema SGCRED" />
+      <module name="EjemploQA" />
+      <option name="NAME_FILTER" value="^Emitir Dictamen de Propuesta$" />
+      <option name="PROGRAM_PARAMETERS" value=" --plugin org.jetbrains.plugins.cucumber.java.run.CucumberJvm5SMFormatter --name &quot;^Emitir Dictamen de Propuesta$&quot;" />
+      <option name="SUGGESTED_NAME" value="Scenario: Emitir Dictamen de Propuesta" />
       <option name="WORKING_DIRECTORY" value="$MODULE_WORKING_DIR$" />
       <extension name="coverage">
         <pattern>
@@ -147,7 +120,7 @@
       <option name="FILE_PATH" value="$PROJECT_DIR$/src/test/resources/features/InformeVisitaCreditoEmpresarial.feature" />
       <option name="GLUE" value="Definitions" />
       <option name="MAIN_CLASS_NAME" value="io.cucumber.core.cli.Main" />
-      <module name="CMACPiura_2022" />
+      <module name="EjemploQA" />
       <option name="NAME_FILTER" value="^Registrar informe de visitas de los clientes en el sistema SGCRED$" />
       <option name="PROGRAM_PARAMETERS" value=" --plugin org.jetbrains.plugins.cucumber.java.run.CucumberJvm5SMFormatter --name &quot;^Registrar informe de visitas de los clientes en el sistema SGCRED$&quot;" />
       <option name="SUGGESTED_NAME" value="Scenario: Registrar informe de visitas de los clientes en el sistema SGCRED" />
@@ -162,15 +135,15 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Scenario: Registrar propuesta de credito empresarial de tipo Refinanciacion Mismo Pagare" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
+    <configuration name="Scenario: Registrar la Aprobación de propuesta credito empresarial" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
       <option name="CUCUMBER_CORE_VERSION" value="5" />
-      <option name="FILE_PATH" value="$PROJECT_DIR$/src/test/resources/features/ExcelCreditoEmpresarialRefinanciacionMismoPagare.feature" />
+      <option name="FILE_PATH" value="$PROJECT_DIR$/src/test/resources/features/ExcelAprobarPropuestaCreditoEmpresarial.feature" />
       <option name="GLUE" value="Definitions" />
       <option name="MAIN_CLASS_NAME" value="io.cucumber.core.cli.Main" />
-      <module name="CMACPiura_2022" />
-      <option name="NAME_FILTER" value="^Registrar propuesta de credito empresarial de tipo Refinanciacion Mismo Pagare$" />
-      <option name="PROGRAM_PARAMETERS" value=" --plugin org.jetbrains.plugins.cucumber.java.run.CucumberJvm5SMFormatter --name &quot;^Registrar propuesta de credito empresarial de tipo Refinanciacion Mismo Pagare$&quot;" />
-      <option name="SUGGESTED_NAME" value="Scenario: Registrar propuesta de credito empresarial de tipo Refinanciacion Mismo Pagare" />
+      <module name="EjemploQA" />
+      <option name="NAME_FILTER" value="^Registrar la Aprobación de propuesta credito empresarial$" />
+      <option name="PROGRAM_PARAMETERS" value=" --plugin org.jetbrains.plugins.cucumber.java.run.CucumberJvm5SMFormatter --name &quot;^Registrar la Aprobación de propuesta credito empresarial$&quot;" />
+      <option name="SUGGESTED_NAME" value="Scenario: Registrar la Aprobación de propuesta credito empresarial" />
       <option name="WORKING_DIRECTORY" value="$MODULE_WORKING_DIR$" />
       <extension name="coverage">
         <pattern>
@@ -184,10 +157,10 @@
     </configuration>
     <configuration name="Scenario: Registrar propuesta de credito empresarial de tipo Refinanciacion" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
       <option name="CUCUMBER_CORE_VERSION" value="5" />
-      <option name="FILE_PATH" value="$PROJECT_DIR$/src/test/resources/features/ExcelCreditoEmpresarialRefinanciacionMismoPagare.feature" />
+      <option name="FILE_PATH" value="$PROJECT_DIR$/src/test/resources/features/ExcelCreditoEmpresarialRefinanciacion.feature" />
       <option name="GLUE" value="Definitions" />
       <option name="MAIN_CLASS_NAME" value="io.cucumber.core.cli.Main" />
-      <module name="CMACPiura_2022" />
+      <module name="EjemploQA" />
       <option name="NAME_FILTER" value="^Registrar propuesta de credito empresarial de tipo Refinanciacion$" />
       <option name="PROGRAM_PARAMETERS" value=" --plugin org.jetbrains.plugins.cucumber.java.run.CucumberJvm5SMFormatter --name &quot;^Registrar propuesta de credito empresarial de tipo Refinanciacion$&quot;" />
       <option name="SUGGESTED_NAME" value="Scenario: Registrar propuesta de credito empresarial de tipo Refinanciacion" />
@@ -204,11 +177,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Cucumber Java.Scenario: Crear una propuesta de Ampliación de Crédito Empresarial desde el Excel" />
-        <item itemvalue="Cucumber Java.Scenario: Registrar propuesta de credito empresarial de tipo Refinanciacion Mismo Pagare" />
-        <item itemvalue="Cucumber Java.Scenario: Registrar Informe Comercial Nuevo Formato de los clientes en el sistema SGCRED" />
-        <item itemvalue="Cucumber Java.Scenario: Registrar informe de visitas de los clientes en el sistema SGCRED" />
+        <item itemvalue="Cucumber Java.Scenario: Crear una propuesta de Creditos Empresarial de tipo Normal desde el Excel" />
         <item itemvalue="Cucumber Java.Scenario: Registrar propuesta de credito empresarial de tipo Refinanciacion" />
+        <item itemvalue="Cucumber Java.Scenario: Registrar informe de visitas de los clientes en el sistema SGCRED" />
+        <item itemvalue="Cucumber Java.Scenario: Registrar la Aprobación de propuesta credito empresarial" />
+        <item itemvalue="Cucumber Java.Scenario: Emitir Dictamen de Propuesta" />
       </list>
     </recent_temporary>
   </component>
@@ -228,35 +201,7 @@
       <option name="project" value="LOCAL" />
       <updated>1637363499709</updated>
     </task>
-    <task id="LOCAL-00002" summary="Actualización de nuevo Branch">
-      <created>1638924512277</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1638924512277</updated>
-    </task>
-    <task id="LOCAL-00003" summary="Avance de Credito Empresarial tipo Ampliación">
-      <created>1643405965467</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1643405965468</updated>
-    </task>
-    <task id="LOCAL-00004" summary="Avance de Credito Empresarial tipo Ampliación">
-      <created>1643685001477</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1643685001477</updated>
-    </task>
-    <task id="LOCAL-00005" summary="Avance de Credito Empresarial tipo Ampliación">
-      <created>1643685024878</created>
-      <option name="number" value="00005" />
-      <option name="presentableId" value="LOCAL-00005" />
-      <option name="project" value="LOCAL" />
-      <updated>1643685024878</updated>
-    </task>
-    <option name="localTasksCounter" value="6" />
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -264,25 +209,7 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State>
-              <option name="BEK_SORT_TYPE" value="1" />
-              <option name="HIGHLIGHTERS">
-                <map>
-                  <entry key="MY_COMMITS" value="false" />
-                </map>
-              </option>
-              <option name="FILTERS">
-                <map>
-                  <entry key="branch">
-                    <value>
-                      <list>
-                        <option value="feature_Angela" />
-                      </list>
-                    </value>
-                  </entry>
-                </map>
-              </option>
-            </State>
+            <State />
           </value>
         </entry>
       </map>
@@ -291,60 +218,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Adicion de pages objects flujo Refinanciacion Especial" />
-    <MESSAGE value="Actualización de nuevo Branch" />
-    <MESSAGE value="Avance de Credito Empresarial tipo Ampliación" />
-    <option name="LAST_COMMIT_MESSAGE" value="Avance de Credito Empresarial tipo Ampliación" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/test/java/PageObjects/OperacionCreditoPage.java</url>
-          <line>213</line>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/test/java/Definitions/ProbarDefinitions.java</url>
-          <line>64</line>
-          <option name="timeStamp" value="2" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/test/java/PageObjects/PropuestaPage.java</url>
-          <line>470</line>
-          <option name="timeStamp" value="6" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/test/java/PageObjects/PropuestaPage.java</url>
-          <line>190</line>
-          <option name="timeStamp" value="8" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/test/java/PageObjects/PropuestaPage.java</url>
-          <line>192</line>
-          <option name="timeStamp" value="9" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-method">
-          <url>file://$PROJECT_DIR$/src/test/java/PageObjects/PropuestaPage.java</url>
-          <line>467</line>
-          <properties class="PageObjects.PropuestaPage" method="ClickEnlazarInformeVisitaReprogramacion">
-            <option name="EMULATED" value="true" />
-          </properties>
-          <option name="timeStamp" value="5" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-method">
-          <url>file://$PROJECT_DIR$/src/test/java/PageObjects/PropuestaPage.java</url>
-          <line>188</line>
-          <properties class="PageObjects.PropuestaPage" method="ClickEnlazarEEFF">
-            <option name="EMULATED" value="true" />
-          </properties>
-          <option name="timeStamp" value="7" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
-  </component>
-  <component name="XSLT-Support.FileAssociations.UIState">
-    <expand />
-    <select />
+    <option name="LAST_COMMIT_MESSAGE" value="Adicion de pages objects flujo Refinanciacion Especial" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/CMACPiura_2022$Scenario__Crear_una_propuesta_de_Ampliación_de_Crédito_Empresarial_desde_el_Excel.ic" NAME="Scenario: Crear una propuesta de Ampliación de Crédito Empresarial desde el Excel Coverage Results" MODIFIED="1643642116365" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
