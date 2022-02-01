@@ -65,7 +65,7 @@ public class ExcelCreditoEmpresarialRefinanciacionDefinitions {
     @Given("la web SGCRED esta disponible para su uso optimo")
     public void la_web_sgcred_esta_disponible_para_su_uso_optimo() {
 
-        Hooks.driver.get("http://10.0.203.16:8083/propuesta/logout.jsp");
+        Hooks.driver.get("http://10.0.203.16:8082/propuesta/logout.jsp");
 
     }
 

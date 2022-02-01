@@ -35,7 +35,7 @@ public class InformeVisitaCreditoEmpresarialDefinitions {
 
     @Given("la web SGCRED esta disponible para usarla")
     public void laWebSGCREDEstaDisponibleParaUsarla() {
-        Hooks.driver.get("http://10.0.203.16:8083/propuesta/logout.jsp");
+        Hooks.driver.get("http://10.0.203.16:8082/propuesta/logout.jsp");
     }
     @When("ingreso usuario y password del perfil Asesor de Negocio")
     public void ingresoUsuarioYPasswordDelPerfilAsesorDeNegocio(DataTable usuario) {

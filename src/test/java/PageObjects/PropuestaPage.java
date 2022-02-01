@@ -28,6 +28,7 @@ public class PropuestaPage {
     protected static String montoLiquidacion;
     protected static String monto;
     protected static String TextoPromocion;
+    protected static String TextoCheckList;
 
 
     @FindBy(xpath = "//textarea[@name='comentCalifCred']") private WebElement txt_ClasificacionCrediticia;
@@ -63,6 +64,7 @@ public class PropuestaPage {
     @FindBy(name = "observCuota") private WebElement txt_ObservacionMontoPago;
     @FindBy(name = "observMejoraGar") private WebElement txt_ObservacionMejoraGarantia;
     @FindBy(xpath = "/html/body/form/table[1]/tbody/tr[3]/td/div/table[1]/tbody/tr/td[2]/table/tbody/tr[4]/td[2]") private WebElement lbl_Promocion;
+    @FindBy(xpath = "//h4[contains(text(),'CHECK LIST CRÉDITOS')]") private WebElement lbl_CheckList;
 
 
     public PropuestaPage(WebDriver d) {
@@ -119,6 +121,7 @@ public class PropuestaPage {
         try {
             List<WebElement> elementList = driver.findElements(By.tagName("textarea"));
             for (WebElement textarea : elementList) {
+                objFuncionEsperar.EsperarTiempo(2);
                 textarea.sendKeys("descripcion general de la propuesta");
             }
         } catch (Exception Error) {
@@ -544,6 +547,20 @@ public class PropuestaPage {
         return TextoPromocion;
 
     }
+
+    public String TextoCheckList() {
+        try {
+            wait.until(ExpectedConditions.visibilityOf(lbl_CheckList));
+            TextoCheckList = lbl_CheckList.getText();
+            System.out.println("Etiqueta:" + TextoCheckList);
+        } catch (Exception Error) {
+            detalleError = "No existe texto del CheckList";
+            objLogErrores.logError(detalleError, Error);
+        }
+        return TextoCheckList;
+
+    }
+
 }
 
 

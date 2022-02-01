@@ -32,7 +32,7 @@ public class InformeComercialCreditoEmpresarialDefinitions {
 
     @Given("el sistema SGCRED esta disponible para usarla")
     public void el_sistema_sgcred_esta_disponible_para_usarla() {
-        Hooks.driver.get("http://10.0.203.16:8083/propuesta/logout.jsp");
+        Hooks.driver.get("http://10.0.203.16:8082/propuesta/logout.jsp");
 
     }
     @When("en la ventana login ingreso usuario y password del perfil Asesor de negocio")

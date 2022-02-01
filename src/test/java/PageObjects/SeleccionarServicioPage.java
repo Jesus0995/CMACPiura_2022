@@ -72,6 +72,7 @@ public class SeleccionarServicioPage {
 
     public void SeleccionarServicio(String TipoServicio) {
         try {
+            objFuncionEsperar.EsperarTiempo(1);
             wait.until(ExpectedConditions.elementToBeClickable(cbx_Servicio));
             new Select(cbx_Servicio).selectByVisibleText(TipoServicio);
         } catch (Exception Error) {
@@ -82,6 +83,7 @@ public class SeleccionarServicioPage {
 
     public void SeleccionarServicioCredito(String ServicioCredito) {
         try {
+            objFuncionEsperar.EsperarTiempo(1);
             wait.until(ExpectedConditions.elementToBeClickable(cbx_ServicioCredito));
             new Select(cbx_ServicioCredito).selectByVisibleText(ServicioCredito);
         } catch (Exception Error) {
@@ -115,7 +117,7 @@ public class SeleccionarServicioPage {
     public void SeleccionarPromocion(String Promocion) {
         try {
             wait.until(ExpectedConditions.elementToBeClickable(cbx_Promocion));
-            objFuncionEsperar.EsperarTiempo(1);
+            objFuncionEsperar.EsperarTiempo(2);
             new Select(cbx_Promocion).selectByVisibleText(Promocion);
             objFuncionEsperar.EsperarTiempo(3);
         } catch (Exception Error) {
@@ -126,6 +128,7 @@ public class SeleccionarServicioPage {
 
     public void SeleccionarTipoOperacion(String TipoOperacion){
         try {
+            objFuncionEsperar.EsperarTiempo(1);
             wait.until(ExpectedConditions.elementToBeClickable(cbx_TipoOperacion));
             new Select(cbx_TipoOperacion).selectByVisibleText(TipoOperacion);
         }catch (Exception Error){
@@ -148,7 +151,7 @@ public class SeleccionarServicioPage {
         try {
             WebElement opcionPagare = driver.findElement(By.xpath("//select[@id='idPagare']//option[text()='"+Pagare+"']"));
             opcionPagare.click();
-            objFuncionEsperar.EsperarTiempo(2);
+            objFuncionEsperar.EsperarTiempo(3);
 
         }catch (Exception Error){
             detalleError = "Error al seleccionar el pagare";
