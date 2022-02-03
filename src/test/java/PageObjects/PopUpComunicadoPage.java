@@ -54,7 +54,6 @@ public class PopUpComunicadoPage {
 
 }
 
-
 //vtn_comunicado.click();
 
 // Assert.assertEquals(Comunicado,lbl_Comunicado.getText());

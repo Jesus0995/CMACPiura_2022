@@ -69,7 +69,7 @@ public class ExcelCreditoEmpresarialDefinitions {
 
     @Given("la pagina web SGCRED lista para utilizar")
     public void laPaginaWebSGCREDListaParaUtilizar() {
-        Hooks.driver.get("http://10.0.203.16:8083/propuesta/logout.jsp");
+        Hooks.driver.get("http://10.0.203.16:8082/propuesta/logout.jsp");
     }
 
     @When("se ingresa el usuario y password")

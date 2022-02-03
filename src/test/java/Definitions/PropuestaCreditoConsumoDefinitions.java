@@ -65,7 +65,7 @@ public class PropuestaCreditoConsumoDefinitions {
     @Given("la pagina web SGCRED esta disponible")
     public void laPaginaWebSGCREDEstaDisponible() {
 
-        Hooks.driver.get("http://10.0.203.12:8081/propuesta/");
+        Hooks.driver.get("http://10.0.203.16:8082/propuesta/");
     }
 
     @When("se completa el usuario y password")
@@ -230,6 +230,7 @@ public class PropuestaCreditoConsumoDefinitions {
 
     @And("en la ventana operacion credito seleccionar la forma desembolso {string}")
     public void enLaVentanaOperacionCreditoSeleccionarLaFormaDesembolso(String FormaDesembolso) {
+
         operacioncredito.SeleccionarFormaDesembolso(FormaDesembolso);
     }
 

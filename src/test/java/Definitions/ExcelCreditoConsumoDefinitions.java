@@ -32,7 +32,8 @@ public class ExcelCreditoConsumoDefinitions {
     GrabarInformacionDocumentoPage grabarDocumentoPropuesta;
     AprobarDictamenPropuestaPage aprobarDictamenPropuesta;
     ExcelPage excel;
-    String Valor;
+    String ValorPropuesta;
+    String ValorResultado;
 
     public ExcelCreditoConsumoDefinitions() {
         login = new LoginPage(Hooks.driver);
@@ -189,6 +190,9 @@ public class ExcelCreditoConsumoDefinitions {
             grabarDocumentoPropuesta.ClickBtnCerrarInformacion();
             grabarDocumentoPropuesta.CerrarVentanaGrabarPropuesta();
 
+            ValorPropuesta = propuesta.CapturarNumeroPropuesta();
+            excel.EscribirExcel(arg0,0,i,21,ValorPropuesta);
+
             propuesta.AbrirOpcionesDictamen();
             propuesta.ClickBtnAprobarPropuesta();
             aprobarDictamenPropuesta.AbrirVentanaAprobarDictamenPropuesta();
@@ -198,11 +202,12 @@ public class ExcelCreditoConsumoDefinitions {
             aprobarDictamenPropuesta.CerrarVentanaAprobarDictamenPropuesta();
 
             grabarDocumentoPropuesta.AbrirVentanaGrabarPropuesta();
-            Valor = grabarDocumentoPropuesta.CapturarMensajeDerivacion();
+            ValorResultado = grabarDocumentoPropuesta.CapturarMensajeDerivacion();
+            excel.EscribirExcel(arg0,0,i,22,ValorResultado);
             grabarDocumentoPropuesta.ClickBtnCerrarInformacion();
             grabarDocumentoPropuesta.CerrarVentanaGrabarPropuesta();
 
-            if (Valor.equals("El Documento ha sido derivado satisfactoriamente")){
+            if (ValorResultado.equals("El Documento ha sido derivado satisfactoriamente")){
                 listadoPropuesta.ClickBtnRegresar();
             }
             else {

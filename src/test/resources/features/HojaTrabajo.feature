@@ -4,7 +4,6 @@ Feature: Crear una Hoja de Trabajo en el sistema SGCCRED de Caja Piura
   Para que se anexe en la propuesta de Créditos de Consumo
 
 
-
   Scenario Outline: Crear una Hoja de Trabajo del cliente
     Given la pagina SGCRED esta disponible
     When se ingresa usuario y password
@@ -35,20 +34,4 @@ Feature: Crear una Hoja de Trabajo en el sistema SGCCRED de Caja Piura
 
     Examples:
       |cliente|
-      |23162539|
-
-      #|14317112|
-
-     # |23622173|
-     # |25461886|
-
-     # |22466895|
-     # |24361969|
-     # |2536846|
-     # |17854720|
-     # |17075292|
-     # |16711829|
-     # |9161627|
-     # |20347368|
-     # |17138243|
-     # |15793|
+      |23977184|

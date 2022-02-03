@@ -13,13 +13,13 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import java.io.IOException;
 
 public class LoginPage {
+
     private WebDriver driver;
     private WebDriverWait wait;
     private funcionVentana objFuncionVentana = new funcionVentana();
     private funcionEsperar objFuncionEsperar = new funcionEsperar();
     private funcionExcepciones objLogErrores = new funcionExcepciones();
     private String detalleError = new String();
-
 
 
     @FindBy(name = "txtUsuario") private WebElement txt_Usuario;

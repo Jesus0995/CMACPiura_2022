@@ -1,4 +1,4 @@
-Feature: Registrar informe de visita con el perfil Administrador
+Feature: Aprobar una propuesta de credito del cliente en el sistema SGCRED
   Yo como usuario Administrador
   Quiero aprobar una propuesta de credito
   Para que el cliente pueda desembolsar

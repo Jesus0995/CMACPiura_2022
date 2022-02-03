@@ -226,6 +226,7 @@ public class PropuestaPage {
     public void ClickDesenlazarInformeVisitaConsumo() {
         try {
             WebElement btn_desenlazarInformeVisitaConsumo = driver.findElement(By.xpath("/html/body/form/table/tbody/tr[3]/td/div/table[18]/tbody/tr[1]/td[3]/button"));
+            objFuncionEsperar.EsperarTiempo(1);
             String JScript = btn_desenlazarInformeVisitaConsumo.getAttribute("onclick");
             ((JavascriptExecutor) driver).executeScript(JScript);
             objFuncionEsperar.EsperarTiempo(2);
@@ -251,6 +252,7 @@ public class PropuestaPage {
     public void ClickEnlazarInformeVisitaConsumo() {
         try {
             WebElement btn_enlazarInformeVisitaConsumo = driver.findElement(By.xpath("/html/body/form/table/tbody/tr[3]/td/div/table[18]/tbody/tr[1]/td[3]/button"));
+            objFuncionEsperar.EsperarTiempo(1);
             String JScript = btn_enlazarInformeVisitaConsumo.getAttribute("onclick");
             ((JavascriptExecutor) driver).executeScript(JScript);
             objFuncionEsperar.EsperarTiempo(2);
@@ -276,6 +278,7 @@ public class PropuestaPage {
     public void ClickEnlazarInformeComercialConsumo() {
         try {
             WebElement btn_enlazarInformeComercialConsumo = driver.findElement(By.xpath("/html/body/form/table/tbody/tr[3]/td/div/table[18]/tbody/tr[2]/td[3]/button"));
+            objFuncionEsperar.EsperarTiempo(1);
             String JScript = btn_enlazarInformeComercialConsumo.getAttribute("onclick");
             ((JavascriptExecutor) driver).executeScript(JScript);
             objFuncionEsperar.EsperarTiempo(2);
@@ -288,6 +291,7 @@ public class PropuestaPage {
     public void ClickEnlazarHojaTrabajo() {
         try {
             WebElement btn_enlazarInformeComercial = driver.findElement(By.xpath(" /html/body/form/table/tbody/tr[3]/td/div/table[16]/tbody/tr/td[3]/button"));
+            objFuncionEsperar.EsperarTiempo(1);
             String JScript = btn_enlazarInformeComercial.getAttribute("onclick");
             ((JavascriptExecutor) driver).executeScript(JScript);
             objFuncionEsperar.EsperarTiempo(2);

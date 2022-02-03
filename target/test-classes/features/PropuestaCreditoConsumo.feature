@@ -77,15 +77,4 @@ Feature: Crear una propuesta de Creditos de Consumo de tipo Normal en el sistema
 
     Examples:
       |cliente|
-      |14317112|
-
-     # |22466895|
-     # |24361969|
-     # |2536846|
-     # |17854720|
-     # |17075292|
-     # |16711829|
-     # |9161627|
-     # |20347368|
-     # |17138243|
-     # |15793|
+      |25356918|

@@ -8,6 +8,6 @@ Feature: Crear una propuesta de Credito Empresarial de tipo Normal en el sistema
     Given la pagina web SGCRED lista para utilizar
     When se ingresa el usuario y password
       | usuario | password |
-      | ALPAMA   | prueba   |
+      | CIYAZU   | prueba   |
     And hacer click en el boton ingresar y muestra el Home SGCRED
     Then ejecutar los registros de propuestas de Credito Empresarial desde Excel "DatosCreditoEmpresarial.xlsx"
