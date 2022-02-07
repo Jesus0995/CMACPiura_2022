@@ -66,7 +66,7 @@ public class ExcelCreditoEmpresarialReprogramacionOtroPagareDefinitions {
     @Given("la pagina web SGCRED es correcto")
     public void laPaginaWebSGCREDEsCorrecto() {
 
-        Hooks.driver.get("http://10.0.203.16:8083/propuesta/");
+        Hooks.driver.get("http://10.0.203.16:8082/propuesta/");
 
     }
 
@@ -154,7 +154,7 @@ public class ExcelCreditoEmpresarialReprogramacionOtroPagareDefinitions {
             confirmarSegurosSeleccionados.ClickBtnCerrar();
             confirmarSegurosSeleccionados.CerrarVentanaConfirmacionSeguros();
 
-            propuesta.ClickAnexarCheckListCreditos();
+            /*propuesta.ClickAnexarCheckListCreditos();
             anexarCheckListCreditos.AbrirVentanaAnexarCheckList();
             anexarCheckListCreditos.SeleccionarOpcionesCheckListCredito();
             anexarCheckListCreditos.Seleccionar_37opinionLegal();
@@ -164,14 +164,14 @@ public class ExcelCreditoEmpresarialReprogramacionOtroPagareDefinitions {
 
             confirmarCheckList.AbrirVentanaConfirmacionCheckList();
             confirmarCheckList.ClickBtnCerrar();
-            confirmarCheckList.CerrarVentanaConfirmacionCheckList();
+            confirmarCheckList.CerrarVentanaConfirmacionCheckList();*/
 
             propuesta.ClickAnexarGarantias();
             seleccionarGarantia.AbrirVentanaGarantia();
             seleccionarGarantia.ClickRegistrarGarantia();
             seleccionarGarantia.CerrarVentanaGarantia();
             seleccionarGarantiasExistentes.AbrirVentanaGarantiasExistentes();
-            seleccionarGarantiasExistentes.SeleccionarCheckGarantiasExistentesPromoMype();
+            seleccionarGarantiasExistentes.SeleccionarCheckGarantiasExistentesPromoCreditoAlToque();
             seleccionarGarantiasExistentes.ClickBtnAceptar();
             seleccionarGarantiasExistentes.CerrarVentanaGarantiasExistentes();
 

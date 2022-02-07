@@ -66,7 +66,7 @@ public class PropuestaPage {
     @FindBy(name = "observCuota") private WebElement txt_ObservacionMontoPago;
     @FindBy(name = "observMejoraGar") private WebElement txt_ObservacionMejoraGarantia;
     @FindBy(xpath = "/html/body/form/table[1]/tbody/tr[3]/td/div/table[1]/tbody/tr/td[2]/table/tbody/tr[4]/td[2]") private WebElement lbl_Promocion;
-    @FindBy(xpath = "//h4[contains(text(),'CHECK LIST CRÉDITOS')]") private WebElement lbl_CheckList;
+    @FindBy(xpath = "//td[@class='Invisible']//h4") public WebElement lbl_Etiquetas;
     @FindBy(xpath = "/html/body/form/table/tbody/tr[3]/td/div/table[16]/tbody/tr/td[3]/button") private WebElement btn_HojaTrabajo;
     @FindBy(xpath = "/html/body/form/table/tbody/tr[3]/td/div/table[18]/tbody/tr[1]/td[3]/button") private WebElement btn_InformeVisitaConsumo;
     @FindBy(xpath = "/html/body/form/table/tbody/tr[3]/td/div/table[18]/tbody/tr[2]/td[3]/button") private WebElement btn_InformeComercialConsumo;
@@ -629,7 +629,7 @@ public class PropuestaPage {
 
     }
 
-    public String TextoCheckList() {
+    /*public String TextoCheckList() {
         try {
             wait.until(ExpectedConditions.visibilityOf(lbl_CheckList));
             TextoCheckList = lbl_CheckList.getText();
@@ -640,7 +640,7 @@ public class PropuestaPage {
         }
         return TextoCheckList;
 
-    }
+    }*/
 
 }
 

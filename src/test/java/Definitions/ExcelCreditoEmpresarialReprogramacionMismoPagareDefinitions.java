@@ -53,7 +53,7 @@ public class ExcelCreditoEmpresarialReprogramacionMismoPagareDefinitions {
     @Given("la pagina web SGCRED esta apto")
     public void laPaginaWebSGCREDEstaApto() {
 
-        Hooks.driver.get("http://10.0.203.16:8083/propuesta/");
+        Hooks.driver.get("http://10.0.203.16:8082/propuesta/");
     }
 
     @When("digito el usuario y password")
@@ -162,7 +162,7 @@ public class ExcelCreditoEmpresarialReprogramacionMismoPagareDefinitions {
             grabarPropuesta.CerrarVentanaGrabarPropuesta();
 
             Valor = propuesta.CapturarNumeroPropuesta();
-            excel.EscribirExcel(arg0, 0, i, 18, Valor);
+            excel.EscribirExcel(arg0, 0, i, 20, Valor);
 
             propuesta.ClickBtnRegresar();
             listadoPropuesta.ClickBtnRegresar();

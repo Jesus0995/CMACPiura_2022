@@ -19,7 +19,6 @@ public class ExcelAprobarPropuestaCreditoEmpresarialDefinitions {
     GrabarInformacionDocumentoPage grabarDocumentoPropuesta;
     ExcelPage excel;
     String ValorResultado;
-    String ValorCheckList;
 
     public ExcelAprobarPropuestaCreditoEmpresarialDefinitions() {
         loginAprobar = new LoginPage(Hooks.driver);
@@ -72,19 +71,13 @@ public class ExcelAprobarPropuestaCreditoEmpresarialDefinitions {
             listadoPropuesta.ClickEditarPropuesta();
             popUpComunicado.ValidarComunicado();
 
-            ValorCheckList = propuesta.TextoCheckList();
-            if (ValorCheckList.isEmpty() == true){
-                System.out.println("No existe validación para CheckList");
-            }
-            else {
-                propuesta.ClickBtnVerificarCheckListCredito();
-                aprobarcheckListCredito.AbrirVentanaAprobarCheckListCredito();
-                aprobarcheckListCredito.SeleccionarOptAprobar();
-                aprobarcheckListCredito.IngresarComentarios();
-                aprobarcheckListCredito.ClickBtnGuardar();
-                aprobarcheckListCredito.ClickBtnCerrar();
-                aprobarcheckListCredito.CerrarVentanaAprobarCheckListCredito();
-            }
+            propuesta.ClickBtnVerificarCheckListCredito();
+            aprobarcheckListCredito.AbrirVentanaAprobarCheckListCredito();
+            aprobarcheckListCredito.SeleccionarOptAprobar();
+            aprobarcheckListCredito.IngresarComentarios();
+            aprobarcheckListCredito.ClickBtnGuardar();
+            aprobarcheckListCredito.ClickBtnCerrar();
+            aprobarcheckListCredito.CerrarVentanaAprobarCheckListCredito();
 
             propuesta.AbrirOpcionesDictamen();
             propuesta.ClickBtnAprobarPropuesta();

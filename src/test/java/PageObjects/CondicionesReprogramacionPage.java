@@ -109,6 +109,7 @@ public class CondicionesReprogramacionPage {
 
     public void IngresarInforme(String Informe){
         try {
+            objFuncionEsperar.EsperarTiempo(1);
             txt_Informe.clear();
             txt_Informe.sendKeys(Informe);
         }
@@ -124,7 +125,7 @@ public class CondicionesReprogramacionPage {
             WebElement OpcionCronograma = driver.findElement(By.xpath("//select[@name='tipoCronograma']//option[contains(text(),'"+Cronograma+"')]"));
             String JScript = OpcionCronograma.getAttribute("onclick");
             ((JavascriptExecutor) driver).executeScript(JScript);
-            objFuncionEsperar.EsperarTiempo(1);
+            objFuncionEsperar.EsperarTiempo(3);
 
         }
         catch (Exception Error){
@@ -136,8 +137,8 @@ public class CondicionesReprogramacionPage {
 
     public void SeleccionarModalidadAmortizacion(String Modalidad){
         try {
+            objFuncionEsperar.EsperarTiempo(5);
             cbx_ModalidadAmortizacion.sendKeys(Modalidad);
-            objFuncionEsperar.EsperarTiempo(2);
             WebElement OpcionModalidad = driver.findElement(By.xpath("//select[@name='modalidad']//option[contains(text(),'"+Modalidad+"')]"));
             String JScript = OpcionModalidad.getAttribute("onclick");
             ((JavascriptExecutor) driver).executeScript(JScript);
@@ -147,13 +148,13 @@ public class CondicionesReprogramacionPage {
             detalleError = "Error al hacer click en el botón Modalidad de Amortización";
             objLogErrores.logError(detalleError, Error);
         }
-    }
 
+    }
 
     public void SeleccionarModalidadPago(String ModalidadPago){
         try {
+            objFuncionEsperar.EsperarTiempo(5);
             cbx_ModalidadPago.sendKeys(ModalidadPago);
-            objFuncionEsperar.EsperarTiempo(1);
             WebElement OpcionPago = driver.findElement(By.xpath("//select[@name='opcion']//option[contains(text(),'"+ModalidadPago+"')]"));
             String JScript = OpcionPago.getAttribute("onclick");
             ((JavascriptExecutor) driver).executeScript(JScript);
@@ -167,6 +168,7 @@ public class CondicionesReprogramacionPage {
 
     public void SeleccionarTipoCalculo(String TipoCalculo){
         try {
+            objFuncionEsperar.EsperarTiempo(5);
             wait.until(ExpectedConditions.elementToBeClickable(cbx_TipoCalculo));
             new Select(cbx_TipoCalculo).selectByVisibleText(TipoCalculo);
         }
@@ -178,6 +180,7 @@ public class CondicionesReprogramacionPage {
 
     public void IngresarNumeroCuotas(String NumeroCuotas){
         try {
+            objFuncionEsperar.EsperarTiempo(1);
             txt_NumeroCuota.clear();
             txt_NumeroCuota.sendKeys(NumeroCuotas);
         }

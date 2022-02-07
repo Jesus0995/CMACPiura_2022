@@ -180,6 +180,7 @@ public class ExcelCreditoEmpresarialRefinanciacionDefinitions {
 
                 case ("CAMPAÑA CRECE MUJER"):
                     seleccionarGarantiasExistentes.SeleccionarCheckGarantiasExistentePromoCampanaCrecerMujer();
+
             }
             seleccionarGarantiasExistentes.ClickBtnAceptar();
             seleccionarGarantiasExistentes.CerrarVentanaGarantiasExistentes();

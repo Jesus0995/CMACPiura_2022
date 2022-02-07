@@ -149,6 +149,7 @@ public class SeleccionarServicioPage {
 
     public void SeleccionarPagare(String Pagare){
         try {
+            objFuncionEsperar.EsperarTiempo(3);
             WebElement opcionPagare = driver.findElement(By.xpath("//select[@id='idPagare']//option[text()='"+Pagare+"']"));
             opcionPagare.click();
             objFuncionEsperar.EsperarTiempo(3);
