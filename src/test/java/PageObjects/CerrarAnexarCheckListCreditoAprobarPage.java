@@ -22,7 +22,7 @@ public class CerrarAnexarCheckListCreditoAprobarPage {
     private funcionExcepciones objLogErrores = new funcionExcepciones();
     private String detalleError;
 
-    @FindBy(xpath = "/html/body/fieldset/form/table/tbody/tr[2]/td/button") private WebElement btn_Cerrar;
+    @FindBy(xpath = "//button[@type='button']") private WebElement btn_Cerrar; //cambió xpath
 
     public void AbrirVentanaCerrarAnexarCheckListAprobar(){
         try {
@@ -57,7 +57,7 @@ public class CerrarAnexarCheckListCreditoAprobarPage {
             System.out.println("Click en el boton cerrar");
             System.out.println("Handles iniciales"+driver.getWindowHandles());
             Integer numeroHandles = driver.getWindowHandles().size();
-            objFuncionEsperar.EsperarTiempo(3);
+            objFuncionEsperar.EsperarTiempo(5);
             btn_Cerrar.click();
             for (int i=0; i<=240;i+=1 ){
                 if (driver.getWindowHandles().size()==numeroHandles){

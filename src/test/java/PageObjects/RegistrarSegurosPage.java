@@ -28,8 +28,10 @@ public class RegistrarSegurosPage {
     //Mapear los locator de la pagina
     @FindBy(id = "4_02201") private WebElement chk_SeguroDesgravamenFlatMN;
     @FindBy(id = "dps02201") private WebElement txt_SeguroDesgravamenFlatMN;
-    @FindBy(id = "5_13501") private WebElement chk_SeguroRiesgoPlanPymes;
-    @FindBy(id = "dps13501") private WebElement txt_SeguroRiesgoPlanPymes;
+    //cambio de ID: 5_13501
+    @FindBy(id = "5_13001") private WebElement chk_SeguroRiesgoPlanPymes;
+    //cambio de ID: dps13501
+    @FindBy(id = "dps13001") private WebElement txt_SeguroRiesgoPlanPymes;
     @FindBy(id = "4_01301") private WebElement chk_SeguroDesgravamenSaldoCapital;
    // @FindBy(xpath = "//input[@id='4_01201']") private WebElement chk_SeguroDesgravamenSaldoCapital; --- Locator del checkbox antes del 09/12/2021. Cambió id
    @FindBy(id = "dps01301") private WebElement txt_SeguroDesgravamenSaldoCapital;
@@ -114,6 +116,7 @@ public class RegistrarSegurosPage {
 
     public void ClickCheckSeguroRiesgoPlanPymes() {
         try {
+            objFuncionEsperar.EsperarTiempo(5);
             wait.until(ExpectedConditions.elementToBeClickable(chk_SeguroRiesgoPlanPymes));
             chk_SeguroRiesgoPlanPymes.click();
         } catch (Exception Error) {
@@ -130,6 +133,7 @@ public class RegistrarSegurosPage {
             int rand_val1 = Math.abs(rand.nextInt(max_val - min_val + 2) + min_val);
             String DPSPlanPymes = '9' + String.valueOf(rand_val1);
             System.out.println("el numero aleatorio es:" + DPSPlanPymes);
+            objFuncionEsperar.EsperarTiempo(2);
             txt_SeguroRiesgoPlanPymes.clear();
             txt_SeguroRiesgoPlanPymes.sendKeys(DPSPlanPymes);
         } catch (Exception Error) {

@@ -58,7 +58,7 @@ public class EnlazarInformeVisitaPage {
     public void ClickBtnRealizar(){
         try {
             wait.until(ExpectedConditions.elementToBeClickable(btn_Realizar));
-            objFuncionEsperar.EsperarTiempo(2);
+            objFuncionEsperar.EsperarTiempo(5);
             btn_Realizar.click();
             objFuncionEsperar.EsperarTiempo(2);
         } catch (Exception Error) {

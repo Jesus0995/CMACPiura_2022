@@ -107,7 +107,6 @@ public class ExcelCreditoEmpresarialRefinanciacionDefinitions {
             seleccionarServicio.SeleccionarServicioCredito(datosExcel[i][2]);
             seleccionarServicio.SeleccionarTipoPropuesta(datosExcel[i][3]);
             seleccionarServicio.SeleccionarSubTipoPropuesta(datosExcel[i][4]);
-
             seleccionarServicio.SeleccionarTipoOperacion(datosExcel[i][6]);
             seleccionarServicio.SeleccionarPagare(datosExcel[i][7]);
             seleccionarServicio.ClickBtnSeleccionarPagare();
@@ -167,8 +166,7 @@ public class ExcelCreditoEmpresarialRefinanciacionDefinitions {
             confirmarCheckList.ClickBtnCerrar();
             confirmarCheckList.CerrarVentanaConfirmacionCheckList();
 
-            propuesta.IngresarComentariosPropuesta();
-            propuesta.IngresarCaracteristicaNegocio();
+
             propuesta.ClickAnexarGarantias();
             seleccionarGarantia.AbrirVentanaGarantia();
             seleccionarGarantia.ClickRegistrarGarantia();
@@ -194,7 +192,7 @@ public class ExcelCreditoEmpresarialRefinanciacionDefinitions {
             enlazarEstadosFinancieros.ClickbtnEnlazar();
             enlazarEstadosFinancieros.CerrarVentanaEnlazarEstadosFinancieros();
 
-            propuesta.IngresarComentariosPropuesta();
+            //propuesta.IngresarComentariosPropuesta();
             propuesta.ClickDesenlazarInformeVisita();
             desenlazarInformeVisita.AbrirVentanaDesenlazarInformeVisita();
             desenlazarInformeVisita.ClickBtnRealizar();
@@ -210,7 +208,11 @@ public class ExcelCreditoEmpresarialRefinanciacionDefinitions {
             enlazarInformeVisita.ClickBtnRealizar();
             enlazarInformeVisita.CerrarVentanaEnlazarInformeVisita();
 
+            propuesta.IngresarComentariosPropuesta();
+            //propuesta.IngresarComentarioCuota();
+            //propuesta.IngresarCaracteristicaNegocio();
             propuesta.IngresarComentariosRatios(datosExcel[i][17]);
+
             propuesta.ClickMenuGrabarPropuesta();
             grabarPropuesta.AbrirVentanaGrabarPropuesta();
             grabarPropuesta.ClickBtnCerrarInformacion();

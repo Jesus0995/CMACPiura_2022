@@ -27,15 +27,12 @@ public class InformeEEFFConsolidadoGrupoVinculadoPage {
     private funcionExcepciones objLogErrores = new funcionExcepciones();
     private String detalleError;
 
-    @FindBy(xpath = "//a[@id='btn_graba']")
-    private WebElement btn_Grabar;
-    @FindBy(xpath = "//a[@id='btn_final']")
-    private WebElement btn_Finalizar;
-    @FindBy(xpath = "//a[@title='Cerrar']")
-    private WebElement btn_Cerrar;
+    @FindBy(xpath = "//a[@id='btn_graba']") private WebElement btn_Grabar;
+    @FindBy(xpath = "//a[@id='btn_final']") private WebElement btn_Finalizar;
+    @FindBy(xpath = "//a[@title='Cerrar']") private WebElement btn_Cerrar;
     @FindBy(xpath = "//*[@id=\"txt_analisis\"]") private WebElement txt_Analisis;
     @FindBy(xpath = "//*[@id=\"txt_conducta\"]") private WebElement txt_Conducta;
-@FindBy(xpath = "/html/body/div[3]/div[1]") private WebElement lbl_Estado;
+    @FindBy(xpath = "/html/body/div[3]/div[1]") private WebElement lbl_Estado;
 
     public void AbrirVentanaInformeEstadoFinancieroConsolidadoGrupo() {
         try {
@@ -141,8 +138,6 @@ public class InformeEEFFConsolidadoGrupoVinculadoPage {
         wait.until(ExpectedConditions.visibilityOf(lbl_Estado));
         lbl_Estado.getAttribute("value");
         System.out.println(lbl_Estado);
-
-
     }
 
 

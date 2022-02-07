@@ -26,6 +26,7 @@ public class SeleccionarSegurosPage {
 
     public void AbrirVentanaSeleccionarSeguros() {
         try {
+            objFuncionEsperar.EsperarTiempo(5);
             identificadoresSeleccionarSeguros = driver.getWindowHandles();
             System.out.println(identificadoresSeleccionarSeguros);
             String LastHandle = "";

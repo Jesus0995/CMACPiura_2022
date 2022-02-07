@@ -26,7 +26,7 @@ Feature: Crear una propuesta de Creditos de Consumo de tipo Normal en el sistema
     And muestra la ventana seleccionar operacion credito doy click en el boton aceptar
     And muestra la ventana operacion credito ingresar el monto, la tasa inicial luego click en el boton calcular
       |Monto|TasaInicial|
-      |3000 |1          |
+      |1500 |10         |
     And en la ventana operacion credito seleccionar el plan de pagos "Fija Vencida"
     And en la ventana operacion credito seleccionar la modalidad de amortizacion "Cronograma Pagos"
     And en la ventana operacion credito seleccionar la opcion de pago "Fecha Fija"

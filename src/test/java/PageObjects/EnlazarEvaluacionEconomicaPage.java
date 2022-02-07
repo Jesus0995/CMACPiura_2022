@@ -59,7 +59,7 @@ public class EnlazarEvaluacionEconomicaPage {
     public void ClickBtnRealizar(){
         try {
             wait.until(ExpectedConditions.elementToBeClickable(btn_Realizar));
-            objFuncionEsperar.EsperarTiempo(1);
+            objFuncionEsperar.EsperarTiempo(2);
             btn_Realizar.click();
             objFuncionEsperar.EsperarTiempo(2);
         } catch (Exception Error) {

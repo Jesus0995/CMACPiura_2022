@@ -39,6 +39,7 @@ public class DesenlazarInformeVisitaPage {
         try {
             System.out.println(driver.getWindowHandles());
             objFuncionVentana.cambiarVentanaInicial();
+            objFuncionEsperar.EsperarTiempo(1);
             System.out.println("Fin cerrar ventana");
         } catch (Exception Error) {
             detalleError = "Error al cerrar ventana Desenlazar Informe";

@@ -8,6 +8,6 @@ Feature: Crear una propuesta de Credito Empresarial de tipo Refinanciacion Espec
     Given la pagina web SGCRED esta disponible para su uso
     When el usuario y password tengan lo siguiente
       | usuario | password |
-      | ALPAMA | prueba   |
+      | CIYAZU  | prueba   |
     And hacer click en el boton ingresar y muestra el menu principal
     Then ejecutar los registros de propuestas de Credito Empresarial Refinanciacion Especial desde Excel "DatosCreditoEmpresarialRefinanciacionEspecial.xlsx"

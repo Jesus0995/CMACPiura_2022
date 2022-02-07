@@ -6,6 +6,7 @@ import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import org.apache.poi.hssf.record.PaneRecord;
 import org.bouncycastle.pqc.jcajce.provider.BouncyCastlePQCProvider;
 
 import java.util.List;
@@ -24,12 +25,15 @@ public class ExcelCreditoEmpresarialAmpliacionDefinitions {
     SeleccionarSegurosPage seleccionarSeguros;
     RegistrarSegurosPage registrarSeguros;
     ConfirmarSegurosSeleccionadosPage confirmarSegurosSeleccionados;
+    AnexarChecklistPage anexarChecklist;
+    CerrarAnexarCheckListCreditoAprobarPage cerrarAnexarCheckListCreditoAprobar;
     SeleccionarGarantiaPage seleccionarGarantia;
     SeleccionarGarantiasExistentesPage seleccionarGarantiasExistentes;
     EnlazarEstadosFinancierosPage enlazarEstadosFinancieros;
     DesenlazarInformeVisitaPage desenlazarInformeVisita;
     EnlazarInformeVisitaPage enlazarInformeVisita;
     EnlazarInformeComercialNuevoPage enlazarInformeComercialNuevo;
+    InformeEEFFConsolidadoGrupoVinculadoPage informeEEFFConsolidadoGrupoVinculado;
     GrabarInformacionDocumentoPage grabarInformacionDocumento;
     AprobarDictamenPropuestaPage aprobarDictamenPropuesta;
     ExcelPage excel;
@@ -50,12 +54,15 @@ public class ExcelCreditoEmpresarialAmpliacionDefinitions {
         seleccionarSeguros = new SeleccionarSegurosPage(Hooks.driver);
         registrarSeguros = new RegistrarSegurosPage(Hooks.driver);
         confirmarSegurosSeleccionados = new ConfirmarSegurosSeleccionadosPage(Hooks.driver);
+        anexarChecklist = new AnexarChecklistPage(Hooks.driver);
+        cerrarAnexarCheckListCreditoAprobar = new CerrarAnexarCheckListCreditoAprobarPage(Hooks.driver);
         seleccionarGarantia = new SeleccionarGarantiaPage(Hooks.driver);
         seleccionarGarantiasExistentes = new SeleccionarGarantiasExistentesPage(Hooks.driver);
         enlazarEstadosFinancieros = new EnlazarEstadosFinancierosPage(Hooks.driver);
         desenlazarInformeVisita = new DesenlazarInformeVisitaPage(Hooks.driver);
         enlazarInformeVisita = new EnlazarInformeVisitaPage(Hooks.driver);
         enlazarInformeComercialNuevo = new EnlazarInformeComercialNuevoPage(Hooks.driver);
+        informeEEFFConsolidadoGrupoVinculado = new InformeEEFFConsolidadoGrupoVinculadoPage(Hooks.driver);
         grabarInformacionDocumento = new GrabarInformacionDocumentoPage(Hooks.driver);
         aprobarDictamenPropuesta = new AprobarDictamenPropuestaPage(Hooks.driver);
         excel = new ExcelPage();
@@ -131,31 +138,46 @@ public class ExcelCreditoEmpresarialAmpliacionDefinitions {
             operacionCredito.IngresarNumeroCuotas(datosExcel[i][14]);
             operacionCredito.IngresarTasaPreferencial(datosExcel[i][15]);
             operacionCredito.SeleccionarFormaDesembolso(datosExcel[i][16]);
-            operacionCredito.SeleccionarCodigoCuenta();
+            operacionCredito.SeleccionarDepartamento(datosExcel[i][17]);
+            operacionCredito.SeleccionarProvincia(datosExcel[i][18]);
+            operacionCredito.SeleccionarDistrito(datosExcel[i][19]);
             operacionCredito.IngresarFechaDesembolso();
-            operacionCredito.IngresarNotas(datosExcel[i][17]);
+            operacionCredito.IngresarNotas(datosExcel[i][20]);
             operacionCredito.ClickBtnGrabar();
             operacionCredito.ObtenerAlerta();
             operacionCredito.CerrarVentanaOperacionCredito();
 
             propuesta.ClickBtnRegistrarSeguro();
-            seleccionarSeguros.AbrirVentanaSeleccionarSeguros();
-            seleccionarSeguros.ClickbtnConfirmar();
-            seleccionarSeguros.CerrarVentanaSeleccionarSeguros();
+            //seleccionarSeguros.AbrirVentanaSeleccionarSeguros(Seguros);
+            //seleccionarSeguros.ClickbtnConfirmar();
+            //seleccionarSeguros.CerrarVentanaSeleccionarSeguros();
             registrarSeguros.AbrirVentanaRegistrarSeguros();
-            registrarSeguros.ClickCheckSeguroDesgravamenSaldoCapital();
-            registrarSeguros.IngresarSeguroDesgravamenSaldoCapital();
+            registrarSeguros.ClickCheckSeguroRiesgoPlanPymes();
+            registrarSeguros.IngresarDPSeguroRiesgoPlanPymes();
             registrarSeguros.ClickBtnConfirmar();
+            registrarSeguros.CerrarVentanaRegistrarSeguros();
             confirmarSegurosSeleccionados.AbrirVentanaConfirmacionSeguros();
             confirmarSegurosSeleccionados.ClickBtnCerrar();
             confirmarSegurosSeleccionados.CerrarVentanaConfirmacionSeguros();
+
+            propuesta.ClickAnexarCheckListCreditos();
+            anexarChecklist.AbrirVentanaAnexarCheckList();
+            anexarChecklist.SeleccionarOpcionesCheckListCredito();
+            anexarChecklist.Seleccionar_37opinionLegal();
+            anexarChecklist.ClickBtnGuardarTerminar();
+            anexarChecklist.AceptarAlerta();
+            anexarChecklist.CerrarVentanaAnexarCheckList();
+
+            cerrarAnexarCheckListCreditoAprobar.AbrirVentanaCerrarAnexarCheckListAprobar();
+            cerrarAnexarCheckListCreditoAprobar.ClickBtnCerrar();
+            cerrarAnexarCheckListCreditoAprobar.CerrarVentanaCerrarAnexarCheckListAprobar();
 
             propuesta.ClickAnexarGarantias();
             seleccionarGarantia.AbrirVentanaGarantia();
             seleccionarGarantia.ClickRegistrarGarantia();
             seleccionarGarantia.CerrarVentanaGarantia();
             seleccionarGarantiasExistentes.AbrirVentanaGarantiasExistentes();
-            seleccionarGarantiasExistentes.SeleccionarCheckGarantiasExistentesPromoCreditoAlToque();
+            seleccionarGarantiasExistentes.SeleccionarCheckGarantiasExistentesMaquinariayEquipo();
             seleccionarGarantiasExistentes.ClickBtnAceptar();
             seleccionarGarantiasExistentes.CerrarVentanaGarantiasExistentes();
 
@@ -181,25 +203,33 @@ public class ExcelCreditoEmpresarialAmpliacionDefinitions {
 
             propuesta.IngresarComentariosPropuesta();
 
+            informeEEFFConsolidadoGrupoVinculado.AbrirVentanaInformeEstadoFinancieroConsolidadoGrupo();
+            informeEEFFConsolidadoGrupoVinculado.IngresarComentarios();
+            informeEEFFConsolidadoGrupoVinculado.IngresarAnalisis();
+            informeEEFFConsolidadoGrupoVinculado.IngresarConducta();
+            informeEEFFConsolidadoGrupoVinculado.ClickBtnGrabar();
+            informeEEFFConsolidadoGrupoVinculado.ClickBtnFinalizar();
+            informeEEFFConsolidadoGrupoVinculado.CerrarVentanaInformeEstadoFinancieroConsolidadoGrupo();
+
             propuesta.ClickMenuGrabarPropuesta();
             grabarInformacionDocumento.AbrirVentanaGrabarPropuesta();
             grabarInformacionDocumento.ClickBtnCerrarInformacion();
             grabarInformacionDocumento.CerrarVentanaGrabarPropuesta();
 
             Valor = propuesta.CapturarNumeroPropuesta();
-            excel.EscribirExcel(arg0, 0, i, 20, Valor);
+            excel.EscribirExcel(arg0, 0, i, 23, Valor);
 
             propuesta.AbrirOpcionesDictamen();
             propuesta.ClickBtnAprobarPropuesta();
             aprobarDictamenPropuesta.AbrirVentanaAprobarDictamenPropuesta();
-            aprobarDictamenPropuesta.IngresarObservaciones(datosExcel[i][18]);
-            aprobarDictamenPropuesta.IngresarContrasena(datosExcel[i][19]);
+            aprobarDictamenPropuesta.IngresarObservaciones(datosExcel[i][21]);
+            aprobarDictamenPropuesta.IngresarContrasena(datosExcel[i][22]);
             aprobarDictamenPropuesta.ClickBtnProcesar();
             aprobarDictamenPropuesta.CerrarVentanaAprobarDictamenPropuesta();
 
             grabarInformacionDocumento.AbrirVentanaGrabarPropuesta();
             ValorResultado = grabarInformacionDocumento.CapturarMensajeDerivacion();
-            excel.EscribirExcel(arg0,0,i,21,ValorResultado);
+            excel.EscribirExcel(arg0,0,i,24,ValorResultado);
             grabarInformacionDocumento.ClickBtnCerrar();
             grabarInformacionDocumento.CerrarVentanaGrabarPropuesta();
 

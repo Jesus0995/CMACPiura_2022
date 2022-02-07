@@ -51,8 +51,10 @@ public class ListadoFormatoVerificacionPage {
 
     public void ClickBtnRegresar() {
         try {
+            objFuncionEsperar.EsperarTiempo(5);
             wait.until(ExpectedConditions.elementToBeClickable(btn_Regresar));
             btn_Regresar.click();
+            objFuncionEsperar.EsperarTiempo(5);
         } catch (Exception Error) {
             detalleError = "Error al seleccionar el boton regresar";
             objLogErrores.logError(detalleError,Error);

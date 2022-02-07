@@ -149,6 +149,7 @@ public class AnexarChecklistPage {
         try {
             System.out.println(driver.getWindowHandles());
             objFuncionVentana.cambiarVentanaInicial();
+            objFuncionEsperar.EsperarTiempo(2);
             System.out.println("Fin cerrar ventana");
         } catch (Exception Error) {
             detalleError = "Error al cerrar ventana Anexar Checklist";

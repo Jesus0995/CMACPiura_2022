@@ -3,6 +3,7 @@ package PageObjects;
 import Functions.funcionEsperar;
 import Functions.funcionExcepciones;
 import Functions.funcionVentana;
+import org.bouncycastle.asn1.x9.X9ECParameters;
 import org.openqa.selenium.*;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
@@ -49,6 +50,7 @@ public class PropuestaPage {
     @FindBy(xpath = "//textarea[@id='txtProyeccCreci']") private WebElement txt_ProyeccionesCrecimiento;
     @FindBy(xpath = "//button[@name=\"btnGaranExist\"]") private WebElement btn_AnexarGarantias;
     @FindBy(xpath = "//textarea[@id='txtPrincipalRatio']") private WebElement txt_ComentariosRatios;
+    @FindBy(xpath = "//textarea[@name=\"observCuota\"]") private WebElement txt_ObservacionCuota;
     @FindBy(xpath = "/html/body/form/table[1]/tbody/tr[2]/td/table[1]/tbody/tr[2]/td[1]/table/tbody/tr/td[5]/a") private WebElement btn_Grabar;
     @FindBy(xpath = "//td[@id='NewDdTD']") private WebElement btn_Dictamen;
     @FindBy(xpath = "//img[@alt='Aprobar']") private WebElement btn_AprobarPropuesta;
@@ -65,7 +67,11 @@ public class PropuestaPage {
     @FindBy(name = "observMejoraGar") private WebElement txt_ObservacionMejoraGarantia;
     @FindBy(xpath = "/html/body/form/table[1]/tbody/tr[3]/td/div/table[1]/tbody/tr/td[2]/table/tbody/tr[4]/td[2]") private WebElement lbl_Promocion;
     @FindBy(xpath = "//h4[contains(text(),'CHECK LIST CRÉDITOS')]") private WebElement lbl_CheckList;
-
+    @FindBy(xpath = "/html/body/form/table/tbody/tr[3]/td/div/table[16]/tbody/tr/td[3]/button") private WebElement btn_HojaTrabajo;
+    @FindBy(xpath = "/html/body/form/table/tbody/tr[3]/td/div/table[18]/tbody/tr[1]/td[3]/button") private WebElement btn_InformeVisitaConsumo;
+    @FindBy(xpath = "/html/body/form/table/tbody/tr[3]/td/div/table[18]/tbody/tr[2]/td[3]/button") private WebElement btn_InformeComercialConsumo;
+    @FindBy(xpath = "/html/body/form/table[1]/tbody/tr[3]/td/div/button") private WebElement btn_EnlazarEstadosFinancieros;
+    @FindBy(xpath = "/html/body/form/table[2]/tbody/tr[1]/td[3]/button") private WebElement btn_InformeVisitaAmpliacion;
 
     public PropuestaPage(WebDriver d) {
         driver = d;
@@ -119,16 +125,24 @@ public class PropuestaPage {
 
     public void IngresarComentariosPropuesta() {
         try {
+            objFuncionEsperar.EsperarTiempo(5);
             List<WebElement> elementList = driver.findElements(By.tagName("textarea"));
             for (WebElement textarea : elementList) {
-                objFuncionEsperar.EsperarTiempo(2);
-                textarea.sendKeys("descripcion general de la propuesta");
+                try{
+                    if(textarea.getAttribute("name") == "observCuota"){
+                        System.out.println("No ingresar comentario a textarea observCuota");
+                    }
+                    else {
+                        objFuncionEsperar.EsperarTiempo(2);
+                        textarea.sendKeys("descripcion general de la propuesta");
+                    }
+                } catch (Exception Error) {
+                }
             }
         } catch (Exception Error) {
             detalleError = "Error al ingresar comentarios en la propuesta";
             objLogErrores.logError(detalleError, Error);
         }
-
     }
 
     public void IngresarCaracteristicaNegocio() {
@@ -142,6 +156,16 @@ public class PropuestaPage {
         }
     }
 
+    public void IngresarComentarioCuota(){
+        try {
+            txt_ObservacionCuota.clear();
+            txt_ObservacionCuota.sendKeys("descripcion general de la propuesta");
+
+        } catch (Exception Error){
+            detalleError = "Error en el registro del comentario Observaciones de Cuota";
+            objLogErrores.logError(detalleError, Error);
+        }
+    }
 
     public void IngresarClasificacionCrediticia(String clasificacion) {
         try {
@@ -187,7 +211,7 @@ public class PropuestaPage {
     }
 
     public void ClickEnlazarEEFF() {
-        try {
+        /*try {
             WebElement btn_EnlazarEEFF = driver.findElement(By.xpath("/html/body/form/table[1]/tbody/tr[3]/td/div/button"));
             objFuncionEsperar.EsperarTiempo(1);
             String JScript = btn_EnlazarEEFF.getAttribute("onclick");
@@ -197,12 +221,24 @@ public class PropuestaPage {
         } catch (Exception Error) {
             detalleError = "Error al seleccionar el boton enlazar estados financieros";
             objLogErrores.logError(detalleError, Error);
+        }*/
+
+        try {
+            objFuncionEsperar.EsperarTiempo(5);
+            wait.until(ExpectedConditions.elementToBeClickable(btn_EnlazarEstadosFinancieros));
+            objFuncionEsperar.EsperarTiempo(5);
+            btn_EnlazarEstadosFinancieros.click();
+        } catch (Exception Error) {
+            detalleError = "Error al seleccionar el boton enlazar estados financieros";
+            objLogErrores.logError(detalleError, Error);
         }
+
     }
 
     public void IngresarComentariosRatios(String ComentariosRatios) {
         try {
             txt_ComentariosRatios.clear();
+            objFuncionEsperar.EsperarTiempo(5);
             txt_ComentariosRatios.sendKeys(ComentariosRatios);
         } catch (Exception Error) {
             detalleError = "Error al ingresar comentarios de la seccion ratios";
@@ -237,7 +273,7 @@ public class PropuestaPage {
     }
 
     public void ClickEnlazarInformeVisita() {
-        try {
+        /*try {
             WebElement btn_enlazarInformeVisita = driver.findElement(By.xpath("/html/body/form/table[2]/tbody/tr[1]/td[3]/button"));
             String JScript = btn_enlazarInformeVisita.getAttribute("onclick");
             ((JavascriptExecutor) driver).executeScript(JScript);
@@ -246,20 +282,40 @@ public class PropuestaPage {
         } catch (Exception Error) {
             detalleError = "Error al seleccionar el boton enlazar informe visita";
             objLogErrores.logError(detalleError, Error);
+        }*/
+        try {
+            objFuncionEsperar.EsperarTiempo(5);
+            wait.until(ExpectedConditions.elementToBeClickable(btn_InformeVisitaAmpliacion));
+            btn_InformeVisitaAmpliacion.click();
+        } catch (Exception Error) {
+            detalleError = "Error al seleccionar el boton enlazar informe visita";
+            objLogErrores.logError(detalleError, Error);
         }
+
     }
 
     public void ClickEnlazarInformeVisitaConsumo() {
-        try {
+        /*try {
             WebElement btn_enlazarInformeVisitaConsumo = driver.findElement(By.xpath("/html/body/form/table/tbody/tr[3]/td/div/table[18]/tbody/tr[1]/td[3]/button"));
-            objFuncionEsperar.EsperarTiempo(1);
+            objFuncionEsperar.EsperarTiempo(2);
             String JScript = btn_enlazarInformeVisitaConsumo.getAttribute("onclick");
             ((JavascriptExecutor) driver).executeScript(JScript);
             objFuncionEsperar.EsperarTiempo(2);
         } catch (Exception Error) {
             detalleError = "Error al seleccionar el boton enlazar informe visita consumo";
             objLogErrores.logError(detalleError, Error);
+        }*/
+
+        try {
+            wait.until(ExpectedConditions.elementToBeClickable(btn_InformeVisitaConsumo));
+            objFuncionEsperar.EsperarTiempo(5);
+            btn_InformeVisitaConsumo.click();
+
+        } catch (Exception Error) {
+            detalleError = "Error al seleccionar el boton enlazar informe visita consumo";
+            objLogErrores.logError(detalleError, Error);
         }
+
     }
 
     public void ClickEnlazarInformeComercialNuevo() {
@@ -276,7 +332,7 @@ public class PropuestaPage {
     }
 
     public void ClickEnlazarInformeComercialConsumo() {
-        try {
+        /*try {
             WebElement btn_enlazarInformeComercialConsumo = driver.findElement(By.xpath("/html/body/form/table/tbody/tr[3]/td/div/table[18]/tbody/tr[2]/td[3]/button"));
             objFuncionEsperar.EsperarTiempo(1);
             String JScript = btn_enlazarInformeComercialConsumo.getAttribute("onclick");
@@ -285,16 +341,36 @@ public class PropuestaPage {
         } catch (Exception Error) {
             detalleError = "Error al seleccionar el boton enlazar informe comercial consumo";
             objLogErrores.logError(detalleError, Error);
+        }*/
+
+        try {
+            wait.until(ExpectedConditions.elementToBeClickable(btn_InformeComercialConsumo));
+            objFuncionEsperar.EsperarTiempo(5);
+            btn_InformeComercialConsumo.click();
+        } catch (Exception Error) {
+            detalleError = "Error al seleccionar el boton enlazar informe comercial consumo";
+            objLogErrores.logError(detalleError, Error);
         }
+
+
     }
 
     public void ClickEnlazarHojaTrabajo() {
-        try {
-            WebElement btn_enlazarInformeComercial = driver.findElement(By.xpath(" /html/body/form/table/tbody/tr[3]/td/div/table[16]/tbody/tr/td[3]/button"));
-            objFuncionEsperar.EsperarTiempo(1);
+        /*try {
+            WebElement btn_enlazarInformeComercial = driver.findElement(By.xpath("/html/body/form/table/tbody/tr[3]/td/div/table[16]/tbody/tr/td[3]/button"));
+            objFuncionEsperar.EsperarTiempo(5);
             String JScript = btn_enlazarInformeComercial.getAttribute("onclick");
             ((JavascriptExecutor) driver).executeScript(JScript);
-            objFuncionEsperar.EsperarTiempo(2);
+            objFuncionEsperar.EsperarTiempo(4);
+        } catch (Exception Error) {
+            detalleError = "Error al seleccionar el boton enlazar hoja de trabajo";
+            objLogErrores.logError(detalleError, Error);
+        }*/
+
+        try {
+            wait.until(ExpectedConditions.elementToBeClickable(btn_HojaTrabajo));
+            objFuncionEsperar.EsperarTiempo(5);
+            btn_HojaTrabajo.click();
         } catch (Exception Error) {
             detalleError = "Error al seleccionar el boton enlazar hoja de trabajo";
             objLogErrores.logError(detalleError, Error);
@@ -411,8 +487,9 @@ public class PropuestaPage {
 
     public String CapturarNumeroPropuesta() {
         try {
-            WebElement lblNumeroPropuesta = driver.findElement(By.xpath("//input[@name='nroPropuesta']"));
-            objFuncionEsperar.EsperarTiempo(1);
+            objFuncionEsperar.EsperarTiempo(5);
+            WebElement lblNumeroPropuesta = driver.findElement(By.xpath("//td[@class='Invisible']//input[@name='nroPropuesta']"));
+            objFuncionEsperar.EsperarTiempo(5);
             numeroPropuesta = lblNumeroPropuesta.getAttribute("value");
             System.out.println("El numero de propuesta es: " + numeroPropuesta);
         } catch (Exception Error) {

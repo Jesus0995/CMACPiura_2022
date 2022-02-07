@@ -40,7 +40,7 @@ public class ExcelEmitirDictamenPropuestaCreditoDefinitions {
 
     @Given("el sistema SGCRED se encuentra disponible para su uso")
     public void el_sistema_sgcred_se_encuentra_disponible_para_su_uso() {
-        Hooks.driver.get("http://10.0.203.16:8083/propuesta/logout.jsp");
+        Hooks.driver.get("http://10.0.203.16:8082/propuesta/logout.jsp");
 
     }
 
@@ -94,7 +94,6 @@ public class ExcelEmitirDictamenPropuestaCreditoDefinitions {
             }
             else {
                 propuesta.ClickBtnRegresar();
-
                 listadoPropuesta.ClickBtnRegresar();
             }
         }

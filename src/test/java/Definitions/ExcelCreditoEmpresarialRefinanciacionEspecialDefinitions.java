@@ -27,7 +27,6 @@ public class ExcelCreditoEmpresarialRefinanciacionEspecialDefinitions {
     SeleccionarGarantiaPage seleccionarGarantia;
     SeleccionarGarantiasExistentesPage seleccionarGarantiasExistentes;
     CancelandoPagaresPage cancelandoPagares;
-
     EnlazarEstadosFinancierosPage enlazarEstadosFinancieros;
     DesenlazarInformeVisitaPage desenlazarInformeVisita;
     EnlazarInformeVisitaPage enlazarInformeVisita;
@@ -75,7 +74,7 @@ public class ExcelCreditoEmpresarialRefinanciacionEspecialDefinitions {
 
     @Given("la pagina web SGCRED esta disponible para su uso")
     public void la_pagina_web_sgcred_esta_disponible_para_su_uso() {
-        Hooks.driver.get("http://10.0.203.16:8083/propuesta/logout.jsp");
+        Hooks.driver.get("http://10.0.203.16:8082/propuesta/logout.jsp");
 
     }
 
@@ -125,6 +124,7 @@ public class ExcelCreditoEmpresarialRefinanciacionEspecialDefinitions {
             seleccionarServicio.ClickBtnSeleccionarPagare();
             seleccionarServicio.ClickBtnCargar();
             seleccionarServicio.CerrarVentanaServicio();
+
             popUpComunicado.ValidarComunicado();
 
             propuesta.ClickIconoCondicionRefinanciar();
@@ -182,7 +182,7 @@ public class ExcelCreditoEmpresarialRefinanciacionEspecialDefinitions {
             confirmarCheckList.CerrarVentanaConfirmacionCheckList();
 
             propuesta.IngresarComentariosPropuesta();
-            propuesta.IngresarCaracteristicaNegocio();
+            //propuesta.IngresarCaracteristicaNegocio();
 
             propuesta.ClickAnexarGarantias();
 

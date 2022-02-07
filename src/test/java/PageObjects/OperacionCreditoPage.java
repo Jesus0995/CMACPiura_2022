@@ -178,6 +178,7 @@ public class OperacionCreditoPage {
 
     public void SeleccionarDiaPagos(String DiaPagos) {
         try {//DiaPagos = objExcel.ExtraerCadenaDecimal(DiaPagos);
+            objFuncionEsperar.EsperarTiempo(2);
             Select Opcion = new Select(driver.findElement(By.xpath("//select[@name='pago']")));
             objFuncionEsperar.EsperarTiempo(1);
             Opcion.selectByVisibleText(DiaPagos);
@@ -191,6 +192,7 @@ public class OperacionCreditoPage {
     public void IngresarNumeroCuotas(String NumeroCuotas) {
         try {//NumeroCuotas = objExcel.ExtraerCadenaDecimal(NumeroCuotas);
             txt_NumeroCuotas.clear();
+            objFuncionEsperar.EsperarTiempo(2);
             txt_NumeroCuotas.sendKeys(NumeroCuotas);
         } catch (Exception Error) {
             detalleError = "Error al ingresar Número de Cuotas";
@@ -201,6 +203,7 @@ public class OperacionCreditoPage {
     public void IngresarTasaPreferencial(String TasaPreferencial) {
         try {
             txt_TasaPreferencial.clear();
+            objFuncionEsperar.EsperarTiempo(2);
             txt_TasaPreferencial.sendKeys(TasaPreferencial);
         } catch (Exception Error) {
             detalleError = "Error al ingresar Tasa Preferencial";
@@ -211,6 +214,7 @@ public class OperacionCreditoPage {
     public void SeleccionarFormaDesembolso(String FormaDesembolso) {
         try {
             cbx_Desembolso.sendKeys(FormaDesembolso);
+            objFuncionEsperar.EsperarTiempo(5);
             WebElement desembolso = driver.findElement(By.xpath("//*[text()='" + FormaDesembolso + "']"));
             String JScript = desembolso.getAttribute("onclick");
             ((JavascriptExecutor) driver).executeScript(JScript);
@@ -244,6 +248,7 @@ public class OperacionCreditoPage {
     public void SeleccionarProvincia(String Provincia) {
         try {
             wait.until(ExpectedConditions.elementToBeClickable(cbx_Provincia));
+            objFuncionEsperar.EsperarTiempo(3);
             new Select(cbx_Provincia).selectByVisibleText(Provincia);
         } catch (Exception Error) {
             detalleError = "Error al seleccionar Provincia";
@@ -254,6 +259,7 @@ public class OperacionCreditoPage {
     public void SeleccionarDistrito(String Distrito) {
         try {
             wait.until(ExpectedConditions.elementToBeClickable(cbx_Distrito));
+            objFuncionEsperar.EsperarTiempo(3);
             new Select(cbx_Distrito).selectByVisibleText(Distrito);
         } catch (Exception Error) {
             detalleError = "Error al seleccionar Distrito";
