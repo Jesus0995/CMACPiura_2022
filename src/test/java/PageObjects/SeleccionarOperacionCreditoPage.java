@@ -28,7 +28,7 @@ public class SeleccionarOperacionCreditoPage {
             System.out.println(driver.getWindowHandles());
             objFuncionVentana.cambiarVentanaNueva();
             ventanaUltima = driver.getWindowHandle();
-            objFuncionEsperar.EsperarTiempo(3);
+           objFuncionEsperar.EsperarTiempo(1);
         } catch (Exception Error) {
             detalleError = "Error abrir ventana Seleccionar Operación Crédito";
             objLogErrores.logError(detalleError,Error);
@@ -59,7 +59,7 @@ public class SeleccionarOperacionCreditoPage {
             System.out.println("Title :" + driver.getTitle());
             WebElement btn_Aceptar = driver.findElement(By.xpath("//button[@type='submit']"));
             btn_Aceptar.click();
-            objFuncionEsperar.EsperarTiempo(11);
+            objFuncionEsperar.EsperarTiempo(4);
         } catch (Exception Error) {
             detalleError = "Error al validar ventana Seleccionar Operación Crédito";
             objLogErrores.logError(detalleError,Error);

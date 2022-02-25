@@ -102,7 +102,7 @@ public class InformeVisita_CrearPage {
     public void IngresarFranjaHoraria(String FranjaHora) {
         try {
         cbx_franjaHoraria.sendKeys(FranjaHora);
-        objFuncionEsperar.EsperarTiempo(3);
+        objFuncionEsperar.EsperarTiempo(1);
 
             /*
             WebElement franjaHora = driver.findElement(By.xpath("//select[@name='meridianoINI']//option[text()='" + FranjaHora + "']"));

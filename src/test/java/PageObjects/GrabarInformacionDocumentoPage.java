@@ -32,7 +32,7 @@ public class GrabarInformacionDocumentoPage {
 
     public void AbrirVentanaGrabarPropuesta() {
         try {
-            objFuncionEsperar.EsperarTiempo(5);
+            objFuncionEsperar.EsperarTiempo(2);
             System.out.println(driver.getWindowHandles());
             objFuncionVentana.cambiarVentanaNueva();
             ventanaUltima = driver.getWindowHandle();
@@ -47,7 +47,7 @@ public class GrabarInformacionDocumentoPage {
             System.out.println(driver.getWindowHandles());
             objFuncionEsperar.EsperarCierreVentana(ventanaUltima);
             objFuncionVentana.cambiarVentanaInicial();
-            objFuncionEsperar.EsperarTiempo(5);
+            //objFuncionEsperar.EsperarTiempo(4);
             System.out.println("Fin cerrar ventana");
         } catch (Exception Error) {
             detalleError = "Error al cerrar ventana Grabar Documento";
@@ -80,7 +80,7 @@ public class GrabarInformacionDocumentoPage {
 
             Integer numeroHandles = driver.getWindowHandles().size();
 
-            objFuncionEsperar.EsperarTiempo(2);
+            objFuncionEsperar.EsperarTiempo(1);
             btn_Cerrar.click();
 
             for (int i = 0; i <= 240; i += 1) {

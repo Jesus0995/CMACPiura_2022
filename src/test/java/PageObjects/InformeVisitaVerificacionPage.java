@@ -164,7 +164,7 @@ public class InformeVisitaVerificacionPage {
         try {
             wait.until(ExpectedConditions.elementToBeClickable(btn_Grabar));
             btn_Grabar.click();
-            objFuncionEsperar.EsperarTiempo(1);
+            //objFuncionEsperar.EsperarTiempo(1);
         } catch (Exception Error) {
             detalleError = "Error al seleccionar el boton Grabar";
             objLogErrores.logError(detalleError, Error);

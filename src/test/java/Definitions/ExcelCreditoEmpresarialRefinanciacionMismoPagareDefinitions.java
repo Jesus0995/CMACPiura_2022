@@ -61,8 +61,8 @@ public class ExcelCreditoEmpresarialRefinanciacionMismoPagareDefinitions {
 
     @Given("la web SGCRED esta disponible para su uso")
     public void laWebSGCREDEstaDisponibleParaSuUso() {
-
-        Hooks.driver.get("http://10.0.203.16:8082/propuesta/logout.jsp");
+        login.IngresarPagina();
+        //Hooks.driver.get("http://10.0.203.16:8082/propuesta/logout.jsp");
 
     }
 

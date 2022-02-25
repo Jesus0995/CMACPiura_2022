@@ -64,8 +64,8 @@ public class ExcelCreditoConsumoDefinitions {
 
     @Given("la pagina web SGCRED esta habilitado")
     public void laPaginaWebSGCREDEstaHabilitado() {
-
-        Hooks.driver.get("http://10.0.203.16:8082/propuesta/");
+        login.IngresarPagina();
+        //Hooks.driver.get("http://10.0.203.16:8082/propuesta/");
 
     }
 

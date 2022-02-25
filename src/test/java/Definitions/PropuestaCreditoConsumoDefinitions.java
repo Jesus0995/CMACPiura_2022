@@ -64,8 +64,8 @@ public class PropuestaCreditoConsumoDefinitions {
 
     @Given("la pagina web SGCRED esta disponible")
     public void laPaginaWebSGCREDEstaDisponible() {
-
-        Hooks.driver.get("http://10.0.203.16:8082/propuesta/");
+        login.IngresarPagina();
+        //Hooks.driver.get("http://10.0.203.16:8082/propuesta/");
     }
 
     @When("se completa el usuario y password")
@@ -482,4 +482,13 @@ public class PropuestaCreditoConsumoDefinitions {
     }
 
 
+    @And("en la ventana operacion credito consumo seleccionar plaza de desembolso")
+    public void enLaVentanaOperacionCreditoConsumoSeleccionarPlazaDeDesembolso(DataTable PlazaDesembolso) {
+        List<Map<String, String>> lista = PlazaDesembolso.asMaps(String.class, String.class);
+        for (int i = 0; i < lista.size(); i++) {
+            operacioncredito.SeleccionarDepartamento(lista.get(i).get("Departamento"));
+            operacioncredito.SeleccionarProvincia(lista.get(i).get("Provincia"));
+            operacioncredito.SeleccionarDistrito(lista.get(i).get("Distrito"));
+        }
+    }
 }

@@ -39,7 +39,8 @@ public class ExcelInformeVisitaVerificacionDefinitions {
 
     @Given("la URL del SGCRED este disponible para su uso")
     public void laURLDelSGCREDEsteDisponibleParaSuUso() {
-        Hooks.driver.get("http://10.0.203.16:8082/propuesta/logout.jsp");
+        login.IngresarPagina();
+        //Hooks.driver.get("http://10.0.203.16:8082/propuesta/logout.jsp");
     }
 
     @When("se ingresa las credenciales del jefe de credito para registrar")

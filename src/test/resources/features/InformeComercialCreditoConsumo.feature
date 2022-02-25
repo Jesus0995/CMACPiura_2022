@@ -28,4 +28,4 @@ Feature: Registrar informe comercial nuevo con el perfil Asesor de Negocios
 
     Examples:
       |cliente|
-      |23934914|
+      |20584149|

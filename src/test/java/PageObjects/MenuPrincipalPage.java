@@ -91,7 +91,6 @@ public class MenuPrincipalPage {
         try {
             wait.until(ExpectedConditions.elementToBeClickable(lnk_CerrarSesion));
             lnk_CerrarSesion.click();
-            objFuncionEsperar.EsperarTiempo(5);
         } catch (Exception Error) {
             detalleError = "Error al seleccionar el link Cerrar Sesion";
             objLogErrores.logError(detalleError, Error);

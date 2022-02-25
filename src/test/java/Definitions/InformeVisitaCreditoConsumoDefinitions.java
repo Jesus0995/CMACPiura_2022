@@ -30,8 +30,8 @@ public class InformeVisitaCreditoConsumoDefinitions {
 
     @Given("la pagina web SGCRED se encuentra disponible")
     public void laPaginaWebSGCREDSeEncuentraDisponible() {
-
-        Hooks.driver.get("http://10.0.203.16:8082/propuesta/");
+        loginInforme.IngresarPagina();
+        //Hooks.driver.get("http://10.0.203.16:8082/propuesta/");
     }
 
     @When("ingreso usuario y password del perfil Asesor de Negocios")

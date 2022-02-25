@@ -8,7 +8,7 @@ Feature: Crear una propuesta de Credito Empresarial de tipo NORMAL en el Sistema
     Given la web SGCRED esta disponible
     When ingresar usuario y password
       | usuario | password |
-      | ALPAMA  | prueba   |
+      | CIYAZU  | prueba   |
     Then hacer click en el boton ingresar
     And mostrar home de SGCRED
     And en el menu principal hacer click en el link propuesta financiamiento
@@ -25,7 +25,7 @@ Feature: Crear una propuesta de Credito Empresarial de tipo NORMAL en el Sistema
     And en la ventana Operacion Credito hacer click en boton aceptar
     And en la ventana Operacion Credito ingresar datos de la operacion luego hacer click en el boton calcular
       | Moneda | Monto | TasaInicial |
-      | S/     | 3000  | 1           |
+      | S/     | 1500  | 1           |
     And en la ventana Operacion Credito seleccionar plan de pagos "Fija Vencida"
     And en la ventana Operacion Credito seleccionar modalidad "Libre Amortizacion"
     And en la ventana Operacion Credito Ingresar los dias "90"
@@ -80,17 +80,7 @@ Feature: Crear una propuesta de Credito Empresarial de tipo NORMAL en el Sistema
 
     Examples:
       | cliente |
-      | 238     |
-      | 629     |
-      | 967     |
-      | 1145    |
-      | 1443    |
-      | 1487    |
-      | 2028    |
-      | 2240    |
-      | 2266    |
-      | 2363    |
-      | 2379    |
+      | 25353633|
 
 
 

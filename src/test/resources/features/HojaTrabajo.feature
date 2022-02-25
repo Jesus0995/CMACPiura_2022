@@ -34,4 +34,4 @@ Feature: Crear una Hoja de Trabajo en el sistema SGCCRED de Caja Piura
 
     Examples:
       |cliente|
-      |23977184|
+      |25454529|

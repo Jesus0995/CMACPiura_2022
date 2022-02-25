@@ -17,7 +17,8 @@ public class ListadoFormatoVerificacionPage {
     private String detalleError = new String();
     @FindBy(xpath = "/html/body/table[3]/tbody/tr/td/div[1]/form/table/tbody/tr[2]/td/button[1]") private WebElement btn_Buscar;
     @FindBy(xpath = "/html/body/form/p/b/button[1]") private WebElement btn_IngresarNuevoFormato;
-    @FindBy(xpath = "/html/body/form/table/tbody/tr[22]/td/button") private WebElement btn_Regresar;
+    //@FindBy(xpath = "/html/body/form/table/tbody/tr[22]/td/button") private WebElement btn_Regresar;
+    @FindBy(xpath = "/html/body/form/table/tbody/tr[22]/td/button[2]") private WebElement btn_Regresar;
 
     public ListadoFormatoVerificacionPage(WebDriver d) {
         driver = d;
@@ -54,7 +55,7 @@ public class ListadoFormatoVerificacionPage {
             objFuncionEsperar.EsperarTiempo(5);
             wait.until(ExpectedConditions.elementToBeClickable(btn_Regresar));
             btn_Regresar.click();
-            objFuncionEsperar.EsperarTiempo(5);
+            //objFuncionEsperar.EsperarTiempo(5);
         } catch (Exception Error) {
             detalleError = "Error al seleccionar el boton regresar";
             objLogErrores.logError(detalleError,Error);

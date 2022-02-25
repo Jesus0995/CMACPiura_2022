@@ -8,7 +8,7 @@ Feature: Registrar Aprobacion de Propuestas con el perfil Jefe de Credito
     Given el sistema SGCRED se encuentra disponible
     When ingreso usuario y password del Perfil Jefe de Credito Agencia
       | usuario | password |
-      | LARI    | prueba   |
+      | NISI    | prueba   |
     And en la ventana doy click en el boton Ingresar de la web SGCRED
     Then el sistema muestra el menu principal de SGCRED
     And en el menu doy click en la opcion propuesta de financiamiento
@@ -34,4 +34,4 @@ Feature: Registrar Aprobacion de Propuestas con el perfil Jefe de Credito
     And cerrar el navegador
     Examples:
       | propuesta |
-      | 4899845   |
+      | 4979030   |

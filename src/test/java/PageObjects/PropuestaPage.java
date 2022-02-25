@@ -37,7 +37,7 @@ public class PropuestaPage {
     @FindBy(id = "justificacion") private WebElement txt_JustificacionCredito;
     @FindBy(name = "btnEnviar") private WebElement btn_NuevaOperacion;
     @FindBy(xpath = "//img[@src='./images/mail-send-receive.png']") private WebElement icn_CambioTasa;
-    @FindBy(xpath = "/html/body/form/table[1]/tbody/tr[3]/td/div/table[7]/tbody/tr[1]/td[2]/button") private WebElement btn_AgregarSeguro;
+    @FindBy(xpath = "/html/body/form/table/tbody/tr[3]/td/div/table[7]/tbody/tr[1]/td[2]/button") private WebElement btn_AgregarSeguro;
     @FindBy(xpath = "/html/body/form/table[1]/tbody/tr[3]/td/div/table[8]/tbody/tr[1]/td[2]/button") private WebElement btn_AnexarChecklist;
     @FindBy(xpath = "//textarea[@id='txtcaracter']") private WebElement txt_CaracteristicaNegocio; //se cambio el name del nuevo ambiente //textarea[@name='caractNegocio']
     @FindBy(xpath = "//textarea[@id='txtclasificac']") private WebElement txt_ClasificacionRiesgoCliente;
@@ -49,11 +49,13 @@ public class PropuestaPage {
     @FindBy(xpath = "//textarea[@id='txtSectorEconomic']") private WebElement txt_AnalisisSector;
     @FindBy(xpath = "//textarea[@id='txtProyeccCreci']") private WebElement txt_ProyeccionesCrecimiento;
     @FindBy(xpath = "//button[@name=\"btnGaranExist\"]") private WebElement btn_AnexarGarantias;
-    @FindBy(xpath = "//textarea[@id='txtPrincipalRatio']") private WebElement txt_ComentariosRatios;
+    @FindBy(xpath = "//*[@id=\"txtPrincipalRatio\"]") private WebElement txt_ComentariosRatios;
     @FindBy(xpath = "//textarea[@name=\"observCuota\"]") private WebElement txt_ObservacionCuota;
     @FindBy(xpath = "/html/body/form/table[1]/tbody/tr[2]/td/table[1]/tbody/tr[2]/td[1]/table/tbody/tr/td[5]/a") private WebElement btn_Grabar;
     @FindBy(xpath = "//td[@id='NewDdTD']") private WebElement btn_Dictamen;
-    @FindBy(xpath = "//img[@alt='Aprobar']") private WebElement btn_AprobarPropuesta;
+    //@FindBy(xpath = "//*[@id=\"NewTD\"]") private WebElement btn_Dictamen;
+    //@FindBy(xpath = "//img[@alt='Aprobar']") private WebElement btn_AprobarPropuesta;
+    @FindBy(xpath = "/html/body/form/table/tbody/tr[2]/td/table[2]/tbody/tr[1]/td/a") private WebElement btn_AprobarPropuesta;
     @FindBy(xpath = "//button[@name='btnEnviar2']") private WebElement btn_VerificarCheckListCredito;
     @FindBy(xpath = "/html/body/form/table[2]/tbody/tr[6]/td[3]/button") private WebElement btn_EnlazarEEFFGrupoVinculado;
     @FindBy(xpath = "/html/body/form/table[1]/tbody/tr[3]/td/div/table[9]/tbody/tr/td[2]/button") private WebElement btn_CancelarPagares;
@@ -102,8 +104,8 @@ public class PropuestaPage {
 
     public void ClickBtnRegistrarSeguro() {
         try {
-            wait.until(ExpectedConditions.elementToBeClickable(btn_AgregarSeguro));
             objFuncionEsperar.EsperarTiempo(2);
+            wait.until(ExpectedConditions.elementToBeClickable(btn_AgregarSeguro));
             btn_AgregarSeguro.click();
         } catch (Exception Error) {
             detalleError = "Error al seleccionar el botón registrar seguro";
@@ -381,7 +383,7 @@ public class PropuestaPage {
         try {
             wait.until(ExpectedConditions.elementToBeClickable(btn_Grabar));
             btn_Grabar.click();
-            objFuncionEsperar.EsperarTiempo(30);
+            objFuncionEsperar.EsperarTiempo(5);
 
         } catch (Exception Error) {
             detalleError = "Error al seleccionar el boton grabar propuesta";
@@ -391,8 +393,9 @@ public class PropuestaPage {
 
     public void AbrirOpcionesDictamen() {
         try {
-            btn_Dictamen.click();
             objFuncionEsperar.EsperarTiempo(2);
+            btn_Dictamen.click();
+            //objFuncionEsperar.EsperarTiempo(2);
         } catch (Exception Error) {
             detalleError = "Error al seleccionar el boton opciones dictamen";
             objLogErrores.logError(detalleError, Error);
@@ -404,7 +407,7 @@ public class PropuestaPage {
         try {
             //objFuncionEsperar.EsperarTiempo(1);
             btn_AprobarPropuesta.click();
-            objFuncionEsperar.EsperarTiempo(2);
+            //objFuncionEsperar.EsperarTiempo(2);
         } catch (Exception Error) {
             detalleError = "Error al seleccionar el boton aprobar propuesta";
             objLogErrores.logError(detalleError, Error);

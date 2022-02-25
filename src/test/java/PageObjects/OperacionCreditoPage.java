@@ -115,7 +115,7 @@ public class OperacionCreditoPage {
         try {
             wait.until(ExpectedConditions.elementToBeClickable(btn_Calcular));
             btn_Calcular.click();
-            objFuncionEsperar.EsperarTiempo(60);
+            //objFuncionEsperar.EsperarTiempo(2);
         } catch (Exception Error) {
             detalleError = "Error al hacer click en el botón Calcular";
             objLogErrores.logError(detalleError, Error);
@@ -125,6 +125,7 @@ public class OperacionCreditoPage {
     public void SeleccionarPlanPagos(String PlanPagos) {
         try {
             //cbx_PlanPagos.sendKeys(PlanPagos);
+            objFuncionEsperar.EsperarTiempo(35);
             WebElement Opcion = driver.findElement(By.xpath("//*[text() = '" + PlanPagos + "']"));
             String JScript = Opcion.getAttribute("onclick");
             ((JavascriptExecutor) driver).executeScript(JScript);
@@ -169,7 +170,6 @@ public class OperacionCreditoPage {
             WebElement Opcion = driver.findElement(By.xpath("//*[text() = '" + OpcionPagos + "']"));
             String JScript = Opcion.getAttribute("onclick");
             ((JavascriptExecutor) driver).executeScript(JScript);
-            objFuncionEsperar.EsperarTiempo(2);
         } catch (Exception Error) {
             detalleError = "Error al seleccionar Opción de Pagos";
             objLogErrores.logError(detalleError, Error);
@@ -180,9 +180,9 @@ public class OperacionCreditoPage {
         try {//DiaPagos = objExcel.ExtraerCadenaDecimal(DiaPagos);
             objFuncionEsperar.EsperarTiempo(2);
             Select Opcion = new Select(driver.findElement(By.xpath("//select[@name='pago']")));
-            objFuncionEsperar.EsperarTiempo(1);
+            //objFuncionEsperar.EsperarTiempo(1);
             Opcion.selectByVisibleText(DiaPagos);
-            objFuncionEsperar.EsperarTiempo(2);
+          //  objFuncionEsperar.EsperarTiempo(2);
         } catch (Exception Error) {
             detalleError = "Error al seleccionar Dias de pago";
             objLogErrores.logError(detalleError, Error);
@@ -218,7 +218,7 @@ public class OperacionCreditoPage {
             WebElement desembolso = driver.findElement(By.xpath("//*[text()='" + FormaDesembolso + "']"));
             String JScript = desembolso.getAttribute("onclick");
             ((JavascriptExecutor) driver).executeScript(JScript);
-            objFuncionEsperar.EsperarTiempo(3);
+            //objFuncionEsperar.EsperarTiempo(3);
         } catch (Exception Error) {
             detalleError = "Error al seleccionar forma de Desembolso";
             objLogErrores.logError(detalleError, Error);
@@ -237,6 +237,7 @@ public class OperacionCreditoPage {
 
     public void SeleccionarDepartamento(String Departamento) {
         try {
+            objFuncionEsperar.EsperarTiempo(2);
             wait.until(ExpectedConditions.elementToBeClickable(cbx_Departamento));
             new Select(cbx_Departamento).selectByVisibleText(Departamento);
         } catch (Exception Error) {
@@ -247,8 +248,9 @@ public class OperacionCreditoPage {
 
     public void SeleccionarProvincia(String Provincia) {
         try {
+            //objFuncionEsperar.EsperarTiempo(2);
             wait.until(ExpectedConditions.elementToBeClickable(cbx_Provincia));
-            objFuncionEsperar.EsperarTiempo(3);
+            objFuncionEsperar.EsperarTiempo(2);
             new Select(cbx_Provincia).selectByVisibleText(Provincia);
         } catch (Exception Error) {
             detalleError = "Error al seleccionar Provincia";
@@ -258,8 +260,9 @@ public class OperacionCreditoPage {
 
     public void SeleccionarDistrito(String Distrito) {
         try {
+            //objFuncionEsperar.EsperarTiempo(5);
             wait.until(ExpectedConditions.elementToBeClickable(cbx_Distrito));
-            objFuncionEsperar.EsperarTiempo(3);
+            objFuncionEsperar.EsperarTiempo(2);
             new Select(cbx_Distrito).selectByVisibleText(Distrito);
         } catch (Exception Error) {
             detalleError = "Error al seleccionar Distrito";
@@ -302,7 +305,7 @@ public class OperacionCreditoPage {
             MensajeAlerta = driver.switchTo().alert();
             System.out.println("El mensaje de alerta es:" + MensajeAlerta.getText());
             MensajeAlerta.accept();
-            objFuncionEsperar.EsperarTiempo(2);
+
         } catch (Exception Error) {
             detalleError = "Error al aceptar alertas";
             objLogErrores.logError(detalleError, Error);

@@ -1,16 +1,13 @@
 package PageObjects;
 
+import Definitions.Hooks;
 import Functions.*;
-import net.bytebuddy.pool.TypePool;
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-
-import java.io.IOException;
 
 public class LoginPage {
 
@@ -19,6 +16,7 @@ public class LoginPage {
     private funcionVentana objFuncionVentana = new funcionVentana();
     private funcionEsperar objFuncionEsperar = new funcionEsperar();
     private funcionExcepciones objLogErrores = new funcionExcepciones();
+    private funcionUrl objDirUrl= new funcionUrl();
     private String detalleError = new String();
 
 
@@ -72,7 +70,7 @@ public class LoginPage {
 
     public void ClickBtnCerrarSesion() {
         try {
-            objFuncionEsperar.EsperarTiempo(2);
+            objFuncionEsperar.EsperarTiempo(1);
             wait.until(ExpectedConditions.elementToBeClickable(btn_Cerrar));
             btn_Cerrar.click();
         } catch (Exception Error) {
@@ -93,5 +91,12 @@ public class LoginPage {
 
     }
 
-
+    public void IngresarPagina(){
+        try {
+            Hooks.driver.get(objDirUrl.ObtenerUrl());
+        }catch(Exception Error){
+            detalleError = "Error en la url o direccion equivocada";
+            objLogErrores.logError(detalleError, Error);
+        }
+    }
 }

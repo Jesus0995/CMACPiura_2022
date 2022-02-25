@@ -89,13 +89,13 @@ public class AprobarDictamenPropuestaPage {
             Procesar.click();
             System.out.println("Esperar el fin de procesar");
 
-            for (int i = 0; i <= 60; i += 1) {
+            for (int i = 0; i <= 5; i += 1) {
                 if (driver.getWindowHandles().size() > 1) {
-                    objFuncionEsperar.EsperarTiempo(1);
+                    //objFuncionEsperar.EsperarTiempo(1);
                     System.out.println("Esperando cierre de la ventana "+driver.getTitle()+" - "+i);
                     System.out.println(driver.getWindowHandles());
                 } else {
-                    i = 61;
+                    i = 6;
                 }
             }
             System.out.println("Fin click boton procesar dictamen");

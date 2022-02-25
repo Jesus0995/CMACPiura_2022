@@ -199,7 +199,7 @@ public class RegistrarHojaTrabajoPage {
             MensajeAlerta = driver.switchTo().alert();
             System.out.println("El mensaje de alerta es:" + MensajeAlerta.getText());
             MensajeAlerta.accept();
-            objFuncionEsperar.EsperarTiempo(2);
+            objFuncionEsperar.EsperarTiempo(1);
         } catch (Exception Error) {
             detalleError = "Error al obtener la alerta";
             objLogErrores.logError(detalleError, Error);

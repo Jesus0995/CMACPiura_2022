@@ -37,9 +37,8 @@ public class InformeVisita_InformePage {
 
     public void ClickBtnCrear() {
         try {
-            objFuncionEsperar.EsperarTiempo(3);
-            btn_crearVisita.click();
             objFuncionEsperar.EsperarTiempo(2);
+            btn_crearVisita.click();
 
         } catch (Exception Error) {
             detalleError = "Error al seleccionar el boton crear";
@@ -49,10 +48,9 @@ public class InformeVisita_InformePage {
 
     public void ClickBtnRegresar() {
         try {
-            objFuncionEsperar.EsperarTiempo(5);//40
+            objFuncionEsperar.EsperarTiempo(1);//40
             wait.until(ExpectedConditions.elementToBeClickable(btn_regresar));
             btn_regresar.click();
-            objFuncionEsperar.EsperarTiempo(4);
 
         } catch (Exception Error) {
             detalleError = "Error al seleccionar el boton regresar";

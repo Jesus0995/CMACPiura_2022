@@ -34,7 +34,8 @@ public class HojaTrabajoDefinitions {
     @Given("la pagina SGCRED esta disponible")
     public void la_web_sgcred_esta_disponible() {
 
-        Hooks.driver.get("http://10.0.203.16:8082/propuesta/");
+        //Hooks.driver.get("http://10.0.203.16:8082/propuesta/");
+        login.IngresarPagina();
     }
 
     @When("se ingresa usuario y password")

@@ -33,8 +33,12 @@ Feature: Crear una propuesta de Creditos de Consumo de tipo Normal en el sistema
     And en la ventana operacion credito ingresar el dia de pago "19"
     And en la ventana operacion credito seleccionar el numero de cuotas "18"
     And en la ventana operacion credito ingresar la tasa preferencial "30"
-    And en la ventana operacion credito seleccionar la forma desembolso "ABONO EN CUENTA"
-    And en la ventana operacion credito seleccionar el codigo de cuenta
+    And en la ventana operacion credito seleccionar la forma desembolso "GIRO BANCO DE LA NACION"
+    And en la ventana operacion credito consumo seleccionar plaza de desembolso
+      | Departamento | Provincia | Distrito |
+      | LIMA         | LIMA      | LIMA     |
+    #And en la ventana operacion credito seleccionar la forma desembolso "ABONO EN CUENTA"
+    #And en la ventana operacion credito seleccionar el codigo de cuenta
     And en la ventana operacion credito seleccionar la fecha desembolso
     And en la ventana operacion credito ingresar una nota "prueba de nueva propuesta"
     And en la ventana operacion credito doy click en el boton grabar
@@ -77,4 +81,4 @@ Feature: Crear una propuesta de Creditos de Consumo de tipo Normal en el sistema
 
     Examples:
       |cliente|
-      |25356918|
+      |20584149|
